@@ -13,8 +13,6 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore';
-import firebaseConfig from '../firebase-applet-config.json';
-import { studentCodeLoginSchema } from '../src/schemas/validation';
 import { getAIAdapter } from '../src/services/aiAdapter';
 import {
   Assignment,
@@ -35,10 +33,30 @@ import {
 
 dotenv.config();
 
-const existingApp = getApps().find((a) => a.name === 'server-firebase-app');
-const firebaseApp =
-  existingApp || initializeApp(firebaseConfig, 'server-firebase-app');
-const serverDb = getFirestore(firebaseApp, firebaseConfig.firestoreDatabaseId);
+// Embedded Firebase Configuration to guarantee zero file-resolution crashes on Vercel Serverless
+const firebaseConfig = {
+  projectId: 'gen-lang-client-0867841400',
+  appId: '1:3952257583:web:9f204c566969e88a83f4da',
+  apiKey: 'AIzaSyCA_h5gZZV8NwUsuGAFsWsUBIcwl5_NxEw',
+  authDomain: 'gen-lang-client-0867841400.firebaseapp.com',
+  firestoreDatabaseId: 'ai-studio-61c10e80-066b-4298-9fa9-96b167747f9a',
+  storageBucket: 'gen-lang-client-0867841400.firebasestorage.app',
+  messagingSenderId: '3952257583',
+  measurementId: '',
+  oAuthClientId:
+    '3952257583-tita4b09emrq71ieu853rof281k37fn7.apps.googleusercontent.com',
+  recaptchaSiteKey: '',
+};
+
+let serverDbInstance: ReturnType<typeof getFirestore> | null = null;
+function getServerDb() {
+  if (!serverDbInstance) {
+    const existing = getApps().find((a) => a.name === 'server-firebase-app');
+    const app = existing || initializeApp(firebaseConfig, 'server-firebase-app');
+    serverDbInstance = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+  }
+  return serverDbInstance;
+}
 
 const SESSION_SECRET =
   process.env.STUDENT_SESSION_SECRET ||
@@ -110,8 +128,9 @@ async function logAIJob(jobData: {
   estimatedCostUsd?: number;
 }) {
   try {
+    const db = getServerDb();
     const jobId = `aijob_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
-    await setDoc(doc(serverDb, 'aiJobs', jobId), {
+    await setDoc(doc(db, 'aiJobs', jobId), {
       ...jobData,
       createdAt: new Date().toISOString(),
     });
@@ -124,59 +143,67 @@ export function createApiApp() {
   const app = express();
   app.use(express.json({ limit: '15mb' }));
 
-  // 1. Server-side unique 6-character student code generation
-  app.post(
-    '/api/admin/generate-student-code',
-    async (req: Request, res: Response) => {
-      try {
-        const { studentId } = req.body as { studentId?: string };
-        if (!studentId || typeof studentId !== 'string') {
-          res.status(400).json({ error: 'Thiếu studentId hợp lệ.' });
-          return;
-        }
-
-        let uniqueCode = '';
-        for (let attempt = 0; attempt < 15; attempt++) {
-          const candidate = createRandom6CharCode();
-          const codeDoc = await getDoc(
-            doc(serverDb, 'studentCodeIndex', candidate)
-          );
-          if (!codeDoc.exists()) {
-            uniqueCode = candidate;
-            break;
-          }
-        }
-
-        if (!uniqueCode) {
-          res.status(500).json({
-            error: 'Không thể tạo mã học sinh duy nhất, vui lòng thử lại.',
-          });
-          return;
-        }
-
-        const nowIso = new Date().toISOString();
-        await setDoc(doc(serverDb, 'studentCodeIndex', uniqueCode), {
-          code: uniqueCode,
-          studentId,
-          status: 'active',
-          createdAt: nowIso,
-        });
-
-        res.json({ code: uniqueCode, createdAt: nowIso });
-      } catch (error) {
-        console.error('Error generating student code:', error);
-        res.status(500).json({
-          error:
-            error instanceof Error
-              ? error.message
-              : 'Lỗi máy chủ khi cấp mã học sinh.',
-        });
-      }
+  // Middleware to support both /api/... and direct /... routes when rewritten by Vercel
+  app.use((req, _res, next) => {
+    if (req.url.startsWith('/api/')) {
+      // already prefixed
     }
-  );
+    next();
+  });
 
-  // 2. Parent / Student 6-character code login with rate-limiting & cooldown
-  app.post('/api/student-auth/login', async (req: Request, res: Response) => {
+  // 1. Server-side unique 6-character student code generation
+  const handleGenerateStudentCode = async (req: Request, res: Response) => {
+    try {
+      const db = getServerDb();
+      const { studentId } = req.body as { studentId?: string };
+      if (!studentId || typeof studentId !== 'string') {
+        res.status(400).json({ error: 'Thiếu studentId hợp lệ.' });
+        return;
+      }
+
+      let uniqueCode = '';
+      for (let attempt = 0; attempt < 15; attempt++) {
+        const candidate = createRandom6CharCode();
+        const codeDoc = await getDoc(
+          doc(db, 'studentCodeIndex', candidate)
+        );
+        if (!codeDoc.exists()) {
+          uniqueCode = candidate;
+          break;
+        }
+      }
+
+      if (!uniqueCode) {
+        res.status(500).json({
+          error: 'Không thể tạo mã học sinh duy nhất, vui lòng thử lại.',
+        });
+        return;
+      }
+
+      const nowIso = new Date().toISOString();
+      await setDoc(doc(db, 'studentCodeIndex', uniqueCode), {
+        code: uniqueCode,
+        studentId,
+        status: 'active',
+        createdAt: nowIso,
+      });
+
+      res.json({ code: uniqueCode, createdAt: nowIso });
+    } catch (error) {
+      console.error('Error generating student code:', error);
+      res.status(500).json({
+        error:
+          error instanceof Error
+            ? error.message
+            : 'Lỗi máy chủ khi cấp mã học sinh.',
+      });
+    }
+  };
+  app.post('/api/admin/generate-student-code', handleGenerateStudentCode);
+  app.post('/admin/generate-student-code', handleGenerateStudentCode);
+
+  // 2. Parent / Student 6-character code login
+  const handleStudentLogin = async (req: Request, res: Response) => {
     const clientIp =
       (req.headers['x-forwarded-for'] as string)?.split(',')[0]?.trim() ||
       req.socket?.remoteAddress ||
@@ -198,18 +225,17 @@ export function createApiApp() {
       return;
     }
 
-    const parsed = studentCodeLoginSchema.safeParse(req.body);
-    if (!parsed.success) {
+    const rawCode = (req.body?.code as string | undefined)?.trim().toUpperCase() || '';
+    if (!/^[A-Z0-9]{6}$/.test(rawCode)) {
       res.status(400).json({
         error: 'Mã truy cập phải gồm đúng 6 ký tự chữ hoặc số.',
       });
       return;
     }
 
-    const code = parsed.data.code;
-
     try {
-      const indexSnap = await getDoc(doc(serverDb, 'studentCodeIndex', code));
+      const db = getServerDb();
+      const indexSnap = await getDoc(doc(db, 'studentCodeIndex', rawCode));
       if (!indexSnap.exists()) {
         rateRecord.failedAttempts += 1;
         if (rateRecord.failedAttempts >= MAX_FAILED_ATTEMPTS) {
@@ -229,7 +255,7 @@ export function createApiApp() {
         status: string;
       };
       const studentSnap = await getDoc(
-        doc(serverDb, 'students', indexData.studentId)
+        doc(db, 'students', indexData.studentId)
       );
 
       if (!studentSnap.exists()) {
@@ -271,7 +297,9 @@ export function createApiApp() {
         error: 'Không thể xác thực mã học sinh lúc này. Vui lòng thử lại.',
       });
     }
-  });
+  };
+  app.post('/api/student-auth/login', handleStudentLogin);
+  app.post('/student-auth/login', handleStudentLogin);
 
   const requireStudentAuth = (
     req: Request,
@@ -297,271 +325,269 @@ export function createApiApp() {
   };
 
   // 3. Student Portal Data Endpoint
-  app.get(
-    '/api/student-portal/data',
-    requireStudentAuth,
-    async (req: Request, res: Response) => {
-      try {
-        const session = (
-          req as Request & { studentSession: StudentTokenPayload }
-        ).studentSession;
-        const studentSnap = await getDoc(
-          doc(serverDb, 'students', session.studentId)
-        );
-        if (!studentSnap.exists()) {
-          res.status(404).json({ error: 'Không tìm thấy hồ sơ học sinh.' });
-          return;
-        }
-
-        const student = {
-          id: studentSnap.id,
-          ...(studentSnap.data() as Omit<Student, 'id'>),
-        };
-
-        if (student.status !== 'active') {
-          res
-            .status(403)
-            .json({ error: 'Hồ sơ học sinh hiện không hoạt động.' });
-          return;
-        }
-
-        const classes: ClassRoom[] = [];
-        for (const classId of student.classIds || []) {
-          const cSnap = await getDoc(doc(serverDb, 'classes', classId));
-          if (cSnap.exists()) {
-            classes.push({
-              id: cSnap.id,
-              ...(cSnap.data() as Omit<ClassRoom, 'id'>),
-            });
-          }
-        }
-
-        const saQuery = query(
-          collection(serverDb, 'studentAssignments'),
-          where('studentId', '==', student.id)
-        );
-        const saSnap = await getDocs(saQuery);
-        const studentAssignments: StudentAssignment[] = saSnap.docs.map(
-          (d) => ({
-            id: d.id,
-            ...(d.data() as Omit<StudentAssignment, 'id'>),
-          })
-        );
-
-        const assignmentsMap: Record<string, Assignment> = {};
-        const submissionsMap: Record<string, Submission> = {};
-
-        for (const sa of studentAssignments) {
-          const assignSnap = await getDoc(
-            doc(serverDb, 'assignments', sa.assignmentId)
-          );
-          if (assignSnap.exists()) {
-            const rawAssign = {
-              id: assignSnap.id,
-              ...(assignSnap.data() as Omit<Assignment, 'id'>),
-            };
-            if (rawAssign.status !== 'revoked') {
-              const allowSolutions =
-                Boolean(rawAssign.publishSolutions) &&
-                Boolean(sa.isScorePublished) &&
-                sa.status === 'graded';
-
-              assignmentsMap[rawAssign.id] = {
-                ...rawAssign,
-                publicQuestionsSnapshot: createPublicQuestionsSnapshot(
-                  rawAssign.publicQuestionsSnapshot || []
-                ),
-                gradingKeySnapshot: allowSolutions
-                  ? rawAssign.gradingKeySnapshot
-                  : undefined,
-              };
-            }
-          }
-
-          const subId = `${sa.assignmentId}_${student.id}`;
-          const subSnap = await getDoc(doc(serverDb, 'submissions', subId));
-          if (subSnap.exists()) {
-            const rawSub = {
-              id: subSnap.id,
-              ...(subSnap.data() as Omit<Submission, 'id'>),
-            };
-            submissionsMap[sa.assignmentId] = rawSub.isPublished
-              ? rawSub
-              : {
-                  ...rawSub,
-                  totalScore: undefined,
-                  questionResults: undefined,
-                  teacherOverallComment: undefined,
-                };
-          }
-        }
-
-        const commentsQuery = query(
-          collection(serverDb, 'comments'),
-          where('status', '==', 'published')
-        );
-        const commentsSnap = await getDocs(commentsQuery);
-        const comments: CommentReport[] = commentsSnap.docs
-          .map((d) => ({
-            id: d.id,
-            ...(d.data() as Omit<CommentReport, 'id'>),
-          }))
-          .filter((c) => c.studentId === student.id);
-
-        const gamesQuery = query(
-          collection(serverDb, 'games'),
-          where('status', '==', 'published')
-        );
-        const gamesSnap = await getDocs(gamesQuery);
-        const games: MathGame[] = gamesSnap.docs
-          .map((d) => ({
-            id: d.id,
-            ...(d.data() as Omit<MathGame, 'id'>),
-          }))
-          .sort((a, b) => a.order - b.order);
-
-        res.json({
-          student: toPublicStudent(student),
-          classes,
-          studentAssignments: studentAssignments.filter(
-            (sa) => Boolean(assignmentsMap[sa.assignmentId])
-          ),
-          assignmentsMap,
-          submissionsMap,
-          comments,
-          games,
-        });
-      } catch (error) {
-        console.error('Error fetching student portal data:', error);
-        res
-          .status(500)
-          .json({ error: 'Lỗi tải dữ liệu cổng học sinh. Vui lòng thử lại.' });
+  const handleStudentPortalData = async (req: Request, res: Response) => {
+    try {
+      const db = getServerDb();
+      const session = (
+        req as Request & { studentSession: StudentTokenPayload }
+      ).studentSession;
+      const studentSnap = await getDoc(
+        doc(db, 'students', session.studentId)
+      );
+      if (!studentSnap.exists()) {
+        res.status(404).json({ error: 'Không tìm thấy hồ sơ học sinh.' });
+        return;
       }
+
+      const student = {
+        id: studentSnap.id,
+        ...(studentSnap.data() as Omit<Student, 'id'>),
+      };
+
+      if (student.status !== 'active') {
+        res
+          .status(403)
+          .json({ error: 'Hồ sơ học sinh hiện không hoạt động.' });
+        return;
+      }
+
+      const classes: ClassRoom[] = [];
+      for (const classId of student.classIds || []) {
+        const cSnap = await getDoc(doc(db, 'classes', classId));
+        if (cSnap.exists()) {
+          classes.push({
+            id: cSnap.id,
+            ...(cSnap.data() as Omit<ClassRoom, 'id'>),
+          });
+        }
+      }
+
+      const saQuery = query(
+        collection(db, 'studentAssignments'),
+        where('studentId', '==', student.id)
+      );
+      const saSnap = await getDocs(saQuery);
+      const studentAssignments: StudentAssignment[] = saSnap.docs.map(
+        (d) => ({
+          id: d.id,
+          ...(d.data() as Omit<StudentAssignment, 'id'>),
+        })
+      );
+
+      const assignmentsMap: Record<string, Assignment> = {};
+      const submissionsMap: Record<string, Submission> = {};
+
+      for (const sa of studentAssignments) {
+        const assignSnap = await getDoc(
+          doc(db, 'assignments', sa.assignmentId)
+        );
+        if (assignSnap.exists()) {
+          const rawAssign = {
+            id: assignSnap.id,
+            ...(assignSnap.data() as Omit<Assignment, 'id'>),
+          };
+          if (rawAssign.status !== 'revoked') {
+            const allowSolutions =
+              Boolean(rawAssign.publishSolutions) &&
+              Boolean(sa.isScorePublished) &&
+              sa.status === 'graded';
+
+            assignmentsMap[rawAssign.id] = {
+              ...rawAssign,
+              publicQuestionsSnapshot: createPublicQuestionsSnapshot(
+                rawAssign.publicQuestionsSnapshot || []
+              ),
+              gradingKeySnapshot: allowSolutions
+                ? rawAssign.gradingKeySnapshot
+                : undefined,
+            };
+          }
+        }
+
+        const subId = `${sa.assignmentId}_${student.id}`;
+        const subSnap = await getDoc(doc(db, 'submissions', subId));
+        if (subSnap.exists()) {
+          const rawSub = {
+            id: subSnap.id,
+            ...(subSnap.data() as Omit<Submission, 'id'>),
+          };
+          submissionsMap[sa.assignmentId] = rawSub.isPublished
+            ? rawSub
+            : {
+                ...rawSub,
+                totalScore: undefined,
+                questionResults: undefined,
+                teacherOverallComment: undefined,
+              };
+        }
+      }
+
+      const commentsQuery = query(
+        collection(db, 'comments'),
+        where('status', '==', 'published')
+      );
+      const commentsSnap = await getDocs(commentsQuery);
+      const comments: CommentReport[] = commentsSnap.docs
+        .map((d) => ({
+          id: d.id,
+          ...(d.data() as Omit<CommentReport, 'id'>),
+        }))
+        .filter((c) => c.studentId === student.id);
+
+      const gamesQuery = query(
+        collection(db, 'games'),
+        where('status', '==', 'published')
+      );
+      const gamesSnap = await getDocs(gamesQuery);
+      const games: MathGame[] = gamesSnap.docs
+        .map((d) => ({
+          id: d.id,
+          ...(d.data() as Omit<MathGame, 'id'>),
+        }))
+        .sort((a, b) => a.order - b.order);
+
+      res.json({
+        student: toPublicStudent(student),
+        classes,
+        studentAssignments: studentAssignments.filter(
+          (sa) => Boolean(assignmentsMap[sa.assignmentId])
+        ),
+        assignmentsMap,
+        submissionsMap,
+        comments,
+        games,
+      });
+    } catch (error) {
+      console.error('Error fetching student portal data:', error);
+      res
+        .status(500)
+        .json({ error: 'Lỗi tải dữ liệu cổng học sinh. Vui lòng thử lại.' });
     }
-  );
+  };
+  app.get('/api/student-portal/data', requireStudentAuth, handleStudentPortalData);
+  app.get('/student-portal/data', requireStudentAuth, handleStudentPortalData);
 
   // 4. Student Portal Save Draft / Submit Homework
-  app.post(
-    '/api/student-portal/submit',
-    requireStudentAuth,
-    async (req: Request, res: Response) => {
-      try {
-        const session = (
-          req as Request & { studentSession: StudentTokenPayload }
-        ).studentSession;
-        const { assignmentId, answers, isFinalSubmit } = req.body as {
-          assignmentId: string;
-          answers: StudentQuestionAnswer[];
-          isFinalSubmit: boolean;
-        };
+  const handleStudentSubmit = async (req: Request, res: Response) => {
+    try {
+      const db = getServerDb();
+      const session = (
+        req as Request & { studentSession: StudentTokenPayload }
+      ).studentSession;
+      const { assignmentId, answers, isFinalSubmit } = req.body as {
+        assignmentId: string;
+        answers: StudentQuestionAnswer[];
+        isFinalSubmit: boolean;
+      };
 
-        if (!assignmentId || !Array.isArray(answers)) {
-          res.status(400).json({ error: 'Dữ liệu bài nộp không hợp lệ.' });
-          return;
-        }
+      if (!assignmentId || !Array.isArray(answers)) {
+        res.status(400).json({ error: 'Dữ liệu bài nộp không hợp lệ.' });
+        return;
+      }
 
-        const saId = `${assignmentId}_${session.studentId}`;
-        const [saSnap, assignSnap] = await Promise.all([
-          getDoc(doc(serverDb, 'studentAssignments', saId)),
-          getDoc(doc(serverDb, 'assignments', assignmentId)),
-        ]);
+      const saId = `${assignmentId}_${session.studentId}`;
+      const [saSnap, assignSnap] = await Promise.all([
+        getDoc(doc(db, 'studentAssignments', saId)),
+        getDoc(doc(db, 'assignments', assignmentId)),
+      ]);
 
-        if (!saSnap.exists() || !assignSnap.exists()) {
-          res
-            .status(404)
-            .json({ error: 'Không tìm thấy bài tập được giao cho bạn.' });
-          return;
-        }
+      if (!saSnap.exists() || !assignSnap.exists()) {
+        res
+          .status(404)
+          .json({ error: 'Không tìm thấy bài tập được giao cho bạn.' });
+        return;
+      }
 
-        const assignment = {
-          id: assignSnap.id,
-          ...(assignSnap.data() as Omit<Assignment, 'id'>),
-        };
-        if (assignment.status !== 'active') {
-          res
-            .status(400)
-            .json({ error: 'Bài tập này đã đóng hoặc bị thu hồi.' });
-          return;
-        }
+      const assignment = {
+        id: assignSnap.id,
+        ...(assignSnap.data() as Omit<Assignment, 'id'>),
+      };
+      if (assignment.status !== 'active') {
+        res
+          .status(400)
+          .json({ error: 'Bài tập này đã đóng hoặc bị thu hồi.' });
+        return;
+      }
 
-        const nowIso = new Date().toISOString();
-        const subRef = doc(serverDb, 'submissions', saId);
-        const existingSubSnap = await getDoc(subRef);
+      const nowIso = new Date().toISOString();
+      const subRef = doc(db, 'submissions', saId);
+      const existingSubSnap = await getDoc(subRef);
 
-        if (!isFinalSubmit) {
-          const draftPayload: Omit<Submission, 'id'> = {
-            assignmentId,
-            studentId: session.studentId,
-            answers,
-            maxScore: assignment.maxScore,
-            status: 'in_progress',
-            isPublished: false,
-            updatedAt: nowIso,
-          };
-          await setDoc(subRef, draftPayload);
-          await updateDoc(doc(serverDb, 'studentAssignments', saId), {
-            status: 'in_progress',
-            updatedAt: nowIso,
-          });
-          res.json({ status: 'in_progress', savedAt: nowIso });
-          return;
-        }
-
-        const gradingKey =
-          assignment.gradingKeySnapshot || assignment.publicQuestionsSnapshot;
-        const existingResults = existingSubSnap.exists()
-          ? (existingSubSnap.data() as Submission).questionResults || []
-          : [];
-
-        const graded = gradeFullSubmission(gradingKey, answers, existingResults);
-        const finalStatus = graded.allAutoGradable ? 'graded' : 'submitted';
-        const isPublished = graded.allAutoGradable;
-
-        const submissionData: Omit<Submission, 'id'> = {
+      if (!isFinalSubmit) {
+        const draftPayload: Omit<Submission, 'id'> = {
           assignmentId,
           studentId: session.studentId,
           answers,
-          questionResults: graded.questionResults,
-          totalScore: graded.totalScore,
-          maxScore: graded.maxScore,
-          status: finalStatus,
-          isPublished,
-          submittedAt: nowIso,
-          ...(graded.allAutoGradable ? { gradedAt: nowIso } : {}),
+          maxScore: assignment.maxScore,
+          status: 'in_progress',
+          isPublished: false,
           updatedAt: nowIso,
         };
-
-        await setDoc(subRef, submissionData);
-        await updateDoc(doc(serverDb, 'studentAssignments', saId), {
-          status: finalStatus,
-          score: graded.totalScore,
-          isScorePublished: isPublished,
-          submittedAt: nowIso,
-          ...(graded.allAutoGradable ? { gradedAt: nowIso } : {}),
+        await setDoc(subRef, draftPayload);
+        await updateDoc(doc(db, 'studentAssignments', saId), {
+          status: 'in_progress',
           updatedAt: nowIso,
         });
-
-        res.json({
-          status: finalStatus,
-          isPublished,
-          totalScore: isPublished ? graded.totalScore : undefined,
-          maxScore: graded.maxScore,
-          submittedAt: nowIso,
-        });
-      } catch (error) {
-        console.error('Error submitting homework:', error);
-        res.status(500).json({
-          error:
-            error instanceof Error
-              ? error.message
-              : 'Lỗi khi nộp bài tập. Vui lòng thử lại.',
-        });
+        res.json({ status: 'in_progress', savedAt: nowIso });
+        return;
       }
+
+      const gradingKey =
+        assignment.gradingKeySnapshot || assignment.publicQuestionsSnapshot;
+      const existingResults = existingSubSnap.exists()
+        ? (existingSubSnap.data() as Submission).questionResults || []
+        : [];
+
+      const graded = gradeFullSubmission(gradingKey, answers, existingResults);
+      const finalStatus = graded.allAutoGradable ? 'graded' : 'submitted';
+      const isPublished = graded.allAutoGradable;
+
+      const submissionData: Omit<Submission, 'id'> = {
+        assignmentId,
+        studentId: session.studentId,
+        answers,
+        questionResults: graded.questionResults,
+        totalScore: graded.totalScore,
+        maxScore: graded.maxScore,
+        status: finalStatus,
+        isPublished,
+        submittedAt: nowIso,
+        ...(graded.allAutoGradable ? { gradedAt: nowIso } : {}),
+        updatedAt: nowIso,
+      };
+
+      await setDoc(subRef, submissionData);
+      await updateDoc(doc(db, 'studentAssignments', saId), {
+        status: finalStatus,
+        score: graded.totalScore,
+        isScorePublished: isPublished,
+        submittedAt: nowIso,
+        ...(graded.allAutoGradable ? { gradedAt: nowIso } : {}),
+        updatedAt: nowIso,
+      });
+
+      res.json({
+        status: finalStatus,
+        isPublished,
+        totalScore: isPublished ? graded.totalScore : undefined,
+        maxScore: graded.maxScore,
+        submittedAt: nowIso,
+      });
+    } catch (error) {
+      console.error('Error submitting homework:', error);
+      res.status(500).json({
+        error:
+          error instanceof Error
+            ? error.message
+            : 'Lỗi khi nộp bài tập. Vui lòng thử lại.',
+      });
     }
-  );
+  };
+  app.post('/api/student-portal/submit', requireStudentAuth, handleStudentSubmit);
+  app.post('/student-portal/submit', requireStudentAuth, handleStudentSubmit);
 
   // 5. AI Endpoint: Parse PDF/Image into Structured Homework
-  app.post('/api/ai/parse-homework', async (req: Request, res: Response) => {
+  const handleAIParsing = async (req: Request, res: Response) => {
     const adapter = getAIAdapter();
     try {
       const { mimeType, base64Data, solveWithAI, preferredModel } = req.body as {
@@ -624,10 +650,12 @@ export function createApiApp() {
             : 'Lỗi xử lý AI khi phân tích đề Toán. Vui lòng thử lại.',
       });
     }
-  });
+  };
+  app.post('/api/ai/parse-homework', handleAIParsing);
+  app.post('/ai/parse-homework', handleAIParsing);
 
   // 6. AI Endpoint: Suggest Essay Grading
-  app.post('/api/ai/suggest-grading', async (req: Request, res: Response) => {
+  const handleAIGrading = async (req: Request, res: Response) => {
     const adapter = getAIAdapter();
     try {
       const {
@@ -692,10 +720,14 @@ export function createApiApp() {
             : 'Không thể lấy gợi ý chấm điểm từ AI lúc này.',
       });
     }
-  });
+  };
+  app.post('/api/ai/suggest-grading', handleAIGrading);
+  app.post('/ai/suggest-grading', handleAIGrading);
 
   return app;
 }
 
 const vercelApp = createApiApp();
-export default vercelApp;
+export default function handler(req: Request, res: Response) {
+  return vercelApp(req, res);
+}

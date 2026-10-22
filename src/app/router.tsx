@@ -29,6 +29,7 @@ export const AppRouter: React.FC = () => {
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
             <Route path="classes" element={<ClassesPage />} />
+            <Route path="classes/:classId" element={<ClassesPage />} />
             <Route path="students" element={<StudentsPage />} />
             <Route path="homework" element={<HomeworkPage />} />
             <Route path="assignments" element={<AssignmentsPage />} />

@@ -35,6 +35,7 @@ import {
 } from '../types/domain';
 import {
   createPublicQuestionsSnapshot,
+  createRandom6CharCode,
   createRichTextFromPlain,
 } from '../utils/gradingEngine';
 
@@ -207,19 +208,43 @@ export function subscribeStudents(onData: (students: Student[]) => void) {
 
 export async function createStudent(values: StudentFormValues): Promise<Student> {
   const studentId = makeId('stu');
-  // Request unique 6-character code from backend server
-  const res = await fetch('/api/admin/generate-student-code', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ studentId }),
-  });
+  let code = '';
 
-  if (!res.ok) {
-    const errData = await res.json().catch(() => ({}));
-    throw new Error(errData.error || 'Không thể sinh mã học sinh từ máy chủ.');
+  try {
+    const res = await fetch('/api/admin/generate-student-code', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ studentId }),
+    });
+    if (res.ok) {
+      const data = (await res.json()) as { code?: string };
+      if (data.code) code = data.code;
+    }
+  } catch (err) {
+    console.warn('Server student code generation failed, using client generator:', err);
   }
 
-  const { code } = (await res.json()) as { code: string };
+  // Fallback direct 6-char code generation
+  if (!code) {
+    for (let i = 0; i < 15; i++) {
+      const candidate = createRandom6CharCode();
+      const snap = await getDoc(doc(db, 'studentCodeIndex', candidate));
+      if (!snap.exists()) {
+        code = candidate;
+        await setDoc(doc(db, 'studentCodeIndex', candidate), {
+          code: candidate,
+          studentId,
+          status: 'active',
+          createdAt: new Date().toISOString(),
+        });
+        break;
+      }
+    }
+  }
+
+  if (!code) {
+    throw new Error('Không thể cấp mã học sinh lúc này. Vui lòng thử lại.');
+  }
   const now = new Date().toISOString();
 
   const payload: Omit<Student, 'id'> = {
