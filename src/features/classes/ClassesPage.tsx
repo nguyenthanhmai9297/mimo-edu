@@ -33,14 +33,9 @@ export const ClassesPage: React.FC = () => {
 
   const [formValues, setFormValues] = useState<ClassFormValues>({
     name: '',
-    code: '',
     grade: 'Khối 5',
-    subject: 'Toán',
     schoolYear: '2026-2027',
     description: '',
-    scheduleText: '',
-    startDate: '',
-    endDate: '',
     status: 'active',
   });
   const [formError, setFormError] = useState<string | null>(null);
@@ -55,9 +50,9 @@ export const ClassesPage: React.FC = () => {
     if (!q) return true;
     return (
       cls.name.toLowerCase().includes(q) ||
-      cls.code.toLowerCase().includes(q) ||
       cls.grade.toLowerCase().includes(q) ||
-      cls.schoolYear.toLowerCase().includes(q)
+      cls.schoolYear.toLowerCase().includes(q) ||
+      (cls.description || '').toLowerCase().includes(q)
     );
   });
 
@@ -65,14 +60,9 @@ export const ClassesPage: React.FC = () => {
     setEditingClass(null);
     setFormValues({
       name: '',
-      code: `TOAN-${Math.floor(100 + Math.random() * 900)}`,
       grade: 'Khối 5',
-      subject: 'Toán',
       schoolYear: '2026-2027',
       description: '',
-      scheduleText: 'Thứ Ba & Thứ Năm (18:00 - 19:30)',
-      startDate: '2026-09-05',
-      endDate: '2027-05-30',
       status: 'active',
     });
     setFormError(null);
@@ -83,14 +73,9 @@ export const ClassesPage: React.FC = () => {
     setEditingClass(cls);
     setFormValues({
       name: cls.name,
-      code: cls.code,
       grade: cls.grade,
-      subject: cls.subject || 'Toán',
       schoolYear: cls.schoolYear,
       description: cls.description || '',
-      scheduleText: cls.scheduleText || '',
-      startDate: cls.startDate || '',
-      endDate: cls.endDate || '',
       status: cls.status,
     });
     setFormError(null);
@@ -132,8 +117,8 @@ export const ClassesPage: React.FC = () => {
             Quản Lý Lớp Học
           </h1>
           <p className="text-sm text-slate-600">
-            Tạo lớp, phân lịch học và theo dõi danh sách học sinh cùng bài tập
-            đã giao cho từng lớp.
+            Tạo lớp học mới và theo dõi danh sách học sinh cùng bài tập đã giao
+            cho từng lớp.
           </p>
         </div>
         <button
@@ -154,7 +139,7 @@ export const ClassesPage: React.FC = () => {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Tìm theo tên lớp, mã lớp, khối hoặc năm học..."
+            placeholder="Tìm theo tên lớp học, khối/lớp, năm học hoặc mô tả..."
             className="w-full rounded-xl border-2 border-slate-800 bg-white py-2 pr-4 pl-10 text-sm focus:outline-none"
           />
         </div>
@@ -198,7 +183,7 @@ export const ClassesPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Classes Table / Grid */}
+      {/* Classes Grid */}
       {filteredClasses.length === 0 ? (
         <div className="cartoon-card p-12 text-center">
           <p className="font-display text-base font-bold text-slate-800">
@@ -226,14 +211,10 @@ export const ClassesPage: React.FC = () => {
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 text-xs text-slate-500">
-                    <span className="font-mono font-bold text-blue-700">
-                      {cls.code}
-                    </span>
+                  <div className="flex items-center gap-2 text-xs text-slate-500">
+                    <span className="font-bold text-blue-700">{cls.grade}</span>
                     <span>·</span>
-                    <span>{cls.grade}</span>
-                    <span>·</span>
-                    <span>{cls.schoolYear}</span>
+                    <span className="font-mono">{cls.schoolYear}</span>
                     <span>·</span>
                     <span
                       className={
@@ -250,15 +231,9 @@ export const ClassesPage: React.FC = () => {
                     {cls.name}
                   </h3>
                   {cls.description && (
-                    <p className="mt-1 line-clamp-2 text-xs text-slate-600">
+                    <p className="mt-1.5 line-clamp-3 text-xs text-slate-600">
                       {cls.description}
                     </p>
-                  )}
-
-                  {cls.scheduleText && (
-                    <div className="mt-3 rounded-xl border border-slate-200 bg-amber-50/70 px-3 py-2 text-xs font-medium text-slate-800">
-                      Lịch học: {cls.scheduleText}
-                    </div>
                   )}
                 </div>
 
@@ -320,13 +295,13 @@ export const ClassesPage: React.FC = () => {
         </div>
       )}
 
-      {/* Create / Edit Modal */}
+      {/* Create / Edit Modal (Strictly 4 Fields: Tên lớp học, Khối / Lớp, Năm học, Mô tả lớp học) */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
-          <div className="cartoon-card max-h-[90vh] w-full max-w-xl overflow-y-auto bg-white p-6">
+          <div className="cartoon-card max-h-[90vh] w-full max-w-lg overflow-y-auto bg-white p-6">
             <div className="flex items-center justify-between border-b border-slate-200 pb-3">
               <h2 className="font-display text-lg font-extrabold text-slate-900">
-                {editingClass ? 'Chỉnh Sửa Lớp Học' : 'Tạo Lớp Học Toán Mới'}
+                {editingClass ? 'Chỉnh Sửa Lớp Học' : 'Tạo Lớp Học Mới'}
               </h2>
               <button
                 type="button"
@@ -344,43 +319,23 @@ export const ClassesPage: React.FC = () => {
                 </div>
               )}
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
-                    Tên lớp học *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formValues.name}
-                    onChange={(e) =>
-                      setFormValues({ ...formValues, name: e.target.value })
-                    }
-                    placeholder="Ví dụ: Toán Tư Duy 5A"
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
-                    Mã lớp duy nhất *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formValues.code}
-                    onChange={(e) =>
-                      setFormValues({
-                        ...formValues,
-                        code: e.target.value.toUpperCase(),
-                      })
-                    }
-                    placeholder="Ví dụ: TOAN5A-2026"
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm uppercase"
-                  />
-                </div>
+              <div>
+                <label className="mb-1 block text-xs font-bold text-slate-700">
+                  Tên lớp học *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={formValues.name}
+                  onChange={(e) =>
+                    setFormValues({ ...formValues, name: e.target.value })
+                  }
+                  placeholder="Ví dụ: Toán Tư Duy 5A"
+                  className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                />
               </div>
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-xs font-bold text-slate-700">
                     Khối / Lớp *
@@ -402,6 +357,9 @@ export const ClassesPage: React.FC = () => {
                       'Khối 7',
                       'Khối 8',
                       'Khối 9',
+                      'Khối 10',
+                      'Khối 11',
+                      'Khối 12',
                     ].map((g) => (
                       <option key={g} value={g}>
                         {g}
@@ -409,19 +367,7 @@ export const ClassesPage: React.FC = () => {
                     ))}
                   </select>
                 </div>
-                <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
-                    Môn học
-                  </label>
-                  <input
-                    type="text"
-                    value={formValues.subject}
-                    onChange={(e) =>
-                      setFormValues({ ...formValues, subject: e.target.value })
-                    }
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
-                  />
-                </div>
+
                 <div>
                   <label className="mb-1 block text-xs font-bold text-slate-700">
                     Năm học *
@@ -437,53 +383,6 @@ export const ClassesPage: React.FC = () => {
                       })
                     }
                     placeholder="2026-2027"
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-bold text-slate-700">
-                  Lịch học dạng văn bản
-                </label>
-                <input
-                  type="text"
-                  value={formValues.scheduleText || ''}
-                  onChange={(e) =>
-                    setFormValues({
-                      ...formValues,
-                      scheduleText: e.target.value,
-                    })
-                  }
-                  placeholder="Ví dụ: Thứ Ba & Thứ Năm (18:00 - 19:30)"
-                  className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
-                    Ngày bắt đầu
-                  </label>
-                  <input
-                    type="date"
-                    value={formValues.startDate || ''}
-                    onChange={(e) =>
-                      setFormValues({ ...formValues, startDate: e.target.value })
-                    }
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
-                    Ngày kết thúc
-                  </label>
-                  <input
-                    type="date"
-                    value={formValues.endDate || ''}
-                    onChange={(e) =>
-                      setFormValues({ ...formValues, endDate: e.target.value })
-                    }
                     className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
                   />
                 </div>
@@ -535,11 +434,16 @@ export const ClassesPage: React.FC = () => {
             <div className="flex items-center justify-between border-b border-slate-200 pb-3">
               <div>
                 <h2 className="font-display text-lg font-extrabold text-slate-900">
-                  {inspectingClass.name} ({inspectingClass.code})
+                  {inspectingClass.name}
                 </h2>
                 <p className="text-xs text-slate-500">
                   {inspectingClass.grade} · Năm học {inspectingClass.schoolYear}
                 </p>
+                {inspectingClass.description && (
+                  <p className="mt-1 text-xs text-slate-600">
+                    {inspectingClass.description}
+                  </p>
+                )}
               </div>
               <button
                 type="button"

@@ -175,7 +175,7 @@ export const StudentsPage: React.FC = () => {
             <option value="all">Tất cả lớp học</option>
             {classes.map((c) => (
               <option key={c.id} value={c.id}>
-                {c.name} ({c.code})
+                {c.name} ({c.grade})
               </option>
             ))}
           </select>
@@ -477,7 +477,7 @@ export const StudentsPage: React.FC = () => {
                           className="h-4 w-4 rounded border-slate-800"
                         />
                         <span>
-                          {cls.name} ({cls.code})
+                          {cls.name} ({cls.grade})
                         </span>
                       </label>
                     );

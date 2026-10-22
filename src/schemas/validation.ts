@@ -1,15 +1,10 @@
 import { z } from 'zod';
 
 export const classFormSchema = z.object({
-  name: z.string().min(1, 'Tên lớp không được để trống').max(100),
-  code: z.string().min(2, 'Mã lớp tối thiểu 2 ký tự').max(40),
-  grade: z.string().min(1, 'Vui lòng chọn khối lớp').max(30),
-  subject: z.string().min(1).max(50).default('Toán'),
+  name: z.string().min(1, 'Tên lớp học không được để trống').max(100),
+  grade: z.string().min(1, 'Vui lòng chọn khối / lớp').max(30),
   schoolYear: z.string().min(4, 'Năm học không hợp lệ').max(30),
   description: z.string().max(1000).optional().or(z.literal('')),
-  scheduleText: z.string().max(300).optional().or(z.literal('')),
-  startDate: z.string().max(40).optional().or(z.literal('')),
-  endDate: z.string().max(40).optional().or(z.literal('')),
   status: z.enum(['active', 'archived']).default('active'),
 });
 

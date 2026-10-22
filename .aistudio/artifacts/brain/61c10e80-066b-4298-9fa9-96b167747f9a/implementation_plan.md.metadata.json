@@ -1,6 +1,6 @@
 {
-  "summary":  "Comprehensive implementation plan for Lớp Chúng Tôi, a Math classroom management and student homework platform featuring Cartoon UI aesthetics, Firebase Authentication & Firestore persistence, 6-character server-validated student access codes, 5-type math homework authoring with KaTeX and interactive geometry drawing, AI PDF/image quiz extraction and grading assistance, and an educational game portal.",
-  "updatedAt":  "2026-10-22T12:18:54.520199695Z",
+  "summary":  "Kế hoạch tinh gọn thông tin Lớp học chỉ giữ lại 4 trường: Tên lớp học, Khối / Lớp, Năm học và Mô tả lớp học; loại bỏ các trường Mã lớp, Môn học, Lịch học, Ngày bắt đầu và Ngày kết thúc trên toàn bộ biểu mẫu, giao diện hiển thị, schema xác thực, cơ sở dữ liệu Firestore và quy tắc bảo mật.",
+  "updatedAt":  "2026-10-22T13:50:35.826848583Z",
   "requestFeedback":  true,
   "userFacing":  true
 }

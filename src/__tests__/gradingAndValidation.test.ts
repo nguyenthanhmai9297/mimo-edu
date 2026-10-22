@@ -189,18 +189,15 @@ describe('Zod Form & Domain Validation Schemas', () => {
   it('validates class creation schema', () => {
     const valid = classFormSchema.safeParse({
       name: 'Toán Tư Duy 5A',
-      code: 'TOAN5A',
       grade: 'Khối 5',
-      subject: 'Toán',
-      schoolYear: '2025-2026',
-      scheduleText: 'Thứ 3 & Thứ 6',
+      schoolYear: '2026-2027',
+      description: 'Lớp bồi dưỡng Toán lớp 5',
       status: 'active',
     });
     expect(valid.success).toBe(true);
 
     const invalid = classFormSchema.safeParse({
       name: '',
-      code: 'A',
       grade: '',
       schoolYear: '25',
       status: 'active',

@@ -97,7 +97,20 @@ export const GradingPage: React.FC = () => {
           studentEssayText: essayText,
         }),
       });
-      const data = await res.json();
+      const rawText = await res.text();
+      let data: {
+        error?: string;
+        suggestedScore: number;
+        explanation: string;
+        improvementFeedback: string;
+      };
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        throw new Error(
+          `Máy chủ AI trả về phản hồi không hợp lệ (HTTP ${res.status}). Hãy kiểm tra cấu hình /api và GEMINI_API_KEY.`
+        );
+      }
       if (!res.ok) {
         throw new Error(data.error || 'Không thể lấy gợi ý chấm từ AI.');
       }

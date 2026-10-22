@@ -42,17 +42,12 @@ service cloud.firestore {
     }
 
     function isValidClassRoom(data) {
-      return data.keys().hasAll(['name', 'code', 'grade', 'subject', 'schoolYear', 'status', 'createdAt', 'updatedAt']) &&
-        data.keys().hasOnly(['name', 'code', 'grade', 'subject', 'schoolYear', 'description', 'scheduleText', 'startDate', 'endDate', 'status', 'createdAt', 'updatedAt']) &&
+      return data.keys().hasAll(['name', 'grade', 'schoolYear', 'status', 'createdAt', 'updatedAt']) &&
+        data.keys().hasOnly(['name', 'grade', 'schoolYear', 'description', 'status', 'createdAt', 'updatedAt']) &&
         data.name is string && data.name.size() >= 1 && data.name.size() <= 100 &&
-        data.code is string && data.code.size() >= 2 && data.code.size() <= 40 &&
         data.grade is string && data.grade.size() >= 1 && data.grade.size() <= 30 &&
-        data.subject is string && data.subject.size() >= 1 && data.subject.size() <= 50 &&
         data.schoolYear is string && data.schoolYear.size() >= 4 && data.schoolYear.size() <= 30 &&
         (!('description' in data) || (data.description is string && data.description.size() <= 1000)) &&
-        (!('scheduleText' in data) || (data.scheduleText is string && data.scheduleText.size() <= 300)) &&
-        (!('startDate' in data) || (data.startDate is string && data.startDate.size() <= 40)) &&
-        (!('endDate' in data) || (data.endDate is string && data.endDate.size() <= 40)) &&
         (data.status == 'active' || data.status == 'archived') &&
         data.createdAt is string && data.createdAt.size() <= 50 &&
         data.updatedAt is string && data.updatedAt.size() <= 50;

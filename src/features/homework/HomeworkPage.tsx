@@ -248,13 +248,55 @@ export const HomeworkPage: React.FC = () => {
       setAiError('Dung lượng file vượt quá giới hạn 10MB.');
       return;
     }
+
     setAiFileName(file.name);
-    setAiMimeType(file.type || 'image/png');
+    const ext = file.name.split('.').pop()?.toLowerCase() || '';
+    let resolvedMime = file.type;
+    if (!resolvedMime || resolvedMime === 'image/jpg') {
+      if (ext === 'pdf') resolvedMime = 'application/pdf';
+      else if (ext === 'png') resolvedMime = 'image/png';
+      else if (ext === 'webp') resolvedMime = 'image/webp';
+      else resolvedMime = 'image/jpeg';
+    }
+
     const reader = new FileReader();
     reader.onload = () => {
-      if (typeof reader.result === 'string') {
-        const base64Part = reader.result.split(',')[1] || '';
-        setAiBase64(base64Part);
+      if (typeof reader.result !== 'string') return;
+      const dataUrl = reader.result;
+
+      // Optimize large images (> 1.8MB) via Canvas so they stay well under Serverless 4.5MB limits
+      if (resolvedMime.startsWith('image/') && file.size > 1.8 * 1024 * 1024) {
+        const img = new Image();
+        img.onload = () => {
+          const maxDim = 1800;
+          let { width, height } = img;
+          if (width > maxDim || height > maxDim) {
+            if (width > height) {
+              height = Math.round((height * maxDim) / width);
+              width = maxDim;
+            } else {
+              width = Math.round((width * maxDim) / height);
+              height = maxDim;
+            }
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, width, height);
+            const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+            setAiMimeType('image/jpeg');
+            setAiBase64(compressedDataUrl.split(',')[1] || '');
+            return;
+          }
+          setAiMimeType(resolvedMime);
+          setAiBase64(dataUrl.split(',')[1] || '');
+        };
+        img.src = dataUrl;
+      } else {
+        setAiMimeType(resolvedMime);
+        setAiBase64(dataUrl.split(',')[1] || '');
       }
     };
     reader.readAsDataURL(file);
@@ -277,7 +319,33 @@ export const HomeworkPage: React.FC = () => {
           solveWithAI: aiSolveToggle,
         }),
       });
-      const data = await res.json();
+
+      const rawText = await res.text();
+      let data: {
+        error?: string;
+        title?: string;
+        description?: string;
+        grade?: string;
+        questions?: HomeworkQuestion[];
+      };
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        if (res.status === 404 || rawText.includes('The page could not be found')) {
+          throw new Error(
+            'Không tìm thấy API Server (/api/ai/parse-homework). Nếu bạn đang chạy trên Vercel, hãy cập nhật bản code mới nhất có thư mục /api và vercel.json rồi Redeploy.'
+          );
+        }
+        if (res.status === 413 || rawText.includes('Request Entity Too Large')) {
+          throw new Error(
+            'Dung lượng ảnh/PDF quá lớn đối với giới hạn Serverless. Vui lòng chọn file nhỏ hơn 4MB.'
+          );
+        }
+        throw new Error(
+          `Máy chủ trả về phản hồi không hợp lệ (HTTP ${res.status}). Vui lòng kiểm tra cấu hình GEMINI_API_KEY trên Server.`
+        );
+      }
+
       if (!res.ok) {
         throw new Error(data.error || 'AI không thể bóc tách file này.');
       }

@@ -402,7 +402,7 @@ export const AssignmentsPage: React.FC = () => {
                           className="h-4 w-4"
                         />
                         <span>
-                          {cls.name} ({cls.code})
+                          {cls.name} ({cls.grade})
                         </span>
                       </label>
                     ))}

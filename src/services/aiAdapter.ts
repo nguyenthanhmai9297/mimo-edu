@@ -208,8 +208,22 @@ Quy tắc:
       },
     });
 
-    const rawText = response.text?.trim() || '{}';
+    const rawText = (response.text || '{}')
+      .trim()
+      .replace(/^```json\s*/i, '')
+      .replace(/^```\s*/i, '')
+      .replace(/```$/i, '')
+      .trim();
     const parsedJson = JSON.parse(rawText);
+    if (
+      !parsedJson ||
+      !Array.isArray(parsedJson.questions) ||
+      parsedJson.questions.length === 0
+    ) {
+      throw new Error(
+        'Không tìm thấy câu hỏi Toán học nào trong ảnh hoặc PDF đã tải lên. Vui lòng chọn file đề Toán rõ nét hơn.'
+      );
+    }
     const validated = aiParsedHomeworkResponseSchema.parse(parsedJson);
 
     const mappedQuestions: HomeworkQuestion[] = validated.questions.map(

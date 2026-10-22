@@ -1439,20 +1439,14 @@ export const StudentPortalPage: React.FC = () => {
                     className="rounded-2xl border-2 border-slate-800 bg-sky-50/50 p-4"
                   >
                     <div className="flex items-center justify-between text-xs text-slate-500">
-                      <span className="font-mono font-bold text-blue-700">
-                        Mã lớp: {cls.code}
+                      <span className="font-bold text-blue-700">
+                        {cls.grade}
                       </span>
-                      <span>Năm học: {cls.schoolYear}</span>
+                      <span className="font-mono">Năm học: {cls.schoolYear}</span>
                     </div>
                     <h3 className="mt-1 font-display text-base font-extrabold text-slate-900">
                       {cls.name}
                     </h3>
-                    {cls.scheduleText && (
-                      <div className="mt-1 flex items-center gap-1.5 text-xs font-bold text-slate-700">
-                        <Clock className="h-3.5 w-3.5 text-amber-700" />
-                        Lịch học: {cls.scheduleText}
-                      </div>
-                    )}
                     {cls.description && (
                       <p className="mt-1 text-xs text-slate-600">
                         {cls.description}

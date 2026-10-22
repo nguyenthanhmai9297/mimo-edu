@@ -135,14 +135,9 @@ export async function createClassRoom(values: ClassFormValues): Promise<string> 
   const now = new Date().toISOString();
   const payload: Omit<ClassRoom, 'id'> = {
     name: values.name.trim(),
-    code: values.code.trim().toUpperCase(),
     grade: values.grade.trim(),
-    subject: values.subject.trim() || 'Toán',
     schoolYear: values.schoolYear.trim(),
     ...(values.description ? { description: values.description.trim() } : {}),
-    ...(values.scheduleText ? { scheduleText: values.scheduleText.trim() } : {}),
-    ...(values.startDate ? { startDate: values.startDate } : {}),
-    ...(values.endDate ? { endDate: values.endDate } : {}),
     status: values.status,
     createdAt: now,
     updatedAt: now,
@@ -163,14 +158,9 @@ export async function updateClassRoom(
   const now = new Date().toISOString();
   const payload: Omit<ClassRoom, 'id'> = {
     name: values.name.trim(),
-    code: values.code.trim().toUpperCase(),
     grade: values.grade.trim(),
-    subject: values.subject.trim() || 'Toán',
     schoolYear: values.schoolYear.trim(),
     ...(values.description ? { description: values.description.trim() } : {}),
-    ...(values.scheduleText ? { scheduleText: values.scheduleText.trim() } : {}),
-    ...(values.startDate ? { startDate: values.startDate } : {}),
-    ...(values.endDate ? { endDate: values.endDate } : {}),
     status: values.status,
     createdAt: existing.createdAt,
     updatedAt: now,
@@ -728,28 +718,18 @@ export async function seedSampleClassroomData(): Promise<{
   // 1. Create 2 sample Math classes
   const class5AId = await createClassRoom({
     name: 'Toán Tư Duy 5A',
-    code: 'TOAN5A-2026',
     grade: 'Khối 5',
-    subject: 'Toán',
     schoolYear: '2026-2027',
     description:
       'Lớp bồi dưỡng Toán tư duy, phân số, số thập phân và hình học phẳng lớp 5.',
-    scheduleText: 'Thứ Ba & Thứ Năm (18:00 - 19:30)',
-    startDate: '2026-09-05',
-    endDate: '2027-05-30',
     status: 'active',
   });
 
   await createClassRoom({
     name: 'Toán Hình Học & Logic 6B',
-    code: 'TOAN6B-2026',
     grade: 'Khối 6',
-    subject: 'Toán',
     schoolYear: '2026-2027',
     description: 'Lớp chuyên đề số nguyên, phân số và hình học trực quan lớp 6.',
-    scheduleText: 'Thứ Bảy (08:30 - 10:30)',
-    startDate: '2026-09-05',
-    endDate: '2027-05-30',
     status: 'active',
   });
 

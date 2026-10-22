@@ -124,14 +124,9 @@ export interface AdminAllowlistEntry {
 export interface ClassRoom {
   id: string;
   name: string;
-  code: string;
   grade: string;
-  subject: string;
   schoolYear: string;
   description?: string;
-  scheduleText?: string;
-  startDate?: string;
-  endDate?: string;
   status: 'active' | 'archived';
   createdAt: string;
   updatedAt: string;
