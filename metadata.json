@@ -1,0 +1,6 @@
+{
+  "name": "Lớp Chúng Tôi — Quản Lý Lớp Học & Bài Tập Toán",
+  "description": "Ứng dụng quản lý lớp học Toán, soạn bài tập về nhà đa định dạng (LaTeX, hình học phẳng), bóc tách đề bằng AI, chấm bài tự động và cổng học sinh sử dụng mã 6 ký tự.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
