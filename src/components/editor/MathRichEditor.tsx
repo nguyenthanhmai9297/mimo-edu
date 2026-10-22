@@ -4,6 +4,7 @@ import {
   AlignLeft,
   AlignRight,
   Bold,
+  Box,
   Compass,
   Eye,
   Image as ImageIcon,
@@ -21,6 +22,7 @@ import {
   TextAlignment,
 } from '../../types/domain';
 import { GeometryBuilderModal } from './GeometryBuilderModal';
+import { Geometry3DModal } from '../geometry3d/Geometry3DModal';
 import { RichContentRenderer } from './RichContentRenderer';
 
 interface MathRichEditorProps {
@@ -51,6 +53,7 @@ export const MathRichEditor: React.FC<MathRichEditorProps> = ({
 }) => {
   const [showPreview, setShowPreview] = useState(false);
   const [showGeometryModal, setShowGeometryModal] = useState(false);
+  const [show3DModal, setShow3DModal] = useState(false);
   const [editingGeomIdx, setEditingGeomIdx] = useState<number | null>(null);
 
   const blocks =
@@ -190,6 +193,15 @@ export const MathRichEditor: React.FC<MathRichEditorProps> = ({
           >
             <Compass className="h-3.5 w-3.5 text-amber-800" />
             Vẽ Hình Học
+          </button>
+          <button
+            type="button"
+            onClick={() => setShow3DModal(true)}
+            className="flex items-center gap-1 rounded-lg border border-indigo-300 bg-indigo-100 px-2.5 py-1 text-xs font-bold text-indigo-900 hover:bg-indigo-200"
+            title="Mô phỏng và chèn hình học không gian 3D"
+          >
+            <Box className="h-3.5 w-3.5 text-indigo-700" />
+            Hình 3D
           </button>
           <label className="flex cursor-pointer items-center gap-1 rounded-lg border border-slate-300 bg-white px-2.5 py-1 text-xs font-bold text-slate-700 hover:bg-slate-50">
             <ImageIcon className="h-3.5 w-3.5 text-emerald-600" />
@@ -502,6 +514,25 @@ export const MathRichEditor: React.FC<MathRichEditorProps> = ({
           onClose={() => {
             setShowGeometryModal(false);
             setEditingGeomIdx(null);
+          }}
+        />
+      )}
+
+      {show3DModal && (
+        <Geometry3DModal
+          isOpen={show3DModal}
+          onClose={() => setShow3DModal(false)}
+          onInsertImage={(dataUrl, caption) => {
+            updateBlocks([
+              ...blocks,
+              {
+                type: 'image',
+                url: dataUrl,
+                alt: caption || 'Hình học 3D',
+                caption: caption || '',
+              },
+            ]);
+            setShow3DModal(false);
           }}
         />
       )}

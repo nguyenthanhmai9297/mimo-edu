@@ -12,6 +12,7 @@ import { AssignmentsPage } from '../features/assignments/AssignmentsPage';
 import { GradingPage } from '../features/grading/GradingPage';
 import { CommentsPage } from '../features/comments/CommentsPage';
 import { GamesAdminPage } from '../features/games/GamesAdminPage';
+import { Geometry3DPage } from '../features/geometry3d/Geometry3DPage';
 import { AdminAllowlistPage } from '../features/auth/AdminAllowlistPage';
 
 export const AppRouter: React.FC = () => {
@@ -32,6 +33,7 @@ export const AppRouter: React.FC = () => {
             <Route path="classes/:classId" element={<ClassesPage />} />
             <Route path="students" element={<StudentsPage />} />
             <Route path="homework" element={<HomeworkPage />} />
+            <Route path="geometry3d" element={<Geometry3DPage />} />
             <Route path="assignments" element={<AssignmentsPage />} />
             <Route path="grading" element={<GradingPage />} />
             <Route path="comments" element={<CommentsPage />} />
