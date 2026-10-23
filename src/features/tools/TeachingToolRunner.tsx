@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { CountdownTool } from './CountdownTool';
+import { KnowledgeTrainTool } from './KnowledgeTrainTool';
 import { MimoQuizTool } from './MimoQuizTool';
 import { RandomPickerTool } from './RandomPickerTool';
 import { TugOfWarTool } from './TugOfWarTool';
@@ -16,6 +17,7 @@ const TOOL_COMPONENTS: Record<string, React.FC<{ presenting: boolean }>> = {
   'goi-ten': RandomPickerTool,
   'dong-ho': CountdownTool,
   'keo-co': TugOfWarTool,
+  'doan-tau': KnowledgeTrainTool,
   'so-do-tu-duy': MindMapTool,
   'mimo-quiz': MimoQuizTool,
   'bang-ve-toan': MathCanvasTool,

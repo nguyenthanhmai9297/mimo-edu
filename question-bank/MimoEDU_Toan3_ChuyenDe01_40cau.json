@@ -3,7 +3,7 @@
   "datasetId": "mimoedu-toan3-n01-v2",
   "title": "Số tự nhiên trong phạm vi 100 000",
   "language": "vi",
-  "notes": "Bộ 40 câu biên soạn phục vụ nhập thử. Cần giáo viên duyệt và ánh xạ schema với ứng dụng trước khi công bố. v2: sửa câu 016 (có hai đáp án đúng), viết lại câu hỏi 017, 019 và lời giải 034, thêm câu chốt đáp án cho các lời giải.",
+  "notes": "Bộ 40 câu biên soạn phục vụ nhập thử. Cần giáo viên duyệt và ánh xạ schema với ứng dụng trước khi công bố. v2: sửa câu 016 (có hai đáp án đúng), viết lại câu hỏi 017, 019 và lời giải 034, thêm câu chốt đáp án cho các lời giải. v3: viết lại câu 010 (đọc số 100 000), thay phương án \"03 478\" của câu 032, viết lại câu 033 bằng một số cụ thể.",
   "questions": [
     {
       "id": "M3-N01-001",
@@ -328,27 +328,27 @@
       "skillId": "N01.read_write",
       "level": "nhan_biet",
       "type": "multiple_choice",
-      "prompt": "Trong các số sau, số nào bằng 100 000?",
+      "prompt": "Số 100 000 được đọc là gì?",
       "options": [
         {
           "id": "A",
-          "text": "10 000"
+          "text": "Mười nghìn"
         },
         {
           "id": "B",
-          "text": "100 000"
+          "text": "Một trăm nghìn"
         },
         {
           "id": "C",
-          "text": "99 999"
+          "text": "Một nghìn"
         },
         {
           "id": "D",
-          "text": "1 000"
+          "text": "Chín mươi chín nghìn chín trăm chín mươi chín"
         }
       ],
       "correctAnswer": "B",
-      "explanation": "Một trăm nghìn được viết là 100 000.",
+      "explanation": "100 000 gồm 10 chục nghìn, đọc là một trăm nghìn. Còn 10 000 đọc là mười nghìn, 1 000 đọc là một nghìn.",
       "tags": [
         "toan-3",
         "so-tu-nhien"
@@ -1102,7 +1102,7 @@
       "options": [
         {
           "id": "A",
-          "text": "03 478"
+          "text": "30 748"
         },
         {
           "id": "B",
@@ -1118,7 +1118,7 @@
         }
       ],
       "correctAnswer": "B",
-      "explanation": "Chữ số đầu không thể là 0. Chọn 3 ở đầu rồi xếp 0, 4, 7, 8 theo thứ tự tăng dần: 30 478.",
+      "explanation": "Chữ số hàng chục nghìn không thể là 0, nên chọn chữ số bé nhất khác 0 là 3. Các chữ số còn lại 0, 4, 7, 8 xếp từ bé đến lớn. Vậy số bé nhất là 30 478.",
       "tags": [
         "toan-3",
         "so-tu-nhien"
@@ -1133,7 +1133,7 @@
       "skillId": "N01.place_value",
       "level": "thu_thach",
       "type": "multiple_choice",
-      "prompt": "Một số có năm chữ số. Nếu đổi chỗ chữ số hàng nghìn là 2 với chữ số hàng trăm là 7, số đó tăng thêm bao nhiêu?",
+      "prompt": "Số 42 715 có chữ số hàng nghìn là 2 và chữ số hàng trăm là 7. Nếu đổi chỗ hai chữ số này cho nhau thì được số mới. Số mới lớn hơn số cũ bao nhiêu?",
       "options": [
         {
           "id": "A",
@@ -1149,11 +1149,11 @@
         },
         {
           "id": "D",
-          "text": "900"
+          "text": "500"
         }
       ],
       "correctAnswer": "B",
-      "explanation": "Đổi từ 2 nghìn 7 trăm thành 7 nghìn 2 trăm làm tăng 5 000 − 500 = 4 500.",
+      "explanation": "Đổi chỗ chữ số 2 và 7 được số mới là 47 215. Ta có 47 215 − 42 715 = 4 500. Vậy số mới lớn hơn số cũ 4 500.",
       "tags": [
         "toan-3",
         "so-tu-nhien"

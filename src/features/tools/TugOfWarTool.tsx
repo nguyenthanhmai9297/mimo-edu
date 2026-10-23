@@ -43,7 +43,7 @@ import {
   TugState,
 } from './tugOfWar';
 
-const TEAM_STYLE = [
+export const TEAM_STYLE = [
   { main: '#1267E9', soft: 'bg-[#EAF5FF]', text: 'text-[#1267E9]', ring: 'ring-[#1267E9]', grad: 'from-[#1267E9] to-[#54C8FF]' },
   { main: '#E5484D', soft: 'bg-[#FFEEF0]', text: 'text-[#D93B5B]', ring: 'ring-[#E5484D]', grad: 'from-[#E5484D] to-[#FF76B5]' },
 ] as const;
@@ -53,7 +53,7 @@ const DURATIONS = [2, 3, 5, 8, 10];
 const TARGETS = [3, 5, 7];
 
 /** Animations of this tool only (pulling crews, wrong-answer shake, confetti). */
-const TUG_CSS = `
+export const TUG_CSS = `
 .tug-crew { transform-box: fill-box; transform-origin: 50% 100%; }
 .tug-crew-0 { transform: rotate(-7deg); }
 .tug-crew-1 { transform: rotate(7deg); }
@@ -150,7 +150,7 @@ const Rope: React.FC<{
   );
 };
 
-const QuestionCard: React.FC<{
+export const QuestionCard: React.FC<{
   question: ToolQuestion;
   team: Team;
   name: string;
@@ -264,7 +264,7 @@ const QuestionCard: React.FC<{
 };
 
 /** A button that asks "are you sure?" inline before running a destructive action. */
-const ConfirmButton: React.FC<{
+export const ConfirmButton: React.FC<{
   label: React.ReactNode;
   question: string;
   confirmLabel: string;
@@ -300,7 +300,7 @@ const ConfirmButton: React.FC<{
 };
 
 const CONFETTI_COLORS = ['#1267E9', '#54C8FF', '#FFD34E', '#FF76B5', '#22C38E', '#7B5CFF'];
-const Confetti: React.FC = () => (
+export const Confetti: React.FC = () => (
   <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
     {Array.from({ length: 48 }, (_, i) => (
       <span

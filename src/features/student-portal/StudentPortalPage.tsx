@@ -5,18 +5,18 @@ import {
   ArrowLeft,
   BookOpen,
   Check,
-  CheckCircle2,
-  Clock,
   Copy,
   ExternalLink,
   Gamepad2,
-  Sparkles,
   Home,
   KeyRound,
   LogOut,
   MessageSquareHeart,
+  PartyPopper,
   RefreshCw,
+  Rocket,
   Save,
+  School,
   Send,
   ShieldAlert,
   User,
@@ -24,13 +24,13 @@ import {
 import { useAppContext } from '../../app/providers';
 import { MathRichEditor } from '../../components/editor/MathRichEditor';
 import { RichContentRenderer } from '../../components/editor/RichContentRenderer';
-import { GamePortalBannerIllustration } from '../../components/ui/CartoonIllustrations';
 import { PracticePortal } from '../practice/student/PracticePortal';
 import { MimoMascot } from '../practice/student/practiceTheme';
-import { NoClassNotice, StudentHome } from './StudentHome';
+import { formatDate, homeworkStatus, NoClassNotice, StudentHome } from './StudentHome';
+import { Avatar, EmptyState, INK, MUTED, SectionTitle, StatusBadge, StudentCard, studentButton, TONE, Tone } from './studentUi';
 import { PRACTICE_CATALOG } from '../../data/practiceCatalog';
 import { usingFirebaseEmulator } from '../../lib/firebase/config';
-import { fetchPracticeCatalog } from '../../services/practiceService';
+import { fetchPracticeCatalog, fetchPracticeHistory } from '../../services/practiceService';
 import {
   clearStudentToken,
   fetchStudentPortalData,
@@ -51,8 +51,30 @@ import { createRichTextFromPlain } from '../../utils/gradingEngine';
 type PortalTab = 'overview' | 'homework' | 'practice' | 'comments' | 'games' | 'profile';
 const PORTAL_TABS: PortalTab[] = ['overview', 'homework', 'practice', 'comments', 'games', 'profile'];
 
+/** Portal sections, shared by the desktop tabs and the mobile bottom bar. */
+const PORTAL_NAV: { id: PortalTab; label: string; short: string; icon: React.ElementType; tone: Tone }[] = [
+  { id: 'overview', label: 'Trang chủ', short: 'Trang chủ', icon: Home, tone: 'blue' },
+  { id: 'homework', label: 'Bài tập', short: 'Bài tập', icon: BookOpen, tone: 'blue' },
+  { id: 'practice', label: 'Luyện Toán cùng Mimo', short: 'Luyện Toán', icon: Rocket, tone: 'purple' },
+  { id: 'comments', label: 'Nhận xét', short: 'Nhận xét', icon: MessageSquareHeart, tone: 'pink' },
+  { id: 'games', label: 'Trò chơi Toán', short: 'Trò chơi', icon: Gamepad2, tone: 'teal' },
+  { id: 'profile', label: 'Hồ sơ & lớp học', short: 'Hồ sơ', icon: User, tone: 'pink' },
+];
+
+/** Latest attempts the practice API keeps per student (api/practice.ts HISTORY_LIMIT). */
+const PRACTICE_HISTORY_LIMIT = 20;
+
 // Local testing only: /portal?demo=1 signs in the emulator's test student
 const EMULATOR_DEMO_STUDENT_CODE = 'MIMO03';
+
+/** Card colour of each game category. */
+const GAME_TONES: Record<string, Tone> = {
+  'Số học': 'blue',
+  'Phép tính': 'purple',
+  'Hình học': 'yellow',
+  'Tư duy logic': 'pink',
+  'Ôn tập kiến thức': 'teal',
+};
 
 const TOTAL_PRACTICE_TOPICS = PRACTICE_CATALOG.reduce((n, g) => n + g.topics.length, 0);
 
@@ -162,8 +184,9 @@ export const StudentPortalPage: React.FC = () => {
     }
   }, [hasStudentSession, loadPortalData]);
 
-  // Count of practice topics with published questions, for the home counters
+  // Home counters: practice topics with published questions and practice attempts
   const [openTopics, setOpenTopics] = useState<number | null>(null);
+  const [practiceCount, setPracticeCount] = useState<number | null>(null);
   useEffect(() => {
     if (!bundle) return;
     let cancelled = false;
@@ -175,6 +198,11 @@ export const StudentPortalPage: React.FC = () => {
             Object.values(t.levels).some((n) => n > 0)
           ).length
         );
+      })
+      .catch(() => undefined);
+    fetchPracticeHistory()
+      .then((h) => {
+        if (!cancelled) setPracticeCount(h.length);
       })
       .catch(() => undefined);
     return () => {
@@ -303,43 +331,40 @@ export const StudentPortalPage: React.FC = () => {
   // ==========================================================================
   if (!hasStudentSession) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-[#FFFDF7] p-4">
-        <div className="cartoon-card w-full max-w-md bg-white p-6 sm:p-8">
+      <div className="student-skin flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#DDF0FF] via-[#FFFBF2] to-[#FFE6F0] p-4">
+        <StudentCard className="relative w-full max-w-md overflow-hidden sm:p-8">
           <div className="flex items-center justify-between">
             <button
               type="button"
               onClick={() => navigate('/')}
-              className="flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-slate-900"
+              className={`flex min-h-[44px] items-center gap-1.5 text-sm font-bold ${MUTED} hover:text-[#1F2A55]`}
             >
               <ArrowLeft className="h-4 w-4" />
               Trang chủ
             </button>
-            <span className="font-display text-xs font-extrabold text-blue-700">
-              MIMOEDU
+            <span className="font-display text-base font-extrabold text-[#1F2A55]">
+              Mimo<span className="text-[#2F8CFF]">EDU</span>
             </span>
           </div>
 
-          <div className="mt-6 text-center">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-slate-900 bg-amber-300 shadow-[0_3px_0_0_#1E293B]">
-              <KeyRound className="h-8 w-8 text-slate-900" />
-            </div>
-            <h1 className="mt-4 font-display text-2xl font-extrabold text-slate-900">
-              Cổng Phụ Huynh & Học Sinh
-            </h1>
-            <p className="mt-1.5 text-sm text-slate-600">
-              Nhập mã truy cập 6 ký tự của học sinh để xem bài tập về nhà, kết
-              quả học tập và kho trò chơi Toán học.
+          <div className="mt-4 flex flex-col items-center text-center">
+            <MimoMascot size={104} eager className="mimo-float" />
+            <h1 className={`mt-4 font-display text-2xl font-extrabold sm:text-3xl ${INK}`}>Chào con! 👋</h1>
+            <p className={`mt-1.5 text-base ${MUTED}`}>
+              Nhập mã 6 ký tự cô đã gửi để vào góc học tập: làm bài tập, luyện Toán cùng Mimo và chơi trò chơi.
             </p>
           </div>
 
           <form onSubmit={handleLoginSubmit} className="mt-6 space-y-4">
-            <div>
-              <label className="mb-1.5 block text-center text-xs font-extrabold text-slate-700">
-                MÃ HỌC SINH (6 KÝ TỰ CHỮ & SỐ)
-              </label>
+            <label className="block">
+              <span className="mb-2 flex items-center justify-center gap-1.5 text-sm font-extrabold text-[#5B3FB8]">
+                <KeyRound className="h-4 w-4" /> Mã học sinh
+              </span>
               <input
                 type="text"
                 maxLength={6}
+                autoComplete="off"
+                autoCapitalize="characters"
                 value={codeInput}
                 onChange={(e) =>
                   setCodeInput(
@@ -347,30 +372,25 @@ export const StudentPortalPage: React.FC = () => {
                   )
                 }
                 placeholder="8K9P2A"
-                className="w-full rounded-2xl border-2 border-slate-900 bg-amber-50/50 py-3.5 text-center font-mono text-2xl font-black tracking-[0.35em] text-slate-900 uppercase focus:bg-white focus:outline-none"
+                className="w-full rounded-2xl border-2 border-[#D7C8FF] bg-[#F7F3FF] py-4 text-center font-mono text-3xl font-black tracking-[0.35em] text-[#1F2A55] uppercase placeholder:text-[#C9BDF0] focus:border-[#8B6CF0] focus:bg-white focus:outline-none"
               />
-            </div>
+            </label>
 
             {loginError && (
-              <div className="rounded-xl border-2 border-rose-800 bg-rose-50 p-3 text-center text-xs font-bold text-rose-800">
+              <div className="rounded-2xl bg-[#FFE9EC] p-3 text-center text-sm font-bold text-[#C2364F]">
                 {loginError}
               </div>
             )}
 
-            <button
-              type="submit"
-              disabled={loginLoading}
-              className="cartoon-button flex min-h-[48px] w-full items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 font-display text-base font-extrabold text-white"
-            >
-              {loginLoading ? 'Đang kiểm tra mã...' : 'Vào Góc Học Tập'}
+            <button type="submit" disabled={loginLoading} className={studentButton('primary', 'blue', 'w-full text-lg')}>
+              {loginLoading ? 'Mimo đang kiểm tra mã…' : 'Vào góc học tập 🚀'}
             </button>
           </form>
 
-          <p className="mt-5 text-center text-xs text-slate-500">
-            Nếu quên mã truy cập, phụ huynh vui lòng nhắn giáo viên phụ trách
-            lớp để nhận lại mã.
+          <p className={`mt-5 text-center text-sm ${MUTED}`}>
+            Quên mã? Bố mẹ nhắn cô giáo để nhận lại mã nhé.
           </p>
-        </div>
+        </StudentCard>
       </div>
     );
   }
@@ -380,42 +400,37 @@ export const StudentPortalPage: React.FC = () => {
   // ==========================================================================
   if (loading && !bundle) {
     return (
-      <div className="mx-auto max-w-5xl space-y-4 p-4">
-        <div className="h-16 animate-pulse rounded-2xl border-2 border-slate-200 bg-white" />
-        <div className="h-44 animate-pulse rounded-2xl border-2 border-slate-200 bg-white" />
-        <div className="h-64 animate-pulse rounded-2xl border-2 border-slate-200 bg-white" />
+      <div className="student-skin flex min-h-screen flex-col items-center justify-center gap-4 bg-[#FFFBF2] p-4">
+        <MimoMascot size={96} eager className="mimo-float" />
+        <p className={`font-display text-lg font-extrabold ${INK}`}>Mimo đang mở góc học tập…</p>
+        <div className="w-full max-w-3xl space-y-3" aria-hidden="true">
+          <div className="h-28 animate-pulse rounded-[1.75rem] bg-white" />
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="h-20 animate-pulse rounded-3xl bg-white" />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
 
   if (error || !bundle) {
     return (
-      <div className="flex min-h-screen items-center justify-center p-4">
-        <div className="cartoon-card max-w-md bg-white p-6 text-center">
-          <AlertTriangle className="mx-auto h-10 w-10 text-amber-600" />
-          <h2 className="mt-3 font-display text-lg font-extrabold text-slate-900">
-            Không thể tải dữ liệu
-          </h2>
-          <p className="mt-1 text-xs text-slate-600">
-            {error || 'Phiên làm việc đã gián đoạn.'}
-          </p>
-          <div className="mt-5 flex justify-center gap-3">
-            <button
-              type="button"
-              onClick={loadPortalData}
-              className="cartoon-button rounded-xl bg-blue-600 px-4 py-2 text-xs font-extrabold text-white"
-            >
-              Thử lại
+      <div className="student-skin flex min-h-screen items-center justify-center bg-[#FFFBF2] p-4">
+        <StudentCard className="w-full max-w-md text-center">
+          <MimoMascot size={88} eager className="mx-auto" />
+          <h2 className={`mt-3 font-display text-xl font-extrabold ${INK}`}>Ôi, chưa tải được dữ liệu</h2>
+          <p className={`mt-1 text-base ${MUTED}`}>{error || 'Phiên làm việc đã gián đoạn.'}</p>
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            <button type="button" onClick={loadPortalData} className={studentButton('primary', 'blue')}>
+              <RefreshCw className="h-5 w-5" /> Thử lại
             </button>
-            <button
-              type="button"
-              onClick={handleExitPortal}
-              className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-800"
-            >
-              Thoát cổng
+            <button type="button" onClick={handleExitPortal} className={studentButton('quiet')}>
+              Thoát
             </button>
           </div>
-        </div>
+        </StudentCard>
       </div>
     );
   }
@@ -444,6 +459,9 @@ export const StudentPortalPage: React.FC = () => {
   const completedAssignments = visibleAssignments.filter(
     (sa) => sa.status === 'submitted' || sa.status === 'graded'
   );
+  const scoredAssignments = visibleAssignments.filter(
+    (sa) => sa.status === 'graded' && sa.isScorePublished
+  );
   const hasClass = classes.length > 0;
   const filteredAssignments =
     hwFilter === 'pending'
@@ -470,104 +488,85 @@ export const StudentPortalPage: React.FC = () => {
     currentStudentAssignment?.status === 'graded';
 
   return (
-    <div className="min-h-screen bg-[#FFFBF2] pb-24 text-[#1F2A55] md:pb-10">
-      {/* Compact Sticky Top App Bar (<= 56px height to respect 15% mobile sticky cap) */}
-      <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-[#EFE9DA] bg-white/90 px-4 backdrop-blur-md">
-        <div className="flex items-center gap-2.5 truncate">
-          <a href="/" className="flex shrink-0 items-center gap-1.5 border-r border-[#EFE9DA] pr-2.5" aria-label="MimoEDU – Trang chủ">
-            <MimoMascot size={32} className="ring-2" />
-            <span className="hidden font-display text-sm font-extrabold text-[#1F2A55] sm:inline">
-              Mimo<span className="text-[#1267E9]">EDU</span>
-            </span>
-          </a>
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E3F4FF] font-display text-sm font-black text-[#3B7FC4]">
-            {student.fullName.slice(0, 1).toUpperCase()}
-          </div>
-          <div className="truncate">
-            <div className="truncate font-display text-sm font-extrabold text-[#1F2A55]">
-              {student.fullName}
+    <div className="student-skin min-h-screen bg-[#FFFBF2] bg-[radial-gradient(ellipse_at_top_left,#E3F1FF_0%,transparent_45%),radial-gradient(ellipse_at_top_right,#FFE6F0_0%,transparent_40%)] pb-28 md:pb-12">
+      {/* Compact sticky top bar (<= 64px) */}
+      <header className="sticky top-0 z-30 border-b border-[#EFE9DA] bg-white/85 backdrop-blur-md">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+          <div className="flex min-w-0 items-center gap-3">
+            <a href="/" className="flex shrink-0 items-center gap-2" aria-label="MimoEDU – Trang chủ">
+              <MimoMascot size={38} className="ring-2" />
+              <span className="hidden font-display text-lg font-extrabold text-[#1F2A55] sm:inline">
+                Mimo<span className="text-[#2F8CFF]">EDU</span>
+              </span>
+            </a>
+            <span className="hidden h-8 w-px bg-[#EFE9DA] sm:block" aria-hidden="true" />
+            <Avatar name={student.nickname || student.fullName} size={38} className="ring-2" />
+            <div className="min-w-0">
+              <div className="truncate font-display text-sm font-extrabold text-[#1F2A55] sm:text-base">
+                {student.fullName}
+              </div>
+              <div className="truncate text-xs font-bold text-[#56608A]">
+                {classes[0] ? `Lớp ${classes[0].name}` : student.grade} · Mã {student.accessCode}
+              </div>
             </div>
-            <div className="font-mono text-[11px] font-bold text-[#56608A]">
-              {student.grade} · Mã: {student.accessCode}
-            </div>
           </div>
-        </div>
 
-        <div className="flex items-center gap-2 shrink-0">
-          <button
-            type="button"
-            onClick={loadPortalData}
-            className="flex min-h-[40px] min-w-[40px] items-center justify-center rounded-xl bg-[#E3F4FF] text-[#3B7FC4] hover:bg-[#D3ECFD]"
-            title="Làm mới dữ liệu"
-          >
-            <RefreshCw className="h-4 w-4" />
-          </button>
-          <button
-            type="button"
-            onClick={handleExitPortal}
-            className="flex min-h-[40px] items-center gap-1.5 rounded-xl bg-[#FFE9EF] px-3 py-1.5 text-xs font-extrabold text-[#C2416B] whitespace-nowrap hover:bg-[#FFDCE6]"
-          >
-            <LogOut className="h-3.5 w-3.5" />
-            Thoát
-          </button>
+          <div className="flex shrink-0 items-center gap-2">
+            <button
+              type="button"
+              onClick={loadPortalData}
+              className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E3F1FF] text-[#1D5FB8] transition hover:bg-[#D3E8FF]"
+              title="Làm mới"
+              aria-label="Làm mới dữ liệu"
+            >
+              <RefreshCw className={`h-5 w-5 ${loading ? 'animate-spin' : ''}`} />
+            </button>
+            <button
+              type="button"
+              onClick={handleExitPortal}
+              className="flex h-11 items-center gap-1.5 rounded-2xl bg-white px-3.5 text-sm font-extrabold text-[#56608A] ring-1 ring-[#EFE9DA] transition hover:bg-[#FFF3F8] hover:text-[#B83270]"
+            >
+              <LogOut className="h-4 w-4" />
+              <span className="hidden sm:inline">Thoát</span>
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Main Responsive Container (expands cleanly on desktop) */}
-      <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
-        {/* Desktop Tab Pills for large screens */}
-        <div className="mb-6 hidden items-center justify-between rounded-2xl bg-white p-2 ring-1 ring-[#EFE9DA] md:flex">
-          <div className="flex items-center gap-2">
-            {(
-              [
-                { id: 'overview', label: 'Trang chủ', icon: Home },
-                {
-                  id: 'homework',
-                  label: `Bài tập (${pendingAssignments.length})`,
-                  icon: BookOpen,
-                },
-                {
-                  id: 'practice',
-                  label: 'Luyện Toán cùng Mimo',
-                  // Tablet widths can't fit the full name alongside the other tabs
-                  shortLabel: 'Luyện Toán',
-                  icon: Sparkles,
-                },
-                { id: 'comments', label: 'Nhận xét', icon: MessageSquareHeart },
-                { id: 'games', label: 'Trò chơi Toán', icon: Gamepad2 },
-                { id: 'profile', label: 'Hồ sơ & Lớp học', icon: User },
-              ] as const
-            ).map((t) => {
+      <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
+        {/* Desktop / tablet tabs */}
+        <nav aria-label="Mục của cổng học sinh" className="mb-7 hidden md:block">
+          <div className="flex items-center gap-1.5 overflow-x-auto rounded-[1.5rem] bg-white p-2 ring-1 ring-[#EFE9DA] shadow-[0_10px_28px_-20px_rgba(31,42,85,0.45)]">
+            {PORTAL_NAV.map((t) => {
               const Icon = t.icon;
               const isActive = activeTab === t.id;
+              const badge = t.id === 'homework' && pendingAssignments.length > 0 ? pendingAssignments.length : null;
               return (
                 <button
                   key={t.id}
                   type="button"
+                  aria-current={isActive ? 'page' : undefined}
                   onClick={() => {
                     setActiveTab(t.id);
                     if (t.id !== 'homework') setActiveAssignmentId(null);
                   }}
-                  className={`flex min-h-[40px] items-center gap-2 rounded-xl px-4 py-2 text-sm font-extrabold transition-colors whitespace-nowrap ${
+                  className={`flex min-h-[48px] items-center gap-2 rounded-2xl px-4 font-display text-[15px] font-extrabold whitespace-nowrap transition ${
                     isActive
-                      ? 'bg-[#3BA4E8] text-white shadow-sm'
-                      : 'text-[#56608A] hover:bg-[#E3F4FF]'
+                      ? `${TONE[t.tone].solid} text-white ${TONE[t.tone].shadow}`
+                      : 'text-[#56608A] hover:bg-[#F4F7FF] hover:text-[#1F2A55]'
                   }`}
                 >
-                  <Icon className="h-4 w-4" />
-                  {'shortLabel' in t ? (
-                    <>
-                      <span className="lg:hidden">{t.shortLabel}</span>
-                      <span className="hidden lg:inline">{t.label}</span>
-                    </>
-                  ) : (
-                    <span>{t.label}</span>
+                  <Icon className="h-5 w-5" />
+                  <span className="lg:hidden">{t.short}</span>
+                  <span className="hidden lg:inline">{t.label}</span>
+                  {badge !== null && (
+                    <span className={`rounded-full px-2 py-0.5 text-xs ${isActive ? 'bg-white/25' : 'bg-[#FFF3C4] text-[#7A5600]'}`}>{badge}</span>
                   )}
                 </button>
               );
             })}
           </div>
-        </div>
+        </nav>
 
         {/* ================================================================ */}
         {/* TAB 1: TỔNG QUAN (OVERVIEW)                                      */}
@@ -575,15 +574,22 @@ export const StudentPortalPage: React.FC = () => {
         {activeTab === 'overview' && (
           <StudentHome
             name={student.nickname || student.fullName}
+            accessCode={student.accessCode}
+            grade={student.grade}
             classes={classes}
             pending={pendingAssignments}
-            completedCount={completedAssignments.length}
+            scored={scoredAssignments}
             assignmentsMap={assignmentsMap}
+            practiceCount={practiceCount}
+            practiceLimit={PRACTICE_HISTORY_LIMIT}
             openTopics={openTopics}
             totalTopics={TOTAL_PRACTICE_TOPICS}
             comments={comments}
             gamesCount={games.length}
-            onNavigate={(target) => setActiveTab(target)}
+            onNavigate={(target) => {
+              setActiveTab(target);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             onOpenAssignment={openAssignmentWorkspace}
           />
         )}
@@ -618,7 +624,7 @@ export const StudentPortalPage: React.FC = () => {
                           type="button"
                           disabled={savingDraft}
                           onClick={() => handleSaveOrSubmit(false)}
-                          className="cartoon-button flex min-h-[44px] items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-xs font-extrabold text-slate-900"
+                          className="cartoon-button flex min-h-[44px] items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-xs font-extrabold text-[#1F2A55]"
                         >
                           <Save className="h-4 w-4 text-blue-600" />
                           {savingDraft ? 'Đang lưu...' : 'Lưu nháp'}
@@ -627,7 +633,7 @@ export const StudentPortalPage: React.FC = () => {
                           type="button"
                           disabled={submittingExam}
                           onClick={() => setConfirmSubmitModal(true)}
-                          className="cartoon-button flex min-h-[44px] items-center gap-1.5 rounded-xl bg-emerald-600 px-5 py-2 text-xs font-extrabold text-white"
+                          className="cartoon-button flex min-h-[44px] items-center gap-1.5 rounded-xl bg-[#34B36F] px-5 py-2 text-xs font-extrabold text-white"
                         >
                           <Send className="h-4 w-4" />
                           Nộp bài
@@ -644,7 +650,7 @@ export const StudentPortalPage: React.FC = () => {
                 )}
 
                 {/* Exam Info Header */}
-                <div className="cartoon-card bg-amber-50 p-5">
+                <div className="cartoon-card bg-[#FFF8E1] p-5">
                   <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
                     <span>Giao ngày: {currentExamAssignment.assignedAt}</span>
                     <span>·</span>
@@ -656,7 +662,7 @@ export const StudentPortalPage: React.FC = () => {
                       Tổng điểm: {currentExamAssignment.maxScore}đ
                     </span>
                   </div>
-                  <h1 className="mt-2 font-display text-xl font-extrabold text-slate-900">
+                  <h1 className="mt-2 font-display text-xl font-extrabold text-[#1F2A55]">
                     {currentExamAssignment.title}
                   </h1>
                   {currentExamAssignment.instructions && (
@@ -668,9 +674,9 @@ export const StudentPortalPage: React.FC = () => {
                   {/* Published Score & Overall Comment if graded */}
                   {currentStudentAssignment.status === 'graded' &&
                     currentStudentAssignment.isScorePublished && (
-                      <div className="mt-4 rounded-2xl border-2 border-slate-900 bg-white p-4">
+                      <div className="mt-4 rounded-2xl border-2 border-[#BDE8CB] bg-white p-4">
                         <div className="flex items-center justify-between">
-                          <span className="font-display text-sm font-extrabold text-slate-900">
+                          <span className="font-display text-sm font-extrabold text-[#1F2A55]">
                             KẾT QUẢ CHẤM BÀI CHÍNH THỨC:
                           </span>
                           <span className="font-mono text-2xl font-black text-emerald-700">
@@ -726,7 +732,7 @@ export const StudentPortalPage: React.FC = () => {
                                   key={opt.id}
                                   className={`flex min-h-[48px] cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-2.5 transition-colors ${
                                     selected
-                                      ? 'border-slate-900 bg-sky-100'
+                                      ? 'border-[#2F8CFF] bg-[#E3F1FF]'
                                       : 'border-slate-300 bg-white hover:bg-slate-50'
                                   }`}
                                 >
@@ -742,7 +748,7 @@ export const StudentPortalPage: React.FC = () => {
                                     }
                                     className="h-5 w-5"
                                   />
-                                  <span className="font-display text-sm font-extrabold text-slate-900">
+                                  <span className="font-display text-sm font-extrabold text-[#1F2A55]">
                                     {opt.label}.
                                   </span>
                                   <div className="flex-1">
@@ -768,7 +774,7 @@ export const StudentPortalPage: React.FC = () => {
                                   key={opt.id}
                                   className={`flex min-h-[48px] cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-2.5 transition-colors ${
                                     checked
-                                      ? 'border-slate-900 bg-sky-100'
+                                      ? 'border-[#2F8CFF] bg-[#E3F1FF]'
                                       : 'border-slate-300 bg-white hover:bg-slate-50'
                                   }`}
                                 >
@@ -788,7 +794,7 @@ export const StudentPortalPage: React.FC = () => {
                                     }}
                                     className="h-5 w-5 rounded"
                                   />
-                                  <span className="font-display text-sm font-extrabold text-slate-900">
+                                  <span className="font-display text-sm font-extrabold text-[#1F2A55]">
                                     {opt.label}.
                                   </span>
                                   <div className="flex-1">
@@ -814,7 +820,7 @@ export const StudentPortalPage: React.FC = () => {
                                   className="flex flex-col justify-between gap-3 rounded-xl border-2 border-slate-300 bg-slate-50 p-3.5 sm:flex-row sm:items-center"
                                 >
                                   <div className="flex items-start gap-2">
-                                    <span className="font-display text-sm font-extrabold text-slate-900">
+                                    <span className="font-display text-sm font-extrabold text-[#1F2A55]">
                                       {st.label})
                                     </span>
                                     <RichContentRenderer
@@ -837,7 +843,7 @@ export const StudentPortalPage: React.FC = () => {
                                       }
                                       className={`min-h-[40px] rounded-xl border-2 px-3.5 py-1.5 text-xs font-extrabold ${
                                         currentVal === true
-                                          ? 'border-slate-900 bg-emerald-500 text-white'
+                                          ? 'border-[#34B36F] bg-[#34B36F] text-white'
                                           : 'border-slate-300 bg-white text-slate-700'
                                       }`}
                                     >
@@ -857,7 +863,7 @@ export const StudentPortalPage: React.FC = () => {
                                       }
                                       className={`min-h-[40px] rounded-xl border-2 px-3.5 py-1.5 text-xs font-extrabold ${
                                         currentVal === false
-                                          ? 'border-slate-900 bg-rose-500 text-white'
+                                          ? 'border-[#F0506E] bg-[#F0506E] text-white'
                                           : 'border-slate-300 bg-white text-slate-700'
                                       }`}
                                     >
@@ -886,7 +892,7 @@ export const StudentPortalPage: React.FC = () => {
                                 })
                               }
                               placeholder="Nhập số hoặc câu trả lời ngắn..."
-                              className="min-h-[48px] w-full rounded-xl border-2 border-slate-800 bg-amber-50/40 px-4 py-2.5 font-mono text-base font-bold focus:bg-white focus:outline-none"
+                              className="min-h-[48px] w-full rounded-xl border-2 border-[#D7C8FF] bg-[#F7F3FF] px-4 py-2.5 font-mono text-base font-bold focus:bg-white focus:outline-none"
                             />
                           </div>
                         )}
@@ -954,287 +960,238 @@ export const StudentPortalPage: React.FC = () => {
               </div>
             ) : (
               /* Homework List View */
-              <div className="space-y-5">
-                <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-                  <div>
-                    <h1 className="font-display text-2xl font-extrabold text-[#1F2A55]">
-                      Bài tập của con
-                    </h1>
-                    <p className="text-sm text-[#56608A]">
-                      Bấm vào từng bài tập để làm bài, lưu nháp hoặc xem điểm và
-                      lời giải sau khi chấm.
-                    </p>
-                  </div>
+              <div className="space-y-6">
+                <SectionTitle
+                  as="h1"
+                  icon={BookOpen}
+                  tone="blue"
+                  title="Bài tập của con"
+                  subtitle="Bấm vào bài để làm, lưu nháp hoặc xem điểm và lời giải sau khi cô chấm."
+                />
 
-                  <div className="flex items-center gap-1 overflow-x-auto rounded-2xl bg-white p-1 ring-1 ring-[#EFE9DA]">
+                {hasClass && visibleAssignments.length > 0 && (
+                  <div role="tablist" aria-label="Lọc bài tập" className="flex gap-2 overflow-x-auto pb-1">
                     {(
                       [
-                        { id: 'all', label: 'Tất cả' },
-                        { id: 'pending', label: 'Cần hoàn thành' },
-                        { id: 'completed', label: 'Đã nộp / Đã chấm' },
+                        { id: 'all', label: 'Tất cả', count: visibleAssignments.length, tone: 'blue' },
+                        { id: 'pending', label: 'Cần hoàn thành', count: pendingAssignments.length, tone: 'yellow' },
+                        { id: 'completed', label: 'Đã nộp / đã chấm', count: completedAssignments.length, tone: 'green' },
                       ] as const
-                    ).map((f) => (
-                      <button
-                        key={f.id}
-                        type="button"
-                        onClick={() => setHwFilter(f.id)}
-                        className={`min-h-[40px] rounded-xl px-3.5 text-sm font-extrabold whitespace-nowrap ${
-                          hwFilter === f.id
-                            ? 'bg-[#3BA4E8] text-white'
-                            : 'text-[#56608A] hover:bg-[#E3F4FF]'
-                        }`}
-                      >
-                        {f.label}
-                      </button>
-                    ))}
+                    ).map((f) => {
+                      const on = hwFilter === f.id;
+                      return (
+                        <button
+                          key={f.id}
+                          type="button"
+                          role="tab"
+                          aria-selected={on}
+                          onClick={() => setHwFilter(f.id)}
+                          className={`flex min-h-[44px] shrink-0 items-center gap-2 rounded-full px-4 text-sm font-extrabold whitespace-nowrap transition ${
+                            on ? `${TONE[f.tone].solid} text-white` : `bg-white ${MUTED} ring-1 ring-[#EFE9DA] hover:bg-[#FFFBF2]`
+                          }`}
+                        >
+                          {f.label}
+                          <span className={`rounded-full px-2 py-0.5 text-xs ${on ? 'bg-white/25' : `${TONE[f.tone].soft} ${TONE[f.tone].text}`}`}>{f.count}</span>
+                        </button>
+                      );
+                    })}
                   </div>
-                </div>
+                )}
 
                 {!hasClass ? (
                   <NoClassNotice />
                 ) : visibleAssignments.length === 0 ? (
-                  <div className="rounded-3xl bg-[#E3F4FF] p-8 text-center ring-1 ring-[#B9E2FB]">
-                    <BookOpen className="mx-auto h-9 w-9 text-[#3BA4E8]" />
-                    <p className="mt-3 font-display text-base font-extrabold text-[#1F2A55]">
-                      Cô chưa giao bài tập nào cho con.
-                    </p>
-                    <p className="mt-1 text-sm text-[#56608A]">
-                      Trong lúc chờ, con vào Luyện Toán cùng Mimo nhé!
-                    </p>
-                  </div>
+                  <EmptyState
+                    mascot
+                    tone="blue"
+                    title="Cô chưa giao bài tập nào cho con."
+                    text="Trong lúc chờ, con vào Luyện Toán cùng Mimo để luyện thêm nhé!"
+                    action={
+                      <button type="button" onClick={() => setActiveTab('practice')} className={studentButton('accent')}>
+                        <Rocket className="h-5 w-5" /> Luyện Toán cùng Mimo
+                      </button>
+                    }
+                  />
+                ) : filteredAssignments.length === 0 ? (
+                  <EmptyState
+                    compact
+                    tone={hwFilter === 'pending' ? 'green' : 'gray'}
+                    icon={hwFilter === 'pending' ? PartyPopper : BookOpen}
+                    title={hwFilter === 'pending' ? 'Con đã làm hết bài cần hoàn thành rồi! 🎉' : 'Chưa có bài nào trong mục này.'}
+                  />
                 ) : (
-                  filteredAssignments.length === 0 && (
-                    <div className="rounded-3xl bg-white p-8 text-center text-sm font-bold text-[#56608A] ring-1 ring-[#EFE9DA]">
-                      {hwFilter === 'pending'
-                        ? 'Con đã làm hết bài cần hoàn thành rồi! 🎉'
-                        : 'Chưa có bài nào trong mục này.'}
-                    </div>
-                  )
+                  <ul className="grid gap-4 lg:grid-cols-2">
+                    {[...filteredAssignments]
+                      .sort((a, b) => {
+                        const dueA = assignmentsMap[a.assignmentId]?.dueAt || '';
+                        const dueB = assignmentsMap[b.assignmentId]?.dueAt || '';
+                        return dueA.localeCompare(dueB);
+                      })
+                      .map((sa) => {
+                        const asg = assignmentsMap[sa.assignmentId];
+                        const status = homeworkStatus(sa, asg);
+                        const finished = sa.status === 'submitted' || sa.status === 'graded';
+                        const accent: Tone =
+                          status === 'overdue' ? 'red' : status === 'graded' ? 'green' : status === 'submitted' ? 'teal' : status === 'returned' ? 'pink' : status === 'in_progress' ? 'blue' : 'yellow';
+                        return (
+                          <li key={sa.id}>
+                            <StudentCard padded={false} className="flex h-full flex-col gap-4 overflow-hidden">
+                              <div className={`h-2 ${TONE[accent].solid}`} aria-hidden="true" />
+                              <div className="flex flex-1 flex-col gap-3 px-5 pb-5">
+                                <div className="flex flex-wrap items-center gap-2">
+                                  <StatusBadge status={status} />
+                                  {status === 'overdue' && sa.status === 'in_progress' && <StatusBadge status="in_progress" />}
+                                  {sa.status === 'graded' && sa.isScorePublished && (
+                                    <span className="rounded-full bg-[#34B36F] px-3 py-1 font-display text-sm font-extrabold text-white tabular-nums">
+                                      {sa.score}/{sa.maxScore} điểm
+                                    </span>
+                                  )}
+                                </div>
+                                <h3 className={`font-display text-lg leading-snug font-extrabold sm:text-xl ${INK}`}>{asg.title}</h3>
+                                {asg.instructions && <p className={`line-clamp-2 text-sm ${MUTED}`}>{asg.instructions}</p>}
+                                <div className={`mt-auto flex flex-wrap items-center justify-between gap-3 text-sm font-bold ${MUTED}`}>
+                                  <span>
+                                    Giao {formatDate(asg.assignedAt)} ·{' '}
+                                    <span className={status === 'overdue' ? 'text-[#C2364F]' : INK}>Hạn nộp {formatDate(asg.dueAt)}</span>
+                                  </span>
+                                  <button
+                                    type="button"
+                                    onClick={() => openAssignmentWorkspace(sa.assignmentId)}
+                                    className={finished ? studentButton('soft', 'teal', 'min-h-[44px] text-sm') : studentButton('primary', accent === 'red' ? 'red' : 'blue', 'min-h-[44px] text-sm')}
+                                  >
+                                    {finished ? 'Xem bài & kết quả' : sa.status === 'in_progress' ? 'Làm tiếp' : sa.status === 'returned' ? 'Sửa bài' : 'Làm bài'}
+                                  </button>
+                                </div>
+                              </div>
+                            </StudentCard>
+                          </li>
+                        );
+                      })}
+                  </ul>
                 )}
-
-                <div className="space-y-4">
-                  {[...filteredAssignments]
-                    .sort((a, b) => {
-                      const dueA = assignmentsMap[a.assignmentId]?.dueAt || '';
-                      const dueB = assignmentsMap[b.assignmentId]?.dueAt || '';
-                      return dueA.localeCompare(dueB);
-                    })
-                    .map((sa) => {
-                      const asg = assignmentsMap[sa.assignmentId];
-                      if (!asg) return null;
-
-                      return (
-                        <div
-                          key={sa.id}
-                          className="cartoon-card flex flex-col justify-between gap-4 bg-white p-5 sm:flex-row sm:items-center"
-                        >
-                          <div>
-                            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                              <span>Ngày giao: {asg.assignedAt}</span>
-                              <span>·</span>
-                              <span className="font-mono font-bold text-rose-700">
-                                Hạn nộp: {asg.dueAt}
-                              </span>
-                              <span>·</span>
-                              <span className="font-bold text-slate-800">
-                                {sa.status === 'assigned' && 'Chưa làm'}
-                                {sa.status === 'in_progress' && 'Đang làm dở'}
-                                {sa.status === 'submitted' &&
-                                  'Đã nộp (Chờ chấm)'}
-                                {sa.status === 'graded' &&
-                                  (sa.isScorePublished
-                                    ? `Đã chấm: ${sa.score}/${sa.maxScore}đ`
-                                    : 'Đã chấm')}
-                                {sa.status === 'returned' && 'Cần làm lại'}
-                              </span>
-                            </div>
-
-                            <h3 className="mt-1.5 font-display text-lg font-extrabold text-slate-900">
-                              {asg.title}
-                            </h3>
-                            {asg.instructions && (
-                              <p className="mt-1 text-xs text-slate-600">
-                                {asg.instructions}
-                              </p>
-                            )}
-                          </div>
-
-                          <button
-                            type="button"
-                            onClick={() =>
-                              openAssignmentWorkspace(sa.assignmentId)
-                            }
-                            className={`cartoon-button min-h-[44px] rounded-xl px-5 py-2.5 text-xs font-extrabold whitespace-nowrap shrink-0 ${
-                              sa.status === 'submitted' ||
-                              sa.status === 'graded'
-                                ? 'bg-sky-100 text-slate-900'
-                                : 'bg-blue-600 text-white'
-                            }`}
-                          >
-                            {sa.status === 'submitted' || sa.status === 'graded'
-                              ? 'Xem bài làm & Kết quả'
-                              : 'Vào làm bài'}
-                          </button>
-                        </div>
-                      );
-                    })}
-                </div>
               </div>
             )}
           </div>
         )}
 
         {/* ================================================================ */}
-        {/* TAB 3: NHẬN XÉT (PUBLISHED MONTHLY & SUBMISSION COMMENTS)        */}
+        {/* NHẬN XÉT                                                           */}
         {/* ================================================================ */}
         {activeTab === 'comments' && (
           <div className="space-y-6">
-            <div>
-              <h1 className="font-display text-2xl font-extrabold text-slate-900">
-                Sổ Nhận Xét Của Giáo Viên
-              </h1>
-              <p className="text-xs text-slate-600">
-                Tổng hợp nhận xét định kỳ hàng tháng và phản hồi học tập đã
-                công bố.
-              </p>
-            </div>
-
+            <SectionTitle
+              as="h1"
+              icon={MessageSquareHeart}
+              tone="pink"
+              title="Nhận xét của cô"
+              subtitle="Những lời nhận xét hằng tháng cô gửi cho con."
+            />
             {comments.length === 0 ? (
-              <div className="cartoon-card bg-white p-12 text-center text-sm text-slate-500">
-                Hiện chưa có nhận xét tháng nào được công bố cho học sinh.
-              </div>
+              <EmptyState
+                mascot
+                tone="pink"
+                title="Cô chưa gửi nhận xét nào."
+                text="Con cứ chăm chỉ mỗi ngày, cô sẽ gửi lời nhận xét sớm thôi!"
+              />
             ) : (
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 {comments.map((cmt) => (
-                  <div
-                    key={cmt.id}
-                    className="cartoon-card space-y-3 bg-white p-5"
-                  >
-                    <div className="flex items-center justify-between border-b border-slate-200 pb-2.5">
-                      <span className="font-display text-base font-extrabold text-blue-700">
-                        Phiếu Nhận Xét Tháng {cmt.month}/{cmt.year}
+                  <StudentCard key={cmt.id} className="space-y-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className={`font-display text-lg font-extrabold ${INK}`}>
+                        {cmt.month ? `Tháng ${cmt.month}/${cmt.year}` : 'Nhận xét của cô'}
                       </span>
-                      <span className="text-xs text-slate-500">
-                        Công bố:{' '}
-                        {cmt.publishedAt
-                          ? cmt.publishedAt.slice(0, 10)
-                          : cmt.updatedAt.slice(0, 10)}
+                      <span className={`text-sm font-bold ${MUTED}`}>
+                        {formatDate((cmt.publishedAt || cmt.updatedAt).slice(0, 10))}
                       </span>
                     </div>
-
-                    <div className="space-y-2.5 text-sm text-slate-800">
-                      <div className="rounded-xl bg-emerald-50 p-3">
-                        <strong className="block text-xs font-extrabold text-emerald-900">
-                          ĐIỂM MẠNH TRONG THÁNG:
-                        </strong>
-                        <p className="mt-1 text-xs leading-relaxed">
-                          {cmt.strengths}
-                        </p>
+                    <div className="rounded-2xl bg-[#E3F7EA] p-4">
+                      <div className="text-sm font-extrabold text-[#1F7A4F]">🌟 Con đã làm tốt</div>
+                      <p className={`mt-1 text-base leading-relaxed ${INK}`}>{cmt.strengths}</p>
+                    </div>
+                    {cmt.improvements && (
+                      <div className="rounded-2xl bg-[#FFF3C4] p-4">
+                        <div className="text-sm font-extrabold text-[#7A5600]">💪 Con cần cố gắng thêm</div>
+                        <p className={`mt-1 text-base leading-relaxed ${INK}`}>{cmt.improvements}</p>
                       </div>
-
-                      {cmt.improvements && (
-                        <div className="rounded-xl bg-amber-50 p-3">
-                          <strong className="block text-xs font-extrabold text-amber-900">
-                            NỘI DUNG CẦN CẢI THIỆN:
-                          </strong>
-                          <p className="mt-1 text-xs leading-relaxed">
-                            {cmt.improvements}
-                          </p>
-                        </div>
-                      )}
-
-                      {cmt.completionRate && (
-                        <div className="text-xs">
-                          <strong>Mức độ hoàn thành BTVN:</strong>{' '}
-                          {cmt.completionRate}
-                        </div>
-                      )}
-
-                      {cmt.practiceSuggestions && (
-                        <div className="rounded-xl bg-sky-50 p-3">
-                          <strong className="block text-xs font-extrabold text-blue-900">
-                            GỢI Ý LUYỆN TẬP THÊM:
-                          </strong>
-                          <p className="mt-1 text-xs leading-relaxed">
-                            {cmt.practiceSuggestions}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
+                    )}
+                    {cmt.practiceSuggestions && (
+                      <div className="rounded-2xl bg-[#E3F1FF] p-4">
+                        <div className="text-sm font-extrabold text-[#1D5FB8]">📚 Gợi ý luyện tập thêm</div>
+                        <p className={`mt-1 text-base leading-relaxed ${INK}`}>{cmt.practiceSuggestions}</p>
+                      </div>
+                    )}
+                    {cmt.completionRate && (
+                      <p className={`text-sm ${MUTED}`}>
+                        <b className={INK}>Mức độ hoàn thành bài tập:</b> {cmt.completionRate}
+                      </p>
+                    )}
+                  </StudentCard>
                 ))}
               </div>
             )}
           </div>
         )}
 
-        {/* ================================================================ */}
-        {/* TAB 4: KHO TRÒ CHƠI TOÁN HỌC                                     */}
-        {/* ================================================================ */}
         {activeTab === 'practice' && <PracticePortal />}
 
+        {/* ================================================================ */}
+        {/* TRÒ CHƠI TOÁN                                                      */}
+        {/* ================================================================ */}
         {activeTab === 'games' && (
           <div className="space-y-6">
-            <GamePortalBannerIllustration />
+            <section className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#DDF7F3] via-[#E3F1FF] to-[#FFF3C4] p-5 sm:p-7">
+              <span className="pointer-events-none absolute -top-6 right-8 text-6xl opacity-60" aria-hidden="true">🎲</span>
+              <span className="pointer-events-none absolute right-40 bottom-2 hidden text-4xl opacity-50 sm:block" aria-hidden="true">🧩</span>
+              <div className="relative flex items-center gap-4">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#14B8A6] text-white shadow-[0_4px_0_0_#0F766E]">
+                  <Gamepad2 className="h-7 w-7" />
+                </span>
+                <div>
+                  <h1 className={`font-display text-2xl font-extrabold sm:text-3xl ${INK}`}>Trò chơi Toán</h1>
+                  <p className={`text-base ${MUTED}`}>Vừa chơi vừa học – chọn một trò chơi con thích nhé!</p>
+                </div>
+              </div>
+            </section>
 
-            {/* Category Filter Buttons */}
-            <div className="flex flex-wrap items-center gap-2">
-              {(
-                [
-                  'all',
-                  'Số học',
-                  'Phép tính',
-                  'Hình học',
-                  'Tư duy logic',
-                  'Ôn tập kiến thức',
-                ] as const
-              ).map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`min-h-[40px] rounded-xl border-2 border-slate-900 px-3.5 py-1.5 text-xs font-extrabold transition-colors whitespace-nowrap ${
-                    selectedCategory === cat
-                      ? 'bg-blue-600 text-white shadow-[0_2px_0_0_#1E293B]'
-                      : 'bg-white text-slate-800 hover:bg-amber-50'
-                  }`}
-                >
-                  {cat === 'all' ? 'Tất cả danh mục' : cat}
-                </button>
-              ))}
-            </div>
+            {games.length > 0 && (
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {(['all', 'Số học', 'Phép tính', 'Hình học', 'Tư duy logic', 'Ôn tập kiến thức'] as const).map((cat) => {
+                  const on = selectedCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      type="button"
+                      aria-pressed={on}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`min-h-[44px] shrink-0 rounded-full px-4 text-sm font-extrabold whitespace-nowrap transition ${
+                        on ? 'bg-[#14B8A6] text-white' : `bg-white ${MUTED} ring-1 ring-[#EFE9DA] hover:bg-[#DDF7F3]`
+                      }`}
+                    >
+                      {cat === 'all' ? 'Tất cả' : cat}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
 
             {playingGame ? (
-              <div className="cartoon-card overflow-hidden bg-white">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-900 bg-amber-100 px-4 py-3">
+              <StudentCard padded={false} className="overflow-hidden">
+                <div className="flex flex-wrap items-center justify-between gap-3 bg-[#DDF7F3] px-5 py-4">
                   <div>
-                    <h3 className="font-display text-base font-extrabold text-slate-900">
-                      {playingGame.title}
-                    </h3>
-                    <p className="text-xs text-slate-600">
-                      Danh mục: {playingGame.category}
-                    </p>
+                    <h3 className={`font-display text-lg font-extrabold ${INK}`}>{playingGame.title}</h3>
+                    <p className={`text-sm ${MUTED}`}>{playingGame.category}</p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <a
-                      href={playingGame.embedUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cartoon-button flex items-center gap-1 rounded-xl bg-white px-3 py-1.5 text-xs font-bold text-slate-900"
-                    >
-                      Mở toàn màn hình <ExternalLink className="h-3.5 w-3.5" />
+                  <div className="flex flex-wrap items-center gap-2">
+                    <a href={playingGame.embedUrl} target="_blank" rel="noopener noreferrer" className={studentButton('quiet', 'blue', 'min-h-[44px] text-sm')}>
+                      Mở toàn màn hình <ExternalLink className="h-4 w-4" />
                     </a>
-                    <button
-                      type="button"
-                      onClick={() => setPlayingGame(null)}
-                      className="cartoon-button rounded-xl bg-rose-500 px-3.5 py-1.5 text-xs font-extrabold text-white"
-                    >
+                    <button type="button" onClick={() => setPlayingGame(null)} className={studentButton('primary', 'pink', 'min-h-[44px] text-sm')}>
                       Đóng trò chơi
                     </button>
                   </div>
                 </div>
-
-                <div className="h-[68vh] w-full bg-slate-900">
+                <div className="h-[68vh] w-full bg-[#1F2A55]">
                   <iframe
                     src={playingGame.embedUrl}
                     title={playingGame.title}
@@ -1243,105 +1200,71 @@ export const StudentPortalPage: React.FC = () => {
                     allowFullScreen
                   />
                 </div>
-
-                <div className="flex items-center gap-2 bg-amber-50 px-4 py-2.5 text-xs text-slate-700">
-                  <AlertTriangle className="h-4 w-4 shrink-0 text-amber-600" />
-                  <span>
-                    Nếu trò chơi không hiển thị do trình duyệt chặn nhúng, con
-                    hãy nhấn nút &ldquo;Mở toàn màn hình&rdquo; phía trên nhé!
-                  </span>
+                <div className={`flex items-center gap-2 bg-[#FFF3C4] px-5 py-3 text-sm ${INK}`}>
+                  <AlertTriangle className="h-4 w-4 shrink-0 text-[#B98700]" />
+                  Nếu trò chơi không hiện ra, con bấm “Mở toàn màn hình” ở trên nhé!
                 </div>
-              </div>
+              </StudentCard>
+            ) : games.length === 0 ? (
+              <EmptyState mascot tone="teal" title="Trò chơi sắp ra mắt!" text="Cô đang chuẩn bị những trò chơi Toán thật vui cho con." />
             ) : (
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {games
-                  .filter((g) =>
-                    selectedCategory === 'all'
-                      ? true
-                      : g.category === selectedCategory
-                  )
-                  .map((g) => (
-                    <div
-                      key={g.id}
-                      className="cartoon-card flex flex-col justify-between bg-white p-5"
-                    >
-                      <div>
-                        <span className="text-xs font-extrabold text-blue-700">
-                          {g.category}
-                        </span>
-                        <h3 className="mt-1 font-display text-lg font-extrabold text-slate-900">
-                          {g.title}
-                        </h3>
-                        {g.description && (
-                          <p className="mt-1.5 text-xs leading-relaxed text-slate-600">
-                            {g.description}
-                          </p>
-                        )}
-                      </div>
-
-                      <button
-                        type="button"
-                        onClick={() => setPlayingGame(g)}
-                        className="cartoon-button mt-5 flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-amber-400 px-4 py-2.5 font-display text-xs font-extrabold text-slate-900"
-                      >
-                        <Gamepad2 className="h-4 w-4" />
-                        Chơi Ngay
-                      </button>
-                    </div>
-                  ))}
+                  .filter((g) => selectedCategory === 'all' || g.category === selectedCategory)
+                  .map((g) => {
+                    const tone = GAME_TONES[g.category] ?? 'teal';
+                    return (
+                      <StudentCard key={g.id} className="group flex flex-col gap-3 transition hover:-translate-y-1">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className={`flex h-12 w-12 items-center justify-center rounded-2xl text-white ${TONE[tone].solid} ${TONE[tone].shadow}`}>
+                            <Gamepad2 className="h-6 w-6" />
+                          </span>
+                          <span className={`rounded-full px-3 py-1 text-xs font-extrabold ${TONE[tone].soft} ${TONE[tone].text}`}>{g.category}</span>
+                        </div>
+                        <h3 className={`font-display text-lg leading-snug font-extrabold ${INK}`}>{g.title}</h3>
+                        {g.description && <p className={`line-clamp-3 text-sm leading-relaxed ${MUTED}`}>{g.description}</p>}
+                        <button type="button" onClick={() => setPlayingGame(g)} className={studentButton('accent', 'yellow', 'mt-auto w-full')}>
+                          <Gamepad2 className="h-5 w-5" /> Chơi ngay
+                        </button>
+                      </StudentCard>
+                    );
+                  })}
               </div>
             )}
           </div>
         )}
 
         {/* ================================================================ */}
-        {/* TAB 5: HỒ SƠ & LỚP HỌC                                           */}
+        {/* HỒ SƠ & LỚP HỌC                                                    */}
         {/* ================================================================ */}
         {activeTab === 'profile' && (
           <div className="mx-auto max-w-3xl space-y-6">
-            <div className="cartoon-card bg-white p-6">
-              <h1 className="font-display text-xl font-extrabold text-slate-900">
-                Hồ Sơ Học Sinh
-              </h1>
-              <div className="mt-4 grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
-                <div>
-                  <span className="text-xs text-slate-500">Họ và tên:</span>
-                  <div className="font-display font-bold text-slate-900">
-                    {student.fullName}
-                  </div>
-                </div>
-                <div>
-                  <span className="text-xs text-slate-500">
-                    Tên gọi thân mật:
-                  </span>
-                  <div className="font-bold text-slate-900">
-                    {student.nickname || '—'}
-                  </div>
-                </div>
-                <div>
-                  <span className="text-xs text-slate-500">Khối lớp:</span>
-                  <div className="font-bold text-slate-900">
-                    {student.grade}
-                  </div>
-                </div>
-                <div>
-                  <span className="text-xs text-slate-500">Ngày sinh:</span>
-                  <div className="font-mono font-bold text-slate-900">
-                    {student.dob || '—'}
-                  </div>
+            <StudentCard className="space-y-5">
+              <div className="flex items-center gap-4">
+                <Avatar name={student.nickname || student.fullName} size={72} />
+                <div className="min-w-0">
+                  <h1 className={`truncate font-display text-2xl font-extrabold ${INK}`}>{student.fullName}</h1>
+                  {student.nickname && <p className={`text-base ${MUTED}`}>Tên ở nhà: {student.nickname}</p>}
                 </div>
               </div>
+              <dl className="grid grid-cols-2 gap-3">
+                <div className="rounded-2xl bg-[#E3F1FF] p-4">
+                  <dt className="text-sm font-bold text-[#1D5FB8]">Khối lớp</dt>
+                  <dd className={`font-display text-lg font-extrabold ${INK}`}>{student.grade || '—'}</dd>
+                </div>
+                <div className="rounded-2xl bg-[#EFE7FF] p-4">
+                  <dt className="text-sm font-bold text-[#5B3FB8]">Ngày sinh</dt>
+                  <dd className={`font-display text-lg font-extrabold ${INK}`}>{formatDate(student.dob)}</dd>
+                </div>
+              </dl>
 
-              {/* Access Code Box with Privacy Warning */}
-              <div className="mt-6 rounded-2xl border-2 border-slate-900 bg-amber-50 p-4">
+              <div className="rounded-3xl bg-[#FFF3C4] p-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <div className="text-xs font-extrabold text-slate-900">
-                      Mã Truy Cập Cổng Học Sinh Của Con:
+                    <div className="flex items-center gap-1.5 text-sm font-extrabold text-[#7A5600]">
+                      <KeyRound className="h-4 w-4" /> Mã vào cổng học sinh của con
                     </div>
-                    <div className="mt-1 font-mono text-2xl font-black tracking-widest text-blue-700">
-                      {student.accessCode}
-                    </div>
+                    <div className="mt-1 font-mono text-3xl font-black tracking-[0.2em] text-[#5B3FB8]">{student.accessCode}</div>
                   </div>
                   <button
                     type="button"
@@ -1350,61 +1273,45 @@ export const StudentPortalPage: React.FC = () => {
                       setCopiedMyCode(true);
                       setTimeout(() => setCopiedMyCode(false), 2000);
                     }}
-                    className="cartoon-button flex min-h-[44px] items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-xs font-extrabold text-slate-900"
+                    className={studentButton('quiet', 'blue', 'min-h-[44px] text-sm')}
                   >
                     {copiedMyCode ? (
                       <>
-                        <Check className="h-4 w-4 text-emerald-600" />
-                        Đã sao chép
+                        <Check className="h-4 w-4 text-[#34B36F]" /> Đã sao chép
                       </>
                     ) : (
                       <>
-                        <Copy className="h-4 w-4" />
-                        Lưu / Sao chép mã
+                        <Copy className="h-4 w-4" /> Sao chép mã
                       </>
                     )}
                   </button>
                 </div>
-                <div className="mt-3 flex items-start gap-2 text-xs text-amber-900">
-                  <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                  <span>
-                    Lưu ý bảo mật: Phụ huynh và học sinh dùng chung mã này để
-                    xem bài tập. Vui lòng không chia sẻ mã công khai cho người
-                    lạ.
-                  </span>
-                </div>
+                <p className="mt-3 flex items-start gap-2 text-sm text-[#7A5600]">
+                  <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0" />
+                  Con và bố mẹ dùng chung mã này. Đừng cho người lạ biết mã nhé!
+                </p>
               </div>
-            </div>
+            </StudentCard>
 
-            {/* Enrolled Classes */}
-            <div className="cartoon-card bg-white p-6">
-              <h2 className="font-display text-lg font-extrabold text-slate-900">
-                Danh Sách Lớp Toán Đang Theo Học
-              </h2>
-              <div className="mt-4 space-y-3">
-                {classes.map((cls) => (
-                  <div
-                    key={cls.id}
-                    className="rounded-2xl border-2 border-slate-800 bg-sky-50/50 p-4"
-                  >
-                    <div className="flex items-center justify-between text-xs text-slate-500">
-                      <span className="font-bold text-blue-700">
-                        {cls.grade}
-                      </span>
-                      <span className="font-mono">Năm học: {cls.schoolYear}</span>
-                    </div>
-                    <h3 className="mt-1 font-display text-base font-extrabold text-slate-900">
-                      {cls.name}
-                    </h3>
-                    {cls.description && (
-                      <p className="mt-1 text-xs text-slate-600">
-                        {cls.description}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+            <StudentCard className="space-y-4">
+              <SectionTitle icon={School} tone="blue" title="Lớp của con" />
+              {classes.length === 0 ? (
+                <NoClassNotice />
+              ) : (
+                <ul className="space-y-3">
+                  {classes.map((cls) => (
+                    <li key={cls.id} className="rounded-2xl bg-[#E3F1FF] p-4">
+                      <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-bold text-[#1D5FB8]">
+                        <span>{cls.grade}</span>
+                        <span>Năm học {cls.schoolYear}</span>
+                      </div>
+                      <h3 className={`mt-1 font-display text-xl font-extrabold ${INK}`}>{cls.name}</h3>
+                      {cls.description && <p className={`mt-1 text-sm ${MUTED}`}>{cls.description}</p>}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </StudentCard>
           </div>
         )}
       </main>
@@ -1413,7 +1320,7 @@ export const StudentPortalPage: React.FC = () => {
       {confirmSubmitModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4">
           <div className="cartoon-card w-full max-w-md bg-white p-6">
-            <h3 className="font-display text-lg font-extrabold text-slate-900">
+            <h3 className="font-display text-lg font-extrabold text-[#1F2A55]">
               Xác nhận nộp bài tập?
             </h3>
             <p className="mt-2 text-sm text-slate-600">
@@ -1433,7 +1340,7 @@ export const StudentPortalPage: React.FC = () => {
                 type="button"
                 disabled={submittingExam}
                 onClick={() => handleSaveOrSubmit(true)}
-                className="cartoon-button min-h-[44px] rounded-xl bg-emerald-600 px-5 py-2 text-xs font-extrabold text-white"
+                className="cartoon-button min-h-[44px] rounded-xl bg-[#34B36F] px-5 py-2 text-xs font-extrabold text-white"
               >
                 {submittingExam ? 'Đang nộp bài...' : 'Chắc chắn nộp bài'}
               </button>
@@ -1442,45 +1349,35 @@ export const StudentPortalPage: React.FC = () => {
         </div>
       )}
 
-      {/* Fixed Mobile Bottom Navigation Bar (5 Mandatory Tabs, <= 64px height) */}
-      <nav className="fixed right-0 bottom-0 left-0 z-40 grid h-16 grid-cols-6 items-center border-t border-[#EFE9DA] bg-white/95 px-1 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden">
-        {(
-          [
-            { id: 'overview', label: 'Trang chủ', icon: Home },
-            {
-              id: 'homework',
-              label: `Bài tập${
-                pendingAssignments.length > 0
-                  ? ` (${pendingAssignments.length})`
-                  : ''
-              }`,
-              icon: BookOpen,
-            },
-            // Short label: the mobile bottom bar has no room for the full name
-            { id: 'practice', label: 'Luyện Toán', icon: Sparkles },
-            { id: 'comments', label: 'Nhận xét', icon: MessageSquareHeart },
-            { id: 'games', label: 'Trò chơi', icon: Gamepad2 },
-            { id: 'profile', label: 'Hồ sơ', icon: User },
-          ] as const
-        ).map((tab) => {
+      {/* Mobile bottom bar (<= 72px) */}
+      <nav
+        aria-label="Mục của cổng học sinh"
+        className="fixed right-0 bottom-0 left-0 z-40 grid grid-cols-6 gap-0.5 border-t border-[#EFE9DA] bg-white/95 px-1 pt-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] backdrop-blur-md md:hidden"
+      >
+        {PORTAL_NAV.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
+          const badge = tab.id === 'homework' && pendingAssignments.length > 0 ? pendingAssignments.length : null;
           return (
             <button
               key={tab.id}
               type="button"
+              aria-current={isActive ? 'page' : undefined}
               onClick={() => {
                 setActiveTab(tab.id);
                 if (tab.id !== 'homework') setActiveAssignmentId(null);
               }}
-              className={`flex min-h-[48px] flex-col items-center justify-center rounded-xl py-1 transition-colors ${
-                isActive ? 'bg-[#E3F4FF] font-extrabold text-[#3B7FC4]' : 'text-[#56608A]'
+              className={`relative flex min-h-[52px] flex-col items-center justify-center rounded-2xl transition ${
+                isActive ? `${TONE[tab.tone].soft} ${TONE[tab.tone].text} font-extrabold` : 'text-[#56608A]'
               }`}
             >
-              <Icon className="h-5 w-5" />
-              <span className="mt-0.5 text-[10px] leading-none whitespace-nowrap">
-                {tab.label}
-              </span>
+              <Icon className={`h-[22px] w-[22px] ${isActive ? 'scale-110' : ''}`} />
+              <span className="mt-1 text-[11px] leading-none whitespace-nowrap">{tab.short}</span>
+              {badge !== null && (
+                <span className="absolute top-0.5 right-1.5 min-w-[18px] rounded-full bg-[#F0506E] px-1 text-center text-[10px] leading-[18px] font-extrabold text-white">
+                  {badge}
+                </span>
+              )}
             </button>
           );
         })}

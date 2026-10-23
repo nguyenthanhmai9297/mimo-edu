@@ -5,6 +5,8 @@
 export interface PracticeTopicInfo {
   id: string;
   name: string;
+  /** One short line shown on the student topic card. */
+  description?: string;
   /** Tên tiếng Việt của kĩ năng theo mã skillId; thiếu thì hiển thị mã. */
   skills?: Record<string, string>;
 }
@@ -23,6 +25,7 @@ export const PRACTICE_CATALOG: PracticeGroupInfo[] = [
       {
         id: 'N01',
         name: 'Số tự nhiên trong phạm vi 100 000',
+        description: 'Đọc, viết, cấu tạo số có năm chữ số',
         // Tạm dịch từ mã kĩ năng trong bộ N01 – cần giáo viên xác nhận
         skills: {
           'N01.read_write': 'Đọc, viết số',
@@ -37,64 +40,64 @@ export const PRACTICE_CATALOG: PracticeGroupInfo[] = [
           'N01.logic': 'Suy luận về số',
         },
       },
-      { id: 'N02', name: 'So sánh và sắp xếp số' },
-      { id: 'N03', name: 'Dãy số và quy luật' },
-      { id: 'N04', name: 'Làm tròn số' },
-      { id: 'N05', name: 'Phép cộng và phép trừ' },
-      { id: 'N06', name: 'Phép nhân và phép chia' },
-      { id: 'N07', name: 'Tính giá trị biểu thức' },
-      { id: 'N08', name: 'Tính nhanh, tính thuận tiện' },
-      { id: 'N09', name: 'Tìm thành phần chưa biết' },
-      { id: 'N10', name: 'Phép chia có dư' },
-      { id: 'N11', name: 'Chữ số La Mã' },
-      { id: 'N12', name: 'Một phần mấy' },
+      { id: 'N02', name: 'So sánh và sắp xếp số', description: 'So sánh và xếp các số theo thứ tự' },
+      { id: 'N03', name: 'Dãy số và quy luật', description: 'Tìm quy luật và viết tiếp dãy số' },
+      { id: 'N04', name: 'Làm tròn số', description: 'Làm tròn số đến hàng chục, trăm, nghìn' },
+      { id: 'N05', name: 'Phép cộng và phép trừ', description: 'Cộng, trừ các số trong phạm vi 100 000' },
+      { id: 'N06', name: 'Phép nhân và phép chia', description: 'Nhân, chia theo bảng và với số có một chữ số' },
+      { id: 'N07', name: 'Tính giá trị biểu thức', description: 'Thứ tự thực hiện phép tính, có dấu ngoặc' },
+      { id: 'N08', name: 'Tính nhanh, tính thuận tiện', description: 'Mẹo tính nhanh và tính thuận tiện' },
+      { id: 'N09', name: 'Tìm thành phần chưa biết', description: 'Tìm số hạng, thừa số, số bị chia chưa biết' },
+      { id: 'N10', name: 'Phép chia có dư', description: 'Chia có dư và tìm số dư' },
+      { id: 'N11', name: 'Chữ số La Mã', description: 'Đọc, viết các số La Mã đơn giản' },
+      { id: 'N12', name: 'Một phần mấy', description: 'Nhận biết và tìm một phần mấy' },
     ],
   },
   {
     id: 'II',
     name: 'Toán có lời văn',
     topics: [
-      { id: 'N13', name: 'Bài toán giải bằng hai bước tính' },
-      { id: 'N14', name: 'Gấp một số lên nhiều lần' },
-      { id: 'N15', name: 'Giảm một số đi nhiều lần' },
-      { id: 'N16', name: 'So sánh số lớn gấp mấy lần số bé' },
-      { id: 'N17', name: 'Bài toán về một phần mấy' },
-      { id: 'N18', name: 'Bài toán rút về đơn vị' },
-      { id: 'N19', name: 'Bài toán thực tế tổng hợp' },
+      { id: 'N13', name: 'Bài toán giải bằng hai bước tính', description: 'Giải bài toán có hai bước tính' },
+      { id: 'N14', name: 'Gấp một số lên nhiều lần', description: 'Bài toán gấp một số lên nhiều lần' },
+      { id: 'N15', name: 'Giảm một số đi nhiều lần', description: 'Bài toán giảm một số đi nhiều lần' },
+      { id: 'N16', name: 'So sánh số lớn gấp mấy lần số bé', description: 'Số lớn gấp mấy lần số bé' },
+      { id: 'N17', name: 'Bài toán về một phần mấy', description: 'Tìm một phần mấy của một số' },
+      { id: 'N18', name: 'Bài toán rút về đơn vị', description: 'Bài toán liên quan rút về đơn vị' },
+      { id: 'N19', name: 'Bài toán thực tế tổng hợp', description: 'Bài toán từ cuộc sống hằng ngày' },
     ],
   },
   {
     id: 'III',
     name: 'Hình học và đo lường',
     topics: [
-      { id: 'N20', name: 'Điểm, đoạn thẳng và các hình học' },
-      { id: 'N21', name: 'Hình tròn' },
-      { id: 'N22', name: 'Chu vi các hình' },
-      { id: 'N23', name: 'Diện tích hình chữ nhật, hình vuông' },
-      { id: 'N24', name: 'Đơn vị đo độ dài' },
-      { id: 'N25', name: 'Đơn vị đo khối lượng' },
-      { id: 'N26', name: 'Đơn vị đo dung tích' },
-      { id: 'N27', name: 'Thời gian và xem đồng hồ' },
-      { id: 'N28', name: 'Tiền Việt Nam' },
-      { id: 'N29', name: 'Nhiệt độ' },
+      { id: 'N20', name: 'Điểm, đoạn thẳng và các hình học', description: 'Điểm, đoạn thẳng, góc và các hình' },
+      { id: 'N21', name: 'Hình tròn', description: 'Tâm, bán kính, đường kính hình tròn' },
+      { id: 'N22', name: 'Chu vi các hình', description: 'Tính chu vi tam giác, tứ giác, hình chữ nhật' },
+      { id: 'N23', name: 'Diện tích hình chữ nhật, hình vuông', description: 'Tính diện tích hình chữ nhật, hình vuông' },
+      { id: 'N24', name: 'Đơn vị đo độ dài', description: 'Mi-li-mét, xăng-ti-mét, mét, ki-lô-mét' },
+      { id: 'N25', name: 'Đơn vị đo khối lượng', description: 'Gam, ki-lô-gam và cân đo' },
+      { id: 'N26', name: 'Đơn vị đo dung tích', description: 'Mi-li-lít, lít và đong đo' },
+      { id: 'N27', name: 'Thời gian và xem đồng hồ', description: 'Xem giờ, ngày, tháng, năm' },
+      { id: 'N28', name: 'Tiền Việt Nam', description: 'Nhận biết tiền, đổi tiền, mua bán' },
+      { id: 'N29', name: 'Nhiệt độ', description: 'Đọc nhiệt kế và độ C' },
     ],
   },
   {
     id: 'IV',
     name: 'Thống kê và xác suất',
     topics: [
-      { id: 'N30', name: 'Thu thập và phân loại số liệu' },
-      { id: 'N31', name: 'Bảng số liệu' },
-      { id: 'N32', name: 'Khả năng xảy ra của sự kiện' },
+      { id: 'N30', name: 'Thu thập và phân loại số liệu', description: 'Thu thập, kiểm đếm và phân loại' },
+      { id: 'N31', name: 'Bảng số liệu', description: 'Đọc và hoàn thiện bảng số liệu' },
+      { id: 'N32', name: 'Khả năng xảy ra của sự kiện', description: 'Chắc chắn, có thể hay không thể' },
     ],
   },
   {
     id: 'V',
     name: 'Toán tư duy và nâng cao',
     topics: [
-      { id: 'N33', name: 'Tư duy quy luật và suy luận logic' },
-      { id: 'N34', name: 'Toán tổ hợp đơn giản' },
-      { id: 'N35', name: 'Toán thử thách tổng hợp' },
+      { id: 'N33', name: 'Tư duy quy luật và suy luận logic', description: 'Suy luận logic và tìm quy luật hình' },
+      { id: 'N34', name: 'Toán tổ hợp đơn giản', description: 'Đếm cách chọn, cách xếp đơn giản' },
+      { id: 'N35', name: 'Toán thử thách tổng hợp', description: 'Thử thách tổng hợp cho nhà vô địch' },
     ],
   },
 ];

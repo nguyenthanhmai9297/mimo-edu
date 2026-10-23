@@ -53,3 +53,12 @@ export const playFanfare = () =>
     { at: 0.36, freq: 784, dur: 0.18, type: 'triangle' },
     { at: 0.54, freq: 1046, dur: 0.45, type: 'triangle' },
   ]);
+
+/** Two-tone train whistle when a train sets off. */
+export const playWhistle = () =>
+  play([
+    { at: 0, freq: 587, dur: 0.45, type: 'triangle', volume: 0.22 },
+    { at: 0, freq: 740, dur: 0.45, type: 'triangle', volume: 0.18 },
+    { at: 0.55, freq: 587, dur: 0.7, type: 'triangle', volume: 0.22 },
+    { at: 0.55, freq: 740, dur: 0.7, type: 'triangle', volume: 0.18 },
+  ]);

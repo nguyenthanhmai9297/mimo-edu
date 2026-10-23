@@ -10,6 +10,7 @@ import {
   QuickQuizArt,
   RandomPickerArt,
   ScoreboardArt,
+  TrainArt,
   TugOfWarArt,
 } from './ToolIllustrations';
 
@@ -101,6 +102,20 @@ export const TEACHING_TOOLS: TeachingTool[] = [
     to: '/admin/tools/keo-co',
     isNew: true,
     keywords: 'keo co thi dau hai doi tro choi cau hoi',
+  },
+  {
+    id: 'doan-tau',
+    name: 'Đoàn tàu kiến thức',
+    description: 'Kéo thả xếp các toa thành đoàn tàu đúng thứ tự, hoặc hai đội trả lời câu hỏi để nối toa về ga đích.',
+    category: 'game',
+    art: TrainArt,
+    usesQuestions: true,
+    audience: 'Cả lớp / 2 đội',
+    duration: '5–15 phút',
+    status: 'ready',
+    to: '/admin/tools/doan-tau',
+    isNew: true,
+    keywords: 'doan tau tri thuc kien thuc xep toa thu tu sap xep keo tha so be lon noi toa thi dau hai doi',
   },
   {
     id: 'mimo-quiz',

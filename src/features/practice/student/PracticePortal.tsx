@@ -36,7 +36,8 @@ import {
   PracticeSubmitResponse,
 } from '../../../types/practice';
 import { PracticeText } from '../PracticeText';
-import { GROUP_THEMES, HeroBanner, LEVEL_THEMES, MimoMascot, MimoSays, ProgressBar, SpaceDecor } from './practiceTheme';
+import { GROUP_THEMES, HeroBanner, LEVEL_THEMES, MimoMascot, MimoSays, ProgressBar } from './practiceTheme';
+import { StatusBadge } from '../../student-portal/studentUi';
 
 type Stage =
   | { name: 'browse' }
@@ -46,12 +47,6 @@ type Stage =
 
 const LETTERS = 'ABCDEF';
 
-/** Topic card badges: open (published, not started), learning (has attempts), closed. */
-const TOPIC_STATUS = {
-  open: { label: 'Đã mở', className: 'bg-[#E3F7EA] text-[#1F7A4F]' },
-  learning: { label: 'Đang học', className: 'bg-[#EFE7FF] text-[#5B3FB8]' },
-  closed: { label: 'Chưa mở', className: 'bg-white text-[#5A6B9A]' },
-} as const;
 const PASS_RATIO = 0.8;
 
 /** Progress per topic from the student's recent attempts (latest 20 kept by the server). */
@@ -72,7 +67,7 @@ function useTopicProgress(history: PracticeHistoryItem[]) {
 }
 
 const SectionTitle: React.FC<{ icon?: React.ReactNode; children: React.ReactNode }> = ({ icon, children }) => (
-  <h2 className="mb-3 flex items-center gap-2 font-display text-lg font-extrabold text-white sm:text-xl">
+  <h2 className="mb-3 flex items-center gap-2 font-display text-lg font-extrabold text-[#1F2A55] sm:text-xl">
     {icon}
     {children}
   </h2>
@@ -82,7 +77,7 @@ const BackButton: React.FC<{ onClick: () => void; children: React.ReactNode }> =
   <button
     type="button"
     onClick={onClick}
-    className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-white/10 px-4 text-sm font-bold text-white ring-1 ring-white/25 backdrop-blur transition hover:bg-white/20"
+    className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-white px-4 text-sm font-bold text-[#1F2A55] ring-1 ring-[#EFE9DA] transition hover:bg-[#F4F7FF]"
   >
     <ArrowLeft className="h-4 w-4" /> {children}
   </button>
@@ -233,7 +228,7 @@ export const PracticePortal: React.FC = () => {
         {errorBox}
 
         <section ref={groupsRef} className="scroll-mt-20">
-          <SectionTitle icon={<Sparkles className="h-5 w-5 text-[#FFD34E]" />}>Chọn nhóm kiến thức</SectionTitle>
+          <SectionTitle icon={<Sparkles className="h-6 w-6 text-[#F5B700]" />}>Chọn nhóm kiến thức</SectionTitle>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {PRACTICE_CATALOG.map((g) => {
               const theme = GROUP_THEMES[g.id];
@@ -246,19 +241,22 @@ export const PracticePortal: React.FC = () => {
                   type="button"
                   onClick={() => setGroupId(g.id)}
                   aria-pressed={active}
-                  className={`group relative flex min-h-[148px] flex-col items-start gap-2.5 rounded-3xl bg-white p-4 text-left transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(84,200,255,0.9)] ${
-                    active ? 'ring-4 ring-[#FFD34E] shadow-[0_18px_40px_-18px_rgba(255,211,78,0.9)]' : 'shadow-md'
+                  className={`group relative flex min-h-[164px] flex-col items-start gap-2.5 rounded-[1.75rem] p-4 text-left transition duration-200 hover:-translate-y-1 ${theme.soft} ${
+                    active ? `ring-4 ${theme.ring} shadow-[0_16px_34px_-18px_rgba(31,42,85,0.55)]` : 'ring-1 ring-white shadow-[0_8px_22px_-18px_rgba(31,42,85,0.45)]'
                   }`}
                 >
-                  <span className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-md transition group-hover:scale-110 group-hover:rotate-6 ${theme.gradient}`}>
-                    <Icon className="h-6 w-6" />
+                  <span className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-md transition group-hover:scale-110 group-hover:rotate-6 ${theme.gradient}`}>
+                    <Icon className="h-7 w-7" />
                   </span>
-                  <span className="font-display text-[15px] leading-snug font-extrabold text-[#071A63]">{g.name}</span>
-                  <span className={`mt-auto text-xs font-extrabold ${theme.text}`}>
-                    {g.topics.length} chuyên đề{open > 0 ? ` · ${open} đã mở` : ''}
+                  <span className="font-display text-base leading-snug font-extrabold text-[#1F2A55]">{g.name}</span>
+                  <span className="mt-auto w-full">
+                    <span className={`block text-xs font-extrabold ${theme.text}`}>
+                      {loading ? `${g.topics.length} chuyên đề` : `${open}/${g.topics.length} chuyên đề đã mở`}
+                    </span>
+                    <ProgressBar value={g.topics.length ? open / g.topics.length : 0} className="mt-1.5 h-2" track="bg-white" fill={`bg-gradient-to-r ${theme.gradient}`} />
                   </span>
                   {active && (
-                    <span className="absolute -top-2 -right-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#FFD34E] text-[#071A63] shadow">
+                    <span className="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#FFD34E] text-[#1F2A55] shadow">
                       <Check className="h-4 w-4" />
                     </span>
                   )}
@@ -271,19 +269,19 @@ export const PracticePortal: React.FC = () => {
         <section>
           <SectionTitle
             icon={
-              <span className={`flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br text-white ${groupTheme.gradient}`}>
-                <groupTheme.icon className="h-4 w-4" />
+              <span className={`flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br text-white ${groupTheme.gradient}`}>
+                <groupTheme.icon className="h-5 w-5" />
               </span>
             }
           >
             {group.name}
           </SectionTitle>
           {loading ? (
-            <div className="flex items-center gap-2 rounded-3xl bg-white p-6 text-sm font-bold text-slate-500">
-              <Loader2 className="h-4 w-4 animate-spin" /> Mimo đang tải chuyên đề…
+            <div className="flex items-center gap-2 rounded-3xl bg-white p-6 text-base font-bold text-[#56608A]">
+              <Loader2 className="h-5 w-5 animate-spin" /> Mimo đang tải chuyên đề…
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {group.topics.map((t) => {
                 const total = topicTotal(t.id);
                 const levels = catalog?.topics[t.id]?.levels;
@@ -297,21 +295,28 @@ export const PracticePortal: React.FC = () => {
                   setStage({ name: 'topic', topicId: t.id });
                   toTop();
                 };
-
-                const status = !open ? 'closed' : p ? 'learning' : 'open';
-                const badge = TOPIC_STATUS[status];
+                // Đã mở → Đang học (has attempts) → Hoàn thành (every level passed)
+                const status = !open ? 'locked' : !p ? 'open' : availableLevels.length > 0 && passed === availableLevels.length ? 'done' : 'learning';
 
                 if (!open) {
                   return (
-                    <div key={t.id} className="flex min-h-[132px] flex-col rounded-3xl bg-[#F1F3FA] p-4" aria-disabled="true">
+                    <div
+                      key={t.id}
+                      aria-disabled="true"
+                      className="flex min-h-[196px] flex-col gap-2 rounded-[1.75rem] border-2 border-dashed border-[#D5DBEE] bg-[#F7F8FD] p-5"
+                    >
                       <div className="flex items-center justify-between gap-2">
-                        <span className="rounded-full bg-white px-2.5 py-0.5 font-mono text-xs font-bold text-slate-500">{t.id}</span>
-                        <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-extrabold ${badge.className}`}>
-                          <Lock className="h-3.5 w-3.5" /> {badge.label}
-                        </span>
+                        <span className="rounded-full bg-white px-2.5 py-0.5 font-mono text-xs font-bold text-[#5A6B9A]">{t.id}</span>
+                        <StatusBadge status="locked" />
                       </div>
-                      <div className="mt-2 font-display text-base leading-snug font-extrabold text-[#5A6B9A]">{t.name}</div>
-                      <div className="mt-auto pt-3 text-xs font-bold text-[#8A9BC4]">Cô đang chuẩn bị bài cho chuyên đề này</div>
+                      <div className="font-display text-lg leading-snug font-extrabold text-[#3D4A78]">{t.name}</div>
+                      {t.description && <p className="text-sm text-[#6B789F]">{t.description}</p>}
+                      <div className="mt-auto flex items-center gap-2 pt-2 text-sm font-bold text-[#6B789F]">
+                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#8A9BC4]">
+                          <Lock className="h-4 w-4" />
+                        </span>
+                        Cô đang chuẩn bị bài – sắp mở nhé!
+                      </div>
                     </div>
                   );
                 }
@@ -321,31 +326,44 @@ export const PracticePortal: React.FC = () => {
                     key={t.id}
                     type="button"
                     onClick={select}
-                    className={`group flex min-h-[132px] flex-col rounded-3xl p-4 text-left ring-2 transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(255,211,78,0.9)] focus-visible:ring-4 focus-visible:ring-[#FFD34E] focus-visible:outline-none ${groupTheme.soft} ${
-                      status === 'learning' ? 'ring-[#B49CFF]' : 'ring-white/70'
+                    className={`group flex min-h-[196px] flex-col gap-2 rounded-[1.75rem] bg-white p-5 text-left ring-1 shadow-[0_10px_28px_-18px_rgba(31,42,85,0.45)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_36px_-18px_rgba(31,42,85,0.55)] focus-visible:ring-4 focus-visible:ring-[#2F8CFF]/40 focus-visible:outline-none ${
+                      status === 'learning' ? 'ring-[#D7C8FF]' : status === 'done' ? 'ring-[#F5D77A]' : 'ring-[#EFE9DA]'
                     }`}
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className={`rounded-full bg-gradient-to-r px-2.5 py-0.5 font-mono text-xs font-bold text-white ${groupTheme.gradient}`}>{t.id}</span>
-                      <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-extrabold ${badge.className}`}>
-                        {status === 'learning' ? <PlayCircle className="h-3.5 w-3.5" /> : <Star className="h-3.5 w-3.5" />} {badge.label}
-                      </span>
+                      <StatusBadge status={status} />
                     </div>
-                    <div className="mt-2 font-display text-lg leading-snug font-extrabold text-[#071A63]">{t.name}</div>
-                    <div className="mt-auto pt-3">
-                      {status === 'learning' ? (
-                        <>
-                          <div className="flex items-center justify-between text-xs font-extrabold">
-                            <span className="text-[#6A4BE6]">Vượt qua {passed}/{availableLevels.length} mức</span>
-                            <span className="text-slate-500">{total} câu</span>
-                          </div>
-                          <ProgressBar value={availableLevels.length ? passed / availableLevels.length : 0} className="mt-1.5" track="bg-white" />
-                        </>
-                      ) : (
-                        <div className="text-xs font-extrabold text-slate-500">{total} câu hỏi · {availableLevels.length} mức độ</div>
+                    <div className="font-display text-lg leading-snug font-extrabold text-[#1F2A55]">{t.name}</div>
+                    {t.description && <p className="text-sm text-[#56608A]">{t.description}</p>}
+                    <div className="mt-auto space-y-2 pt-2">
+                      <div className="flex items-center justify-between gap-2 text-xs font-extrabold text-[#56608A]">
+                        <span>
+                          {total} câu · {availableLevels.length} mức độ
+                        </span>
+                        <span className="flex gap-1" aria-label={`Vượt qua ${passed}/${availableLevels.length} mức`}>
+                          {availableLevels.map((l) => (
+                            <span
+                              key={l}
+                              title={PRACTICE_LEVEL_LABELS[l]}
+                              className={`h-3 w-3 rounded-full ${p?.passed.has(l) ? `bg-gradient-to-br ${LEVEL_THEMES[l].gradient}` : 'bg-[#E8ECF6]'}`}
+                            />
+                          ))}
+                        </span>
+                      </div>
+                      {status !== 'open' && (
+                        <ProgressBar value={availableLevels.length ? passed / availableLevels.length : 0} className="h-2" track="bg-[#F1F3FA]" />
                       )}
-                      <span className={`mt-2.5 inline-flex items-center gap-1 text-sm font-extrabold transition group-hover:gap-2 ${groupTheme.text}`}>
-                        {status === 'learning' ? 'Học tiếp' : 'Bắt đầu luyện'} <ChevronRight className="h-4 w-4" />
+                      <span
+                        className={`flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-2xl font-display text-base font-extrabold transition group-hover:gap-2.5 ${
+                          status === 'open'
+                            ? 'bg-[#FFD34E] text-[#1F2A55] shadow-[0_4px_0_0_#C99A00]'
+                            : status === 'done'
+                              ? 'bg-[#FFF3C4] text-[#7A5600]'
+                              : 'bg-[#8B6CF0] text-white shadow-[0_4px_0_0_#5B3FB8]'
+                        }`}
+                      >
+                        {status === 'open' ? 'Luyện ngay' : status === 'done' ? 'Luyện lại' : 'Học tiếp'} <ChevronRight className="h-5 w-5" />
                       </span>
                     </div>
                   </button>
@@ -595,7 +613,7 @@ export const PracticePortal: React.FC = () => {
         </div>
 
         {errorBox}
-        <div className="rounded-3xl bg-white/10 p-4 ring-1 ring-white/20 backdrop-blur">
+        <div className="rounded-3xl bg-[#E3F1FF] p-4 ring-1 ring-[#B9DBFF]">
           {confirmSubmit && answered < total ? (
             <div className="space-y-3 rounded-2xl bg-white p-4">
               <MimoSays size={56}>Con còn {total - answered} câu chưa làm. Con vẫn muốn nộp bài chứ?</MimoSays>
@@ -767,8 +785,7 @@ export const PracticePortal: React.FC = () => {
   }
 
   return (
-    <div className="relative -mx-4 overflow-hidden bg-[#071A63] bg-[radial-gradient(ellipse_at_top_left,rgba(84,200,255,0.28),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(255,118,181,0.22),transparent_55%)] px-4 py-6 sm:mx-0 sm:rounded-[2rem] sm:px-6 sm:py-8">
-      <SpaceDecor />
+    <div className="relative -mx-4 overflow-hidden bg-gradient-to-br from-[#E8F4FF] via-[#F6F0FF] to-[#FFF6E0] px-4 py-6 sm:mx-0 sm:rounded-[2rem] sm:px-6 sm:py-8">
       <div className="relative">{content}</div>
     </div>
   );

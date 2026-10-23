@@ -168,3 +168,27 @@ export const MindMapArt = () => (
     <circle cx="80" cy="57" r="5" fill="#FFD34E" />
   </Frame>
 );
+
+export const TrainArt = () => (
+  <Frame bg="#EAFBF4">
+    <rect x="12" y="86" width="136" height="4" rx="2" fill="#B7790A" />
+    {/* locomotive facing left */}
+    <rect x="14" y="56" width="30" height="24" rx="7" fill="#1267E9" />
+    <rect x="38" y="44" width="22" height="36" rx="5" fill="#1267E9" />
+    <rect x="35" y="40" width="28" height="6" rx="3" fill="#FFD34E" />
+    <rect x="43" y="50" width="12" height="10" rx="3" fill="#EAF6FF" />
+    <rect x="20" y="44" width="7" height="13" rx="2" fill="#071A63" />
+    <circle cx="25" cy="36" r="5" fill="#DCE7F3" />
+    {[[66, '#FF76B5', '1'], [94, '#F5A800', '2'], [122, '#7B5CFF', '3']].map(([x, c, n]) => (
+      <g key={n as string}>
+        <rect x={x as number} y="58" width="24" height="22" rx="5" fill={c as string} />
+        <text x={(x as number) + 12} y="74" textAnchor="middle" fontSize="12" fontWeight="800" fill="#FFFFFF">
+          {n}
+        </text>
+      </g>
+    ))}
+    {[22, 50, 72, 84, 100, 112, 128, 140].map((x) => (
+      <circle key={x} cx={x} cy="83" r="4" fill="#071A63" />
+    ))}
+  </Frame>
+);
