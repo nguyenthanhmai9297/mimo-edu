@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n18-draft-v1",
+  "title": "Bài toán rút về đơn vị",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N18-001",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 quyển vở giá 10000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 997"
+        },
+        {
+          "id": "B",
+          "text": "4 990"
+        },
+        {
+          "id": "C",
+          "text": "5 000"
+        },
+        {
+          "id": "D",
+          "text": "4 999"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "10000 : 2 = 5000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-002",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 quyển vở giá 18000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 000"
+        },
+        {
+          "id": "B",
+          "text": "7 000"
+        },
+        {
+          "id": "C",
+          "text": "5 990"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "18000 : 3 = 6000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-003",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 quyển vở giá 28000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 995"
+        },
+        {
+          "id": "B",
+          "text": "6 997"
+        },
+        {
+          "id": "C",
+          "text": "7 000"
+        },
+        {
+          "id": "D",
+          "text": "7 003"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "28000 : 4 = 7000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-004",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "5 quyển vở giá 40000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 000"
+        },
+        {
+          "id": "B",
+          "text": "8 010"
+        },
+        {
+          "id": "C",
+          "text": "8 000"
+        },
+        {
+          "id": "D",
+          "text": "8 800"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "40000 : 5 = 8000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-005",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "6 quyển vở giá 54000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 000"
+        },
+        {
+          "id": "B",
+          "text": "8 900"
+        },
+        {
+          "id": "C",
+          "text": "8 999"
+        },
+        {
+          "id": "D",
+          "text": "9 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "54000 : 6 = 9000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-006",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "7 quyển vở giá 70000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 990"
+        },
+        {
+          "id": "B",
+          "text": "9 000"
+        },
+        {
+          "id": "C",
+          "text": "10 100"
+        },
+        {
+          "id": "D",
+          "text": "10 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "70000 : 7 = 10000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-007",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "8 quyển vở giá 88000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 100"
+        },
+        {
+          "id": "B",
+          "text": "10 000"
+        },
+        {
+          "id": "C",
+          "text": "10 995"
+        },
+        {
+          "id": "D",
+          "text": "11 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "88000 : 8 = 11000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-008",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 quyển vở giá 24000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 000"
+        },
+        {
+          "id": "B",
+          "text": "11 990"
+        },
+        {
+          "id": "C",
+          "text": "10 800"
+        },
+        {
+          "id": "D",
+          "text": "12 100"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "24000 : 2 = 12000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-009",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 quyển vở giá 39000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 999"
+        },
+        {
+          "id": "B",
+          "text": "13 000"
+        },
+        {
+          "id": "C",
+          "text": "12 900"
+        },
+        {
+          "id": "D",
+          "text": "13 002"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "39000 : 3 = 13000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-010",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 quyển vở giá 56000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14 005"
+        },
+        {
+          "id": "B",
+          "text": "14 000"
+        },
+        {
+          "id": "C",
+          "text": "15 000"
+        },
+        {
+          "id": "D",
+          "text": "14 001"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "56000 : 4 = 14000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-011",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "2 quyển vở giá 16000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 000"
+        },
+        {
+          "id": "B",
+          "text": "9 000"
+        },
+        {
+          "id": "C",
+          "text": "7 990"
+        },
+        {
+          "id": "D",
+          "text": "8 002"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "16000 : 2 = 8000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-012",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "3 quyển vở giá 27000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 005"
+        },
+        {
+          "id": "B",
+          "text": "8 000"
+        },
+        {
+          "id": "C",
+          "text": "8 900"
+        },
+        {
+          "id": "D",
+          "text": "9 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "27000 : 3 = 9000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-013",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "4 quyển vở giá 40000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 000"
+        },
+        {
+          "id": "B",
+          "text": "10 000"
+        },
+        {
+          "id": "C",
+          "text": "10 005"
+        },
+        {
+          "id": "D",
+          "text": "10 001"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "40000 : 4 = 10000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-014",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5 quyển vở giá 55000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 000"
+        },
+        {
+          "id": "B",
+          "text": "9 900"
+        },
+        {
+          "id": "C",
+          "text": "11 001"
+        },
+        {
+          "id": "D",
+          "text": "12 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "55000 : 5 = 11000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-015",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "6 quyển vở giá 72000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 995"
+        },
+        {
+          "id": "B",
+          "text": "11 998"
+        },
+        {
+          "id": "C",
+          "text": "11 990"
+        },
+        {
+          "id": "D",
+          "text": "12 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "72000 : 6 = 12000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-016",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "7 quyển vở giá 91000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13 000"
+        },
+        {
+          "id": "B",
+          "text": "13 100"
+        },
+        {
+          "id": "C",
+          "text": "12 997"
+        },
+        {
+          "id": "D",
+          "text": "13 001"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "91000 : 7 = 13000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-017",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "8 quyển vở giá 112000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14 005"
+        },
+        {
+          "id": "B",
+          "text": "14 002"
+        },
+        {
+          "id": "C",
+          "text": "14 000"
+        },
+        {
+          "id": "D",
+          "text": "15 400"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "112000 : 8 = 14000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-018",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "2 quyển vở giá 30000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14 990"
+        },
+        {
+          "id": "B",
+          "text": "14 997"
+        },
+        {
+          "id": "C",
+          "text": "15 000"
+        },
+        {
+          "id": "D",
+          "text": "15 005"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "30000 : 2 = 15000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-019",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "3 quyển vở giá 48000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 000"
+        },
+        {
+          "id": "B",
+          "text": "17 000"
+        },
+        {
+          "id": "C",
+          "text": "15 995"
+        },
+        {
+          "id": "D",
+          "text": "16 002"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "48000 : 3 = 16000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-020",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "4 quyển vở giá 68000 đồng. Một quyển vở giá bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17 003"
+        },
+        {
+          "id": "B",
+          "text": "16 995"
+        },
+        {
+          "id": "C",
+          "text": "18 700"
+        },
+        {
+          "id": "D",
+          "text": "17 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "68000 : 4 = 17000 đồng.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-021",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "2 hộp có 22 chiếc bút, các hộp có số bút như nhau. 3 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 033"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "43"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hộp 22 : 2 = 11 bút; 3 hộp có 33 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-022",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "3 hộp có 36 chiếc bút, các hộp có số bút như nhau. 4 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45"
+        },
+        {
+          "id": "B",
+          "text": "49"
+        },
+        {
+          "id": "C",
+          "text": "1 048"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp 36 : 3 = 12 bút; 4 hộp có 48 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-023",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "4 hộp có 52 chiếc bút, các hộp có số bút như nhau. 5 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62"
+        },
+        {
+          "id": "B",
+          "text": "65"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "1 065"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hộp 52 : 4 = 13 bút; 5 hộp có 65 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-024",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "5 hộp có 70 chiếc bút, các hộp có số bút như nhau. 6 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "79"
+        },
+        {
+          "id": "C",
+          "text": "87"
+        },
+        {
+          "id": "D",
+          "text": "82"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp 70 : 5 = 14 bút; 6 hộp có 84 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-025",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "6 hộp có 90 chiếc bút, các hộp có số bút như nhau. 7 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "105"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "107"
+        },
+        {
+          "id": "D",
+          "text": "108"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp 90 : 6 = 15 bút; 7 hộp có 105 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-026",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "7 hộp có 112 chiếc bút, các hộp có số bút như nhau. 3 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "148"
+        },
+        {
+          "id": "B",
+          "text": "52"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "1 048"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi hộp 112 : 7 = 16 bút; 3 hộp có 48 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-027",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "8 hộp có 136 chiếc bút, các hộp có số bút như nhau. 4 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "68"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "65"
+        },
+        {
+          "id": "D",
+          "text": "74"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp 136 : 8 = 17 bút; 4 hộp có 68 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-028",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "2 hộp có 36 chiếc bút, các hộp có số bút như nhau. 5 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 090"
+        },
+        {
+          "id": "B",
+          "text": "190"
+        },
+        {
+          "id": "C",
+          "text": "88"
+        },
+        {
+          "id": "D",
+          "text": "90"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp 36 : 2 = 18 bút; 5 hộp có 90 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-029",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "3 hộp có 57 chiếc bút, các hộp có số bút như nhau. 6 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "114"
+        },
+        {
+          "id": "B",
+          "text": "117"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "116"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp 57 : 3 = 19 bút; 6 hộp có 114 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-030",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "4 hộp có 80 chiếc bút, các hộp có số bút như nhau. 7 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "139"
+        },
+        {
+          "id": "B",
+          "text": "140"
+        },
+        {
+          "id": "C",
+          "text": "240"
+        },
+        {
+          "id": "D",
+          "text": "142"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hộp 80 : 4 = 20 bút; 7 hộp có 140 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-031",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "2 hộp có 28 chiếc bút, các hộp có số bút như nhau. 3 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "47"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp 28 : 2 = 14 bút; 3 hộp có 42 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-032",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "3 hộp có 45 chiếc bút, các hộp có số bút như nhau. 4 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "160"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "65"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi hộp 45 : 3 = 15 bút; 4 hộp có 60 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-033",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "4 hộp có 64 chiếc bút, các hộp có số bút như nhau. 5 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80"
+        },
+        {
+          "id": "B",
+          "text": "85"
+        },
+        {
+          "id": "C",
+          "text": "78"
+        },
+        {
+          "id": "D",
+          "text": "81"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp 64 : 4 = 16 bút; 5 hộp có 80 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-034",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "5 hộp có 85 chiếc bút, các hộp có số bút như nhau. 6 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "112"
+        },
+        {
+          "id": "B",
+          "text": "102"
+        },
+        {
+          "id": "C",
+          "text": "97"
+        },
+        {
+          "id": "D",
+          "text": "104"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hộp 85 : 5 = 17 bút; 6 hộp có 102 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-035",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "6 hộp có 108 chiếc bút, các hộp có số bút như nhau. 7 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "116"
+        },
+        {
+          "id": "B",
+          "text": "126"
+        },
+        {
+          "id": "C",
+          "text": "128"
+        },
+        {
+          "id": "D",
+          "text": "124"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hộp 108 : 6 = 18 bút; 7 hộp có 126 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-036",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "7 hộp có 133 chiếc bút, các hộp có số bút như nhau. 3 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "62"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp 133 : 7 = 19 bút; 3 hộp có 57 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-037",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "8 hộp có 160 chiếc bút, các hộp có số bút như nhau. 4 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80"
+        },
+        {
+          "id": "B",
+          "text": "77"
+        },
+        {
+          "id": "C",
+          "text": "79"
+        },
+        {
+          "id": "D",
+          "text": "90"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp 160 : 8 = 20 bút; 4 hộp có 80 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-038",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "2 hộp có 42 chiếc bút, các hộp có số bút như nhau. 5 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "108"
+        },
+        {
+          "id": "C",
+          "text": "95"
+        },
+        {
+          "id": "D",
+          "text": "105"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp 42 : 2 = 21 bút; 5 hộp có 105 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-039",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "3 hộp có 66 chiếc bút, các hộp có số bút như nhau. 6 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "132"
+        },
+        {
+          "id": "B",
+          "text": "137"
+        },
+        {
+          "id": "C",
+          "text": "142"
+        },
+        {
+          "id": "D",
+          "text": "119"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp 66 : 3 = 22 bút; 6 hộp có 132 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-040",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "4 hộp có 92 chiếc bút, các hộp có số bút như nhau. 7 hộp như vậy có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "177"
+        },
+        {
+          "id": "B",
+          "text": "1 161"
+        },
+        {
+          "id": "C",
+          "text": "171"
+        },
+        {
+          "id": "D",
+          "text": "161"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp 92 : 4 = 23 bút; 7 hộp có 161 bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

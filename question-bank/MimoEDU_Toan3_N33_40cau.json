@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n33-revised-20261023",
+  "title": "Tư duy quy luật và suy luận logic",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "group": "Toán tư duy và nâng cao",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N33-001",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 3, 5, 7, 9, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số tăng 2, nên số tiếp theo là 9+2=11.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-002",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 8, 16, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số gấp đôi số trước: 16 × 2 = 32.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-003",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 4 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bàn có 2 ghế, 4 bàn có 4 × 2 = 8 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-004",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 10, 12, 15, 19, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 19+5=24.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-005",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 4, 7, 10, 13, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số tăng 3, nên số tiếp theo là 13+3=16.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-006",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 3, 6, 12, 24, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "48"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi số gấp đôi số trước: 24 × 2 = 48.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-007",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 5 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bàn có 2 ghế, 5 bàn có 5 × 2 = 10 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-008",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 11, 13, 16, 20, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 20+5=25.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-009",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 5, 9, 13, 17, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi số tăng 4, nên số tiếp theo là 17+4=21.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-010",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 4, 8, 16, 32, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "66"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số gấp đôi số trước: 32 × 2 = 64.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-011",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 6 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi bàn có 2 ghế, 6 bàn có 6 × 2 = 12 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-012",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 12, 14, 17, 21, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 21+5=26.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-013",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 6, 11, 16, 21, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi số tăng 5, nên số tiếp theo là 21+5=26.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-014",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 5, 10, 20, 40, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "82"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "80"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số gấp đôi số trước: 40 × 2 = 80.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-015",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 7 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi bàn có 2 ghế, 7 bàn có 7 × 2 = 14 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-016",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 13, 15, 18, 22, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 22+5=27.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-017",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 7, 13, 19, 25, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số tăng 6, nên số tiếp theo là 25+6=31.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-018",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 6, 12, 24, 48, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96"
+        },
+        {
+          "id": "B",
+          "text": "52"
+        },
+        {
+          "id": "C",
+          "text": "50"
+        },
+        {
+          "id": "D",
+          "text": "98"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi số gấp đôi số trước: 48 × 2 = 96.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-019",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 8 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi bàn có 2 ghế, 8 bàn có 8 × 2 = 16 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-020",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 14, 16, 19, 23, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 23+5=28.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-021",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 8, 10, 12, 14, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi số tăng 2, nên số tiếp theo là 14+2=16.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-022",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 7, 14, 28, 56, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "112"
+        },
+        {
+          "id": "D",
+          "text": "114"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số gấp đôi số trước: 56 × 2 = 112.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-023",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 9 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bàn có 2 ghế, 9 bàn có 9 × 2 = 18 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-024",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 15, 17, 20, 24, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 24+5=29.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-025",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 9, 12, 15, 18, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi số tăng 3, nên số tiếp theo là 18+3=21.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-026",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 8, 16, 32, 64, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "128"
+        },
+        {
+          "id": "C",
+          "text": "68"
+        },
+        {
+          "id": "D",
+          "text": "130"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi số gấp đôi số trước: 64 × 2 = 128.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-027",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 10 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bàn có 2 ghế, 10 bàn có 10 × 2 = 20 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-028",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 16, 18, 21, 25, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 25+5=30.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-029",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 10, 14, 18, 22, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số tăng 4, nên số tiếp theo là 22+4=26.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-030",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 9, 18, 36, 72, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "74"
+        },
+        {
+          "id": "B",
+          "text": "146"
+        },
+        {
+          "id": "C",
+          "text": "76"
+        },
+        {
+          "id": "D",
+          "text": "144"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số gấp đôi số trước: 72 × 2 = 144.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-031",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 11 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi bàn có 2 ghế, 11 bàn có 11 × 2 = 22 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-032",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 17, 19, 22, 26, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 26+5=31.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-033",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 11, 16, 21, 26, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số tăng 5, nên số tiếp theo là 26+5=31.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-034",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 10, 20, 40, 80, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "82"
+        },
+        {
+          "id": "C",
+          "text": "162"
+        },
+        {
+          "id": "D",
+          "text": "160"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số gấp đôi số trước: 80 × 2 = 160.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-035",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 12 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi bàn có 2 ghế, 12 bàn có 12 × 2 = 24 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-036",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 18, 20, 23, 27, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 27+5=32.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-037",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_cong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 12, 18, 24, 30, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi số tăng 6, nên số tiếp theo là 30+6=36.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-038",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_nhan",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 11, 22, 44, 88, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "176"
+        },
+        {
+          "id": "B",
+          "text": "92"
+        },
+        {
+          "id": "C",
+          "text": "90"
+        },
+        {
+          "id": "D",
+          "text": "178"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi số gấp đôi số trước: 88 × 2 = 176.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-039",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.suy_luan_dem",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 13 chiếc bàn xếp thành một hàng, mỗi bàn có 2 ghế đối diện nhau. Tổng cộng có bao nhiêu ghế?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bàn có 2 ghế, 13 bàn có 13 × 2 = 26 ghế.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-040",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.quy_luat_hieu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 19, 21, 24, 28, ... Số tiếp theo là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hiệu liên tiếp là 2, 3, 4; tiếp theo cộng 5 nên 28+5=33.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

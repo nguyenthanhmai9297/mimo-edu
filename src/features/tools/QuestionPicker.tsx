@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { BookOpen, Check, Loader2, PenLine, Plus, Sparkles, Trash2 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
-import { findPracticeTopic } from '../../data/practiceCatalog';
+import { findPracticeTopic, PRACTICE_CATALOG } from '../../data/practiceCatalog';
 import { listPracticeQuestions, listPracticeSets } from '../../services/practiceAdminService';
 import { PRACTICE_LEVEL_LABELS } from '../../types/domain';
 import { PRACTICE_LEVELS, PracticeLevel, PracticeQuestion, PracticeSet } from '../../types/practice';
@@ -38,9 +38,14 @@ const newDraft = (): ManualQuestionDraft => ({
  * Kho học liệu Toán 3, Luyện Toán cùng Mimo and questions typed by hand
  * (kept on this device only).
  */
-export const QuestionPicker: React.FC<{ onChange: (questions: ToolQuestion[]) => void }> = ({ onChange }) => {
+export const QuestionPicker: React.FC<{
+  onChange: (questions: ToolQuestion[]) => void;
+  /** Lists Luyện Toán cùng Mimo by chuyên đề N01–N35 (grouped, with per-topic counts) instead of by imported set. */
+  groupByTopic?: boolean;
+  initialSource?: Source;
+}> = ({ onChange, groupByTopic = false, initialSource = 'homework' }) => {
   const { homeworkList } = useAppContext();
-  const [source, setSource] = useState<Source>('homework');
+  const [source, setSource] = useState<Source>(initialSource);
   const [homeworkIds, setHomeworkIds] = useState<string[]>([]);
   const [practiceSets, setPracticeSets] = useState<PracticeSet[]>([]);
   const [practiceQuestions, setPracticeQuestions] = useState<PracticeQuestion[]>([]);
@@ -164,6 +169,15 @@ export const QuestionPicker: React.FC<{ onChange: (questions: ToolQuestion[]) =>
             <p className="p-3 text-sm text-[#5E6C84]">Chưa có bộ câu hỏi Luyện Toán cùng Mimo nào.</p>
           ) : (
             <div className="space-y-3">
+              {groupByTopic ? (
+                <PracticeTopicList
+                  sets={practiceSets}
+                  questions={practiceQuestions}
+                  levels={levels}
+                  selectedSetIds={practiceSetIds}
+                  onChange={setPracticeSetIds}
+                />
+              ) : (
               <ul className="space-y-1.5">
                 {practiceSets.map((s) => {
                   const on = practiceSetIds.includes(s.id);
@@ -188,6 +202,7 @@ export const QuestionPicker: React.FC<{ onChange: (questions: ToolQuestion[]) =>
                   );
                 })}
               </ul>
+              )}
               <div className="flex flex-wrap items-center gap-2 px-1">
                 <span className="text-xs font-bold text-[#5E6C84]">Mức độ:</span>
                 {PRACTICE_LEVELS.map((l) => (
@@ -267,6 +282,91 @@ export const QuestionPicker: React.FC<{ onChange: (questions: ToolQuestion[]) =>
           {' '}(Kho học liệu {selected.hw} · Luyện Toán {selected.practice} · Tự nhập {selected.manual})
         </span>
       </p>
+    </div>
+  );
+};
+
+/**
+ * Luyện Toán cùng Mimo by chuyên đề: the 5 groups of the catalogue, each topic
+ * with the number of approved questions matching the chosen levels.
+ */
+const PracticeTopicList: React.FC<{
+  sets: PracticeSet[];
+  questions: PracticeQuestion[];
+  levels: PracticeLevel[];
+  selectedSetIds: string[];
+  onChange: (ids: string[]) => void;
+}> = ({ sets, questions, levels, selectedSetIds, onChange }) => {
+  const topics = useMemo(
+    () =>
+      PRACTICE_CATALOG.map((g) => ({
+        group: g,
+        topics: g.topics.map((t) => {
+          const setIds = sets.filter((s) => s.topicId === t.id).map((s) => s.id);
+          const count = questions.filter((q) => setIds.includes(q.datasetId) && levels.includes(q.level)).length;
+          return { topic: t, setIds, count, on: setIds.length > 0 && setIds.every((id) => selectedSetIds.includes(id)) };
+        }),
+      })),
+    [sets, questions, levels, selectedSetIds]
+  );
+  const usable = topics.flatMap((g) => g.topics).filter((t) => t.setIds.length > 0);
+  const setTopics = (list: typeof usable, on: boolean) => {
+    const ids = list.flatMap((t) => t.setIds);
+    onChange(on ? [...new Set([...selectedSetIds, ...ids])] : selectedSetIds.filter((id) => !ids.includes(id)));
+  };
+  const allOn = usable.length > 0 && usable.every((t) => t.on);
+
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 px-1">
+        <span className="text-xs font-bold text-[#5E6C84]">Chọn một hoặc nhiều chuyên đề N01–N35</span>
+        <button type="button" onClick={() => setTopics(usable, !allOn)} className="min-h-[32px] rounded-full bg-white px-3 text-xs font-bold text-[#1267E9] ring-1 ring-[#BFD6EE]">
+          {allOn ? 'Bỏ chọn tất cả' : 'Chọn tất cả chuyên đề'}
+        </button>
+      </div>
+      {topics.map(({ group, topics: list }) => {
+        const groupUsable = list.filter((t) => t.setIds.length > 0);
+        const groupOn = groupUsable.length > 0 && groupUsable.every((t) => t.on);
+        return (
+          <div key={group.id}>
+            <div className="mb-1.5 flex items-center justify-between gap-2 px-1">
+              <span className="text-sm font-extrabold text-[#172B4D]">
+                {group.id}. {group.name}
+              </span>
+              {groupUsable.length > 0 && (
+                <button type="button" onClick={() => setTopics(groupUsable, !groupOn)} className="text-xs font-bold text-[#1267E9] hover:underline">
+                  {groupOn ? 'Bỏ chọn nhóm' : 'Chọn cả nhóm'}
+                </button>
+              )}
+            </div>
+            <ul className="grid gap-1.5 sm:grid-cols-2">
+              {list.map(({ topic, setIds, count, on }) => (
+                <li key={topic.id}>
+                  <button
+                    type="button"
+                    disabled={setIds.length === 0}
+                    onClick={() => setTopics([{ topic, setIds, count, on }], !on)}
+                    aria-pressed={on}
+                    className={`flex w-full items-center gap-2 rounded-xl px-2.5 py-2 text-left transition disabled:opacity-50 ${
+                      on ? 'bg-[#EAF5FF] ring-1 ring-[#1267E9]' : 'bg-white ring-1 ring-[#DCE7F3] hover:ring-[#54C8FF]'
+                    }`}
+                  >
+                    <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md ${on ? 'bg-[#1267E9] text-white' : 'ring-1 ring-[#BFD6EE]'}`}>
+                      {on && <Check className="h-3.5 w-3.5" />}
+                    </span>
+                    <span className="min-w-0 flex-1 truncate text-sm font-semibold text-[#172B4D]">
+                      <span className="text-[#1267E9]">{topic.id}</span> {topic.name}
+                    </span>
+                    <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold ${count > 0 ? 'bg-[#E7F7F0] text-[#119468]' : 'bg-slate-100 text-slate-500'}`}>
+                      {setIds.length === 0 ? 'Chưa có câu' : `${count} câu`}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 };

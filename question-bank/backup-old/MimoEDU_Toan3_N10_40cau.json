@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n10-draft-v1",
+  "title": "Phép chia có dư",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N10-001",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 11 : 2 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "1 001"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "11 = 2 × 5 + 1, số dư là 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-002",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 20 : 3 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "20 = 3 × 6 + 2, số dư là 2.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-003",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 31 : 4 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "31 = 4 × 7 + 3, số dư là 3.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-004",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 44 : 5 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "44 = 5 × 8 + 4, số dư là 4.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-005",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 59 : 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "1 005"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "59 = 6 × 9 + 5, số dư là 5.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-006",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 76 : 7 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "76 = 7 × 10 + 6, số dư là 6.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-007",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 95 : 8 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "107"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "95 = 8 × 11 + 7, số dư là 7.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-008",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 25 : 2 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "101"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "25 = 2 × 12 + 1, số dư là 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-009",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 40 : 3 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "101"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "40 = 3 × 13 + 1, số dư là 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-010",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số dư của phép chia 57 : 4 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "101"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "57 = 4 × 14 + 1, số dư là 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-011",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 17 : 2, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "17 = 2 × 8 + 1, thương là 8.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-012",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 29 : 3, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "29 = 3 × 9 + 2, thương là 9.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-013",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 43 : 4, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "43 = 4 × 10 + 3, thương là 10.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-014",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 59 : 5, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "59 = 5 × 11 + 4, thương là 11.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-015",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 77 : 6, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "77 = 6 × 12 + 5, thương là 12.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-016",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 97 : 7, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "97 = 7 × 13 + 6, thương là 13.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-017",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 119 : 8, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "119 = 8 × 14 + 7, thương là 14.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-018",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 31 : 2, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "31 = 2 × 15 + 1, thương là 15.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-019",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 49 : 3, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "49 = 3 × 16 + 1, thương là 16.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-020",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong phép chia 69 : 4, thương bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "69 = 4 × 17 + 1, thương là 17.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-021",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 23 quả cam, xếp mỗi đĩa 2 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "23 : 2 được 11, dư 1; xếp được 11 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-022",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 38 quả cam, xếp mỗi đĩa 3 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 012"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "38 : 3 được 12, dư 2; xếp được 12 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-023",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 55 quả cam, xếp mỗi đĩa 4 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "55 : 4 được 13, dư 3; xếp được 13 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-024",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 74 quả cam, xếp mỗi đĩa 5 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "74 : 5 được 14, dư 4; xếp được 14 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-025",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 95 quả cam, xếp mỗi đĩa 6 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "95 : 6 được 15, dư 5; xếp được 15 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-026",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 118 quả cam, xếp mỗi đĩa 7 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "118 : 7 được 16, dư 6; xếp được 16 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-027",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 143 quả cam, xếp mỗi đĩa 8 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "143 : 8 được 17, dư 7; xếp được 17 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-028",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 37 quả cam, xếp mỗi đĩa 2 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "118"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "37 : 2 được 18, dư 1; xếp được 18 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-029",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 58 quả cam, xếp mỗi đĩa 3 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "58 : 3 được 19, dư 1; xếp được 19 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-030",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 81 quả cam, xếp mỗi đĩa 4 quả. Xếp được nhiều nhất bao nhiêu đĩa đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "81 : 4 được 20, dư 1; xếp được 20 đĩa đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-031",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 29 học sinh, mỗi bàn ngồi tối đa 2 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xếp được 14 bàn đủ 2 em và còn 1 em, cần 15 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-032",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 47 học sinh, mỗi bàn ngồi tối đa 3 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "116"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xếp được 15 bàn đủ 3 em và còn 2 em, cần 16 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-033",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 67 học sinh, mỗi bàn ngồi tối đa 4 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Xếp được 16 bàn đủ 4 em và còn 3 em, cần 17 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-034",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 89 học sinh, mỗi bàn ngồi tối đa 5 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xếp được 17 bàn đủ 5 em và còn 4 em, cần 18 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-035",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 113 học sinh, mỗi bàn ngồi tối đa 6 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "1 019"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xếp được 18 bàn đủ 6 em và còn 5 em, cần 19 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-036",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 139 học sinh, mỗi bàn ngồi tối đa 7 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Xếp được 19 bàn đủ 7 em và còn 6 em, cần 20 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-037",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 167 học sinh, mỗi bàn ngồi tối đa 8 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Xếp được 20 bàn đủ 8 em và còn 7 em, cần 21 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-038",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 43 học sinh, mỗi bàn ngồi tối đa 2 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Xếp được 21 bàn đủ 2 em và còn 1 em, cần 22 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-039",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 67 học sinh, mỗi bàn ngồi tối đa 3 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "123"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Xếp được 22 bàn đủ 3 em và còn 1 em, cần 23 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-040",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 93 học sinh, mỗi bàn ngồi tối đa 4 học sinh. Cần ít nhất bao nhiêu bàn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xếp được 23 bàn đủ 4 em và còn 1 em, cần 24 bàn.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

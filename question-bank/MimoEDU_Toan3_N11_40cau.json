@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n11-revised-20261023",
+  "title": "Chữ số La Mã",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "group": "Số và phép tính",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N11-001",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.doc_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số La Mã I biểu thị số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "I là cách viết La Mã của số 1.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-002",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.viet_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 8 được viết bằng chữ số La Mã như thế nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XII"
+        },
+        {
+          "id": "B",
+          "text": "IX"
+        },
+        {
+          "id": "C",
+          "text": "X"
+        },
+        {
+          "id": "D",
+          "text": "VIII"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tra theo quy tắc viết trong phạm vi 20: 8 = VIII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-003",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.quy_tac",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trên thẻ học tập số 3, cách viết đúng số 4 bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IV"
+        },
+        {
+          "id": "B",
+          "text": "VIIII"
+        },
+        {
+          "id": "C",
+          "text": "IVI"
+        },
+        {
+          "id": "D",
+          "text": "IIII"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số 4 được viết là IV; kí hiệu I đứng trước V hoặc X thể hiện phép trừ tương ứng.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-004",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.so_sanh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn: V hay VI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XX"
+        },
+        {
+          "id": "B",
+          "text": "I"
+        },
+        {
+          "id": "C",
+          "text": "V"
+        },
+        {
+          "id": "D",
+          "text": "VI"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "V = 5, còn VI = 6; vì 6 > 5 nên chọn VI.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-005",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.day_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong dãy V, VI, ... , VIII, số còn thiếu là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IX"
+        },
+        {
+          "id": "B",
+          "text": "VI"
+        },
+        {
+          "id": "C",
+          "text": "VII"
+        },
+        {
+          "id": "D",
+          "text": "VIII"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dãy tăng lần lượt 1 đơn vị: 5, 6, 7, 8. Số cần tìm là VII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-006",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.dong_ho",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mặt đồng hồ dùng chữ số La Mã. Sau số X một giờ là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XII"
+        },
+        {
+          "id": "B",
+          "text": "IX"
+        },
+        {
+          "id": "C",
+          "text": "XI"
+        },
+        {
+          "id": "D",
+          "text": "I"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số sau 10 là 11, viết là XI.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-007",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.lien_truoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số liền trước của IX viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "X"
+        },
+        {
+          "id": "B",
+          "text": "IX"
+        },
+        {
+          "id": "C",
+          "text": "XI"
+        },
+        {
+          "id": "D",
+          "text": "VIII"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "IX là 9. Số liền trước là 8, viết VIII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-008",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.van_dung",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính IX cộng I, kết quả viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XI"
+        },
+        {
+          "id": "B",
+          "text": "X"
+        },
+        {
+          "id": "C",
+          "text": "VIII"
+        },
+        {
+          "id": "D",
+          "text": "IX"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "IX = 9, I = 1; 9 + 1 = 10, viết X.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-009",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.doc_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số La Mã XVII biểu thị số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "XVII là cách viết La Mã của số 17.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-010",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.viet_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 4 được viết bằng chữ số La Mã như thế nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IV"
+        },
+        {
+          "id": "B",
+          "text": "VI"
+        },
+        {
+          "id": "C",
+          "text": "VIII"
+        },
+        {
+          "id": "D",
+          "text": "V"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tra theo quy tắc viết trong phạm vi 20: 4 = IV.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-011",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.quy_tac",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trên thẻ học tập số 11, cách viết đúng số 4 bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IV"
+        },
+        {
+          "id": "B",
+          "text": "IVI"
+        },
+        {
+          "id": "C",
+          "text": "VIIII"
+        },
+        {
+          "id": "D",
+          "text": "IIII"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số 4 được viết là IV; kí hiệu I đứng trước V hoặc X thể hiện phép trừ tương ứng.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-012",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.so_sanh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn: IV hay V?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XX"
+        },
+        {
+          "id": "B",
+          "text": "I"
+        },
+        {
+          "id": "C",
+          "text": "V"
+        },
+        {
+          "id": "D",
+          "text": "IV"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "IV = 4, còn V = 5; vì 5 > 4 nên chọn V.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-013",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.day_so",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong dãy I, II, ... , IV, số còn thiếu là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "V"
+        },
+        {
+          "id": "B",
+          "text": "IV"
+        },
+        {
+          "id": "C",
+          "text": "II"
+        },
+        {
+          "id": "D",
+          "text": "III"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy tăng lần lượt 1 đơn vị: 1, 2, 3, 4. Số cần tìm là III.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-014",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.dong_ho",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mặt đồng hồ dùng chữ số La Mã. Sau số IX một giờ là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "VIII"
+        },
+        {
+          "id": "B",
+          "text": "XI"
+        },
+        {
+          "id": "C",
+          "text": "I"
+        },
+        {
+          "id": "D",
+          "text": "X"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số sau 9 là 10, viết là X.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-015",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.lien_truoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số liền trước của III viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "II"
+        },
+        {
+          "id": "B",
+          "text": "IV"
+        },
+        {
+          "id": "C",
+          "text": "III"
+        },
+        {
+          "id": "D",
+          "text": "V"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "III là 3. Số liền trước là 2, viết II.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-016",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.van_dung",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính XVII cộng I, kết quả viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XVII"
+        },
+        {
+          "id": "B",
+          "text": "XVI"
+        },
+        {
+          "id": "C",
+          "text": "XVIII"
+        },
+        {
+          "id": "D",
+          "text": "XIX"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "XVII = 17, I = 1; 17 + 1 = 18, viết XVIII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-017",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.doc_so",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số La Mã XIII biểu thị số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "XIII là cách viết La Mã của số 13.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-018",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.viet_so",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 20 được viết bằng chữ số La Mã như thế nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "I"
+        },
+        {
+          "id": "B",
+          "text": "II"
+        },
+        {
+          "id": "C",
+          "text": "IV"
+        },
+        {
+          "id": "D",
+          "text": "XX"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tra theo quy tắc viết trong phạm vi 20: 20 = XX.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-019",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.quy_tac",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trên thẻ học tập số 19, cách viết đúng số 4 bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IIII"
+        },
+        {
+          "id": "B",
+          "text": "VIIII"
+        },
+        {
+          "id": "C",
+          "text": "IVI"
+        },
+        {
+          "id": "D",
+          "text": "IV"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số 4 được viết là IV; kí hiệu I đứng trước V hoặc X thể hiện phép trừ tương ứng.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-020",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.so_sanh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn: III hay IV?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IV"
+        },
+        {
+          "id": "B",
+          "text": "III"
+        },
+        {
+          "id": "C",
+          "text": "I"
+        },
+        {
+          "id": "D",
+          "text": "XX"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "III = 3, còn IV = 4; vì 4 > 3 nên chọn IV.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-021",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.day_so",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trong bài ôn luyện, trong dãy IX, X, ... , XII, số còn thiếu là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "X"
+        },
+        {
+          "id": "B",
+          "text": "XIII"
+        },
+        {
+          "id": "C",
+          "text": "XI"
+        },
+        {
+          "id": "D",
+          "text": "XII"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dãy tăng lần lượt 1 đơn vị: 9, 10, 11, 12. Số cần tìm là XI.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-022",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.dong_ho",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mặt đồng hồ dùng chữ số La Mã. Sau số VIII một giờ là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IX"
+        },
+        {
+          "id": "B",
+          "text": "I"
+        },
+        {
+          "id": "C",
+          "text": "VII"
+        },
+        {
+          "id": "D",
+          "text": "X"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số sau 8 là 9, viết là IX.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-023",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.lien_truoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số liền trước của XI viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XII"
+        },
+        {
+          "id": "B",
+          "text": "X"
+        },
+        {
+          "id": "C",
+          "text": "XI"
+        },
+        {
+          "id": "D",
+          "text": "XIII"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "XI là 11. Số liền trước là 10, viết X.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-024",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trong bài ôn luyện, tính IX cộng I, kết quả viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "VIII"
+        },
+        {
+          "id": "B",
+          "text": "XI"
+        },
+        {
+          "id": "C",
+          "text": "X"
+        },
+        {
+          "id": "D",
+          "text": "IX"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "IX = 9, I = 1; 9 + 1 = 10, viết X.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-025",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.doc_so",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số La Mã IX biểu thị số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "IX là cách viết La Mã của số 9.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-026",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.viet_so",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số 16 được viết bằng chữ số La Mã như thế nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XVIII"
+        },
+        {
+          "id": "B",
+          "text": "XVI"
+        },
+        {
+          "id": "C",
+          "text": "XX"
+        },
+        {
+          "id": "D",
+          "text": "XVII"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tra theo quy tắc viết trong phạm vi 20: 16 = XVI.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-027",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.quy_tac",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trên thẻ học tập số 27, cách viết đúng số 9 bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IIX"
+        },
+        {
+          "id": "B",
+          "text": "XI"
+        },
+        {
+          "id": "C",
+          "text": "IX"
+        },
+        {
+          "id": "D",
+          "text": "VIIII"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số 9 được viết là IX; kí hiệu I đứng trước V hoặc X thể hiện phép trừ tương ứng.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-028",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.so_sanh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn: II hay III?",
+      "options": [
+        {
+          "id": "A",
+          "text": "II"
+        },
+        {
+          "id": "B",
+          "text": "XX"
+        },
+        {
+          "id": "C",
+          "text": "III"
+        },
+        {
+          "id": "D",
+          "text": "I"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "II = 2, còn III = 3; vì 3 > 2 nên chọn III.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-029",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.day_so",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trong bài ôn luyện, trong dãy V, VI, ... , VIII, số còn thiếu là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "VII"
+        },
+        {
+          "id": "B",
+          "text": "VI"
+        },
+        {
+          "id": "C",
+          "text": "VIII"
+        },
+        {
+          "id": "D",
+          "text": "IX"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dãy tăng lần lượt 1 đơn vị: 5, 6, 7, 8. Số cần tìm là VII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-030",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.dong_ho",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mặt đồng hồ dùng chữ số La Mã. Sau số VII một giờ là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "VIII"
+        },
+        {
+          "id": "B",
+          "text": "I"
+        },
+        {
+          "id": "C",
+          "text": "IX"
+        },
+        {
+          "id": "D",
+          "text": "VI"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số sau 7 là 8, viết là VIII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-031",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.lien_truoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số liền trước của V viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "V"
+        },
+        {
+          "id": "B",
+          "text": "IV"
+        },
+        {
+          "id": "C",
+          "text": "VII"
+        },
+        {
+          "id": "D",
+          "text": "VI"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "V là 5. Số liền trước là 4, viết IV.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-032",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.van_dung",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong bài ôn luyện, tính XVII cộng I, kết quả viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XVII"
+        },
+        {
+          "id": "B",
+          "text": "XIX"
+        },
+        {
+          "id": "C",
+          "text": "XVIII"
+        },
+        {
+          "id": "D",
+          "text": "XVI"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "XVII = 17, I = 1; 17 + 1 = 18, viết XVIII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-033",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.doc_so",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số La Mã V biểu thị số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "V là cách viết La Mã của số 5.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-034",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.viet_so",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số 12 được viết bằng chữ số La Mã như thế nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XVI"
+        },
+        {
+          "id": "B",
+          "text": "XIV"
+        },
+        {
+          "id": "C",
+          "text": "XIII"
+        },
+        {
+          "id": "D",
+          "text": "XII"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tra theo quy tắc viết trong phạm vi 20: 12 = XII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-035",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.quy_tac",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trên thẻ học tập số 35, cách viết đúng số 9 bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IIX"
+        },
+        {
+          "id": "B",
+          "text": "IX"
+        },
+        {
+          "id": "C",
+          "text": "VIIII"
+        },
+        {
+          "id": "D",
+          "text": "XI"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số 9 được viết là IX; kí hiệu I đứng trước V hoặc X thể hiện phép trừ tương ứng.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-036",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.so_sanh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn: X hay XI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "I"
+        },
+        {
+          "id": "B",
+          "text": "XX"
+        },
+        {
+          "id": "C",
+          "text": "XI"
+        },
+        {
+          "id": "D",
+          "text": "X"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "X = 10, còn XI = 11; vì 11 > 10 nên chọn XI.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-037",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.day_so",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong bài ôn luyện, trong dãy I, II, ... , IV, số còn thiếu là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "V"
+        },
+        {
+          "id": "B",
+          "text": "IV"
+        },
+        {
+          "id": "C",
+          "text": "III"
+        },
+        {
+          "id": "D",
+          "text": "II"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dãy tăng lần lượt 1 đơn vị: 1, 2, 3, 4. Số cần tìm là III.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-038",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.dong_ho",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mặt đồng hồ dùng chữ số La Mã. Sau số VI một giờ là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "I"
+        },
+        {
+          "id": "B",
+          "text": "VIII"
+        },
+        {
+          "id": "C",
+          "text": "VII"
+        },
+        {
+          "id": "D",
+          "text": "V"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số sau 6 là 7, viết là VII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-039",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.lien_truoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số liền trước của XIII viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "XIV"
+        },
+        {
+          "id": "B",
+          "text": "XV"
+        },
+        {
+          "id": "C",
+          "text": "XIII"
+        },
+        {
+          "id": "D",
+          "text": "XII"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "XIII là 13. Số liền trước là 12, viết XII.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N11-040",
+      "grade": 3,
+      "topicId": "N11",
+      "topicName": "Chữ số La Mã",
+      "skillId": "N11.van_dung",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Điền kết quả vào phiếu: Trong bài ôn luyện, tính IX cộng I, kết quả viết bằng chữ số La Mã là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "VIII"
+        },
+        {
+          "id": "B",
+          "text": "IX"
+        },
+        {
+          "id": "C",
+          "text": "X"
+        },
+        {
+          "id": "D",
+          "text": "XI"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "IX = 9, I = 1; 9 + 1 = 10, viết X.",
+      "tags": [
+        "toan-3",
+        "n11"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

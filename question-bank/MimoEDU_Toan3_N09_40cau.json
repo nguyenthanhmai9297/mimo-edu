@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n09-revised-20261023",
+  "title": "Tìm thành phần chưa biết",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "group": "Số và phép tính",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N09-001",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 23 = 123",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "101"
+        },
+        {
+          "id": "C",
+          "text": "110"
+        },
+        {
+          "id": "D",
+          "text": "99"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số hạng chưa biết bằng tổng trừ số hạng đã biết: 123−23=100.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-002",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x − 24 = 111",
+      "options": [
+        {
+          "id": "A",
+          "text": "136"
+        },
+        {
+          "id": "B",
+          "text": "145"
+        },
+        {
+          "id": "C",
+          "text": "134"
+        },
+        {
+          "id": "D",
+          "text": "135"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số bị trừ bằng hiệu cộng số trừ: 111+24=135.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-003",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 147 − x = 122",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số trừ bằng số bị trừ trừ hiệu: 147−122=25.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-004",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 5 = 665",
+      "options": [
+        {
+          "id": "A",
+          "text": "143"
+        },
+        {
+          "id": "B",
+          "text": "133"
+        },
+        {
+          "id": "C",
+          "text": "132"
+        },
+        {
+          "id": "D",
+          "text": "134"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thừa số chưa biết bằng tích chia thừa số đã biết: 665:5=133.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-005",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 864 : x = 144",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số chia bằng số bị chia chia thương: 864:144=6.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-006",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 28 = 183",
+      "options": [
+        {
+          "id": "A",
+          "text": "155"
+        },
+        {
+          "id": "B",
+          "text": "156"
+        },
+        {
+          "id": "C",
+          "text": "165"
+        },
+        {
+          "id": "D",
+          "text": "154"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số hạng chưa biết bằng tổng trừ số hạng đã biết: 183−28=155.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-007",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x − 29 = 166",
+      "options": [
+        {
+          "id": "A",
+          "text": "196"
+        },
+        {
+          "id": "B",
+          "text": "195"
+        },
+        {
+          "id": "C",
+          "text": "205"
+        },
+        {
+          "id": "D",
+          "text": "194"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số bị trừ bằng hiệu cộng số trừ: 166+29=195.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-008",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 207 − x = 177",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số trừ bằng số bị trừ trừ hiệu: 207−177=30.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-009",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 4 = 752",
+      "options": [
+        {
+          "id": "A",
+          "text": "198"
+        },
+        {
+          "id": "B",
+          "text": "188"
+        },
+        {
+          "id": "C",
+          "text": "187"
+        },
+        {
+          "id": "D",
+          "text": "189"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thừa số chưa biết bằng tích chia thừa số đã biết: 752:4=188.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-010",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 995 : x = 199",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số chia bằng số bị chia chia thương: 995:199=5.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-011",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 33 = 243",
+      "options": [
+        {
+          "id": "A",
+          "text": "211"
+        },
+        {
+          "id": "B",
+          "text": "220"
+        },
+        {
+          "id": "C",
+          "text": "210"
+        },
+        {
+          "id": "D",
+          "text": "209"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số hạng chưa biết bằng tổng trừ số hạng đã biết: 243−33=210.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-012",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x − 34 = 221",
+      "options": [
+        {
+          "id": "A",
+          "text": "255"
+        },
+        {
+          "id": "B",
+          "text": "265"
+        },
+        {
+          "id": "C",
+          "text": "254"
+        },
+        {
+          "id": "D",
+          "text": "256"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số bị trừ bằng hiệu cộng số trừ: 221+34=255.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-013",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 267 − x = 232",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "45"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số trừ bằng số bị trừ trừ hiệu: 267−232=35.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-014",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 3 = 729",
+      "options": [
+        {
+          "id": "A",
+          "text": "253"
+        },
+        {
+          "id": "B",
+          "text": "244"
+        },
+        {
+          "id": "C",
+          "text": "242"
+        },
+        {
+          "id": "D",
+          "text": "243"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thừa số chưa biết bằng tích chia thừa số đã biết: 729:3=243.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-015",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 1016 : x = 254",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số chia bằng số bị chia chia thương: 1016:254=4.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-016",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 38 = 303",
+      "options": [
+        {
+          "id": "A",
+          "text": "275"
+        },
+        {
+          "id": "B",
+          "text": "264"
+        },
+        {
+          "id": "C",
+          "text": "266"
+        },
+        {
+          "id": "D",
+          "text": "265"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số hạng chưa biết bằng tổng trừ số hạng đã biết: 303−38=265.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-017",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x − 39 = 276",
+      "options": [
+        {
+          "id": "A",
+          "text": "314"
+        },
+        {
+          "id": "B",
+          "text": "325"
+        },
+        {
+          "id": "C",
+          "text": "316"
+        },
+        {
+          "id": "D",
+          "text": "315"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số bị trừ bằng hiệu cộng số trừ: 276+39=315.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-018",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 327 − x = 287",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "41"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số trừ bằng số bị trừ trừ hiệu: 327−287=40.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-019",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 2 = 596",
+      "options": [
+        {
+          "id": "A",
+          "text": "299"
+        },
+        {
+          "id": "B",
+          "text": "308"
+        },
+        {
+          "id": "C",
+          "text": "298"
+        },
+        {
+          "id": "D",
+          "text": "297"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Thừa số chưa biết bằng tích chia thừa số đã biết: 596:2=298.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-020",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 927 : x = 309",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số chia bằng số bị chia chia thương: 927:309=3.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-021",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 43 = 363",
+      "options": [
+        {
+          "id": "A",
+          "text": "330"
+        },
+        {
+          "id": "B",
+          "text": "319"
+        },
+        {
+          "id": "C",
+          "text": "320"
+        },
+        {
+          "id": "D",
+          "text": "321"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số hạng chưa biết bằng tổng trừ số hạng đã biết: 363−43=320.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-022",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x − 44 = 331",
+      "options": [
+        {
+          "id": "A",
+          "text": "374"
+        },
+        {
+          "id": "B",
+          "text": "376"
+        },
+        {
+          "id": "C",
+          "text": "375"
+        },
+        {
+          "id": "D",
+          "text": "385"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số bị trừ bằng hiệu cộng số trừ: 331+44=375.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-023",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 387 − x = 342",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "55"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số trừ bằng số bị trừ trừ hiệu: 387−342=45.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-024",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 7 = 2471",
+      "options": [
+        {
+          "id": "A",
+          "text": "354"
+        },
+        {
+          "id": "B",
+          "text": "353"
+        },
+        {
+          "id": "C",
+          "text": "363"
+        },
+        {
+          "id": "D",
+          "text": "352"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thừa số chưa biết bằng tích chia thừa số đã biết: 2471:7=353.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-025",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 728 : x = 364",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số chia bằng số bị chia chia thương: 728:364=2.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-026",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 48 = 423",
+      "options": [
+        {
+          "id": "A",
+          "text": "385"
+        },
+        {
+          "id": "B",
+          "text": "374"
+        },
+        {
+          "id": "C",
+          "text": "375"
+        },
+        {
+          "id": "D",
+          "text": "376"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số hạng chưa biết bằng tổng trừ số hạng đã biết: 423−48=375.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-027",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x − 49 = 386",
+      "options": [
+        {
+          "id": "A",
+          "text": "436"
+        },
+        {
+          "id": "B",
+          "text": "435"
+        },
+        {
+          "id": "C",
+          "text": "445"
+        },
+        {
+          "id": "D",
+          "text": "434"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số bị trừ bằng hiệu cộng số trừ: 386+49=435.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-028",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 447 − x = 397",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "51"
+        },
+        {
+          "id": "C",
+          "text": "50"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số trừ bằng số bị trừ trừ hiệu: 447−397=50.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-029",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 6 = 2448",
+      "options": [
+        {
+          "id": "A",
+          "text": "407"
+        },
+        {
+          "id": "B",
+          "text": "408"
+        },
+        {
+          "id": "C",
+          "text": "409"
+        },
+        {
+          "id": "D",
+          "text": "418"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thừa số chưa biết bằng tích chia thừa số đã biết: 2448:6=408.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-030",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 2933 : x = 419",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số chia bằng số bị chia chia thương: 2933:419=7.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-031",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 53 = 483",
+      "options": [
+        {
+          "id": "A",
+          "text": "429"
+        },
+        {
+          "id": "B",
+          "text": "430"
+        },
+        {
+          "id": "C",
+          "text": "431"
+        },
+        {
+          "id": "D",
+          "text": "440"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số hạng chưa biết bằng tổng trừ số hạng đã biết: 483−53=430.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-032",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x − 54 = 441",
+      "options": [
+        {
+          "id": "A",
+          "text": "494"
+        },
+        {
+          "id": "B",
+          "text": "505"
+        },
+        {
+          "id": "C",
+          "text": "496"
+        },
+        {
+          "id": "D",
+          "text": "495"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số bị trừ bằng hiệu cộng số trừ: 441+54=495.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-033",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 507 − x = 452",
+      "options": [
+        {
+          "id": "A",
+          "text": "55"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "65"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số trừ bằng số bị trừ trừ hiệu: 507−452=55.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-034",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 5 = 2315",
+      "options": [
+        {
+          "id": "A",
+          "text": "463"
+        },
+        {
+          "id": "B",
+          "text": "464"
+        },
+        {
+          "id": "C",
+          "text": "462"
+        },
+        {
+          "id": "D",
+          "text": "473"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Thừa số chưa biết bằng tích chia thừa số đã biết: 2315:5=463.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-035",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 2844 : x = 474",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số chia bằng số bị chia chia thương: 2844:474=6.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-036",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 58 = 543",
+      "options": [
+        {
+          "id": "A",
+          "text": "484"
+        },
+        {
+          "id": "B",
+          "text": "486"
+        },
+        {
+          "id": "C",
+          "text": "495"
+        },
+        {
+          "id": "D",
+          "text": "485"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số hạng chưa biết bằng tổng trừ số hạng đã biết: 543−58=485.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-037",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x − 59 = 496",
+      "options": [
+        {
+          "id": "A",
+          "text": "554"
+        },
+        {
+          "id": "B",
+          "text": "555"
+        },
+        {
+          "id": "C",
+          "text": "556"
+        },
+        {
+          "id": "D",
+          "text": "565"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số bị trừ bằng hiệu cộng số trừ: 496+59=555.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-038",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 567 − x = 507",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "59"
+        },
+        {
+          "id": "C",
+          "text": "61"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số trừ bằng số bị trừ trừ hiệu: 567−507=60.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-039",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 4 = 2072",
+      "options": [
+        {
+          "id": "A",
+          "text": "528"
+        },
+        {
+          "id": "B",
+          "text": "517"
+        },
+        {
+          "id": "C",
+          "text": "519"
+        },
+        {
+          "id": "D",
+          "text": "518"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thừa số chưa biết bằng tích chia thừa số đã biết: 2072:4=518.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-040",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.thanh_phan_chua_biet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 2645 : x = 529",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số chia bằng số bị chia chia thương: 2645:529=5.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

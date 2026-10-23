@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n25-revised-20261023",
+  "title": "Đơn vị đo khối lượng",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N25-001",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "200"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "2000"
+        },
+        {
+          "id": "D",
+          "text": "1002"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1000 g, vậy 2 kg = 2000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-002",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "200"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "2000 : 1000 = 2 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-003",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 2 kg, một túi bột nặng 3 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai khối lượng: 2 + 3 = 5 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-004",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 9 kg. Dùng hết 2 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sau khi dùng còn 9 - 2 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-005",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3000"
+        },
+        {
+          "id": "B",
+          "text": "300"
+        },
+        {
+          "id": "C",
+          "text": "1003"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1000 g, vậy 3 kg = 3000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-006",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "300"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "3000 : 1000 = 3 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-007",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 3 kg, một túi bột nặng 4 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng hai khối lượng: 3 + 4 = 7 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-008",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 10 kg. Dùng hết 3 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sau khi dùng còn 10 - 3 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-009",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4000"
+        },
+        {
+          "id": "B",
+          "text": "400"
+        },
+        {
+          "id": "C",
+          "text": "1004"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1000 g, vậy 4 kg = 4000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-010",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "400"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "4000 : 1000 = 4 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-011",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 4 kg, một túi bột nặng 5 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng hai khối lượng: 4 + 5 = 9 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-012",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 11 kg. Dùng hết 4 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Sau khi dùng còn 11 - 4 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-013",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "500"
+        },
+        {
+          "id": "B",
+          "text": "5000"
+        },
+        {
+          "id": "C",
+          "text": "1005"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 kg = 1000 g, vậy 5 kg = 5000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-014",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "500"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "5000 : 1000 = 5 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-015",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 5 kg, một túi bột nặng 6 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai khối lượng: 5 + 6 = 11 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-016",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 12 kg. Dùng hết 5 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sau khi dùng còn 12 - 5 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-017",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "6 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "600"
+        },
+        {
+          "id": "B",
+          "text": "1006"
+        },
+        {
+          "id": "C",
+          "text": "6000"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1000 g, vậy 6 kg = 6000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-018",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "6000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "600"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "6000 : 1000 = 6 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-019",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 6 kg, một túi bột nặng 7 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai khối lượng: 6 + 7 = 13 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-020",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 13 kg. Dùng hết 6 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Sau khi dùng còn 13 - 6 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-021",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "7 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7000"
+        },
+        {
+          "id": "B",
+          "text": "700"
+        },
+        {
+          "id": "C",
+          "text": "1007"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1000 g, vậy 7 kg = 7000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-022",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "7000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "700"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "7000 : 1000 = 7 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-023",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 7 kg, một túi bột nặng 8 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai khối lượng: 7 + 8 = 15 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-024",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 14 kg. Dùng hết 7 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sau khi dùng còn 14 - 7 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-025",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "8 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8000"
+        },
+        {
+          "id": "B",
+          "text": "800"
+        },
+        {
+          "id": "C",
+          "text": "80"
+        },
+        {
+          "id": "D",
+          "text": "1008"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1000 g, vậy 8 kg = 8000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-026",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "8000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80"
+        },
+        {
+          "id": "B",
+          "text": "800"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "8000 : 1000 = 8 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-027",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 8 kg, một túi bột nặng 9 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai khối lượng: 8 + 9 = 17 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-028",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 15 kg. Dùng hết 8 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sau khi dùng còn 15 - 8 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-029",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "9 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "900"
+        },
+        {
+          "id": "B",
+          "text": "9000"
+        },
+        {
+          "id": "C",
+          "text": "1009"
+        },
+        {
+          "id": "D",
+          "text": "90"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 kg = 1000 g, vậy 9 kg = 9000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-030",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "9000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "900"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "9000 : 1000 = 9 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-031",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 9 kg, một túi bột nặng 10 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai khối lượng: 9 + 10 = 19 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-032",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 16 kg. Dùng hết 9 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sau khi dùng còn 16 - 9 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-033",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "10 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10000"
+        },
+        {
+          "id": "B",
+          "text": "100"
+        },
+        {
+          "id": "C",
+          "text": "1010"
+        },
+        {
+          "id": "D",
+          "text": "1000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1000 g, vậy 10 kg = 10000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-034",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "10000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1000"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "100"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "10000 : 1000 = 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-035",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 10 kg, một túi bột nặng 11 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai khối lượng: 10 + 11 = 21 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-036",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 17 kg. Dùng hết 10 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sau khi dùng còn 17 - 10 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-037",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_kg_g",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "11 kg bằng bao nhiêu gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11000"
+        },
+        {
+          "id": "B",
+          "text": "110"
+        },
+        {
+          "id": "C",
+          "text": "1011"
+        },
+        {
+          "id": "D",
+          "text": "1100"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1000 g, vậy 11 kg = 11000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-038",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.doi_g_kg",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "11000 g bằng bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1100"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "110"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "11000 : 1000 = 11 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-039",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.cong_khoi_luong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 11 kg, một túi bột nặng 12 kg. Tổng khối lượng hai túi bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai khối lượng: 11 + 12 = 23 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-040",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bao gạo nặng 18 kg. Dùng hết 11 kg rồi mua thêm 3 kg. Bao hiện nặng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sau khi dùng còn 18 - 11 = 7 kg; mua thêm 3 kg thành 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

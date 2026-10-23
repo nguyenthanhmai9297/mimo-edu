@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   BookOpen,
-  Box,
   CalendarCheck,
   CheckSquare,
   Gamepad2,
@@ -28,7 +27,6 @@ const NAV_ITEMS = [
   { to: '/admin/classes', label: 'Lớp học', icon: School },
   { to: '/admin/students', label: 'Học sinh & Mã', icon: GraduationCap },
   { to: '/admin/homework', label: 'Kho học liệu Toán 3', icon: BookOpen },
-  { to: '/admin/geometry3d', label: 'Hình học 3D', icon: Box },
   { to: '/admin/practice', label: 'Luyện Toán cùng Mimo', icon: Sparkles },
   { to: '/admin/assignments', label: 'Giao bài tập', icon: CalendarCheck },
   { to: '/admin/grading', label: 'Chấm bài nộp', icon: CheckSquare },

@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n31-draft-v1",
+  "title": "Bảng số liệu",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N31-001",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 5 quyển, Thứ Ba 2 quyển, Thứ Tư 3 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "5 + 2 + 3 = 10 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-002",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 6 quyển, Thứ Ba 3 quyển, Thứ Tư 4 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "6 + 3 + 4 = 13 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-003",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 7 quyển, Thứ Ba 4 quyển, Thứ Tư 5 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "116"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "7 + 4 + 5 = 16 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-004",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 8 quyển, Thứ Ba 5 quyển, Thứ Tư 6 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "8 + 5 + 6 = 19 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-005",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 9 quyển, Thứ Ba 6 quyển, Thứ Tư 7 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "9 + 6 + 7 = 22 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-006",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 10 quyển, Thứ Ba 7 quyển, Thứ Tư 3 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "10 + 7 + 3 = 20 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-007",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 11 quyển, Thứ Ba 8 quyển, Thứ Tư 4 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "11 + 8 + 4 = 23 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-008",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 12 quyển, Thứ Ba 2 quyển, Thứ Tư 5 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "119"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "12 + 2 + 5 = 19 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-009",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 13 quyển, Thứ Ba 3 quyển, Thứ Tư 6 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "13 + 3 + 6 = 22 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-010",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 14 quyển, Thứ Ba 4 quyển, Thứ Tư 7 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "1 025"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "14 + 4 + 7 = 25 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-011",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 10 kg giấy, 3B thu 8 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "102"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "10 − 8 = 2 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-012",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 12 kg giấy, 3B thu 9 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "12 − 9 = 3 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-013",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 14 kg giấy, 3B thu 10 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "14 − 10 = 4 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-014",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 16 kg giấy, 3B thu 11 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "16 − 11 = 5 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-015",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 18 kg giấy, 3B thu 12 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "18 − 12 = 6 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-016",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 20 kg giấy, 3B thu 13 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "20 − 13 = 7 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-017",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 22 kg giấy, 3B thu 14 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "22 − 14 = 8 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-018",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 17 kg giấy, 3B thu 15 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "17 − 15 = 2 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-019",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 19 kg giấy, 3B thu 16 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "103"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "19 − 16 = 3 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-020",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 21 kg giấy, 3B thu 17 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "1 004"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "21 − 17 = 4 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-021",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 11 quyển, Thứ Ba 2 quyển, Thứ Tư 3 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "11 + 2 + 3 = 16 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-022",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 12 quyển, Thứ Ba 3 quyển, Thứ Tư 4 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 019"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "12 + 3 + 4 = 19 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-023",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 13 quyển, Thứ Ba 4 quyển, Thứ Tư 5 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "13 + 4 + 5 = 22 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-024",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 14 quyển, Thứ Ba 5 quyển, Thứ Tư 6 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "125"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "14 + 5 + 6 = 25 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-025",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 15 quyển, Thứ Ba 6 quyển, Thứ Tư 7 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "15 + 6 + 7 = 28 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-026",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 16 quyển, Thứ Ba 7 quyển, Thứ Tư 3 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "16 + 7 + 3 = 26 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-027",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 17 quyển, Thứ Ba 8 quyển, Thứ Tư 4 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "17 + 8 + 4 = 29 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-028",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 18 quyển, Thứ Ba 2 quyển, Thứ Tư 5 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "1 025"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "18 + 2 + 5 = 25 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-029",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 19 quyển, Thứ Ba 3 quyển, Thứ Tư 6 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "128"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "19 + 3 + 6 = 28 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-030",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Thứ Hai 20 quyển, Thứ Ba 4 quyển, Thứ Tư 7 quyển. Tổng số sách ba ngày là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "1 031"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "20 + 4 + 7 = 31 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-031",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 16 kg giấy, 3B thu 14 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "16 − 14 = 2 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-032",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 18 kg giấy, 3B thu 15 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "18 − 15 = 3 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-033",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 20 kg giấy, 3B thu 16 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "20 − 16 = 4 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-034",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 22 kg giấy, 3B thu 17 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "22 − 17 = 5 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-035",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 24 kg giấy, 3B thu 18 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 006"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "24 − 18 = 6 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-036",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 26 kg giấy, 3B thu 19 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "26 − 19 = 7 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-037",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 28 kg giấy, 3B thu 20 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "28 − 20 = 8 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-038",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 23 kg giấy, 3B thu 21 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "102"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "23 − 21 = 2 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-039",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 25 kg giấy, 3B thu 22 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "1 003"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "25 − 22 = 3 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-040",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Lớp 3A thu 27 kg giấy, 3B thu 23 kg giấy. Lớp 3A nhiều hơn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "27 − 23 = 4 kg.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

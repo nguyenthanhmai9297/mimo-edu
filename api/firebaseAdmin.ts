@@ -1,4 +1,5 @@
 import { App, cert, getApps, initializeApp } from 'firebase-admin/app';
+import { Auth, getAuth } from 'firebase-admin/auth';
 import { Firestore, getFirestore } from 'firebase-admin/firestore';
 
 /**
@@ -46,6 +47,12 @@ function initAdminApp(): App | null {
     { credential: cert(serviceAccount), projectId: serviceAccount.project_id },
     APP_NAME
   );
+}
+
+/** Admin Auth (verifies teachers' Firebase ID tokens), or null without credentials. */
+export function getAdminAuth(): Auth | null {
+  const app = initAdminApp();
+  return app ? getAuth(app) : null;
 }
 
 /** Returns the Admin Firestore, or null when the server has no credentials. */

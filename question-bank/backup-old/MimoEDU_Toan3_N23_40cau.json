@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n23-draft-v1",
+  "title": "Diện tích hình chữ nhật, hình vuông",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N23-001",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 7 cm, rộng 2 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 7 × 2 = 14 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-002",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 9 cm, rộng 3 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 9 × 3 = 27 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-003",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 11 cm, rộng 4 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "1 044"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "43"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 11 × 4 = 44 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-004",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 13 cm, rộng 5 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "55"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "1 065"
+        },
+        {
+          "id": "D",
+          "text": "65"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích: 13 × 5 = 65 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-005",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 15 cm, rộng 6 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "100"
+        },
+        {
+          "id": "C",
+          "text": "90"
+        },
+        {
+          "id": "D",
+          "text": "190"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 15 × 6 = 90 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-006",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 17 cm, rộng 7 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "124"
+        },
+        {
+          "id": "B",
+          "text": "119"
+        },
+        {
+          "id": "C",
+          "text": "117"
+        },
+        {
+          "id": "D",
+          "text": "109"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 17 × 7 = 119 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-007",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 19 cm, rộng 8 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "150"
+        },
+        {
+          "id": "B",
+          "text": "152"
+        },
+        {
+          "id": "C",
+          "text": "155"
+        },
+        {
+          "id": "D",
+          "text": "151"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 19 × 8 = 152 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-008",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 14 cm, rộng 2 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 14 × 2 = 28 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-009",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 16 cm, rộng 3 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "43"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 16 × 3 = 48 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-010",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 18 cm, rộng 4 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "172"
+        },
+        {
+          "id": "B",
+          "text": "72"
+        },
+        {
+          "id": "C",
+          "text": "1 072"
+        },
+        {
+          "id": "D",
+          "text": "73"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 18 × 4 = 72 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-011",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 8 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "67"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "64"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 8 × 8 = 64 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-012",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 9 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "86"
+        },
+        {
+          "id": "B",
+          "text": "81"
+        },
+        {
+          "id": "C",
+          "text": "79"
+        },
+        {
+          "id": "D",
+          "text": "76"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 9 × 9 = 81 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-013",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 10 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "97"
+        },
+        {
+          "id": "B",
+          "text": "110"
+        },
+        {
+          "id": "C",
+          "text": "98"
+        },
+        {
+          "id": "D",
+          "text": "100"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích: 10 × 10 = 100 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-014",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 11 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "124"
+        },
+        {
+          "id": "B",
+          "text": "121"
+        },
+        {
+          "id": "C",
+          "text": "119"
+        },
+        {
+          "id": "D",
+          "text": "120"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 11 × 11 = 121 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-015",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 12 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "139"
+        },
+        {
+          "id": "B",
+          "text": "144"
+        },
+        {
+          "id": "C",
+          "text": "147"
+        },
+        {
+          "id": "D",
+          "text": "141"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 12 × 12 = 144 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-016",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 13 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "171"
+        },
+        {
+          "id": "B",
+          "text": "172"
+        },
+        {
+          "id": "C",
+          "text": "69"
+        },
+        {
+          "id": "D",
+          "text": "169"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích: 13 × 13 = 169 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-017",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 14 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "197"
+        },
+        {
+          "id": "B",
+          "text": "199"
+        },
+        {
+          "id": "C",
+          "text": "201"
+        },
+        {
+          "id": "D",
+          "text": "196"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích: 14 × 14 = 196 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-018",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 15 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "226"
+        },
+        {
+          "id": "B",
+          "text": "125"
+        },
+        {
+          "id": "C",
+          "text": "222"
+        },
+        {
+          "id": "D",
+          "text": "225"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích: 15 × 15 = 225 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-019",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 16 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 256"
+        },
+        {
+          "id": "B",
+          "text": "256"
+        },
+        {
+          "id": "C",
+          "text": "255"
+        },
+        {
+          "id": "D",
+          "text": "231"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 16 × 16 = 256 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-020",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 17 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "289"
+        },
+        {
+          "id": "B",
+          "text": "288"
+        },
+        {
+          "id": "C",
+          "text": "294"
+        },
+        {
+          "id": "D",
+          "text": "1 289"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 17 × 17 = 289 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-021",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 13 cm, rộng 2 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích: 13 × 2 = 26 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-022",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 15 cm, rộng 3 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45"
+        },
+        {
+          "id": "B",
+          "text": "48"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 15 × 3 = 45 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-023",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 17 cm, rộng 4 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "68"
+        },
+        {
+          "id": "C",
+          "text": "74"
+        },
+        {
+          "id": "D",
+          "text": "71"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 17 × 4 = 68 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-024",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 19 cm, rộng 5 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "95"
+        },
+        {
+          "id": "B",
+          "text": "94"
+        },
+        {
+          "id": "C",
+          "text": "100"
+        },
+        {
+          "id": "D",
+          "text": "1 095"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 19 × 5 = 95 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-025",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 21 cm, rộng 6 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "126"
+        },
+        {
+          "id": "B",
+          "text": "131"
+        },
+        {
+          "id": "C",
+          "text": "116"
+        },
+        {
+          "id": "D",
+          "text": "1 126"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 21 × 6 = 126 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-026",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 23 cm, rộng 7 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "164"
+        },
+        {
+          "id": "B",
+          "text": "161"
+        },
+        {
+          "id": "C",
+          "text": "159"
+        },
+        {
+          "id": "D",
+          "text": "177"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 23 × 7 = 161 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-027",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 25 cm, rộng 8 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "200"
+        },
+        {
+          "id": "B",
+          "text": "205"
+        },
+        {
+          "id": "C",
+          "text": "220"
+        },
+        {
+          "id": "D",
+          "text": "210"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 25 × 8 = 200 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-028",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 20 cm, rộng 2 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "140"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 20 × 2 = 40 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-029",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 22 cm, rộng 3 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "61"
+        },
+        {
+          "id": "C",
+          "text": "68"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 22 × 3 = 66 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-030",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 24 cm, rộng 4 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96"
+        },
+        {
+          "id": "B",
+          "text": "105"
+        },
+        {
+          "id": "C",
+          "text": "91"
+        },
+        {
+          "id": "D",
+          "text": "93"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 24 × 4 = 96 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-031",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 14 cm có diện tích bao nhiêu cm²? (Lượt luyện 31)",
+      "options": [
+        {
+          "id": "A",
+          "text": "215"
+        },
+        {
+          "id": "B",
+          "text": "201"
+        },
+        {
+          "id": "C",
+          "text": "296"
+        },
+        {
+          "id": "D",
+          "text": "196"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích: 14 × 14 = 196 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-032",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 15 cm có diện tích bao nhiêu cm²? (Lượt luyện 32)",
+      "options": [
+        {
+          "id": "A",
+          "text": "215"
+        },
+        {
+          "id": "B",
+          "text": "224"
+        },
+        {
+          "id": "C",
+          "text": "203"
+        },
+        {
+          "id": "D",
+          "text": "225"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích: 15 × 15 = 225 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-033",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 16 cm có diện tích bao nhiêu cm²? (Lượt luyện 33)",
+      "options": [
+        {
+          "id": "A",
+          "text": "254"
+        },
+        {
+          "id": "B",
+          "text": "156"
+        },
+        {
+          "id": "C",
+          "text": "256"
+        },
+        {
+          "id": "D",
+          "text": "257"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 16 × 16 = 256 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-034",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 17 cm có diện tích bao nhiêu cm²? (Lượt luyện 34)",
+      "options": [
+        {
+          "id": "A",
+          "text": "189"
+        },
+        {
+          "id": "B",
+          "text": "389"
+        },
+        {
+          "id": "C",
+          "text": "289"
+        },
+        {
+          "id": "D",
+          "text": "317"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 17 × 17 = 289 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-035",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 18 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "321"
+        },
+        {
+          "id": "B",
+          "text": "324"
+        },
+        {
+          "id": "C",
+          "text": "323"
+        },
+        {
+          "id": "D",
+          "text": "327"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 18 × 18 = 324 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-036",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 19 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "360"
+        },
+        {
+          "id": "B",
+          "text": "361"
+        },
+        {
+          "id": "C",
+          "text": "364"
+        },
+        {
+          "id": "D",
+          "text": "1 361"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 19 × 19 = 361 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-037",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 20 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "400"
+        },
+        {
+          "id": "B",
+          "text": "397"
+        },
+        {
+          "id": "C",
+          "text": "360"
+        },
+        {
+          "id": "D",
+          "text": "403"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích: 20 × 20 = 400 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-038",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 21 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "443"
+        },
+        {
+          "id": "B",
+          "text": "441"
+        },
+        {
+          "id": "C",
+          "text": "442"
+        },
+        {
+          "id": "D",
+          "text": "438"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích: 21 × 21 = 441 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-039",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 22 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "481"
+        },
+        {
+          "id": "B",
+          "text": "485"
+        },
+        {
+          "id": "C",
+          "text": "484"
+        },
+        {
+          "id": "D",
+          "text": "489"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 22 × 22 = 484 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-040",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 23 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "527"
+        },
+        {
+          "id": "B",
+          "text": "519"
+        },
+        {
+          "id": "C",
+          "text": "529"
+        },
+        {
+          "id": "D",
+          "text": "429"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích: 23 × 23 = 529 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

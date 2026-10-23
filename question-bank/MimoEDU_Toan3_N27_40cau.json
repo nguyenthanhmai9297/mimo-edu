@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n27-revised-20261023",
+  "title": "Thời gian và xem đồng hồ",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N27-001",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 7 giờ 05 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 giờ 15 phút"
+        },
+        {
+          "id": "B",
+          "text": "8 giờ 05 phút"
+        },
+        {
+          "id": "C",
+          "text": "7 giờ 25 phút"
+        },
+        {
+          "id": "D",
+          "text": "7 giờ 05 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng 10 phút vào 7 giờ 05 phút được 7 giờ 15 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-002",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "120"
+        },
+        {
+          "id": "C",
+          "text": "200"
+        },
+        {
+          "id": "D",
+          "text": "130"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 giờ = 60 phút, vậy 2 giờ = 120 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-003",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 7 giờ 00 phút, kéo dài 30 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 giờ 30 phút"
+        },
+        {
+          "id": "B",
+          "text": "8 giờ 00 phút"
+        },
+        {
+          "id": "C",
+          "text": "7 giờ 20 phút"
+        },
+        {
+          "id": "D",
+          "text": "7 giờ 40 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bắt đầu từ 7 giờ, cộng 30 phút được 7 giờ 30 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-004",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 27 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cùng trong giờ thứ 8, lấy 27 - 15 = 12 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-005",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 8 giờ 10 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 giờ 30 phút"
+        },
+        {
+          "id": "B",
+          "text": "9 giờ 10 phút"
+        },
+        {
+          "id": "C",
+          "text": "8 giờ 10 phút"
+        },
+        {
+          "id": "D",
+          "text": "8 giờ 20 phút"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng 10 phút vào 8 giờ 10 phút được 8 giờ 20 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-006",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "300"
+        },
+        {
+          "id": "B",
+          "text": "180"
+        },
+        {
+          "id": "C",
+          "text": "190"
+        },
+        {
+          "id": "D",
+          "text": "90"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 giờ = 60 phút, vậy 3 giờ = 180 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-007",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 8 giờ 00 phút, kéo dài 31 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 giờ 41 phút"
+        },
+        {
+          "id": "B",
+          "text": "9 giờ 00 phút"
+        },
+        {
+          "id": "C",
+          "text": "8 giờ 21 phút"
+        },
+        {
+          "id": "D",
+          "text": "8 giờ 31 phút"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bắt đầu từ 8 giờ, cộng 31 phút được 8 giờ 31 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-008",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 28 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cùng trong giờ thứ 8, lấy 28 - 15 = 13 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-009",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 9 giờ 15 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 giờ 35 phút"
+        },
+        {
+          "id": "B",
+          "text": "10 giờ 15 phút"
+        },
+        {
+          "id": "C",
+          "text": "9 giờ 25 phút"
+        },
+        {
+          "id": "D",
+          "text": "9 giờ 15 phút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng 10 phút vào 9 giờ 15 phút được 9 giờ 25 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-010",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "250"
+        },
+        {
+          "id": "B",
+          "text": "400"
+        },
+        {
+          "id": "C",
+          "text": "120"
+        },
+        {
+          "id": "D",
+          "text": "240"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 giờ = 60 phút, vậy 4 giờ = 240 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-011",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 9 giờ 00 phút, kéo dài 32 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 giờ 00 phút"
+        },
+        {
+          "id": "B",
+          "text": "9 giờ 32 phút"
+        },
+        {
+          "id": "C",
+          "text": "9 giờ 22 phút"
+        },
+        {
+          "id": "D",
+          "text": "9 giờ 42 phút"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bắt đầu từ 9 giờ, cộng 32 phút được 9 giờ 32 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-012",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 29 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cùng trong giờ thứ 8, lấy 29 - 15 = 14 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-013",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 10 giờ 20 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 giờ 20 phút"
+        },
+        {
+          "id": "B",
+          "text": "10 giờ 30 phút"
+        },
+        {
+          "id": "C",
+          "text": "10 giờ 40 phút"
+        },
+        {
+          "id": "D",
+          "text": "11 giờ 20 phút"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng 10 phút vào 10 giờ 20 phút được 10 giờ 30 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-014",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "310"
+        },
+        {
+          "id": "B",
+          "text": "500"
+        },
+        {
+          "id": "C",
+          "text": "300"
+        },
+        {
+          "id": "D",
+          "text": "150"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 giờ = 60 phút, vậy 5 giờ = 300 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-015",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 10 giờ 00 phút, kéo dài 33 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 giờ 00 phút"
+        },
+        {
+          "id": "B",
+          "text": "10 giờ 23 phút"
+        },
+        {
+          "id": "C",
+          "text": "10 giờ 33 phút"
+        },
+        {
+          "id": "D",
+          "text": "10 giờ 43 phút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bắt đầu từ 10 giờ, cộng 33 phút được 10 giờ 33 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-016",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 30 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cùng trong giờ thứ 8, lấy 30 - 15 = 15 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-017",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 11 giờ 25 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 giờ 45 phút"
+        },
+        {
+          "id": "B",
+          "text": "11 giờ 25 phút"
+        },
+        {
+          "id": "C",
+          "text": "11 giờ 35 phút"
+        },
+        {
+          "id": "D",
+          "text": "12 giờ 25 phút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng 10 phút vào 11 giờ 25 phút được 11 giờ 35 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-018",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "6 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "180"
+        },
+        {
+          "id": "B",
+          "text": "370"
+        },
+        {
+          "id": "C",
+          "text": "360"
+        },
+        {
+          "id": "D",
+          "text": "600"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 giờ = 60 phút, vậy 6 giờ = 360 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-019",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 11 giờ 00 phút, kéo dài 34 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 giờ 00 phút"
+        },
+        {
+          "id": "B",
+          "text": "11 giờ 24 phút"
+        },
+        {
+          "id": "C",
+          "text": "11 giờ 34 phút"
+        },
+        {
+          "id": "D",
+          "text": "11 giờ 44 phút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bắt đầu từ 11 giờ, cộng 34 phút được 11 giờ 34 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-020",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 31 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cùng trong giờ thứ 8, lấy 31 - 15 = 16 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-021",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 12 giờ 30 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 giờ 40 phút"
+        },
+        {
+          "id": "B",
+          "text": "12 giờ 30 phút"
+        },
+        {
+          "id": "C",
+          "text": "13 giờ 30 phút"
+        },
+        {
+          "id": "D",
+          "text": "12 giờ 50 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng 10 phút vào 12 giờ 30 phút được 12 giờ 40 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-022",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "7 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "700"
+        },
+        {
+          "id": "B",
+          "text": "420"
+        },
+        {
+          "id": "C",
+          "text": "210"
+        },
+        {
+          "id": "D",
+          "text": "430"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 giờ = 60 phút, vậy 7 giờ = 420 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-023",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 12 giờ 00 phút, kéo dài 35 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13 giờ 00 phút"
+        },
+        {
+          "id": "B",
+          "text": "12 giờ 25 phút"
+        },
+        {
+          "id": "C",
+          "text": "12 giờ 35 phút"
+        },
+        {
+          "id": "D",
+          "text": "12 giờ 45 phút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bắt đầu từ 12 giờ, cộng 35 phút được 12 giờ 35 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-024",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 32 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cùng trong giờ thứ 8, lấy 32 - 15 = 17 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-025",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 7 giờ 35 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 giờ 35 phút"
+        },
+        {
+          "id": "B",
+          "text": "7 giờ 45 phút"
+        },
+        {
+          "id": "C",
+          "text": "7 giờ 55 phút"
+        },
+        {
+          "id": "D",
+          "text": "8 giờ 35 phút"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng 10 phút vào 7 giờ 35 phút được 7 giờ 45 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-026",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "8 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "490"
+        },
+        {
+          "id": "B",
+          "text": "800"
+        },
+        {
+          "id": "C",
+          "text": "480"
+        },
+        {
+          "id": "D",
+          "text": "240"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 giờ = 60 phút, vậy 8 giờ = 480 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-027",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 7 giờ 00 phút, kéo dài 36 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 giờ 36 phút"
+        },
+        {
+          "id": "B",
+          "text": "7 giờ 46 phút"
+        },
+        {
+          "id": "C",
+          "text": "8 giờ 00 phút"
+        },
+        {
+          "id": "D",
+          "text": "7 giờ 26 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bắt đầu từ 7 giờ, cộng 36 phút được 7 giờ 36 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-028",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 33 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cùng trong giờ thứ 8, lấy 33 - 15 = 18 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-029",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 8 giờ 40 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 giờ 00 phút"
+        },
+        {
+          "id": "B",
+          "text": "8 giờ 50 phút"
+        },
+        {
+          "id": "C",
+          "text": "9 giờ 40 phút"
+        },
+        {
+          "id": "D",
+          "text": "8 giờ 40 phút"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng 10 phút vào 8 giờ 40 phút được 8 giờ 50 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-030",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "9 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "540"
+        },
+        {
+          "id": "B",
+          "text": "550"
+        },
+        {
+          "id": "C",
+          "text": "900"
+        },
+        {
+          "id": "D",
+          "text": "270"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 giờ = 60 phút, vậy 9 giờ = 540 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-031",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 8 giờ 00 phút, kéo dài 37 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 giờ 00 phút"
+        },
+        {
+          "id": "B",
+          "text": "8 giờ 27 phút"
+        },
+        {
+          "id": "C",
+          "text": "8 giờ 37 phút"
+        },
+        {
+          "id": "D",
+          "text": "8 giờ 47 phút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bắt đầu từ 8 giờ, cộng 37 phút được 8 giờ 37 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-032",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 34 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cùng trong giờ thứ 8, lấy 34 - 15 = 19 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-033",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 9 giờ 45 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 giờ 45 phút"
+        },
+        {
+          "id": "B",
+          "text": "9 giờ 55 phút"
+        },
+        {
+          "id": "C",
+          "text": "9 giờ 45 phút"
+        },
+        {
+          "id": "D",
+          "text": "9 giờ 05 phút"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng 10 phút vào 9 giờ 45 phút được 9 giờ 55 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-034",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "10 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "300"
+        },
+        {
+          "id": "B",
+          "text": "600"
+        },
+        {
+          "id": "C",
+          "text": "610"
+        },
+        {
+          "id": "D",
+          "text": "1000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 giờ = 60 phút, vậy 10 giờ = 600 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-035",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 9 giờ 00 phút, kéo dài 38 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 giờ 38 phút"
+        },
+        {
+          "id": "B",
+          "text": "9 giờ 28 phút"
+        },
+        {
+          "id": "C",
+          "text": "10 giờ 00 phút"
+        },
+        {
+          "id": "D",
+          "text": "9 giờ 48 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bắt đầu từ 9 giờ, cộng 38 phút được 9 giờ 38 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-036",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 35 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cùng trong giờ thứ 8, lấy 35 - 15 = 20 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-037",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.cong_phut",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Đồng hồ chỉ 10 giờ 50 phút. Sau 10 phút là mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 giờ 00 phút"
+        },
+        {
+          "id": "B",
+          "text": "10 giờ 50 phút"
+        },
+        {
+          "id": "C",
+          "text": "11 giờ 10 phút"
+        },
+        {
+          "id": "D",
+          "text": "11 giờ 50 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng 10 phút vào 10 giờ 50 phút được 11 giờ 00 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-038",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.doi_gio_phut",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "11 giờ bằng bao nhiêu phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "660"
+        },
+        {
+          "id": "B",
+          "text": "1100"
+        },
+        {
+          "id": "C",
+          "text": "670"
+        },
+        {
+          "id": "D",
+          "text": "330"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 giờ = 60 phút, vậy 11 giờ = 660 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-039",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.ket_thuc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tiết học bắt đầu lúc 10 giờ 00 phút, kéo dài 39 phút. Tiết học kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 giờ 39 phút"
+        },
+        {
+          "id": "B",
+          "text": "10 giờ 29 phút"
+        },
+        {
+          "id": "C",
+          "text": "10 giờ 49 phút"
+        },
+        {
+          "id": "D",
+          "text": "11 giờ 00 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bắt đầu từ 10 giờ, cộng 39 phút được 10 giờ 39 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N27-040",
+      "grade": 3,
+      "topicId": "N27",
+      "topicName": "Thời gian và xem đồng hồ",
+      "skillId": "N27.tinh_thoi_luong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 15 phút, kết thúc lúc 8 giờ 36 phút. Hoạt động kéo dài mấy phút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cùng trong giờ thứ 8, lấy 36 - 15 = 21 phút.",
+      "tags": [
+        "toan-3",
+        "n27"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n08-revised-20261023",
+  "title": "Tính nhanh, tính thuận tiện",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "group": "Số và phép tính",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N08-001",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 125 + 37 + 875",
+      "options": [
+        {
+          "id": "A",
+          "text": "1038"
+        },
+        {
+          "id": "B",
+          "text": "1027"
+        },
+        {
+          "id": "C",
+          "text": "1037"
+        },
+        {
+          "id": "D",
+          "text": "1137"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gom 125+875=1000; rồi cộng 37, được 1037.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-002",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 150 + 38 − 38",
+      "options": [
+        {
+          "id": "A",
+          "text": "140"
+        },
+        {
+          "id": "B",
+          "text": "151"
+        },
+        {
+          "id": "C",
+          "text": "250"
+        },
+        {
+          "id": "D",
+          "text": "150"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng rồi trừ cùng 38 nên còn 150.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-003",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 75 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "300"
+        },
+        {
+          "id": "B",
+          "text": "290"
+        },
+        {
+          "id": "C",
+          "text": "301"
+        },
+        {
+          "id": "D",
+          "text": "400"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhóm 25×4=100; được 300.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-004",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 200 × 2 + 200 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "990"
+        },
+        {
+          "id": "B",
+          "text": "1100"
+        },
+        {
+          "id": "C",
+          "text": "1001"
+        },
+        {
+          "id": "D",
+          "text": "1000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 200×(2+3)=200×5=1000.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-005",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 225 + 775 − 41",
+      "options": [
+        {
+          "id": "A",
+          "text": "1059"
+        },
+        {
+          "id": "B",
+          "text": "959"
+        },
+        {
+          "id": "C",
+          "text": "960"
+        },
+        {
+          "id": "D",
+          "text": "949"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gom 225+775=1000; trừ 41, được 959.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-006",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 250 + 42 + 750",
+      "options": [
+        {
+          "id": "A",
+          "text": "1032"
+        },
+        {
+          "id": "B",
+          "text": "1042"
+        },
+        {
+          "id": "C",
+          "text": "1043"
+        },
+        {
+          "id": "D",
+          "text": "1142"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gom 250+750=1000; rồi cộng 42, được 1042.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-007",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 275 + 43 − 43",
+      "options": [
+        {
+          "id": "A",
+          "text": "276"
+        },
+        {
+          "id": "B",
+          "text": "265"
+        },
+        {
+          "id": "C",
+          "text": "275"
+        },
+        {
+          "id": "D",
+          "text": "375"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng rồi trừ cùng 43 nên còn 275.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-008",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 200 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "790"
+        },
+        {
+          "id": "B",
+          "text": "800"
+        },
+        {
+          "id": "C",
+          "text": "900"
+        },
+        {
+          "id": "D",
+          "text": "801"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhóm 25×4=100; được 800.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-009",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 125 × 2 + 125 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "725"
+        },
+        {
+          "id": "B",
+          "text": "625"
+        },
+        {
+          "id": "C",
+          "text": "615"
+        },
+        {
+          "id": "D",
+          "text": "626"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 125×(2+3)=125×5=625.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-010",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 150 + 850 − 46",
+      "options": [
+        {
+          "id": "A",
+          "text": "1054"
+        },
+        {
+          "id": "B",
+          "text": "954"
+        },
+        {
+          "id": "C",
+          "text": "955"
+        },
+        {
+          "id": "D",
+          "text": "944"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gom 150+850=1000; trừ 46, được 954.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-011",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 175 + 47 + 825",
+      "options": [
+        {
+          "id": "A",
+          "text": "1037"
+        },
+        {
+          "id": "B",
+          "text": "1147"
+        },
+        {
+          "id": "C",
+          "text": "1047"
+        },
+        {
+          "id": "D",
+          "text": "1048"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gom 175+825=1000; rồi cộng 47, được 1047.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-012",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 200 + 48 − 48",
+      "options": [
+        {
+          "id": "A",
+          "text": "200"
+        },
+        {
+          "id": "B",
+          "text": "190"
+        },
+        {
+          "id": "C",
+          "text": "201"
+        },
+        {
+          "id": "D",
+          "text": "300"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng rồi trừ cùng 48 nên còn 200.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-013",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 325 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "1400"
+        },
+        {
+          "id": "B",
+          "text": "1301"
+        },
+        {
+          "id": "C",
+          "text": "1300"
+        },
+        {
+          "id": "D",
+          "text": "1290"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhóm 25×4=100; được 1300.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-014",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 250 × 2 + 250 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "1240"
+        },
+        {
+          "id": "B",
+          "text": "1251"
+        },
+        {
+          "id": "C",
+          "text": "1250"
+        },
+        {
+          "id": "D",
+          "text": "1350"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 250×(2+3)=250×5=1250.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-015",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 275 + 725 − 51",
+      "options": [
+        {
+          "id": "A",
+          "text": "1049"
+        },
+        {
+          "id": "B",
+          "text": "950"
+        },
+        {
+          "id": "C",
+          "text": "949"
+        },
+        {
+          "id": "D",
+          "text": "939"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gom 275+725=1000; trừ 51, được 949.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-016",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 300 + 52 + 700",
+      "options": [
+        {
+          "id": "A",
+          "text": "1053"
+        },
+        {
+          "id": "B",
+          "text": "1042"
+        },
+        {
+          "id": "C",
+          "text": "1152"
+        },
+        {
+          "id": "D",
+          "text": "1052"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gom 300+700=1000; rồi cộng 52, được 1052.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-017",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 125 + 53 − 53",
+      "options": [
+        {
+          "id": "A",
+          "text": "125"
+        },
+        {
+          "id": "B",
+          "text": "126"
+        },
+        {
+          "id": "C",
+          "text": "115"
+        },
+        {
+          "id": "D",
+          "text": "225"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng rồi trừ cùng 53 nên còn 125.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-018",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 450 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "1900"
+        },
+        {
+          "id": "B",
+          "text": "1790"
+        },
+        {
+          "id": "C",
+          "text": "1801"
+        },
+        {
+          "id": "D",
+          "text": "1800"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhóm 25×4=100; được 1800.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-019",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 175 × 2 + 175 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "876"
+        },
+        {
+          "id": "B",
+          "text": "865"
+        },
+        {
+          "id": "C",
+          "text": "975"
+        },
+        {
+          "id": "D",
+          "text": "875"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 175×(2+3)=175×5=875.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-020",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 200 + 800 − 56",
+      "options": [
+        {
+          "id": "A",
+          "text": "944"
+        },
+        {
+          "id": "B",
+          "text": "934"
+        },
+        {
+          "id": "C",
+          "text": "945"
+        },
+        {
+          "id": "D",
+          "text": "1044"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gom 200+800=1000; trừ 56, được 944.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-021",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 225 + 57 + 775",
+      "options": [
+        {
+          "id": "A",
+          "text": "1157"
+        },
+        {
+          "id": "B",
+          "text": "1058"
+        },
+        {
+          "id": "C",
+          "text": "1047"
+        },
+        {
+          "id": "D",
+          "text": "1057"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gom 225+775=1000; rồi cộng 57, được 1057.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-022",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 250 + 58 − 58",
+      "options": [
+        {
+          "id": "A",
+          "text": "251"
+        },
+        {
+          "id": "B",
+          "text": "250"
+        },
+        {
+          "id": "C",
+          "text": "240"
+        },
+        {
+          "id": "D",
+          "text": "350"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng rồi trừ cùng 58 nên còn 250.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-023",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 575 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "2301"
+        },
+        {
+          "id": "B",
+          "text": "2400"
+        },
+        {
+          "id": "C",
+          "text": "2290"
+        },
+        {
+          "id": "D",
+          "text": "2300"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhóm 25×4=100; được 2300.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-024",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 300 × 2 + 300 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "1501"
+        },
+        {
+          "id": "B",
+          "text": "1490"
+        },
+        {
+          "id": "C",
+          "text": "1500"
+        },
+        {
+          "id": "D",
+          "text": "1600"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 300×(2+3)=300×5=1500.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-025",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 125 + 875 − 61",
+      "options": [
+        {
+          "id": "A",
+          "text": "929"
+        },
+        {
+          "id": "B",
+          "text": "1039"
+        },
+        {
+          "id": "C",
+          "text": "939"
+        },
+        {
+          "id": "D",
+          "text": "940"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gom 125+875=1000; trừ 61, được 939.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-026",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 150 + 62 + 850",
+      "options": [
+        {
+          "id": "A",
+          "text": "1063"
+        },
+        {
+          "id": "B",
+          "text": "1052"
+        },
+        {
+          "id": "C",
+          "text": "1162"
+        },
+        {
+          "id": "D",
+          "text": "1062"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gom 150+850=1000; rồi cộng 62, được 1062.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-027",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 175 + 63 − 63",
+      "options": [
+        {
+          "id": "A",
+          "text": "275"
+        },
+        {
+          "id": "B",
+          "text": "165"
+        },
+        {
+          "id": "C",
+          "text": "176"
+        },
+        {
+          "id": "D",
+          "text": "175"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng rồi trừ cùng 63 nên còn 175.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-028",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 700 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "2801"
+        },
+        {
+          "id": "B",
+          "text": "2800"
+        },
+        {
+          "id": "C",
+          "text": "2900"
+        },
+        {
+          "id": "D",
+          "text": "2790"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhóm 25×4=100; được 2800.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-029",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 225 × 2 + 225 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "1115"
+        },
+        {
+          "id": "B",
+          "text": "1125"
+        },
+        {
+          "id": "C",
+          "text": "1225"
+        },
+        {
+          "id": "D",
+          "text": "1126"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 225×(2+3)=225×5=1125.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-030",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 250 + 750 − 66",
+      "options": [
+        {
+          "id": "A",
+          "text": "935"
+        },
+        {
+          "id": "B",
+          "text": "924"
+        },
+        {
+          "id": "C",
+          "text": "1034"
+        },
+        {
+          "id": "D",
+          "text": "934"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gom 250+750=1000; trừ 66, được 934.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-031",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 275 + 67 + 725",
+      "options": [
+        {
+          "id": "A",
+          "text": "1067"
+        },
+        {
+          "id": "B",
+          "text": "1057"
+        },
+        {
+          "id": "C",
+          "text": "1068"
+        },
+        {
+          "id": "D",
+          "text": "1167"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gom 275+725=1000; rồi cộng 67, được 1067.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-032",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 300 + 68 − 68",
+      "options": [
+        {
+          "id": "A",
+          "text": "301"
+        },
+        {
+          "id": "B",
+          "text": "400"
+        },
+        {
+          "id": "C",
+          "text": "290"
+        },
+        {
+          "id": "D",
+          "text": "300"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng rồi trừ cùng 68 nên còn 300.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-033",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 825 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "3300"
+        },
+        {
+          "id": "B",
+          "text": "3301"
+        },
+        {
+          "id": "C",
+          "text": "3400"
+        },
+        {
+          "id": "D",
+          "text": "3290"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhóm 25×4=100; được 3300.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-034",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 150 × 2 + 150 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "850"
+        },
+        {
+          "id": "B",
+          "text": "750"
+        },
+        {
+          "id": "C",
+          "text": "740"
+        },
+        {
+          "id": "D",
+          "text": "751"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 150×(2+3)=150×5=750.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-035",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 175 + 825 − 71",
+      "options": [
+        {
+          "id": "A",
+          "text": "930"
+        },
+        {
+          "id": "B",
+          "text": "1029"
+        },
+        {
+          "id": "C",
+          "text": "919"
+        },
+        {
+          "id": "D",
+          "text": "929"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gom 175+825=1000; trừ 71, được 929.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-036",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 200 + 72 + 800",
+      "options": [
+        {
+          "id": "A",
+          "text": "1062"
+        },
+        {
+          "id": "B",
+          "text": "1172"
+        },
+        {
+          "id": "C",
+          "text": "1072"
+        },
+        {
+          "id": "D",
+          "text": "1073"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gom 200+800=1000; rồi cộng 72, được 1072.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-037",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 225 + 73 − 73",
+      "options": [
+        {
+          "id": "A",
+          "text": "226"
+        },
+        {
+          "id": "B",
+          "text": "325"
+        },
+        {
+          "id": "C",
+          "text": "225"
+        },
+        {
+          "id": "D",
+          "text": "215"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng rồi trừ cùng 73 nên còn 225.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-038",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 950 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "3801"
+        },
+        {
+          "id": "B",
+          "text": "3900"
+        },
+        {
+          "id": "C",
+          "text": "3800"
+        },
+        {
+          "id": "D",
+          "text": "3790"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhóm 25×4=100; được 3800.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-039",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 275 × 2 + 275 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "1376"
+        },
+        {
+          "id": "B",
+          "text": "1475"
+        },
+        {
+          "id": "C",
+          "text": "1365"
+        },
+        {
+          "id": "D",
+          "text": "1375"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 275×(2+3)=275×5=1375.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-040",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.tinh_thuan_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 300 + 700 − 76",
+      "options": [
+        {
+          "id": "A",
+          "text": "924"
+        },
+        {
+          "id": "B",
+          "text": "925"
+        },
+        {
+          "id": "C",
+          "text": "1024"
+        },
+        {
+          "id": "D",
+          "text": "914"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gom 300+700=1000; trừ 76, được 924.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

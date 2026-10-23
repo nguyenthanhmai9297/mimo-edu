@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n16-revised-20261023",
+  "title": "So sánh số lớn gấp mấy lần số bé",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "group": "Toán có lời văn",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N16-001",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 6 gấp số 2 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta lấy 6 : 2 = 3. Vậy số lớn gấp số bé 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-002",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 12 gấp số 3 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta lấy 12 : 3 = 4. Vậy số lớn gấp số bé 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-003",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 20 gấp số 4 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta lấy 20 : 4 = 5. Vậy số lớn gấp số bé 5 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-004",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 30 gấp số 5 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta lấy 30 : 5 = 6. Vậy số lớn gấp số bé 6 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-005",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 42 gấp số 6 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta lấy 42 : 6 = 7. Vậy số lớn gấp số bé 7 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-006",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 56 gấp số 7 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta lấy 56 : 7 = 8. Vậy số lớn gấp số bé 8 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-007",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 72 gấp số 8 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "64"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta lấy 72 : 8 = 9. Vậy số lớn gấp số bé 9 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-008",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 36 gấp số 9 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta lấy 36 : 9 = 4. Vậy số lớn gấp số bé 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-009",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 60 gấp số 12 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta lấy 60 : 12 = 5. Vậy số lớn gấp số bé 5 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-010",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.ti_so",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 90 gấp số 15 mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "75"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta lấy 90 : 15 = 6. Vậy số lớn gấp số bé 6 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-011",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 9 viên bi, Bình có 3 viên bi. Số viên bi của An gấp số viên bi của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh số lượng bằng phép chia: 9 : 3 = 3 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-012",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 16 quyển sách, Bình có 4 quyển sách. Số quyển sách của An gấp số quyển sách của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "So sánh số lượng bằng phép chia: 16 : 4 = 4 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-013",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 25 bông hoa, Bình có 5 bông hoa. Số bông hoa của An gấp số bông hoa của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh số lượng bằng phép chia: 25 : 5 = 5 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-014",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 36 chiếc bút, Bình có 6 chiếc bút. Số chiếc bút của An gấp số chiếc bút của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh số lượng bằng phép chia: 36 : 6 = 6 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-015",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 49 huy hiệu, Bình có 7 huy hiệu. Số huy hiệu của An gấp số huy hiệu của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh số lượng bằng phép chia: 49 : 7 = 7 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-016",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 24 tấm thiệp, Bình có 8 tấm thiệp. Số tấm thiệp của An gấp số tấm thiệp của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh số lượng bằng phép chia: 24 : 8 = 3 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-017",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 36 quả cam, Bình có 9 quả cam. Số quả cam của An gấp số quả cam của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh số lượng bằng phép chia: 36 : 9 = 4 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-018",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 50 viên kẹo, Bình có 10 viên kẹo. Số viên kẹo của An gấp số viên kẹo của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "So sánh số lượng bằng phép chia: 50 : 10 = 5 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-019",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 66 nhãn vở, Bình có 11 nhãn vở. Số nhãn vở của An gấp số nhãn vở của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "55"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "So sánh số lượng bằng phép chia: 66 : 11 = 6 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-020",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.so_sanh_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "An có 84 chiếc cốc, Bình có 12 chiếc cốc. Số chiếc cốc của An gấp số chiếc cốc của Bình mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "72"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh số lượng bằng phép chia: 84 : 12 = 7 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-021",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số cây ở vườn A là 12, số cây ở vườn B là 6. Muốn biết số cây ở vườn a gấp số cây ở vườn b mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy số lớn chia số bé: 12 : 6 = 2 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-022",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số trang đã đọc của Mai là 21, số trang đã đọc của Nam là 7. Muốn biết số trang đã đọc của mai gấp số trang đã đọc của nam mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy số lớn chia số bé: 21 : 7 = 3 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-023",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số bông hoa đỏ là 32, số bông hoa vàng là 8. Muốn biết số bông hoa đỏ gấp số bông hoa vàng mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy số lớn chia số bé: 32 : 8 = 4 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-024",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số ghế hàng thứ nhất là 45, số ghế hàng thứ hai là 9. Muốn biết số ghế hàng thứ nhất gấp số ghế hàng thứ hai mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy số lớn chia số bé: 45 : 9 = 5 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-025",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số hộp phấn lớp 3A là 72, số hộp phấn lớp 3B là 12. Muốn biết số hộp phấn lớp 3a gấp số hộp phấn lớp 3b mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy số lớn chia số bé: 72 : 12 = 6 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-026",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số viên sỏi của Hà là 30, số viên sỏi của Lan là 15. Muốn biết số viên sỏi của hà gấp số viên sỏi của lan mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy số lớn chia số bé: 30 : 15 = 2 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-027",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số quả táo trong giỏ lớn là 54, số quả táo trong giỏ nhỏ là 18. Muốn biết số quả táo trong giỏ lớn gấp số quả táo trong giỏ nhỏ mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy số lớn chia số bé: 54 : 18 = 3 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-028",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nhãn dán của Minh là 80, số nhãn dán của Hoa là 20. Muốn biết số nhãn dán của minh gấp số nhãn dán của hoa mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy số lớn chia số bé: 80 : 20 = 4 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-029",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số quyển truyện trên kệ A là 120, số quyển truyện trên kệ B là 24. Muốn biết số quyển truyện trên kệ a gấp số quyển truyện trên kệ b mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy số lớn chia số bé: 120 : 24 = 5 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-030",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.van_dung",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số chiếc bánh của nhóm 1 là 150, số chiếc bánh của nhóm 2 là 25. Muốn biết số chiếc bánh của nhóm 1 gấp số chiếc bánh của nhóm 2 mấy lần, kết quả là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "125"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy số lớn chia số bé: 150 : 25 = 6 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-031",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 12 viên bi, Nam có 4 viên bi. Mai cho bạn 4 viên bi. Khi đó số viên bi Mai còn lại gấp số viên bi của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai còn 12 - 4 = 8 viên bi. Số còn lại gấp của Nam: 8 : 4 = 2 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-032",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 20 nhãn vở, Nam có 5 nhãn vở. Mai cho bạn 5 nhãn vở. Khi đó số nhãn vở Mai còn lại gấp số nhãn vở của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai còn 20 - 5 = 15 nhãn vở. Số còn lại gấp của Nam: 15 : 5 = 3 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-033",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 30 quyển sách, Nam có 6 quyển sách. Mai cho bạn 6 quyển sách. Khi đó số quyển sách Mai còn lại gấp số quyển sách của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mai còn 30 - 6 = 24 quyển sách. Số còn lại gấp của Nam: 24 : 6 = 4 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-034",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 42 chậu cây, Nam có 7 chậu cây. Mai cho bạn 7 chậu cây. Khi đó số chậu cây Mai còn lại gấp số chậu cây của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai còn 42 - 7 = 35 chậu cây. Số còn lại gấp của Nam: 35 : 7 = 5 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-035",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 56 bông hoa, Nam có 8 bông hoa. Mai cho bạn 8 bông hoa. Khi đó số bông hoa Mai còn lại gấp số bông hoa của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "48"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai còn 56 - 8 = 48 bông hoa. Số còn lại gấp của Nam: 48 : 8 = 6 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-036",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 27 lá cờ, Nam có 9 lá cờ. Mai cho bạn 9 lá cờ. Khi đó số lá cờ Mai còn lại gấp số lá cờ của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mai còn 27 - 9 = 18 lá cờ. Số còn lại gấp của Nam: 18 : 9 = 2 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-037",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 40 hạt đậu, Nam có 10 hạt đậu. Mai cho bạn 10 hạt đậu. Khi đó số hạt đậu Mai còn lại gấp số hạt đậu của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mai còn 40 - 10 = 30 hạt đậu. Số còn lại gấp của Nam: 30 : 10 = 3 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-038",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 55 bút chì, Nam có 11 bút chì. Mai cho bạn 11 bút chì. Khi đó số bút chì Mai còn lại gấp số bút chì của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mai còn 55 - 11 = 44 bút chì. Số còn lại gấp của Nam: 44 : 11 = 4 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-039",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 72 khối gỗ, Nam có 12 khối gỗ. Mai cho bạn 12 khối gỗ. Khi đó số khối gỗ Mai còn lại gấp số khối gỗ của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "60"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai còn 72 - 12 = 60 khối gỗ. Số còn lại gấp của Nam: 60 : 12 = 5 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-040",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 91 huy hiệu, Nam có 13 huy hiệu. Mai cho bạn 13 huy hiệu. Khi đó số huy hiệu Mai còn lại gấp số huy hiệu của Nam mấy lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "78"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai còn 91 - 13 = 78 huy hiệu. Số còn lại gấp của Nam: 78 : 13 = 6 (lần).",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n35-revised-20261023",
+  "title": "Toán thử thách tổng hợp",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "group": "Toán tư duy và nâng cao",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N35-001",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 9. Số đó cộng thêm 5 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số cần tìm là 9 : 3 = 3. Cộng thêm 5 được 8.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-002",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 6 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 6, cộng 2 + (2 + 3 + ... + 6) = 22.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-003",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 4 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "46"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở là 4 × 3 = 12 nghìn đồng. Tiền thừa: 50 - 12 = 38 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-004",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 7 cm, chiều rộng 3 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chiều dài mới 7+2=9 cm. Chu vi mới (9+3) × 2 = 24 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-005",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 12. Số đó cộng thêm 6 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số cần tìm là 12 : 3 = 4. Cộng thêm 6 được 10.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-006",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 7 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 7, cộng 2 + (2 + 3 + ... + 7) = 29.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-007",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 5 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền mua vở là 5 × 3 = 15 nghìn đồng. Tiền thừa: 50 - 15 = 35 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-008",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 8 cm, chiều rộng 4 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chiều dài mới 8+2=10 cm. Chu vi mới (10+4) × 2 = 28 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-009",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 15. Số đó cộng thêm 7 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số cần tìm là 15 : 3 = 5. Cộng thêm 7 được 12.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-010",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 8 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "39"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 8, cộng 2 + (2 + 3 + ... + 8) = 37.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-011",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 6 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở là 6 × 3 = 18 nghìn đồng. Tiền thừa: 50 - 18 = 32 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-012",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 9 cm, chiều rộng 5 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chiều dài mới 9+2=11 cm. Chu vi mới (11+5) × 2 = 32 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-013",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 18. Số đó cộng thêm 8 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số cần tìm là 18 : 3 = 6. Cộng thêm 8 được 14.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-014",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 9 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "46"
+        },
+        {
+          "id": "B",
+          "text": "47"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 9, cộng 2 + (2 + 3 + ... + 9) = 46.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-015",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 7 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở là 7 × 3 = 21 nghìn đồng. Tiền thừa: 50 - 21 = 29 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-016",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 10 cm, chiều rộng 6 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "72"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chiều dài mới 10+2=12 cm. Chu vi mới (12+6) × 2 = 36 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-017",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 21. Số đó cộng thêm 9 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số cần tìm là 21 : 3 = 7. Cộng thêm 9 được 16.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-018",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 10 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "57"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 10, cộng 2 + (2 + 3 + ... + 10) = 56.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-019",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 8 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền mua vở là 8 × 3 = 24 nghìn đồng. Tiền thừa: 50 - 24 = 26 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-020",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 11 cm, chiều rộng 7 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "91"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chiều dài mới 11+2=13 cm. Chu vi mới (13+7) × 2 = 40 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-021",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 24. Số đó cộng thêm 10 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số cần tìm là 24 : 3 = 8. Cộng thêm 10 được 18.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-022",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 11 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "67"
+        },
+        {
+          "id": "B",
+          "text": "68"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "69"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 11, cộng 2 + (2 + 3 + ... + 11) = 67.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-023",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 9 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "41"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền mua vở là 9 × 3 = 27 nghìn đồng. Tiền thừa: 50 - 27 = 23 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-024",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 12 cm, chiều rộng 8 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "112"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "46"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chiều dài mới 12+2=14 cm. Chu vi mới (14+8) × 2 = 44 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-025",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 27. Số đó cộng thêm 11 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số cần tìm là 27 : 3 = 9. Cộng thêm 11 được 20.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-026",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 12 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "67"
+        },
+        {
+          "id": "B",
+          "text": "79"
+        },
+        {
+          "id": "C",
+          "text": "81"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 12, cộng 2 + (2 + 3 + ... + 12) = 79.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-027",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 10 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở là 10 × 3 = 30 nghìn đồng. Tiền thừa: 50 - 30 = 20 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-028",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 13 cm, chiều rộng 9 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "135"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "50"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chiều dài mới 13+2=15 cm. Chu vi mới (15+9) × 2 = 48 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-029",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 30. Số đó cộng thêm 12 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số cần tìm là 30 : 3 = 10. Cộng thêm 12 được 22.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-030",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 13 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "93"
+        },
+        {
+          "id": "B",
+          "text": "94"
+        },
+        {
+          "id": "C",
+          "text": "79"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 13, cộng 2 + (2 + 3 + ... + 13) = 92.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-031",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 11 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở là 11 × 3 = 33 nghìn đồng. Tiền thừa: 50 - 33 = 17 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-032",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 14 cm, chiều rộng 10 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "160"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chiều dài mới 14+2=16 cm. Chu vi mới (16+10) × 2 = 52 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-033",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 33. Số đó cộng thêm 13 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "46"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số cần tìm là 33 : 3 = 11. Cộng thêm 13 được 24.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-034",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 14 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "92"
+        },
+        {
+          "id": "B",
+          "text": "107"
+        },
+        {
+          "id": "C",
+          "text": "106"
+        },
+        {
+          "id": "D",
+          "text": "108"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 14, cộng 2 + (2 + 3 + ... + 14) = 106.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-035",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 12 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền mua vở là 12 × 3 = 36 nghìn đồng. Tiền thừa: 50 - 36 = 14 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-036",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 15 cm, chiều rộng 11 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "187"
+        },
+        {
+          "id": "D",
+          "text": "58"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chiều dài mới 15+2=17 cm. Chu vi mới (17+11) × 2 = 56 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-037",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số nhân với 3 được 36. Số đó cộng thêm 14 bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số cần tìm là 36 : 3 = 12. Cộng thêm 14 được 26.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-038",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.day_so_thu_thach",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 2, 4, 7, 11, 16, ... Hãy tìm số thứ 15 của dãy.",
+      "options": [
+        {
+          "id": "A",
+          "text": "106"
+        },
+        {
+          "id": "B",
+          "text": "121"
+        },
+        {
+          "id": "C",
+          "text": "123"
+        },
+        {
+          "id": "D",
+          "text": "122"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số đầu là 2, các bước tăng là 2, 3, 4, ... Đến số thứ 15, cộng 2 + (2 + 3 + ... + 15) = 121.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-039",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.mua_ban",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một quyển vở giá 13 nghìn đồng. Mua 3 quyển và trả 50 nghìn đồng, được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền mua vở là 13 × 3 = 39 nghìn đồng. Tiền thừa: 50 - 39 = 11 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-040",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.chu_vi_thay_doi",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có chiều dài 16 cm, chiều rộng 12 cm. Nếu tăng chiều dài thêm 2 cm, chu vi mới bằng bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "62"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "216"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chiều dài mới 16+2=18 cm. Chu vi mới (18+12) × 2 = 60 cm.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

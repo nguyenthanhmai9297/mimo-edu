@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n19-draft-v1",
+  "title": "Bài toán thực tế tổng hợp",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N19-001",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 2 quyển vở, mỗi quyển 5000 đồng. Trả 15000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 998"
+        },
+        {
+          "id": "B",
+          "text": "5 000"
+        },
+        {
+          "id": "C",
+          "text": "5 100"
+        },
+        {
+          "id": "D",
+          "text": "4 990"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 10000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-002",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 3 quyển vở, mỗi quyển 6000 đồng. Trả 23000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 000"
+        },
+        {
+          "id": "B",
+          "text": "5 002"
+        },
+        {
+          "id": "C",
+          "text": "5 000"
+        },
+        {
+          "id": "D",
+          "text": "5 100"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền vở 18000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-003",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 4 quyển vở, mỗi quyển 7000 đồng. Trả 33000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 000"
+        },
+        {
+          "id": "B",
+          "text": "5 003"
+        },
+        {
+          "id": "C",
+          "text": "5 500"
+        },
+        {
+          "id": "D",
+          "text": "4 997"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền vở 28000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-004",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 5 quyển vở, mỗi quyển 8000 đồng. Trả 45000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 000"
+        },
+        {
+          "id": "B",
+          "text": "5 100"
+        },
+        {
+          "id": "C",
+          "text": "5 005"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 40000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-005",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 6 quyển vở, mỗi quyển 9000 đồng. Trả 59000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 000"
+        },
+        {
+          "id": "B",
+          "text": "5 005"
+        },
+        {
+          "id": "C",
+          "text": "4 999"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 54000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-006",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 7 quyển vở, mỗi quyển 10000 đồng. Trả 75000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 100"
+        },
+        {
+          "id": "B",
+          "text": "5 002"
+        },
+        {
+          "id": "C",
+          "text": "4 998"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 70000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-007",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 8 quyển vở, mỗi quyển 11000 đồng. Trả 93000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 900"
+        },
+        {
+          "id": "B",
+          "text": "5 001"
+        },
+        {
+          "id": "C",
+          "text": "4 500"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 88000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-008",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 2 quyển vở, mỗi quyển 12000 đồng. Trả 29000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 000"
+        },
+        {
+          "id": "B",
+          "text": "4 990"
+        },
+        {
+          "id": "C",
+          "text": "5 001"
+        },
+        {
+          "id": "D",
+          "text": "5 005"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền vở 24000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-009",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 3 quyển vở, mỗi quyển 13000 đồng. Trả 44000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 900"
+        },
+        {
+          "id": "B",
+          "text": "4 995"
+        },
+        {
+          "id": "C",
+          "text": "4 990"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 39000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-010",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 4 quyển vở, mỗi quyển 14000 đồng. Trả 61000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 100"
+        },
+        {
+          "id": "B",
+          "text": "5 002"
+        },
+        {
+          "id": "C",
+          "text": "4 500"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 56000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-011",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 2 quyển vở, mỗi quyển 8000 đồng. Trả 21000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 000"
+        },
+        {
+          "id": "B",
+          "text": "5 100"
+        },
+        {
+          "id": "C",
+          "text": "5 003"
+        },
+        {
+          "id": "D",
+          "text": "4 999"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền vở 16000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-012",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 3 quyển vở, mỗi quyển 9000 đồng. Trả 32000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 998"
+        },
+        {
+          "id": "B",
+          "text": "5 000"
+        },
+        {
+          "id": "C",
+          "text": "4 000"
+        },
+        {
+          "id": "D",
+          "text": "5 500"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 27000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-013",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 4 quyển vở, mỗi quyển 10000 đồng. Trả 45000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 500"
+        },
+        {
+          "id": "B",
+          "text": "4 000"
+        },
+        {
+          "id": "C",
+          "text": "5 100"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 40000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-014",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 5 quyển vở, mỗi quyển 11000 đồng. Trả 60000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 000"
+        },
+        {
+          "id": "B",
+          "text": "5 005"
+        },
+        {
+          "id": "C",
+          "text": "4 990"
+        },
+        {
+          "id": "D",
+          "text": "5 001"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền vở 55000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-015",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 6 quyển vở, mỗi quyển 12000 đồng. Trả 77000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 002"
+        },
+        {
+          "id": "B",
+          "text": "5 000"
+        },
+        {
+          "id": "C",
+          "text": "4 997"
+        },
+        {
+          "id": "D",
+          "text": "5 003"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 72000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-016",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 7 quyển vở, mỗi quyển 13000 đồng. Trả 96000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 990"
+        },
+        {
+          "id": "B",
+          "text": "5 000"
+        },
+        {
+          "id": "C",
+          "text": "4 000"
+        },
+        {
+          "id": "D",
+          "text": "4 995"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 91000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-017",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 8 quyển vở, mỗi quyển 14000 đồng. Trả 117000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 005"
+        },
+        {
+          "id": "B",
+          "text": "5 000"
+        },
+        {
+          "id": "C",
+          "text": "5 100"
+        },
+        {
+          "id": "D",
+          "text": "5 010"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 112000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-018",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 2 quyển vở, mỗi quyển 15000 đồng. Trả 35000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 900"
+        },
+        {
+          "id": "B",
+          "text": "5 010"
+        },
+        {
+          "id": "C",
+          "text": "4 000"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 30000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-019",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 3 quyển vở, mỗi quyển 16000 đồng. Trả 53000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 000"
+        },
+        {
+          "id": "B",
+          "text": "5 001"
+        },
+        {
+          "id": "C",
+          "text": "4 997"
+        },
+        {
+          "id": "D",
+          "text": "4 995"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền vở 48000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-020",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 4 quyển vở, mỗi quyển 17000 đồng. Trả 73000 đồng. Được trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 998"
+        },
+        {
+          "id": "B",
+          "text": "5 000"
+        },
+        {
+          "id": "C",
+          "text": "5 005"
+        },
+        {
+          "id": "D",
+          "text": "5 001"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 68000 đồng; tiền thừa 5 000 đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-021",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 22 kg gạo, bán buổi sáng 11 kg, buổi chiều 2 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đã bán 13 kg; còn 9 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-022",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 36 kg gạo, bán buổi sáng 12 kg, buổi chiều 3 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đã bán 15 kg; còn 21 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-023",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 52 kg gạo, bán buổi sáng 13 kg, buổi chiều 4 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "135"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "1 035"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 17 kg; còn 35 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-024",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 70 kg gạo, bán buổi sáng 14 kg, buổi chiều 5 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "51"
+        },
+        {
+          "id": "B",
+          "text": "53"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 19 kg; còn 51 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-025",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 90 kg gạo, bán buổi sáng 15 kg, buổi chiều 6 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 069"
+        },
+        {
+          "id": "B",
+          "text": "69"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "67"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đã bán 21 kg; còn 69 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-026",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 112 kg gạo, bán buổi sáng 16 kg, buổi chiều 7 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 089"
+        },
+        {
+          "id": "B",
+          "text": "89"
+        },
+        {
+          "id": "C",
+          "text": "90"
+        },
+        {
+          "id": "D",
+          "text": "97"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đã bán 23 kg; còn 89 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-027",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 136 kg gạo, bán buổi sáng 17 kg, buổi chiều 8 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "111"
+        },
+        {
+          "id": "B",
+          "text": "1 111"
+        },
+        {
+          "id": "C",
+          "text": "114"
+        },
+        {
+          "id": "D",
+          "text": "110"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 25 kg; còn 111 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-028",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 36 kg gạo, bán buổi sáng 18 kg, buổi chiều 2 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 20 kg; còn 16 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-029",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 57 kg gạo, bán buổi sáng 19 kg, buổi chiều 3 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "135"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đã bán 22 kg; còn 35 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-030",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 80 kg gạo, bán buổi sáng 20 kg, buổi chiều 4 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "59"
+        },
+        {
+          "id": "D",
+          "text": "1 056"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 24 kg; còn 56 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-031",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 28 kg gạo, bán buổi sáng 14 kg, buổi chiều 2 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "1 012"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 16 kg; còn 12 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-032",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 45 kg gạo, bán buổi sáng 15 kg, buổi chiều 3 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "127"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 18 kg; còn 27 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-033",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 64 kg gạo, bán buổi sáng 16 kg, buổi chiều 4 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "46"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đã bán 20 kg; còn 44 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-034",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 85 kg gạo, bán buổi sáng 17 kg, buổi chiều 5 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "63"
+        },
+        {
+          "id": "B",
+          "text": "1 063"
+        },
+        {
+          "id": "C",
+          "text": "53"
+        },
+        {
+          "id": "D",
+          "text": "66"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 22 kg; còn 63 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-035",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 108 kg gạo, bán buổi sáng 18 kg, buổi chiều 6 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "74"
+        },
+        {
+          "id": "B",
+          "text": "84"
+        },
+        {
+          "id": "C",
+          "text": "1 084"
+        },
+        {
+          "id": "D",
+          "text": "83"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đã bán 24 kg; còn 84 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-036",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 133 kg gạo, bán buổi sáng 19 kg, buổi chiều 7 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "107"
+        },
+        {
+          "id": "B",
+          "text": "112"
+        },
+        {
+          "id": "C",
+          "text": "117"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 26 kg; còn 107 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-037",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 160 kg gạo, bán buổi sáng 20 kg, buổi chiều 8 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "232"
+        },
+        {
+          "id": "B",
+          "text": "132"
+        },
+        {
+          "id": "C",
+          "text": "129"
+        },
+        {
+          "id": "D",
+          "text": "1 132"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đã bán 28 kg; còn 132 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-038",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 42 kg gạo, bán buổi sáng 21 kg, buổi chiều 2 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đã bán 23 kg; còn 19 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-039",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 66 kg gạo, bán buổi sáng 22 kg, buổi chiều 3 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "1 041"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đã bán 25 kg; còn 41 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-040",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 92 kg gạo, bán buổi sáng 23 kg, buổi chiều 4 kg. Còn bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62"
+        },
+        {
+          "id": "B",
+          "text": "65"
+        },
+        {
+          "id": "C",
+          "text": "165"
+        },
+        {
+          "id": "D",
+          "text": "55"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đã bán 27 kg; còn 65 kg.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

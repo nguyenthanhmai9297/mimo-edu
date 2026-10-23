@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n29-revised-20261023",
+  "title": "Nhiệt độ",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N29-001",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 18°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhiệt độ mới là 18 + 2 = 20°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-002",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 23°C, buổi tối là 18°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Độ chênh lệch là 23 - 18 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-003",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 21°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhiệt độ chiều: 21 - 4 = 17°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-004",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 18°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trưa 18 + 7 = 25°C. Chiều 25 - 3 = 22°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-005",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 19°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhiệt độ mới là 19 + 2 = 21°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-006",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 24°C, buổi tối là 19°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Độ chênh lệch là 24 - 19 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-007",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 22°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhiệt độ chiều: 22 - 4 = 18°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-008",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 19°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trưa 19 + 7 = 26°C. Chiều 26 - 3 = 23°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-009",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 20°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhiệt độ mới là 20 + 2 = 22°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-010",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 25°C, buổi tối là 20°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Độ chênh lệch là 25 - 20 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-011",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 23°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhiệt độ chiều: 23 - 4 = 19°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-012",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 20°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trưa 20 + 7 = 27°C. Chiều 27 - 3 = 24°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-013",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 21°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhiệt độ mới là 21 + 2 = 23°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-014",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 26°C, buổi tối là 21°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Độ chênh lệch là 26 - 21 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-015",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 24°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhiệt độ chiều: 24 - 4 = 20°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-016",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 21°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trưa 21 + 7 = 28°C. Chiều 28 - 3 = 25°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-017",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 22°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhiệt độ mới là 22 + 2 = 24°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-018",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 27°C, buổi tối là 22°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Độ chênh lệch là 27 - 22 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-019",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 25°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhiệt độ chiều: 25 - 4 = 21°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-020",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 22°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trưa 22 + 7 = 29°C. Chiều 29 - 3 = 26°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-021",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 23°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhiệt độ mới là 23 + 2 = 25°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-022",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 28°C, buổi tối là 23°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Độ chênh lệch là 28 - 23 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-023",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 26°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhiệt độ chiều: 26 - 4 = 22°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-024",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 23°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trưa 23 + 7 = 30°C. Chiều 30 - 3 = 27°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-025",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 24°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhiệt độ mới là 24 + 2 = 26°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-026",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 29°C, buổi tối là 24°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Độ chênh lệch là 29 - 24 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-027",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 27°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhiệt độ chiều: 27 - 4 = 23°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-028",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 24°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trưa 24 + 7 = 31°C. Chiều 31 - 3 = 28°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-029",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 25°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhiệt độ mới là 25 + 2 = 27°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-030",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 30°C, buổi tối là 25°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Độ chênh lệch là 30 - 25 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-031",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 28°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhiệt độ chiều: 28 - 4 = 24°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-032",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 25°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trưa 25 + 7 = 32°C. Chiều 32 - 3 = 29°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-033",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 26°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhiệt độ mới là 26 + 2 = 28°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-034",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 31°C, buổi tối là 26°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Độ chênh lệch là 31 - 26 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-035",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 29°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhiệt độ chiều: 29 - 4 = 25°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-036",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 26°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trưa 26 + 7 = 33°C. Chiều 33 - 3 = 30°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-037",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.tang_nhiet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt kế chỉ 27°C. Nhiệt độ tăng thêm 2°C. Nhiệt kế sẽ chỉ bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhiệt độ mới là 27 + 2 = 29°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-038",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.so_sanh_nhiet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 32°C, buổi tối là 27°C. Buổi sáng cao hơn buổi tối bao nhiêu độ C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Độ chênh lệch là 32 - 27 = 5°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-039",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.giam_nhiet",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ lúc trưa là 30°C. Chiều giảm 4°C. Chiều nhiệt độ là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhiệt độ chiều: 30 - 4 = 26°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-040",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.nhiet_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một ngày có nhiệt độ sáng 27°C, trưa tăng 7°C so với sáng, chiều thấp hơn trưa 3°C. Nhiệt độ chiều là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trưa 27 + 7 = 34°C. Chiều 34 - 3 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n14-draft-v1",
+  "title": "Gấp một số lên nhiều lần",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N14-001",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "5 gấp lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "1 010"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "5 × 2 = 10.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-002",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "6 gấp lên 3 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "6 × 3 = 18.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-003",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "7 gấp lên 4 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "1 028"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "7 × 4 = 28.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-004",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "8 gấp lên 5 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "8 × 5 = 40.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-005",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "9 gấp lên 6 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "53"
+        },
+        {
+          "id": "B",
+          "text": "55"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "59"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "9 × 6 = 54.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-006",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "10 gấp lên 7 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "77"
+        },
+        {
+          "id": "C",
+          "text": "80"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "10 × 7 = 70.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-007",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "11 gấp lên 8 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "78"
+        },
+        {
+          "id": "C",
+          "text": "98"
+        },
+        {
+          "id": "D",
+          "text": "86"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "11 × 8 = 88.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-008",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "12 gấp lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "12 × 2 = 24.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-009",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "13 gấp lên 3 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "139"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "13 × 3 = 39.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-010",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "14 gấp lên 4 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "156"
+        },
+        {
+          "id": "C",
+          "text": "51"
+        },
+        {
+          "id": "D",
+          "text": "58"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "14 × 4 = 56.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-011",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "8 gấp lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "8 × 2 = 16.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-012",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "9 gấp lên 3 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "127"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "9 × 3 = 27.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-013",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "10 gấp lên 4 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "10 × 4 = 40.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-014",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "11 gấp lên 5 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "55"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "53"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "11 × 5 = 55.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-015",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "12 gấp lên 6 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62"
+        },
+        {
+          "id": "B",
+          "text": "73"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "82"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "12 × 6 = 72.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-016",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "13 gấp lên 7 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "91"
+        },
+        {
+          "id": "B",
+          "text": "96"
+        },
+        {
+          "id": "C",
+          "text": "92"
+        },
+        {
+          "id": "D",
+          "text": "101"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "13 × 7 = 91.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-017",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "14 gấp lên 8 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "115"
+        },
+        {
+          "id": "B",
+          "text": "112"
+        },
+        {
+          "id": "C",
+          "text": "111"
+        },
+        {
+          "id": "D",
+          "text": "101"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "14 × 8 = 112.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-018",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "15 gấp lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "15 × 2 = 30.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-019",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "16 gấp lên 3 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "148"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "44"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "16 × 3 = 48.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-020",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "17 gấp lên 4 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "74"
+        },
+        {
+          "id": "C",
+          "text": "68"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "17 × 4 = 68.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-021",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 11 cm. Đoạn thứ hai dài gấp 2 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đoạn hai dài 22 cm; tổng dài 33 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-022",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 12 cm. Đoạn thứ hai dài gấp 3 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "52"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn hai dài 36 cm; tổng dài 48 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-023",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 13 cm. Đoạn thứ hai dài gấp 4 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "67"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "59"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đoạn hai dài 52 cm; tổng dài 65 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-024",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 14 cm. Đoạn thứ hai dài gấp 5 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "94"
+        },
+        {
+          "id": "B",
+          "text": "79"
+        },
+        {
+          "id": "C",
+          "text": "84"
+        },
+        {
+          "id": "D",
+          "text": "81"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đoạn hai dài 70 cm; tổng dài 84 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-025",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 15 cm. Đoạn thứ hai dài gấp 6 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "105"
+        },
+        {
+          "id": "B",
+          "text": "100"
+        },
+        {
+          "id": "C",
+          "text": "110"
+        },
+        {
+          "id": "D",
+          "text": "205"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đoạn hai dài 90 cm; tổng dài 105 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-026",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 16 cm. Đoạn thứ hai dài gấp 7 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "127"
+        },
+        {
+          "id": "B",
+          "text": "125"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "128"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn hai dài 112 cm; tổng dài 128 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-027",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 17 cm. Đoạn thứ hai dài gấp 8 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "253"
+        },
+        {
+          "id": "B",
+          "text": "1 153"
+        },
+        {
+          "id": "C",
+          "text": "143"
+        },
+        {
+          "id": "D",
+          "text": "153"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn hai dài 136 cm; tổng dài 153 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-028",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 18 cm. Đoạn thứ hai dài gấp 2 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "59"
+        },
+        {
+          "id": "B",
+          "text": "52"
+        },
+        {
+          "id": "C",
+          "text": "49"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn hai dài 36 cm; tổng dài 54 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-029",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 19 cm. Đoạn thứ hai dài gấp 3 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 076"
+        },
+        {
+          "id": "B",
+          "text": "76"
+        },
+        {
+          "id": "C",
+          "text": "78"
+        },
+        {
+          "id": "D",
+          "text": "74"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đoạn hai dài 57 cm; tổng dài 76 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-030",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 20 cm. Đoạn thứ hai dài gấp 4 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "97"
+        },
+        {
+          "id": "C",
+          "text": "103"
+        },
+        {
+          "id": "D",
+          "text": "98"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đoạn hai dài 80 cm; tổng dài 100 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-031",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 14 cm. Đoạn thứ hai dài gấp 2 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "1 042"
+        },
+        {
+          "id": "D",
+          "text": "43"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đoạn hai dài 28 cm; tổng dài 42 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-032",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 15 cm. Đoạn thứ hai dài gấp 3 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "55"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn hai dài 45 cm; tổng dài 60 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-033",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 16 cm. Đoạn thứ hai dài gấp 4 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "72"
+        },
+        {
+          "id": "B",
+          "text": "79"
+        },
+        {
+          "id": "C",
+          "text": "80"
+        },
+        {
+          "id": "D",
+          "text": "180"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đoạn hai dài 64 cm; tổng dài 80 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-034",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 17 cm. Đoạn thứ hai dài gấp 5 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "105"
+        },
+        {
+          "id": "B",
+          "text": "92"
+        },
+        {
+          "id": "C",
+          "text": "102"
+        },
+        {
+          "id": "D",
+          "text": "101"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đoạn hai dài 85 cm; tổng dài 102 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-035",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 18 cm. Đoạn thứ hai dài gấp 6 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "128"
+        },
+        {
+          "id": "B",
+          "text": "136"
+        },
+        {
+          "id": "C",
+          "text": "226"
+        },
+        {
+          "id": "D",
+          "text": "126"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn hai dài 108 cm; tổng dài 126 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-036",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 19 cm. Đoạn thứ hai dài gấp 7 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "155"
+        },
+        {
+          "id": "B",
+          "text": "252"
+        },
+        {
+          "id": "C",
+          "text": "147"
+        },
+        {
+          "id": "D",
+          "text": "152"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn hai dài 133 cm; tổng dài 152 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-037",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 20 cm. Đoạn thứ hai dài gấp 8 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "183"
+        },
+        {
+          "id": "B",
+          "text": "1 180"
+        },
+        {
+          "id": "C",
+          "text": "180"
+        },
+        {
+          "id": "D",
+          "text": "175"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đoạn hai dài 160 cm; tổng dài 180 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-038",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 21 cm. Đoạn thứ hai dài gấp 2 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "64"
+        },
+        {
+          "id": "B",
+          "text": "63"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "65"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đoạn hai dài 42 cm; tổng dài 63 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-039",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 22 cm. Đoạn thứ hai dài gấp 3 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "78"
+        },
+        {
+          "id": "B",
+          "text": "88"
+        },
+        {
+          "id": "C",
+          "text": "93"
+        },
+        {
+          "id": "D",
+          "text": "98"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đoạn hai dài 66 cm; tổng dài 88 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-040",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn dây dài 23 cm. Đoạn thứ hai dài gấp 4 lần đoạn thứ nhất. Hai đoạn dài tổng cộng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "115"
+        },
+        {
+          "id": "B",
+          "text": "117"
+        },
+        {
+          "id": "C",
+          "text": "215"
+        },
+        {
+          "id": "D",
+          "text": "105"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đoạn hai dài 92 cm; tổng dài 115 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

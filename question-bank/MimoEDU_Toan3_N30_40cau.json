@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n30-revised-20261023",
+  "title": "Thu thập và phân loại số liệu",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "group": "Thống kê và xác suất",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N30-001",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 3 vỏ hộp, tổ 2 thu 5 vỏ hộp, tổ 3 thu 7 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "B",
+          "text": "Tổ 3"
+        },
+        {
+          "id": "C",
+          "text": "Tổ 2"
+        },
+        {
+          "id": "D",
+          "text": "Cả ba tổ bằng nhau"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh 3, 5, 7; lớn nhất là 7, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-002",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 3 bạn, xanh 5 bạn, vàng 7 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tổng số bạn tham gia là 3 + 5 + 7 = 15.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-003",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 3 bạn đi bộ, 5 bạn đi xe đạp và 7 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-004",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 3 quả bóng đỏ và 7 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 7 - 3 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-005",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 4 vỏ hộp, tổ 2 thu 6 vỏ hộp, tổ 3 thu 8 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tổ 2"
+        },
+        {
+          "id": "B",
+          "text": "Cả ba tổ bằng nhau"
+        },
+        {
+          "id": "C",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "D",
+          "text": "Tổ 3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh 4, 6, 8; lớn nhất là 8, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-006",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 4 bạn, xanh 6 bạn, vàng 8 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tổng số bạn tham gia là 4 + 6 + 8 = 18.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-007",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 4 bạn đi bộ, 6 bạn đi xe đạp và 8 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-008",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 4 quả bóng đỏ và 8 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 8 - 4 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-009",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 5 vỏ hộp, tổ 2 thu 7 vỏ hộp, tổ 3 thu 9 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tổ 2"
+        },
+        {
+          "id": "B",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "C",
+          "text": "Cả ba tổ bằng nhau"
+        },
+        {
+          "id": "D",
+          "text": "Tổ 3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh 5, 7, 9; lớn nhất là 9, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-010",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 5 bạn, xanh 7 bạn, vàng 9 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tổng số bạn tham gia là 5 + 7 + 9 = 21.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-011",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 5 bạn đi bộ, 7 bạn đi xe đạp và 9 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-012",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 5 quả bóng đỏ và 9 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 9 - 5 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-013",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 6 vỏ hộp, tổ 2 thu 8 vỏ hộp, tổ 3 thu 10 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cả ba tổ bằng nhau"
+        },
+        {
+          "id": "B",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "C",
+          "text": "Tổ 2"
+        },
+        {
+          "id": "D",
+          "text": "Tổ 3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh 6, 8, 10; lớn nhất là 10, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-014",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 6 bạn, xanh 8 bạn, vàng 10 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tổng số bạn tham gia là 6 + 8 + 10 = 24.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-015",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 6 bạn đi bộ, 8 bạn đi xe đạp và 10 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-016",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 6 quả bóng đỏ và 10 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 10 - 6 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-017",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 7 vỏ hộp, tổ 2 thu 9 vỏ hộp, tổ 3 thu 11 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tổ 3"
+        },
+        {
+          "id": "B",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "C",
+          "text": "Cả ba tổ bằng nhau"
+        },
+        {
+          "id": "D",
+          "text": "Tổ 2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "So sánh 7, 9, 11; lớn nhất là 11, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-018",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 7 bạn, xanh 9 bạn, vàng 11 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tổng số bạn tham gia là 7 + 9 + 11 = 27.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-019",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 7 bạn đi bộ, 9 bạn đi xe đạp và 11 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-020",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 7 quả bóng đỏ và 11 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 11 - 7 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-021",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 8 vỏ hộp, tổ 2 thu 10 vỏ hộp, tổ 3 thu 12 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tổ 2"
+        },
+        {
+          "id": "B",
+          "text": "Tổ 3"
+        },
+        {
+          "id": "C",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "D",
+          "text": "Cả ba tổ bằng nhau"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh 8, 10, 12; lớn nhất là 12, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-022",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 8 bạn, xanh 10 bạn, vàng 12 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tổng số bạn tham gia là 8 + 10 + 12 = 30.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-023",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 8 bạn đi bộ, 10 bạn đi xe đạp và 12 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-024",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 8 quả bóng đỏ và 12 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 12 - 8 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-025",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 9 vỏ hộp, tổ 2 thu 11 vỏ hộp, tổ 3 thu 13 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cả ba tổ bằng nhau"
+        },
+        {
+          "id": "B",
+          "text": "Tổ 2"
+        },
+        {
+          "id": "C",
+          "text": "Tổ 3"
+        },
+        {
+          "id": "D",
+          "text": "Tổ 1"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh 9, 11, 13; lớn nhất là 13, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-026",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 9 bạn, xanh 11 bạn, vàng 13 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tổng số bạn tham gia là 9 + 11 + 13 = 33.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-027",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 9 bạn đi bộ, 11 bạn đi xe đạp và 13 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-028",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 9 quả bóng đỏ và 13 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 13 - 9 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-029",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 10 vỏ hộp, tổ 2 thu 12 vỏ hộp, tổ 3 thu 14 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "B",
+          "text": "Cả ba tổ bằng nhau"
+        },
+        {
+          "id": "C",
+          "text": "Tổ 3"
+        },
+        {
+          "id": "D",
+          "text": "Tổ 2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh 10, 12, 14; lớn nhất là 14, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-030",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 10 bạn, xanh 12 bạn, vàng 14 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tổng số bạn tham gia là 10 + 12 + 14 = 36.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-031",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 10 bạn đi bộ, 12 bạn đi xe đạp và 14 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-032",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 10 quả bóng đỏ và 14 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 14 - 10 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-033",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 11 vỏ hộp, tổ 2 thu 13 vỏ hộp, tổ 3 thu 15 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cả ba tổ bằng nhau"
+        },
+        {
+          "id": "B",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "C",
+          "text": "Tổ 3"
+        },
+        {
+          "id": "D",
+          "text": "Tổ 2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh 11, 13, 15; lớn nhất là 15, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-034",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 11 bạn, xanh 13 bạn, vàng 15 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tổng số bạn tham gia là 11 + 13 + 15 = 39.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-035",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 11 bạn đi bộ, 13 bạn đi xe đạp và 15 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-036",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 11 quả bóng đỏ và 15 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 15 - 11 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-037",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.so_sanh_so_lieu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tổ 1 thu 12 vỏ hộp, tổ 2 thu 14 vỏ hộp, tổ 3 thu 16 vỏ hộp. Tổ nào thu nhiều nhất?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tổ 2"
+        },
+        {
+          "id": "B",
+          "text": "Tổ 1"
+        },
+        {
+          "id": "C",
+          "text": "Tổ 3"
+        },
+        {
+          "id": "D",
+          "text": "Cả ba tổ bằng nhau"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh 12, 14, 16; lớn nhất là 16, thuộc tổ 3.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-038",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.tong_so_lieu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát màu yêu thích: đỏ 12 bạn, xanh 14 bạn, vàng 16 bạn. Có tất cả bao nhiêu bạn tham gia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tổng số bạn tham gia là 12 + 14 + 16 = 42.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-039",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.phan_loai",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một lớp đếm được 12 bạn đi bộ, 14 bạn đi xe đạp và 16 bạn được đưa đón. Có bao nhiêu nhóm phương tiện/cách đi học đã được phân loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dữ liệu được chia thành 3 nhóm: đi bộ, xe đạp, được đưa đón.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-040",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.chenh_lech",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 12 quả bóng đỏ và 16 quả bóng xanh. Số bóng xanh nhiều hơn bóng đỏ bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 16 - 12 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

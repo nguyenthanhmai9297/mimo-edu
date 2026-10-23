@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n17-revised-20261023",
+  "title": "Bài toán về một phần mấy",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "group": "Toán có lời văn",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N17-001",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/2 của 4 quả táo là bao nhiêu quả táo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chia 4 thành 2 phần bằng nhau, mỗi phần có 4 : 2 = 2 quả táo.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-002",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/3 của 9 viên bi là bao nhiêu viên bi?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chia 9 thành 3 phần bằng nhau, mỗi phần có 9 : 3 = 3 viên bi.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-003",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/4 của 16 que tính là bao nhiêu que tính?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chia 16 thành 4 phần bằng nhau, mỗi phần có 16 : 4 = 4 que tính.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-004",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/5 của 25 nhãn vở là bao nhiêu nhãn vở?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia 25 thành 5 phần bằng nhau, mỗi phần có 25 : 5 = 5 nhãn vở.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-005",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/6 của 36 bông hoa là bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chia 36 thành 6 phần bằng nhau, mỗi phần có 36 : 6 = 6 bông hoa.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-006",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/7 của 49 chiếc bánh là bao nhiêu chiếc bánh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "49"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia 49 thành 7 phần bằng nhau, mỗi phần có 49 : 7 = 7 chiếc bánh.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-007",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/8 của 64 hạt đậu là bao nhiêu hạt đậu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "64"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chia 64 thành 8 phần bằng nhau, mỗi phần có 64 : 8 = 8 hạt đậu.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-008",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/9 của 81 quyển vở là bao nhiêu quyển vở?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "81"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia 81 thành 9 phần bằng nhau, mỗi phần có 81 : 9 = 9 quyển vở.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-009",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/2 của 20 viên kẹo là bao nhiêu viên kẹo?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chia 20 thành 2 phần bằng nhau, mỗi phần có 20 : 2 = 10 viên kẹo.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-010",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.mot_phan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "1/3 của 33 bút chì là bao nhiêu bút chì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia 33 thành 3 phần bằng nhau, mỗi phần có 33 : 3 = 11 bút chì.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-011",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 6 học sinh. Cô giáo chia đều thành 2 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Một nhóm là 1/2 số học sinh. Ta tính 6 : 2 = 3 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-012",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 12 học sinh. Cô giáo chia đều thành 3 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Một nhóm là 1/3 số học sinh. Ta tính 12 : 3 = 4 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-013",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 20 học sinh. Cô giáo chia đều thành 4 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Một nhóm là 1/4 số học sinh. Ta tính 20 : 4 = 5 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-014",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 30 học sinh. Cô giáo chia đều thành 5 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Một nhóm là 1/5 số học sinh. Ta tính 30 : 5 = 6 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-015",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 42 học sinh. Cô giáo chia đều thành 6 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Một nhóm là 1/6 số học sinh. Ta tính 42 : 6 = 7 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-016",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 56 học sinh. Cô giáo chia đều thành 7 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Một nhóm là 1/7 số học sinh. Ta tính 56 : 7 = 8 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-017",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 72 học sinh. Cô giáo chia đều thành 8 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Một nhóm là 1/8 số học sinh. Ta tính 72 : 8 = 9 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-018",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 90 học sinh. Cô giáo chia đều thành 9 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Một nhóm là 1/9 số học sinh. Ta tính 90 : 9 = 10 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-019",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 22 học sinh. Cô giáo chia đều thành 2 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Một nhóm là 1/2 số học sinh. Ta tính 22 : 2 = 11 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-020",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.chia_deu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một lớp có 36 học sinh. Cô giáo chia đều thành 3 nhóm. Một nhóm có bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Một nhóm là 1/3 số học sinh. Ta tính 36 : 3 = 12 (học sinh).",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-021",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 8 quả cam. Mẹ dùng 1/2 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mẹ dùng 8 : 2 = 4 quả. Còn lại 8 - 4 = 4 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-022",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 15 quả quýt. Mẹ dùng 1/3 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mẹ dùng 15 : 3 = 5 quả. Còn lại 15 - 5 = 10 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-023",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 24 quả táo. Mẹ dùng 1/4 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mẹ dùng 24 : 4 = 6 quả. Còn lại 24 - 6 = 18 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-024",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 35 quả lê. Mẹ dùng 1/5 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mẹ dùng 35 : 5 = 7 quả. Còn lại 35 - 7 = 28 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-025",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 48 quả ổi. Mẹ dùng 1/6 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "41"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mẹ dùng 48 : 6 = 8 quả. Còn lại 48 - 8 = 40 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-026",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 63 quả mận. Mẹ dùng 1/7 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "63"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mẹ dùng 63 : 7 = 9 quả. Còn lại 63 - 9 = 54 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-027",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 80 quả đào. Mẹ dùng 1/8 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "80"
+        },
+        {
+          "id": "D",
+          "text": "71"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mẹ dùng 80 : 8 = 10 quả. Còn lại 80 - 10 = 70 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-028",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 99 quả hồng. Mẹ dùng 1/9 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "99"
+        },
+        {
+          "id": "D",
+          "text": "89"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mẹ dùng 99 : 9 = 11 quả. Còn lại 99 - 11 = 88 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-029",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 24 quả na. Mẹ dùng 1/2 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mẹ dùng 24 : 2 = 12 quả. Còn lại 24 - 12 = 12 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-030",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.phan_con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mẹ mua 39 quả bưởi. Mẹ dùng 1/3 số quả. Mẹ còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mẹ dùng 39 : 3 = 13 quả. Còn lại 39 - 13 = 26 quả.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-031",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 10 cm. Bạn An cắt đi 1/2 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đầu tiên cắt 10 : 2 = 5 cm. Còn 10 - 5 - 2 = 3 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-032",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 18 cm. Bạn An cắt đi 1/3 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đầu tiên cắt 18 : 3 = 6 cm. Còn 18 - 6 - 2 = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-033",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 28 cm. Bạn An cắt đi 1/4 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đầu tiên cắt 28 : 4 = 7 cm. Còn 28 - 7 - 2 = 19 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-034",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 40 cm. Bạn An cắt đi 1/5 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đầu tiên cắt 40 : 5 = 8 cm. Còn 40 - 8 - 2 = 30 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-035",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 54 cm. Bạn An cắt đi 1/6 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "47"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đầu tiên cắt 54 : 6 = 9 cm. Còn 54 - 9 - 2 = 43 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-036",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 70 cm. Bạn An cắt đi 1/7 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "62"
+        },
+        {
+          "id": "C",
+          "text": "58"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đầu tiên cắt 70 : 7 = 10 cm. Còn 70 - 10 - 2 = 58 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-037",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 88 cm. Bạn An cắt đi 1/8 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "77"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "79"
+        },
+        {
+          "id": "D",
+          "text": "75"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đầu tiên cắt 88 : 8 = 11 cm. Còn 88 - 11 - 2 = 75 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-038",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 108 cm. Bạn An cắt đi 1/9 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "98"
+        },
+        {
+          "id": "C",
+          "text": "94"
+        },
+        {
+          "id": "D",
+          "text": "96"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đầu tiên cắt 108 : 9 = 12 cm. Còn 108 - 12 - 2 = 94 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-039",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 26 cm. Bạn An cắt đi 1/2 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đầu tiên cắt 26 : 2 = 13 cm. Còn 26 - 13 - 2 = 11 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N17-040",
+      "grade": 3,
+      "topicId": "N17",
+      "topicName": "Bài toán về một phần mấy",
+      "skillId": "N17.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dải ruy băng dài 42 cm. Bạn An cắt đi 1/3 chiều dài dải ruy băng, sau đó cắt tiếp 2 cm. Hỏi dải ruy băng còn bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đầu tiên cắt 42 : 3 = 14 cm. Còn 42 - 14 - 2 = 26 cm.",
+      "tags": [
+        "toan-3",
+        "n17"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

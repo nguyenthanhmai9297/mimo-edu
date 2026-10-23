@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n22-revised-20261023",
+  "title": "Chu vi các hình",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N22-001",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 8 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "64"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi hình vuông là 8 × 4 = 32 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-002",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 13 cm, rộng 3 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi = (13 + 3) × 2 = 32 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-003",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 32 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi cạnh dài 32 : 4 = 8 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-004",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 15 m, rộng 4 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi là (15 + 4) × 2 = 38 m. Trừ cửa 2 m còn 36 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-005",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 9 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "81"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông là 9 × 4 = 36 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-006",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 14 cm, rộng 4 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi = (14 + 4) × 2 = 36 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-007",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 36 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cạnh dài 36 : 4 = 9 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-008",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 16 m, rộng 5 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "44"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi là (16 + 5) × 2 = 42 m. Trừ cửa 2 m còn 40 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-009",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 10 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "100"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông là 10 × 4 = 40 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-010",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 15 cm, rộng 5 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "75"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi = (15 + 5) × 2 = 40 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-011",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 40 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cạnh dài 40 : 4 = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-012",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 17 m, rộng 6 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "46"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi là (17 + 6) × 2 = 46 m. Trừ cửa 2 m còn 44 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-013",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 11 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "121"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi hình vuông là 11 × 4 = 44 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-014",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 16 cm, rộng 6 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "46"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "96"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi = (16 + 6) × 2 = 44 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-015",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 44 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi cạnh dài 44 : 4 = 11 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-016",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 18 m, rộng 7 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi là (18 + 7) × 2 = 50 m. Trừ cửa 2 m còn 48 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-017",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 12 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "48"
+        },
+        {
+          "id": "C",
+          "text": "52"
+        },
+        {
+          "id": "D",
+          "text": "144"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông là 12 × 4 = 48 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-018",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 17 cm, rộng 7 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "119"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi = (17 + 7) × 2 = 48 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-019",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 48 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi cạnh dài 48 : 4 = 12 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-020",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 19 m, rộng 8 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "52"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi là (19 + 8) × 2 = 54 m. Trừ cửa 2 m còn 52 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-021",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 13 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "169"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông là 13 × 4 = 52 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-022",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 18 cm, rộng 8 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "144"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "52"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi = (18 + 8) × 2 = 52 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-023",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 52 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi cạnh dài 52 : 4 = 13 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-024",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 20 m, rộng 9 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "58"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi là (20 + 9) × 2 = 58 m. Trừ cửa 2 m còn 56 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-025",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 14 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "60"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "196"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi hình vuông là 14 × 4 = 56 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-026",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 19 cm, rộng 3 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "46"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi = (19 + 3) × 2 = 44 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-027",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 56 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi cạnh dài 56 : 4 = 14 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-028",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 21 m, rộng 4 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "52"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi là (21 + 4) × 2 = 50 m. Trừ cửa 2 m còn 48 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-029",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 15 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "64"
+        },
+        {
+          "id": "C",
+          "text": "225"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông là 15 × 4 = 60 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-030",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 20 cm, rộng 4 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "50"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi = (20 + 4) × 2 = 48 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-031",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 60 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cạnh dài 60 : 4 = 15 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-032",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 22 m, rộng 5 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi là (22 + 5) × 2 = 54 m. Trừ cửa 2 m còn 52 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-033",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 16 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "256"
+        },
+        {
+          "id": "B",
+          "text": "68"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông là 16 × 4 = 64 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-034",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 21 cm, rộng 5 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "105"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi = (21 + 5) × 2 = 52 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-035",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 64 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi cạnh dài 64 : 4 = 16 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-036",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 23 m, rộng 6 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "60"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "58"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi là (23 + 6) × 2 = 58 m. Trừ cửa 2 m còn 56 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-037",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 17 cm có chu vi bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "72"
+        },
+        {
+          "id": "C",
+          "text": "289"
+        },
+        {
+          "id": "D",
+          "text": "68"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông là 17 × 4 = 68 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-038",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_chu_nhat",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 22 cm, rộng 6 cm. Chu vi bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "132"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi = (22 + 6) × 2 = 56 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-039",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.tim_canh_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Chu vi hình vuông là 68 cm. Độ dài một cạnh là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "68"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cạnh dài 68 : 4 = 17 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-040",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mảnh đất chữ nhật dài 24 m, rộng 7 m. Rào quanh đất một vòng, chừa cửa rộng 2 m. Cần bao nhiêu mét hàng rào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "64"
+        },
+        {
+          "id": "D",
+          "text": "62"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi là (24 + 7) × 2 = 62 m. Trừ cửa 2 m còn 60 m.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

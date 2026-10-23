@@ -9,6 +9,8 @@ import { ToolStage } from './ToolStage';
 
 // The mind map pulls in a diagram library, so it is only downloaded when opened
 const MindMapTool = lazy(() => import('./MindMapTool').then((m) => ({ default: m.MindMapTool })));
+// The drawing board is large too: loaded on demand
+const MathCanvasTool = lazy(() => import('./MathCanvasTool').then((m) => ({ default: m.MathCanvasTool })));
 
 const TOOL_COMPONENTS: Record<string, React.FC<{ presenting: boolean }>> = {
   'goi-ten': RandomPickerTool,
@@ -16,6 +18,7 @@ const TOOL_COMPONENTS: Record<string, React.FC<{ presenting: boolean }>> = {
   'keo-co': TugOfWarTool,
   'so-do-tu-duy': MindMapTool,
   'mimo-quiz': MimoQuizTool,
+  'bang-ve-toan': MathCanvasTool,
 };
 
 /** /admin/tools/:toolId – opens a built-in tool; anything else goes back to the catalogue. */

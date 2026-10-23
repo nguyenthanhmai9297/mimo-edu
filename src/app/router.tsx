@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LandingPage } from '../features/auth/LandingPage';
 import { StudentPortalPage } from '../features/student-portal/StudentPortalPage';
+import { StudentQuizPage } from '../features/student-portal/StudentQuizPage';
 import { RequireAdminGuard } from './guards/RequireAdminGuard';
 import { AdminLayout } from '../components/layout/AdminLayout';
 import { AdminDashboard } from '../features/dashboard/AdminDashboard';
@@ -27,6 +28,8 @@ export const AppRouter: React.FC = () => {
 
         {/* Mobile-First Parent & Student Portal */}
         <Route path="/portal" element={<StudentPortalPage />} />
+        {/* Mimo Quiz: students join the teacher's room with a code */}
+        <Route path="/quiz" element={<StudentQuizPage />} />
 
         {/* Protected Admin / Teacher Portal */}
         <Route element={<RequireAdminGuard />}>

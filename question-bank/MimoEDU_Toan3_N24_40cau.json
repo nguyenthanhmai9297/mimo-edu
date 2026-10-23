@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n24-revised-20261023",
+  "title": "Đơn vị đo độ dài",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N24-001",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "2000"
+        },
+        {
+          "id": "C",
+          "text": "102"
+        },
+        {
+          "id": "D",
+          "text": "200"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 m = 100 cm, vậy 2 m = 2 × 100 = 200 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-002",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "20 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "200"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "10 dm = 1 m nên 20 dm = 2 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-003",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 2 m 4 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "222"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "204"
+        },
+        {
+          "id": "D",
+          "text": "200"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "2 m = 200 cm. Cộng 4 cm được 204 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-004",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 5 m. Người ta cắt đi 2 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "302"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "300"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đoạn còn lại là 5 - 2 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-005",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "103"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "300"
+        },
+        {
+          "id": "D",
+          "text": "3000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 m = 100 cm, vậy 3 m = 3 × 100 = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-006",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "30 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "300"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "10 dm = 1 m nên 30 dm = 3 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-007",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 3 m 5 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "323"
+        },
+        {
+          "id": "B",
+          "text": "300"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "305"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "3 m = 300 cm. Cộng 5 cm được 305 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-008",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 6 m. Người ta cắt đi 3 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "303"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "300"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn còn lại là 6 - 3 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-009",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "104"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "400"
+        },
+        {
+          "id": "D",
+          "text": "4000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 m = 100 cm, vậy 4 m = 4 × 100 = 400 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-010",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "40 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "400"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "10 dm = 1 m nên 40 dm = 4 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-011",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 4 m 6 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "424"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "400"
+        },
+        {
+          "id": "D",
+          "text": "406"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "4 m = 400 cm. Cộng 6 cm được 406 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-012",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 7 m. Người ta cắt đi 4 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "304"
+        },
+        {
+          "id": "C",
+          "text": "300"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đoạn còn lại là 7 - 4 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-013",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50"
+        },
+        {
+          "id": "B",
+          "text": "105"
+        },
+        {
+          "id": "C",
+          "text": "5000"
+        },
+        {
+          "id": "D",
+          "text": "500"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 m = 100 cm, vậy 5 m = 5 × 100 = 500 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-014",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "50 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "500"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "10 dm = 1 m nên 50 dm = 5 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-015",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 5 m 7 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "525"
+        },
+        {
+          "id": "C",
+          "text": "500"
+        },
+        {
+          "id": "D",
+          "text": "507"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "5 m = 500 cm. Cộng 7 cm được 507 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-016",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 8 m. Người ta cắt đi 5 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "305"
+        },
+        {
+          "id": "B",
+          "text": "300"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đoạn còn lại là 8 - 5 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-017",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "6 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "600"
+        },
+        {
+          "id": "B",
+          "text": "106"
+        },
+        {
+          "id": "C",
+          "text": "6000"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 m = 100 cm, vậy 6 m = 6 × 100 = 600 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-018",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "60 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "600"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "10 dm = 1 m nên 60 dm = 6 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-019",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 6 m 8 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "626"
+        },
+        {
+          "id": "B",
+          "text": "68"
+        },
+        {
+          "id": "C",
+          "text": "600"
+        },
+        {
+          "id": "D",
+          "text": "608"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "6 m = 600 cm. Cộng 8 cm được 608 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-020",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 9 m. Người ta cắt đi 6 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "306"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "300"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn còn lại là 9 - 6 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-021",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "7 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "107"
+        },
+        {
+          "id": "B",
+          "text": "700"
+        },
+        {
+          "id": "C",
+          "text": "70"
+        },
+        {
+          "id": "D",
+          "text": "7000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 m = 100 cm, vậy 7 m = 7 × 100 = 700 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-022",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "70 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "700"
+        },
+        {
+          "id": "C",
+          "text": "70"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "10 dm = 1 m nên 70 dm = 7 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-023",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 7 m 9 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "709"
+        },
+        {
+          "id": "B",
+          "text": "727"
+        },
+        {
+          "id": "C",
+          "text": "700"
+        },
+        {
+          "id": "D",
+          "text": "79"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "7 m = 700 cm. Cộng 9 cm được 709 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-024",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 10 m. Người ta cắt đi 7 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "307"
+        },
+        {
+          "id": "D",
+          "text": "300"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn còn lại là 10 - 7 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-025",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "8 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "800"
+        },
+        {
+          "id": "B",
+          "text": "108"
+        },
+        {
+          "id": "C",
+          "text": "8000"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 m = 100 cm, vậy 8 m = 8 × 100 = 800 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-026",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "80 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "80"
+        },
+        {
+          "id": "D",
+          "text": "800"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "10 dm = 1 m nên 80 dm = 8 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-027",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 8 m 10 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "828"
+        },
+        {
+          "id": "B",
+          "text": "800"
+        },
+        {
+          "id": "C",
+          "text": "90"
+        },
+        {
+          "id": "D",
+          "text": "810"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "8 m = 800 cm. Cộng 10 cm được 810 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-028",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 11 m. Người ta cắt đi 8 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "308"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "300"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đoạn còn lại là 11 - 8 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-029",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "9 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "900"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "9000"
+        },
+        {
+          "id": "D",
+          "text": "109"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 m = 100 cm, vậy 9 m = 9 × 100 = 900 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-030",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "90 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "900"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "10 dm = 1 m nên 90 dm = 9 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-031",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 9 m 11 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "911"
+        },
+        {
+          "id": "B",
+          "text": "900"
+        },
+        {
+          "id": "C",
+          "text": "929"
+        },
+        {
+          "id": "D",
+          "text": "101"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "9 m = 900 cm. Cộng 11 cm được 911 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-032",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 12 m. Người ta cắt đi 9 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "300"
+        },
+        {
+          "id": "B",
+          "text": "309"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đoạn còn lại là 12 - 9 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-033",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "10 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "1000"
+        },
+        {
+          "id": "C",
+          "text": "110"
+        },
+        {
+          "id": "D",
+          "text": "10000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 m = 100 cm, vậy 10 m = 10 × 100 = 1000 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-034",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "100 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "1000"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "10 dm = 1 m nên 100 dm = 10 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-035",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 10 m 12 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1000"
+        },
+        {
+          "id": "B",
+          "text": "112"
+        },
+        {
+          "id": "C",
+          "text": "1030"
+        },
+        {
+          "id": "D",
+          "text": "1012"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "10 m = 1000 cm. Cộng 12 cm được 1012 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-036",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 13 m. Người ta cắt đi 10 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "300"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "310"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đoạn còn lại là 13 - 10 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-037",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_m_cm",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "11 m bằng bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1100"
+        },
+        {
+          "id": "B",
+          "text": "110"
+        },
+        {
+          "id": "C",
+          "text": "11000"
+        },
+        {
+          "id": "D",
+          "text": "111"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 m = 100 cm, vậy 11 m = 11 × 100 = 1100 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-038",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_dm_m",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "110 dm bằng bao nhiêu mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "110"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "1100"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "10 dm = 1 m nên 110 dm = 11 m.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-039",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.doi_hon_hop",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sợi dây dài 11 m 13 cm. Dây dài tất cả bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "123"
+        },
+        {
+          "id": "B",
+          "text": "1113"
+        },
+        {
+          "id": "C",
+          "text": "1131"
+        },
+        {
+          "id": "D",
+          "text": "1100"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "11 m = 1100 cm. Cộng 13 cm được 1113 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-040",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.do_dai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có một sợi dây dài 14 m. Người ta cắt đi 11 m. Đoạn còn lại dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "311"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "300"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đoạn còn lại là 14 - 11 = 3 m = 300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

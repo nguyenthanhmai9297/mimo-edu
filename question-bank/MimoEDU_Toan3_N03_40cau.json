@@ -1,0 +1,1449 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n03-v1",
+  "title": "Dãy số và quy luật",
+  "language": "vi",
+  "notes": "40 câu trắc nghiệm do ChatGPT biên soạn; cần giáo viên kiểm duyệt nội dung sư phạm trước khi xuất bản. Không tự động ghi Firebase.",
+  "questions": [
+    {
+      "id": "M3-N03-001",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 120, 130, 140, 150, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "180"
+        },
+        {
+          "id": "B",
+          "text": "160"
+        },
+        {
+          "id": "C",
+          "text": "150"
+        },
+        {
+          "id": "D",
+          "text": "170"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi số sau bằng số trước cộng 10. Số tiếp theo là 160.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-002",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 250, 350, 450, 550, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "850"
+        },
+        {
+          "id": "B",
+          "text": "750"
+        },
+        {
+          "id": "C",
+          "text": "650"
+        },
+        {
+          "id": "D",
+          "text": "550"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số sau bằng số trước cộng 100. Số tiếp theo là 650.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-003",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 1 300, 2 300, 3 300, 4 300, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 300"
+        },
+        {
+          "id": "B",
+          "text": "7 300"
+        },
+        {
+          "id": "C",
+          "text": "5 300"
+        },
+        {
+          "id": "D",
+          "text": "6 300"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số sau bằng số trước cộng 1 000. Số tiếp theo là 5 300.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-004",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 4 321, 4 421, 4 521, 4 621, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 921"
+        },
+        {
+          "id": "B",
+          "text": "4 621"
+        },
+        {
+          "id": "C",
+          "text": "4 721"
+        },
+        {
+          "id": "D",
+          "text": "4 821"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số sau bằng số trước cộng 100. Số tiếp theo là 4 721.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-005",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 9 900, 9 800, 9 700, 9 600, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 600"
+        },
+        {
+          "id": "B",
+          "text": "9 400"
+        },
+        {
+          "id": "C",
+          "text": "9 700"
+        },
+        {
+          "id": "D",
+          "text": "9 500"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số sau bằng số trước trừ 100. Số tiếp theo là 9 500.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-006",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 50 000, 60 000, 70 000, 80 000, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "80 000"
+        },
+        {
+          "id": "B",
+          "text": "90 000"
+        },
+        {
+          "id": "C",
+          "text": "100 000"
+        },
+        {
+          "id": "D",
+          "text": "110 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi số sau bằng số trước cộng 10 000. Số tiếp theo là 90 000.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-007",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 7 550, 7 600, 7 650, 7 700, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 800"
+        },
+        {
+          "id": "B",
+          "text": "7 850"
+        },
+        {
+          "id": "C",
+          "text": "7 700"
+        },
+        {
+          "id": "D",
+          "text": "7 750"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số sau bằng số trước cộng 50. Số tiếp theo là 7 750.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-008",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 80 200, 80 000, 79 800, 79 600, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "79 200"
+        },
+        {
+          "id": "B",
+          "text": "79 800"
+        },
+        {
+          "id": "C",
+          "text": "79 600"
+        },
+        {
+          "id": "D",
+          "text": "79 400"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi số sau bằng số trước trừ 200. Số tiếp theo là 79 400.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-009",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 11 111, 12 222, 13 333, 14 444, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "14 444"
+        },
+        {
+          "id": "B",
+          "text": "17 777"
+        },
+        {
+          "id": "C",
+          "text": "15 555"
+        },
+        {
+          "id": "D",
+          "text": "16 666"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi số sau bằng số trước cộng 1 111. Số tiếp theo là 15 555.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-010",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.arithmetic",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số còn thiếu: 20 000, 19 000, 18 000, 17 000, …",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 000"
+        },
+        {
+          "id": "B",
+          "text": "17 000"
+        },
+        {
+          "id": "C",
+          "text": "15 000"
+        },
+        {
+          "id": "D",
+          "text": "18 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi số sau bằng số trước trừ 1 000. Số tiếp theo là 16 000.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "arithmetic"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-011",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 230, 250, …, 290, 310.",
+      "options": [
+        {
+          "id": "A",
+          "text": "270"
+        },
+        {
+          "id": "B",
+          "text": "310"
+        },
+        {
+          "id": "C",
+          "text": "290"
+        },
+        {
+          "id": "D",
+          "text": "250"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dãy tăng/giảm đều 20 đơn vị mỗi bước. Số ở vị trí thứ ba là 270.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-012",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 500, 550, …, 650, 700.",
+      "options": [
+        {
+          "id": "A",
+          "text": "650"
+        },
+        {
+          "id": "B",
+          "text": "550"
+        },
+        {
+          "id": "C",
+          "text": "700"
+        },
+        {
+          "id": "D",
+          "text": "600"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy tăng/giảm đều 50 đơn vị mỗi bước. Số ở vị trí thứ ba là 600.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-013",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 1 200, 1 400, …, 1 800, 2 000.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 600"
+        },
+        {
+          "id": "B",
+          "text": "1 800"
+        },
+        {
+          "id": "C",
+          "text": "1 400"
+        },
+        {
+          "id": "D",
+          "text": "2 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dãy tăng/giảm đều 200 đơn vị mỗi bước. Số ở vị trí thứ ba là 1 600.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-014",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 9 000, 8 000, …, 6 000, 5 000.",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 000"
+        },
+        {
+          "id": "B",
+          "text": "9 000"
+        },
+        {
+          "id": "C",
+          "text": "8 000"
+        },
+        {
+          "id": "D",
+          "text": "6 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dãy tăng/giảm đều 1 000 đơn vị mỗi bước. Số ở vị trí thứ ba là 7 000.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-015",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 700, 770, …, 910, 980.",
+      "options": [
+        {
+          "id": "A",
+          "text": "840"
+        },
+        {
+          "id": "B",
+          "text": "770"
+        },
+        {
+          "id": "C",
+          "text": "910"
+        },
+        {
+          "id": "D",
+          "text": "980"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dãy tăng/giảm đều 70 đơn vị mỗi bước. Số ở vị trí thứ ba là 840.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-016",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 16 000, 16 500, …, 17 500, 18 000.",
+      "options": [
+        {
+          "id": "A",
+          "text": "18 000"
+        },
+        {
+          "id": "B",
+          "text": "17 000"
+        },
+        {
+          "id": "C",
+          "text": "16 500"
+        },
+        {
+          "id": "D",
+          "text": "17 500"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy tăng/giảm đều 500 đơn vị mỗi bước. Số ở vị trí thứ ba là 17 000.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-017",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 875, 900, …, 950, 975.",
+      "options": [
+        {
+          "id": "A",
+          "text": "975"
+        },
+        {
+          "id": "B",
+          "text": "900"
+        },
+        {
+          "id": "C",
+          "text": "950"
+        },
+        {
+          "id": "D",
+          "text": "925"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy tăng/giảm đều 25 đơn vị mỗi bước. Số ở vị trí thứ ba là 925.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-018",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 4 200, 3 900, …, 3 300, 3 000.",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 300"
+        },
+        {
+          "id": "B",
+          "text": "3 600"
+        },
+        {
+          "id": "C",
+          "text": "3 900"
+        },
+        {
+          "id": "D",
+          "text": "4 200"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy tăng/giảm đều 300 đơn vị mỗi bước. Số ở vị trí thứ ba là 3 600.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-019",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 999, 1 110, …, 1 332, 1 443.",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 110"
+        },
+        {
+          "id": "B",
+          "text": "1 332"
+        },
+        {
+          "id": "C",
+          "text": "1 221"
+        },
+        {
+          "id": "D",
+          "text": "1 443"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dãy tăng/giảm đều 111 đơn vị mỗi bước. Số ở vị trí thứ ba là 1 221.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-020",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.missing_middle",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm số còn thiếu: 80 000, 75 000, …, 65 000, 60 000.",
+      "options": [
+        {
+          "id": "A",
+          "text": "65 000"
+        },
+        {
+          "id": "B",
+          "text": "70 000"
+        },
+        {
+          "id": "C",
+          "text": "80 000"
+        },
+        {
+          "id": "D",
+          "text": "75 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy tăng/giảm đều 5 000 đơn vị mỗi bước. Số ở vị trí thứ ba là 70 000.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "missing_middle"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-021",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 120, mỗi số sau hơn số trước 15 đơn vị. Số hạng thứ 8 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "240"
+        },
+        {
+          "id": "B",
+          "text": "255"
+        },
+        {
+          "id": "C",
+          "text": "210"
+        },
+        {
+          "id": "D",
+          "text": "225"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 8 có 7 lần tăng. Ta có 120 + 7 × 15 = 225.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-022",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 340, mỗi số sau hơn số trước 20 đơn vị. Số hạng thứ 9 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "520"
+        },
+        {
+          "id": "B",
+          "text": "500"
+        },
+        {
+          "id": "C",
+          "text": "480"
+        },
+        {
+          "id": "D",
+          "text": "540"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 9 có 8 lần tăng. Ta có 340 + 8 × 20 = 500.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-023",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 500, mỗi số sau hơn số trước 25 đơn vị. Số hạng thứ 11 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "725"
+        },
+        {
+          "id": "B",
+          "text": "750"
+        },
+        {
+          "id": "C",
+          "text": "775"
+        },
+        {
+          "id": "D",
+          "text": "800"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 11 có 10 lần tăng. Ta có 500 + 10 × 25 = 750.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-024",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 1 500, mỗi số sau hơn số trước 100 đơn vị. Số hạng thứ 12 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 700"
+        },
+        {
+          "id": "B",
+          "text": "2 800"
+        },
+        {
+          "id": "C",
+          "text": "2 600"
+        },
+        {
+          "id": "D",
+          "text": "2 500"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 12 có 11 lần tăng. Ta có 1 500 + 11 × 100 = 2 600.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-025",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 75, mỗi số sau hơn số trước 25 đơn vị. Số hạng thứ 14 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "400"
+        },
+        {
+          "id": "B",
+          "text": "375"
+        },
+        {
+          "id": "C",
+          "text": "425"
+        },
+        {
+          "id": "D",
+          "text": "450"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 14 có 13 lần tăng. Ta có 75 + 13 × 25 = 400.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-026",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 600, mỗi số sau hơn số trước 50 đơn vị. Số hạng thứ 10 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 150"
+        },
+        {
+          "id": "B",
+          "text": "1 050"
+        },
+        {
+          "id": "C",
+          "text": "1 100"
+        },
+        {
+          "id": "D",
+          "text": "1 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 10 có 9 lần tăng. Ta có 600 + 9 × 50 = 1 050.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-027",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 1 200, mỗi số sau hơn số trước 200 đơn vị. Số hạng thứ 15 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 200"
+        },
+        {
+          "id": "B",
+          "text": "3 800"
+        },
+        {
+          "id": "C",
+          "text": "4 400"
+        },
+        {
+          "id": "D",
+          "text": "4 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 15 có 14 lần tăng. Ta có 1 200 + 14 × 200 = 4 000.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-028",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 20 000, mỗi số sau hơn số trước 500 đơn vị. Số hạng thứ 9 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24 000"
+        },
+        {
+          "id": "B",
+          "text": "23 500"
+        },
+        {
+          "id": "C",
+          "text": "24 500"
+        },
+        {
+          "id": "D",
+          "text": "25 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 9 có 8 lần tăng. Ta có 20 000 + 8 × 500 = 24 000.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-029",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 990, mỗi số sau hơn số trước 10 đơn vị. Số hạng thứ 20 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 190"
+        },
+        {
+          "id": "B",
+          "text": "1 170"
+        },
+        {
+          "id": "C",
+          "text": "1 200"
+        },
+        {
+          "id": "D",
+          "text": "1 180"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 20 có 19 lần tăng. Ta có 990 + 19 × 10 = 1 180.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-030",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.nth_term",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Dãy số bắt đầu từ 4 000, mỗi số sau hơn số trước 250 đơn vị. Số hạng thứ 13 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 500"
+        },
+        {
+          "id": "B",
+          "text": "6 750"
+        },
+        {
+          "id": "C",
+          "text": "7 000"
+        },
+        {
+          "id": "D",
+          "text": "7 250"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Từ số hạng thứ nhất đến số hạng thứ 13 có 12 lần tăng. Ta có 4 000 + 12 × 250 = 7 000.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "nth_term"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-031",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 100, 125, 150, … Số 300 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 200. Có 200 : 25 = 8 bước, nên số đó ở vị trí thứ 9.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-032",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 150, 200, 250, … Số 550 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 400. Có 400 : 50 = 8 bước, nên số đó ở vị trí thứ 9.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-033",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 1 000, 1 250, 1 500, … Số 3 000 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 2 000. Có 2 000 : 250 = 8 bước, nên số đó ở vị trí thứ 9.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-034",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 200, 240, 280, … Số 520 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 320. Có 320 : 40 = 8 bước, nên số đó ở vị trí thứ 9.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-035",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 600, 700, 800, … Số 1 500 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 900. Có 900 : 100 = 9 bước, nên số đó ở vị trí thứ 10.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-036",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 1 200, 1 500, 1 800, … Số 3 900 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 2 700. Có 2 700 : 300 = 9 bước, nên số đó ở vị trí thứ 10.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-037",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 100, 175, 250, … Số 700 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 600. Có 600 : 75 = 8 bước, nên số đó ở vị trí thứ 9.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-038",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 450, 500, 550, … Số 950 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 500. Có 500 : 50 = 10 bước, nên số đó ở vị trí thứ 11.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-039",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 2 000, 2 500, 3 000, … Số 7 000 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 5 000. Có 5 000 : 500 = 10 bước, nên số đó ở vị trí thứ 11.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N03-040",
+      "grade": 3,
+      "topicId": "N03",
+      "topicName": "Dãy số và quy luật",
+      "skillId": "N03.position",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số: 75, 100, 125, … Số 325 là số hạng thứ mấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hiệu giữa số cần tìm và số đầu là 250. Có 250 : 25 = 10 bước, nên số đó ở vị trí thứ 11.",
+      "tags": [
+        "toan-3",
+        "n03",
+        "position"
+      ],
+      "status": "reviewed_draft"
+    }
+  ]
+}

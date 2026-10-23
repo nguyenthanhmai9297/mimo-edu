@@ -3,6 +3,7 @@ import {
   CountdownArt,
   GamesArt,
   Geometry3DArt,
+  MathCanvasArt,
   MindMapArt,
   PracticeArt,
   PuzzleArt,
@@ -12,9 +13,10 @@ import {
   TugOfWarArt,
 } from './ToolIllustrations';
 
-export type ToolCategory = 'game' | 'activity' | 'visual' | 'quiz';
+export type ToolCategory = 'math' | 'game' | 'activity' | 'visual' | 'quiz';
 
 export const TOOL_CATEGORIES: { id: ToolCategory; label: string; badge: string }[] = [
+  { id: 'math', label: 'Công cụ Toán học', badge: 'bg-[#E6FAFC] text-[#0E8A9A]' },
   { id: 'game', label: 'Trò chơi tương tác', badge: 'bg-[#F3EFFF] text-[#6A4BE6]' },
   { id: 'activity', label: 'Hoạt động trên lớp', badge: 'bg-[#EAF5FF] text-[#1267E9]' },
   { id: 'visual', label: 'Công cụ trực quan', badge: 'bg-[#FFF6DC] text-[#B7790A]' },
@@ -43,6 +45,20 @@ export interface TeachingTool {
 }
 
 export const TEACHING_TOOLS: TeachingTool[] = [
+  {
+    id: 'bang-ve-toan',
+    name: 'Bảng vẽ Toán học',
+    description: 'Vẽ điểm, đoạn thẳng, tam giác, tứ giác, hình tròn; kéo đỉnh, thêm đường cao, đường chéo; xuất PNG, SVG, PDF.',
+    category: 'math',
+    art: MathCanvasArt,
+    usesQuestions: false,
+    audience: 'Cả lớp',
+    duration: 'Tùy chọn',
+    status: 'ready',
+    to: '/admin/tools/bang-ve-toan',
+    isNew: true,
+    keywords: 'bang ve toan hoc hinh hoc diem doan thang tam giac hinh vuong hinh tron duong cao dem hinh math canvas',
+  },
   {
     id: 'goi-ten',
     name: 'Gọi tên & Chia nhóm',
@@ -155,7 +171,7 @@ export const TEACHING_TOOLS: TeachingTool[] = [
     id: 'hinh-hoc-3d',
     name: 'Hình học 3D',
     description: 'Quan sát, xoay, trải phẳng và đổ đầy các khối hình không gian.',
-    category: 'visual',
+    category: 'math',
     art: Geometry3DArt,
     usesQuestions: false,
     audience: 'Cả lớp',

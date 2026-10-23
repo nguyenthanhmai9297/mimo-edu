@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n06-revised-20261023",
+  "title": "Phép nhân và phép chia",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "group": "Số và phép tính",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N06-001",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 4 × 3 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 3 nhóm, mỗi nhóm 4 đơn vị, vậy 4 × 3 = 12.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-002",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 8 : 2 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 2 × 4 = 8 nên 8 : 2 = 4.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-003",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 5 × 5 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 5 nhóm, mỗi nhóm 5 đơn vị, vậy 5 × 5 = 25.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-004",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 18 : 3 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 3 × 6 = 18 nên 18 : 3 = 6.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-005",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 6 × 7 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "41"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "43"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 7 nhóm, mỗi nhóm 6 đơn vị, vậy 6 × 7 = 42.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-006",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 12 : 4 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 4 × 3 = 12 nên 12 : 4 = 3.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-007",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 7 × 4 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 4 nhóm, mỗi nhóm 7 đơn vị, vậy 7 × 4 = 28.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-008",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 25 : 5 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 5 × 5 = 25 nên 25 : 5 = 5.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-009",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 8 × 6 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "49"
+        },
+        {
+          "id": "B",
+          "text": "47"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 6 nhóm, mỗi nhóm 8 đơn vị, vậy 8 × 6 = 48.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-010",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_nham",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhẩm: 42 : 6 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 6 × 7 = 42 nên 42 : 6 = 7.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-011",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 124 × 2 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "250"
+        },
+        {
+          "id": "B",
+          "text": "348"
+        },
+        {
+          "id": "C",
+          "text": "248"
+        },
+        {
+          "id": "D",
+          "text": "238"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhân lần lượt từ hàng đơn vị sang hàng cao hơn: 124 × 2 = 248.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-012",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 147 : 3 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "59"
+        },
+        {
+          "id": "B",
+          "text": "49"
+        },
+        {
+          "id": "C",
+          "text": "50"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chia từ hàng cao đến hàng thấp: 147 : 3 = 49. Thử lại: 49 × 3 = 147.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-013",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 198 × 4 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "792"
+        },
+        {
+          "id": "B",
+          "text": "782"
+        },
+        {
+          "id": "C",
+          "text": "892"
+        },
+        {
+          "id": "D",
+          "text": "796"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhân lần lượt từ hàng đơn vị sang hàng cao hơn: 198 × 4 = 792.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-014",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 315 : 5 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "63"
+        },
+        {
+          "id": "B",
+          "text": "64"
+        },
+        {
+          "id": "C",
+          "text": "73"
+        },
+        {
+          "id": "D",
+          "text": "62"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia từ hàng cao đến hàng thấp: 315 : 5 = 63. Thử lại: 63 × 5 = 315.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-015",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 272 × 6 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1622"
+        },
+        {
+          "id": "B",
+          "text": "1732"
+        },
+        {
+          "id": "C",
+          "text": "1638"
+        },
+        {
+          "id": "D",
+          "text": "1632"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhân lần lượt từ hàng đơn vị sang hàng cao hơn: 272 × 6 = 1632.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-016",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 154 : 2 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "78"
+        },
+        {
+          "id": "B",
+          "text": "87"
+        },
+        {
+          "id": "C",
+          "text": "77"
+        },
+        {
+          "id": "D",
+          "text": "76"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chia từ hàng cao đến hàng thấp: 154 : 2 = 77. Thử lại: 77 × 2 = 154.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-017",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 346 × 3 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1028"
+        },
+        {
+          "id": "B",
+          "text": "1041"
+        },
+        {
+          "id": "C",
+          "text": "1138"
+        },
+        {
+          "id": "D",
+          "text": "1038"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhân lần lượt từ hàng đơn vị sang hàng cao hơn: 346 × 3 = 1038.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-018",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 364 : 4 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "101"
+        },
+        {
+          "id": "B",
+          "text": "91"
+        },
+        {
+          "id": "C",
+          "text": "90"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chia từ hàng cao đến hàng thấp: 364 : 4 = 91. Thử lại: 91 × 4 = 364.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-019",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.nhan_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 420 × 5 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2200"
+        },
+        {
+          "id": "B",
+          "text": "2090"
+        },
+        {
+          "id": "C",
+          "text": "2100"
+        },
+        {
+          "id": "D",
+          "text": "2105"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhân lần lượt từ hàng đơn vị sang hàng cao hơn: 420 × 5 = 2100.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-020",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.chia_viet",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đặt tính rồi tính: 630 : 6 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "106"
+        },
+        {
+          "id": "B",
+          "text": "115"
+        },
+        {
+          "id": "C",
+          "text": "104"
+        },
+        {
+          "id": "D",
+          "text": "105"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chia từ hàng cao đến hàng thấp: 630 : 6 = 105. Thử lại: 105 × 6 = 630.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-021",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 24 bút chì. 3 hộp có tất cả bao nhiêu bút chì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "72"
+        },
+        {
+          "id": "B",
+          "text": "69"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy số bút trong một hộp nhân số hộp: 24 × 3 = 72 (bút chì).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-022",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 108 quyển vở chia đều vào 4 chồng. Mỗi chồng có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy tổng số vở chia số chồng: 108 : 4 = 27 (quyển).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-023",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.tim_thua_so",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền thừa số còn thiếu: □ × 5 = 150",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "150"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta có 150 : 5 = 30, vậy số cần điền là 30.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-024",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.tim_so_chia",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số chia còn thiếu: 198 : □ = 33",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "198"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số chia bằng 198 : 33 = 6.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-025",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.sua_loi",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bạn Mai tính 36 × 7 = 259. Kết quả đúng phải là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "259"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "252"
+        },
+        {
+          "id": "D",
+          "text": "245"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Kết quả đúng là 36 × 7 = 252; bạn Mai tính thừa 7.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-026",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 39 bút chì. 3 hộp có tất cả bao nhiêu bút chì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "117"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "114"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy số bút trong một hộp nhân số hộp: 39 × 3 = 117 (bút chì).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-027",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 168 quyển vở chia đều vào 4 chồng. Mỗi chồng có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "43"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy tổng số vở chia số chồng: 168 : 4 = 42 (quyển).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-028",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.tim_thua_so",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền thừa số còn thiếu: □ × 5 = 225",
+      "options": [
+        {
+          "id": "A",
+          "text": "225"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta có 225 : 5 = 45, vậy số cần điền là 45.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-029",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.tim_so_chia",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số chia còn thiếu: 288 : □ = 48",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "288"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số chia bằng 288 : 48 = 6.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-030",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.sua_loi",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bạn Mai tính 51 × 7 = 364. Kết quả đúng phải là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "357"
+        },
+        {
+          "id": "C",
+          "text": "350"
+        },
+        {
+          "id": "D",
+          "text": "364"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Kết quả đúng là 51 × 7 = 357; bạn Mai tính thừa 7.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-031",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một thư viện có 3 giá, mỗi giá có 25 cuốn sách, rồi nhận thêm 2 cuốn. Hỏi có tất cả bao nhiêu cuốn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "78"
+        },
+        {
+          "id": "B",
+          "text": "77"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Sách trên các giá: 25 × 3 = 75. Tổng số: 75 + 2 = 77 (cuốn).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-032",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 116 chiếc bánh chia đều vào 4 hộp. Bán đi 1 hộp. Hỏi còn bao nhiêu chiếc bánh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "91"
+        },
+        {
+          "id": "B",
+          "text": "87"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "116"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hộp có 116 : 4 = 29 bánh. Còn 116 − 29 = 87 bánh.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-033",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một thư viện có 5 giá, mỗi giá có 33 cuốn sách, rồi nhận thêm 4 cuốn. Hỏi có tất cả bao nhiêu cuốn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "169"
+        },
+        {
+          "id": "C",
+          "text": "170"
+        },
+        {
+          "id": "D",
+          "text": "165"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Sách trên các giá: 33 × 5 = 165. Tổng số: 165 + 4 = 169 (cuốn).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-034",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 222 chiếc bánh chia đều vào 6 hộp. Bán đi 1 hộp. Hỏi còn bao nhiêu chiếc bánh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "191"
+        },
+        {
+          "id": "B",
+          "text": "185"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "222"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hộp có 222 : 6 = 37 bánh. Còn 222 − 37 = 185 bánh.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-035",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một thư viện có 7 giá, mỗi giá có 41 cuốn sách, rồi nhận thêm 3 cuốn. Hỏi có tất cả bao nhiêu cuốn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "291"
+        },
+        {
+          "id": "B",
+          "text": "51"
+        },
+        {
+          "id": "C",
+          "text": "287"
+        },
+        {
+          "id": "D",
+          "text": "290"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sách trên các giá: 41 × 7 = 287. Tổng số: 287 + 3 = 290 (cuốn).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-036",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 135 chiếc bánh chia đều vào 3 hộp. Bán đi 1 hộp. Hỏi còn bao nhiêu chiếc bánh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45"
+        },
+        {
+          "id": "B",
+          "text": "135"
+        },
+        {
+          "id": "C",
+          "text": "93"
+        },
+        {
+          "id": "D",
+          "text": "90"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp có 135 : 3 = 45 bánh. Còn 135 − 45 = 90 bánh.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-037",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một thư viện có 4 giá, mỗi giá có 49 cuốn sách, rồi nhận thêm 2 cuốn. Hỏi có tất cả bao nhiêu cuốn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "198"
+        },
+        {
+          "id": "B",
+          "text": "199"
+        },
+        {
+          "id": "C",
+          "text": "196"
+        },
+        {
+          "id": "D",
+          "text": "55"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sách trên các giá: 49 × 4 = 196. Tổng số: 196 + 2 = 198 (cuốn).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-038",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 265 chiếc bánh chia đều vào 5 hộp. Bán đi 1 hộp. Hỏi còn bao nhiêu chiếc bánh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "265"
+        },
+        {
+          "id": "B",
+          "text": "217"
+        },
+        {
+          "id": "C",
+          "text": "53"
+        },
+        {
+          "id": "D",
+          "text": "212"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp có 265 : 5 = 53 bánh. Còn 265 − 53 = 212 bánh.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-039",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một thư viện có 6 giá, mỗi giá có 57 cuốn sách, rồi nhận thêm 4 cuốn. Hỏi có tất cả bao nhiêu cuốn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "347"
+        },
+        {
+          "id": "B",
+          "text": "67"
+        },
+        {
+          "id": "C",
+          "text": "342"
+        },
+        {
+          "id": "D",
+          "text": "346"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sách trên các giá: 57 × 6 = 342. Tổng số: 342 + 4 = 346 (cuốn).",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-040",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 427 chiếc bánh chia đều vào 7 hộp. Bán đi 1 hộp. Hỏi còn bao nhiêu chiếc bánh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "373"
+        },
+        {
+          "id": "B",
+          "text": "427"
+        },
+        {
+          "id": "C",
+          "text": "61"
+        },
+        {
+          "id": "D",
+          "text": "366"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp có 427 : 7 = 61 bánh. Còn 427 − 61 = 366 bánh.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

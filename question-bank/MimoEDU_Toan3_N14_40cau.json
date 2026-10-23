@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n14-revised-20261023",
+  "title": "Gấp một số lên nhiều lần",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "group": "Toán có lời văn",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N14-001",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Gấp 3 lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gấp lên 2 lần là nhân 2: 3×2=6.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-002",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mỗi bó có 4 bông hoa. 3 bó có bao nhiêu bông?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "3 bó có 4×3=12 bông.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-003",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nam có 5 viên bi. Bình có số bi gấp 4 lần Nam. Bình có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bình có 5×4=20 viên bi.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-004",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Chiều rộng hình chữ nhật là 6 cm, chiều dài gấp 5 lần chiều rộng. Tính chiều dài.",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chiều dài 6×5=30 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-005",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một ngăn có 7 quyển sách. 6 ngăn giống nhau có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tất cả có 7×6=42 quyển.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-006",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Gấp 8 lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gấp lên 2 lần là nhân 2: 8×2=16.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-007",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mỗi bó có 9 bông hoa. 3 bó có bao nhiêu bông?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "3 bó có 9×3=27 bông.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-008",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nam có 10 viên bi. Bình có số bi gấp 4 lần Nam. Bình có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bình có 10×4=40 viên bi.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-009",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Chiều rộng hình chữ nhật là 11 cm, chiều dài gấp 5 lần chiều rộng. Tính chiều dài.",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "57"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chiều dài 11×5=55 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-010",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một ngăn có 12 quyển sách. 6 ngăn giống nhau có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "74"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tất cả có 12×6=72 quyển.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-011",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Gấp 13 lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gấp lên 2 lần là nhân 2: 13×2=26.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-012",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mỗi bó có 14 bông hoa. 3 bó có bao nhiêu bông?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "3 bó có 14×3=42 bông.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-013",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nam có 15 viên bi. Bình có số bi gấp 4 lần Nam. Bình có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bình có 15×4=60 viên bi.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-014",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Chiều rộng hình chữ nhật là 16 cm, chiều dài gấp 5 lần chiều rộng. Tính chiều dài.",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "80"
+        },
+        {
+          "id": "C",
+          "text": "82"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chiều dài 16×5=80 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-015",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một ngăn có 17 quyển sách. 6 ngăn giống nhau có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "102"
+        },
+        {
+          "id": "C",
+          "text": "104"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tất cả có 17×6=102 quyển.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-016",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Gấp 18 lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gấp lên 2 lần là nhân 2: 18×2=36.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-017",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mỗi bó có 19 bông hoa. 3 bó có bao nhiêu bông?",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "59"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "3 bó có 19×3=57 bông.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-018",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nam có 3 viên bi. Bình có số bi gấp 4 lần Nam. Bình có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bình có 3×4=12 viên bi.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-019",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Chiều rộng hình chữ nhật là 4 cm, chiều dài gấp 5 lần chiều rộng. Tính chiều dài.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chiều dài 4×5=20 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-020",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một ngăn có 5 quyển sách. 6 ngăn giống nhau có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tất cả có 5×6=30 quyển.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-021",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Gấp 6 lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gấp lên 2 lần là nhân 2: 6×2=12.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-022",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi bó có 7 bông hoa. 3 bó có bao nhiêu bông?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "3 bó có 7×3=21 bông.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-023",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nam có 8 viên bi. Bình có số bi gấp 4 lần Nam. Bình có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bình có 8×4=32 viên bi.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-024",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Chiều rộng hình chữ nhật là 9 cm, chiều dài gấp 5 lần chiều rộng. Tính chiều dài.",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chiều dài 9×5=45 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-025",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một ngăn có 10 quyển sách. 6 ngăn giống nhau có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tất cả có 10×6=60 quyển.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-026",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Gấp 11 lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gấp lên 2 lần là nhân 2: 11×2=22.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-027",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi bó có 12 bông hoa. 3 bó có bao nhiêu bông?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "3 bó có 12×3=36 bông.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-028",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nam có 13 viên bi. Bình có số bi gấp 4 lần Nam. Bình có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "52"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bình có 13×4=52 viên bi.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-029",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Chiều rộng hình chữ nhật là 14 cm, chiều dài gấp 5 lần chiều rộng. Tính chiều dài.",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chiều dài 14×5=70 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-030",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một ngăn có 15 quyển sách. 6 ngăn giống nhau có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "92"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tất cả có 15×6=90 quyển.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-031",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Gấp 16 lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gấp lên 2 lần là nhân 2: 16×2=32.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-032",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi bó có 17 bông hoa. 3 bó có bao nhiêu bông?",
+      "options": [
+        {
+          "id": "A",
+          "text": "51"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "53"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "3 bó có 17×3=51 bông.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-033",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nam có 18 viên bi. Bình có số bi gấp 4 lần Nam. Bình có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "72"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "74"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bình có 18×4=72 viên bi.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-034",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Chiều rộng hình chữ nhật là 19 cm, chiều dài gấp 5 lần chiều rộng. Tính chiều dài.",
+      "options": [
+        {
+          "id": "A",
+          "text": "97"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "95"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chiều dài 19×5=95 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-035",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một ngăn có 3 quyển sách. 6 ngăn giống nhau có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tất cả có 3×6=18 quyển.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-036",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Gấp 4 lên 2 lần được bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gấp lên 2 lần là nhân 2: 4×2=8.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-037",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi bó có 5 bông hoa. 3 bó có bao nhiêu bông?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "3 bó có 5×3=15 bông.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-038",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nam có 6 viên bi. Bình có số bi gấp 4 lần Nam. Bình có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bình có 6×4=24 viên bi.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-039",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Chiều rộng hình chữ nhật là 7 cm, chiều dài gấp 5 lần chiều rộng. Tính chiều dài.",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chiều dài 7×5=35 cm.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N14-040",
+      "grade": 3,
+      "topicId": "N14",
+      "topicName": "Gấp một số lên nhiều lần",
+      "skillId": "N14.gap_len",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một ngăn có 8 quyển sách. 6 ngăn giống nhau có bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tất cả có 8×6=48 quyển.",
+      "tags": [
+        "toan-3",
+        "n14"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

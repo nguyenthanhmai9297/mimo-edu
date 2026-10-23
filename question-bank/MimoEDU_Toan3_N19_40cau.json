@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n19-revised-20261023",
+  "title": "Bài toán thực tế tổng hợp",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "group": "Toán có lời văn",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N19-001",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 2 quyển vở, mỗi quyển 4 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "96"
+        },
+        {
+          "id": "C",
+          "text": "91"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở: 4 × 2 = 8 nghìn đồng. Tiền trả lại: 100 - 8 = 92 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-002",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 3 quyển vở, mỗi quyển 5 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "84"
+        },
+        {
+          "id": "C",
+          "text": "85"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền mua vở: 5 × 3 = 15 nghìn đồng. Tiền trả lại: 100 - 15 = 85 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-003",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 4 quyển vở, mỗi quyển 6 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "82"
+        },
+        {
+          "id": "B",
+          "text": "75"
+        },
+        {
+          "id": "C",
+          "text": "76"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền mua vở: 6 × 4 = 24 nghìn đồng. Tiền trả lại: 100 - 24 = 76 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-004",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 5 quyển vở, mỗi quyển 7 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "64"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "65"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền mua vở: 7 × 5 = 35 nghìn đồng. Tiền trả lại: 100 - 35 = 65 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-005",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 2 quyển vở, mỗi quyển 8 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "83"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "84"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền mua vở: 8 × 2 = 16 nghìn đồng. Tiền trả lại: 100 - 16 = 84 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-006",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 3 quyển vở, mỗi quyển 9 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "82"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "73"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở: 9 × 3 = 27 nghìn đồng. Tiền trả lại: 100 - 27 = 73 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-007",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 4 quyển vở, mỗi quyển 10 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "59"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở: 10 × 4 = 40 nghìn đồng. Tiền trả lại: 100 - 40 = 60 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-008",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 5 quyển vở, mỗi quyển 11 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền mua vở: 11 × 5 = 55 nghìn đồng. Tiền trả lại: 100 - 55 = 45 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-009",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 2 quyển vở, mỗi quyển 12 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "75"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "76"
+        },
+        {
+          "id": "D",
+          "text": "88"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền mua vở: 12 × 2 = 24 nghìn đồng. Tiền trả lại: 100 - 24 = 76 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-010",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.mua_ban",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan mua 3 quyển vở, mỗi quyển 13 nghìn đồng và đưa người bán 100 nghìn đồng. Lan được trả lại bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "61"
+        },
+        {
+          "id": "C",
+          "text": "74"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền mua vở: 13 × 3 = 39 nghìn đồng. Tiền trả lại: 100 - 39 = 61 nghìn đồng.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-011",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 7 giờ 00 phút và kéo dài 25 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7 giờ 35 phút"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "8 giờ 25 phút"
+        },
+        {
+          "id": "D",
+          "text": "7 giờ 25 phút"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "25 phút = 0 giờ 25 phút. Cộng vào 7 giờ 00 phút được 7 giờ 25 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-012",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 8 giờ 00 phút và kéo dài 30 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 giờ 30 phút"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "8 giờ 30 phút"
+        },
+        {
+          "id": "D",
+          "text": "8 giờ 40 phút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "30 phút = 0 giờ 30 phút. Cộng vào 8 giờ 00 phút được 8 giờ 30 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-013",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 9 giờ 00 phút và kéo dài 35 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 giờ 35 phút"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "9 giờ 45 phút"
+        },
+        {
+          "id": "D",
+          "text": "9 giờ 35 phút"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "35 phút = 0 giờ 35 phút. Cộng vào 9 giờ 00 phút được 9 giờ 35 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-014",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 10 giờ 00 phút và kéo dài 40 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "10 giờ 50 phút"
+        },
+        {
+          "id": "C",
+          "text": "10 giờ 40 phút"
+        },
+        {
+          "id": "D",
+          "text": "11 giờ 40 phút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "40 phút = 0 giờ 40 phút. Cộng vào 10 giờ 00 phút được 10 giờ 40 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-015",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 11 giờ 00 phút và kéo dài 45 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "11 giờ 55 phút"
+        },
+        {
+          "id": "C",
+          "text": "12 giờ 45 phút"
+        },
+        {
+          "id": "D",
+          "text": "11 giờ 45 phút"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "45 phút = 0 giờ 45 phút. Cộng vào 11 giờ 00 phút được 11 giờ 45 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-016",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 12 giờ 00 phút và kéo dài 50 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "12 giờ 50 phút"
+        },
+        {
+          "id": "C",
+          "text": "12 giờ 00 phút"
+        },
+        {
+          "id": "D",
+          "text": "13 giờ 50 phút"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "50 phút = 0 giờ 50 phút. Cộng vào 12 giờ 00 phút được 12 giờ 50 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-017",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 13 giờ 00 phút và kéo dài 55 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13 giờ 55 phút"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "13 giờ 05 phút"
+        },
+        {
+          "id": "D",
+          "text": "14 giờ 55 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "55 phút = 0 giờ 55 phút. Cộng vào 13 giờ 00 phút được 13 giờ 55 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-018",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 14 giờ 00 phút và kéo dài 60 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 giờ 00 phút"
+        },
+        {
+          "id": "B",
+          "text": "15 giờ 10 phút"
+        },
+        {
+          "id": "C",
+          "text": "14 giờ 00 phút"
+        },
+        {
+          "id": "D",
+          "text": "16 giờ 00 phút"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "60 phút = 1 giờ 0 phút. Cộng vào 14 giờ 00 phút được 15 giờ 00 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-019",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 15 giờ 00 phút và kéo dài 65 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17 giờ 05 phút"
+        },
+        {
+          "id": "B",
+          "text": "16 giờ 15 phút"
+        },
+        {
+          "id": "C",
+          "text": "15 giờ 05 phút"
+        },
+        {
+          "id": "D",
+          "text": "16 giờ 05 phút"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "65 phút = 1 giờ 5 phút. Cộng vào 15 giờ 00 phút được 16 giờ 05 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-020",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.thoi_gian",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hoạt động bắt đầu lúc 16 giờ 00 phút và kéo dài 70 phút. Hoạt động kết thúc lúc mấy giờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18 giờ 10 phút"
+        },
+        {
+          "id": "B",
+          "text": "17 giờ 20 phút"
+        },
+        {
+          "id": "C",
+          "text": "16 giờ 10 phút"
+        },
+        {
+          "id": "D",
+          "text": "17 giờ 10 phút"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "70 phút = 1 giờ 10 phút. Cộng vào 16 giờ 00 phút được 17 giờ 10 phút.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-021",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 20 quyển truyện tranh và 7 quyển truyện chữ. Học sinh mượn 5 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ban đầu có 20 + 7 = 27 quyển. Còn lại 27 - 5 = 22 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-022",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 23 quyển truyện tranh và 8 quyển truyện chữ. Học sinh mượn 6 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ban đầu có 23 + 8 = 31 quyển. Còn lại 31 - 6 = 25 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-023",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 26 quyển truyện tranh và 9 quyển truyện chữ. Học sinh mượn 7 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ban đầu có 26 + 9 = 35 quyển. Còn lại 35 - 7 = 28 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-024",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 29 quyển truyện tranh và 10 quyển truyện chữ. Học sinh mượn 8 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ban đầu có 29 + 10 = 39 quyển. Còn lại 39 - 8 = 31 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-025",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 32 quyển truyện tranh và 11 quyển truyện chữ. Học sinh mượn 5 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "43"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ban đầu có 32 + 11 = 43 quyển. Còn lại 43 - 5 = 38 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-026",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 35 quyển truyện tranh và 12 quyển truyện chữ. Học sinh mượn 6 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "41"
+        },
+        {
+          "id": "C",
+          "text": "47"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ban đầu có 35 + 12 = 47 quyển. Còn lại 47 - 6 = 41 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-027",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 38 quyển truyện tranh và 13 quyển truyện chữ. Học sinh mượn 7 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "43"
+        },
+        {
+          "id": "B",
+          "text": "51"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "44"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ban đầu có 38 + 13 = 51 quyển. Còn lại 51 - 7 = 44 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-028",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 41 quyển truyện tranh và 14 quyển truyện chữ. Học sinh mượn 8 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ban đầu có 41 + 14 = 55 quyển. Còn lại 55 - 8 = 47 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-029",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 44 quyển truyện tranh và 15 quyển truyện chữ. Học sinh mượn 5 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "59"
+        },
+        {
+          "id": "C",
+          "text": "53"
+        },
+        {
+          "id": "D",
+          "text": "55"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ban đầu có 44 + 15 = 59 quyển. Còn lại 59 - 5 = 54 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-030",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.con_lai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Thư viện có 47 quyển truyện tranh và 16 quyển truyện chữ. Học sinh mượn 6 quyển. Hỏi thư viện còn bao nhiêu quyển truyện?",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "63"
+        },
+        {
+          "id": "C",
+          "text": "57"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ban đầu có 47 + 16 = 63 quyển. Còn lại 63 - 6 = 57 quyển.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-031",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 20 m, rộng 8 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi sân: (20 + 8) × 2 = 56 m. Thêm 4 m để buộc, cần 56 + 4 = 60 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-032",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 22 m, rộng 9 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "62"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi sân: (22 + 9) × 2 = 62 m. Thêm 4 m để buộc, cần 62 + 4 = 66 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-033",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 24 m, rộng 10 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "68"
+        },
+        {
+          "id": "B",
+          "text": "72"
+        },
+        {
+          "id": "C",
+          "text": "76"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi sân: (24 + 10) × 2 = 68 m. Thêm 4 m để buộc, cần 68 + 4 = 72 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-034",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 26 m, rộng 11 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "74"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "78"
+        },
+        {
+          "id": "D",
+          "text": "82"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi sân: (26 + 11) × 2 = 74 m. Thêm 4 m để buộc, cần 74 + 4 = 78 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-035",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 28 m, rộng 12 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80"
+        },
+        {
+          "id": "B",
+          "text": "88"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "84"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi sân: (28 + 12) × 2 = 80 m. Thêm 4 m để buộc, cần 80 + 4 = 84 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-036",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 30 m, rộng 13 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "94"
+        },
+        {
+          "id": "D",
+          "text": "86"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi sân: (30 + 13) × 2 = 86 m. Thêm 4 m để buộc, cần 86 + 4 = 90 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-037",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 32 m, rộng 14 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96"
+        },
+        {
+          "id": "B",
+          "text": "92"
+        },
+        {
+          "id": "C",
+          "text": "46"
+        },
+        {
+          "id": "D",
+          "text": "100"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi sân: (32 + 14) × 2 = 92 m. Thêm 4 m để buộc, cần 92 + 4 = 96 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-038",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 34 m, rộng 15 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "98"
+        },
+        {
+          "id": "B",
+          "text": "102"
+        },
+        {
+          "id": "C",
+          "text": "49"
+        },
+        {
+          "id": "D",
+          "text": "106"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi sân: (34 + 15) × 2 = 98 m. Thêm 4 m để buộc, cần 98 + 4 = 102 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-039",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 36 m, rộng 16 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "112"
+        },
+        {
+          "id": "B",
+          "text": "108"
+        },
+        {
+          "id": "C",
+          "text": "52"
+        },
+        {
+          "id": "D",
+          "text": "104"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi sân: (36 + 16) × 2 = 104 m. Thêm 4 m để buộc, cần 104 + 4 = 108 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N19-040",
+      "grade": 3,
+      "topicId": "N19",
+      "topicName": "Bài toán thực tế tổng hợp",
+      "skillId": "N19.chu_vi_thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một sân chơi hình chữ nhật dài 38 m, rộng 17 m. Người ta căng dây quanh sân một vòng và thêm 4 m dây để buộc nút. Cần bao nhiêu mét dây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "118"
+        },
+        {
+          "id": "B",
+          "text": "55"
+        },
+        {
+          "id": "C",
+          "text": "114"
+        },
+        {
+          "id": "D",
+          "text": "110"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi sân: (38 + 17) × 2 = 110 m. Thêm 4 m để buộc, cần 110 + 4 = 114 m.",
+      "tags": [
+        "toan-3",
+        "n19"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

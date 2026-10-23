@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n20-revised-20261023",
+  "title": "Điểm, đoạn thẳng và các hình học",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N20-001",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trên một đường thẳng có 3 điểm phân biệt. Chọn hai điểm làm đầu mút thì có thể tạo được bao nhiêu đoạn thẳng khác nhau?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cặp hai điểm xác định một đoạn thẳng. Số đoạn thẳng là 3 × 2 : 2 = 3.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-002",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trên một đường thẳng có 4 điểm phân biệt. Chọn hai điểm làm đầu mút thì có thể tạo được bao nhiêu đoạn thẳng khác nhau?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cặp hai điểm xác định một đoạn thẳng. Số đoạn thẳng là 4 × 3 : 2 = 6.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-003",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trên một đường thẳng có 5 điểm phân biệt. Chọn hai điểm làm đầu mút thì có thể tạo được bao nhiêu đoạn thẳng khác nhau?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cặp hai điểm xác định một đoạn thẳng. Số đoạn thẳng là 5 × 4 : 2 = 10.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-004",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trên một đường thẳng có 6 điểm phân biệt. Chọn hai điểm làm đầu mút thì có thể tạo được bao nhiêu đoạn thẳng khác nhau?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi cặp hai điểm xác định một đoạn thẳng. Số đoạn thẳng là 6 × 5 : 2 = 15.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-005",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trên một đường thẳng có 7 điểm phân biệt. Chọn hai điểm làm đầu mút thì có thể tạo được bao nhiêu đoạn thẳng khác nhau?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi cặp hai điểm xác định một đoạn thẳng. Số đoạn thẳng là 7 × 6 : 2 = 21.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-006",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.nhan_biet_hinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tam giác có đặc điểm nào sau đây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 cạnh"
+        },
+        {
+          "id": "B",
+          "text": "Không có đầu mút"
+        },
+        {
+          "id": "C",
+          "text": "4 cạnh"
+        },
+        {
+          "id": "D",
+          "text": "3 cạnh"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Theo định nghĩa và tính chất đã học, hình tam giác có 3 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-007",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.nhan_biet_hinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tứ giác có đặc điểm nào sau đây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không có đầu mút"
+        },
+        {
+          "id": "B",
+          "text": "5 cạnh"
+        },
+        {
+          "id": "C",
+          "text": "3 cạnh"
+        },
+        {
+          "id": "D",
+          "text": "4 cạnh"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Theo định nghĩa và tính chất đã học, hình tứ giác có 4 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-008",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.nhan_biet_hinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông có đặc điểm nào sau đây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 góc vuông"
+        },
+        {
+          "id": "B",
+          "text": "Không có đầu mút"
+        },
+        {
+          "id": "C",
+          "text": "2 góc vuông"
+        },
+        {
+          "id": "D",
+          "text": "4 góc vuông"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Theo định nghĩa và tính chất đã học, hình vuông có 4 góc vuông.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-009",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.nhan_biet_hinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật có đặc điểm nào sau đây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 góc vuông"
+        },
+        {
+          "id": "B",
+          "text": "3 góc vuông"
+        },
+        {
+          "id": "C",
+          "text": "Không có đầu mút"
+        },
+        {
+          "id": "D",
+          "text": "1 góc vuông"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Theo định nghĩa và tính chất đã học, hình chữ nhật có 4 góc vuông.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-010",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.nhan_biet_hinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng có đặc điểm nào sau đây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 đầu mút"
+        },
+        {
+          "id": "B",
+          "text": "Không có đầu mút"
+        },
+        {
+          "id": "C",
+          "text": "2 đầu mút"
+        },
+        {
+          "id": "D",
+          "text": "3 đầu mút"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Theo định nghĩa và tính chất đã học, đoạn thẳng có 2 đầu mút.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-011",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có các điểm A, B, C cùng nằm trên một đường thẳng. Nếu có tổng cộng 3 điểm phân biệt được đánh dấu trên đường thẳng ấy, ta vẽ được tất cả bao nhiêu đoạn thẳng có hai đầu mút là hai điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi đoạn được xác định bởi một cặp hai điểm. Có 3 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-012",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có các điểm A, B, C, D cùng nằm trên một đường thẳng. Nếu có tổng cộng 4 điểm phân biệt được đánh dấu trên đường thẳng ấy, ta vẽ được tất cả bao nhiêu đoạn thẳng có hai đầu mút là hai điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi đoạn được xác định bởi một cặp hai điểm. Có 6 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-013",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có các điểm A, B, C, D cùng nằm trên một đường thẳng. Nếu có tổng cộng 5 điểm phân biệt được đánh dấu trên đường thẳng ấy, ta vẽ được tất cả bao nhiêu đoạn thẳng có hai đầu mút là hai điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi đoạn được xác định bởi một cặp hai điểm. Có 10 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-014",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có các điểm A, B, C, D cùng nằm trên một đường thẳng. Nếu có tổng cộng 6 điểm phân biệt được đánh dấu trên đường thẳng ấy, ta vẽ được tất cả bao nhiêu đoạn thẳng có hai đầu mút là hai điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi đoạn được xác định bởi một cặp hai điểm. Có 15 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-015",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có các điểm A, B, C, D cùng nằm trên một đường thẳng. Nếu có tổng cộng 7 điểm phân biệt được đánh dấu trên đường thẳng ấy, ta vẽ được tất cả bao nhiêu đoạn thẳng có hai đầu mút là hai điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi đoạn được xác định bởi một cặp hai điểm. Có 21 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-016",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dac_diem_hinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Ghép 7 hình tam giác riêng rẽ, không chồng lên nhau. Mỗi hình có 3 cạnh. Tổng số cạnh của tất cả hình tam giác khi đếm riêng từng hình là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 cạnh. Đếm riêng các hình: 7 × 3 = 21 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-017",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dac_diem_hinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Ghép 8 hình tam giác riêng rẽ, không chồng lên nhau. Mỗi hình có 3 cạnh. Tổng số cạnh của tất cả hình tam giác khi đếm riêng từng hình là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh. Đếm riêng các hình: 8 × 3 = 24 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-018",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dac_diem_hinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Ghép 9 hình tam giác riêng rẽ, không chồng lên nhau. Mỗi hình có 3 cạnh. Tổng số cạnh của tất cả hình tam giác khi đếm riêng từng hình là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi tam giác có 3 cạnh. Đếm riêng các hình: 9 × 3 = 27 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-019",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dac_diem_hinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Ghép 10 hình tam giác riêng rẽ, không chồng lên nhau. Mỗi hình có 3 cạnh. Tổng số cạnh của tất cả hình tam giác khi đếm riêng từng hình là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh. Đếm riêng các hình: 10 × 3 = 30 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-020",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dac_diem_hinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Ghép 11 hình tam giác riêng rẽ, không chồng lên nhau. Mỗi hình có 3 cạnh. Tổng số cạnh của tất cả hình tam giác khi đếm riêng từng hình là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh. Đếm riêng các hình: 11 × 3 = 33 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-021",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.diem_doan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trên đoạn thẳng AB có 2 điểm phân biệt nằm bên trong đoạn (không trùng A, B). Tổng cộng có bao nhiêu đoạn thẳng khác nhau được tạo bởi các cặp điểm trong số các điểm đã cho?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 2+2=4 điểm kể cả A và B. Chọn hai điểm làm đầu mút được 6 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-022",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.diem_doan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trên đoạn thẳng AB có 3 điểm phân biệt nằm bên trong đoạn (không trùng A, B). Tổng cộng có bao nhiêu đoạn thẳng khác nhau được tạo bởi các cặp điểm trong số các điểm đã cho?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 3+2=5 điểm kể cả A và B. Chọn hai điểm làm đầu mút được 10 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-023",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.diem_doan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trên đoạn thẳng AB có 4 điểm phân biệt nằm bên trong đoạn (không trùng A, B). Tổng cộng có bao nhiêu đoạn thẳng khác nhau được tạo bởi các cặp điểm trong số các điểm đã cho?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 4+2=6 điểm kể cả A và B. Chọn hai điểm làm đầu mút được 15 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-024",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.diem_doan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trên đoạn thẳng AB có 5 điểm phân biệt nằm bên trong đoạn (không trùng A, B). Tổng cộng có bao nhiêu đoạn thẳng khác nhau được tạo bởi các cặp điểm trong số các điểm đã cho?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 5+2=7 điểm kể cả A và B. Chọn hai điểm làm đầu mút được 21 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-025",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.diem_doan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trên đoạn thẳng AB có 6 điểm phân biệt nằm bên trong đoạn (không trùng A, B). Tổng cộng có bao nhiêu đoạn thẳng khác nhau được tạo bởi các cặp điểm trong số các điểm đã cho?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 6+2=8 điểm kể cả A và B. Chọn hai điểm làm đầu mút được 28 đoạn thẳng.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-026",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_hinh_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật được chia bằng các đoạn thẳng song song với cạnh ngắn thành 3 hình chữ nhật nhỏ liền nhau trong một hàng. Đếm cả các hình ghép từ nhiều phần liên tiếp, có tất cả bao nhiêu hình chữ nhật?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chọn vị trí bắt đầu và kết thúc dãy hình nhỏ: 3 + 2 + ... + 1 = 6 hình chữ nhật.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-027",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_hinh_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật được chia bằng các đoạn thẳng song song với cạnh ngắn thành 4 hình chữ nhật nhỏ liền nhau trong một hàng. Đếm cả các hình ghép từ nhiều phần liên tiếp, có tất cả bao nhiêu hình chữ nhật?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chọn vị trí bắt đầu và kết thúc dãy hình nhỏ: 4 + 3 + ... + 1 = 10 hình chữ nhật.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-028",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_hinh_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật được chia bằng các đoạn thẳng song song với cạnh ngắn thành 5 hình chữ nhật nhỏ liền nhau trong một hàng. Đếm cả các hình ghép từ nhiều phần liên tiếp, có tất cả bao nhiêu hình chữ nhật?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chọn vị trí bắt đầu và kết thúc dãy hình nhỏ: 5 + 4 + ... + 1 = 15 hình chữ nhật.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-029",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_hinh_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật được chia bằng các đoạn thẳng song song với cạnh ngắn thành 6 hình chữ nhật nhỏ liền nhau trong một hàng. Đếm cả các hình ghép từ nhiều phần liên tiếp, có tất cả bao nhiêu hình chữ nhật?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chọn vị trí bắt đầu và kết thúc dãy hình nhỏ: 6 + 5 + ... + 1 = 21 hình chữ nhật.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-030",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_hinh_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật được chia bằng các đoạn thẳng song song với cạnh ngắn thành 7 hình chữ nhật nhỏ liền nhau trong một hàng. Đếm cả các hình ghép từ nhiều phần liên tiếp, có tất cả bao nhiêu hình chữ nhật?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chọn vị trí bắt đầu và kết thúc dãy hình nhỏ: 7 + 6 + ... + 1 = 28 hình chữ nhật.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-031",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.luoi_o_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bảng gồm 2 hàng và 3 cột ô vuông bằng nhau. Có bao nhiêu ô vuông nhỏ (không kể các ô ghép)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hàng có 3 ô vuông nhỏ, có 2 hàng nên có 2 × 3 = 6 ô vuông nhỏ.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-032",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.luoi_o_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bảng gồm 3 hàng và 4 cột ô vuông bằng nhau. Có bao nhiêu ô vuông nhỏ (không kể các ô ghép)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hàng có 4 ô vuông nhỏ, có 3 hàng nên có 3 × 4 = 12 ô vuông nhỏ.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-033",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.luoi_o_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bảng gồm 4 hàng và 5 cột ô vuông bằng nhau. Có bao nhiêu ô vuông nhỏ (không kể các ô ghép)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hàng có 5 ô vuông nhỏ, có 4 hàng nên có 4 × 5 = 20 ô vuông nhỏ.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-034",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.luoi_o_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bảng gồm 5 hàng và 6 cột ô vuông bằng nhau. Có bao nhiêu ô vuông nhỏ (không kể các ô ghép)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hàng có 6 ô vuông nhỏ, có 5 hàng nên có 5 × 6 = 30 ô vuông nhỏ.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-035",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.luoi_o_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bảng gồm 6 hàng và 7 cột ô vuông bằng nhau. Có bao nhiêu ô vuông nhỏ (không kể các ô ghép)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "43"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hàng có 7 ô vuông nhỏ, có 6 hàng nên có 6 × 7 = 42 ô vuông nhỏ.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-036",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan_thu_thach",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn thẳng có 3 điểm được đánh dấu, kể cả hai đầu mút. Hỏi có bao nhiêu đoạn thẳng khác nhau có hai đầu mút đều là các điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi cặp điểm tạo một đoạn. Có 3 × (3 - 1) : 2 = 3 đoạn.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-037",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan_thu_thach",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn thẳng có 4 điểm được đánh dấu, kể cả hai đầu mút. Hỏi có bao nhiêu đoạn thẳng khác nhau có hai đầu mút đều là các điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi cặp điểm tạo một đoạn. Có 4 × (4 - 1) : 2 = 6 đoạn.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-038",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan_thu_thach",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn thẳng có 5 điểm được đánh dấu, kể cả hai đầu mút. Hỏi có bao nhiêu đoạn thẳng khác nhau có hai đầu mút đều là các điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi cặp điểm tạo một đoạn. Có 5 × (5 - 1) : 2 = 10 đoạn.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-039",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan_thu_thach",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn thẳng có 6 điểm được đánh dấu, kể cả hai đầu mút. Hỏi có bao nhiêu đoạn thẳng khác nhau có hai đầu mút đều là các điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi cặp điểm tạo một đoạn. Có 6 × (6 - 1) : 2 = 15 đoạn.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-040",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.dem_doan_thu_thach",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đoạn thẳng có 7 điểm được đánh dấu, kể cả hai đầu mút. Hỏi có bao nhiêu đoạn thẳng khác nhau có hai đầu mút đều là các điểm đã đánh dấu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi cặp điểm tạo một đoạn. Có 7 × (7 - 1) : 2 = 21 đoạn.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

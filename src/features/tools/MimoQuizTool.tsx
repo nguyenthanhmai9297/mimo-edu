@@ -6,6 +6,11 @@ import { QuestionPicker } from './QuestionPicker';
 import { playChime, playFanfare } from './toolSound';
 import type { ToolQuestion } from './toolQuestions';
 import { formatClock } from './toolUtils';
+import { LETTERS, TILE, TimerRing } from './quizStyle';
+import { LiveQuizHost } from './LiveQuizHost';
+import { usingFirebaseEmulator } from '../../lib/firebase/config';
+import { createLiveQuiz } from '../../services/liveQuizService';
+import type { LiveQuizHostView } from '../../types/liveQuiz';
 import {
   buildQuizDeck,
   DEFAULT_QUIZ_SETTINGS,
@@ -22,15 +27,6 @@ import {
   type QuizSettings,
 } from './mimoQuiz';
 
-const TILE = [
-  { bg: 'bg-[#1267E9]', shape: '▲' },
-  { bg: 'bg-[#FF4F9A]', shape: '◆' },
-  { bg: 'bg-[#F5A800]', shape: '●' },
-  { bg: 'bg-[#7B5CFF]', shape: '■' },
-  { bg: 'bg-[#13B5C9]', shape: '★' },
-  { bg: 'bg-[#22C38E]', shape: '✚' },
-];
-const LETTERS = 'ABCDEF';
 const PER_QUESTION = [10, 20, 30, 45, 60, 90];
 const TOTAL_MIN = [5, 10, 15, 20];
 const MARKS: { v: ClassMark; label: string; cls: string }[] = [
@@ -50,42 +46,12 @@ const Chip: React.FC<{ on: boolean; onClick: () => void; children: React.ReactNo
   </button>
 );
 
-const TimerRing: React.FC<{ left: number; total: number; big: boolean }> = ({ left, total, big }) => {
-  const r = 34;
-  const c = 2 * Math.PI * r;
-  const frac = total > 0 ? left / total : 0;
-  const warn = left <= 5;
-  return (
-    <div className={`relative ${big ? 'h-28 w-28' : 'h-20 w-20'}`} role="timer" aria-label={`Còn ${left} giây`}>
-      <svg viewBox="0 0 80 80" className="h-full w-full -rotate-90">
-        <circle cx="40" cy="40" r={r} fill="none" stroke="#EAF5FF" strokeWidth="8" />
-        <circle
-          cx="40"
-          cy="40"
-          r={r}
-          fill="none"
-          stroke={warn ? '#E5484D' : '#1267E9'}
-          strokeWidth="8"
-          strokeLinecap="round"
-          strokeDasharray={c}
-          strokeDashoffset={c * (1 - frac)}
-          style={{ transition: 'stroke-dashoffset 0.3s linear' }}
-        />
-      </svg>
-      <span
-        className={`absolute inset-0 flex items-center justify-center font-display font-extrabold [font-variant-numeric:tabular-nums] ${warn ? 'text-[#E5484D]' : 'text-[#071A63]'} ${
-          big ? (left >= 60 ? 'text-2xl' : 'text-4xl') : left >= 60 ? 'text-base' : 'text-2xl'
-        }`}
-      >
-        {left >= 60 ? formatClock(left) : left}
-      </span>
-    </div>
-  );
-};
+type Phase = 'setup' | 'play' | 'summary' | 'live';
 
-type Phase = 'setup' | 'play' | 'summary';
+// Join mode needs the live-quiz API, which is only switched on against the Firebase Emulator for now
+const LIVE_AVAILABLE = usingFirebaseEmulator;
 
-/** "Mimo Quiz" – presentation mode: one board, the teacher controls every step. */
+/** "Mimo Quiz": presentation mode (one board) or join mode (students answer on their own devices). */
 export const MimoQuizTool: React.FC<{ presenting: boolean }> = ({ presenting }) => {
   const [phase, setPhase] = useState<Phase>('setup');
   const [settings, setSettings] = useState<QuizSettings>(DEFAULT_QUIZ_SETTINGS);
@@ -94,6 +60,10 @@ export const MimoQuizTool: React.FC<{ presenting: boolean }> = ({ presenting }) 
   const [now, setNow] = useState(Date.now());
   const [sound, setSound] = useState(true);
   const [timeUpAt, setTimeUpAt] = useState<number | null>(null);
+  const [mode, setMode] = useState<'present' | 'live'>('present');
+  const [live, setLive] = useState<{ deck: ToolQuestion[]; view: LiveQuizHostView; perQuestionSec: number | null } | null>(null);
+  const [starting, setStarting] = useState(false);
+  const [startError, setStartError] = useState('');
   const soundRef = useRef(sound);
   soundRef.current = sound;
   const big = presenting;
@@ -119,7 +89,23 @@ export const MimoQuizTool: React.FC<{ presenting: boolean }> = ({ presenting }) 
     if (t.run.finishedAt !== null) setPhase('summary');
   }, [now, run, settings, phase]);
 
+  const beginLive = async () => {
+    setStarting(true);
+    setStartError('');
+    try {
+      const deck = buildQuizDeck(questions, settings);
+      const perQuestionSec = settings.timer === 'per' ? settings.perQuestionSec : null;
+      setLive({ deck, view: await createLiveQuiz(deck, perQuestionSec, 'Mimo Quiz'), perQuestionSec });
+      setPhase('live');
+    } catch (e) {
+      setStartError(e instanceof Error ? e.message : 'Không tạo được phòng Quiz.');
+    } finally {
+      setStarting(false);
+    }
+  };
+
   const begin = () => {
+    if (mode === 'live') return void beginLive();
     const t = Date.now();
     setRun(startQuiz(buildQuizDeck(questions, settings), settings, t));
     setNow(t);
@@ -173,8 +159,31 @@ export const MimoQuizTool: React.FC<{ presenting: boolean }> = ({ presenting }) 
         </section>
         <section className="space-y-4">
           <h2 className="font-display text-base font-extrabold text-[#172B4D]">2. Thiết lập Quiz</h2>
-          <div className="rounded-xl bg-[#EAF5FF] p-3 text-sm text-[#172B4D]">
-            <b>Chế độ trình chiếu:</b> chiếu câu hỏi lên bảng, học sinh giơ tay hoặc giơ thẻ A/B/C/D, giáo viên bấm hiện đáp án.
+          <div>
+            <span className="text-xs font-bold text-[#5E6C84]">Cách chơi</span>
+            <div className="mt-1 grid grid-cols-2 gap-2">
+              {(
+                [
+                  ['present', 'Trình chiếu', 'Chiếu lên bảng, học sinh giơ tay hoặc giơ thẻ A/B/C/D.'],
+                  ['live', 'Học sinh tham gia', LIVE_AVAILABLE ? 'Học sinh nhập mã phòng và trả lời trên máy của mình (thử nghiệm).' : 'Đang thử nghiệm, chưa bật trên máy chủ này.'],
+                ] as const
+              ).map(([v, name, hint]) => (
+                <button
+                  key={v}
+                  type="button"
+                  aria-pressed={mode === v}
+                  disabled={v === 'live' && !LIVE_AVAILABLE}
+                  onClick={() => {
+                    setMode(v);
+                    if (v === 'live' && settings.timer === 'total') set('timer', 'per');
+                  }}
+                  className={`rounded-xl border-2 p-3 text-left disabled:opacity-50 ${mode === v ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-[#DCE7F3] bg-white'}`}
+                >
+                  <div className="font-bold text-[#071A63]">{name}</div>
+                  <div className="text-xs text-[#5E6C84]">{hint}</div>
+                </button>
+              ))}
+            </div>
           </div>
           <label className="block">
             <span className="text-xs font-bold text-[#5E6C84]">Số câu: {Math.min(settings.questionCount, usable || settings.questionCount)}</span>
@@ -191,7 +200,11 @@ export const MimoQuizTool: React.FC<{ presenting: boolean }> = ({ presenting }) 
             <span className="text-xs font-bold text-[#5E6C84]">Hẹn giờ</span>
             <div className="mt-1 flex flex-wrap gap-1.5">
               <Chip on={settings.timer === 'per'} onClick={() => set('timer', 'per')}>Mỗi câu</Chip>
-              <Chip on={settings.timer === 'total'} onClick={() => set('timer', 'total')}>Cả bài</Chip>
+              {mode === 'present' && (
+                <Chip on={settings.timer === 'total'} onClick={() => set('timer', 'total')}>
+                  Cả bài
+                </Chip>
+              )}
               <Chip on={settings.timer === 'none'} onClick={() => set('timer', 'none')}>Không hẹn giờ</Chip>
             </div>
             {settings.timer === 'per' && (
@@ -217,7 +230,7 @@ export const MimoQuizTool: React.FC<{ presenting: boolean }> = ({ presenting }) 
             [
               ['shuffleQuestions', 'Xáo trộn thứ tự câu hỏi'],
               ['shuffleAnswers', 'Xáo trộn đáp án A/B/C/D'],
-              ...(settings.timer === 'per' ? ([['autoReveal', 'Hết giờ tự hiện đáp án']] as const) : []),
+              ...(settings.timer === 'per' && mode === 'present' ? ([['autoReveal', 'Hết giờ tự hiện đáp án']] as const) : []),
             ] as const
           ).map(([k, label]) => (
             <label key={k} className="flex items-center gap-2 text-sm text-[#172B4D]">
@@ -229,12 +242,29 @@ export const MimoQuizTool: React.FC<{ presenting: boolean }> = ({ presenting }) 
             <input type="checkbox" checked={sound} onChange={(e) => setSound(e.target.checked)} className="h-4 w-4 accent-[#1267E9]" />
             Âm báo hết giờ
           </label>
-          <button type="button" disabled={usable < 1} onClick={begin} className="studio-btn studio-btn-accent min-h-[52px] w-full text-base">
-            <Play className="h-5 w-5" /> Bắt đầu Quiz
+          <button type="button" disabled={usable < 1 || starting} onClick={begin} className="studio-btn studio-btn-accent min-h-[52px] w-full text-base">
+            <Play className="h-5 w-5" /> {mode === 'live' ? (starting ? 'Đang tạo phòng…' : 'Tạo phòng Quiz') : 'Bắt đầu Quiz'}
           </button>
+          {startError && <p className="text-sm font-bold text-[#D93B5B]">{startError}</p>}
           {usable < 1 && <p className="text-xs font-semibold text-[#B7790A]">Hãy chọn ít nhất 1 câu hỏi.</p>}
         </section>
       </div>
+    );
+  }
+
+  if (phase === 'live' && live) {
+    return (
+      <LiveQuizHost
+        deck={live.deck}
+        initial={live.view}
+        perQuestionSec={live.perQuestionSec}
+        presenting={presenting}
+        sound={sound}
+        onExit={() => {
+          setLive(null);
+          setPhase('setup');
+        }}
+      />
     );
   }
 

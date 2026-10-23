@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n33-draft-v1",
+  "title": "Tư duy quy luật và suy luận logic",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N33-001",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 5, 7, 9, 11, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "113"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dãy mỗi lần tăng 2, nên số tiếp theo là 13.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-002",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 6, 9, 12, 15, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy mỗi lần tăng 3, nên số tiếp theo là 18.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-003",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 7, 11, 15, 19, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "123"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 4, nên số tiếp theo là 23.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-004",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 8, 13, 18, 23, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 028"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 5, nên số tiếp theo là 28.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-005",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 9, 15, 21, 27, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "133"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 6, nên số tiếp theo là 33.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-006",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 10, 17, 24, 31, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "138"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dãy mỗi lần tăng 7, nên số tiếp theo là 38.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-007",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 11, 19, 27, 35, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "1 043"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy mỗi lần tăng 8, nên số tiếp theo là 43.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-008",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 12, 14, 16, 18, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 2, nên số tiếp theo là 20.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-009",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 13, 16, 19, 22, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 3, nên số tiếp theo là 25.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-010",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 14, 18, 22, 26, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 4, nên số tiếp theo là 30.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-011",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 8, 10, 12, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 018"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 2: 18.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-012",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 9, 12, 15, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 3: 24.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-013",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 10, 14, 18, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "1 030"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 4: 30.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-014",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 11, 16, 21, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "1 036"
+        },
+        {
+          "id": "C",
+          "text": "46"
+        },
+        {
+          "id": "D",
+          "text": "39"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 5: 36.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-015",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 12, 18, 24, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "47"
+        },
+        {
+          "id": "B",
+          "text": "1 042"
+        },
+        {
+          "id": "C",
+          "text": "142"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 6: 42.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-016",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 13, 20, 27, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "49"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 7: 48.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-017",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 14, 22, 30, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "49"
+        },
+        {
+          "id": "D",
+          "text": "53"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 8: 54.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-018",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 15, 17, 19, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 2: 25.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-019",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 16, 19, 22, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 3: 31.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-020",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 17, 21, 25, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "137"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 4: 37.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-021",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 11, 13, 15, 17, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "119"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dãy mỗi lần tăng 2, nên số tiếp theo là 19.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-022",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 12, 15, 18, 21, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 3, nên số tiếp theo là 24.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-023",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 13, 17, 21, 25, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "1 029"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy mỗi lần tăng 4, nên số tiếp theo là 29.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-024",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 14, 19, 24, 29, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "1 034"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 5, nên số tiếp theo là 34.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-025",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 15, 21, 27, 33, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "39"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dãy mỗi lần tăng 6, nên số tiếp theo là 39.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-026",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 16, 23, 30, 37, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "43"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "144"
+        },
+        {
+          "id": "D",
+          "text": "1 044"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy mỗi lần tăng 7, nên số tiếp theo là 44.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-027",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 17, 25, 33, 41, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "51"
+        },
+        {
+          "id": "B",
+          "text": "49"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "1 049"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy mỗi lần tăng 8, nên số tiếp theo là 49.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-028",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 18, 20, 22, 24, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "1 026"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dãy mỗi lần tăng 2, nên số tiếp theo là 26.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-029",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 19, 22, 25, 28, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "131"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dãy mỗi lần tăng 3, nên số tiếp theo là 31.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-030",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Điền số tiếp theo: 20, 24, 28, 32, ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "136"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "1 036"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Dãy mỗi lần tăng 4, nên số tiếp theo là 36.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-031",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 14, 16, 18, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "1 024"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 2: 24.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-032",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 15, 18, 21, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "130"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 3: 30.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-033",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 16, 20, 24, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "136"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 4: 36.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-034",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 17, 22, 27, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "46"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 5: 42.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-035",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 18, 24, 30, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "47"
+        },
+        {
+          "id": "C",
+          "text": "148"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 6: 48.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-036",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 19, 26, 33, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 7: 54.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-037",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 20, 28, 36, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "57"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "63"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 8: 60.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-038",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 21, 23, 25, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "41"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 2: 31.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-039",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 22, 25, 28, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "1 037"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 3: 37.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N33-040",
+      "grade": 3,
+      "topicId": "N33",
+      "topicName": "Tư duy quy luật và suy luận logic",
+      "skillId": "N33.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dãy số 23, 27, 31, ... Số ở vị trí thứ 6 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "43"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số thứ 6 bằng số đầu cộng 5 lần 4: 43.",
+      "tags": [
+        "toan-3",
+        "n33"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

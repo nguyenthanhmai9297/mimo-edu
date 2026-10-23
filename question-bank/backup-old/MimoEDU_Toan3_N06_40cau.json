@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n06-draft-v1",
+  "title": "Phép nhân và phép chia",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N06-001",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 5 × 2 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "5 nhân 2 bằng 10.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-002",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 6 × 3 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "6 nhân 3 bằng 18.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-003",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 7 × 4 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "7 nhân 4 bằng 28.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-004",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 8 × 5 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "8 nhân 5 bằng 40.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-005",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 9 × 6 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "1 054"
+        },
+        {
+          "id": "C",
+          "text": "53"
+        },
+        {
+          "id": "D",
+          "text": "55"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "9 nhân 6 bằng 54.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-006",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 10 × 7 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80"
+        },
+        {
+          "id": "B",
+          "text": "60"
+        },
+        {
+          "id": "C",
+          "text": "65"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "10 nhân 7 bằng 70.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-007",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 11 × 8 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 088"
+        },
+        {
+          "id": "B",
+          "text": "98"
+        },
+        {
+          "id": "C",
+          "text": "88"
+        },
+        {
+          "id": "D",
+          "text": "78"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "11 nhân 8 bằng 88.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-008",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 12 × 2 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "124"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "1 024"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "12 nhân 2 bằng 24.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-009",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 13 × 3 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "49"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "13 nhân 3 bằng 39.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-010",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 14 × 4 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "156"
+        },
+        {
+          "id": "C",
+          "text": "1 056"
+        },
+        {
+          "id": "D",
+          "text": "61"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "14 nhân 4 bằng 56.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-011",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 160 : 2 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "82"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 80 × 2 = 160 nên kết quả là 80.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-012",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 27 : 3 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "1 009"
+        },
+        {
+          "id": "D",
+          "text": "109"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì 9 × 3 = 27 nên kết quả là 9.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-013",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 400 : 4 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "97"
+        },
+        {
+          "id": "B",
+          "text": "110"
+        },
+        {
+          "id": "C",
+          "text": "100"
+        },
+        {
+          "id": "D",
+          "text": "101"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 100 × 4 = 400 nên kết quả là 100.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-014",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 55 : 5 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Vì 11 × 5 = 55 nên kết quả là 11.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-015",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 720 : 6 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "220"
+        },
+        {
+          "id": "B",
+          "text": "120"
+        },
+        {
+          "id": "C",
+          "text": "115"
+        },
+        {
+          "id": "D",
+          "text": "123"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì 120 × 6 = 720 nên kết quả là 120.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-016",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 91 : 7 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "1 013"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 13 × 7 = 91 nên kết quả là 13.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-017",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 1120 : 8 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "145"
+        },
+        {
+          "id": "B",
+          "text": "140"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "150"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì 140 × 8 = 1120 nên kết quả là 140.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-018",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 30 : 2 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "115"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 15 × 2 = 30 nên kết quả là 15.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-019",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 480 : 3 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "170"
+        },
+        {
+          "id": "B",
+          "text": "260"
+        },
+        {
+          "id": "C",
+          "text": "165"
+        },
+        {
+          "id": "D",
+          "text": "160"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Vì 160 × 3 = 480 nên kết quả là 160.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-020",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 68 : 4 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "117"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 17 × 4 = 68 nên kết quả là 17.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-021",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 2 chiếc bút. Có 11 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 11 × 2 = 22 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-022",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 3 chiếc bút. Có 12 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "41"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 12 × 3 = 36 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-023",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 4 chiếc bút. Có 13 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "57"
+        },
+        {
+          "id": "C",
+          "text": "50"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 13 × 4 = 52 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-024",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 5 chiếc bút. Có 14 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "67"
+        },
+        {
+          "id": "B",
+          "text": "75"
+        },
+        {
+          "id": "C",
+          "text": "70"
+        },
+        {
+          "id": "D",
+          "text": "68"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 14 × 5 = 70 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-025",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 6 chiếc bút. Có 15 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "87"
+        },
+        {
+          "id": "C",
+          "text": "190"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 15 × 6 = 90 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-026",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 7 chiếc bút. Có 16 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 112"
+        },
+        {
+          "id": "B",
+          "text": "109"
+        },
+        {
+          "id": "C",
+          "text": "111"
+        },
+        {
+          "id": "D",
+          "text": "112"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 16 × 7 = 112 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-027",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 8 chiếc bút. Có 17 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "135"
+        },
+        {
+          "id": "B",
+          "text": "146"
+        },
+        {
+          "id": "C",
+          "text": "136"
+        },
+        {
+          "id": "D",
+          "text": "134"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 17 × 8 = 136 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-028",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 2 chiếc bút. Có 18 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 18 × 2 = 36 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-029",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 3 chiếc bút. Có 19 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "57"
+        },
+        {
+          "id": "D",
+          "text": "62"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 19 × 3 = 57 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-030",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 4 chiếc bút. Có 20 hộp như vậy. Có tất cả bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "82"
+        },
+        {
+          "id": "D",
+          "text": "75"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 20 × 4 = 80 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-031",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 28 viên bi chia đều vào 14 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi túi ban đầu có 28 : 14 = 2 viên, còn 2 − 1 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-032",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 45 viên bi chia đều vào 15 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "1 002"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi túi ban đầu có 45 : 15 = 3 viên, còn 3 − 1 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-033",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 64 viên bi chia đều vào 16 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "103"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi túi ban đầu có 64 : 16 = 4 viên, còn 4 − 1 = 3 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-034",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 85 viên bi chia đều vào 17 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi túi ban đầu có 85 : 17 = 5 viên, còn 5 − 1 = 4 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-035",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 108 viên bi chia đều vào 18 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "105"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi túi ban đầu có 108 : 18 = 6 viên, còn 6 − 1 = 5 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-036",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 133 viên bi chia đều vào 19 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "106"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi túi ban đầu có 133 : 19 = 7 viên, còn 7 − 1 = 6 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-037",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 160 viên bi chia đều vào 20 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi túi ban đầu có 160 : 20 = 8 viên, còn 8 − 1 = 7 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-038",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 42 viên bi chia đều vào 21 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "101"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi túi ban đầu có 42 : 21 = 2 viên, còn 2 − 1 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-039",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 66 viên bi chia đều vào 22 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "102"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi túi ban đầu có 66 : 22 = 3 viên, còn 3 − 1 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N06-040",
+      "grade": 3,
+      "topicId": "N06",
+      "topicName": "Phép nhân và phép chia",
+      "skillId": "N06.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 92 viên bi chia đều vào 23 túi. Sau đó lấy từ mỗi túi ra 1 viên. Mỗi túi còn bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "1 003"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi túi ban đầu có 92 : 23 = 4 viên, còn 4 − 1 = 3 viên.",
+      "tags": [
+        "toan-3",
+        "n06"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

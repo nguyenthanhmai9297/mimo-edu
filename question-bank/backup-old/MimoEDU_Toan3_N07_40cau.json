@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n07-draft-v1",
+  "title": "Tính giá trị biểu thức",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N07-001",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 5 + 2 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhân trước: 2 × 3 = 6; rồi cộng 5 được 11.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-002",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 6 + 3 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "118"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhân trước: 3 × 4 = 12; rồi cộng 6 được 18.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-003",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 7 + 4 × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "127"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhân trước: 4 × 5 = 20; rồi cộng 7 được 27.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-004",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 8 + 5 × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhân trước: 5 × 6 = 30; rồi cộng 8 được 38.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-005",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 9 + 6 × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 051"
+        },
+        {
+          "id": "B",
+          "text": "52"
+        },
+        {
+          "id": "C",
+          "text": "51"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhân trước: 6 × 7 = 42; rồi cộng 9 được 51.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-006",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 10 + 7 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhân trước: 7 × 3 = 21; rồi cộng 10 được 31.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-007",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 11 + 8 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "143"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "46"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhân trước: 8 × 4 = 32; rồi cộng 11 được 43.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-008",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 12 + 2 × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "122"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhân trước: 2 × 5 = 10; rồi cộng 12 được 22.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-009",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 13 + 3 × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhân trước: 3 × 6 = 18; rồi cộng 13 được 31.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-010",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị: 14 + 4 × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "1 042"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhân trước: 4 × 7 = 28; rồi cộng 14 được 42.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-011",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (8 + 2) × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tính trong ngoặc trước: 10 × 3 = 30.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-012",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (9 + 3) × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "47"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính trong ngoặc trước: 12 × 4 = 48.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-013",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (10 + 4) × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "63"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "69"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tính trong ngoặc trước: 14 × 5 = 70.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-014",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (11 + 5) × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "86"
+        },
+        {
+          "id": "B",
+          "text": "97"
+        },
+        {
+          "id": "C",
+          "text": "96"
+        },
+        {
+          "id": "D",
+          "text": "94"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính trong ngoặc trước: 16 × 6 = 96.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-015",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (12 + 6) × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "131"
+        },
+        {
+          "id": "B",
+          "text": "121"
+        },
+        {
+          "id": "C",
+          "text": "126"
+        },
+        {
+          "id": "D",
+          "text": "129"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính trong ngoặc trước: 18 × 7 = 126.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-016",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (13 + 7) × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "160"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính trong ngoặc trước: 20 × 3 = 60.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-017",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (14 + 8) × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "188"
+        },
+        {
+          "id": "C",
+          "text": "86"
+        },
+        {
+          "id": "D",
+          "text": "89"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính trong ngoặc trước: 22 × 4 = 88.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-018",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (15 + 2) × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "85"
+        },
+        {
+          "id": "C",
+          "text": "87"
+        },
+        {
+          "id": "D",
+          "text": "93"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tính trong ngoặc trước: 17 × 5 = 85.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-019",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (16 + 3) × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "114"
+        },
+        {
+          "id": "B",
+          "text": "115"
+        },
+        {
+          "id": "C",
+          "text": "103"
+        },
+        {
+          "id": "D",
+          "text": "116"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính trong ngoặc trước: 19 × 6 = 114.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-020",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (17 + 4) × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "148"
+        },
+        {
+          "id": "B",
+          "text": "145"
+        },
+        {
+          "id": "C",
+          "text": "147"
+        },
+        {
+          "id": "D",
+          "text": "137"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính trong ngoặc trước: 21 × 7 = 147.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-021",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 22 : 2 + 3 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Thực hiện chia và nhân trước: 11 + 6 = 17.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-022",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 36 : 3 + 4 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thực hiện chia và nhân trước: 12 + 8 = 20.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-023",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 52 : 4 + 5 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Thực hiện chia và nhân trước: 13 + 10 = 23.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-024",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 70 : 5 + 6 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thực hiện chia và nhân trước: 14 + 12 = 26.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-025",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 90 : 6 + 7 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Thực hiện chia và nhân trước: 15 + 14 = 29.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-026",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 112 : 7 + 3 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "122"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Thực hiện chia và nhân trước: 16 + 6 = 22.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-027",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 136 : 8 + 4 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "1 025"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thực hiện chia và nhân trước: 17 + 8 = 25.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-028",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 36 : 2 + 5 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thực hiện chia và nhân trước: 18 + 10 = 28.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-029",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 57 : 3 + 6 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thực hiện chia và nhân trước: 19 + 12 = 31.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-030",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 80 : 4 + 7 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "134"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "1 034"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thực hiện chia và nhân trước: 20 + 14 = 34.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-031",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (28 − 6) : 2 + 14",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong ngoặc được 22; chia 2 được 11; cộng 14 được 25.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-032",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (45 − 12) : 3 + 15",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong ngoặc được 33; chia 3 được 11; cộng 15 được 26.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-033",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (64 − 20) : 4 + 16",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trong ngoặc được 44; chia 4 được 11; cộng 16 được 27.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-034",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (85 − 30) : 5 + 17",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trong ngoặc được 55; chia 5 được 11; cộng 17 được 28.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-035",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (108 − 42) : 6 + 18",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trong ngoặc được 66; chia 6 được 11; cộng 18 được 29.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-036",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (133 − 21) : 7 + 19",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "45"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trong ngoặc được 112; chia 7 được 16; cộng 19 được 35.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-037",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (160 − 32) : 8 + 20",
+      "options": [
+        {
+          "id": "A",
+          "text": "41"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong ngoặc được 128; chia 8 được 16; cộng 20 được 36.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-038",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (42 − 10) : 2 + 21",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "137"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong ngoặc được 32; chia 2 được 16; cộng 21 được 37.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-039",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (66 − 18) : 3 + 22",
+      "options": [
+        {
+          "id": "A",
+          "text": "41"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "138"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trong ngoặc được 48; chia 3 được 16; cộng 22 được 38.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-040",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (92 − 28) : 4 + 23",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "41"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trong ngoặc được 64; chia 4 được 16; cộng 23 được 39.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

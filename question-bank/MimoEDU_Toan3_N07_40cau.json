@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n07-revised-20261023",
+  "title": "Tính giá trị biểu thức",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "group": "Số và phép tính",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N07-001",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 10 + 2 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thực hiện nhân trước: 2 × 3 = 6; 10 + 6 = 16.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-002",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: (12 + 3) × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "61"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "63"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính trong ngoặc trước: 12+3=15; sau đó 15×4=60.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-003",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 14 × 4 − 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "49"
+        },
+        {
+          "id": "C",
+          "text": "51"
+        },
+        {
+          "id": "D",
+          "text": "55"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhân trước: 14×4=56; rồi trừ 5, được 51.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-004",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 80 : 5 + 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chia trước: 80:5=16; cộng 6 được 22.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-005",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 18 + 42 : 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chia trước: 42:7=6; cộng 18 được 24.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-006",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: (140 − 20) : 20",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trong ngoặc: 140−20=120; chia 20 được 6.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-007",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 22 + 2 + 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng từ trái sang phải: 22+2=24; cộng 4 được 28.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-008",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 72 : (3 × 2)",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tính trong ngoặc: 3×2=6; 72:6=12.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-009",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 26 + 4 × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "48"
+        },
+        {
+          "id": "C",
+          "text": "53"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Thực hiện nhân trước: 4 × 6 = 24; 26 + 24 = 50.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-010",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: (28 + 5) × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "229"
+        },
+        {
+          "id": "B",
+          "text": "236"
+        },
+        {
+          "id": "C",
+          "text": "234"
+        },
+        {
+          "id": "D",
+          "text": "231"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tính trong ngoặc trước: 28+5=33; sau đó 33×7=231.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-011",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 30 × 6 − 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "177"
+        },
+        {
+          "id": "B",
+          "text": "180"
+        },
+        {
+          "id": "C",
+          "text": "175"
+        },
+        {
+          "id": "D",
+          "text": "183"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhân trước: 30×6=180; rồi trừ 3, được 177.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-012",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 224 : 7 + 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "43"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chia trước: 224:7=32; cộng 4 được 36.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-013",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 34 + 10 : 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia trước: 10:5=2; cộng 34 được 36.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-014",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (108 − 36) : 36",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trong ngoặc: 108−36=72; chia 36 được 2.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-015",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 38 + 4 + 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "49"
+        },
+        {
+          "id": "B",
+          "text": "53"
+        },
+        {
+          "id": "C",
+          "text": "52"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng từ trái sang phải: 38+4=42; cộng 7 được 49.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-016",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 200 : (5 × 2)",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tính trong ngoặc: 5×2=10; 200:10=20.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-017",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 42 + 6 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "64"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "69"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Thực hiện nhân trước: 6 × 4 = 24; 42 + 24 = 66.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-018",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: (44 + 7) × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "255"
+        },
+        {
+          "id": "B",
+          "text": "262"
+        },
+        {
+          "id": "C",
+          "text": "253"
+        },
+        {
+          "id": "D",
+          "text": "258"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính trong ngoặc trước: 44+7=51; sau đó 51×5=255.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-019",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 46 × 2 − 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "89"
+        },
+        {
+          "id": "C",
+          "text": "86"
+        },
+        {
+          "id": "D",
+          "text": "88"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhân trước: 46×2=92; rồi trừ 6, được 86.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-020",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 144 : 3 + 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "55"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "53"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chia trước: 144:3=48; cộng 7 được 55.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-021",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 50 + 12 : 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chia trước: 12:3=4; cộng 50 được 54.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-022",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: (260 − 52) : 52",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trong ngoặc: 260−52=208; chia 52 được 4.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-023",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 54 + 6 + 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "63"
+        },
+        {
+          "id": "C",
+          "text": "68"
+        },
+        {
+          "id": "D",
+          "text": "71"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng từ trái sang phải: 54+6=60; cộng 5 được 65.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-024",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 392 : (7 × 2)",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính trong ngoặc: 7×2=14; 392:14=28.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-025",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 58 + 2 × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "72"
+        },
+        {
+          "id": "B",
+          "text": "74"
+        },
+        {
+          "id": "C",
+          "text": "70"
+        },
+        {
+          "id": "D",
+          "text": "75"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Thực hiện nhân trước: 2 × 7 = 14; 58 + 14 = 72.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-026",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: (60 + 3) × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "189"
+        },
+        {
+          "id": "B",
+          "text": "190"
+        },
+        {
+          "id": "C",
+          "text": "187"
+        },
+        {
+          "id": "D",
+          "text": "192"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính trong ngoặc trước: 60+3=63; sau đó 63×3=189.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-027",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 62 × 4 − 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "244"
+        },
+        {
+          "id": "B",
+          "text": "242"
+        },
+        {
+          "id": "C",
+          "text": "247"
+        },
+        {
+          "id": "D",
+          "text": "248"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhân trước: 62×4=248; rồi trừ 4, được 244.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-028",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 320 : 5 + 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "67"
+        },
+        {
+          "id": "B",
+          "text": "69"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "74"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chia trước: 320:5=64; cộng 5 được 69.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-029",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: 66 + 36 : 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "72"
+        },
+        {
+          "id": "B",
+          "text": "78"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia trước: 36:6=6; cộng 66 được 72.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-030",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính: (476 − 68) : 68",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trong ngoặc: 476−68=408; chia 68 được 6.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-031",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: 70 + 2 + 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "78"
+        },
+        {
+          "id": "B",
+          "text": "77"
+        },
+        {
+          "id": "C",
+          "text": "73"
+        },
+        {
+          "id": "D",
+          "text": "75"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng từ trái sang phải: 70+2=72; cộng 3 được 75.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-032",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: 216 : (3 × 2)",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính trong ngoặc: 3×2=6; 216:6=36.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-033",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: 74 + 4 × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "97"
+        },
+        {
+          "id": "B",
+          "text": "98"
+        },
+        {
+          "id": "C",
+          "text": "94"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Thực hiện nhân trước: 4 × 5 = 20; 74 + 20 = 94.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-034",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (76 + 5) × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "484"
+        },
+        {
+          "id": "B",
+          "text": "489"
+        },
+        {
+          "id": "C",
+          "text": "486"
+        },
+        {
+          "id": "D",
+          "text": "491"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính trong ngoặc trước: 76+5=81; sau đó 81×6=486.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-035",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: 78 × 6 − 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "467"
+        },
+        {
+          "id": "B",
+          "text": "459"
+        },
+        {
+          "id": "C",
+          "text": "464"
+        },
+        {
+          "id": "D",
+          "text": "461"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhân trước: 78×6=468; rồi trừ 7, được 461.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-036",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: 560 : 7 + 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "86"
+        },
+        {
+          "id": "C",
+          "text": "81"
+        },
+        {
+          "id": "D",
+          "text": "83"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chia trước: 560:7=80; cộng 3 được 83.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-037",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: 82 + 8 : 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "86"
+        },
+        {
+          "id": "C",
+          "text": "87"
+        },
+        {
+          "id": "D",
+          "text": "82"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chia trước: 8:4=2; cộng 82 được 84.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-038",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: (252 − 84) : 84",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trong ngoặc: 252−84=168; chia 84 được 2.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-039",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: 86 + 4 + 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "99"
+        },
+        {
+          "id": "B",
+          "text": "96"
+        },
+        {
+          "id": "C",
+          "text": "94"
+        },
+        {
+          "id": "D",
+          "text": "100"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng từ trái sang phải: 86+4=90; cộng 6 được 96.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N07-040",
+      "grade": 3,
+      "topicId": "N07",
+      "topicName": "Tính giá trị biểu thức",
+      "skillId": "N07.thu_tu_phep_tinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính: 440 : (5 × 2)",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "49"
+        },
+        {
+          "id": "C",
+          "text": "47"
+        },
+        {
+          "id": "D",
+          "text": "44"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tính trong ngoặc: 5×2=10; 440:10=44.",
+      "tags": [
+        "toan-3",
+        "n07"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

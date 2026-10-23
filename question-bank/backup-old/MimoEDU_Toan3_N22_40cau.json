@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n22-draft-v1",
+  "title": "Chu vi các hình",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N22-001",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 5 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông: 5 × 4 = 20 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-002",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 6 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi hình vuông: 6 × 4 = 24 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-003",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 7 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "128"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi hình vuông: 7 × 4 = 28 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-004",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 8 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi hình vuông: 8 × 4 = 32 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-005",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 9 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông: 9 × 4 = 36 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-006",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 10 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "140"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông: 10 × 4 = 40 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-007",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 11 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông: 11 × 4 = 44 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-008",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 12 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "51"
+        },
+        {
+          "id": "B",
+          "text": "48"
+        },
+        {
+          "id": "C",
+          "text": "1 048"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông: 12 × 4 = 48 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-009",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 13 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "55"
+        },
+        {
+          "id": "C",
+          "text": "62"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi hình vuông: 13 × 4 = 52 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-010",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 14 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "61"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "51"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông: 14 × 4 = 56 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-011",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 10 cm, rộng 8 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "41"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi bằng (10 + 8) × 2 = 36 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-012",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 12 cm, rộng 9 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "142"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi bằng (12 + 9) × 2 = 42 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-013",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 14 cm, rộng 10 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "1 048"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi bằng (14 + 10) × 2 = 48 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-014",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 16 cm, rộng 11 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "49"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi bằng (16 + 11) × 2 = 54 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-015",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 18 cm, rộng 12 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "66"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi bằng (18 + 12) × 2 = 60 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-016",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 20 cm, rộng 13 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "76"
+        },
+        {
+          "id": "C",
+          "text": "68"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi bằng (20 + 13) × 2 = 66 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-017",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 22 cm, rộng 14 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "72"
+        },
+        {
+          "id": "B",
+          "text": "62"
+        },
+        {
+          "id": "C",
+          "text": "74"
+        },
+        {
+          "id": "D",
+          "text": "73"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi bằng (22 + 14) × 2 = 72 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-018",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 17 cm, rộng 15 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "64"
+        },
+        {
+          "id": "C",
+          "text": "61"
+        },
+        {
+          "id": "D",
+          "text": "63"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi bằng (17 + 15) × 2 = 64 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-019",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 19 cm, rộng 16 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "71"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "73"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi bằng (19 + 16) × 2 = 70 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-020",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 21 cm, rộng 17 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "76"
+        },
+        {
+          "id": "B",
+          "text": "83"
+        },
+        {
+          "id": "C",
+          "text": "74"
+        },
+        {
+          "id": "D",
+          "text": "69"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi bằng (21 + 17) × 2 = 76 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-021",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 11 cm có chu vi bao nhiêu cm? (Lượt luyện 21)",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "46"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi hình vuông: 11 × 4 = 44 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-022",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 12 cm có chu vi bao nhiêu cm? (Lượt luyện 22)",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "53"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi hình vuông: 12 × 4 = 48 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-023",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 13 cm có chu vi bao nhiêu cm? (Lượt luyện 23)",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "52"
+        },
+        {
+          "id": "C",
+          "text": "47"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông: 13 × 4 = 52 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-024",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 14 cm có chu vi bao nhiêu cm? (Lượt luyện 24)",
+      "options": [
+        {
+          "id": "A",
+          "text": "59"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "58"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông: 14 × 4 = 56 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-025",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 15 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "65"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi hình vuông: 15 × 4 = 60 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-026",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 16 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "61"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "66"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông: 16 × 4 = 64 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-027",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 17 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "68"
+        },
+        {
+          "id": "B",
+          "text": "69"
+        },
+        {
+          "id": "C",
+          "text": "1 068"
+        },
+        {
+          "id": "D",
+          "text": "58"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi hình vuông: 17 × 4 = 68 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-028",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 18 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 072"
+        },
+        {
+          "id": "B",
+          "text": "72"
+        },
+        {
+          "id": "C",
+          "text": "71"
+        },
+        {
+          "id": "D",
+          "text": "77"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi hình vuông: 18 × 4 = 72 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-029",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 19 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "176"
+        },
+        {
+          "id": "B",
+          "text": "71"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "76"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông: 19 × 4 = 76 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-030",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 20 cm có chu vi bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi hình vuông: 20 × 4 = 80 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-031",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 16 cm, rộng 14 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "61"
+        },
+        {
+          "id": "B",
+          "text": "59"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "62"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi bằng (16 + 14) × 2 = 60 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-032",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 18 cm, rộng 15 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 066"
+        },
+        {
+          "id": "B",
+          "text": "66"
+        },
+        {
+          "id": "C",
+          "text": "63"
+        },
+        {
+          "id": "D",
+          "text": "76"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi bằng (18 + 15) × 2 = 66 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-033",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 20 cm, rộng 16 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "75"
+        },
+        {
+          "id": "C",
+          "text": "74"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi bằng (20 + 16) × 2 = 72 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-034",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 22 cm, rộng 17 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "78"
+        },
+        {
+          "id": "B",
+          "text": "79"
+        },
+        {
+          "id": "C",
+          "text": "85"
+        },
+        {
+          "id": "D",
+          "text": "88"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi bằng (22 + 17) × 2 = 78 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-035",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 24 cm, rộng 18 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "1 084"
+        },
+        {
+          "id": "C",
+          "text": "82"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chu vi bằng (24 + 18) × 2 = 84 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-036",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 26 cm, rộng 19 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "99"
+        },
+        {
+          "id": "D",
+          "text": "89"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi bằng (26 + 19) × 2 = 90 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-037",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 28 cm, rộng 20 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "91"
+        },
+        {
+          "id": "B",
+          "text": "1 096"
+        },
+        {
+          "id": "C",
+          "text": "96"
+        },
+        {
+          "id": "D",
+          "text": "105"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chu vi bằng (28 + 20) × 2 = 96 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-038",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 23 cm, rộng 21 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "85"
+        },
+        {
+          "id": "B",
+          "text": "80"
+        },
+        {
+          "id": "C",
+          "text": "91"
+        },
+        {
+          "id": "D",
+          "text": "88"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chu vi bằng (23 + 21) × 2 = 88 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-039",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 25 cm, rộng 22 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "85"
+        },
+        {
+          "id": "B",
+          "text": "94"
+        },
+        {
+          "id": "C",
+          "text": "95"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi bằng (25 + 22) × 2 = 94 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N22-040",
+      "grade": 3,
+      "topicId": "N22",
+      "topicName": "Chu vi các hình",
+      "skillId": "N22.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 27 cm, rộng 23 cm. Chu vi bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "100"
+        },
+        {
+          "id": "C",
+          "text": "1 100"
+        },
+        {
+          "id": "D",
+          "text": "95"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chu vi bằng (27 + 23) × 2 = 100 cm.",
+      "tags": [
+        "toan-3",
+        "n22"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

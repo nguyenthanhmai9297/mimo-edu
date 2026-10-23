@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n26-revised-20261023",
+  "title": "Đơn vị đo dung tích",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N26-001",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1002"
+        },
+        {
+          "id": "B",
+          "text": "2000"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "200"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 l = 1000 ml, vậy 2 l = 2000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-002",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "200"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "2000 : 1000 = 2 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-003",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 2 l nước, bình B có 5 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng lượng nước: 2 + 5 = 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-004",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 7 l nước. Rót ra 2 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Còn 7 - 2 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-005",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "1003"
+        },
+        {
+          "id": "C",
+          "text": "300"
+        },
+        {
+          "id": "D",
+          "text": "3000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 l = 1000 ml, vậy 3 l = 3000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-006",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "300"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "3000 : 1000 = 3 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-007",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 3 l nước, bình B có 6 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng lượng nước: 3 + 6 = 9 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-008",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 8 l nước. Rót ra 3 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Còn 8 - 3 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-009",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1004"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "400"
+        },
+        {
+          "id": "D",
+          "text": "4000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 l = 1000 ml, vậy 4 l = 4000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-010",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "400"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "4000 : 1000 = 4 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-011",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 4 l nước, bình B có 7 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng lượng nước: 4 + 7 = 11 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-012",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 9 l nước. Rót ra 4 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Còn 9 - 4 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-013",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5000"
+        },
+        {
+          "id": "B",
+          "text": "500"
+        },
+        {
+          "id": "C",
+          "text": "50"
+        },
+        {
+          "id": "D",
+          "text": "1005"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 l = 1000 ml, vậy 5 l = 5000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-014",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "500"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "5000 : 1000 = 5 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-015",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 5 l nước, bình B có 8 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng lượng nước: 5 + 8 = 13 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-016",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 10 l nước. Rót ra 5 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Còn 10 - 5 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-017",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "6 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1006"
+        },
+        {
+          "id": "B",
+          "text": "60"
+        },
+        {
+          "id": "C",
+          "text": "6000"
+        },
+        {
+          "id": "D",
+          "text": "600"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 l = 1000 ml, vậy 6 l = 6000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-018",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "6000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "600"
+        },
+        {
+          "id": "B",
+          "text": "60"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "6000 : 1000 = 6 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-019",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 6 l nước, bình B có 9 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng lượng nước: 6 + 9 = 15 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-020",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 11 l nước. Rót ra 6 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Còn 11 - 6 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-021",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "7 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "700"
+        },
+        {
+          "id": "B",
+          "text": "1007"
+        },
+        {
+          "id": "C",
+          "text": "7000"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 l = 1000 ml, vậy 7 l = 7000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-022",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "7000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "700"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "7000 : 1000 = 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-023",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 7 l nước, bình B có 10 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng lượng nước: 7 + 10 = 17 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-024",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 12 l nước. Rót ra 7 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Còn 12 - 7 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-025",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "8 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8000"
+        },
+        {
+          "id": "B",
+          "text": "800"
+        },
+        {
+          "id": "C",
+          "text": "1008"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 l = 1000 ml, vậy 8 l = 8000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-026",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "8000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "80"
+        },
+        {
+          "id": "C",
+          "text": "800"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "8000 : 1000 = 8 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-027",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 8 l nước, bình B có 11 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng lượng nước: 8 + 11 = 19 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-028",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 13 l nước. Rót ra 8 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Còn 13 - 8 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-029",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "9 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "900"
+        },
+        {
+          "id": "B",
+          "text": "9000"
+        },
+        {
+          "id": "C",
+          "text": "90"
+        },
+        {
+          "id": "D",
+          "text": "1009"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 l = 1000 ml, vậy 9 l = 9000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-030",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "9000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "900"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "9000 : 1000 = 9 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-031",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 9 l nước, bình B có 12 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng lượng nước: 9 + 12 = 21 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-032",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 14 l nước. Rót ra 9 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Còn 14 - 9 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-033",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "10 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1010"
+        },
+        {
+          "id": "B",
+          "text": "10000"
+        },
+        {
+          "id": "C",
+          "text": "100"
+        },
+        {
+          "id": "D",
+          "text": "1000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 l = 1000 ml, vậy 10 l = 10000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-034",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "10000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "1000"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "10000 : 1000 = 10 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-035",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 10 l nước, bình B có 13 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng lượng nước: 10 + 13 = 23 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-036",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 15 l nước. Rót ra 10 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Còn 15 - 10 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-037",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_l_ml",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "11 l bằng bao nhiêu mi-li-lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11000"
+        },
+        {
+          "id": "B",
+          "text": "110"
+        },
+        {
+          "id": "C",
+          "text": "1100"
+        },
+        {
+          "id": "D",
+          "text": "1011"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 l = 1000 ml, vậy 11 l = 11000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-038",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.doi_ml_l",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "11000 ml bằng bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "110"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "1100"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "11000 : 1000 = 11 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-039",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.cong_dung_tich",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bình A có 11 l nước, bình B có 14 l nước. Cả hai bình có bao nhiêu lít?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng lượng nước: 11 + 14 = 25 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-040",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 16 l nước. Rót ra 11 l rồi đổ thêm 2 l. Bình có bao nhiêu lít nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Còn 16 - 11 = 5 l, thêm 2 l thành 7 l.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

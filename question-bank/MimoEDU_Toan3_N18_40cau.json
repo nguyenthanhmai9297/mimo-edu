@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n18-revised-20261023",
+  "title": "Bài toán rút về đơn vị",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "group": "Toán có lời văn",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N18-001",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 quyển vở có giá 6 nghìn đồng. Giá một quyển vở là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Giá một đơn vị: 6 : 2 = 3 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-002",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 chiếc bút có giá 12 nghìn đồng. Giá một chiếc bút là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Giá một đơn vị: 12 : 3 = 4 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-003",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 hộp phấn có giá 20 nghìn đồng. Giá một hộp phấn là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Giá một đơn vị: 20 : 4 = 5 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-004",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "5 quả bóng có giá 30 nghìn đồng. Giá một quả bóng là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Giá một đơn vị: 30 : 5 = 6 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-005",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "6 gói hạt giống có giá 42 nghìn đồng. Giá một gói hạt giống là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Giá một đơn vị: 42 : 6 = 7 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-006",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 túi kẹo có giá 16 nghìn đồng. Giá một túi kẹo là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Giá một đơn vị: 16 : 2 = 8 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-007",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 chậu cây có giá 27 nghìn đồng. Giá một chậu cây là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Giá một đơn vị: 27 : 3 = 9 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-008",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 cuốn truyện có giá 40 nghìn đồng. Giá một cuốn truyện là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Giá một đơn vị: 40 : 4 = 10 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-009",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "5 chiếc bánh có giá 55 nghìn đồng. Giá một chiếc bánh là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "55"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Giá một đơn vị: 55 : 5 = 11 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-010",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.tim_mot_don_vi",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "6 chai nước có giá 72 nghìn đồng. Giá một chai nước là bao nhiêu nghìn đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "72"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Giá một đơn vị: 72 : 6 = 12 (nghìn đồng).",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-011",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "2 hộp có 8 chiếc bút, mỗi hộp như nhau. Hỏi 4 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hộp có 8 : 2 = 4 chiếc bút. 4 hộp có 4 × 4 = 16 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-012",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "3 hộp có 15 chiếc bút, mỗi hộp như nhau. Hỏi 5 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp có 15 : 3 = 5 chiếc bút. 5 hộp có 5 × 5 = 25 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-013",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "4 hộp có 24 chiếc bút, mỗi hộp như nhau. Hỏi 6 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp có 24 : 4 = 6 chiếc bút. 6 hộp có 6 × 6 = 36 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-014",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5 hộp có 35 chiếc bút, mỗi hộp như nhau. Hỏi 7 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp có 35 : 5 = 7 chiếc bút. 7 hộp có 7 × 7 = 49 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-015",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "2 hộp có 16 chiếc bút, mỗi hộp như nhau. Hỏi 4 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp có 16 : 2 = 8 chiếc bút. 4 hộp có 8 × 4 = 32 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-016",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "3 hộp có 27 chiếc bút, mỗi hộp như nhau. Hỏi 5 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi hộp có 27 : 3 = 9 chiếc bút. 5 hộp có 9 × 5 = 45 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-017",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "4 hộp có 40 chiếc bút, mỗi hộp như nhau. Hỏi 6 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp có 40 : 4 = 10 chiếc bút. 6 hộp có 10 × 6 = 60 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-018",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5 hộp có 55 chiếc bút, mỗi hộp như nhau. Hỏi 7 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "77"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "88"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hộp có 55 : 5 = 11 chiếc bút. 7 hộp có 11 × 7 = 77 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-019",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "2 hộp có 24 chiếc bút, mỗi hộp như nhau. Hỏi 4 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi hộp có 24 : 2 = 12 chiếc bút. 4 hộp có 12 × 4 = 48 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-020",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "3 hộp có 39 chiếc bút, mỗi hộp như nhau. Hỏi 5 hộp như thế có bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "78"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "65"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hộp có 39 : 3 = 13 chiếc bút. 5 hộp có 13 × 5 = 65 chiếc bút.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-021",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 10 học sinh xếp đều thành 2 hàng. Nếu xếp 5 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hàng có 10 : 2 = 5 bạn. 5 hàng cần 5 × 5 = 25 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-022",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 18 học sinh xếp đều thành 3 hàng. Nếu xếp 6 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hàng có 18 : 3 = 6 bạn. 6 hàng cần 6 × 6 = 36 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-023",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 28 học sinh xếp đều thành 4 hàng. Nếu xếp 7 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "49"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hàng có 28 : 4 = 7 bạn. 7 hàng cần 7 × 7 = 49 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-024",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 40 học sinh xếp đều thành 5 hàng. Nếu xếp 8 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi hàng có 40 : 5 = 8 bạn. 8 hàng cần 8 × 8 = 64 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-025",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 18 học sinh xếp đều thành 2 hàng. Nếu xếp 5 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "45"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi hàng có 18 : 2 = 9 bạn. 5 hàng cần 9 × 5 = 45 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-026",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 30 học sinh xếp đều thành 3 hàng. Nếu xếp 6 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi hàng có 30 : 3 = 10 bạn. 6 hàng cần 10 × 6 = 60 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-027",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 44 học sinh xếp đều thành 4 hàng. Nếu xếp 7 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "77"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "66"
+        },
+        {
+          "id": "D",
+          "text": "44"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi hàng có 44 : 4 = 11 bạn. 7 hàng cần 11 × 7 = 77 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-028",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 60 học sinh xếp đều thành 5 hàng. Nếu xếp 8 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "60"
+        },
+        {
+          "id": "C",
+          "text": "96"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi hàng có 60 : 5 = 12 bạn. 8 hàng cần 12 × 8 = 96 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-029",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 26 học sinh xếp đều thành 2 hàng. Nếu xếp 5 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "65"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi hàng có 26 : 2 = 13 bạn. 5 hàng cần 13 × 5 = 65 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-030",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.so_hang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 42 học sinh xếp đều thành 3 hàng. Nếu xếp 6 hàng như thế thì cần bao nhiêu học sinh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "84"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi hàng có 42 : 3 = 14 bạn. 6 hàng cần 14 × 6 = 84 bạn.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-031",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 12 tờ giấy để làm đều 2 bộ thiệp. Muốn làm 4 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi bộ dùng 12 : 2 = 6 tờ. 4 bộ cần 6 × 4 = 24 tờ. Thêm 3 tờ: 24 + 3 = 27.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-032",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 21 tờ giấy để làm đều 3 bộ thiệp. Muốn làm 5 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bộ dùng 21 : 3 = 7 tờ. 5 bộ cần 7 × 5 = 35 tờ. Thêm 3 tờ: 35 + 3 = 38.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-033",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 32 tờ giấy để làm đều 4 bộ thiệp. Muốn làm 6 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "51"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi bộ dùng 32 : 4 = 8 tờ. 6 bộ cần 8 × 6 = 48 tờ. Thêm 3 tờ: 48 + 3 = 51.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-034",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 45 tờ giấy để làm đều 5 bộ thiệp. Muốn làm 7 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "63"
+        },
+        {
+          "id": "C",
+          "text": "64"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi bộ dùng 45 : 5 = 9 tờ. 7 bộ cần 9 × 7 = 63 tờ. Thêm 3 tờ: 63 + 3 = 66.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-035",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 20 tờ giấy để làm đều 2 bộ thiệp. Muốn làm 4 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bộ dùng 20 : 2 = 10 tờ. 4 bộ cần 10 × 4 = 40 tờ. Thêm 3 tờ: 40 + 3 = 43.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-036",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 33 tờ giấy để làm đều 3 bộ thiệp. Muốn làm 5 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "66"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bộ dùng 33 : 3 = 11 tờ. 5 bộ cần 11 × 5 = 55 tờ. Thêm 3 tờ: 55 + 3 = 58.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-037",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 48 tờ giấy để làm đều 4 bộ thiệp. Muốn làm 6 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "75"
+        },
+        {
+          "id": "C",
+          "text": "72"
+        },
+        {
+          "id": "D",
+          "text": "73"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bộ dùng 48 : 4 = 12 tờ. 6 bộ cần 12 × 6 = 72 tờ. Thêm 3 tờ: 72 + 3 = 75.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-038",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 65 tờ giấy để làm đều 5 bộ thiệp. Muốn làm 7 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "104"
+        },
+        {
+          "id": "B",
+          "text": "94"
+        },
+        {
+          "id": "C",
+          "text": "91"
+        },
+        {
+          "id": "D",
+          "text": "92"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bộ dùng 65 : 5 = 13 tờ. 7 bộ cần 13 × 7 = 91 tờ. Thêm 3 tờ: 91 + 3 = 94.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-039",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 28 tờ giấy để làm đều 2 bộ thiệp. Muốn làm 4 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "59"
+        },
+        {
+          "id": "C",
+          "text": "57"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bộ dùng 28 : 2 = 14 tờ. 4 bộ cần 14 × 4 = 56 tờ. Thêm 3 tờ: 56 + 3 = 59.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N18-040",
+      "grade": 3,
+      "topicId": "N18",
+      "topicName": "Bài toán rút về đơn vị",
+      "skillId": "N18.rut_ve_don_vi_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tổ dùng 45 tờ giấy để làm đều 3 bộ thiệp. Muốn làm 5 bộ thiệp như thế và thêm 3 tờ giấy trang trí thì cần tổng cộng bao nhiêu tờ giấy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "75"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "78"
+        },
+        {
+          "id": "D",
+          "text": "76"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi bộ dùng 45 : 3 = 15 tờ. 5 bộ cần 15 × 5 = 75 tờ. Thêm 3 tờ: 75 + 3 = 78.",
+      "tags": [
+        "toan-3",
+        "n18"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

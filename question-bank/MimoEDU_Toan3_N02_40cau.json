@@ -1,0 +1,1449 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n02-v1",
+  "title": "So sánh và sắp xếp số",
+  "language": "vi",
+  "notes": "40 câu trắc nghiệm do ChatGPT biên soạn; cần giáo viên kiểm duyệt nội dung sư phạm trước khi xuất bản. Không tự động ghi Firebase.",
+  "questions": [
+    {
+      "id": "M3-N02-001",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 34 215 … 34 125.",
+      "options": [
+        {
+          "id": "A",
+          "text": "="
+        },
+        {
+          "id": "B",
+          "text": "<"
+        },
+        {
+          "id": "C",
+          "text": ">"
+        },
+        {
+          "id": "D",
+          "text": "≥"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 34 215 > 34 125.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-002",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 70 009 … 70 090.",
+      "options": [
+        {
+          "id": "A",
+          "text": "<"
+        },
+        {
+          "id": "B",
+          "text": "="
+        },
+        {
+          "id": "C",
+          "text": "≥"
+        },
+        {
+          "id": "D",
+          "text": ">"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 70 009 < 70 090.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-003",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 10 000 … 9 999.",
+      "options": [
+        {
+          "id": "A",
+          "text": ">"
+        },
+        {
+          "id": "B",
+          "text": "<"
+        },
+        {
+          "id": "C",
+          "text": "≥"
+        },
+        {
+          "id": "D",
+          "text": "="
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 10 000 > 9 999.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-004",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 48 620 … 48 602.",
+      "options": [
+        {
+          "id": "A",
+          "text": "<"
+        },
+        {
+          "id": "B",
+          "text": ">"
+        },
+        {
+          "id": "C",
+          "text": "="
+        },
+        {
+          "id": "D",
+          "text": "≥"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 48 620 > 48 602.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-005",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 55 055 … 55 050.",
+      "options": [
+        {
+          "id": "A",
+          "text": "="
+        },
+        {
+          "id": "B",
+          "text": "<"
+        },
+        {
+          "id": "C",
+          "text": "≥"
+        },
+        {
+          "id": "D",
+          "text": ">"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 55 055 > 55 050.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-006",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 90 231 … 90 321.",
+      "options": [
+        {
+          "id": "A",
+          "text": "≥"
+        },
+        {
+          "id": "B",
+          "text": ">"
+        },
+        {
+          "id": "C",
+          "text": "<"
+        },
+        {
+          "id": "D",
+          "text": "="
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 90 231 < 90 321.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-007",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 60 800 … 60 800.",
+      "options": [
+        {
+          "id": "A",
+          "text": "≥"
+        },
+        {
+          "id": "B",
+          "text": "="
+        },
+        {
+          "id": "C",
+          "text": "<"
+        },
+        {
+          "id": "D",
+          "text": ">"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 60 800 = 60 800.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-008",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 81 007 … 80 017.",
+      "options": [
+        {
+          "id": "A",
+          "text": "≥"
+        },
+        {
+          "id": "B",
+          "text": ">"
+        },
+        {
+          "id": "C",
+          "text": "="
+        },
+        {
+          "id": "D",
+          "text": "<"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 81 007 > 80 017.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-009",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 99 090 … 99 009.",
+      "options": [
+        {
+          "id": "A",
+          "text": "≥"
+        },
+        {
+          "id": "B",
+          "text": "<"
+        },
+        {
+          "id": "C",
+          "text": ">"
+        },
+        {
+          "id": "D",
+          "text": "="
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 99 090 > 99 009.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-010",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.compare",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Điền dấu thích hợp: 27 654 … 27 645.",
+      "options": [
+        {
+          "id": "A",
+          "text": "<"
+        },
+        {
+          "id": "B",
+          "text": ">"
+        },
+        {
+          "id": "C",
+          "text": "="
+        },
+        {
+          "id": "D",
+          "text": "≥"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh lần lượt các chữ số từ trái sang phải: 27 654 > 27 645.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "compare"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-011",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 34 210, 34 120, 34 420 theo thứ tự tăng dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "34 420; 34 210; 34 120"
+        },
+        {
+          "id": "B",
+          "text": "34 120; 34 420; 34 210"
+        },
+        {
+          "id": "C",
+          "text": "34 120; 34 210; 34 420"
+        },
+        {
+          "id": "D",
+          "text": "34 210; 34 120; 34 420"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh từng số rồi viết theo thứ tự tăng dần: 34 120; 34 210; 34 420.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-012",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 70 400, 70 040, 74 000 theo thứ tự giảm dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "70 400; 74 000; 70 040"
+        },
+        {
+          "id": "B",
+          "text": "70 040; 70 400; 74 000"
+        },
+        {
+          "id": "C",
+          "text": "70 400; 70 040; 74 000"
+        },
+        {
+          "id": "D",
+          "text": "74 000; 70 400; 70 040"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh từng số rồi viết theo thứ tự giảm dần: 74 000; 70 400; 70 040.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-013",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 9 999, 10 000, 10 001 theo thứ tự tăng dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 999; 10 001; 10 000"
+        },
+        {
+          "id": "B",
+          "text": "10 001; 10 000; 9 999"
+        },
+        {
+          "id": "C",
+          "text": "9 999; 10 000; 10 001"
+        },
+        {
+          "id": "D",
+          "text": "10 000; 9 999; 10 001"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "So sánh từng số rồi viết theo thứ tự tăng dần: 9 999; 10 000; 10 001.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-014",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 54 321, 53 421, 53 241 theo thứ tự giảm dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "54 321; 53 241; 53 421"
+        },
+        {
+          "id": "B",
+          "text": "53 241; 53 421; 54 321"
+        },
+        {
+          "id": "C",
+          "text": "53 421; 54 321; 53 241"
+        },
+        {
+          "id": "D",
+          "text": "54 321; 53 421; 53 241"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh từng số rồi viết theo thứ tự giảm dần: 54 321; 53 421; 53 241.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-015",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 60 800, 60 080, 68 000 theo thứ tự tăng dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "60 800; 60 080; 68 000"
+        },
+        {
+          "id": "B",
+          "text": "60 080; 68 000; 60 800"
+        },
+        {
+          "id": "C",
+          "text": "68 000; 60 800; 60 080"
+        },
+        {
+          "id": "D",
+          "text": "60 080; 60 800; 68 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh từng số rồi viết theo thứ tự tăng dần: 60 080; 60 800; 68 000.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-016",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 45 005, 45 050, 40 550 theo thứ tự giảm dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "40 550; 45 005; 45 050"
+        },
+        {
+          "id": "B",
+          "text": "45 050; 45 005; 40 550"
+        },
+        {
+          "id": "C",
+          "text": "45 050; 40 550; 45 005"
+        },
+        {
+          "id": "D",
+          "text": "45 005; 45 050; 40 550"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh từng số rồi viết theo thứ tự giảm dần: 45 050; 45 005; 40 550.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-017",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 29 090, 29 009, 29 900 theo thứ tự tăng dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "29 900; 29 090; 29 009"
+        },
+        {
+          "id": "B",
+          "text": "29 009; 29 090; 29 900"
+        },
+        {
+          "id": "C",
+          "text": "29 090; 29 009; 29 900"
+        },
+        {
+          "id": "D",
+          "text": "29 009; 29 900; 29 090"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "So sánh từng số rồi viết theo thứ tự tăng dần: 29 009; 29 090; 29 900.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-018",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 80 102, 81 002, 80 012 theo thứ tự giảm dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "80 012; 80 102; 81 002"
+        },
+        {
+          "id": "B",
+          "text": "81 002; 80 012; 80 102"
+        },
+        {
+          "id": "C",
+          "text": "80 102; 81 002; 80 012"
+        },
+        {
+          "id": "D",
+          "text": "81 002; 80 102; 80 012"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh từng số rồi viết theo thứ tự giảm dần: 81 002; 80 102; 80 012.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-019",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 99 900, 99 090, 90 990 theo thứ tự tăng dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "99 900; 99 090; 90 990"
+        },
+        {
+          "id": "B",
+          "text": "90 990; 99 900; 99 090"
+        },
+        {
+          "id": "C",
+          "text": "99 090; 90 990; 99 900"
+        },
+        {
+          "id": "D",
+          "text": "90 990; 99 090; 99 900"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh từng số rồi viết theo thứ tự tăng dần: 90 990; 99 090; 99 900.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-020",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.order",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các số 32 100, 31 200, 32 010 theo thứ tự giảm dần.",
+      "options": [
+        {
+          "id": "A",
+          "text": "32 100; 31 200; 32 010"
+        },
+        {
+          "id": "B",
+          "text": "32 010; 32 100; 31 200"
+        },
+        {
+          "id": "C",
+          "text": "31 200; 32 010; 32 100"
+        },
+        {
+          "id": "D",
+          "text": "32 100; 32 010; 31 200"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "So sánh từng số rồi viết theo thứ tự giảm dần: 32 100; 32 010; 31 200.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "order"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-021",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 25 000 nhưng bé hơn 26 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26 001"
+        },
+        {
+          "id": "B",
+          "text": "25 340"
+        },
+        {
+          "id": "C",
+          "text": "25 000"
+        },
+        {
+          "id": "D",
+          "text": "26 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì 25 000 < 25 340 < 26 000, nên chọn 25 340.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-022",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 48 300 nhưng bé hơn 49 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "49 001"
+        },
+        {
+          "id": "B",
+          "text": "49 000"
+        },
+        {
+          "id": "C",
+          "text": "48 520"
+        },
+        {
+          "id": "D",
+          "text": "48 300"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 48 300 < 48 520 < 49 000, nên chọn 48 520.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-023",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 70 000 nhưng bé hơn 72 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "72 001"
+        },
+        {
+          "id": "B",
+          "text": "72 000"
+        },
+        {
+          "id": "C",
+          "text": "70 450"
+        },
+        {
+          "id": "D",
+          "text": "70 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 70 000 < 70 450 < 72 000, nên chọn 70 450.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-024",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 19 000 nhưng bé hơn 20 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 001"
+        },
+        {
+          "id": "B",
+          "text": "20 000"
+        },
+        {
+          "id": "C",
+          "text": "19 000"
+        },
+        {
+          "id": "D",
+          "text": "19 301"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Vì 19 000 < 19 301 < 20 000, nên chọn 19 301.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-025",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 81 000 nhưng bé hơn 83 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "81 510"
+        },
+        {
+          "id": "B",
+          "text": "81 000"
+        },
+        {
+          "id": "C",
+          "text": "83 000"
+        },
+        {
+          "id": "D",
+          "text": "83 001"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 81 000 < 81 510 < 83 000, nên chọn 81 510.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-026",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 35 000 nhưng bé hơn 37 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35 000"
+        },
+        {
+          "id": "B",
+          "text": "37 001"
+        },
+        {
+          "id": "C",
+          "text": "37 000"
+        },
+        {
+          "id": "D",
+          "text": "35 490"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Vì 35 000 < 35 490 < 37 000, nên chọn 35 490.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-027",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 60 000 nhưng bé hơn 62 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62 000"
+        },
+        {
+          "id": "B",
+          "text": "60 500"
+        },
+        {
+          "id": "C",
+          "text": "62 001"
+        },
+        {
+          "id": "D",
+          "text": "60 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì 60 000 < 60 500 < 62 000, nên chọn 60 500.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-028",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 90 000 nhưng bé hơn 92 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "92 001"
+        },
+        {
+          "id": "B",
+          "text": "92 000"
+        },
+        {
+          "id": "C",
+          "text": "90 440"
+        },
+        {
+          "id": "D",
+          "text": "90 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 90 000 < 90 440 < 92 000, nên chọn 90 440.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-029",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 43 000 nhưng bé hơn 45 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "43 222"
+        },
+        {
+          "id": "B",
+          "text": "45 000"
+        },
+        {
+          "id": "C",
+          "text": "45 001"
+        },
+        {
+          "id": "D",
+          "text": "43 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 43 000 < 43 222 < 45 000, nên chọn 43 222.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-030",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.interval",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số nào lớn hơn 76 000 nhưng bé hơn 78 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "76 234"
+        },
+        {
+          "id": "B",
+          "text": "78 001"
+        },
+        {
+          "id": "C",
+          "text": "76 000"
+        },
+        {
+          "id": "D",
+          "text": "78 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 76 000 < 76 234 < 78 000, nên chọn 76 234.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "interval"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-031",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 1, 2, 4, 8, 9, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "98 412"
+        },
+        {
+          "id": "B",
+          "text": "98 241"
+        },
+        {
+          "id": "C",
+          "text": "98 421"
+        },
+        {
+          "id": "D",
+          "text": "12 489"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 98 421. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 98 412.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-032",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 0, 3, 5, 7, 8, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30 578"
+        },
+        {
+          "id": "B",
+          "text": "87 530"
+        },
+        {
+          "id": "C",
+          "text": "87 503"
+        },
+        {
+          "id": "D",
+          "text": "87 350"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 87 530. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 87 503.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-033",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 0, 1, 4, 6, 9, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96 401"
+        },
+        {
+          "id": "B",
+          "text": "96 140"
+        },
+        {
+          "id": "C",
+          "text": "10 469"
+        },
+        {
+          "id": "D",
+          "text": "96 410"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 96 410. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 96 401.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-034",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 2, 3, 5, 7, 9, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "97 352"
+        },
+        {
+          "id": "B",
+          "text": "23 579"
+        },
+        {
+          "id": "C",
+          "text": "97 523"
+        },
+        {
+          "id": "D",
+          "text": "97 532"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 97 532. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 97 523.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-035",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 0, 2, 4, 5, 7, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 457"
+        },
+        {
+          "id": "B",
+          "text": "75 240"
+        },
+        {
+          "id": "C",
+          "text": "75 420"
+        },
+        {
+          "id": "D",
+          "text": "75 402"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 75 420. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 75 402.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-036",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 1, 3, 4, 6, 8, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "86 413"
+        },
+        {
+          "id": "B",
+          "text": "86 431"
+        },
+        {
+          "id": "C",
+          "text": "13 468"
+        },
+        {
+          "id": "D",
+          "text": "86 341"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 86 431. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 86 413.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-037",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 0, 1, 2, 8, 9, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "98 201"
+        },
+        {
+          "id": "B",
+          "text": "98 210"
+        },
+        {
+          "id": "C",
+          "text": "10 289"
+        },
+        {
+          "id": "D",
+          "text": "98 120"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 98 210. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 98 201.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-038",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 0, 3, 4, 6, 7, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30 467"
+        },
+        {
+          "id": "B",
+          "text": "76 340"
+        },
+        {
+          "id": "C",
+          "text": "76 430"
+        },
+        {
+          "id": "D",
+          "text": "76 403"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 76 430. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 76 403.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-039",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 1, 2, 5, 6, 9, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96 251"
+        },
+        {
+          "id": "B",
+          "text": "96 521"
+        },
+        {
+          "id": "C",
+          "text": "12 569"
+        },
+        {
+          "id": "D",
+          "text": "96 512"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 96 521. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 96 512.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N02-040",
+      "grade": 3,
+      "topicId": "N02",
+      "topicName": "So sánh và sắp xếp số",
+      "skillId": "N02.digits",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 0, 2, 3, 7, 8, mỗi chữ số dùng đúng một lần, lập số lớn thứ hai có 5 chữ số. Số đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "87 302"
+        },
+        {
+          "id": "B",
+          "text": "87 320"
+        },
+        {
+          "id": "C",
+          "text": "87 230"
+        },
+        {
+          "id": "D",
+          "text": "20 378"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sắp các chữ số theo thứ tự giảm dần được số lớn nhất 87 320. Đổi chỗ hai chữ số ở cuối để được số lớn thứ hai là 87 302.",
+      "tags": [
+        "toan-3",
+        "n02",
+        "digits"
+      ],
+      "status": "reviewed_draft"
+    }
+  ]
+}

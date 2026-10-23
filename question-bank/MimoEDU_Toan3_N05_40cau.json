@@ -1,0 +1,1449 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n05-v1",
+  "title": "Phép cộng và phép trừ",
+  "language": "vi",
+  "notes": "40 câu trắc nghiệm do ChatGPT biên soạn; cần giáo viên kiểm duyệt nội dung sư phạm trước khi xuất bản. Không tự động ghi Firebase.",
+  "questions": [
+    {
+      "id": "M3-N05-001",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 12 340 + 24 350 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36 590"
+        },
+        {
+          "id": "B",
+          "text": "36 700"
+        },
+        {
+          "id": "C",
+          "text": "36 690"
+        },
+        {
+          "id": "D",
+          "text": "37 690"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 12 340 + 24 350 = 36 690.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-002",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 50 421 + 12 316 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62 747"
+        },
+        {
+          "id": "B",
+          "text": "62 737"
+        },
+        {
+          "id": "C",
+          "text": "63 737"
+        },
+        {
+          "id": "D",
+          "text": "62 637"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 50 421 + 12 316 = 62 737.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-003",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 33 210 + 15 670 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48 890"
+        },
+        {
+          "id": "B",
+          "text": "49 880"
+        },
+        {
+          "id": "C",
+          "text": "48 780"
+        },
+        {
+          "id": "D",
+          "text": "48 880"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 33 210 + 15 670 = 48 880.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-004",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 70 805 + 10 102 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80 807"
+        },
+        {
+          "id": "B",
+          "text": "81 907"
+        },
+        {
+          "id": "C",
+          "text": "80 917"
+        },
+        {
+          "id": "D",
+          "text": "80 907"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 70 805 + 10 102 = 80 907.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-005",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 12 003 + 7 605 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19 508"
+        },
+        {
+          "id": "B",
+          "text": "19 608"
+        },
+        {
+          "id": "C",
+          "text": "20 608"
+        },
+        {
+          "id": "D",
+          "text": "19 618"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 12 003 + 7 605 = 19 608.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-006",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 65 000 - 23 000 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "43 000"
+        },
+        {
+          "id": "B",
+          "text": "42 000"
+        },
+        {
+          "id": "C",
+          "text": "41 900"
+        },
+        {
+          "id": "D",
+          "text": "42 010"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 65 000 - 23 000 = 42 000.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-007",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 98 765 - 12 345 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "86 320"
+        },
+        {
+          "id": "B",
+          "text": "86 430"
+        },
+        {
+          "id": "C",
+          "text": "86 420"
+        },
+        {
+          "id": "D",
+          "text": "87 420"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 98 765 - 12 345 = 86 420.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-008",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 50 000 - 20 000 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30 000"
+        },
+        {
+          "id": "B",
+          "text": "31 000"
+        },
+        {
+          "id": "C",
+          "text": "29 900"
+        },
+        {
+          "id": "D",
+          "text": "30 010"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 50 000 - 20 000 = 30 000.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-009",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 80 420 - 30 110 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50 310"
+        },
+        {
+          "id": "B",
+          "text": "51 310"
+        },
+        {
+          "id": "C",
+          "text": "50 320"
+        },
+        {
+          "id": "D",
+          "text": "50 210"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 80 420 - 30 110 = 50 310.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-010",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.compute",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính: 99 999 - 11 111 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "89 888"
+        },
+        {
+          "id": "B",
+          "text": "88 788"
+        },
+        {
+          "id": "C",
+          "text": "88 888"
+        },
+        {
+          "id": "D",
+          "text": "88 898"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt tính thẳng hàng rồi tính từ phải sang trái: 99 999 - 11 111 = 88 888.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "compute"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-011",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 47 865 + 28 977 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "76 852"
+        },
+        {
+          "id": "B",
+          "text": "76 842"
+        },
+        {
+          "id": "C",
+          "text": "76 742"
+        },
+        {
+          "id": "D",
+          "text": "77 842"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 47 865 + 28 977 = 76 842.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-012",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 36 548 + 24 786 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62 334"
+        },
+        {
+          "id": "B",
+          "text": "61 234"
+        },
+        {
+          "id": "C",
+          "text": "61 334"
+        },
+        {
+          "id": "D",
+          "text": "61 344"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 36 548 + 24 786 = 61 334.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-013",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 50 876 + 19 989 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "71 865"
+        },
+        {
+          "id": "B",
+          "text": "70 865"
+        },
+        {
+          "id": "C",
+          "text": "70 875"
+        },
+        {
+          "id": "D",
+          "text": "70 765"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 50 876 + 19 989 = 70 865.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-014",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 67 890 + 12 098 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80 988"
+        },
+        {
+          "id": "B",
+          "text": "79 988"
+        },
+        {
+          "id": "C",
+          "text": "79 998"
+        },
+        {
+          "id": "D",
+          "text": "79 888"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 67 890 + 12 098 = 79 988.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-015",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 59 475 + 30 486 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "89 971"
+        },
+        {
+          "id": "B",
+          "text": "90 961"
+        },
+        {
+          "id": "C",
+          "text": "89 961"
+        },
+        {
+          "id": "D",
+          "text": "89 861"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 59 475 + 30 486 = 89 961.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-016",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 70 000 - 27 865 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42 135"
+        },
+        {
+          "id": "B",
+          "text": "42 035"
+        },
+        {
+          "id": "C",
+          "text": "42 145"
+        },
+        {
+          "id": "D",
+          "text": "43 135"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 70 000 - 27 865 = 42 135.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-017",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 60 302 - 19 587 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41 715"
+        },
+        {
+          "id": "B",
+          "text": "40 725"
+        },
+        {
+          "id": "C",
+          "text": "40 715"
+        },
+        {
+          "id": "D",
+          "text": "40 615"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 60 302 - 19 587 = 40 715.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-018",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 90 005 - 48 679 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41 326"
+        },
+        {
+          "id": "B",
+          "text": "42 326"
+        },
+        {
+          "id": "C",
+          "text": "41 226"
+        },
+        {
+          "id": "D",
+          "text": "41 336"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 90 005 - 48 679 = 41 326.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-019",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 81 000 - 39 586 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42 414"
+        },
+        {
+          "id": "B",
+          "text": "41 424"
+        },
+        {
+          "id": "C",
+          "text": "41 414"
+        },
+        {
+          "id": "D",
+          "text": "41 314"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 81 000 - 39 586 = 41 414.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-020",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.carry_borrow",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính: 50 004 - 27 896 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22 008"
+        },
+        {
+          "id": "B",
+          "text": "23 108"
+        },
+        {
+          "id": "C",
+          "text": "22 118"
+        },
+        {
+          "id": "D",
+          "text": "22 108"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đặt tính theo hàng và nhớ khi cộng hoặc mượn khi trừ nếu cần: 50 004 - 27 896 = 22 108.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "carry_borrow"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-021",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một thư viện có 23 450 quyển sách, nhận thêm 12 575 quyển. Thư viện có tất cả bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35 925"
+        },
+        {
+          "id": "B",
+          "text": "36 025"
+        },
+        {
+          "id": "C",
+          "text": "36 125"
+        },
+        {
+          "id": "D",
+          "text": "37 025"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta thực hiện phép cộng: 23 450 + 12 575 = 36 025.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-022",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một kho có 65 400 kg gạo, đã xuất 17 875 kg. Kho còn lại bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "47 525"
+        },
+        {
+          "id": "B",
+          "text": "47 425"
+        },
+        {
+          "id": "C",
+          "text": "48 525"
+        },
+        {
+          "id": "D",
+          "text": "47 625"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta thực hiện phép trừ: 65 400 - 17 875 = 47 525.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-023",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hai trường thu gom lần lượt 13 580 kg và 17 560 kg giấy. Cả hai trường thu gom bao nhiêu ki-lô-gam?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31 240"
+        },
+        {
+          "id": "B",
+          "text": "31 140"
+        },
+        {
+          "id": "C",
+          "text": "31 040"
+        },
+        {
+          "id": "D",
+          "text": "32 140"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta thực hiện phép cộng: 13 580 + 17 560 = 31 140.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-024",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một xưởng làm được 50 120 sản phẩm, giao đi 23 985 sản phẩm. Xưởng còn lại bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26 035"
+        },
+        {
+          "id": "B",
+          "text": "26 135"
+        },
+        {
+          "id": "C",
+          "text": "27 135"
+        },
+        {
+          "id": "D",
+          "text": "26 235"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta thực hiện phép trừ: 50 120 - 23 985 = 26 135.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-025",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ngày thứ nhất có 23 456 lượt khách, ngày thứ hai có 19 876 lượt khách. Cả hai ngày có bao nhiêu lượt?",
+      "options": [
+        {
+          "id": "A",
+          "text": "43 432"
+        },
+        {
+          "id": "B",
+          "text": "43 232"
+        },
+        {
+          "id": "C",
+          "text": "43 332"
+        },
+        {
+          "id": "D",
+          "text": "44 332"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta thực hiện phép cộng: 23 456 + 19 876 = 43 332.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-026",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng nhập 40 000 chiếc bút, bán 17 685 chiếc. Còn lại bao nhiêu chiếc bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22 415"
+        },
+        {
+          "id": "B",
+          "text": "22 215"
+        },
+        {
+          "id": "C",
+          "text": "22 315"
+        },
+        {
+          "id": "D",
+          "text": "23 315"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta thực hiện phép trừ: 40 000 - 17 685 = 22 315.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-027",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một trường có 15 435 tờ giấy, được tặng thêm 22 680 tờ. Trường có tất cả bao nhiêu tờ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38 015"
+        },
+        {
+          "id": "B",
+          "text": "39 115"
+        },
+        {
+          "id": "C",
+          "text": "38 115"
+        },
+        {
+          "id": "D",
+          "text": "38 215"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta thực hiện phép cộng: 15 435 + 22 680 = 38 115.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-028",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một kho có 70 320 chai nước, chuyển đi 26 845 chai. Trong kho còn bao nhiêu chai?",
+      "options": [
+        {
+          "id": "A",
+          "text": "43 375"
+        },
+        {
+          "id": "B",
+          "text": "43 575"
+        },
+        {
+          "id": "C",
+          "text": "43 475"
+        },
+        {
+          "id": "D",
+          "text": "44 475"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta thực hiện phép trừ: 70 320 - 26 845 = 43 475.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-029",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hai lớp quyên góp được 26 750 đồng và 18 750 đồng. Tổng số tiền là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45 400"
+        },
+        {
+          "id": "B",
+          "text": "46 500"
+        },
+        {
+          "id": "C",
+          "text": "45 600"
+        },
+        {
+          "id": "D",
+          "text": "45 500"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta thực hiện phép cộng: 26 750 + 18 750 = 45 500.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-030",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.word_problem",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng có 60 200 quyển vở, đã bán 25 480 quyển. Còn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34 820"
+        },
+        {
+          "id": "B",
+          "text": "35 720"
+        },
+        {
+          "id": "C",
+          "text": "34 720"
+        },
+        {
+          "id": "D",
+          "text": "34 620"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta thực hiện phép trừ: 60 200 - 25 480 = 34 720.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "word_problem"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-031",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 17 560 + 12 340 + 8 540 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38 440"
+        },
+        {
+          "id": "B",
+          "text": "38 340"
+        },
+        {
+          "id": "C",
+          "text": "29 900"
+        },
+        {
+          "id": "D",
+          "text": "38 540"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính từ trái sang phải: bước 1 được 29 900; bước 2 tính 29 900 + 8 540 = 38 440.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-032",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 45 000 - 12 780 + 9 360 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32 220"
+        },
+        {
+          "id": "B",
+          "text": "41 580"
+        },
+        {
+          "id": "C",
+          "text": "41 480"
+        },
+        {
+          "id": "D",
+          "text": "41 680"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tính từ trái sang phải: bước 1 được 32 220; bước 2 tính 32 220 + 9 360 = 41 580.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-033",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 67 200 - 18 950 - 12 780 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35 570"
+        },
+        {
+          "id": "B",
+          "text": "35 370"
+        },
+        {
+          "id": "C",
+          "text": "48 250"
+        },
+        {
+          "id": "D",
+          "text": "35 470"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tính từ trái sang phải: bước 1 được 48 250; bước 2 tính 48 250 - 12 780 = 35 470.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-034",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 26 875 + 15 360 - 9 980 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42 235"
+        },
+        {
+          "id": "B",
+          "text": "32 355"
+        },
+        {
+          "id": "C",
+          "text": "32 255"
+        },
+        {
+          "id": "D",
+          "text": "32 155"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính từ trái sang phải: bước 1 được 42 235; bước 2 tính 42 235 - 9 980 = 32 255.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-035",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 35 000 + 22 550 - 12 345 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45 205"
+        },
+        {
+          "id": "B",
+          "text": "57 550"
+        },
+        {
+          "id": "C",
+          "text": "45 305"
+        },
+        {
+          "id": "D",
+          "text": "45 105"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính từ trái sang phải: bước 1 được 57 550; bước 2 tính 57 550 - 12 345 = 45 205.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-036",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 18 680 + 23 540 + 10 250 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52 370"
+        },
+        {
+          "id": "B",
+          "text": "52 470"
+        },
+        {
+          "id": "C",
+          "text": "52 570"
+        },
+        {
+          "id": "D",
+          "text": "42 220"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tính từ trái sang phải: bước 1 được 42 220; bước 2 tính 42 220 + 10 250 = 52 470.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-037",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 80 000 - 27 560 - 18 490 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52 440"
+        },
+        {
+          "id": "B",
+          "text": "34 050"
+        },
+        {
+          "id": "C",
+          "text": "33 850"
+        },
+        {
+          "id": "D",
+          "text": "33 950"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tính từ trái sang phải: bước 1 được 52 440; bước 2 tính 52 440 - 18 490 = 33 950.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-038",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 45 235 + 16 675 - 12 450 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "61 910"
+        },
+        {
+          "id": "B",
+          "text": "49 360"
+        },
+        {
+          "id": "C",
+          "text": "49 460"
+        },
+        {
+          "id": "D",
+          "text": "49 560"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tính từ trái sang phải: bước 1 được 61 910; bước 2 tính 61 910 - 12 450 = 49 460.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-039",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 58 000 - 19 985 + 12 005 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50 020"
+        },
+        {
+          "id": "B",
+          "text": "38 015"
+        },
+        {
+          "id": "C",
+          "text": "50 120"
+        },
+        {
+          "id": "D",
+          "text": "49 920"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tính từ trái sang phải: bước 1 được 38 015; bước 2 tính 38 015 + 12 005 = 50 020.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N05-040",
+      "grade": 3,
+      "topicId": "N05",
+      "topicName": "Phép cộng và phép trừ",
+      "skillId": "N05.two_steps",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính giá trị biểu thức theo thứ tự từ trái sang phải: 23 890 + 25 075 - 14 960 = ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48 965"
+        },
+        {
+          "id": "B",
+          "text": "34 105"
+        },
+        {
+          "id": "C",
+          "text": "33 905"
+        },
+        {
+          "id": "D",
+          "text": "34 005"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tính từ trái sang phải: bước 1 được 48 965; bước 2 tính 48 965 - 14 960 = 34 005.",
+      "tags": [
+        "toan-3",
+        "n05",
+        "two_steps"
+      ],
+      "status": "reviewed_draft"
+    }
+  ]
+}

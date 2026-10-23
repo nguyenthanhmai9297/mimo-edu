@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n26-draft-v1",
+  "title": "Đơn vị đo dung tích",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N26-001",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "5 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 000"
+        },
+        {
+          "id": "B",
+          "text": "6 000"
+        },
+        {
+          "id": "C",
+          "text": "4 998"
+        },
+        {
+          "id": "D",
+          "text": "4 500"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 l = 1 000 ml nên được 5000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-002",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "6 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 005"
+        },
+        {
+          "id": "B",
+          "text": "5 990"
+        },
+        {
+          "id": "C",
+          "text": "6 010"
+        },
+        {
+          "id": "D",
+          "text": "6 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 l = 1 000 ml nên được 6000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-003",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "7 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 999"
+        },
+        {
+          "id": "B",
+          "text": "6 990"
+        },
+        {
+          "id": "C",
+          "text": "7 000"
+        },
+        {
+          "id": "D",
+          "text": "7 001"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 l = 1 000 ml nên được 7000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-004",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "8 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 003"
+        },
+        {
+          "id": "B",
+          "text": "7 200"
+        },
+        {
+          "id": "C",
+          "text": "7 999"
+        },
+        {
+          "id": "D",
+          "text": "8 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 l = 1 000 ml nên được 8000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-005",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "9 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 998"
+        },
+        {
+          "id": "B",
+          "text": "9 000"
+        },
+        {
+          "id": "C",
+          "text": "10 000"
+        },
+        {
+          "id": "D",
+          "text": "9 005"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 l = 1 000 ml nên được 9000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-006",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "10 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 990"
+        },
+        {
+          "id": "B",
+          "text": "10 010"
+        },
+        {
+          "id": "C",
+          "text": "9 999"
+        },
+        {
+          "id": "D",
+          "text": "10 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 l = 1 000 ml nên được 10000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-007",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "11 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 002"
+        },
+        {
+          "id": "B",
+          "text": "10 990"
+        },
+        {
+          "id": "C",
+          "text": "11 000"
+        },
+        {
+          "id": "D",
+          "text": "11 003"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 l = 1 000 ml nên được 11000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-008",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "12 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 000"
+        },
+        {
+          "id": "B",
+          "text": "11 000"
+        },
+        {
+          "id": "C",
+          "text": "11 990"
+        },
+        {
+          "id": "D",
+          "text": "12 010"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 l = 1 000 ml nên được 12000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-009",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "13 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13 000"
+        },
+        {
+          "id": "B",
+          "text": "12 998"
+        },
+        {
+          "id": "C",
+          "text": "13 010"
+        },
+        {
+          "id": "D",
+          "text": "13 002"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 l = 1 000 ml nên được 13000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-010",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "14 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 600"
+        },
+        {
+          "id": "B",
+          "text": "14 100"
+        },
+        {
+          "id": "C",
+          "text": "14 000"
+        },
+        {
+          "id": "D",
+          "text": "14 010"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 l = 1 000 ml nên được 14000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-011",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 800 ml nước. Rót thêm 200 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 010"
+        },
+        {
+          "id": "B",
+          "text": "1 003"
+        },
+        {
+          "id": "C",
+          "text": "1 000"
+        },
+        {
+          "id": "D",
+          "text": "1 005"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "800 + 200 = 1000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-012",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 900 ml nước. Rót thêm 300 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 199"
+        },
+        {
+          "id": "B",
+          "text": "1 205"
+        },
+        {
+          "id": "C",
+          "text": "1 200"
+        },
+        {
+          "id": "D",
+          "text": "1 202"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "900 + 300 = 1200 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-013",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1000 ml nước. Rót thêm 400 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 390"
+        },
+        {
+          "id": "B",
+          "text": "1 400"
+        },
+        {
+          "id": "C",
+          "text": "1 395"
+        },
+        {
+          "id": "D",
+          "text": "1 399"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1000 + 400 = 1400 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-014",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1100 ml nước. Rót thêm 500 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 602"
+        },
+        {
+          "id": "B",
+          "text": "1 598"
+        },
+        {
+          "id": "C",
+          "text": "1 500"
+        },
+        {
+          "id": "D",
+          "text": "1 600"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1100 + 500 = 1600 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-015",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1200 ml nước. Rót thêm 600 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 700"
+        },
+        {
+          "id": "B",
+          "text": "1 802"
+        },
+        {
+          "id": "C",
+          "text": "1 800"
+        },
+        {
+          "id": "D",
+          "text": "1 798"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1200 + 600 = 1800 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-016",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1300 ml nước. Rót thêm 700 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 003"
+        },
+        {
+          "id": "B",
+          "text": "2 000"
+        },
+        {
+          "id": "C",
+          "text": "2 005"
+        },
+        {
+          "id": "D",
+          "text": "1 995"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1300 + 700 = 2000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-017",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1400 ml nước. Rót thêm 800 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 195"
+        },
+        {
+          "id": "B",
+          "text": "2 200"
+        },
+        {
+          "id": "C",
+          "text": "2 210"
+        },
+        {
+          "id": "D",
+          "text": "2 199"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1400 + 800 = 2200 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-018",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1500 ml nước. Rót thêm 200 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 530"
+        },
+        {
+          "id": "B",
+          "text": "1 700"
+        },
+        {
+          "id": "C",
+          "text": "1 701"
+        },
+        {
+          "id": "D",
+          "text": "1 702"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1500 + 200 = 1700 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-019",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1600 ml nước. Rót thêm 300 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 895"
+        },
+        {
+          "id": "B",
+          "text": "1 900"
+        },
+        {
+          "id": "C",
+          "text": "1 902"
+        },
+        {
+          "id": "D",
+          "text": "1 800"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1600 + 300 = 1900 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-020",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1700 ml nước. Rót thêm 400 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 102"
+        },
+        {
+          "id": "B",
+          "text": "2 097"
+        },
+        {
+          "id": "C",
+          "text": "2 090"
+        },
+        {
+          "id": "D",
+          "text": "2 100"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1700 + 400 = 2100 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-021",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "11 l bằng bao nhiêu ml? (Lượt luyện 21)",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 001"
+        },
+        {
+          "id": "B",
+          "text": "11 000"
+        },
+        {
+          "id": "C",
+          "text": "12 000"
+        },
+        {
+          "id": "D",
+          "text": "11 010"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 l = 1 000 ml nên được 11000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-022",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "12 l bằng bao nhiêu ml? (Lượt luyện 22)",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 000"
+        },
+        {
+          "id": "B",
+          "text": "11 995"
+        },
+        {
+          "id": "C",
+          "text": "12 010"
+        },
+        {
+          "id": "D",
+          "text": "12 003"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 l = 1 000 ml nên được 12000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-023",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "13 l bằng bao nhiêu ml? (Lượt luyện 23)",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 700"
+        },
+        {
+          "id": "B",
+          "text": "12 995"
+        },
+        {
+          "id": "C",
+          "text": "13 001"
+        },
+        {
+          "id": "D",
+          "text": "13 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 l = 1 000 ml nên được 13000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-024",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "14 l bằng bao nhiêu ml? (Lượt luyện 24)",
+      "options": [
+        {
+          "id": "A",
+          "text": "14 000"
+        },
+        {
+          "id": "B",
+          "text": "13 998"
+        },
+        {
+          "id": "C",
+          "text": "14 003"
+        },
+        {
+          "id": "D",
+          "text": "14 002"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 l = 1 000 ml nên được 14000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-025",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "15 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15 010"
+        },
+        {
+          "id": "B",
+          "text": "16 500"
+        },
+        {
+          "id": "C",
+          "text": "15 000"
+        },
+        {
+          "id": "D",
+          "text": "15 003"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 l = 1 000 ml nên được 15000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-026",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "16 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 010"
+        },
+        {
+          "id": "B",
+          "text": "14 400"
+        },
+        {
+          "id": "C",
+          "text": "16 000"
+        },
+        {
+          "id": "D",
+          "text": "15 999"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 l = 1 000 ml nên được 16000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-027",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "17 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 997"
+        },
+        {
+          "id": "B",
+          "text": "16 000"
+        },
+        {
+          "id": "C",
+          "text": "17 000"
+        },
+        {
+          "id": "D",
+          "text": "17 003"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 l = 1 000 ml nên được 17000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-028",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "18 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 200"
+        },
+        {
+          "id": "B",
+          "text": "18 000"
+        },
+        {
+          "id": "C",
+          "text": "18 010"
+        },
+        {
+          "id": "D",
+          "text": "18 100"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 l = 1 000 ml nên được 18000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-029",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "19 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18 995"
+        },
+        {
+          "id": "B",
+          "text": "19 000"
+        },
+        {
+          "id": "C",
+          "text": "18 990"
+        },
+        {
+          "id": "D",
+          "text": "19 005"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 l = 1 000 ml nên được 19000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-030",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "20 l bằng bao nhiêu ml?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19 900"
+        },
+        {
+          "id": "B",
+          "text": "20 000"
+        },
+        {
+          "id": "C",
+          "text": "20 010"
+        },
+        {
+          "id": "D",
+          "text": "19 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 l = 1 000 ml nên được 20000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-031",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1400 ml nước. Rót thêm 200 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 605"
+        },
+        {
+          "id": "B",
+          "text": "600"
+        },
+        {
+          "id": "C",
+          "text": "1 598"
+        },
+        {
+          "id": "D",
+          "text": "1 600"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1400 + 200 = 1600 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-032",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1500 ml nước. Rót thêm 300 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 801"
+        },
+        {
+          "id": "B",
+          "text": "1 800"
+        },
+        {
+          "id": "C",
+          "text": "1 900"
+        },
+        {
+          "id": "D",
+          "text": "1 797"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1500 + 300 = 1800 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-033",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1600 ml nước. Rót thêm 400 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 200"
+        },
+        {
+          "id": "B",
+          "text": "2 000"
+        },
+        {
+          "id": "C",
+          "text": "1 998"
+        },
+        {
+          "id": "D",
+          "text": "1 900"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1600 + 400 = 2000 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-034",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1700 ml nước. Rót thêm 500 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 300"
+        },
+        {
+          "id": "B",
+          "text": "2 200"
+        },
+        {
+          "id": "C",
+          "text": "2 420"
+        },
+        {
+          "id": "D",
+          "text": "3 200"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1700 + 500 = 2200 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-035",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1800 ml nước. Rót thêm 600 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 405"
+        },
+        {
+          "id": "B",
+          "text": "2 500"
+        },
+        {
+          "id": "C",
+          "text": "3 400"
+        },
+        {
+          "id": "D",
+          "text": "2 400"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1800 + 600 = 2400 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-036",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 1900 ml nước. Rót thêm 700 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 598"
+        },
+        {
+          "id": "B",
+          "text": "2 500"
+        },
+        {
+          "id": "C",
+          "text": "2 600"
+        },
+        {
+          "id": "D",
+          "text": "2 595"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1900 + 700 = 2600 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-037",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 2000 ml nước. Rót thêm 800 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 800"
+        },
+        {
+          "id": "B",
+          "text": "2 800"
+        },
+        {
+          "id": "C",
+          "text": "2 795"
+        },
+        {
+          "id": "D",
+          "text": "2 799"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "2000 + 800 = 2800 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-038",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 2100 ml nước. Rót thêm 200 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 295"
+        },
+        {
+          "id": "B",
+          "text": "2 300"
+        },
+        {
+          "id": "C",
+          "text": "2 301"
+        },
+        {
+          "id": "D",
+          "text": "2 310"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "2100 + 200 = 2300 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-039",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 2200 ml nước. Rót thêm 300 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 600"
+        },
+        {
+          "id": "B",
+          "text": "2 495"
+        },
+        {
+          "id": "C",
+          "text": "2 500"
+        },
+        {
+          "id": "D",
+          "text": "2 490"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "2200 + 300 = 2500 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N26-040",
+      "grade": 3,
+      "topicId": "N26",
+      "topicName": "Đơn vị đo dung tích",
+      "skillId": "N26.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một bình có 2300 ml nước. Rót thêm 400 ml. Bình có tất cả bao nhiêu ml nước?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 700"
+        },
+        {
+          "id": "B",
+          "text": "2 430"
+        },
+        {
+          "id": "C",
+          "text": "2 700"
+        },
+        {
+          "id": "D",
+          "text": "2 705"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "2300 + 400 = 2700 ml.",
+      "tags": [
+        "toan-3",
+        "n26"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

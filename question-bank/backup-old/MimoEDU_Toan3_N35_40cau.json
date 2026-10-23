@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n35-draft-v1",
+  "title": "Toán thử thách tổng hợp",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N35-001",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 2 rồi cộng 3 thì được 13. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "1 005"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 13 trừ 3 rồi chia 2, được 5.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-002",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 3 rồi cộng 4 thì được 22. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 22 trừ 4 rồi chia 3, được 6.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-003",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 4 rồi cộng 5 thì được 33. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "107"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "1 007"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 33 trừ 5 rồi chia 4, được 7.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-004",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 5 rồi cộng 6 thì được 46. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 46 trừ 6 rồi chia 5, được 8.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-005",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 6 rồi cộng 7 thì được 61. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 61 trừ 7 rồi chia 6, được 9.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-006",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 7 rồi cộng 3 thì được 73. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 73 trừ 3 rồi chia 7, được 10.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-007",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 8 rồi cộng 4 thì được 92. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "111"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 92 trừ 4 rồi chia 8, được 11.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-008",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 2 rồi cộng 5 thì được 29. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 29 trừ 5 rồi chia 2, được 12.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-009",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 3 rồi cộng 6 thì được 45. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 45 trừ 6 rồi chia 3, được 13.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-010",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 4 rồi cộng 7 thì được 63. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "114"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 63 trừ 7 rồi chia 4, được 14.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-011",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 2, rồi nhân 3 thì được 30. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "108"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 30 chia 3, rồi trừ 2, được 8.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-012",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 3, rồi nhân 4 thì được 48. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 48 chia 4, rồi trừ 3, được 9.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-013",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 4, rồi nhân 5 thì được 70. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 70 chia 5, rồi trừ 4, được 10.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-014",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 5, rồi nhân 6 thì được 96. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "111"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 96 chia 6, rồi trừ 5, được 11.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-015",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 6, rồi nhân 7 thì được 126. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "1 012"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 126 chia 7, rồi trừ 6, được 12.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-016",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 7, rồi nhân 3 thì được 60. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "113"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 60 chia 3, rồi trừ 7, được 13.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-017",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 8, rồi nhân 4 thì được 88. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 88 chia 4, rồi trừ 8, được 14.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-018",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 2, rồi nhân 5 thì được 85. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 85 chia 5, rồi trừ 2, được 15.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-019",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 3, rồi nhân 6 thì được 114. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 114 chia 6, rồi trừ 3, được 16.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-020",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 4, rồi nhân 7 thì được 147. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "1 017"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 147 chia 7, rồi trừ 4, được 17.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-021",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 2 rồi cộng 3 thì được 25. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 25 trừ 3 rồi chia 2, được 11.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-022",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 3 rồi cộng 4 thì được 40. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 40 trừ 4 rồi chia 3, được 12.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-023",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 4 rồi cộng 5 thì được 57. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "113"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 57 trừ 5 rồi chia 4, được 13.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-024",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 5 rồi cộng 6 thì được 76. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "114"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 76 trừ 6 rồi chia 5, được 14.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-025",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 6 rồi cộng 7 thì được 97. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "115"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 97 trừ 7 rồi chia 6, được 15.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-026",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 7 rồi cộng 3 thì được 115. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 115 trừ 3 rồi chia 7, được 16.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-027",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 8 rồi cộng 4 thì được 140. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 140 trừ 4 rồi chia 8, được 17.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-028",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 2 rồi cộng 5 thì được 41. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 41 trừ 5 rồi chia 2, được 18.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-029",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 3 rồi cộng 6 thì được 63. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 63 trừ 6 rồi chia 3, được 19.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-030",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm số bí mật: Lấy số đó nhân 4 rồi cộng 7 thì được 87. Số bí mật là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 87 trừ 7 rồi chia 4, được 20.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-031",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 2, rồi nhân 3 thì được 48. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 48 chia 3, rồi trừ 2, được 14.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-032",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 3, rồi nhân 4 thì được 72. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 72 chia 4, rồi trừ 3, được 15.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-033",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 4, rồi nhân 5 thì được 100. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "1 016"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 100 chia 5, rồi trừ 4, được 16.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-034",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 5, rồi nhân 6 thì được 132. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 132 chia 6, rồi trừ 5, được 17.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-035",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 6, rồi nhân 7 thì được 168. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 168 chia 7, rồi trừ 6, được 18.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-036",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 7, rồi nhân 3 thì được 78. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 78 chia 3, rồi trừ 7, được 19.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-037",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 8, rồi nhân 4 thì được 112. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "1 020"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 112 chia 4, rồi trừ 8, được 20.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-038",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 2, rồi nhân 5 thì được 115. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "121"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 115 chia 5, rồi trừ 2, được 21.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-039",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 3, rồi nhân 6 thì được 150. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 150 chia 6, rồi trừ 3, được 22.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N35-040",
+      "grade": 3,
+      "topicId": "N35",
+      "topicName": "Toán thử thách tổng hợp",
+      "skillId": "N35.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số cộng với 4, rồi nhân 7 thì được 189. Số ban đầu là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "123"
+        },
+        {
+          "id": "B",
+          "text": "1 023"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 189 chia 7, rồi trừ 4, được 23.",
+      "tags": [
+        "toan-3",
+        "n35"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

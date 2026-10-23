@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n25-draft-v1",
+  "title": "Đơn vị đo khối lượng",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N25-001",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "5 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 998"
+        },
+        {
+          "id": "B",
+          "text": "4 995"
+        },
+        {
+          "id": "C",
+          "text": "5 010"
+        },
+        {
+          "id": "D",
+          "text": "5 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 kg = 1 000 g nên 5 kg = 5000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-002",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "6 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 000"
+        },
+        {
+          "id": "B",
+          "text": "5 990"
+        },
+        {
+          "id": "C",
+          "text": "6 100"
+        },
+        {
+          "id": "D",
+          "text": "7 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1 000 g nên 6 kg = 6000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-003",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "7 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6 300"
+        },
+        {
+          "id": "B",
+          "text": "7 001"
+        },
+        {
+          "id": "C",
+          "text": "7 000"
+        },
+        {
+          "id": "D",
+          "text": "7 100"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1 000 g nên 7 kg = 7000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-004",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "8 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 002"
+        },
+        {
+          "id": "B",
+          "text": "7 200"
+        },
+        {
+          "id": "C",
+          "text": "8 000"
+        },
+        {
+          "id": "D",
+          "text": "8 010"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1 000 g nên 8 kg = 8000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-005",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "9 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 000"
+        },
+        {
+          "id": "B",
+          "text": "8 998"
+        },
+        {
+          "id": "C",
+          "text": "8 000"
+        },
+        {
+          "id": "D",
+          "text": "9 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 kg = 1 000 g nên 9 kg = 9000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-006",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "10 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 003"
+        },
+        {
+          "id": "B",
+          "text": "10 000"
+        },
+        {
+          "id": "C",
+          "text": "9 900"
+        },
+        {
+          "id": "D",
+          "text": "10 005"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 kg = 1 000 g nên 10 kg = 10000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-007",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "11 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 000"
+        },
+        {
+          "id": "B",
+          "text": "11 005"
+        },
+        {
+          "id": "C",
+          "text": "11 000"
+        },
+        {
+          "id": "D",
+          "text": "11 010"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1 000 g nên 11 kg = 11000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-008",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "12 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 000"
+        },
+        {
+          "id": "B",
+          "text": "10 800"
+        },
+        {
+          "id": "C",
+          "text": "11 000"
+        },
+        {
+          "id": "D",
+          "text": "12 001"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1 000 g nên 12 kg = 12000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-009",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "13 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 999"
+        },
+        {
+          "id": "B",
+          "text": "13 002"
+        },
+        {
+          "id": "C",
+          "text": "13 000"
+        },
+        {
+          "id": "D",
+          "text": "14 300"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1 000 g nên 13 kg = 13000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-010",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "14 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14 000"
+        },
+        {
+          "id": "B",
+          "text": "14 010"
+        },
+        {
+          "id": "C",
+          "text": "14 005"
+        },
+        {
+          "id": "D",
+          "text": "15 400"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1 000 g nên 14 kg = 14000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-011",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 8 kg, một túi khác nặng 2 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "8 + 2 = 10 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-012",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 9 kg, một túi khác nặng 3 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "9 + 3 = 12 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-013",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 10 kg, một túi khác nặng 4 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "114"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "10 + 4 = 14 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-014",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 11 kg, một túi khác nặng 5 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "11 + 5 = 16 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-015",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 12 kg, một túi khác nặng 6 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "1 018"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "12 + 6 = 18 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-016",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 13 kg, một túi khác nặng 7 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "13 + 7 = 20 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-017",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 14 kg, một túi khác nặng 8 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "122"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "14 + 8 = 22 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-018",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 15 kg, một túi khác nặng 2 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "15 + 2 = 17 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-019",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 16 kg, một túi khác nặng 3 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "16 + 3 = 19 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-020",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 17 kg, một túi khác nặng 4 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "17 + 4 = 21 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-021",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "11 kg bằng bao nhiêu g? (Lượt luyện 21)",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 000"
+        },
+        {
+          "id": "B",
+          "text": "11 001"
+        },
+        {
+          "id": "C",
+          "text": "10 998"
+        },
+        {
+          "id": "D",
+          "text": "10 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1 000 g nên 11 kg = 11000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-022",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "12 kg bằng bao nhiêu g? (Lượt luyện 22)",
+      "options": [
+        {
+          "id": "A",
+          "text": "11 000"
+        },
+        {
+          "id": "B",
+          "text": "11 998"
+        },
+        {
+          "id": "C",
+          "text": "11 990"
+        },
+        {
+          "id": "D",
+          "text": "12 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 kg = 1 000 g nên 12 kg = 12000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-023",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "13 kg bằng bao nhiêu g? (Lượt luyện 23)",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 900"
+        },
+        {
+          "id": "B",
+          "text": "12 999"
+        },
+        {
+          "id": "C",
+          "text": "11 700"
+        },
+        {
+          "id": "D",
+          "text": "13 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 kg = 1 000 g nên 13 kg = 13000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-024",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "14 kg bằng bao nhiêu g? (Lượt luyện 24)",
+      "options": [
+        {
+          "id": "A",
+          "text": "14 000"
+        },
+        {
+          "id": "B",
+          "text": "13 000"
+        },
+        {
+          "id": "C",
+          "text": "14 003"
+        },
+        {
+          "id": "D",
+          "text": "15 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 kg = 1 000 g nên 14 kg = 14000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-025",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "15 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14 999"
+        },
+        {
+          "id": "B",
+          "text": "15 000"
+        },
+        {
+          "id": "C",
+          "text": "14 998"
+        },
+        {
+          "id": "D",
+          "text": "14 900"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 kg = 1 000 g nên 15 kg = 15000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-026",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "16 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 002"
+        },
+        {
+          "id": "B",
+          "text": "15 997"
+        },
+        {
+          "id": "C",
+          "text": "16 000"
+        },
+        {
+          "id": "D",
+          "text": "15 990"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1 000 g nên 16 kg = 16000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-027",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "17 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17 001"
+        },
+        {
+          "id": "B",
+          "text": "16 999"
+        },
+        {
+          "id": "C",
+          "text": "17 000"
+        },
+        {
+          "id": "D",
+          "text": "16 998"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1 000 g nên 17 kg = 17000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-028",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "18 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17 995"
+        },
+        {
+          "id": "B",
+          "text": "18 001"
+        },
+        {
+          "id": "C",
+          "text": "17 997"
+        },
+        {
+          "id": "D",
+          "text": "18 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 kg = 1 000 g nên 18 kg = 18000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-029",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "19 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19 002"
+        },
+        {
+          "id": "B",
+          "text": "18 000"
+        },
+        {
+          "id": "C",
+          "text": "19 000"
+        },
+        {
+          "id": "D",
+          "text": "19 100"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 kg = 1 000 g nên 19 kg = 19000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-030",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "20 kg bằng bao nhiêu g?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 100"
+        },
+        {
+          "id": "B",
+          "text": "20 000"
+        },
+        {
+          "id": "C",
+          "text": "21 000"
+        },
+        {
+          "id": "D",
+          "text": "20 001"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 kg = 1 000 g nên 20 kg = 20000 g.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-031",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 14 kg, một túi khác nặng 2 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "14 + 2 = 16 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-032",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 15 kg, một túi khác nặng 3 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "15 + 3 = 18 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-033",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 16 kg, một túi khác nặng 4 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "16 + 4 = 20 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-034",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 17 kg, một túi khác nặng 5 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "17 + 5 = 22 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-035",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 18 kg, một túi khác nặng 6 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "124"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "18 + 6 = 24 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-036",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 19 kg, một túi khác nặng 7 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "19 + 7 = 26 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-037",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 20 kg, một túi khác nặng 8 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "20 + 8 = 28 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-038",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 21 kg, một túi khác nặng 2 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "21 + 2 = 23 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-039",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 22 kg, một túi khác nặng 3 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "22 + 3 = 25 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N25-040",
+      "grade": 3,
+      "topicId": "N25",
+      "topicName": "Đơn vị đo khối lượng",
+      "skillId": "N25.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi gạo nặng 23 kg, một túi khác nặng 4 kg. Tổng cân nặng bằng bao nhiêu kg?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 027"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "23 + 4 = 27 kg.",
+      "tags": [
+        "toan-3",
+        "n25"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

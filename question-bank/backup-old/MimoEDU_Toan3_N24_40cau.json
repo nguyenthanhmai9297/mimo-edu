@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n24-draft-v1",
+  "title": "Đơn vị đo độ dài",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N24-001",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "5 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "450"
+        },
+        {
+          "id": "B",
+          "text": "500"
+        },
+        {
+          "id": "C",
+          "text": "498"
+        },
+        {
+          "id": "D",
+          "text": "490"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 m = 100 cm nên 5 m = 500 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-002",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "6 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "500"
+        },
+        {
+          "id": "B",
+          "text": "597"
+        },
+        {
+          "id": "C",
+          "text": "600"
+        },
+        {
+          "id": "D",
+          "text": "610"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 m = 100 cm nên 6 m = 600 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-003",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "7 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "699"
+        },
+        {
+          "id": "B",
+          "text": "800"
+        },
+        {
+          "id": "C",
+          "text": "630"
+        },
+        {
+          "id": "D",
+          "text": "700"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 m = 100 cm nên 7 m = 700 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-004",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "8 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "810"
+        },
+        {
+          "id": "B",
+          "text": "800"
+        },
+        {
+          "id": "C",
+          "text": "880"
+        },
+        {
+          "id": "D",
+          "text": "790"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 m = 100 cm nên 8 m = 800 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-005",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "9 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "895"
+        },
+        {
+          "id": "B",
+          "text": "900"
+        },
+        {
+          "id": "C",
+          "text": "800"
+        },
+        {
+          "id": "D",
+          "text": "910"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 m = 100 cm nên 9 m = 900 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-006",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "10 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 100"
+        },
+        {
+          "id": "B",
+          "text": "997"
+        },
+        {
+          "id": "C",
+          "text": "1 002"
+        },
+        {
+          "id": "D",
+          "text": "1 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 m = 100 cm nên 10 m = 1000 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-007",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "11 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 101"
+        },
+        {
+          "id": "B",
+          "text": "1 100"
+        },
+        {
+          "id": "C",
+          "text": "1 095"
+        },
+        {
+          "id": "D",
+          "text": "1 103"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 m = 100 cm nên 11 m = 1100 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-008",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "12 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 200"
+        },
+        {
+          "id": "B",
+          "text": "1 200"
+        },
+        {
+          "id": "C",
+          "text": "1 199"
+        },
+        {
+          "id": "D",
+          "text": "1 201"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 m = 100 cm nên 12 m = 1200 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-009",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "13 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 300"
+        },
+        {
+          "id": "B",
+          "text": "1 170"
+        },
+        {
+          "id": "C",
+          "text": "1 305"
+        },
+        {
+          "id": "D",
+          "text": "1 310"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 m = 100 cm nên 13 m = 1300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-010",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "14 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 500"
+        },
+        {
+          "id": "B",
+          "text": "1 401"
+        },
+        {
+          "id": "C",
+          "text": "1 400"
+        },
+        {
+          "id": "D",
+          "text": "400"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 m = 100 cm nên 14 m = 1400 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-011",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "8 dm 2 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "74"
+        },
+        {
+          "id": "B",
+          "text": "83"
+        },
+        {
+          "id": "C",
+          "text": "82"
+        },
+        {
+          "id": "D",
+          "text": "87"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 dm = 10 cm; 8 dm 2 cm = 82 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-012",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "9 dm 3 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "84"
+        },
+        {
+          "id": "B",
+          "text": "102"
+        },
+        {
+          "id": "C",
+          "text": "193"
+        },
+        {
+          "id": "D",
+          "text": "93"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 dm = 10 cm; 9 dm 3 cm = 93 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-013",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "10 dm 4 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "114"
+        },
+        {
+          "id": "B",
+          "text": "107"
+        },
+        {
+          "id": "C",
+          "text": "99"
+        },
+        {
+          "id": "D",
+          "text": "104"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 dm = 10 cm; 10 dm 4 cm = 104 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-014",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "11 dm 5 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "104"
+        },
+        {
+          "id": "B",
+          "text": "115"
+        },
+        {
+          "id": "C",
+          "text": "126"
+        },
+        {
+          "id": "D",
+          "text": "117"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 dm = 10 cm; 11 dm 5 cm = 115 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-015",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "12 dm 6 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "126"
+        },
+        {
+          "id": "C",
+          "text": "138"
+        },
+        {
+          "id": "D",
+          "text": "116"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 dm = 10 cm; 12 dm 6 cm = 126 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-016",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "13 dm 7 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "147"
+        },
+        {
+          "id": "B",
+          "text": "237"
+        },
+        {
+          "id": "C",
+          "text": "137"
+        },
+        {
+          "id": "D",
+          "text": "138"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 dm = 10 cm; 13 dm 7 cm = 137 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-017",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "14 dm 8 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "148"
+        },
+        {
+          "id": "B",
+          "text": "138"
+        },
+        {
+          "id": "C",
+          "text": "149"
+        },
+        {
+          "id": "D",
+          "text": "248"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 dm = 10 cm; 14 dm 8 cm = 148 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-018",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "15 dm 2 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "154"
+        },
+        {
+          "id": "B",
+          "text": "155"
+        },
+        {
+          "id": "C",
+          "text": "152"
+        },
+        {
+          "id": "D",
+          "text": "137"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 dm = 10 cm; 15 dm 2 cm = 152 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-019",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "16 dm 3 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "165"
+        },
+        {
+          "id": "B",
+          "text": "163"
+        },
+        {
+          "id": "C",
+          "text": "162"
+        },
+        {
+          "id": "D",
+          "text": "179"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 dm = 10 cm; 16 dm 3 cm = 163 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-020",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "17 dm 4 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "184"
+        },
+        {
+          "id": "B",
+          "text": "274"
+        },
+        {
+          "id": "C",
+          "text": "174"
+        },
+        {
+          "id": "D",
+          "text": "169"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 dm = 10 cm; 17 dm 4 cm = 174 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-021",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "11 m bằng bao nhiêu cm? (Lượt luyện 21)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 100"
+        },
+        {
+          "id": "B",
+          "text": "1 090"
+        },
+        {
+          "id": "C",
+          "text": "1 110"
+        },
+        {
+          "id": "D",
+          "text": "1 095"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 m = 100 cm nên 11 m = 1100 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-022",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "12 m bằng bao nhiêu cm? (Lượt luyện 22)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 197"
+        },
+        {
+          "id": "B",
+          "text": "1 320"
+        },
+        {
+          "id": "C",
+          "text": "1 200"
+        },
+        {
+          "id": "D",
+          "text": "1 300"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 m = 100 cm nên 12 m = 1200 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-023",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "13 m bằng bao nhiêu cm? (Lượt luyện 23)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 302"
+        },
+        {
+          "id": "B",
+          "text": "1 295"
+        },
+        {
+          "id": "C",
+          "text": "1 300"
+        },
+        {
+          "id": "D",
+          "text": "1 290"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 m = 100 cm nên 13 m = 1300 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-024",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "14 m bằng bao nhiêu cm? (Lượt luyện 24)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 540"
+        },
+        {
+          "id": "B",
+          "text": "1 405"
+        },
+        {
+          "id": "C",
+          "text": "1 399"
+        },
+        {
+          "id": "D",
+          "text": "1 400"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 m = 100 cm nên 14 m = 1400 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-025",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "15 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 495"
+        },
+        {
+          "id": "B",
+          "text": "1 650"
+        },
+        {
+          "id": "C",
+          "text": "1 497"
+        },
+        {
+          "id": "D",
+          "text": "1 500"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 m = 100 cm nên 15 m = 1500 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-026",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "16 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 602"
+        },
+        {
+          "id": "B",
+          "text": "1 597"
+        },
+        {
+          "id": "C",
+          "text": "1 500"
+        },
+        {
+          "id": "D",
+          "text": "1 600"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 m = 100 cm nên 16 m = 1600 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-027",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "17 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 698"
+        },
+        {
+          "id": "B",
+          "text": "1 710"
+        },
+        {
+          "id": "C",
+          "text": "1 700"
+        },
+        {
+          "id": "D",
+          "text": "1 870"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 m = 100 cm nên 17 m = 1700 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-028",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "18 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 799"
+        },
+        {
+          "id": "B",
+          "text": "1 800"
+        },
+        {
+          "id": "C",
+          "text": "1 795"
+        },
+        {
+          "id": "D",
+          "text": "1 980"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 m = 100 cm nên 18 m = 1800 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-029",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "19 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 900"
+        },
+        {
+          "id": "B",
+          "text": "2 900"
+        },
+        {
+          "id": "C",
+          "text": "1 710"
+        },
+        {
+          "id": "D",
+          "text": "2 090"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 m = 100 cm nên 19 m = 1900 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-030",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "20 m bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 000"
+        },
+        {
+          "id": "B",
+          "text": "2 003"
+        },
+        {
+          "id": "C",
+          "text": "2 010"
+        },
+        {
+          "id": "D",
+          "text": "2 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 m = 100 cm nên 20 m = 2000 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-031",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "14 dm 2 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "142"
+        },
+        {
+          "id": "B",
+          "text": "156"
+        },
+        {
+          "id": "C",
+          "text": "242"
+        },
+        {
+          "id": "D",
+          "text": "140"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 dm = 10 cm; 14 dm 2 cm = 142 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-032",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "15 dm 3 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "163"
+        },
+        {
+          "id": "B",
+          "text": "154"
+        },
+        {
+          "id": "C",
+          "text": "158"
+        },
+        {
+          "id": "D",
+          "text": "153"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 dm = 10 cm; 15 dm 3 cm = 153 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-033",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "16 dm 4 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "169"
+        },
+        {
+          "id": "B",
+          "text": "164"
+        },
+        {
+          "id": "C",
+          "text": "159"
+        },
+        {
+          "id": "D",
+          "text": "163"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 dm = 10 cm; 16 dm 4 cm = 164 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-034",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "17 dm 5 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "177"
+        },
+        {
+          "id": "B",
+          "text": "173"
+        },
+        {
+          "id": "C",
+          "text": "176"
+        },
+        {
+          "id": "D",
+          "text": "175"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "1 dm = 10 cm; 17 dm 5 cm = 175 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-035",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "18 dm 6 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "188"
+        },
+        {
+          "id": "B",
+          "text": "204"
+        },
+        {
+          "id": "C",
+          "text": "186"
+        },
+        {
+          "id": "D",
+          "text": "176"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 dm = 10 cm; 18 dm 6 cm = 186 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-036",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "19 dm 7 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "197"
+        },
+        {
+          "id": "B",
+          "text": "178"
+        },
+        {
+          "id": "C",
+          "text": "297"
+        },
+        {
+          "id": "D",
+          "text": "196"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 dm = 10 cm; 19 dm 7 cm = 197 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-037",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "20 dm 8 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "188"
+        },
+        {
+          "id": "B",
+          "text": "203"
+        },
+        {
+          "id": "C",
+          "text": "208"
+        },
+        {
+          "id": "D",
+          "text": "206"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 dm = 10 cm; 20 dm 8 cm = 208 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-038",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "21 dm 2 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "217"
+        },
+        {
+          "id": "B",
+          "text": "210"
+        },
+        {
+          "id": "C",
+          "text": "212"
+        },
+        {
+          "id": "D",
+          "text": "214"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "1 dm = 10 cm; 21 dm 2 cm = 212 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-039",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "22 dm 3 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "223"
+        },
+        {
+          "id": "B",
+          "text": "225"
+        },
+        {
+          "id": "C",
+          "text": "233"
+        },
+        {
+          "id": "D",
+          "text": "218"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "1 dm = 10 cm; 22 dm 3 cm = 223 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N24-040",
+      "grade": 3,
+      "topicId": "N24",
+      "topicName": "Đơn vị đo độ dài",
+      "skillId": "N24.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "23 dm 4 cm bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "334"
+        },
+        {
+          "id": "B",
+          "text": "234"
+        },
+        {
+          "id": "C",
+          "text": "1 234"
+        },
+        {
+          "id": "D",
+          "text": "244"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "1 dm = 10 cm; 23 dm 4 cm = 234 cm.",
+      "tags": [
+        "toan-3",
+        "n24"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

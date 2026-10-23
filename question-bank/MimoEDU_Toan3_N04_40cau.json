@@ -1,0 +1,1449 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n04-v1",
+  "title": "Làm tròn số",
+  "language": "vi",
+  "notes": "40 câu trắc nghiệm do ChatGPT biên soạn; cần giáo viên kiểm duyệt nội dung sư phạm trước khi xuất bản. Không tự động ghi Firebase.",
+  "questions": [
+    {
+      "id": "M3-N04-001",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 12 347 đến hàng chục được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 340"
+        },
+        {
+          "id": "B",
+          "text": "12 350"
+        },
+        {
+          "id": "C",
+          "text": "12 360"
+        },
+        {
+          "id": "D",
+          "text": "12 347"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Xét chữ số hàng đơn vị; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 12 350.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-002",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 56 891 đến hàng chục được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56 890"
+        },
+        {
+          "id": "B",
+          "text": "56 891"
+        },
+        {
+          "id": "C",
+          "text": "56 900"
+        },
+        {
+          "id": "D",
+          "text": "56 880"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Xét chữ số hàng đơn vị; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 56 890.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-003",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 80 504 đến hàng chục được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80 510"
+        },
+        {
+          "id": "B",
+          "text": "80 490"
+        },
+        {
+          "id": "C",
+          "text": "80 504"
+        },
+        {
+          "id": "D",
+          "text": "80 500"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Xét chữ số hàng đơn vị; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 80 500.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-004",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 49 995 đến hàng chục được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50 010"
+        },
+        {
+          "id": "B",
+          "text": "49 990"
+        },
+        {
+          "id": "C",
+          "text": "50 000"
+        },
+        {
+          "id": "D",
+          "text": "49 995"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số hàng đơn vị; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 50 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-005",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 73 422 đến hàng chục được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "73 420"
+        },
+        {
+          "id": "B",
+          "text": "73 430"
+        },
+        {
+          "id": "C",
+          "text": "73 422"
+        },
+        {
+          "id": "D",
+          "text": "73 410"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Xét chữ số hàng đơn vị; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 73 420.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-006",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 16 275 đến hàng trăm được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 200"
+        },
+        {
+          "id": "B",
+          "text": "16 275"
+        },
+        {
+          "id": "C",
+          "text": "16 400"
+        },
+        {
+          "id": "D",
+          "text": "16 300"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Xét chữ số hàng chục; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 16 300.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-007",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 34 249 đến hàng trăm được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34 100"
+        },
+        {
+          "id": "B",
+          "text": "34 200"
+        },
+        {
+          "id": "C",
+          "text": "34 300"
+        },
+        {
+          "id": "D",
+          "text": "34 249"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Xét chữ số hàng chục; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 34 200.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-008",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 67 850 đến hàng trăm được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "67 900"
+        },
+        {
+          "id": "B",
+          "text": "67 850"
+        },
+        {
+          "id": "C",
+          "text": "67 800"
+        },
+        {
+          "id": "D",
+          "text": "68 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Xét chữ số hàng chục; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 67 900.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-009",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 90 551 đến hàng trăm được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90 600"
+        },
+        {
+          "id": "B",
+          "text": "90 500"
+        },
+        {
+          "id": "C",
+          "text": "90 700"
+        },
+        {
+          "id": "D",
+          "text": "90 551"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Xét chữ số hàng chục; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 90 600.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-010",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn số 99 949 đến hàng trăm được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "99 900"
+        },
+        {
+          "id": "B",
+          "text": "99 949"
+        },
+        {
+          "id": "C",
+          "text": "100 000"
+        },
+        {
+          "id": "D",
+          "text": "99 800"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Xét chữ số hàng chục; nếu từ 5 trở lên thì tăng 1 ở hàng làm tròn. Kết quả là 99 900.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-011",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 12 440 đến hàng nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13 000"
+        },
+        {
+          "id": "B",
+          "text": "12 440"
+        },
+        {
+          "id": "C",
+          "text": "12 000"
+        },
+        {
+          "id": "D",
+          "text": "11 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 12 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-012",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 12 500 đến hàng nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 000"
+        },
+        {
+          "id": "B",
+          "text": "12 500"
+        },
+        {
+          "id": "C",
+          "text": "13 000"
+        },
+        {
+          "id": "D",
+          "text": "14 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 13 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-013",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 17 560 đến hàng nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17 560"
+        },
+        {
+          "id": "B",
+          "text": "19 000"
+        },
+        {
+          "id": "C",
+          "text": "18 000"
+        },
+        {
+          "id": "D",
+          "text": "17 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 18 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-014",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 34 999 đến hàng nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34 000"
+        },
+        {
+          "id": "B",
+          "text": "34 999"
+        },
+        {
+          "id": "C",
+          "text": "35 000"
+        },
+        {
+          "id": "D",
+          "text": "36 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 35 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-015",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 65 499 đến hàng nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66 000"
+        },
+        {
+          "id": "B",
+          "text": "64 000"
+        },
+        {
+          "id": "C",
+          "text": "65 499"
+        },
+        {
+          "id": "D",
+          "text": "65 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 65 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-016",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 65 500 đến hàng nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "65 000"
+        },
+        {
+          "id": "B",
+          "text": "67 000"
+        },
+        {
+          "id": "C",
+          "text": "66 000"
+        },
+        {
+          "id": "D",
+          "text": "65 500"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 66 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-017",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 84 050 đến hàng nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "85 000"
+        },
+        {
+          "id": "B",
+          "text": "84 050"
+        },
+        {
+          "id": "C",
+          "text": "84 000"
+        },
+        {
+          "id": "D",
+          "text": "83 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 84 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-018",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 99 501 đến hàng nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "99 501"
+        },
+        {
+          "id": "B",
+          "text": "101 000"
+        },
+        {
+          "id": "C",
+          "text": "100 000"
+        },
+        {
+          "id": "D",
+          "text": "99 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 100 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-019",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 44 000 đến hàng chục nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44 000"
+        },
+        {
+          "id": "B",
+          "text": "30 000"
+        },
+        {
+          "id": "C",
+          "text": "40 000"
+        },
+        {
+          "id": "D",
+          "text": "50 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 40 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-020",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.round_thousands",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Làm tròn 75 000 đến hàng chục nghìn được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80 000"
+        },
+        {
+          "id": "B",
+          "text": "90 000"
+        },
+        {
+          "id": "C",
+          "text": "70 000"
+        },
+        {
+          "id": "D",
+          "text": "75 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Xét chữ số ngay bên phải hàng cần làm tròn. Kết quả là 80 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "round_thousands"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-021",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số sách thư viện là 23 745. Nếu báo cáo số lượng làm tròn đến hàng trăm, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23 600"
+        },
+        {
+          "id": "B",
+          "text": "23 700"
+        },
+        {
+          "id": "C",
+          "text": "23 745"
+        },
+        {
+          "id": "D",
+          "text": "23 800"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Làm tròn 23 745 đến hàng trăm ta được 23 700.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-022",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số vé bán ra là 48 720. Nếu báo cáo số lượng làm tròn đến hàng nghìn, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "49 000"
+        },
+        {
+          "id": "B",
+          "text": "48 720"
+        },
+        {
+          "id": "C",
+          "text": "48 000"
+        },
+        {
+          "id": "D",
+          "text": "50 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Làm tròn 48 720 đến hàng nghìn ta được 49 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-023",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số người tham gia là 15 480. Nếu báo cáo số lượng làm tròn đến hàng nghìn, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16 000"
+        },
+        {
+          "id": "B",
+          "text": "15 000"
+        },
+        {
+          "id": "C",
+          "text": "15 480"
+        },
+        {
+          "id": "D",
+          "text": "14 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Làm tròn 15 480 đến hàng nghìn ta được 15 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-024",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số cây trong vùng là 86 250. Nếu báo cáo số lượng làm tròn đến hàng nghìn, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "86 000"
+        },
+        {
+          "id": "B",
+          "text": "86 250"
+        },
+        {
+          "id": "C",
+          "text": "87 000"
+        },
+        {
+          "id": "D",
+          "text": "85 000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Làm tròn 86 250 đến hàng nghìn ta được 86 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-025",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số sản phẩm là 41 555. Nếu báo cáo số lượng làm tròn đến hàng trăm, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41 555"
+        },
+        {
+          "id": "B",
+          "text": "41 500"
+        },
+        {
+          "id": "C",
+          "text": "41 600"
+        },
+        {
+          "id": "D",
+          "text": "41 700"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Làm tròn 41 555 đến hàng trăm ta được 41 600.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-026",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số lượt đọc là 73 990. Nếu báo cáo số lượng làm tròn đến hàng nghìn, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "74 000"
+        },
+        {
+          "id": "B",
+          "text": "73 000"
+        },
+        {
+          "id": "C",
+          "text": "75 000"
+        },
+        {
+          "id": "D",
+          "text": "73 990"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Làm tròn 73 990 đến hàng nghìn ta được 74 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-027",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số lượt truy cập là 67 510. Nếu báo cáo số lượng làm tròn đến hàng chục nghìn, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70 000"
+        },
+        {
+          "id": "B",
+          "text": "80 000"
+        },
+        {
+          "id": "C",
+          "text": "60 000"
+        },
+        {
+          "id": "D",
+          "text": "67 510"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Làm tròn 67 510 đến hàng chục nghìn ta được 70 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-028",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số chai nước là 24 560. Nếu báo cáo số lượng làm tròn đến hàng nghìn, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26 000"
+        },
+        {
+          "id": "B",
+          "text": "25 000"
+        },
+        {
+          "id": "C",
+          "text": "24 560"
+        },
+        {
+          "id": "D",
+          "text": "24 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Làm tròn 24 560 đến hàng nghìn ta được 25 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-029",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số hạt giống là 91 149. Nếu báo cáo số lượng làm tròn đến hàng trăm, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "91 200"
+        },
+        {
+          "id": "B",
+          "text": "91 100"
+        },
+        {
+          "id": "C",
+          "text": "91 000"
+        },
+        {
+          "id": "D",
+          "text": "91 149"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Làm tròn 91 149 đến hàng trăm ta được 91 100.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-030",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.context",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Số viên gạch là 55 490. Nếu báo cáo số lượng làm tròn đến hàng chục nghìn, cần ghi số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50 000"
+        },
+        {
+          "id": "B",
+          "text": "70 000"
+        },
+        {
+          "id": "C",
+          "text": "60 000"
+        },
+        {
+          "id": "D",
+          "text": "55 490"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Làm tròn 55 490 đến hàng chục nghìn ta được 60 000.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "context"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-031",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng trăm được 2 300 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 249"
+        },
+        {
+          "id": "B",
+          "text": "2 400"
+        },
+        {
+          "id": "C",
+          "text": "2 349"
+        },
+        {
+          "id": "D",
+          "text": "2 350"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Các số được làm tròn thành 2 300 nằm từ 2 250 đến 2 349. Số lớn nhất là 2 349.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-032",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng trăm được 4 500 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 549"
+        },
+        {
+          "id": "B",
+          "text": "4 550"
+        },
+        {
+          "id": "C",
+          "text": "4 600"
+        },
+        {
+          "id": "D",
+          "text": "4 449"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Các số được làm tròn thành 4 500 nằm từ 4 450 đến 4 549. Số lớn nhất là 4 549.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-033",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng nghìn được 12 000 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13 000"
+        },
+        {
+          "id": "B",
+          "text": "12 499"
+        },
+        {
+          "id": "C",
+          "text": "12 500"
+        },
+        {
+          "id": "D",
+          "text": "11 499"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Các số được làm tròn thành 12 000 nằm từ 11 500 đến 12 499. Số lớn nhất là 12 499.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-034",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng nghìn được 36 000 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36 500"
+        },
+        {
+          "id": "B",
+          "text": "35 499"
+        },
+        {
+          "id": "C",
+          "text": "36 499"
+        },
+        {
+          "id": "D",
+          "text": "37 000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Các số được làm tròn thành 36 000 nằm từ 35 500 đến 36 499. Số lớn nhất là 36 499.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-035",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng chục nghìn được 70 000 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "75 000"
+        },
+        {
+          "id": "B",
+          "text": "74 999"
+        },
+        {
+          "id": "C",
+          "text": "80 000"
+        },
+        {
+          "id": "D",
+          "text": "64 999"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Các số được làm tròn thành 70 000 nằm từ 65 000 đến 74 999. Số lớn nhất là 74 999.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-036",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng nghìn được 9 000 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 499"
+        },
+        {
+          "id": "B",
+          "text": "10 000"
+        },
+        {
+          "id": "C",
+          "text": "9 499"
+        },
+        {
+          "id": "D",
+          "text": "9 500"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Các số được làm tròn thành 9 000 nằm từ 8 500 đến 9 499. Số lớn nhất là 9 499.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-037",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng trăm được 5 600 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5 649"
+        },
+        {
+          "id": "B",
+          "text": "5 700"
+        },
+        {
+          "id": "C",
+          "text": "5 549"
+        },
+        {
+          "id": "D",
+          "text": "5 650"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Các số được làm tròn thành 5 600 nằm từ 5 550 đến 5 649. Số lớn nhất là 5 649.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-038",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng nghìn được 38 000 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39 000"
+        },
+        {
+          "id": "B",
+          "text": "38 500"
+        },
+        {
+          "id": "C",
+          "text": "37 499"
+        },
+        {
+          "id": "D",
+          "text": "38 499"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Các số được làm tròn thành 38 000 nằm từ 37 500 đến 38 499. Số lớn nhất là 38 499.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-039",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng chục nghìn được 20 000 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25 000"
+        },
+        {
+          "id": "B",
+          "text": "30 000"
+        },
+        {
+          "id": "C",
+          "text": "14 999"
+        },
+        {
+          "id": "D",
+          "text": "24 999"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Các số được làm tròn thành 20 000 nằm từ 15 000 đến 24 999. Số lớn nhất là 24 999.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N04-040",
+      "grade": 3,
+      "topicId": "N04",
+      "topicName": "Làm tròn số",
+      "skillId": "N04.max_round",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Số tự nhiên lớn nhất khi làm tròn đến hàng trăm được 8 700 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8 649"
+        },
+        {
+          "id": "B",
+          "text": "8 750"
+        },
+        {
+          "id": "C",
+          "text": "8 749"
+        },
+        {
+          "id": "D",
+          "text": "8 800"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Các số được làm tròn thành 8 700 nằm từ 8 650 đến 8 749. Số lớn nhất là 8 749.",
+      "tags": [
+        "toan-3",
+        "n04",
+        "max_round"
+      ],
+      "status": "reviewed_draft"
+    }
+  ]
+}

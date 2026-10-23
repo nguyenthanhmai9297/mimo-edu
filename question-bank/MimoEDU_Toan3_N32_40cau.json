@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n32-revised-20261023",
+  "title": "Khả năng xảy ra của sự kiện",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "group": "Thống kê và xác suất",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N32-001",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 2 viên bi màu đỏ, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tất cả viên bi đều màu đỏ, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-002",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 3 viên bi đỏ và 2 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Không thể"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-003",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 2 viên bi đỏ và 3 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Có thể"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-004",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 4 thẻ ghi số chẵn và 2 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Không thể"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-005",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 3 viên bi màu xanh, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu xanh là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tất cả viên bi đều màu xanh, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-006",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 4 viên bi đỏ và 3 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-007",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 3 viên bi đỏ và 4 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-008",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 5 thẻ ghi số chẵn và 3 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Không thể"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-009",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 4 viên bi màu vàng, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tất cả viên bi đều màu vàng, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-010",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 5 viên bi đỏ và 4 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Không thể"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-011",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 4 viên bi đỏ và 5 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-012",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 6 thẻ ghi số chẵn và 4 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Có thể"
+        },
+        {
+          "id": "D",
+          "text": "Không thể"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-013",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 5 viên bi màu tím, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu tím là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tất cả viên bi đều màu tím, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-014",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 6 viên bi đỏ và 5 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Không thể"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-015",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 5 viên bi đỏ và 6 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Không thể"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-016",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 7 thẻ ghi số chẵn và 5 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-017",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 6 viên bi màu cam, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu cam là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tất cả viên bi đều màu cam, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-018",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 7 viên bi đỏ và 6 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "B",
+          "text": "Không thể"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-019",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 6 viên bi đỏ và 7 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Không thể"
+        },
+        {
+          "id": "C",
+          "text": "Có thể"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-020",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 8 thẻ ghi số chẵn và 6 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-021",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 7 viên bi màu hồng, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu hồng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tất cả viên bi đều màu hồng, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-022",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 8 viên bi đỏ và 7 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-023",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 7 viên bi đỏ và 8 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-024",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 9 thẻ ghi số chẵn và 7 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-025",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 8 viên bi màu trắng, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu trắng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Không thể"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tất cả viên bi đều màu trắng, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-026",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 9 viên bi đỏ và 8 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-027",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 8 viên bi đỏ và 9 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-028",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 10 thẻ ghi số chẵn và 8 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-029",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 9 viên bi màu đen, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu đen là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "B",
+          "text": "Không thể"
+        },
+        {
+          "id": "C",
+          "text": "Có thể"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tất cả viên bi đều màu đen, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-030",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 10 viên bi đỏ và 9 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-031",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 9 viên bi đỏ và 10 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-032",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 11 thẻ ghi số chẵn và 9 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Không thể"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-033",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 10 viên bi màu nâu, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu nâu là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tất cả viên bi đều màu nâu, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-034",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 11 viên bi đỏ và 10 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Có thể"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-035",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 10 viên bi đỏ và 11 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-036",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 12 thẻ ghi số chẵn và 10 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Có thể"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-037",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.chac_chan",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 11 viên bi màu lục, không có màu khác. Lấy ngẫu nhiên 1 viên bi màu lục là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Có thể"
+        },
+        {
+          "id": "B",
+          "text": "Không thể"
+        },
+        {
+          "id": "C",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tất cả viên bi đều màu lục, nên lấy một viên bất kỳ chắc chắn đúng màu.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-038",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.khong_the",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 12 viên bi đỏ và 11 viên bi xanh, không có bi vàng. Lấy ngẫu nhiên một viên bi vàng là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "B",
+          "text": "Có thể"
+        },
+        {
+          "id": "C",
+          "text": "Không thể"
+        },
+        {
+          "id": "D",
+          "text": "Không đủ dữ kiện"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Không có viên bi vàng trong túi, nên không thể lấy được bi vàng.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-039",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.co_the",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một túi chứa 11 viên bi đỏ và 12 viên bi xanh. Lấy ngẫu nhiên 1 viên bi đỏ là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "B",
+          "text": "Chắc chắn"
+        },
+        {
+          "id": "C",
+          "text": "Có thể"
+        },
+        {
+          "id": "D",
+          "text": "Không thể"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Túi có bi đỏ và bi xanh, nên lấy bi đỏ có thể xảy ra nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-040",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.nhan_dinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hộp có 13 thẻ ghi số chẵn và 11 thẻ ghi số lẻ, không có loại khác. Chọn ngẫu nhiên 1 thẻ ghi số chẵn là sự kiện nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Không thể"
+        },
+        {
+          "id": "B",
+          "text": "Không đủ dữ kiện"
+        },
+        {
+          "id": "C",
+          "text": "Có thể"
+        },
+        {
+          "id": "D",
+          "text": "Chắc chắn"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Trong hộp có cả thẻ số chẵn và thẻ số lẻ, nên chọn trúng thẻ số chẵn là có thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

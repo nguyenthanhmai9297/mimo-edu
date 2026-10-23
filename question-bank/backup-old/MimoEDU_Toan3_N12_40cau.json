@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n12-draft-v1",
+  "title": "Một phần mấy",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N12-001",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 2 viên kẹo chia thành 2 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "2 : 2 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-002",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 3 viên kẹo chia thành 3 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "101"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "3 : 3 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-003",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 4 viên kẹo chia thành 4 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "101"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "4 : 4 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-004",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 5 viên kẹo chia thành 5 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "101"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "5 : 5 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-005",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 6 viên kẹo chia thành 6 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "1 001"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "6 : 6 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-006",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 7 viên kẹo chia thành 7 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "7 : 7 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-007",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 8 viên kẹo chia thành 8 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "8 : 8 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-008",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 9 viên kẹo chia thành 9 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "9 : 9 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-009",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 2 viên kẹo chia thành 2 phần bằng nhau. Một phần có bao nhiêu viên? (Lượt luyện 9)",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "1 001"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "2 : 2 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-010",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 3 viên kẹo chia thành 3 phần bằng nhau. Một phần có bao nhiêu viên? (Lượt luyện 10)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "1 001"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "3 : 3 = 1 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-011",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 4 viên kẹo chia thành 2 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "4 : 2 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-012",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 6 viên kẹo chia thành 3 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "102"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "6 : 3 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-013",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 8 viên kẹo chia thành 4 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "1 002"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "8 : 4 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-014",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 10 viên kẹo chia thành 5 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "102"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "10 : 5 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-015",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 12 viên kẹo chia thành 6 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "12 : 6 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-016",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 14 viên kẹo chia thành 7 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "14 : 7 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-017",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 16 viên kẹo chia thành 8 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "16 : 8 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-018",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 18 viên kẹo chia thành 9 phần bằng nhau. Một phần có bao nhiêu viên?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "102"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "18 : 9 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-019",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 4 viên kẹo chia thành 2 phần bằng nhau. Một phần có bao nhiêu viên? (Lượt luyện 19)",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "102"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "4 : 2 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-020",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 6 viên kẹo chia thành 3 phần bằng nhau. Một phần có bao nhiêu viên? (Lượt luyện 20)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 002"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "6 : 3 = 2 viên.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-021",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 12 quả, lấy 1/2 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 2 bằng nhau: 12 : 2 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-022",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 18 quả, lấy 1/3 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "1 006"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 3 bằng nhau: 18 : 3 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-023",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 24 quả, lấy 1/4 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy một phần 4 bằng nhau: 24 : 4 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-024",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 30 quả, lấy 1/5 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy một phần 5 bằng nhau: 30 : 5 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-025",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 36 quả, lấy 1/6 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "1 006"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy một phần 6 bằng nhau: 36 : 6 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-026",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 42 quả, lấy 1/7 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 7 bằng nhau: 42 : 7 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-027",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 48 quả, lấy 1/8 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 8 bằng nhau: 48 : 8 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-028",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 54 quả, lấy 1/9 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "1 006"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 9 bằng nhau: 54 : 9 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-029",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 12 quả, lấy 1/2 số quả trong rổ. Lấy bao nhiêu quả? (Lượt luyện 29)",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy một phần 2 bằng nhau: 12 : 2 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-030",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 18 quả, lấy 1/3 số quả trong rổ. Lấy bao nhiêu quả? (Lượt luyện 30)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "1 006"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy một phần 3 bằng nhau: 18 : 3 = 6 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-031",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 16 quả, lấy 1/2 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 2 bằng nhau: 16 : 2 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-032",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 24 quả, lấy 1/3 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 3 bằng nhau: 24 : 3 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-033",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 32 quả, lấy 1/4 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy một phần 4 bằng nhau: 32 : 4 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-034",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 40 quả, lấy 1/5 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "1 008"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 5 bằng nhau: 40 : 5 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-035",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 48 quả, lấy 1/6 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy một phần 6 bằng nhau: 48 : 6 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-036",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 56 quả, lấy 1/7 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 7 bằng nhau: 56 : 7 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-037",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 64 quả, lấy 1/8 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy một phần 8 bằng nhau: 64 : 8 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-038",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 72 quả, lấy 1/9 số quả trong rổ. Lấy bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "1 008"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy một phần 9 bằng nhau: 72 : 9 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-039",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 16 quả, lấy 1/2 số quả trong rổ. Lấy bao nhiêu quả? (Lượt luyện 39)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy một phần 2 bằng nhau: 16 : 2 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N12-040",
+      "grade": 3,
+      "topicId": "N12",
+      "topicName": "Một phần mấy",
+      "skillId": "N12.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một rổ có 24 quả, lấy 1/3 số quả trong rổ. Lấy bao nhiêu quả? (Lượt luyện 40)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy một phần 3 bằng nhau: 24 : 3 = 8 quả.",
+      "tags": [
+        "toan-3",
+        "n12"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

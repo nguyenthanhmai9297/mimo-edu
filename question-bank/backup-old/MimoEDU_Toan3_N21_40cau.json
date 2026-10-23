@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n21-draft-v1",
+  "title": "Hình tròn",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N21-001",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 5 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đường kính gấp đôi bán kính: 5 × 2 = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-002",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 6 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "1 012"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính gấp đôi bán kính: 6 × 2 = 12 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-003",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 7 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "114"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đường kính gấp đôi bán kính: 7 × 2 = 14 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-004",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 8 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính gấp đôi bán kính: 8 × 2 = 16 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-005",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 9 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đường kính gấp đôi bán kính: 9 × 2 = 18 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-006",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 10 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đường kính gấp đôi bán kính: 10 × 2 = 20 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-007",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 11 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đường kính gấp đôi bán kính: 11 × 2 = 22 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-008",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 12 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính gấp đôi bán kính: 12 × 2 = 24 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-009",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 13 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "126"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính gấp đôi bán kính: 13 × 2 = 26 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-010",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 14 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính gấp đôi bán kính: 14 × 2 = 28 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-011",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 16 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "108"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bán kính bằng một nửa đường kính: 16 : 2 = 8 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-012",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 18 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "109"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bán kính bằng một nửa đường kính: 18 : 2 = 9 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-013",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 20 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 20 : 2 = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-014",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 22 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bán kính bằng một nửa đường kính: 22 : 2 = 11 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-015",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 24 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "112"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bán kính bằng một nửa đường kính: 24 : 2 = 12 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-016",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 26 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bán kính bằng một nửa đường kính: 26 : 2 = 13 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-017",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 28 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "1 014"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bán kính bằng một nửa đường kính: 28 : 2 = 14 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-018",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 30 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bán kính bằng một nửa đường kính: 30 : 2 = 15 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-019",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 32 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 32 : 2 = 16 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-020",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 34 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "117"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bán kính bằng một nửa đường kính: 34 : 2 = 17 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-021",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 11 cm. Đường kính AB bằng bao nhiêu cm? (Lượt luyện 21)",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đường kính gấp đôi bán kính: 11 × 2 = 22 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-022",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 12 cm. Đường kính AB bằng bao nhiêu cm? (Lượt luyện 22)",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính gấp đôi bán kính: 12 × 2 = 24 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-023",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 13 cm. Đường kính AB bằng bao nhiêu cm? (Lượt luyện 23)",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đường kính gấp đôi bán kính: 13 × 2 = 26 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-024",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 14 cm. Đường kính AB bằng bao nhiêu cm? (Lượt luyện 24)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 028"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính gấp đôi bán kính: 14 × 2 = 28 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-025",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 15 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính gấp đôi bán kính: 15 × 2 = 30 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-026",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 16 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đường kính gấp đôi bán kính: 16 × 2 = 32 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-027",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 17 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính gấp đôi bán kính: 17 × 2 = 34 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-028",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 18 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "136"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đường kính gấp đôi bán kính: 18 × 2 = 36 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-029",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 19 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đường kính gấp đôi bán kính: 19 × 2 = 38 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-030",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA bằng 20 cm. Đường kính AB bằng bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đường kính gấp đôi bán kính: 20 × 2 = 40 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-031",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 28 cm. Bán kính OA dài bao nhiêu cm? (Lượt luyện 31)",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bán kính bằng một nửa đường kính: 28 : 2 = 14 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-032",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 30 cm. Bán kính OA dài bao nhiêu cm? (Lượt luyện 32)",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bán kính bằng một nửa đường kính: 30 : 2 = 15 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-033",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 32 cm. Bán kính OA dài bao nhiêu cm? (Lượt luyện 33)",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "116"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bán kính bằng một nửa đường kính: 32 : 2 = 16 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-034",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 34 cm. Bán kính OA dài bao nhiêu cm? (Lượt luyện 34)",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bán kính bằng một nửa đường kính: 34 : 2 = 17 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-035",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 36 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 36 : 2 = 18 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-036",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 38 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "119"
+        },
+        {
+          "id": "B",
+          "text": "1 019"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bán kính bằng một nửa đường kính: 38 : 2 = 19 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-037",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 40 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "120"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 40 : 2 = 20 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-038",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 42 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bán kính bằng một nửa đường kính: 42 : 2 = 21 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-039",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 44 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "122"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 44 : 2 = 22 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-040",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính AB bằng 46 cm. Bán kính OA dài bao nhiêu cm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "123"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bán kính bằng một nửa đường kính: 46 : 2 = 23 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

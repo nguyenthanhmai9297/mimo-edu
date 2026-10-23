@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n20-draft-v1",
+  "title": "Điểm, đoạn thẳng và các hình học",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N20-001",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 5 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 5 × 3 = 15 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-002",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 6 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "118"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 6 × 3 = 18 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-003",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 7 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "121"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 7 × 3 = 21 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-004",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 8 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 8 × 3 = 24 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-005",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 9 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 027"
+        },
+        {
+          "id": "B",
+          "text": "127"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 9 × 3 = 27 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-006",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 10 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 10 × 3 = 30 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-007",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 11 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 11 × 3 = 33 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-008",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 12 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "1 036"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 12 × 3 = 36 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-009",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 13 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 13 × 3 = 39 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-010",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 14 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "47"
+        },
+        {
+          "id": "B",
+          "text": "1 042"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 14 × 3 = 42 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-011",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 8 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh? (Lượt luyện 11)",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 8 × 3 = 24 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-012",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 9 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh? (Lượt luyện 12)",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "1 027"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 9 × 3 = 27 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-013",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 10 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh? (Lượt luyện 13)",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 10 × 3 = 30 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-014",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 11 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh? (Lượt luyện 14)",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 11 × 3 = 33 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-015",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 12 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh? (Lượt luyện 15)",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 12 × 3 = 36 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-016",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 13 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh? (Lượt luyện 16)",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "1 039"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 13 × 3 = 39 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-017",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 14 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh? (Lượt luyện 17)",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 14 × 3 = 42 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-018",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 15 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 15 × 3 = 45 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-019",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 16 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "45"
+        },
+        {
+          "id": "C",
+          "text": "43"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 16 × 3 = 48 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-020",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 17 hình tam giác rời nhau. Tất cả có bao nhiêu đỉnh?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "51"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "53"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 đỉnh, nên có 17 × 3 = 51 đỉnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-021",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 2 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "106"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh, 2 hình có 6 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-022",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 3 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 009"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh, 3 hình có 9 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-023",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 4 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh, 4 hình có 12 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-024",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 5 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh, 5 hình có 15 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-025",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 6 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh, 6 hình có 18 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-026",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 7 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác?",
+      "options": [
+        {
+          "id": "A",
+          "text": "121"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh, 7 hình có 21 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-027",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 8 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh, 8 hình có 24 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-028",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 2 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 28)",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh, 2 hình có 6 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-029",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 3 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 29)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 009"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 cạnh, 3 hình có 9 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-030",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Ghép 4 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 30)",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh, 4 hình có 12 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-031",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 2 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 31)",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 cạnh, 2 hình có 6 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-032",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 3 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 32)",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "109"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh, 3 hình có 9 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-033",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 4 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 33)",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh, 4 hình có 12 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-034",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 5 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 34)",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tam giác có 3 cạnh, 5 hình có 15 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-035",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 6 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 35)",
+      "options": [
+        {
+          "id": "A",
+          "text": "118"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh, 6 hình có 18 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-036",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 7 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 36)",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi tam giác có 3 cạnh, 7 hình có 21 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-037",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 8 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 37)",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "1 024"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh, 8 hình có 24 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-038",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 2 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 38)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh, 2 hình có 6 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-039",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 3 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 39)",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tam giác có 3 cạnh, 3 hình có 9 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N20-040",
+      "grade": 3,
+      "topicId": "N20",
+      "topicName": "Điểm, đoạn thẳng và các hình học",
+      "skillId": "N20.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Ghép 4 hình tam giác rời nhau. Có tất cả bao nhiêu cạnh của các hình tam giác? (Lượt luyện 40)",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tam giác có 3 cạnh, 4 hình có 12 cạnh.",
+      "tags": [
+        "toan-3",
+        "n20"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

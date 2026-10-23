@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n13-draft-v1",
+  "title": "Bài toán giải bằng hai bước tính",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N13-001",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 5 bông hoa, Mai có nhiều hơn Lan 2 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "1 012"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 7; cả hai có 5 + 7 = 12.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-002",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 6 bông hoa, Mai có nhiều hơn Lan 3 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 9; cả hai có 6 + 9 = 15.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-003",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 7 bông hoa, Mai có nhiều hơn Lan 4 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mai có 11; cả hai có 7 + 11 = 18.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-004",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 8 bông hoa, Mai có nhiều hơn Lan 5 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 13; cả hai có 8 + 13 = 21.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-005",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 9 bông hoa, Mai có nhiều hơn Lan 6 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mai có 15; cả hai có 9 + 15 = 24.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-006",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 10 bông hoa, Mai có nhiều hơn Lan 7 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mai có 17; cả hai có 10 + 17 = 27.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-007",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 11 bông hoa, Mai có nhiều hơn Lan 8 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "130"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 19; cả hai có 11 + 19 = 30.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-008",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 12 bông hoa, Mai có nhiều hơn Lan 2 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "1 026"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 14; cả hai có 12 + 14 = 26.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-009",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 13 bông hoa, Mai có nhiều hơn Lan 3 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "129"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 16; cả hai có 13 + 16 = 29.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-010",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 14 bông hoa, Mai có nhiều hơn Lan 4 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 18; cả hai có 14 + 18 = 32.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-011",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 8 bông hoa, Mai có nhiều hơn Lan 2 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "1 018"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mai có 10; cả hai có 8 + 10 = 18.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-012",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 9 bông hoa, Mai có nhiều hơn Lan 3 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "121"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mai có 12; cả hai có 9 + 12 = 21.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-013",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 10 bông hoa, Mai có nhiều hơn Lan 4 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "1 024"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mai có 14; cả hai có 10 + 14 = 24.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-014",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 11 bông hoa, Mai có nhiều hơn Lan 5 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mai có 16; cả hai có 11 + 16 = 27.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-015",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 12 bông hoa, Mai có nhiều hơn Lan 6 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mai có 18; cả hai có 12 + 18 = 30.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-016",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 13 bông hoa, Mai có nhiều hơn Lan 7 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mai có 20; cả hai có 13 + 20 = 33.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-017",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 14 bông hoa, Mai có nhiều hơn Lan 8 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "46"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mai có 22; cả hai có 14 + 22 = 36.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-018",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 15 bông hoa, Mai có nhiều hơn Lan 2 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mai có 17; cả hai có 15 + 17 = 32.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-019",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 16 bông hoa, Mai có nhiều hơn Lan 3 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 19; cả hai có 16 + 19 = 35.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-020",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 17 bông hoa, Mai có nhiều hơn Lan 4 bông. Cả hai bạn có bao nhiêu bông hoa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mai có 21; cả hai có 17 + 21 = 38.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-021",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 2 quả bóng. Có 11 túi, đem tặng 3 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 22 quả, còn 22 − 3 = 19.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-022",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 3 quả bóng. Có 12 túi, đem tặng 4 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "29"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 36 quả, còn 36 − 4 = 32.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-023",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 4 quả bóng. Có 13 túi, đem tặng 5 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "45"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 52 quả, còn 52 − 5 = 47.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-024",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 5 quả bóng. Có 14 túi, đem tặng 6 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "74"
+        },
+        {
+          "id": "B",
+          "text": "64"
+        },
+        {
+          "id": "C",
+          "text": "54"
+        },
+        {
+          "id": "D",
+          "text": "61"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 70 quả, còn 70 − 6 = 64.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-025",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 6 quả bóng. Có 15 túi, đem tặng 7 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "83"
+        },
+        {
+          "id": "B",
+          "text": "82"
+        },
+        {
+          "id": "C",
+          "text": "73"
+        },
+        {
+          "id": "D",
+          "text": "84"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 90 quả, còn 90 − 7 = 83.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-026",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 7 quả bóng. Có 16 túi, đem tặng 3 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "109"
+        },
+        {
+          "id": "B",
+          "text": "119"
+        },
+        {
+          "id": "C",
+          "text": "209"
+        },
+        {
+          "id": "D",
+          "text": "112"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 112 quả, còn 112 − 3 = 109.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-027",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 8 quả bóng. Có 17 túi, đem tặng 4 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "132"
+        },
+        {
+          "id": "B",
+          "text": "232"
+        },
+        {
+          "id": "C",
+          "text": "119"
+        },
+        {
+          "id": "D",
+          "text": "127"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 136 quả, còn 136 − 4 = 132.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-028",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 2 quả bóng. Có 18 túi, đem tặng 5 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 36 quả, còn 36 − 5 = 31.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-029",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 3 quả bóng. Có 19 túi, đem tặng 6 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "51"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "52"
+        },
+        {
+          "id": "D",
+          "text": "151"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 57 quả, còn 57 − 6 = 51.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-030",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 4 quả bóng. Có 20 túi, đem tặng 7 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "83"
+        },
+        {
+          "id": "B",
+          "text": "73"
+        },
+        {
+          "id": "C",
+          "text": "63"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 80 quả, còn 80 − 7 = 73.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-031",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 2 quả bóng. Có 14 túi, đem tặng 3 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 28 quả, còn 28 − 3 = 25.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-032",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 3 quả bóng. Có 15 túi, đem tặng 4 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "43"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "41"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 45 quả, còn 45 − 4 = 41.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-033",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 4 quả bóng. Có 16 túi, đem tặng 5 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "59"
+        },
+        {
+          "id": "B",
+          "text": "69"
+        },
+        {
+          "id": "C",
+          "text": "64"
+        },
+        {
+          "id": "D",
+          "text": "1 059"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 64 quả, còn 64 − 5 = 59.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-034",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 5 quả bóng. Có 17 túi, đem tặng 6 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "79"
+        },
+        {
+          "id": "B",
+          "text": "82"
+        },
+        {
+          "id": "C",
+          "text": "77"
+        },
+        {
+          "id": "D",
+          "text": "179"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 85 quả, còn 85 − 6 = 79.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-035",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 6 quả bóng. Có 18 túi, đem tặng 7 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "101"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "111"
+        },
+        {
+          "id": "D",
+          "text": "106"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 108 quả, còn 108 − 7 = 101.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-036",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 7 quả bóng. Có 19 túi, đem tặng 3 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "117"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "130"
+        },
+        {
+          "id": "D",
+          "text": "120"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 133 quả, còn 133 − 3 = 130.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-037",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 8 quả bóng. Có 20 túi, đem tặng 4 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "156"
+        },
+        {
+          "id": "B",
+          "text": "154"
+        },
+        {
+          "id": "C",
+          "text": "1 156"
+        },
+        {
+          "id": "D",
+          "text": "161"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 160 quả, còn 160 − 4 = 156.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-038",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 2 quả bóng. Có 21 túi, đem tặng 5 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "137"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 42 quả, còn 42 − 5 = 37.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-039",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 3 quả bóng. Có 22 túi, đem tặng 6 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "62"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "57"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 66 quả, còn 66 − 6 = 60.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-040",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi túi có 4 quả bóng. Có 23 túi, đem tặng 7 quả. Còn lại bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "85"
+        },
+        {
+          "id": "C",
+          "text": "83"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 92 quả, còn 92 − 7 = 85.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

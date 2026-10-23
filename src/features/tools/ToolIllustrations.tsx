@@ -120,6 +120,19 @@ export const Geometry3DArt = () => (
   </Frame>
 );
 
+export const MathCanvasArt = () => (
+  <Frame bg="#E6FAFC">
+    <g transform="translate(34 20)" fill="none" strokeLinejoin="round" strokeLinecap="round">
+      <path d="M8 74 L46 10 L92 74 Z" fill="#FFFFFF" stroke="#071A63" strokeWidth="4" />
+      <path d="M46 10 L46 74" stroke="#1267E9" strokeWidth="3" strokeDasharray="6 5" />
+      <path d="M46 64 h10 v10" stroke="#E5484D" strokeWidth="3" />
+      {[[8, 74], [46, 10], [92, 74], [46, 74]].map(([x, y]) => (
+        <circle key={`${x}-${y}`} cx={x} cy={y} r="5" fill="#071A63" />
+      ))}
+    </g>
+  </Frame>
+);
+
 export const PracticeArt = () => (
   <Frame bg="#071A63">
     <circle cx="120" cy="28" r="14" fill="#FFD34E" />

@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n23-revised-20261023",
+  "title": "Diện tích hình chữ nhật, hình vuông",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N23-001",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 6 cm, rộng 3 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích hình chữ nhật là 6 × 3 = 18 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-002",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 5 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích = 5 × 5 = 25 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-003",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 18 cm² và chiều rộng 3 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 18 : 3 = 6 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-004",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 6 cm, rộng 3 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tấm có diện tích 6 × 3 = 18 cm². Hai tấm có 18 × 2 = 36 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-005",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 7 cm, rộng 4 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích hình chữ nhật là 7 × 4 = 28 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-006",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 6 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích = 6 × 6 = 36 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-007",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 28 cm² và chiều rộng 4 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 28 : 4 = 7 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-008",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 7 cm, rộng 4 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "58"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tấm có diện tích 7 × 4 = 28 cm². Hai tấm có 28 × 2 = 56 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-009",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 8 cm, rộng 5 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích hình chữ nhật là 8 × 5 = 40 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-010",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 7 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "49"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích = 7 × 7 = 49 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-011",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 40 cm² và chiều rộng 5 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 40 : 5 = 8 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-012",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 8 cm, rộng 5 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "82"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tấm có diện tích 8 × 5 = 40 cm². Hai tấm có 40 × 2 = 80 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-013",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 9 cm, rộng 6 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích hình chữ nhật là 9 × 6 = 54 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-014",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 8 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích = 8 × 8 = 64 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-015",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 54 cm² và chiều rộng 6 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 54 : 6 = 9 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-016",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 9 cm, rộng 6 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "110"
+        },
+        {
+          "id": "C",
+          "text": "108"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tấm có diện tích 9 × 6 = 54 cm². Hai tấm có 54 × 2 = 108 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-017",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 10 cm, rộng 7 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "77"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích hình chữ nhật là 10 × 7 = 70 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-018",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 9 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "81"
+        },
+        {
+          "id": "B",
+          "text": "82"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích = 9 × 9 = 81 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-019",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 70 cm² và chiều rộng 7 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 70 : 7 = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-020",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 10 cm, rộng 7 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "142"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "140"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tấm có diện tích 10 × 7 = 70 cm². Hai tấm có 70 × 2 = 140 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-021",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 11 cm, rộng 8 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "96"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích hình chữ nhật là 11 × 8 = 88 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-022",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 10 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "101"
+        },
+        {
+          "id": "D",
+          "text": "100"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích = 10 × 10 = 100 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-023",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 88 cm² và chiều rộng 8 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 88 : 8 = 11 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-024",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 11 cm, rộng 8 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "178"
+        },
+        {
+          "id": "C",
+          "text": "88"
+        },
+        {
+          "id": "D",
+          "text": "176"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi tấm có diện tích 11 × 8 = 88 cm². Hai tấm có 88 × 2 = 176 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-025",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 12 cm, rộng 9 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "117"
+        },
+        {
+          "id": "B",
+          "text": "108"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích hình chữ nhật là 12 × 9 = 108 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-026",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 11 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "122"
+        },
+        {
+          "id": "C",
+          "text": "121"
+        },
+        {
+          "id": "D",
+          "text": "44"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích = 11 × 11 = 121 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-027",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 108 cm² và chiều rộng 9 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "108"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 108 : 9 = 12 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-028",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 12 cm, rộng 9 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "108"
+        },
+        {
+          "id": "C",
+          "text": "216"
+        },
+        {
+          "id": "D",
+          "text": "218"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tấm có diện tích 12 × 9 = 108 cm². Hai tấm có 108 × 2 = 216 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-029",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 13 cm, rộng 10 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "140"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "130"
+        },
+        {
+          "id": "D",
+          "text": "46"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích hình chữ nhật là 13 × 10 = 130 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-030",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 12 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "145"
+        },
+        {
+          "id": "C",
+          "text": "144"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích = 12 × 12 = 144 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-031",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 130 cm² và chiều rộng 10 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "130"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 130 : 10 = 13 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-032",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 13 cm, rộng 10 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "46"
+        },
+        {
+          "id": "B",
+          "text": "260"
+        },
+        {
+          "id": "C",
+          "text": "262"
+        },
+        {
+          "id": "D",
+          "text": "130"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tấm có diện tích 13 × 10 = 130 cm². Hai tấm có 130 × 2 = 260 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-033",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 14 cm, rộng 11 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "154"
+        },
+        {
+          "id": "D",
+          "text": "165"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diện tích hình chữ nhật là 14 × 11 = 154 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-034",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 13 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "169"
+        },
+        {
+          "id": "B",
+          "text": "52"
+        },
+        {
+          "id": "C",
+          "text": "170"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Diện tích = 13 × 13 = 169 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-035",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 154 cm² và chiều rộng 11 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "154"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 154 : 11 = 14 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-036",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 14 cm, rộng 11 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "310"
+        },
+        {
+          "id": "B",
+          "text": "308"
+        },
+        {
+          "id": "C",
+          "text": "154"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi tấm có diện tích 14 × 11 = 154 cm². Hai tấm có 154 × 2 = 308 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-037",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_chu_nhat",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình chữ nhật dài 15 cm, rộng 12 cm. Diện tích bằng bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "54"
+        },
+        {
+          "id": "B",
+          "text": "180"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "192"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích hình chữ nhật là 15 × 12 = 180 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-038",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_vuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình vuông cạnh 14 cm có diện tích bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "196"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "197"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Diện tích = 14 × 14 = 196 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-039",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.tim_chieu_dai",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một hình chữ nhật có diện tích 180 cm² và chiều rộng 12 cm. Chiều dài là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "180"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chiều dài = diện tích : chiều rộng = 180 : 12 = 15 cm.",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N23-040",
+      "grade": 3,
+      "topicId": "N23",
+      "topicName": "Diện tích hình chữ nhật, hình vuông",
+      "skillId": "N23.dien_tich_ghep",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hai tấm bìa hình chữ nhật không chồng lên nhau, mỗi tấm dài 15 cm, rộng 12 cm. Tổng diện tích hai tấm là bao nhiêu cm²?",
+      "options": [
+        {
+          "id": "A",
+          "text": "180"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "360"
+        },
+        {
+          "id": "D",
+          "text": "362"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi tấm có diện tích 15 × 12 = 180 cm². Hai tấm có 180 × 2 = 360 cm².",
+      "tags": [
+        "toan-3",
+        "n23"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

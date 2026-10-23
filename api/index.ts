@@ -15,7 +15,9 @@ import {
   where,
 } from 'firebase/firestore';
 import { getAIAdapter } from '../src/services/aiAdapter';
-import { EMULATOR_PROJECT_ID, getAdminDb } from './firebaseAdmin';
+import { EMULATOR_PROJECT_ID, getAdminAuth, getAdminDb, isUsingFirebaseEmulator } from './firebaseAdmin';
+import { createLiveQuizRouter } from './liveQuiz';
+import { createFirestoreLiveQuizStore, LiveQuizStore } from './liveQuizStore';
 import { createPracticeRouter } from './practice';
 import { createFirestorePracticeStore, PracticeStore } from './practiceStore';
 import {
@@ -358,6 +360,58 @@ export function createApiApp() {
     },
   });
   app.use(['/api/practice', '/practice'], practiceRouter);
+
+  // Mimo Quiz – học sinh tham gia: prototype, only on the Firebase Emulator unless LIVE_QUIZ_ENABLED=true
+  const OWNER_EMAIL = 'dang.nh.aprotrain@gmail.com'; // same owner as firestore.rules isAdmin()
+  const requireTeacher = async (req: Request, res: Response, next: NextFunction) => {
+    const header = req.headers.authorization;
+    const auth = getAdminAuth();
+    const adminDb = getAdminDb();
+    if (!header?.startsWith('Bearer ') || !auth || !adminDb) {
+      res.status(401).json({ error: 'Cần đăng nhập tài khoản giáo viên.' });
+      return;
+    }
+    try {
+      const decoded = await auth.verifyIdToken(header.slice(7));
+      const email = decoded.email;
+      const allowed =
+        Boolean(email) &&
+        decoded.email_verified === true &&
+        (email === OWNER_EMAIL || (await adminDb.collection('adminAllowlist').doc(email!).get()).exists);
+      if (!allowed) {
+        res.status(403).json({ error: 'Tài khoản này không có quyền giáo viên.' });
+        return;
+      }
+      (req as Request & { teacherEmail?: string }).teacherEmail = email;
+      next();
+    } catch {
+      res.status(401).json({ error: 'Phiên đăng nhập giáo viên đã hết hạn, vui lòng tải lại trang.' });
+    }
+  };
+  let liveQuizStore: LiveQuizStore | null | undefined;
+  const liveQuizRouter = createLiveQuizRouter({
+    enabled: () => isUsingFirebaseEmulator() || process.env.LIVE_QUIZ_ENABLED === 'true',
+    requireTeacher,
+    requireStudentAuth,
+    getStore: () => {
+      if (liveQuizStore === undefined) {
+        try {
+          const adminDb = getAdminDb();
+          liveQuizStore = adminDb ? createFirestoreLiveQuizStore(adminDb) : null;
+        } catch (error) {
+          console.error('Firebase Admin init failed (live quiz):', error);
+          liveQuizStore = null;
+        }
+      }
+      return liveQuizStore;
+    },
+    getStudentName: async (studentId) => {
+      const snap = await getAdminDb()?.collection('students').doc(studentId).get();
+      const data = snap?.data() as { fullName?: string; nickname?: string } | undefined;
+      return data?.nickname || data?.fullName || 'Học sinh';
+    },
+  });
+  app.use(['/api/live-quiz', '/live-quiz'], liveQuizRouter);
 
   // 3. Student Portal Data Endpoint
   const handleStudentPortalData = async (req: Request, res: Response) => {

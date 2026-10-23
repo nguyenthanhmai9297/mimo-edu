@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n08-draft-v1",
+  "title": "Tính nhanh, tính thuận tiện",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N08-001",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 50 + 2 + 8",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "63"
+        },
+        {
+          "id": "C",
+          "text": "160"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhóm 2 + 8 = 10, nên được 60.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-002",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 60 + 3 + 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "170"
+        },
+        {
+          "id": "C",
+          "text": "70"
+        },
+        {
+          "id": "D",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhóm 3 + 7 = 10, nên được 70.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-003",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 70 + 4 + 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "75"
+        },
+        {
+          "id": "B",
+          "text": "80"
+        },
+        {
+          "id": "C",
+          "text": "81"
+        },
+        {
+          "id": "D",
+          "text": "82"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhóm 4 + 6 = 10, nên được 80.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-004",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 80 + 5 + 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "85"
+        },
+        {
+          "id": "B",
+          "text": "80"
+        },
+        {
+          "id": "C",
+          "text": "91"
+        },
+        {
+          "id": "D",
+          "text": "90"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhóm 5 + 5 = 10, nên được 90.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-005",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 90 + 6 + 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "98"
+        },
+        {
+          "id": "C",
+          "text": "100"
+        },
+        {
+          "id": "D",
+          "text": "110"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nhóm 6 + 4 = 10, nên được 100.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-006",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 100 + 7 + 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "110"
+        },
+        {
+          "id": "C",
+          "text": "108"
+        },
+        {
+          "id": "D",
+          "text": "99"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhóm 7 + 3 = 10, nên được 110.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-007",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 110 + 8 + 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "120"
+        },
+        {
+          "id": "B",
+          "text": "115"
+        },
+        {
+          "id": "C",
+          "text": "108"
+        },
+        {
+          "id": "D",
+          "text": "123"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Nhóm 8 + 2 = 10, nên được 120.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-008",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 120 + 2 + 8",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 130"
+        },
+        {
+          "id": "B",
+          "text": "130"
+        },
+        {
+          "id": "C",
+          "text": "128"
+        },
+        {
+          "id": "D",
+          "text": "230"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhóm 2 + 8 = 10, nên được 130.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-009",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 130 + 3 + 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "141"
+        },
+        {
+          "id": "B",
+          "text": "130"
+        },
+        {
+          "id": "C",
+          "text": "138"
+        },
+        {
+          "id": "D",
+          "text": "140"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nhóm 3 + 7 = 10, nên được 140.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-010",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 140 + 4 + 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "135"
+        },
+        {
+          "id": "B",
+          "text": "150"
+        },
+        {
+          "id": "C",
+          "text": "149"
+        },
+        {
+          "id": "D",
+          "text": "147"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nhóm 4 + 6 = 10, nên được 150.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-011",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 8 × 2 + 8 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "140"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 8 nhân với (2 + 3) = 40.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-012",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 9 × 3 + 9 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "63"
+        },
+        {
+          "id": "B",
+          "text": "73"
+        },
+        {
+          "id": "C",
+          "text": "57"
+        },
+        {
+          "id": "D",
+          "text": "1 063"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 9 nhân với (3 + 4) = 63.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-013",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 10 × 4 + 10 × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "93"
+        },
+        {
+          "id": "C",
+          "text": "89"
+        },
+        {
+          "id": "D",
+          "text": "81"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 10 nhân với (4 + 5) = 90.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-014",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 11 × 5 + 11 × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "121"
+        },
+        {
+          "id": "B",
+          "text": "133"
+        },
+        {
+          "id": "C",
+          "text": "120"
+        },
+        {
+          "id": "D",
+          "text": "126"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 11 nhân với (5 + 6) = 121.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-015",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 12 × 6 + 12 × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "156"
+        },
+        {
+          "id": "B",
+          "text": "1 156"
+        },
+        {
+          "id": "C",
+          "text": "155"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 12 nhân với (6 + 7) = 156.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-016",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 13 × 7 + 13 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "130"
+        },
+        {
+          "id": "B",
+          "text": "135"
+        },
+        {
+          "id": "C",
+          "text": "133"
+        },
+        {
+          "id": "D",
+          "text": "132"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 13 nhân với (7 + 3) = 130.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-017",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 14 × 8 + 14 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "173"
+        },
+        {
+          "id": "B",
+          "text": "168"
+        },
+        {
+          "id": "C",
+          "text": "165"
+        },
+        {
+          "id": "D",
+          "text": "167"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 14 nhân với (8 + 4) = 168.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-018",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 15 × 2 + 15 × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "205"
+        },
+        {
+          "id": "C",
+          "text": "105"
+        },
+        {
+          "id": "D",
+          "text": "1 105"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 15 nhân với (2 + 5) = 105.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-019",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 16 × 3 + 16 × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "142"
+        },
+        {
+          "id": "B",
+          "text": "134"
+        },
+        {
+          "id": "C",
+          "text": "147"
+        },
+        {
+          "id": "D",
+          "text": "144"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 16 nhân với (3 + 6) = 144.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-020",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 17 × 4 + 17 × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "187"
+        },
+        {
+          "id": "B",
+          "text": "192"
+        },
+        {
+          "id": "C",
+          "text": "189"
+        },
+        {
+          "id": "D",
+          "text": "188"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 17 nhân với (4 + 7) = 187.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-021",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1100 + 20 + 80",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 100"
+        },
+        {
+          "id": "B",
+          "text": "1 198"
+        },
+        {
+          "id": "C",
+          "text": "1 200"
+        },
+        {
+          "id": "D",
+          "text": "1 080"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gộp 20 + 80 = 100; kết quả 1200.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-022",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1200 + 30 + 70",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 300"
+        },
+        {
+          "id": "B",
+          "text": "2 300"
+        },
+        {
+          "id": "C",
+          "text": "1 298"
+        },
+        {
+          "id": "D",
+          "text": "1 301"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gộp 30 + 70 = 100; kết quả 1300.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-023",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1300 + 40 + 60",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 400"
+        },
+        {
+          "id": "B",
+          "text": "1 260"
+        },
+        {
+          "id": "C",
+          "text": "1 399"
+        },
+        {
+          "id": "D",
+          "text": "1 390"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gộp 40 + 60 = 100; kết quả 1400.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-024",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1400 + 50 + 50",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 400"
+        },
+        {
+          "id": "B",
+          "text": "2 500"
+        },
+        {
+          "id": "C",
+          "text": "1 501"
+        },
+        {
+          "id": "D",
+          "text": "1 500"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gộp 50 + 50 = 100; kết quả 1500.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-025",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1500 + 60 + 40",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 600"
+        },
+        {
+          "id": "B",
+          "text": "2 600"
+        },
+        {
+          "id": "C",
+          "text": "1 440"
+        },
+        {
+          "id": "D",
+          "text": "1 700"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gộp 60 + 40 = 100; kết quả 1600.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-026",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1600 + 70 + 30",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 600"
+        },
+        {
+          "id": "B",
+          "text": "1 700"
+        },
+        {
+          "id": "C",
+          "text": "1 800"
+        },
+        {
+          "id": "D",
+          "text": "700"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gộp 70 + 30 = 100; kết quả 1700.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-027",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1700 + 80 + 20",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 797"
+        },
+        {
+          "id": "B",
+          "text": "1 800"
+        },
+        {
+          "id": "C",
+          "text": "1 620"
+        },
+        {
+          "id": "D",
+          "text": "1 700"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gộp 80 + 20 = 100; kết quả 1800.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-028",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1800 + 20 + 80",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 090"
+        },
+        {
+          "id": "B",
+          "text": "1 902"
+        },
+        {
+          "id": "C",
+          "text": "1 903"
+        },
+        {
+          "id": "D",
+          "text": "1 900"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Gộp 20 + 80 = 100; kết quả 1900.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-029",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 1900 + 30 + 70",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 010"
+        },
+        {
+          "id": "B",
+          "text": "2 001"
+        },
+        {
+          "id": "C",
+          "text": "2 000"
+        },
+        {
+          "id": "D",
+          "text": "1 997"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Gộp 30 + 70 = 100; kết quả 2000.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-030",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính nhanh: 2000 + 40 + 60",
+      "options": [
+        {
+          "id": "A",
+          "text": "2 310"
+        },
+        {
+          "id": "B",
+          "text": "2 100"
+        },
+        {
+          "id": "C",
+          "text": "2 103"
+        },
+        {
+          "id": "D",
+          "text": "2 102"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Gộp 40 + 60 = 100; kết quả 2100.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-031",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 14 × 5 − 14 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "41"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hiệu bằng 14 × (5 − 2) = 42.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-032",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 15 × 7 − 15 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "65"
+        },
+        {
+          "id": "B",
+          "text": "1 060"
+        },
+        {
+          "id": "C",
+          "text": "60"
+        },
+        {
+          "id": "D",
+          "text": "59"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu bằng 15 × (7 − 3) = 60.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-033",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 16 × 9 − 16 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "1 080"
+        },
+        {
+          "id": "C",
+          "text": "83"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu bằng 16 × (9 − 4) = 80.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-034",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 17 × 11 − 17 × 5",
+      "options": [
+        {
+          "id": "A",
+          "text": "92"
+        },
+        {
+          "id": "B",
+          "text": "103"
+        },
+        {
+          "id": "C",
+          "text": "102"
+        },
+        {
+          "id": "D",
+          "text": "99"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu bằng 17 × (11 − 5) = 102.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-035",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 18 × 13 − 18 × 6",
+      "options": [
+        {
+          "id": "A",
+          "text": "126"
+        },
+        {
+          "id": "B",
+          "text": "1 126"
+        },
+        {
+          "id": "C",
+          "text": "123"
+        },
+        {
+          "id": "D",
+          "text": "121"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hiệu bằng 18 × (13 − 6) = 126.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-036",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 19 × 10 − 19 × 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "47"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "57"
+        },
+        {
+          "id": "D",
+          "text": "56"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Hiệu bằng 19 × (10 − 7) = 57.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-037",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 20 × 12 − 20 × 8",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 080"
+        },
+        {
+          "id": "B",
+          "text": "85"
+        },
+        {
+          "id": "C",
+          "text": "88"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu bằng 20 × (12 − 8) = 80.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-038",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 21 × 7 − 21 × 2",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "205"
+        },
+        {
+          "id": "D",
+          "text": "105"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu bằng 21 × (7 − 2) = 105.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-039",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 22 × 9 − 22 × 3",
+      "options": [
+        {
+          "id": "A",
+          "text": "133"
+        },
+        {
+          "id": "B",
+          "text": "132"
+        },
+        {
+          "id": "C",
+          "text": "127"
+        },
+        {
+          "id": "D",
+          "text": "232"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hiệu bằng 22 × (9 − 3) = 132.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N08-040",
+      "grade": 3,
+      "topicId": "N08",
+      "topicName": "Tính nhanh, tính thuận tiện",
+      "skillId": "N08.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính thuận tiện: 23 × 11 − 23 × 4",
+      "options": [
+        {
+          "id": "A",
+          "text": "160"
+        },
+        {
+          "id": "B",
+          "text": "177"
+        },
+        {
+          "id": "C",
+          "text": "164"
+        },
+        {
+          "id": "D",
+          "text": "161"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hiệu bằng 23 × (11 − 4) = 161.",
+      "tags": [
+        "toan-3",
+        "n08"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

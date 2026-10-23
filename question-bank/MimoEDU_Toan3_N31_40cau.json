@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n31-revised-20261023",
+  "title": "Bảng số liệu",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "group": "Thống kê và xác suất",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N31-001",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 5 quyển; Thứ Ba 8 quyển; Thứ Tư 11 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 11 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-002",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 5 quyển; Thứ Ba 8 quyển; Thứ Tư 11 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng số sách ba ngày: 5 + 8 + 11 = 24 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-003",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 5 cây, tổ B trồng 8 cây, tổ C trồng 11 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta tính 11 - 5 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-004",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 5 sản phẩm, nhóm 2 làm 8, nhóm 3 làm 11. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ban đầu có 5+8+11=24 sản phẩm. Thêm 4 thành 28 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-005",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 6 quyển; Thứ Ba 9 quyển; Thứ Tư 12 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 12 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-006",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 6 quyển; Thứ Ba 9 quyển; Thứ Tư 12 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng số sách ba ngày: 6 + 9 + 12 = 27 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-007",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 6 cây, tổ B trồng 9 cây, tổ C trồng 12 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta tính 12 - 6 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-008",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 6 sản phẩm, nhóm 2 làm 9, nhóm 3 làm 12. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ban đầu có 6+9+12=27 sản phẩm. Thêm 4 thành 31 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-009",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 7 quyển; Thứ Ba 10 quyển; Thứ Tư 13 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 13 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-010",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 7 quyển; Thứ Ba 10 quyển; Thứ Tư 13 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng số sách ba ngày: 7 + 10 + 13 = 30 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-011",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 7 cây, tổ B trồng 10 cây, tổ C trồng 13 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta tính 13 - 7 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-012",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 7 sản phẩm, nhóm 2 làm 10, nhóm 3 làm 13. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ban đầu có 7+10+13=30 sản phẩm. Thêm 4 thành 34 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-013",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 8 quyển; Thứ Ba 11 quyển; Thứ Tư 14 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 14 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-014",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 8 quyển; Thứ Ba 11 quyển; Thứ Tư 14 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng số sách ba ngày: 8 + 11 + 14 = 33 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-015",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 8 cây, tổ B trồng 11 cây, tổ C trồng 14 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta tính 14 - 8 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-016",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 8 sản phẩm, nhóm 2 làm 11, nhóm 3 làm 14. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ban đầu có 8+11+14=33 sản phẩm. Thêm 4 thành 37 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-017",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 9 quyển; Thứ Ba 12 quyển; Thứ Tư 15 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 15 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-018",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 9 quyển; Thứ Ba 12 quyển; Thứ Tư 15 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng số sách ba ngày: 9 + 12 + 15 = 36 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-019",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 9 cây, tổ B trồng 12 cây, tổ C trồng 15 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta tính 15 - 9 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-020",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 9 sản phẩm, nhóm 2 làm 12, nhóm 3 làm 15. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ban đầu có 9+12+15=36 sản phẩm. Thêm 4 thành 40 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-021",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 10 quyển; Thứ Ba 13 quyển; Thứ Tư 16 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 16 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-022",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 10 quyển; Thứ Ba 13 quyển; Thứ Tư 16 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "39"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng số sách ba ngày: 10 + 13 + 16 = 39 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-023",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 10 cây, tổ B trồng 13 cây, tổ C trồng 16 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta tính 16 - 10 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-024",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 10 sản phẩm, nhóm 2 làm 13, nhóm 3 làm 16. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "47"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "39"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ban đầu có 10+13+16=39 sản phẩm. Thêm 4 thành 43 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-025",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 11 quyển; Thứ Ba 14 quyển; Thứ Tư 17 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 17 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-026",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 11 quyển; Thứ Ba 14 quyển; Thứ Tư 17 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng số sách ba ngày: 11 + 14 + 17 = 42 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-027",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 11 cây, tổ B trồng 14 cây, tổ C trồng 17 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta tính 17 - 11 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-028",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 11 sản phẩm, nhóm 2 làm 14, nhóm 3 làm 17. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "50"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ban đầu có 11+14+17=42 sản phẩm. Thêm 4 thành 46 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-029",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 12 quyển; Thứ Ba 15 quyển; Thứ Tư 18 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 18 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-030",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 12 quyển; Thứ Ba 15 quyển; Thứ Tư 18 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng số sách ba ngày: 12 + 15 + 18 = 45 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-031",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 12 cây, tổ B trồng 15 cây, tổ C trồng 18 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta tính 18 - 12 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-032",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 12 sản phẩm, nhóm 2 làm 15, nhóm 3 làm 18. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45"
+        },
+        {
+          "id": "B",
+          "text": "41"
+        },
+        {
+          "id": "C",
+          "text": "53"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ban đầu có 12+15+18=45 sản phẩm. Thêm 4 thành 49 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-033",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 13 quyển; Thứ Ba 16 quyển; Thứ Tư 19 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 19 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-034",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 13 quyển; Thứ Ba 16 quyển; Thứ Tư 19 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "48"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng số sách ba ngày: 13 + 16 + 19 = 48 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-035",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 13 cây, tổ B trồng 16 cây, tổ C trồng 19 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta tính 19 - 13 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-036",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 13 sản phẩm, nhóm 2 làm 16, nhóm 3 làm 19. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ban đầu có 13+16+19=48 sản phẩm. Thêm 4 thành 52 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-037",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.doc_bang",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 14 quyển; Thứ Ba 17 quyển; Thứ Tư 20 quyển. Thứ Tư mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đọc hàng Thứ Tư trong bảng: 20 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-038",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.tong_bang",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sách mượn: Thứ Hai 14 quyển; Thứ Ba 17 quyển; Thứ Tư 20 quyển. Cả ba ngày mượn bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "51"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng số sách ba ngày: 14 + 17 + 20 = 51 quyển.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-039",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.chenh_lech_bang",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu: Tổ A trồng 14 cây, tổ B trồng 17 cây, tổ C trồng 20 cây. Tổ C nhiều hơn tổ A bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta tính 20 - 14 = 6 cây.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N31-040",
+      "grade": 3,
+      "topicId": "N31",
+      "topicName": "Bảng số liệu",
+      "skillId": "N31.bang_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Bảng số liệu số sản phẩm: Nhóm 1 làm 14 sản phẩm, nhóm 2 làm 17, nhóm 3 làm 20. Nếu nhóm 1 làm thêm 4 sản phẩm, cả ba nhóm có bao nhiêu sản phẩm?",
+      "options": [
+        {
+          "id": "A",
+          "text": "55"
+        },
+        {
+          "id": "B",
+          "text": "59"
+        },
+        {
+          "id": "C",
+          "text": "47"
+        },
+        {
+          "id": "D",
+          "text": "51"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ban đầu có 14+17+20=51 sản phẩm. Thêm 4 thành 55 sản phẩm.",
+      "tags": [
+        "toan-3",
+        "n31"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

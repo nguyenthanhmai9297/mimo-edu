@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n16-draft-v1",
+  "title": "So sánh số lớn gấp mấy lần số bé",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N16-001",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 10 gấp mấy lần số 5?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "1 002"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "10 : 5 = 2 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-002",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 18 gấp mấy lần số 6?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "18 : 6 = 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-003",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 28 gấp mấy lần số 7?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "28 : 7 = 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-004",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 40 gấp mấy lần số 8?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "40 : 8 = 5 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-005",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 54 gấp mấy lần số 9?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "106"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "54 : 9 = 6 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-006",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 70 gấp mấy lần số 10?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "70 : 10 = 7 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-007",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 88 gấp mấy lần số 11?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "88 : 11 = 8 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-008",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 24 gấp mấy lần số 12?",
+      "options": [
+        {
+          "id": "A",
+          "text": "102"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "24 : 12 = 2 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-009",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 39 gấp mấy lần số 13?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "103"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "39 : 13 = 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-010",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 56 gấp mấy lần số 14?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "56 : 14 = 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-011",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 16 gấp mấy lần số 8?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "16 : 8 = 2 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-012",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 27 gấp mấy lần số 9?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "1 003"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "27 : 9 = 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-013",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 40 gấp mấy lần số 10?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "40 : 10 = 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-014",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 55 gấp mấy lần số 11?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "55 : 11 = 5 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-015",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 72 gấp mấy lần số 12?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "1 006"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "72 : 12 = 6 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-016",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 91 gấp mấy lần số 13?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "1 007"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "91 : 13 = 7 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-017",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 112 gấp mấy lần số 14?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "112 : 14 = 8 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-018",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 30 gấp mấy lần số 15?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "30 : 15 = 2 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-019",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 48 gấp mấy lần số 16?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "1 003"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "48 : 16 = 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-020",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 68 gấp mấy lần số 17?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "104"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "1 004"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "68 : 17 = 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-021",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 22 m, tấm kia dài 11 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 22 : 11 = 2 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-022",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 36 m, tấm kia dài 12 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 003"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 36 : 12 = 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-023",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 52 m, tấm kia dài 13 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "104"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 52 : 13 = 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-024",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 70 m, tấm kia dài 14 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 70 : 14 = 5 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-025",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 90 m, tấm kia dài 15 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "106"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 90 : 15 = 6 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-026",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 112 m, tấm kia dài 16 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 112 : 16 = 7 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-027",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 136 m, tấm kia dài 17 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "1 008"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 136 : 17 = 8 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-028",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 36 m, tấm kia dài 18 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 36 : 18 = 2 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-029",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 57 m, tấm kia dài 19 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "103"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 57 : 19 = 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-030",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 80 m, tấm kia dài 20 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 80 : 20 = 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-031",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 28 m, tấm kia dài 14 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 002"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 28 : 14 = 2 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-032",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 45 m, tấm kia dài 15 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 003"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Lấy 45 : 15 = 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-033",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 64 m, tấm kia dài 16 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "104"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 64 : 16 = 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-034",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 85 m, tấm kia dài 17 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 85 : 17 = 5 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-035",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 108 m, tấm kia dài 18 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "1 006"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lấy 108 : 18 = 6 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-036",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 133 m, tấm kia dài 19 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 133 : 19 = 7 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-037",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 160 m, tấm kia dài 20 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 160 : 20 = 8 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-038",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 42 m, tấm kia dài 21 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "1 002"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 42 : 21 = 2 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-039",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 66 m, tấm kia dài 22 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lấy 66 : 22 = 3 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N16-040",
+      "grade": 3,
+      "topicId": "N16",
+      "topicName": "So sánh số lớn gấp mấy lần số bé",
+      "skillId": "N16.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một tấm vải dài 92 m, tấm kia dài 23 m. Tấm dài gấp mấy lần tấm ngắn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Lấy 92 : 23 = 4 lần.",
+      "tags": [
+        "toan-3",
+        "n16"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n34-revised-20261023",
+  "title": "Toán tổ hợp đơn giản",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "group": "Toán tư duy và nâng cao",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N34-001",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 2 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 2 × 3 = 6 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-002",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 2 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Với mỗi trong 2 đường A–B, có 2 đường B–C. Tổng 2 × 2 = 4 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-003",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 3 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 3 cách chọn lớp trưởng; còn 2 cách chọn lớp phó, được 6 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-004",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 4 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (4 × 3) : 2 = 6.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-005",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 3 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 3 × 3 = 9 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-006",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 3 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Với mỗi trong 3 đường A–B, có 2 đường B–C. Tổng 3 × 2 = 6 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-007",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 4 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 4 cách chọn lớp trưởng; còn 3 cách chọn lớp phó, được 12 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-008",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 5 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (5 × 4) : 2 = 10.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-009",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 4 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 4 × 3 = 12 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-010",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 4 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Với mỗi trong 4 đường A–B, có 2 đường B–C. Tổng 4 × 2 = 8 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-011",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 5 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 5 cách chọn lớp trưởng; còn 4 cách chọn lớp phó, được 20 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-012",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 6 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (6 × 5) : 2 = 15.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-013",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 5 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 5 × 3 = 15 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-014",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 5 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Với mỗi trong 5 đường A–B, có 2 đường B–C. Tổng 5 × 2 = 10 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-015",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 6 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 6 cách chọn lớp trưởng; còn 5 cách chọn lớp phó, được 30 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-016",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 7 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (7 × 6) : 2 = 21.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-017",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 6 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 6 × 3 = 18 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-018",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 6 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Với mỗi trong 6 đường A–B, có 2 đường B–C. Tổng 6 × 2 = 12 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-019",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 7 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "43"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 7 cách chọn lớp trưởng; còn 6 cách chọn lớp phó, được 42 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-020",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 8 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (8 × 7) : 2 = 28.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-021",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 7 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 7 × 3 = 21 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-022",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 7 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Với mỗi trong 7 đường A–B, có 2 đường B–C. Tổng 7 × 2 = 14 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-023",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 8 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "56"
+        },
+        {
+          "id": "B",
+          "text": "57"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 8 cách chọn lớp trưởng; còn 7 cách chọn lớp phó, được 56 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-024",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 9 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "37"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (9 × 8) : 2 = 36.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-025",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 8 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 8 × 3 = 24 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-026",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 8 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Với mỗi trong 8 đường A–B, có 2 đường B–C. Tổng 8 × 2 = 16 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-027",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 9 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "73"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 9 cách chọn lớp trưởng; còn 8 cách chọn lớp phó, được 72 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-028",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 10 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (10 × 9) : 2 = 45.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-029",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 9 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 9 × 3 = 27 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-030",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 9 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Với mỗi trong 9 đường A–B, có 2 đường B–C. Tổng 9 × 2 = 18 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-031",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 10 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90"
+        },
+        {
+          "id": "B",
+          "text": "91"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 10 cách chọn lớp trưởng; còn 9 cách chọn lớp phó, được 90 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-032",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 11 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "110"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "55"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (11 × 10) : 2 = 55.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-033",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 10 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 10 × 3 = 30 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-034",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 10 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Với mỗi trong 10 đường A–B, có 2 đường B–C. Tổng 10 × 2 = 20 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-035",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 11 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "110"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "111"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 11 cách chọn lớp trưởng; còn 10 cách chọn lớp phó, được 110 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-036",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 12 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "132"
+        },
+        {
+          "id": "C",
+          "text": "67"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (12 × 11) : 2 = 66.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-037",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.nguyen_ly_nhan",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 11 loại áo và 3 loại quần khác nhau. Mỗi bộ gồm 1 áo và 1 quần. Có thể chọn bao nhiêu bộ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo có 3 cách ghép quần. Tổng 11 × 3 = 33 bộ.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-038",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.dem_duong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ A đến B có 11 con đường, từ B đến C có 2 con đường. Đi A → B → C có bao nhiêu cách chọn đường?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Với mỗi trong 11 đường A–B, có 2 đường B–C. Tổng 11 × 2 = 22 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-039",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_co_thu_tu",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 12 học sinh. Muốn chọn một bạn làm lớp trưởng và một bạn khác làm lớp phó. Có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "133"
+        },
+        {
+          "id": "B",
+          "text": "132"
+        },
+        {
+          "id": "C",
+          "text": "110"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 12 cách chọn lớp trưởng; còn 11 cách chọn lớp phó, được 132 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-040",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.chon_cap",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 13 điểm phân biệt, không có ba điểm nào thẳng hàng. Có thể nối hai điểm để tạo bao nhiêu đoạn thẳng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "156"
+        },
+        {
+          "id": "C",
+          "text": "78"
+        },
+        {
+          "id": "D",
+          "text": "79"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi cặp hai điểm tạo một đoạn. Số cặp là (13 × 12) : 2 = 78.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

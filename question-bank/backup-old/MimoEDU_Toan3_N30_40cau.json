@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n30-draft-v1",
+  "title": "Thu thập và phân loại số liệu",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N30-001",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 5 bạn thích táo, 2 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "107"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai nhóm: 5 + 2 = 7 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-002",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 6 bạn thích táo, 3 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 6 + 3 = 9 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-003",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 7 bạn thích táo, 4 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 011"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 7 + 4 = 11 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-004",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 8 bạn thích táo, 5 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng hai nhóm: 8 + 5 = 13 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-005",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 9 bạn thích táo, 6 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "115"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng hai nhóm: 9 + 6 = 15 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-006",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 10 bạn thích táo, 7 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 10 + 7 = 17 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-007",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 11 bạn thích táo, 8 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "1 019"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng hai nhóm: 11 + 8 = 19 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-008",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 12 bạn thích táo, 2 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng hai nhóm: 12 + 2 = 14 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-009",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 13 bạn thích táo, 3 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai nhóm: 13 + 3 = 16 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-010",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 14 bạn thích táo, 4 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng hai nhóm: 14 + 4 = 18 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-011",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 8 bạn chọn màu xanh, 2 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 006"
+        },
+        {
+          "id": "B",
+          "text": "106"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chênh lệch là 8 − 2 = 6 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-012",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 9 bạn chọn màu xanh, 3 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "106"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chênh lệch là 9 − 3 = 6 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-013",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 10 bạn chọn màu xanh, 4 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chênh lệch là 10 − 4 = 6 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-014",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 11 bạn chọn màu xanh, 5 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chênh lệch là 11 − 5 = 6 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-015",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 12 bạn chọn màu xanh, 6 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chênh lệch là 12 − 6 = 6 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-016",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 13 bạn chọn màu xanh, 7 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "1 006"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chênh lệch là 13 − 7 = 6 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-017",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 14 bạn chọn màu xanh, 8 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chênh lệch là 14 − 8 = 6 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-018",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 15 bạn chọn màu xanh, 2 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "1 013"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chênh lệch là 15 − 2 = 13 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-019",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 16 bạn chọn màu xanh, 3 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chênh lệch là 16 − 3 = 13 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-020",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 17 bạn chọn màu xanh, 4 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chênh lệch là 17 − 4 = 13 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-021",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 11 bạn thích táo, 2 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 11 + 2 = 13 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-022",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 12 bạn thích táo, 3 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "1 015"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 12 + 3 = 15 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-023",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 13 bạn thích táo, 4 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 13 + 4 = 17 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-024",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 14 bạn thích táo, 5 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 14 + 5 = 19 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-025",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 15 bạn thích táo, 6 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "121"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng hai nhóm: 15 + 6 = 21 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-026",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 16 bạn thích táo, 7 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cộng hai nhóm: 16 + 7 = 23 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-027",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 17 bạn thích táo, 8 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cộng hai nhóm: 17 + 8 = 25 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-028",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 18 bạn thích táo, 2 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 18 + 2 = 20 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-029",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 19 bạn thích táo, 3 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cộng hai nhóm: 19 + 3 = 22 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-030",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Khảo sát lớp có 20 bạn thích táo, 4 bạn thích cam. Có bao nhiêu bạn được khảo sát nếu mỗi bạn chọn đúng một loại?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "124"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Cộng hai nhóm: 20 + 4 = 24 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-031",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 14 bạn chọn màu xanh, 2 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chênh lệch là 14 − 2 = 12 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-032",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 15 bạn chọn màu xanh, 3 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "1 012"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chênh lệch là 15 − 3 = 12 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-033",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 16 bạn chọn màu xanh, 4 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "1 012"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chênh lệch là 16 − 4 = 12 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-034",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 17 bạn chọn màu xanh, 5 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chênh lệch là 17 − 5 = 12 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-035",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 18 bạn chọn màu xanh, 6 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "1 012"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chênh lệch là 18 − 6 = 12 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-036",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 19 bạn chọn màu xanh, 7 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "1 012"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chênh lệch là 19 − 7 = 12 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-037",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 20 bạn chọn màu xanh, 8 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "1 012"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chênh lệch là 20 − 8 = 12 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-038",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 21 bạn chọn màu xanh, 2 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "1 019"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chênh lệch là 21 − 2 = 19 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-039",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 22 bạn chọn màu xanh, 3 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chênh lệch là 22 − 3 = 19 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N30-040",
+      "grade": 3,
+      "topicId": "N30",
+      "topicName": "Thu thập và phân loại số liệu",
+      "skillId": "N30.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 23 bạn chọn màu xanh, 4 bạn chọn màu đỏ. Hai nhóm chênh lệch bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "1 019"
+        },
+        {
+          "id": "C",
+          "text": "119"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chênh lệch là 23 − 4 = 19 bạn.",
+      "tags": [
+        "toan-3",
+        "n30"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

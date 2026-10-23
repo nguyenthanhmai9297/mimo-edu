@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n34-draft-v1",
+  "title": "Toán tổ hợp đơn giản",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N34-001",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 2 loại áo và 3 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo ghép với 3 quần; có 2 × 3 = 6 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-002",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 3 loại áo và 4 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi áo ghép với 4 quần; có 3 × 4 = 12 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-003",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 4 loại áo và 5 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi áo ghép với 5 quần; có 4 × 5 = 20 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-004",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 5 loại áo và 6 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "130"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "25"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo ghép với 6 quần; có 5 × 6 = 30 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-005",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 6 loại áo và 7 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "43"
+        },
+        {
+          "id": "D",
+          "text": "41"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi áo ghép với 7 quần; có 6 × 7 = 42 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-006",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 7 loại áo và 3 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "21"
+        },
+        {
+          "id": "B",
+          "text": "121"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi áo ghép với 3 quần; có 7 × 3 = 21 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-007",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 8 loại áo và 4 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "35"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo ghép với 4 quần; có 8 × 4 = 32 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-008",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 2 loại áo và 5 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi áo ghép với 5 quần; có 2 × 5 = 10 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-009",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 3 loại áo và 6 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "19"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi áo ghép với 6 quần; có 3 × 6 = 18 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-010",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 4 loại áo và 7 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "1 028"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi áo ghép với 7 quần; có 4 × 7 = 28 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-011",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 8 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 8 × 7 : 2 = 28 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-012",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 9 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 036"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 9 × 8 : 2 = 36 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-013",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 10 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "45"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 10 × 9 : 2 = 45 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-014",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 11 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "155"
+        },
+        {
+          "id": "B",
+          "text": "54"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 11 × 10 : 2 = 55 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-015",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 12 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "69"
+        },
+        {
+          "id": "B",
+          "text": "61"
+        },
+        {
+          "id": "C",
+          "text": "66"
+        },
+        {
+          "id": "D",
+          "text": "71"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 12 × 11 : 2 = 66 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-016",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 13 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80"
+        },
+        {
+          "id": "B",
+          "text": "77"
+        },
+        {
+          "id": "C",
+          "text": "78"
+        },
+        {
+          "id": "D",
+          "text": "178"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 13 × 12 : 2 = 78 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-017",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 14 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "101"
+        },
+        {
+          "id": "B",
+          "text": "191"
+        },
+        {
+          "id": "C",
+          "text": "91"
+        },
+        {
+          "id": "D",
+          "text": "100"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 14 × 13 : 2 = 91 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-018",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 15 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "104"
+        },
+        {
+          "id": "B",
+          "text": "1 105"
+        },
+        {
+          "id": "C",
+          "text": "106"
+        },
+        {
+          "id": "D",
+          "text": "105"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 15 × 14 : 2 = 105 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-019",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 16 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "121"
+        },
+        {
+          "id": "B",
+          "text": "125"
+        },
+        {
+          "id": "C",
+          "text": "120"
+        },
+        {
+          "id": "D",
+          "text": "220"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 16 × 15 : 2 = 120 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-020",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 17 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "136"
+        },
+        {
+          "id": "B",
+          "text": "236"
+        },
+        {
+          "id": "C",
+          "text": "133"
+        },
+        {
+          "id": "D",
+          "text": "131"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 17 × 16 : 2 = 136 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-021",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 2 loại áo và 3 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 21)",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi áo ghép với 3 quần; có 2 × 3 = 6 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-022",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 3 loại áo và 4 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 22)",
+      "options": [
+        {
+          "id": "A",
+          "text": "17"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo ghép với 4 quần; có 3 × 4 = 12 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-023",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 4 loại áo và 5 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 23)",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "1 020"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo ghép với 5 quần; có 4 × 5 = 20 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-024",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 5 loại áo và 6 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 24)",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi áo ghép với 6 quần; có 5 × 6 = 30 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-025",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 6 loại áo và 7 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 25)",
+      "options": [
+        {
+          "id": "A",
+          "text": "43"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo ghép với 7 quần; có 6 × 7 = 42 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-026",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 7 loại áo và 3 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 26)",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "121"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi áo ghép với 3 quần; có 7 × 3 = 21 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-027",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 8 loại áo và 4 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 27)",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi áo ghép với 4 quần; có 8 × 4 = 32 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-028",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 2 loại áo và 5 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 28)",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi áo ghép với 5 quần; có 2 × 5 = 10 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-029",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 3 loại áo và 6 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 29)",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi áo ghép với 6 quần; có 3 × 6 = 18 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-030",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 4 loại áo và 7 loại quần. Chọn 1 áo và 1 quần có bao nhiêu cách? (Lượt luyện 30)",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "33"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi áo ghép với 7 quần; có 4 × 7 = 28 cách.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-031",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 14 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay? (Lượt luyện 31)",
+      "options": [
+        {
+          "id": "A",
+          "text": "82"
+        },
+        {
+          "id": "B",
+          "text": "91"
+        },
+        {
+          "id": "C",
+          "text": "89"
+        },
+        {
+          "id": "D",
+          "text": "1 091"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 14 × 13 : 2 = 91 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-032",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 15 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay? (Lượt luyện 32)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 105"
+        },
+        {
+          "id": "B",
+          "text": "95"
+        },
+        {
+          "id": "C",
+          "text": "102"
+        },
+        {
+          "id": "D",
+          "text": "105"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 15 × 14 : 2 = 105 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-033",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 16 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay? (Lượt luyện 33)",
+      "options": [
+        {
+          "id": "A",
+          "text": "123"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "120"
+        },
+        {
+          "id": "D",
+          "text": "220"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 16 × 15 : 2 = 120 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-034",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 17 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay? (Lượt luyện 34)",
+      "options": [
+        {
+          "id": "A",
+          "text": "136"
+        },
+        {
+          "id": "B",
+          "text": "134"
+        },
+        {
+          "id": "C",
+          "text": "126"
+        },
+        {
+          "id": "D",
+          "text": "131"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có 17 × 16 : 2 = 136 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-035",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 18 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "152"
+        },
+        {
+          "id": "B",
+          "text": "155"
+        },
+        {
+          "id": "C",
+          "text": "153"
+        },
+        {
+          "id": "D",
+          "text": "148"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 18 × 17 : 2 = 153 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-036",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 19 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "174"
+        },
+        {
+          "id": "B",
+          "text": "171"
+        },
+        {
+          "id": "C",
+          "text": "161"
+        },
+        {
+          "id": "D",
+          "text": "166"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 19 × 18 : 2 = 171 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-037",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 20 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "187"
+        },
+        {
+          "id": "B",
+          "text": "200"
+        },
+        {
+          "id": "C",
+          "text": "190"
+        },
+        {
+          "id": "D",
+          "text": "195"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 20 × 19 : 2 = 190 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-038",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 21 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "215"
+        },
+        {
+          "id": "B",
+          "text": "231"
+        },
+        {
+          "id": "C",
+          "text": "189"
+        },
+        {
+          "id": "D",
+          "text": "210"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có 21 × 20 : 2 = 210 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-039",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 22 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "331"
+        },
+        {
+          "id": "B",
+          "text": "231"
+        },
+        {
+          "id": "C",
+          "text": "1 231"
+        },
+        {
+          "id": "D",
+          "text": "229"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có 22 × 21 : 2 = 231 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N34-040",
+      "grade": 3,
+      "topicId": "N34",
+      "topicName": "Toán tổ hợp đơn giản",
+      "skillId": "N34.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 23 học sinh. Mỗi cặp hai học sinh bắt tay nhau đúng một lần. Có bao nhiêu cái bắt tay?",
+      "options": [
+        {
+          "id": "A",
+          "text": "258"
+        },
+        {
+          "id": "B",
+          "text": "1 253"
+        },
+        {
+          "id": "C",
+          "text": "253"
+        },
+        {
+          "id": "D",
+          "text": "254"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có 23 × 22 : 2 = 253 cặp.",
+      "tags": [
+        "toan-3",
+        "n34"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

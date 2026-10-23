@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Dữ liệu thử nghiệm của Firebase Emulator (chỉ trên máy)
+emulator-data/

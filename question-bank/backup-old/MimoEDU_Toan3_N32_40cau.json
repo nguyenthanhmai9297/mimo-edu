@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n32-draft-v1",
+  "title": "Khả năng xảy ra của sự kiện",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N32-001",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 5 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "101"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-002",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 6 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "101"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-003",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 7 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-004",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 8 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "1 001"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-005",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 9 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 001"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-006",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 10 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "1 001"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-007",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 11 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "1 001"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-008",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 12 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "101"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-009",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 13 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-010",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 14 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "101"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-011",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 8 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "103"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-012",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 9 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "103"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-013",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 10 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "1 003"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-014",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 11 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "1 003"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-015",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 12 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "103"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-016",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 13 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-017",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 14 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "1 003"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-018",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 15 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-019",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 16 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "1 003"
+        },
+        {
+          "id": "D",
+          "text": "103"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-020",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 17 viên bi xanh. Lấy ngẫu nhiên 1 viên được bi vàng thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Không có bi vàng nên sự kiện không thể xảy ra.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-021",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 11 bi xanh và 2 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "1 002"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "102"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-022",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 12 bi xanh và 3 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-023",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 13 bi xanh và 4 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-024",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 14 bi xanh và 5 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-025",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 15 bi xanh và 6 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "1 002"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-026",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 16 bi xanh và 7 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "0"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-027",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 17 bi xanh và 8 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-028",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 18 bi xanh và 2 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "1 002"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-029",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 19 bi xanh và 3 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "102"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-030",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hộp có 20 bi xanh và 4 bi đỏ. Lấy ngẫu nhiên 1 viên bi đỏ thuộc loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "1 002"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có cả bi xanh và đỏ nên lấy bi đỏ là có thể, nhưng không chắc chắn.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-031",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 14 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể) (Lượt luyện 31)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "101"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-032",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 15 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-033",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 16 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "101"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-034",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 17 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "1 001"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-035",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 18 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "101"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-036",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 19 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 001"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "101"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-037",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 20 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "1 001"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-038",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 21 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 001"
+        },
+        {
+          "id": "B",
+          "text": "101"
+        },
+        {
+          "id": "C",
+          "text": "0"
+        },
+        {
+          "id": "D",
+          "text": "1"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-039",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 22 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N32-040",
+      "grade": 3,
+      "topicId": "N32",
+      "topicName": "Khả năng xảy ra của sự kiện",
+      "skillId": "N32.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong hộp chỉ có 23 viên bi đỏ. Lấy ngẫu nhiên 1 viên được viên đỏ là sự kiện loại nào? (1: chắc chắn; 2: có thể; 3: không thể)",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 001"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì trong hộp toàn bi đỏ nên chắc chắn lấy được bi đỏ.",
+      "tags": [
+        "toan-3",
+        "n32"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

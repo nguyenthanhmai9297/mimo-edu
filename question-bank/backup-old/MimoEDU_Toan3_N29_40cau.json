@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n29-draft-v1",
+  "title": "Nhiệt độ",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N29-001",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 20°C, buổi trưa tăng thêm 2°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "21"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "20 + 2 = 22°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-002",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 21°C, buổi trưa tăng thêm 3°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "21 + 3 = 24°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-003",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 22°C, buổi trưa tăng thêm 4°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "1 026"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "22 + 4 = 26°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-004",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 23°C, buổi trưa tăng thêm 5°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "23 + 5 = 28°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-005",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 24°C, buổi trưa tăng thêm 6°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "1 030"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "24 + 6 = 30°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-006",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 25°C, buổi trưa tăng thêm 7°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "1 032"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "25 + 7 = 32°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-007",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 26°C, buổi trưa tăng thêm 8°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "26 + 8 = 34°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-008",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 27°C, buổi trưa tăng thêm 2°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "27 + 2 = 29°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-009",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 28°C, buổi trưa tăng thêm 3°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "41"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "28 + 3 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-010",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 29°C, buổi trưa tăng thêm 4°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 033"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "29 + 4 = 33°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-011",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 33°C, chiều giảm 2°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 031"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "30"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "33 − 2 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-012",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 34°C, chiều giảm 3°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "26"
+        },
+        {
+          "id": "B",
+          "text": "32"
+        },
+        {
+          "id": "C",
+          "text": "31"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "34 − 3 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-013",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 35°C, chiều giảm 4°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "1 031"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "35 − 4 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-014",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 36°C, chiều giảm 5°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "1 031"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "36 − 5 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-015",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 37°C, chiều giảm 6°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "131"
+        },
+        {
+          "id": "D",
+          "text": "1 031"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "37 − 6 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-016",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 38°C, chiều giảm 7°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "31"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "1 031"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "38 − 7 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-017",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 39°C, chiều giảm 8°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "28"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "39 − 8 = 31°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-018",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 40°C, chiều giảm 2°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "40 − 2 = 38°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-019",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 41°C, chiều giảm 3°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "33"
+        },
+        {
+          "id": "B",
+          "text": "138"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "41 − 3 = 38°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-020",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 42°C, chiều giảm 4°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "138"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "42 − 4 = 38°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-021",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 26°C, buổi trưa tăng thêm 2°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "23"
+        },
+        {
+          "id": "D",
+          "text": "28"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "26 + 2 = 28°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-022",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 27°C, buổi trưa tăng thêm 3°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "27"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "27 + 3 = 30°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-023",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 28°C, buổi trưa tăng thêm 4°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "29"
+        },
+        {
+          "id": "C",
+          "text": "32"
+        },
+        {
+          "id": "D",
+          "text": "1 032"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "28 + 4 = 32°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-024",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 29°C, buổi trưa tăng thêm 5°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "36"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "29 + 5 = 34°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-025",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 30°C, buổi trưa tăng thêm 6°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 036"
+        },
+        {
+          "id": "B",
+          "text": "36"
+        },
+        {
+          "id": "C",
+          "text": "33"
+        },
+        {
+          "id": "D",
+          "text": "46"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "30 + 6 = 36°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-026",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 31°C, buổi trưa tăng thêm 7°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "38"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "31 + 7 = 38°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-027",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 32°C, buổi trưa tăng thêm 8°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "39"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "32 + 8 = 40°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-028",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 33°C, buổi trưa tăng thêm 2°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35"
+        },
+        {
+          "id": "B",
+          "text": "45"
+        },
+        {
+          "id": "C",
+          "text": "1 035"
+        },
+        {
+          "id": "D",
+          "text": "135"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "33 + 2 = 35°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-029",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 34°C, buổi trưa tăng thêm 3°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "137"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "34 + 3 = 37°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-030",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi sáng là 35°C, buổi trưa tăng thêm 4°C. Buổi trưa bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "139"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "35 + 4 = 39°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-031",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 39°C, chiều giảm 2°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "39"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "39 − 2 = 37°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-032",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 40°C, chiều giảm 3°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "1 037"
+        },
+        {
+          "id": "C",
+          "text": "47"
+        },
+        {
+          "id": "D",
+          "text": "34"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "40 − 3 = 37°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-033",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 41°C, chiều giảm 4°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 037"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "41 − 4 = 37°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-034",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 42°C, chiều giảm 5°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "1 037"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "42 − 5 = 37°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-035",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 43°C, chiều giảm 6°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "37"
+        },
+        {
+          "id": "B",
+          "text": "34"
+        },
+        {
+          "id": "C",
+          "text": "47"
+        },
+        {
+          "id": "D",
+          "text": "27"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "43 − 6 = 37°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-036",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 44°C, chiều giảm 7°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "38"
+        },
+        {
+          "id": "B",
+          "text": "37"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "44 − 7 = 37°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-037",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 45°C, chiều giảm 8°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40"
+        },
+        {
+          "id": "B",
+          "text": "39"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "37"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "45 − 8 = 37°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-038",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 46°C, chiều giảm 2°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "41"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "46"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "46 − 2 = 44°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-039",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 47°C, chiều giảm 3°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34"
+        },
+        {
+          "id": "B",
+          "text": "42"
+        },
+        {
+          "id": "C",
+          "text": "44"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "47 − 3 = 44°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N29-040",
+      "grade": 3,
+      "topicId": "N29",
+      "topicName": "Nhiệt độ",
+      "skillId": "N29.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Nhiệt độ buổi trưa 48°C, chiều giảm 4°C. Chiều là bao nhiêu °C?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "144"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "48 − 4 = 44°C.",
+      "tags": [
+        "toan-3",
+        "n29"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

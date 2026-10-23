@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n13-revised-20261023",
+  "title": "Bài toán giải bằng hai bước tính",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "group": "Toán có lời văn",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N13-001",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 18 nhãn vở, Mai có nhiều hơn Lan 4 nhãn. Hỏi cả hai bạn có bao nhiêu nhãn vở?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "45"
+        },
+        {
+          "id": "C",
+          "text": "41"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mai có 18+4=22 nhãn; cả hai có 18+22=40 nhãn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-002",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 28 quyển sách, bán buổi sáng 20 quyển và buổi chiều 5 quyển. Hỏi còn lại bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đã bán 20+5=25 quyển; còn 28−25=3 quyển.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-003",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 6 chiếc bút. Mua 4 hộp và thêm 22 bút lẻ. Có tất cả bao nhiêu bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48"
+        },
+        {
+          "id": "B",
+          "text": "46"
+        },
+        {
+          "id": "C",
+          "text": "51"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong hộp có 6×4=24 bút; cộng 22 được 46 bút.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-004",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 23 bạn, thêm 7 bạn. Chia đều thành 2 nhóm. Mỗi nhóm có bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có tất cả 23+7=30 bạn; mỗi nhóm 30:2=15 bạn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-005",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 26 cây trong vườn, trồng thêm 2 hàng, mỗi hàng 8 cây. Hỏi có tất cả bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "44"
+        },
+        {
+          "id": "C",
+          "text": "43"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Trồng thêm 8×2=16 cây; tổng 26+16=42 cây.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-006",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Một đội có 28 quả bóng, cho đi 9 quả rồi mua thêm 3 quả. Hỏi đội có bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "23"
+        },
+        {
+          "id": "C",
+          "text": "27"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Còn 28−9=19 quả; mua thêm 3, có 22 quả.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-007",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 28 chai nước, nhập thêm 16 chai rồi xếp đều vào 4 thùng. Mỗi thùng có bao nhiêu chai?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tổng số chai: 28+16=44; mỗi thùng 44:4=11 chai.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-008",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hồng có 32 que tính, Bình có ít hơn Hồng 5 que. Cả hai có bao nhiêu que tính?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "64"
+        },
+        {
+          "id": "C",
+          "text": "59"
+        },
+        {
+          "id": "D",
+          "text": "61"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bình có 32−5=27 que; cả hai có 32+27=59 que.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-009",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Lan có 34 nhãn vở, Mai có nhiều hơn Lan 6 nhãn. Hỏi cả hai bạn có bao nhiêu nhãn vở?",
+      "options": [
+        {
+          "id": "A",
+          "text": "75"
+        },
+        {
+          "id": "B",
+          "text": "79"
+        },
+        {
+          "id": "C",
+          "text": "76"
+        },
+        {
+          "id": "D",
+          "text": "74"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mai có 34+6=40 nhãn; cả hai có 34+40=74 nhãn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-010",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 46 quyển sách, bán buổi sáng 36 quyển và buổi chiều 7 quyển. Hỏi còn lại bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đã bán 36+7=43 quyển; còn 46−43=3 quyển.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-011",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 8 chiếc bút. Mua 4 hộp và thêm 38 bút lẻ. Có tất cả bao nhiêu bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "75"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "71"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong hộp có 8×4=32 bút; cộng 38 được 70 bút.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-012",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 39 bạn, thêm 9 bạn. Chia đều thành 2 nhóm. Mỗi nhóm có bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "29"
+        },
+        {
+          "id": "B",
+          "text": "26"
+        },
+        {
+          "id": "C",
+          "text": "25"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Có tất cả 39+9=48 bạn; mỗi nhóm 48:2=24 bạn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-013",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 42 cây trong vườn, trồng thêm 2 hàng, mỗi hàng 4 cây. Hỏi có tất cả bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "52"
+        },
+        {
+          "id": "B",
+          "text": "51"
+        },
+        {
+          "id": "C",
+          "text": "55"
+        },
+        {
+          "id": "D",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trồng thêm 4×2=8 cây; tổng 42+8=50 cây.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-014",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Một đội có 44 quả bóng, cho đi 5 quả rồi mua thêm 3 quả. Hỏi đội có bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "43"
+        },
+        {
+          "id": "C",
+          "text": "42"
+        },
+        {
+          "id": "D",
+          "text": "47"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Còn 44−5=39 quả; mua thêm 3, có 42 quả.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-015",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 42 chai nước, nhập thêm 24 chai rồi xếp đều vào 6 thùng. Mỗi thùng có bao nhiêu chai?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tổng số chai: 42+24=66; mỗi thùng 66:6=11 chai.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-016",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hồng có 48 que tính, Bình có ít hơn Hồng 7 que. Cả hai có bao nhiêu que tính?",
+      "options": [
+        {
+          "id": "A",
+          "text": "89"
+        },
+        {
+          "id": "B",
+          "text": "91"
+        },
+        {
+          "id": "C",
+          "text": "90"
+        },
+        {
+          "id": "D",
+          "text": "94"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bình có 48−7=41 que; cả hai có 48+41=89 que.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-017",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Lan có 50 nhãn vở, Mai có nhiều hơn Lan 8 nhãn. Hỏi cả hai bạn có bao nhiêu nhãn vở?",
+      "options": [
+        {
+          "id": "A",
+          "text": "108"
+        },
+        {
+          "id": "B",
+          "text": "110"
+        },
+        {
+          "id": "C",
+          "text": "109"
+        },
+        {
+          "id": "D",
+          "text": "113"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 50+8=58 nhãn; cả hai có 50+58=108 nhãn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-018",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 64 quyển sách, bán buổi sáng 52 quyển và buổi chiều 9 quyển. Hỏi còn lại bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Đã bán 52+9=61 quyển; còn 64−61=3 quyển.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-019",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 4 chiếc bút. Mua 4 hộp và thêm 54 bút lẻ. Có tất cả bao nhiêu bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "72"
+        },
+        {
+          "id": "B",
+          "text": "71"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "70"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trong hộp có 4×4=16 bút; cộng 54 được 70 bút.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-020",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 55 bạn, thêm 5 bạn. Chia đều thành 2 nhóm. Mỗi nhóm có bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32"
+        },
+        {
+          "id": "B",
+          "text": "30"
+        },
+        {
+          "id": "C",
+          "text": "35"
+        },
+        {
+          "id": "D",
+          "text": "31"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Có tất cả 55+5=60 bạn; mỗi nhóm 60:2=30 bạn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-021",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 58 cây trong vườn, trồng thêm 2 hàng, mỗi hàng 6 cây. Hỏi có tất cả bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "72"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "71"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trồng thêm 6×2=12 cây; tổng 58+12=70 cây.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-022",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đội có 60 quả bóng, cho đi 7 quả rồi mua thêm 3 quả. Hỏi đội có bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "57"
+        },
+        {
+          "id": "B",
+          "text": "56"
+        },
+        {
+          "id": "C",
+          "text": "61"
+        },
+        {
+          "id": "D",
+          "text": "58"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Còn 60−7=53 quả; mua thêm 3, có 56 quả.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-023",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 56 chai nước, nhập thêm 32 chai rồi xếp đều vào 8 thùng. Mỗi thùng có bao nhiêu chai?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tổng số chai: 56+32=88; mỗi thùng 88:8=11 chai.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-024",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hồng có 64 que tính, Bình có ít hơn Hồng 9 que. Cả hai có bao nhiêu que tính?",
+      "options": [
+        {
+          "id": "A",
+          "text": "120"
+        },
+        {
+          "id": "B",
+          "text": "121"
+        },
+        {
+          "id": "C",
+          "text": "124"
+        },
+        {
+          "id": "D",
+          "text": "119"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bình có 64−9=55 que; cả hai có 64+55=119 que.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-025",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Lan có 66 nhãn vở, Mai có nhiều hơn Lan 4 nhãn. Hỏi cả hai bạn có bao nhiêu nhãn vở?",
+      "options": [
+        {
+          "id": "A",
+          "text": "136"
+        },
+        {
+          "id": "B",
+          "text": "137"
+        },
+        {
+          "id": "C",
+          "text": "138"
+        },
+        {
+          "id": "D",
+          "text": "141"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mai có 66+4=70 nhãn; cả hai có 66+70=136 nhãn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-026",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 76 quyển sách, bán buổi sáng 68 quyển và buổi chiều 5 quyển. Hỏi còn lại bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đã bán 68+5=73 quyển; còn 76−73=3 quyển.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-027",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 6 chiếc bút. Mua 4 hộp và thêm 70 bút lẻ. Có tất cả bao nhiêu bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "95"
+        },
+        {
+          "id": "B",
+          "text": "99"
+        },
+        {
+          "id": "C",
+          "text": "96"
+        },
+        {
+          "id": "D",
+          "text": "94"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trong hộp có 6×4=24 bút; cộng 70 được 94 bút.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-028",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 71 bạn, thêm 7 bạn. Chia đều thành 2 nhóm. Mỗi nhóm có bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "41"
+        },
+        {
+          "id": "C",
+          "text": "40"
+        },
+        {
+          "id": "D",
+          "text": "44"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Có tất cả 71+7=78 bạn; mỗi nhóm 78:2=39 bạn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-029",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 74 cây trong vườn, trồng thêm 2 hàng, mỗi hàng 8 cây. Hỏi có tất cả bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "95"
+        },
+        {
+          "id": "B",
+          "text": "90"
+        },
+        {
+          "id": "C",
+          "text": "92"
+        },
+        {
+          "id": "D",
+          "text": "91"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trồng thêm 8×2=16 cây; tổng 74+16=90 cây.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-030",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một đội có 76 quả bóng, cho đi 9 quả rồi mua thêm 3 quả. Hỏi đội có bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70"
+        },
+        {
+          "id": "B",
+          "text": "75"
+        },
+        {
+          "id": "C",
+          "text": "71"
+        },
+        {
+          "id": "D",
+          "text": "72"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Còn 76−9=67 quả; mua thêm 3, có 70 quả.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-031",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 76 chai nước, nhập thêm 16 chai rồi xếp đều vào 4 thùng. Mỗi thùng có bao nhiêu chai?",
+      "options": [
+        {
+          "id": "A",
+          "text": "24"
+        },
+        {
+          "id": "B",
+          "text": "25"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tổng số chai: 76+16=92; mỗi thùng 92:4=23 chai.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-032",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hồng có 80 que tính, Bình có ít hơn Hồng 5 que. Cả hai có bao nhiêu que tính?",
+      "options": [
+        {
+          "id": "A",
+          "text": "155"
+        },
+        {
+          "id": "B",
+          "text": "160"
+        },
+        {
+          "id": "C",
+          "text": "157"
+        },
+        {
+          "id": "D",
+          "text": "156"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bình có 80−5=75 que; cả hai có 80+75=155 que.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-033",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Lan có 82 nhãn vở, Mai có nhiều hơn Lan 6 nhãn. Hỏi cả hai bạn có bao nhiêu nhãn vở?",
+      "options": [
+        {
+          "id": "A",
+          "text": "172"
+        },
+        {
+          "id": "B",
+          "text": "170"
+        },
+        {
+          "id": "C",
+          "text": "175"
+        },
+        {
+          "id": "D",
+          "text": "171"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mai có 82+6=88 nhãn; cả hai có 82+88=170 nhãn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-034",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 94 quyển sách, bán buổi sáng 84 quyển và buổi chiều 7 quyển. Hỏi còn lại bao nhiêu quyển?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đã bán 84+7=91 quyển; còn 94−91=3 quyển.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-035",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mỗi hộp có 8 chiếc bút. Mua 4 hộp và thêm 86 bút lẻ. Có tất cả bao nhiêu bút?",
+      "options": [
+        {
+          "id": "A",
+          "text": "119"
+        },
+        {
+          "id": "B",
+          "text": "118"
+        },
+        {
+          "id": "C",
+          "text": "123"
+        },
+        {
+          "id": "D",
+          "text": "120"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong hộp có 8×4=32 bút; cộng 86 được 118 bút.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-036",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 87 bạn, thêm 9 bạn. Chia đều thành 2 nhóm. Mỗi nhóm có bao nhiêu bạn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "53"
+        },
+        {
+          "id": "B",
+          "text": "50"
+        },
+        {
+          "id": "C",
+          "text": "48"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Có tất cả 87+9=96 bạn; mỗi nhóm 96:2=48 bạn.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-037",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 90 cây trong vườn, trồng thêm 2 hàng, mỗi hàng 4 cây. Hỏi có tất cả bao nhiêu cây?",
+      "options": [
+        {
+          "id": "A",
+          "text": "100"
+        },
+        {
+          "id": "B",
+          "text": "103"
+        },
+        {
+          "id": "C",
+          "text": "99"
+        },
+        {
+          "id": "D",
+          "text": "98"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Trồng thêm 4×2=8 cây; tổng 90+8=98 cây.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-038",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một đội có 92 quả bóng, cho đi 5 quả rồi mua thêm 3 quả. Hỏi đội có bao nhiêu quả?",
+      "options": [
+        {
+          "id": "A",
+          "text": "92"
+        },
+        {
+          "id": "B",
+          "text": "91"
+        },
+        {
+          "id": "C",
+          "text": "90"
+        },
+        {
+          "id": "D",
+          "text": "95"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Còn 92−5=87 quả; mua thêm 3, có 90 quả.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-039",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Cửa hàng có 90 chai nước, nhập thêm 24 chai rồi xếp đều vào 6 thùng. Mỗi thùng có bao nhiêu chai?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "19"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tổng số chai: 90+24=114; mỗi thùng 114:6=19 chai.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N13-040",
+      "grade": 3,
+      "topicId": "N13",
+      "topicName": "Bài toán giải bằng hai bước tính",
+      "skillId": "N13.giai_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hồng có 96 que tính, Bình có ít hơn Hồng 7 que. Cả hai có bao nhiêu que tính?",
+      "options": [
+        {
+          "id": "A",
+          "text": "186"
+        },
+        {
+          "id": "B",
+          "text": "185"
+        },
+        {
+          "id": "C",
+          "text": "190"
+        },
+        {
+          "id": "D",
+          "text": "187"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bình có 96−7=89 que; cả hai có 96+89=185 que.",
+      "tags": [
+        "toan-3",
+        "n13"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

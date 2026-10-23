@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n21-revised-20261023",
+  "title": "Hình tròn",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N21-001",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 2 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 2 × 2 = 4 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-002",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 4 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 4 : 2 = 2 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-003",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 2 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "1"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 2 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-004",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 4 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 4 : 2 = 2 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-005",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 3 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 3 × 2 = 6 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-006",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 6 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 6 : 2 = 3 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-007",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 3 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 3 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-008",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 6 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 6 : 2 = 3 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-009",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 4 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 4 × 2 = 8 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-010",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 8 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bán kính bằng một nửa đường kính: 8 : 2 = 4 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-011",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 4 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 4 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-012",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 8 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 8 : 2 = 4 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-013",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 5 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 5 × 2 = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-014",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 10 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Bán kính bằng một nửa đường kính: 10 : 2 = 5 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-015",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 5 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 5 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-016",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 10 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 10 : 2 = 5 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-017",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 6 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 6 × 2 = 12 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-018",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 12 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 12 : 2 = 6 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-019",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 6 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 6 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-020",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 12 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 12 : 2 = 6 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-021",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 7 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "21"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 7 × 2 = 14 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-022",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 14 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 14 : 2 = 7 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-023",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 7 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "14"
+        },
+        {
+          "id": "B",
+          "text": "6"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 7 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-024",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 14 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 14 : 2 = 7 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-025",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 8 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "24"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 8 × 2 = 16 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-026",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 16 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bán kính bằng một nửa đường kính: 16 : 2 = 8 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-027",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 8 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "16"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 8 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-028",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 16 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 16 : 2 = 8 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-029",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 9 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "27"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 9 × 2 = 18 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-030",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 18 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 18 : 2 = 9 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-031",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 9 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 9 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-032",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 18 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 18 : 2 = 9 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-033",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 10 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "20"
+        },
+        {
+          "id": "D",
+          "text": "12"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 10 × 2 = 20 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-034",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 20 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Bán kính bằng một nửa đường kính: 20 : 2 = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-035",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 10 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-036",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 20 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 20 : 2 = 10 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-037",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.duong_kinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn tâm O có bán kính OA dài 11 cm. Đường kính AB dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "22"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "33"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đường kính dài gấp hai lần bán kính: 11 × 2 = 22 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-038",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Hình tròn có đường kính CD dài 22 cm. Bán kính hình tròn dài bao nhiêu xăng-ti-mét?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "11"
+        },
+        {
+          "id": "C",
+          "text": "24"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bán kính bằng một nửa đường kính: 22 : 2 = 11 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-039",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.ban_kinh_bang_nhau",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tâm O, các điểm A và B nằm trên đường tròn, OA và OB đều là bán kính. Nếu OA = 11 cm thì OB dài bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mọi bán kính của cùng một hình tròn đều bằng nhau, nên OB = OA = 11 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N21-040",
+      "grade": 3,
+      "topicId": "N21",
+      "topicName": "Hình tròn",
+      "skillId": "N21.tam_duong_kinh",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Đoạn thẳng AB đi qua tâm O của một hình tròn và A, B đều nằm trên đường tròn. Biết AB = 22 cm. Độ dài OA là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "22"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "AB là đường kính, O là trung điểm AB nên OA = 22 : 2 = 11 cm.",
+      "tags": [
+        "toan-3",
+        "n21"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

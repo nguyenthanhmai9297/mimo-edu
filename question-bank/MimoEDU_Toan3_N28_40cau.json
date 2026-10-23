@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n28-revised-20261023",
+  "title": "Tiền Việt Nam",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "group": "Hình học và đo lường",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N28-001",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "2 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40000"
+        },
+        {
+          "id": "B",
+          "text": "20000"
+        },
+        {
+          "id": "C",
+          "text": "2000"
+        },
+        {
+          "id": "D",
+          "text": "30000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "2 × 10 000 = 20000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-002",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mai có 2 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2000"
+        },
+        {
+          "id": "B",
+          "text": "20000"
+        },
+        {
+          "id": "C",
+          "text": "10000"
+        },
+        {
+          "id": "D",
+          "text": "15000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "2 × 5 000 = 10000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-003",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 5000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5000"
+        },
+        {
+          "id": "B",
+          "text": "95000"
+        },
+        {
+          "id": "C",
+          "text": "100000"
+        },
+        {
+          "id": "D",
+          "text": "90000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền trả lại: 100 000 - 5000 = 95000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-004",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 2 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18000"
+        },
+        {
+          "id": "B",
+          "text": "16000"
+        },
+        {
+          "id": "C",
+          "text": "21000"
+        },
+        {
+          "id": "D",
+          "text": "24000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền vở 2 × 8 000 = 16000 đồng. Cộng bút 5 000 đồng được 21000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-005",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "3 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40000"
+        },
+        {
+          "id": "B",
+          "text": "60000"
+        },
+        {
+          "id": "C",
+          "text": "30000"
+        },
+        {
+          "id": "D",
+          "text": "3000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "3 × 10 000 = 30000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-006",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mai có 3 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3000"
+        },
+        {
+          "id": "B",
+          "text": "20000"
+        },
+        {
+          "id": "C",
+          "text": "30000"
+        },
+        {
+          "id": "D",
+          "text": "15000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "3 × 5 000 = 15000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-007",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 10000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10000"
+        },
+        {
+          "id": "B",
+          "text": "95000"
+        },
+        {
+          "id": "C",
+          "text": "85000"
+        },
+        {
+          "id": "D",
+          "text": "90000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền trả lại: 100 000 - 10000 = 90000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-008",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mua 3 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "23000"
+        },
+        {
+          "id": "B",
+          "text": "32000"
+        },
+        {
+          "id": "C",
+          "text": "24000"
+        },
+        {
+          "id": "D",
+          "text": "29000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền vở 3 × 8 000 = 24000 đồng. Cộng bút 5 000 đồng được 29000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-009",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "4 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40000"
+        },
+        {
+          "id": "B",
+          "text": "50000"
+        },
+        {
+          "id": "C",
+          "text": "80000"
+        },
+        {
+          "id": "D",
+          "text": "4000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "4 × 10 000 = 40000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-010",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Mai có 4 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4000"
+        },
+        {
+          "id": "B",
+          "text": "20000"
+        },
+        {
+          "id": "C",
+          "text": "40000"
+        },
+        {
+          "id": "D",
+          "text": "25000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "4 × 5 000 = 20000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-011",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 15000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90000"
+        },
+        {
+          "id": "B",
+          "text": "15000"
+        },
+        {
+          "id": "C",
+          "text": "80000"
+        },
+        {
+          "id": "D",
+          "text": "85000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền trả lại: 100 000 - 15000 = 85000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-012",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 4 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40000"
+        },
+        {
+          "id": "B",
+          "text": "37000"
+        },
+        {
+          "id": "C",
+          "text": "32000"
+        },
+        {
+          "id": "D",
+          "text": "28000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 4 × 8 000 = 32000 đồng. Cộng bút 5 000 đồng được 37000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-013",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "5 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60000"
+        },
+        {
+          "id": "B",
+          "text": "5000"
+        },
+        {
+          "id": "C",
+          "text": "100000"
+        },
+        {
+          "id": "D",
+          "text": "50000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "5 × 10 000 = 50000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-014",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mai có 5 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30000"
+        },
+        {
+          "id": "B",
+          "text": "5000"
+        },
+        {
+          "id": "C",
+          "text": "25000"
+        },
+        {
+          "id": "D",
+          "text": "50000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "5 × 5 000 = 25000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-015",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 20000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "75000"
+        },
+        {
+          "id": "B",
+          "text": "20000"
+        },
+        {
+          "id": "C",
+          "text": "80000"
+        },
+        {
+          "id": "D",
+          "text": "85000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền trả lại: 100 000 - 20000 = 80000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-016",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 5 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48000"
+        },
+        {
+          "id": "B",
+          "text": "40000"
+        },
+        {
+          "id": "C",
+          "text": "45000"
+        },
+        {
+          "id": "D",
+          "text": "33000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền vở 5 × 8 000 = 40000 đồng. Cộng bút 5 000 đồng được 45000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-017",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "6 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6000"
+        },
+        {
+          "id": "B",
+          "text": "70000"
+        },
+        {
+          "id": "C",
+          "text": "60000"
+        },
+        {
+          "id": "D",
+          "text": "120000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "6 × 10 000 = 60000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-018",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mai có 6 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60000"
+        },
+        {
+          "id": "B",
+          "text": "35000"
+        },
+        {
+          "id": "C",
+          "text": "30000"
+        },
+        {
+          "id": "D",
+          "text": "6000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "6 × 5 000 = 30000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-019",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 25000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25000"
+        },
+        {
+          "id": "B",
+          "text": "75000"
+        },
+        {
+          "id": "C",
+          "text": "70000"
+        },
+        {
+          "id": "D",
+          "text": "80000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền trả lại: 100 000 - 25000 = 75000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-020",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Mua 6 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48000"
+        },
+        {
+          "id": "B",
+          "text": "38000"
+        },
+        {
+          "id": "C",
+          "text": "53000"
+        },
+        {
+          "id": "D",
+          "text": "56000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền vở 6 × 8 000 = 48000 đồng. Cộng bút 5 000 đồng được 53000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-021",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "7 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70000"
+        },
+        {
+          "id": "B",
+          "text": "140000"
+        },
+        {
+          "id": "C",
+          "text": "80000"
+        },
+        {
+          "id": "D",
+          "text": "7000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "7 × 10 000 = 70000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-022",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mai có 7 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35000"
+        },
+        {
+          "id": "B",
+          "text": "7000"
+        },
+        {
+          "id": "C",
+          "text": "40000"
+        },
+        {
+          "id": "D",
+          "text": "70000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "7 × 5 000 = 35000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-023",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 30000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70000"
+        },
+        {
+          "id": "B",
+          "text": "30000"
+        },
+        {
+          "id": "C",
+          "text": "75000"
+        },
+        {
+          "id": "D",
+          "text": "65000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền trả lại: 100 000 - 30000 = 70000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-024",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mua 7 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "64000"
+        },
+        {
+          "id": "B",
+          "text": "61000"
+        },
+        {
+          "id": "C",
+          "text": "43000"
+        },
+        {
+          "id": "D",
+          "text": "56000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 7 × 8 000 = 56000 đồng. Cộng bút 5 000 đồng được 61000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-025",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "8 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80000"
+        },
+        {
+          "id": "B",
+          "text": "8000"
+        },
+        {
+          "id": "C",
+          "text": "160000"
+        },
+        {
+          "id": "D",
+          "text": "90000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "8 × 10 000 = 80000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-026",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mai có 8 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "40000"
+        },
+        {
+          "id": "B",
+          "text": "45000"
+        },
+        {
+          "id": "C",
+          "text": "8000"
+        },
+        {
+          "id": "D",
+          "text": "80000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "8 × 5 000 = 40000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-027",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 35000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35000"
+        },
+        {
+          "id": "B",
+          "text": "65000"
+        },
+        {
+          "id": "C",
+          "text": "60000"
+        },
+        {
+          "id": "D",
+          "text": "70000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền trả lại: 100 000 - 35000 = 65000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-028",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mua 8 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "72000"
+        },
+        {
+          "id": "B",
+          "text": "64000"
+        },
+        {
+          "id": "C",
+          "text": "69000"
+        },
+        {
+          "id": "D",
+          "text": "48000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền vở 8 × 8 000 = 64000 đồng. Cộng bút 5 000 đồng được 69000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-029",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "9 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "100000"
+        },
+        {
+          "id": "B",
+          "text": "90000"
+        },
+        {
+          "id": "C",
+          "text": "9000"
+        },
+        {
+          "id": "D",
+          "text": "180000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "9 × 10 000 = 90000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-030",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mai có 9 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90000"
+        },
+        {
+          "id": "B",
+          "text": "50000"
+        },
+        {
+          "id": "C",
+          "text": "9000"
+        },
+        {
+          "id": "D",
+          "text": "45000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "9 × 5 000 = 45000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-031",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 40000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60000"
+        },
+        {
+          "id": "B",
+          "text": "65000"
+        },
+        {
+          "id": "C",
+          "text": "40000"
+        },
+        {
+          "id": "D",
+          "text": "55000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền trả lại: 100 000 - 40000 = 60000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-032",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mua 9 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "77000"
+        },
+        {
+          "id": "B",
+          "text": "80000"
+        },
+        {
+          "id": "C",
+          "text": "53000"
+        },
+        {
+          "id": "D",
+          "text": "72000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền vở 9 × 8 000 = 72000 đồng. Cộng bút 5 000 đồng được 77000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-033",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "10 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "110000"
+        },
+        {
+          "id": "B",
+          "text": "100000"
+        },
+        {
+          "id": "C",
+          "text": "10000"
+        },
+        {
+          "id": "D",
+          "text": "200000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "10 × 10 000 = 100000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-034",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 10 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10000"
+        },
+        {
+          "id": "B",
+          "text": "55000"
+        },
+        {
+          "id": "C",
+          "text": "100000"
+        },
+        {
+          "id": "D",
+          "text": "50000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "10 × 5 000 = 50000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-035",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 45000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60000"
+        },
+        {
+          "id": "B",
+          "text": "45000"
+        },
+        {
+          "id": "C",
+          "text": "50000"
+        },
+        {
+          "id": "D",
+          "text": "55000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Tiền trả lại: 100 000 - 45000 = 55000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-036",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mua 10 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "88000"
+        },
+        {
+          "id": "B",
+          "text": "80000"
+        },
+        {
+          "id": "C",
+          "text": "85000"
+        },
+        {
+          "id": "D",
+          "text": "58000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tiền vở 10 × 8 000 = 80000 đồng. Cộng bút 5 000 đồng được 85000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-037",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.dem_tien",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "11 tờ tiền mệnh giá 10 000 đồng có tổng cộng bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "120000"
+        },
+        {
+          "id": "B",
+          "text": "11000"
+        },
+        {
+          "id": "C",
+          "text": "110000"
+        },
+        {
+          "id": "D",
+          "text": "220000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "11 × 10 000 = 110000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-038",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.menh_gia",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mai có 11 tờ 5 000 đồng. Mai có bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "110000"
+        },
+        {
+          "id": "B",
+          "text": "60000"
+        },
+        {
+          "id": "C",
+          "text": "55000"
+        },
+        {
+          "id": "D",
+          "text": "11000"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "11 × 5 000 = 55000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-039",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tien_thua",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mua bút hết 50000 đồng, trả tờ 100 000 đồng. Người bán trả lại bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50000"
+        },
+        {
+          "id": "B",
+          "text": "50001"
+        },
+        {
+          "id": "C",
+          "text": "55000"
+        },
+        {
+          "id": "D",
+          "text": "45000"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tiền trả lại: 100 000 - 50000 = 50000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N28-040",
+      "grade": 3,
+      "topicId": "N28",
+      "topicName": "Tiền Việt Nam",
+      "skillId": "N28.tinh_tien_hai_buoc",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Mua 11 quyển vở, mỗi quyển 8 000 đồng, và 1 chiếc bút giá 5 000 đồng. Hết tất cả bao nhiêu đồng?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96000"
+        },
+        {
+          "id": "B",
+          "text": "93000"
+        },
+        {
+          "id": "C",
+          "text": "63000"
+        },
+        {
+          "id": "D",
+          "text": "88000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Tiền vở 11 × 8 000 = 88000 đồng. Cộng bút 5 000 đồng được 93000 đồng.",
+      "tags": [
+        "toan-3",
+        "n28"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

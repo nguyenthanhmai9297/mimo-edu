@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n09-draft-v1",
+  "title": "Tìm thành phần chưa biết",
+  "language": "vi",
+  "notes": "Bản nháp sinh theo mẫu, cần giáo viên duyệt từng câu, đặc biệt độ đa dạng và phân loại mức độ. Không tự động xuất bản.",
+  "questions": [
+    {
+      "id": "M3-N09-001",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 5 = 7",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "12"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "102"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 7 − 5 = 2.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-002",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 6 = 9",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x = 9 − 6 = 3.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-003",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 7 = 11",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "9"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x = 11 − 7 = 4.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-004",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 8 = 13",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "x = 13 − 8 = 5.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-005",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 9 = 15",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "1 006"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 15 − 9 = 6.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-006",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 10 = 17",
+      "options": [
+        {
+          "id": "A",
+          "text": "10"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "17"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x = 17 − 10 = 7.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-007",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 11 = 19",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 008"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x = 19 − 11 = 8.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-008",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 12 = 14",
+      "options": [
+        {
+          "id": "A",
+          "text": "0"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "1 002"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "x = 14 − 12 = 2.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-009",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 13 = 16",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "1 003"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 16 − 13 = 3.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-010",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x + 14 = 18",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "1 004"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 18 − 14 = 4.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-011",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 2 = 16",
+      "options": [
+        {
+          "id": "A",
+          "text": "11"
+        },
+        {
+          "id": "B",
+          "text": "108"
+        },
+        {
+          "id": "C",
+          "text": "8"
+        },
+        {
+          "id": "D",
+          "text": "5"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 16 : 2 = 8.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-012",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 3 = 27",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "9"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x = 27 : 3 = 9.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-013",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 4 = 40",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x = 40 : 4 = 10.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-014",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 5 = 55",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "x = 55 : 5 = 11.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-015",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 6 = 72",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "112"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "1 012"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x = 72 : 6 = 12.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-016",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 7 = 91",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "13"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 91 : 7 = 13.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-017",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 8 = 112",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "114"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "x = 112 : 8 = 14.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-018",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 2 = 30",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "18"
+        },
+        {
+          "id": "D",
+          "text": "1 015"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x = 30 : 2 = 15.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-019",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 3 = 48",
+      "options": [
+        {
+          "id": "A",
+          "text": "15"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "26"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x = 48 : 3 = 16.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-020",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: x × 4 = 68",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "18"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "1 017"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 68 : 4 = 17.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-021",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 22 − x = 11",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "1 011"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "x = 22 − 11 = 11.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-022",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 36 − x = 24",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "1 012"
+        },
+        {
+          "id": "C",
+          "text": "22"
+        },
+        {
+          "id": "D",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x = 36 − 24 = 12.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-023",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 52 − x = 39",
+      "options": [
+        {
+          "id": "A",
+          "text": "13"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "15"
+        },
+        {
+          "id": "D",
+          "text": "23"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x = 52 − 39 = 13.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-024",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 70 − x = 56",
+      "options": [
+        {
+          "id": "A",
+          "text": "16"
+        },
+        {
+          "id": "B",
+          "text": "114"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 70 − 56 = 14.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-025",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 90 − x = 75",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "13"
+        },
+        {
+          "id": "C",
+          "text": "12"
+        },
+        {
+          "id": "D",
+          "text": "15"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "x = 90 − 75 = 15.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-026",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 112 − x = 96",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "14"
+        },
+        {
+          "id": "C",
+          "text": "21"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "x = 112 − 96 = 16.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-027",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 136 − x = 119",
+      "options": [
+        {
+          "id": "A",
+          "text": "19"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "17"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 136 − 119 = 17.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-028",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 36 − x = 18",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "1 018"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x = 36 − 18 = 18.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-029",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 57 − x = 38",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x = 57 − 38 = 19.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-030",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: 80 − x = 60",
+      "options": [
+        {
+          "id": "A",
+          "text": "20"
+        },
+        {
+          "id": "B",
+          "text": "17"
+        },
+        {
+          "id": "C",
+          "text": "10"
+        },
+        {
+          "id": "D",
+          "text": "18"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x = 80 − 60 = 20.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-031",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 14) : 2 = 28",
+      "options": [
+        {
+          "id": "A",
+          "text": "42"
+        },
+        {
+          "id": "B",
+          "text": "142"
+        },
+        {
+          "id": "C",
+          "text": "38"
+        },
+        {
+          "id": "D",
+          "text": "43"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x + 14 = 56; x = 56 − 14 = 42.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-032",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 15) : 3 = 30",
+      "options": [
+        {
+          "id": "A",
+          "text": "75"
+        },
+        {
+          "id": "B",
+          "text": "76"
+        },
+        {
+          "id": "C",
+          "text": "82"
+        },
+        {
+          "id": "D",
+          "text": "85"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x + 15 = 90; x = 90 − 15 = 75.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-033",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 16) : 4 = 32",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 112"
+        },
+        {
+          "id": "B",
+          "text": "122"
+        },
+        {
+          "id": "C",
+          "text": "117"
+        },
+        {
+          "id": "D",
+          "text": "112"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "x + 16 = 128; x = 128 − 16 = 112.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-034",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 17) : 5 = 34",
+      "options": [
+        {
+          "id": "A",
+          "text": "253"
+        },
+        {
+          "id": "B",
+          "text": "1 153"
+        },
+        {
+          "id": "C",
+          "text": "153"
+        },
+        {
+          "id": "D",
+          "text": "163"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x + 17 = 170; x = 170 − 17 = 153.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-035",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 18) : 6 = 36",
+      "options": [
+        {
+          "id": "A",
+          "text": "179"
+        },
+        {
+          "id": "B",
+          "text": "198"
+        },
+        {
+          "id": "C",
+          "text": "298"
+        },
+        {
+          "id": "D",
+          "text": "193"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x + 18 = 216; x = 216 − 18 = 198.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-036",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 19) : 7 = 38",
+      "options": [
+        {
+          "id": "A",
+          "text": "246"
+        },
+        {
+          "id": "B",
+          "text": "247"
+        },
+        {
+          "id": "C",
+          "text": "245"
+        },
+        {
+          "id": "D",
+          "text": "249"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x + 19 = 266; x = 266 − 19 = 247.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-037",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 20) : 8 = 40",
+      "options": [
+        {
+          "id": "A",
+          "text": "300"
+        },
+        {
+          "id": "B",
+          "text": "295"
+        },
+        {
+          "id": "C",
+          "text": "290"
+        },
+        {
+          "id": "D",
+          "text": "297"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x + 20 = 320; x = 320 − 20 = 300.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-038",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 21) : 2 = 42",
+      "options": [
+        {
+          "id": "A",
+          "text": "53"
+        },
+        {
+          "id": "B",
+          "text": "69"
+        },
+        {
+          "id": "C",
+          "text": "63"
+        },
+        {
+          "id": "D",
+          "text": "64"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "x + 21 = 84; x = 84 − 21 = 63.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-039",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 22) : 3 = 44",
+      "options": [
+        {
+          "id": "A",
+          "text": "110"
+        },
+        {
+          "id": "B",
+          "text": "112"
+        },
+        {
+          "id": "C",
+          "text": "108"
+        },
+        {
+          "id": "D",
+          "text": "210"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "x + 22 = 132; x = 132 − 22 = 110.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N09-040",
+      "grade": 3,
+      "topicId": "N09",
+      "topicName": "Tìm thành phần chưa biết",
+      "skillId": "N09.practice",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm x: (x + 23) : 4 = 46",
+      "options": [
+        {
+          "id": "A",
+          "text": "160"
+        },
+        {
+          "id": "B",
+          "text": "161"
+        },
+        {
+          "id": "C",
+          "text": "158"
+        },
+        {
+          "id": "D",
+          "text": "171"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "x + 23 = 184; x = 184 − 23 = 161.",
+      "tags": [
+        "toan-3",
+        "n09"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}

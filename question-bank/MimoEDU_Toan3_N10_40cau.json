@@ -1,0 +1,1419 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n10-revised-20261023",
+  "title": "Phép chia có dư",
+  "grade": 3,
+  "publicationStatus": "draft_not_approved",
+  "topics": [
+    {
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "group": "Số và phép tính",
+      "questionCount": 40,
+      "targetQuestionCount": 40,
+      "contentStatus": "needs_teacher_review"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M3-N10-001",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.so_du",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính 22 : 3. Số dư là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "22=3×7+1, với 1<3. Vậy số dư là 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-002",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính 38 : 4. Thương là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "8"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "38=4×9+2, nên thương là 9, dư 2.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-003",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 58 cái kẹo chia đều cho 5 bạn. Có bao nhiêu cái kẹo còn thừa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "4"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi bạn nhận 11 cái, vì 58=5×11+3; còn thừa 3 cái.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-004",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.chia_co_du",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính 82 : 6. Thương và số dư lần lượt là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "13 và 4"
+        },
+        {
+          "id": "B",
+          "text": "14 và 4"
+        },
+        {
+          "id": "C",
+          "text": "13 và 5"
+        },
+        {
+          "id": "D",
+          "text": "12 và 4"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 82=6×13+4, với 4<6, thương 13 dư 4.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-005",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 110 quyển vở, mỗi túi đựng 7 quyển. Xếp được nhiều nhất bao nhiêu túi đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "15"
+        },
+        {
+          "id": "C",
+          "text": "14"
+        },
+        {
+          "id": "D",
+          "text": "16"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "110:7=15 dư 5. Xếp được 15 túi đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-006",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.so_du",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính 142 : 8. Số dư là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "16"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "142=8×17+6, với 6<8. Vậy số dư là 6.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-007",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuong",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính 178 : 9. Thương là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "18"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "19"
+        },
+        {
+          "id": "D",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "178=9×19+7, nên thương là 19, dư 7.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-008",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 65 cái kẹo chia đều cho 3 bạn. Có bao nhiêu cái kẹo còn thừa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22"
+        },
+        {
+          "id": "B",
+          "text": "20"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi bạn nhận 21 cái, vì 65=3×21+2; còn thừa 2 cái.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-009",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.chia_co_du",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Tính 95 : 4. Thương và số dư lần lượt là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "22 và 3"
+        },
+        {
+          "id": "B",
+          "text": "23 và 3"
+        },
+        {
+          "id": "C",
+          "text": "23 và 4"
+        },
+        {
+          "id": "D",
+          "text": "24 và 3"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì 95=4×23+3, với 3<4, thương 23 dư 3.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-010",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Có 127 quyển vở, mỗi túi đựng 5 quyển. Xếp được nhiều nhất bao nhiêu túi đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "25"
+        },
+        {
+          "id": "B",
+          "text": "24"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "127:5=25 dư 2. Xếp được 25 túi đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-011",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.so_du",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính 163 : 6. Số dư là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "1"
+        },
+        {
+          "id": "C",
+          "text": "28"
+        },
+        {
+          "id": "D",
+          "text": "26"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "163=6×27+1, với 1<6. Vậy số dư là 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-012",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính 209 : 7. Thương là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "28"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "29"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "209=7×29+6, nên thương là 29, dư 6.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-013",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 254 cái kẹo chia đều cho 8 bạn. Có bao nhiêu cái kẹo còn thừa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "30"
+        },
+        {
+          "id": "D",
+          "text": "32"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mỗi bạn nhận 31 cái, vì 254=8×31+6; còn thừa 6 cái.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-014",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.chia_co_du",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính 303 : 9. Thương và số dư lần lượt là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "34 và 6"
+        },
+        {
+          "id": "B",
+          "text": "33 và 6"
+        },
+        {
+          "id": "C",
+          "text": "33 và 7"
+        },
+        {
+          "id": "D",
+          "text": "32 và 6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Vì 303=9×33+6, với 6<9, thương 33 dư 6.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-015",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 106 quyển vở, mỗi túi đựng 3 quyển. Xếp được nhiều nhất bao nhiêu túi đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "36"
+        },
+        {
+          "id": "B",
+          "text": "2"
+        },
+        {
+          "id": "C",
+          "text": "34"
+        },
+        {
+          "id": "D",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "106:3=35 dư 1. Xếp được 35 túi đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-016",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.so_du",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính 149 : 4. Số dư là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "36"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "149=4×37+1, với 1<4. Vậy số dư là 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-017",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuong",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính 196 : 5. Thương là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39"
+        },
+        {
+          "id": "B",
+          "text": "38"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "40"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "196=5×39+1, nên thương là 39, dư 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-018",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 249 cái kẹo chia đều cho 6 bạn. Có bao nhiêu cái kẹo còn thừa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "40"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "42"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi bạn nhận 41 cái, vì 249=6×41+3; còn thừa 3 cái.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-019",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.chia_co_du",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Tính 302 : 7. Thương và số dư lần lượt là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44 và 1"
+        },
+        {
+          "id": "B",
+          "text": "42 và 1"
+        },
+        {
+          "id": "C",
+          "text": "43 và 2"
+        },
+        {
+          "id": "D",
+          "text": "43 và 1"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Vì 302=7×43+1, với 1<7, thương 43 dư 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-020",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Có 366 quyển vở, mỗi túi đựng 8 quyển. Xếp được nhiều nhất bao nhiêu túi đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "44"
+        },
+        {
+          "id": "B",
+          "text": "7"
+        },
+        {
+          "id": "C",
+          "text": "45"
+        },
+        {
+          "id": "D",
+          "text": "46"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "366:8=45 dư 6. Xếp được 45 túi đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-021",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.so_du",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính 428 : 9. Số dư là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "46"
+        },
+        {
+          "id": "D",
+          "text": "48"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "428=9×47+5, với 5<9. Vậy số dư là 5.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-022",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính 149 : 3. Thương là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50"
+        },
+        {
+          "id": "B",
+          "text": "48"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "49"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "149=3×49+2, nên thương là 49, dư 2.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-023",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 206 cái kẹo chia đều cho 4 bạn. Có bao nhiêu cái kẹo còn thừa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "52"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi bạn nhận 51 cái, vì 206=4×51+2; còn thừa 2 cái.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-024",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.chia_co_du",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính 269 : 5. Thương và số dư lần lượt là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "53 và 4"
+        },
+        {
+          "id": "B",
+          "text": "54 và 4"
+        },
+        {
+          "id": "C",
+          "text": "52 và 4"
+        },
+        {
+          "id": "D",
+          "text": "53 và 5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 269=5×53+4, với 4<5, thương 53 dư 4.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-025",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 335 quyển vở, mỗi túi đựng 6 quyển. Xếp được nhiều nhất bao nhiêu túi đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "6"
+        },
+        {
+          "id": "B",
+          "text": "55"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "54"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "335:6=55 dư 5. Xếp được 55 túi đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-026",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.so_du",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính 401 : 7. Số dư là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "56"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "401=7×57+2, với 2<7. Vậy số dư là 2.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-027",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuong",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính 478 : 8. Thương là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "60"
+        },
+        {
+          "id": "B",
+          "text": "58"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "59"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "478=8×59+6, nên thương là 59, dư 6.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-028",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 553 cái kẹo chia đều cho 9 bạn. Có bao nhiêu cái kẹo còn thừa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62"
+        },
+        {
+          "id": "B",
+          "text": "60"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi bạn nhận 61 cái, vì 553=9×61+4; còn thừa 4 cái.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-029",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.chia_co_du",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Tính 190 : 3. Thương và số dư lần lượt là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "63 và 1"
+        },
+        {
+          "id": "B",
+          "text": "62 và 1"
+        },
+        {
+          "id": "C",
+          "text": "63 và 2"
+        },
+        {
+          "id": "D",
+          "text": "64 và 1"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 190=3×63+1, với 1<3, thương 63 dư 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-030",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Có 263 quyển vở, mỗi túi đựng 4 quyển. Xếp được nhiều nhất bao nhiêu túi đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "66"
+        },
+        {
+          "id": "B",
+          "text": "65"
+        },
+        {
+          "id": "C",
+          "text": "64"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "263:4=65 dư 3. Xếp được 65 túi đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-031",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.so_du",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính 338 : 5. Số dư là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "68"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "3"
+        },
+        {
+          "id": "D",
+          "text": "66"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "338=5×67+3, với 3<5. Vậy số dư là 3.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-032",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính 416 : 6. Thương là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "69"
+        },
+        {
+          "id": "B",
+          "text": "68"
+        },
+        {
+          "id": "C",
+          "text": "70"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "416=6×69+2, nên thương là 69, dư 2.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-033",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 500 cái kẹo chia đều cho 7 bạn. Có bao nhiêu cái kẹo còn thừa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "72"
+        },
+        {
+          "id": "C",
+          "text": "70"
+        },
+        {
+          "id": "D",
+          "text": "3"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Mỗi bạn nhận 71 cái, vì 500=7×71+3; còn thừa 3 cái.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-034",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.chia_co_du",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính 590 : 8. Thương và số dư lần lượt là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "74 và 6"
+        },
+        {
+          "id": "B",
+          "text": "73 và 7"
+        },
+        {
+          "id": "C",
+          "text": "73 và 6"
+        },
+        {
+          "id": "D",
+          "text": "72 và 6"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vì 590=8×73+6, với 6<8, thương 73 dư 6.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-035",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 678 quyển vở, mỗi túi đựng 9 quyển. Xếp được nhiều nhất bao nhiêu túi đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "76"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "75"
+        },
+        {
+          "id": "D",
+          "text": "74"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "678:9=75 dư 3. Xếp được 75 túi đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-036",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.so_du",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính 233 : 3. Số dư là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "78"
+        },
+        {
+          "id": "C",
+          "text": "76"
+        },
+        {
+          "id": "D",
+          "text": "2"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "233=3×77+2, với 2<3. Vậy số dư là 2.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-037",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuong",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính 317 : 4. Thương là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "80"
+        },
+        {
+          "id": "C",
+          "text": "78"
+        },
+        {
+          "id": "D",
+          "text": "79"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "317=4×79+1, nên thương là 79, dư 1.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-038",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 407 cái kẹo chia đều cho 5 bạn. Có bao nhiêu cái kẹo còn thừa?",
+      "options": [
+        {
+          "id": "A",
+          "text": "82"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "2"
+        },
+        {
+          "id": "D",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mỗi bạn nhận 81 cái, vì 407=5×81+2; còn thừa 2 cái.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-039",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.chia_co_du",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tính 502 : 6. Thương và số dư lần lượt là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "83 và 4"
+        },
+        {
+          "id": "B",
+          "text": "82 và 4"
+        },
+        {
+          "id": "C",
+          "text": "84 và 4"
+        },
+        {
+          "id": "D",
+          "text": "83 và 5"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì 502=6×83+4, với 4<6, thương 83 dư 4.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    },
+    {
+      "id": "M3-N10-040",
+      "grade": 3,
+      "topicId": "N10",
+      "topicName": "Phép chia có dư",
+      "skillId": "N10.thuc_te",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có 599 quyển vở, mỗi túi đựng 7 quyển. Xếp được nhiều nhất bao nhiêu túi đầy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "5"
+        },
+        {
+          "id": "B",
+          "text": "84"
+        },
+        {
+          "id": "C",
+          "text": "85"
+        },
+        {
+          "id": "D",
+          "text": "86"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "599:7=85 dư 4. Xếp được 85 túi đầy.",
+      "tags": [
+        "toan-3",
+        "n10"
+      ],
+      "status": "needs_teacher_review"
+    }
+  ]
+}
