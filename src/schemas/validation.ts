@@ -101,6 +101,18 @@ export const aiParsedQuestionSchema = z.object({
   acceptableAnswers: z.array(z.string()).optional(),
   rubric: z.string().optional(),
   sampleSolutionText: z.string().optional(),
+  figureDescription: z.string().optional(),
+  figures: z
+    .array(
+      z.object({
+        page: z.number().int().min(1),
+        box: z.tuple([z.number(), z.number(), z.number(), z.number()]),
+        description: z.string().optional(),
+      })
+    )
+    .optional(),
+  needsReview: z.boolean().optional(),
+  reviewNote: z.string().optional(),
 });
 
 export const aiParsedHomeworkResponseSchema = z.object({
@@ -114,4 +126,35 @@ export const aiEssayGradingSuggestionSchema = z.object({
   suggestedScore: z.number().min(0),
   explanation: z.string().min(1),
   improvementFeedback: z.string().min(1),
+});
+
+const QUESTION_TYPES = [
+  'single_choice',
+  'multiple_choice',
+  'true_false_multi',
+  'short_answer',
+  'essay',
+] as const;
+
+/** A homework draft prepared outside the app (JSON file) to open in the editor. */
+export const homeworkImportSchema = z.object({
+  title: z.string().min(1).max(200),
+  description: z.string().max(2000).optional(),
+  grade: z.string().max(40).optional(),
+  answerSource: z.enum(['teacher', 'ai']).default('teacher'),
+  aiSolverEnabled: z.boolean().default(false),
+  questions: z
+    .array(
+      z
+        .object({
+          id: z.string().min(1),
+          order: z.number(),
+          type: z.enum(QUESTION_TYPES),
+          points: z.number().min(0),
+          prompt: z.object({ version: z.literal(1), blocks: z.array(z.any()) }),
+        })
+        .passthrough()
+    )
+    .min(1)
+    .max(100),
 });

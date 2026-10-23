@@ -590,12 +590,19 @@ export function createApiApp() {
   const handleAIParsing = async (req: Request, res: Response) => {
     const adapter = getAIAdapter();
     try {
-      const { mimeType, base64Data, solveWithAI, preferredModel } = req.body as {
-        mimeType?: string;
-        base64Data?: string;
-        solveWithAI?: boolean;
-        preferredModel?: string;
-      };
+      const { files, mimeType, base64Data, solveWithAI, preferredModel } =
+        req.body as {
+          files?: { mimeType?: string; base64Data?: string }[];
+          mimeType?: string;
+          base64Data?: string;
+          solveWithAI?: boolean;
+          preferredModel?: string;
+        };
+
+      // Accept a list of pages, or the legacy single-file body.
+      const requestedFiles = Array.isArray(files)
+        ? files
+        : [{ mimeType, base64Data }];
 
       const allowedMimeTypes = [
         'image/png',
@@ -603,7 +610,17 @@ export function createApiApp() {
         'image/webp',
         'application/pdf',
       ];
-      if (!mimeType || !allowedMimeTypes.includes(mimeType)) {
+      if (requestedFiles.length === 0 || requestedFiles.length > 20) {
+        res.status(400).json({
+          error: 'Vui lòng chọn từ 1 đến 20 file ảnh/PDF cho một đề.',
+        });
+        return;
+      }
+      if (
+        requestedFiles.some(
+          (f) => !f?.mimeType || !allowedMimeTypes.includes(f.mimeType)
+        )
+      ) {
         res.status(400).json({
           error:
             'Định dạng file không hỗ trợ. Chỉ chấp nhận PNG, JPG, WEBP hoặc PDF.',
@@ -611,16 +628,25 @@ export function createApiApp() {
         return;
       }
 
-      if (!base64Data || base64Data.length > 14_000_000) {
+      const totalBase64Length = requestedFiles.reduce(
+        (sum, f) => sum + (f.base64Data?.length ?? 0),
+        0
+      );
+      if (
+        requestedFiles.some((f) => !f.base64Data) ||
+        totalBase64Length > 14_000_000
+      ) {
         res.status(400).json({
-          error: 'File rỗng hoặc vượt quá giới hạn dung lượng 10MB.',
+          error: 'File rỗng hoặc tổng dung lượng vượt quá giới hạn 10MB.',
         });
         return;
       }
 
       const result = await adapter.parseHomeworkFromMedia({
-        mimeType,
-        base64Data,
+        files: requestedFiles.map((f) => ({
+          mimeType: f.mimeType as string,
+          base64Data: f.base64Data as string,
+        })),
         solveWithAI: Boolean(solveWithAI),
         preferredModel,
       });
@@ -640,7 +666,7 @@ export function createApiApp() {
       await logAIJob({
         taskType: 'ocr_parse',
         provider: adapter.providerName,
-        model: 'gemini-3.8-flash',
+        model: adapter.defaultModel,
         status: 'failed',
       });
       res.status(500).json({
@@ -710,7 +736,7 @@ export function createApiApp() {
       await logAIJob({
         taskType: 'essay_grade',
         provider: adapter.providerName,
-        model: 'gemini-3.8-flash',
+        model: adapter.defaultModel,
         status: 'failed',
       });
       res.status(500).json({

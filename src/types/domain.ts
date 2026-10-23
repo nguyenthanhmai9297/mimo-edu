@@ -111,7 +111,25 @@ export interface HomeworkQuestion {
   // Type 5: essay
   rubric?: string;
   sampleSolution?: RichTextContent;
+  // Teacher-only note set by AI import when the result needs a manual check
+  aiReviewNote?: string;
+  // Curriculum metadata from imported question sets (e.g. MimoEDU), for
+  // practice by topic/skill/level and error statistics later on
+  sourceId?: string;
+  topicId?: string;
+  topicName?: string;
+  skillId?: string;
+  level?: PracticeLevel;
 }
+
+export type PracticeLevel = 'nhan_biet' | 'thong_hieu' | 'van_dung' | 'thu_thach';
+
+export const PRACTICE_LEVEL_LABELS: Record<PracticeLevel, string> = {
+  nhan_biet: 'Nhận biết',
+  thong_hieu: 'Thông hiểu',
+  van_dung: 'Vận dụng',
+  thu_thach: 'Thử thách',
+};
 
 export interface AdminAllowlistEntry {
   id: string; // email

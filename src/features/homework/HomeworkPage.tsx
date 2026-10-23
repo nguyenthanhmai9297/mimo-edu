@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import {
   ArrowDown,
+  AlertTriangle,
   ArrowUp,
+  CheckCircle2,
   Copy,
   Edit3,
   Eye,
-  FileUp,
+  FileJson,
+  FileText,
   Plus,
   Save,
   Sparkles,
@@ -16,6 +19,19 @@ import { useAppContext } from '../../app/providers';
 import { MathRichEditor } from '../../components/editor/MathRichEditor';
 import { RichContentRenderer } from '../../components/editor/RichContentRenderer';
 import {
+  AIImportModal,
+  ExtractedHomework,
+  FigureCropInfo,
+  SourceFile,
+} from './AIImportModal';
+import { FigureRecropModal } from './FigureRecropModal';
+import { cropFigure, NormalizedBox } from './figureCrop';
+import {
+  FigureCropContext,
+  FigureCropContextValue,
+} from '../../components/editor/FigureCropContext';
+import { SourceDocumentPanel } from './SourceDocumentPanel';
+import {
   deleteDraftHomework,
   duplicateHomework,
   saveHomework,
@@ -24,10 +40,15 @@ import {
   ChoiceOption,
   Homework,
   HomeworkQuestion,
+  PRACTICE_LEVEL_LABELS,
+  PracticeLevel,
   QuestionType,
   TrueFalseStatement,
 } from '../../types/domain';
 import { createRichTextFromPlain } from '../../utils/gradingEngine';
+import { homeworkImportSchema } from '../../schemas/validation';
+import { buildHomeworkFromMimo, isMimoDataset, MimoDataset } from './mimoImport';
+import { MimoImportModal } from './MimoImportModal';
 
 const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
   single_choice: '1. Trắc nghiệm 1 đáp án',
@@ -124,14 +145,66 @@ export const HomeworkPage: React.FC = () => {
 
   // AI Upload Modal State
   const [aiModalOpen, setAiModalOpen] = useState(false);
-  const [aiFileName, setAiFileName] = useState('');
-  const [aiMimeType, setAiMimeType] = useState('');
-  const [aiBase64, setAiBase64] = useState('');
-  const [aiSolveToggle, setAiSolveToggle] = useState(true);
-  const [aiLoading, setAiLoading] = useState(false);
-  const [aiError, setAiError] = useState<string | null>(null);
+  // Original exam pages shown beside the editor while reviewing AI output
+  const [sourceFiles, setSourceFiles] = useState<SourceFile[]>([]);
+  const [showSource, setShowSource] = useState(true);
+
+  // Figures cropped from source pages during AI import, keyed by image URL
+  const [figureCrops, setFigureCrops] = useState<Record<string, FigureCropInfo>>({});
+  const [recropRequest, setRecropRequest] = useState<{
+    url: string;
+    resolve: (newUrl: string | null) => void;
+  } | null>(null);
+  const [confirmPublish, setConfirmPublish] = useState(false);
+
+  const clearSourceFiles = () => {
+    sourceFiles.forEach((f) => URL.revokeObjectURL(f.objectUrl));
+    setSourceFiles([]);
+    setFigureCrops({});
+  };
+
+  const figureCropContext: FigureCropContextValue = {
+    canRecrop: (url) => {
+      const info = figureCrops[url];
+      return Boolean(info && sourceFiles.some((f) => f.id === info.sourceId));
+    },
+    recrop: (url) =>
+      new Promise((resolve) => setRecropRequest({ url, resolve })),
+  };
+
+  const finishRecrop = async (box: NormalizedBox | null) => {
+    if (!recropRequest) return;
+    const { url, resolve } = recropRequest;
+    setRecropRequest(null);
+    const info = figureCrops[url];
+    const page = info && sourceFiles.find((f) => f.id === info.sourceId);
+    if (!box || !info || !page) {
+      resolve(null);
+      return;
+    }
+    try {
+      const newUrl = await cropFigure(page.objectUrl, box);
+      setFigureCrops((prev) => ({ ...prev, [newUrl]: { sourceId: info.sourceId, box } }));
+      resolve(newUrl);
+    } catch {
+      resolve(null);
+    }
+  };
+
+  const pendingReviewCount = questions.filter((q) => q.aiReviewNote).length;
+
+  const markQuestionReviewed = (idx: number) => {
+    setQuestions((prev) =>
+      prev.map((q, i) => {
+        if (i !== idx) return q;
+        const { aiReviewNote: _reviewed, ...rest } = q;
+        return rest;
+      })
+    );
+  };
 
   const startNewHomework = () => {
+    clearSourceFiles();
     setEditingHw(null);
     setTitle('');
     setDescription('');
@@ -145,6 +218,7 @@ export const HomeworkPage: React.FC = () => {
   };
 
   const openEditHomework = (hw: Homework) => {
+    clearSourceFiles();
     setEditingHw(hw);
     setTitle(hw.title);
     setDescription(hw.description || '');
@@ -201,6 +275,14 @@ export const HomeworkPage: React.FC = () => {
 
   const handleSave = async (status: 'draft' | 'published') => {
     setErrorMsg(null);
+    if (status === 'published' && pendingReviewCount > 0 && !confirmPublish) {
+      setConfirmPublish(true);
+      setErrorMsg(
+        `Còn ${pendingReviewCount} câu AI đánh dấu "Cần kiểm tra". Hãy soát lại, hoặc bấm "Xuất Bản Đề" lần nữa để vẫn xuất bản.`
+      );
+      return;
+    }
+    setConfirmPublish(false);
     if (!title.trim()) {
       setErrorMsg('Vui lòng nhập tiêu đề bài tập về nhà.');
       return;
@@ -230,6 +312,7 @@ export const HomeworkPage: React.FC = () => {
         },
         editingHw || undefined
       );
+      clearSourceFiles();
       setEditorMode(false);
     } catch (err) {
       setErrorMsg(
@@ -240,135 +323,96 @@ export const HomeworkPage: React.FC = () => {
     }
   };
 
-  const handleFileSelectForAI = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setAiError(null);
-    if (file.size > 10 * 1024 * 1024) {
-      setAiError('Dung lượng file vượt quá giới hạn 10MB.');
-      return;
-    }
+  const [importError, setImportError] = useState<string | null>(null);
 
-    setAiFileName(file.name);
-    const ext = file.name.split('.').pop()?.toLowerCase() || '';
-    let resolvedMime = file.type;
-    if (!resolvedMime || resolvedMime === 'image/jpg') {
-      if (ext === 'pdf') resolvedMime = 'application/pdf';
-      else if (ext === 'png') resolvedMime = 'image/png';
-      else if (ext === 'webp') resolvedMime = 'image/webp';
-      else resolvedMime = 'image/jpeg';
-    }
+  const [mimoDataset, setMimoDataset] = useState<MimoDataset | null>(null);
 
-    const reader = new FileReader();
-    reader.onload = () => {
-      if (typeof reader.result !== 'string') return;
-      const dataUrl = reader.result;
-
-      // Optimize large images (> 1.8MB) via Canvas so they stay well under Serverless 4.5MB limits
-      if (resolvedMime.startsWith('image/') && file.size > 1.8 * 1024 * 1024) {
-        const img = new Image();
-        img.onload = () => {
-          const maxDim = 1800;
-          let { width, height } = img;
-          if (width > maxDim || height > maxDim) {
-            if (width > height) {
-              height = Math.round((height * maxDim) / width);
-              width = maxDim;
-            } else {
-              width = Math.round((width * maxDim) / height);
-              height = maxDim;
-            }
-          }
-          const canvas = document.createElement('canvas');
-          canvas.width = width;
-          canvas.height = height;
-          const ctx = canvas.getContext('2d');
-          if (ctx) {
-            ctx.drawImage(img, 0, 0, width, height);
-            const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.85);
-            setAiMimeType('image/jpeg');
-            setAiBase64(compressedDataUrl.split(',')[1] || '');
-            return;
-          }
-          setAiMimeType(resolvedMime);
-          setAiBase64(dataUrl.split(',')[1] || '');
-        };
-        img.src = dataUrl;
-      } else {
-        setAiMimeType(resolvedMime);
-        setAiBase64(dataUrl.split(',')[1] || '');
-      }
-    };
-    reader.readAsDataURL(file);
+  const openImportedDraft = (draft: {
+    title: string;
+    description?: string;
+    grade?: string;
+    answerSource: 'teacher' | 'ai';
+    aiSolverEnabled: boolean;
+    questions: HomeworkQuestion[];
+  }) => {
+    clearSourceFiles();
+    setEditingHw(null);
+    setTitle(draft.title);
+    setDescription(draft.description || '');
+    setGrade(draft.grade || 'Khối 5');
+    setAnswerSource(draft.answerSource);
+    setAiSolverEnabled(draft.aiSolverEnabled);
+    setQuestions(draft.questions.map((q, i) => ({ ...q, order: i + 1 })));
+    setStudentPreviewMode(false);
+    setErrorMsg(null);
+    setEditorMode(true);
   };
 
-  const handleRunAIExtraction = async () => {
-    if (!aiBase64 || !aiMimeType) {
-      setAiError('Vui lòng chọn file ảnh (PNG/JPG/WEBP) hoặc PDF đề Toán.');
+  const handleImportFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    e.target.value = '';
+    if (!file) return;
+    setImportError(null);
+    let json: unknown;
+    try {
+      json = JSON.parse(await file.text());
+    } catch {
+      setImportError('Không đọc được file. Hãy chọn đúng file đề .json.');
       return;
     }
-    setAiError(null);
-    setAiLoading(true);
-    try {
-      const res = await fetch('/api/ai/parse-homework', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          mimeType: aiMimeType,
-          base64Data: aiBase64,
-          solveWithAI: aiSolveToggle,
-        }),
-      });
-
-      const rawText = await res.text();
-      let data: {
-        error?: string;
-        title?: string;
-        description?: string;
-        grade?: string;
-        questions?: HomeworkQuestion[];
-      };
-      try {
-        data = JSON.parse(rawText);
-      } catch {
-        if (res.status === 404 || rawText.includes('The page could not be found')) {
-          throw new Error(
-            'Không tìm thấy API Server (/api/ai/parse-homework). Nếu bạn đang chạy trên Vercel, hãy cập nhật bản code mới nhất có thư mục /api và vercel.json rồi Redeploy.'
-          );
-        }
-        if (res.status === 413 || rawText.includes('Request Entity Too Large')) {
-          throw new Error(
-            'Dung lượng ảnh/PDF quá lớn đối với giới hạn Serverless. Vui lòng chọn file nhỏ hơn 4MB.'
-          );
-        }
-        throw new Error(
-          `Máy chủ trả về phản hồi không hợp lệ (HTTP ${res.status}). Vui lòng kiểm tra cấu hình GEMINI_API_KEY trên Server.`
-        );
-      }
-
-      if (!res.ok) {
-        throw new Error(data.error || 'AI không thể bóc tách file này.');
-      }
-
-      // Open extracted homework in editor preview for teacher verification before saving!
-      setEditingHw(null);
-      setTitle(data.title || 'Đề Toán trích xuất từ AI');
-      setDescription(data.description || '');
-      setGrade(data.grade || 'Khối 5');
-      setAnswerSource(aiSolveToggle ? 'ai' : 'teacher');
-      setAiSolverEnabled(aiSolveToggle);
-      setQuestions(data.questions || []);
-      setAiModalOpen(false);
-      setEditorMode(true);
-    } catch (err) {
-      setAiError(
-        err instanceof Error
-          ? err.message
-          : 'Chuyển đổi đề thất bại. Vui lòng thử lại.'
-      );
-    } finally {
-      setAiLoading(false);
+    // MimoEDU question sets: let the teacher choose levels first
+    if (isMimoDataset(json)) {
+      setMimoDataset(json);
+      return;
     }
+    const parsed = homeworkImportSchema.safeParse(json);
+    if (!parsed.success) {
+      setImportError('File không đúng định dạng đề của hệ thống hoặc bộ câu hỏi MimoEDU.');
+      return;
+    }
+    openImportedDraft({
+      ...parsed.data,
+      questions: parsed.data.questions as unknown as HomeworkQuestion[],
+    });
+  };
+
+  const handleMimoConfirm = (levels: PracticeLevel[]) => {
+    if (!mimoDataset) return;
+    const draft = buildHomeworkFromMimo(mimoDataset, levels);
+    setMimoDataset(null);
+    if (draft.questions.length === 0) {
+      setImportError('Không có câu hỏi nào thuộc dạng hệ thống hỗ trợ trong các mức đã chọn.');
+      return;
+    }
+    openImportedDraft({ ...draft, answerSource: 'teacher', aiSolverEnabled: false });
+    if (draft.skippedIds.length > 0) {
+      setErrorMsg(
+        `Đã bỏ qua ${draft.skippedIds.length} câu thuộc dạng chưa hỗ trợ: ${draft.skippedIds.join(', ')}.`
+      );
+    }
+  };
+
+  const handleExtracted = (
+    data: ExtractedHomework,
+    solveWithAI: boolean,
+    sources: SourceFile[],
+    crops: Record<string, FigureCropInfo>
+  ) => {
+    // Open extracted homework in the editor for teacher verification before saving
+    clearSourceFiles();
+    setSourceFiles(sources);
+    setFigureCrops(crops);
+    setShowSource(true);
+    setEditingHw(null);
+    setTitle(data.title || 'Đề Toán trích xuất từ AI');
+    setDescription(data.description || '');
+    setGrade(data.grade || 'Khối 5');
+    setAnswerSource(solveWithAI ? 'ai' : 'teacher');
+    setAiSolverEnabled(solveWithAI);
+    setQuestions(data.questions || []);
+    setStudentPreviewMode(false);
+    setErrorMsg(null);
+    setEditorMode(true);
   };
 
   if (editorMode) {
@@ -377,6 +421,7 @@ export const HomeworkPage: React.FC = () => {
     );
 
     return (
+      <FigureCropContext.Provider value={figureCropContext}>
       <div className="space-y-6">
         {/* Top Editor Action Bar */}
         <div className="cartoon-card sticky top-16 z-10 flex flex-wrap items-center justify-between gap-4 bg-amber-100 p-4">
@@ -389,6 +434,15 @@ export const HomeworkPage: React.FC = () => {
               <span className="font-mono font-bold">{questions.length}</span> ·
               Tổng điểm:{' '}
               <span className="font-mono font-bold">{totalPoints} điểm</span> ·
+              {pendingReviewCount > 0 && (
+                <>
+                  {' '}
+                  <span className="font-bold text-amber-700">
+                    {pendingReviewCount} câu cần kiểm tra
+                  </span>{' '}
+                  ·
+                </>
+              )}
               Nguồn đáp án:{' '}
               <span className="font-bold">
                 {answerSource === 'ai' ? 'AI Đề xuất (Giáo viên duyệt)' : 'Giáo viên biên soạn'}
@@ -397,6 +451,16 @@ export const HomeworkPage: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
+            {sourceFiles.length > 0 && !showSource && (
+              <button
+                type="button"
+                onClick={() => setShowSource(true)}
+                className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-slate-900"
+              >
+                <FileText className="h-4 w-4" />
+                Hiện đề gốc
+              </button>
+            )}
             <button
               type="button"
               onClick={() => setStudentPreviewMode((p) => !p)}
@@ -433,7 +497,10 @@ export const HomeworkPage: React.FC = () => {
 
             <button
               type="button"
-              onClick={() => setEditorMode(false)}
+              onClick={() => {
+                clearSourceFiles();
+                setEditorMode(false);
+              }}
               className="cartoon-button rounded-xl bg-slate-100 px-3 py-2 text-xs font-bold text-slate-700"
             >
               Đóng
@@ -541,7 +608,20 @@ export const HomeworkPage: React.FC = () => {
           </div>
         ) : (
           /* Teacher Authoring Mode */
-          <div className="space-y-6">
+          <div
+            className={
+              sourceFiles.length > 0 && showSource
+                ? 'grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]'
+                : ''
+            }
+          >
+          {sourceFiles.length > 0 && showSource && (
+            <SourceDocumentPanel
+              files={sourceFiles}
+              onHide={() => setShowSource(false)}
+            />
+          )}
+          <div className="min-w-0 space-y-6">
             {/* Metadata Card */}
             <div className="cartoon-card p-6">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
@@ -612,13 +692,44 @@ export const HomeworkPage: React.FC = () => {
 
             {/* Question List */}
             {questions.map((q, qIdx) => (
-              <div key={q.id} className="cartoon-card p-6">
+              <div
+                key={q.id}
+                className={`cartoon-card p-6 ${q.aiReviewNote ? 'ring-4 ring-amber-300' : ''}`}
+              >
+                {q.aiReviewNote && (
+                  <div className="mb-4 flex flex-wrap items-start justify-between gap-3 rounded-xl border-2 border-amber-400 bg-amber-50 px-3.5 py-2.5">
+                    <div className="flex items-start gap-2 text-xs text-amber-900">
+                      <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+                      <div>
+                        <div className="font-extrabold">Cần kiểm tra</div>
+                        <div>{q.aiReviewNote}</div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => markQuestionReviewed(qIdx)}
+                      className="flex items-center gap-1 rounded-lg border-2 border-amber-500 bg-white px-2.5 py-1 text-xs font-extrabold text-amber-800 hover:bg-amber-100"
+                    >
+                      <CheckCircle2 className="h-3.5 w-3.5" />
+                      Đã kiểm tra
+                    </button>
+                  </div>
+                )}
                 {/* Question Header */}
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b-2 border-slate-200 pb-3">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="rounded-xl border-2 border-slate-900 bg-amber-300 px-3 py-1 font-display text-sm font-extrabold text-slate-900">
                       Câu {qIdx + 1}
                     </span>
+
+                    {(q.level || q.skillId) && (
+                      <span
+                        className="rounded-lg bg-indigo-50 px-2 py-1 text-[11px] font-bold text-indigo-800"
+                        title={[q.topicName, q.skillId, q.sourceId].filter(Boolean).join(' · ')}
+                      >
+                        {[q.level && PRACTICE_LEVEL_LABELS[q.level], q.skillId].filter(Boolean).join(' · ')}
+                      </span>
+                    )}
 
                     <select
                       value={q.type}
@@ -934,6 +1045,21 @@ export const HomeworkPage: React.FC = () => {
                       />
                     </div>
                   )}
+
+                  {/* Explanation for auto-graded questions, released with solutions */}
+                  {q.type !== 'essay' && (
+                    <div className="mt-3">
+                      <MathRichEditor
+                        compact
+                        label="Lời giải (học sinh xem sau khi chấm):"
+                        placeholder="Không bắt buộc – giải thích vì sao chọn đáp án này"
+                        value={q.sampleSolution || createRichTextFromPlain('')}
+                        onChange={(nextSol) =>
+                          updateQuestionAt(qIdx, { ...q, sampleSolution: nextSol })
+                        }
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -960,8 +1086,22 @@ export const HomeworkPage: React.FC = () => {
               </div>
             </div>
           </div>
+          </div>
         )}
       </div>
+      {recropRequest && (() => {
+        const info = figureCrops[recropRequest.url];
+        const page = info && sourceFiles.find((f) => f.id === info.sourceId);
+        return page ? (
+          <FigureRecropModal
+            pageUrl={page.objectUrl}
+            initialBox={info.box}
+            onConfirm={(box) => void finishRecrop(box)}
+            onCancel={() => void finishRecrop(null)}
+          />
+        ) : null;
+      })()}
+      </FigureCropContext.Provider>
     );
   }
 
@@ -971,7 +1111,7 @@ export const HomeworkPage: React.FC = () => {
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <h1 className="font-display text-2xl font-extrabold text-slate-900">
-            Kho Bài Tập Về Nhà & Bóc Tách Đề Bằng AI
+            Kho học liệu Toán 3
           </h1>
           <p className="text-sm text-slate-600">
             Soạn đề Toán thủ công với công thức KaTeX và hình học phẳng, hoặc
@@ -982,10 +1122,7 @@ export const HomeworkPage: React.FC = () => {
         <div className="flex flex-wrap items-center gap-3">
           <button
             type="button"
-            onClick={() => {
-              setAiError(null);
-              setAiModalOpen(true);
-            }}
+            onClick={() => setAiModalOpen(true)}
             className="cartoon-button flex items-center gap-2 rounded-xl bg-amber-300 px-4 py-2.5 text-xs font-extrabold text-slate-900 whitespace-nowrap"
           >
             <Sparkles className="h-4 w-4" />
@@ -1000,14 +1137,34 @@ export const HomeworkPage: React.FC = () => {
             <Plus className="h-4 w-4" />
             Soạn BTVN Thủ Công
           </button>
+
+          <label
+            className="cartoon-button flex cursor-pointer items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-xs font-extrabold text-slate-900 whitespace-nowrap"
+            title="Mở đề đã soạn sẵn dạng file .json"
+          >
+            <FileJson className="h-4 w-4" />
+            Nhập đề từ file
+            <input
+              type="file"
+              accept="application/json,.json"
+              onChange={handleImportFile}
+              className="hidden"
+            />
+          </label>
         </div>
       </div>
+
+      {importError && (
+        <div className="cartoon-card bg-rose-50 p-4 text-xs font-bold text-rose-700">
+          {importError}
+        </div>
+      )}
 
       {/* Homework List */}
       {homeworkList.length === 0 ? (
         <div className="cartoon-card p-12 text-center">
           <p className="font-display text-base font-bold text-slate-800">
-            Chưa có đề BTVN nào trong kho
+            Kho học liệu Toán 3 chưa có đề nào
           </p>
           <p className="mt-1 text-xs text-slate-500">
             Hãy nhấn &ldquo;Soạn BTVN Thủ Công&rdquo; hoặc &ldquo;Upload Ảnh/PDF
@@ -1090,94 +1247,19 @@ export const HomeworkPage: React.FC = () => {
         </div>
       )}
 
-      {/* AI Upload PDF / Image Modal */}
-      {aiModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
-          <div className="cartoon-card w-full max-w-lg bg-white p-6">
-            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-              <div className="flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-amber-600" />
-                <h2 className="font-display text-lg font-extrabold text-slate-900">
-                  Upload Ảnh / PDF Để Tạo BTVN Bằng AI
-                </h2>
-              </div>
-              <button
-                type="button"
-                onClick={() => setAiModalOpen(false)}
-                className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            </div>
-
-            <div className="mt-4 space-y-4">
-              {aiError && (
-                <div className="rounded-xl border border-rose-300 bg-rose-50 p-3 text-xs font-bold text-rose-700">
-                  {aiError}
-                </div>
-              )}
-
-              <label className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-800 bg-amber-50/60 p-6 text-center hover:bg-amber-100/50">
-                <FileUp className="h-8 w-8 text-blue-600" />
-                <span className="mt-2 font-display text-sm font-extrabold text-slate-900">
-                  {aiFileName || 'Nhấn để chọn file Ảnh (PNG, JPG) hoặc PDF đề Toán'}
-                </span>
-                <span className="mt-1 text-xs text-slate-500">
-                  Giới hạn tối đa 10MB · Xử lý qua AI Adapter phía Server
-                </span>
-                <input
-                  type="file"
-                  accept="image/png,image/jpeg,image/webp,application/pdf"
-                  onChange={handleFileSelectForAI}
-                  className="hidden"
-                />
-              </label>
-
-              <div className="rounded-xl border-2 border-slate-800 bg-slate-50 p-3.5">
-                <label className="flex cursor-pointer items-start gap-2.5">
-                  <input
-                    type="checkbox"
-                    checked={aiSolveToggle}
-                    onChange={(e) => setAiSolveToggle(e.target.checked)}
-                    className="mt-0.5 h-4 w-4"
-                  />
-                  <div>
-                    <div className="text-xs font-extrabold text-slate-900">
-                      Bật chế độ &ldquo;AI giải đề&rdquo;
-                    </div>
-                    <p className="mt-0.5 text-xs text-slate-600">
-                      Nếu bật, AI sẽ tự giải và điền đáp án đề xuất kèm lời giải
-                      tham khảo (ghi nhận nguồn đáp án là AI). Nếu tắt, AI chỉ
-                      chuyển đổi nội dung đề để giáo viên tự nhập đáp án chuẩn.
-                    </p>
-                  </div>
-                </label>
-              </div>
-
-              <div className="flex justify-end gap-3 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setAiModalOpen(false)}
-                  className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
-                >
-                  Hủy
-                </button>
-                <button
-                  type="button"
-                  onClick={handleRunAIExtraction}
-                  disabled={aiLoading}
-                  className="cartoon-button flex items-center gap-1.5 rounded-xl bg-blue-600 px-5 py-2 text-xs font-extrabold text-white"
-                >
-                  <Sparkles className="h-4 w-4" />
-                  {aiLoading
-                    ? 'AI đang đọc & phân loại câu hỏi...'
-                    : 'Nhận Diện & Xem Trước Đề'}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      {mimoDataset && (
+        <MimoImportModal
+          dataset={mimoDataset}
+          onCancel={() => setMimoDataset(null)}
+          onConfirm={handleMimoConfirm}
+        />
       )}
+
+      <AIImportModal
+        open={aiModalOpen}
+        onClose={() => setAiModalOpen(false)}
+        onExtracted={handleExtracted}
+      />
     </div>
   );
 };

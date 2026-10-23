@@ -376,8 +376,8 @@ export const LandingPage: React.FC = () => {
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
                 <span>
-                  Chuyển phiếu bài tập giấy hoặc file PDF thành ngân hàng câu
-                  hỏi số hóa chỉ trong vài giây nhờ AI.
+                  Chuyển phiếu bài tập giấy hoặc file PDF thành học liệu Toán 3
+                  số hóa chỉ trong vài giây nhờ AI.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">

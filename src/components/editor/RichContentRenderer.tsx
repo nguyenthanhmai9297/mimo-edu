@@ -2,6 +2,7 @@ import React from 'react';
 import katex from 'katex';
 import { Image as ImageIcon } from 'lucide-react';
 import { RichTextContent } from '../../types/domain';
+import { parseInlineSegments } from '../../utils/inlineMarks';
 import { GeometryRenderer } from './GeometryRenderer';
 
 interface RichContentRendererProps {
@@ -10,38 +11,39 @@ interface RichContentRendererProps {
 }
 
 /**
- * Renders text that may contain inline $...$ LaTeX segments safely using KaTeX.
+ * Renders text that may contain inline $...$ LaTeX (via KaTeX) and **bold** / *italic* marks.
  */
 function renderInlineTextWithMath(text: string): React.ReactNode[] {
   if (!text) return [];
-  const parts = text.split(/(\$[^$]+\$)/g);
-  return parts.map((part, idx) => {
-    if (part.startsWith('$') && part.endsWith('$') && part.length > 2) {
-      const latex = part.slice(1, -1);
-      try {
-        const html = katex.renderToString(latex, {
-          throwOnError: false,
-          displayMode: false,
-        });
-        return (
-          <span
-            key={idx}
-            className="mx-0.5 inline-block align-middle"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        );
-      } catch {
-        return (
-          <code
-            key={idx}
-            className="rounded bg-amber-100 px-1 font-mono text-xs text-slate-900"
-          >
-            {latex}
-          </code>
-        );
-      }
+  return parseInlineSegments(text).map((seg, idx) => {
+    if (seg.kind === 'text') {
+      if (seg.bold && seg.italic) return <strong key={idx}><em>{seg.text}</em></strong>;
+      if (seg.bold) return <strong key={idx}>{seg.text}</strong>;
+      if (seg.italic) return <em key={idx}>{seg.text}</em>;
+      return <React.Fragment key={idx}>{seg.text}</React.Fragment>;
     }
-    return <React.Fragment key={idx}>{part}</React.Fragment>;
+    try {
+      const html = katex.renderToString(seg.latex, {
+        throwOnError: false,
+        displayMode: false,
+      });
+      return (
+        <span
+          key={idx}
+          className="mx-0.5 inline-block align-middle"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      );
+    } catch {
+      return (
+        <code
+          key={idx}
+          className="rounded bg-amber-100 px-1 font-mono text-xs text-slate-900"
+        >
+          {seg.latex}
+        </code>
+      );
+    }
   });
 }
 

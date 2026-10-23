@@ -44,7 +44,7 @@
     │   ├── dashboard/            # AdminDashboard (Thống kê, Sắp đến hạn, Nút tạo dữ liệu mẫu)
     │   ├── classes/              # Quản lý Lớp học (CRUD, Lưu trữ)
     │   ├── students/             # Quản lý Học sinh & Cấp mã 6 ký tự
-    │   ├── homework/             # Ngân hàng BTVN (5 dạng câu hỏi Toán + AI Parse)
+    │   ├── homework/             # Kho học liệu Toán 3 (5 dạng câu hỏi Toán + AI Parse)
     │   ├── assignments/          # Giao bài tập & Tạo Snapshot đề bài
     │   ├── grading/              # Thu bài, Chấm điểm tự luận, AI gợi ý nhận xét
     │   ├── comments/             # Nhận xét định kỳ cho Phụ huynh
@@ -70,10 +70,10 @@ npm install
 ### Bước 2: Cấu hình biến môi trường (`.env`)
 Sao chép `.env.example` thành `.env` và cấu hình các biến môi trường phía server:
 ```dotenv
-# Khóa API Gemini (chỉ lưu phía server, tuyệt đối không dùng tiền tố VITE_)
-GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-AI_PROVIDER="gemini"
-AI_MODEL="gemini-3.8-flash"
+# Khóa API Claude (chỉ lưu phía server, tuyệt đối không dùng tiền tố VITE_)
+ANTHROPIC_API_KEY="YOUR_ANTHROPIC_API_KEY"
+AI_PROVIDER="anthropic"          # hoặc "gemini" (cần GEMINI_API_KEY)
+AI_MODEL="claude-sonnet-5-5"
 
 # Khóa bí mật ký HMAC Session Token cho Cổng Học Sinh
 STUDENT_SESSION_SECRET="lop-chung-toi-hmac-secret-key-2025"
@@ -109,9 +109,9 @@ npm test
 1. Đẩy mã nguồn lên GitHub repository.
 2. Tạo project mới trên **Vercel**, kết nối với repository.
 3. Thiết lập các biến môi trường trong **Vercel Project Settings > Environment Variables**:
-   - `GEMINI_API_KEY`
-   - `AI_PROVIDER` (`gemini`)
-   - `AI_MODEL` (`gemini-3.8-flash`)
+   - `ANTHROPIC_API_KEY`
+   - `AI_PROVIDER` (`anthropic`)
+   - `AI_MODEL` (`claude-sonnet-5-5`)
    - `STUDENT_SESSION_SECRET`
    - `INITIAL_ADMIN_EMAIL`
 4. Thêm domain Vercel vào **Firebase Console > Authentication > Settings > Authorized domains** để Google Sign-In hoạt động.

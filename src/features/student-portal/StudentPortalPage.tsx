@@ -34,11 +34,21 @@ import {
   GameCategory,
   HomeworkQuestion,
   MathGame,
+  RichTextContent,
   StudentQuestionAnswer,
 } from '../../types/domain';
 import { createRichTextFromPlain } from '../../utils/gradingEngine';
 
 type PortalTab = 'overview' | 'homework' | 'comments' | 'games' | 'profile';
+
+/** True when rich content has something to show (not just an empty paragraph). */
+function hasRichContent(content?: RichTextContent): boolean {
+  return Boolean(
+    content?.blocks.some((b) =>
+      b.type === 'paragraph' ? b.text.trim() !== '' : b.type === 'list' ? b.items.some((i) => i.trim()) : true
+    )
+  );
+}
 
 export const StudentPortalPage: React.FC = () => {
   const navigate = useNavigate();
@@ -438,7 +448,9 @@ export const StudentPortalPage: React.FC = () => {
                 { id: 'overview', label: 'Tổng quan', icon: Home },
                 {
                   id: 'homework',
-                  label: `Bài tập (${pendingAssignments.length})`,
+                  label: `Luyện Toán cùng Mimo (${pendingAssignments.length})`,
+                  // Tablet widths can't fit the full name alongside the other tabs
+                  shortLabel: `Luyện Toán (${pendingAssignments.length})`,
                   icon: BookOpen,
                 },
                 { id: 'comments', label: 'Nhận xét', icon: MessageSquareHeart },
@@ -463,7 +475,14 @@ export const StudentPortalPage: React.FC = () => {
                   }`}
                 >
                   <Icon className="h-4 w-4" />
-                  <span>{t.label}</span>
+                  {'shortLabel' in t ? (
+                    <>
+                      <span className="lg:hidden">{t.shortLabel}</span>
+                      <span className="hidden lg:inline">{t.label}</span>
+                    </>
+                  ) : (
+                    <span>{t.label}</span>
+                  )}
                 </button>
               );
             })}
@@ -526,7 +545,7 @@ export const StudentPortalPage: React.FC = () => {
                     onClick={() => setActiveTab('homework')}
                     className="text-xs font-bold text-blue-700 hover:underline"
                   >
-                    Tất cả bài tập →
+                    Vào Luyện Toán cùng Mimo →
                   </button>
                 </div>
 
@@ -991,7 +1010,7 @@ export const StudentPortalPage: React.FC = () => {
                                 {qResult.teacherComment}
                               </div>
                             )}
-                            {keyQuestionWithSolution?.sampleSolution && (
+                            {hasRichContent(keyQuestionWithSolution?.sampleSolution) && (
                               <div>
                                 <strong className="text-emerald-950">
                                   Lời giải tham khảo:
@@ -999,7 +1018,7 @@ export const StudentPortalPage: React.FC = () => {
                                 <div className="mt-1">
                                   <RichContentRenderer
                                     content={
-                                      keyQuestionWithSolution.sampleSolution
+                                      keyQuestionWithSolution!.sampleSolution
                                     }
                                   />
                                 </div>
@@ -1017,11 +1036,14 @@ export const StudentPortalPage: React.FC = () => {
               <div className="space-y-5">
                 <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
                   <div>
-                    <h1 className="font-display text-2xl font-extrabold text-slate-900">
-                      Danh Sách Bài Tập Về Nhà
+                    <h1 className="font-display text-2xl font-extrabold uppercase text-slate-900">
+                      Luyện Toán cùng Mimo
                     </h1>
-                    <p className="text-xs text-slate-600">
-                      Bấm vào từng bài tập để làm bài, lưu nháp hoặc xem điểm và
+                    <p className="text-sm font-bold text-blue-700">
+                      Khám phá kiến thức – Rèn luyện tư duy – Chinh phục Toán học!
+                    </p>
+                    <p className="mt-1 text-xs text-slate-600">
+                      Bấm vào từng bài để làm bài, lưu nháp hoặc xem điểm và
                       lời giải sau khi chấm.
                     </p>
                   </div>
@@ -1500,7 +1522,8 @@ export const StudentPortalPage: React.FC = () => {
             { id: 'overview', label: 'Tổng quan', icon: Home },
             {
               id: 'homework',
-              label: `Bài tập${
+              // Short label: the mobile bottom bar has no room for the full name
+              label: `Luyện Toán${
                 pendingAssignments.length > 0
                   ? ` (${pendingAssignments.length})`
                   : ''

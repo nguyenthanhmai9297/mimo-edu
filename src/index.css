@@ -51,3 +51,27 @@
   overflow-y: hidden;
   padding: 0.5rem 0;
 }
+
+/* Single-surface question editor (Tiptap) */
+.tiptap-content p {
+  margin: 0.15rem 0;
+  line-height: 1.75;
+}
+.tiptap-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.tiptap-content ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+.tiptap-content p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: #94a3b8;
+  pointer-events: none;
+}
+.tiptap-content .ProseMirror-selectednode {
+  outline: none;
+}
