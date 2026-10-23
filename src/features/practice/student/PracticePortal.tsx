@@ -45,6 +45,13 @@ type Stage =
   | { name: 'result'; result: PracticeSubmitResponse; topicId: string; level: PracticeLevel; skillId: string | null };
 
 const LETTERS = 'ABCDEF';
+
+/** Topic card badges: open (published, not started), learning (has attempts), closed. */
+const TOPIC_STATUS = {
+  open: { label: 'Đã mở', className: 'bg-[#E3F7EA] text-[#1F7A4F]' },
+  learning: { label: 'Đang học', className: 'bg-[#EFE7FF] text-[#5B3FB8]' },
+  closed: { label: 'Chưa mở', className: 'bg-white text-[#5A6B9A]' },
+} as const;
 const PASS_RATIO = 0.8;
 
 /** Progress per topic from the student's recent attempts (latest 20 kept by the server). */
@@ -248,7 +255,7 @@ export const PracticePortal: React.FC = () => {
                   </span>
                   <span className="font-display text-[15px] leading-snug font-extrabold text-[#071A63]">{g.name}</span>
                   <span className={`mt-auto text-xs font-extrabold ${theme.text}`}>
-                    {g.topics.length} chuyên đề{open > 0 ? ` · ${open} đang mở` : ''}
+                    {g.topics.length} chuyên đề{open > 0 ? ` · ${open} đã mở` : ''}
                   </span>
                   {active && (
                     <span className="absolute -top-2 -right-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#FFD34E] text-[#071A63] shadow">
@@ -291,47 +298,55 @@ export const PracticePortal: React.FC = () => {
                   toTop();
                 };
 
+                const status = !open ? 'closed' : p ? 'learning' : 'open';
+                const badge = TOPIC_STATUS[status];
+
                 if (!open) {
                   return (
-                    <div key={t.id} className="flex min-h-[124px] flex-col rounded-3xl bg-[#EAF6FF] p-4 opacity-90" aria-disabled="true">
+                    <div key={t.id} className="flex min-h-[132px] flex-col rounded-3xl bg-[#F1F3FA] p-4" aria-disabled="true">
                       <div className="flex items-center justify-between gap-2">
                         <span className="rounded-full bg-white px-2.5 py-0.5 font-mono text-xs font-bold text-slate-500">{t.id}</span>
-                        <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-0.5 text-xs font-extrabold text-[#5A6B9A]">
-                          <Lock className="h-3 w-3" /> Sắp ra mắt
+                        <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-extrabold ${badge.className}`}>
+                          <Lock className="h-3.5 w-3.5" /> {badge.label}
                         </span>
                       </div>
                       <div className="mt-2 font-display text-base leading-snug font-extrabold text-[#5A6B9A]">{t.name}</div>
-                      <div className="mt-auto pt-3 text-xs font-bold text-[#8A9BC4]">Mimo đang chuẩn bị bài tập…</div>
+                      <div className="mt-auto pt-3 text-xs font-bold text-[#8A9BC4]">Cô đang chuẩn bị bài cho chuyên đề này</div>
                     </div>
                   );
                 }
 
-                // Open topics (currently N01) stand out with a glowing gradient frame
                 return (
                   <button
                     key={t.id}
                     type="button"
                     onClick={select}
-                    className="group rounded-3xl bg-gradient-to-r from-[#FFD34E] via-[#FF76B5] to-[#54C8FF] p-[3px] text-left shadow-[0_18px_40px_-16px_rgba(255,211,78,0.8)] transition duration-200 hover:-translate-y-1.5 sm:col-span-2 lg:col-span-1"
+                    className={`group flex min-h-[132px] flex-col rounded-3xl p-4 text-left ring-2 transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_40px_-18px_rgba(255,211,78,0.9)] focus-visible:ring-4 focus-visible:ring-[#FFD34E] focus-visible:outline-none ${groupTheme.soft} ${
+                      status === 'learning' ? 'ring-[#B49CFF]' : 'ring-white/70'
+                    }`}
                   >
-                    <div className="flex h-full min-h-[118px] flex-col rounded-[21px] bg-white p-4">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="rounded-full bg-[#EAF6FF] px-2.5 py-0.5 font-mono text-xs font-bold text-[#1267E9]">{t.id}</span>
-                        <span className="inline-flex items-center gap-1 rounded-full bg-[#FFF8E1] px-2.5 py-0.5 text-xs font-extrabold text-[#B7790A]">
-                          <Star className="h-3.5 w-3.5 fill-[#FFD34E] text-[#FFD34E]" /> Đang mở
-                        </span>
-                      </div>
-                      <div className="mt-2 font-display text-lg leading-snug font-extrabold text-[#071A63]">{t.name}</div>
-                      <div className="mt-auto pt-3">
-                        <div className="flex items-center justify-between text-xs font-extrabold">
-                          <span className="text-[#1267E9]">{total} câu hỏi</span>
-                          <span className="text-slate-500">{p ? `Vượt qua ${passed}/${availableLevels.length} mức` : 'Chưa luyện'}</span>
-                        </div>
-                        <ProgressBar value={availableLevels.length ? passed / availableLevels.length : 0} className="mt-1.5" />
-                        <span className="mt-3 inline-flex items-center gap-1 text-sm font-extrabold text-[#FF76B5] transition group-hover:gap-2">
-                          Khám phá ngay <ChevronRight className="h-4 w-4" />
-                        </span>
-                      </div>
+                    <div className="flex items-center justify-between gap-2">
+                      <span className={`rounded-full bg-gradient-to-r px-2.5 py-0.5 font-mono text-xs font-bold text-white ${groupTheme.gradient}`}>{t.id}</span>
+                      <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-extrabold ${badge.className}`}>
+                        {status === 'learning' ? <PlayCircle className="h-3.5 w-3.5" /> : <Star className="h-3.5 w-3.5" />} {badge.label}
+                      </span>
+                    </div>
+                    <div className="mt-2 font-display text-lg leading-snug font-extrabold text-[#071A63]">{t.name}</div>
+                    <div className="mt-auto pt-3">
+                      {status === 'learning' ? (
+                        <>
+                          <div className="flex items-center justify-between text-xs font-extrabold">
+                            <span className="text-[#6A4BE6]">Vượt qua {passed}/{availableLevels.length} mức</span>
+                            <span className="text-slate-500">{total} câu</span>
+                          </div>
+                          <ProgressBar value={availableLevels.length ? passed / availableLevels.length : 0} className="mt-1.5" track="bg-white" />
+                        </>
+                      ) : (
+                        <div className="text-xs font-extrabold text-slate-500">{total} câu hỏi · {availableLevels.length} mức độ</div>
+                      )}
+                      <span className={`mt-2.5 inline-flex items-center gap-1 text-sm font-extrabold transition group-hover:gap-2 ${groupTheme.text}`}>
+                        {status === 'learning' ? 'Học tiếp' : 'Bắt đầu luyện'} <ChevronRight className="h-4 w-4" />
+                      </span>
                     </div>
                   </button>
                 );

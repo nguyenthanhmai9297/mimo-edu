@@ -11,3 +11,4 @@ coverage/
 emulator-data/
 .vercel
 .firebase/
+backups/

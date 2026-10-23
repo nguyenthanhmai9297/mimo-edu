@@ -27,7 +27,10 @@ import { RichContentRenderer } from '../../components/editor/RichContentRenderer
 import { GamePortalBannerIllustration } from '../../components/ui/CartoonIllustrations';
 import { PracticePortal } from '../practice/student/PracticePortal';
 import { MimoMascot } from '../practice/student/practiceTheme';
+import { NoClassNotice, StudentHome } from './StudentHome';
+import { PRACTICE_CATALOG } from '../../data/practiceCatalog';
 import { usingFirebaseEmulator } from '../../lib/firebase/config';
+import { fetchPracticeCatalog } from '../../services/practiceService';
 import {
   clearStudentToken,
   fetchStudentPortalData,
@@ -50,6 +53,8 @@ const PORTAL_TABS: PortalTab[] = ['overview', 'homework', 'practice', 'comments'
 
 // Local testing only: /portal?demo=1 signs in the emulator's test student
 const EMULATOR_DEMO_STUDENT_CODE = 'MIMO03';
+
+const TOTAL_PRACTICE_TOPICS = PRACTICE_CATALOG.reduce((n, g) => n + g.topics.length, 0);
 
 /** True when rich content has something to show (not just an empty paragraph). */
 function hasRichContent(content?: RichTextContent): boolean {
@@ -156,6 +161,26 @@ export const StudentPortalPage: React.FC = () => {
       setBundle(null);
     }
   }, [hasStudentSession, loadPortalData]);
+
+  // Count of practice topics with published questions, for the home counters
+  const [openTopics, setOpenTopics] = useState<number | null>(null);
+  useEffect(() => {
+    if (!bundle) return;
+    let cancelled = false;
+    fetchPracticeCatalog()
+      .then((c) => {
+        if (cancelled) return;
+        setOpenTopics(
+          Object.values(c.topics).filter((t) =>
+            Object.values(t.levels).some((n) => n > 0)
+          ).length
+        );
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, [bundle]);
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -405,15 +430,27 @@ export const StudentPortalPage: React.FC = () => {
     games,
   } = bundle;
 
-  const pendingAssignments = studentAssignments.filter(
+  // The server leaves revoked assignments out of assignmentsMap; counting their
+  // studentAssignments too made the badge disagree with the list.
+  const visibleAssignments = studentAssignments.filter(
+    (sa) => assignmentsMap[sa.assignmentId]
+  );
+  const pendingAssignments = visibleAssignments.filter(
     (sa) =>
       sa.status === 'assigned' ||
       sa.status === 'in_progress' ||
       sa.status === 'returned'
   );
-  const publishedScoreList = studentAssignments.filter(
-    (sa) => sa.status === 'graded' && sa.isScorePublished
+  const completedAssignments = visibleAssignments.filter(
+    (sa) => sa.status === 'submitted' || sa.status === 'graded'
   );
+  const hasClass = classes.length > 0;
+  const filteredAssignments =
+    hwFilter === 'pending'
+      ? pendingAssignments
+      : hwFilter === 'completed'
+        ? completedAssignments
+        : visibleAssignments;
 
   // ==========================================================================
   // ACTIVE HOMEWORK EXAM / RESULT VIEW
@@ -433,24 +470,24 @@ export const StudentPortalPage: React.FC = () => {
     currentStudentAssignment?.status === 'graded';
 
   return (
-    <div className="min-h-screen bg-[#FFFDF7] pb-24 text-slate-900">
+    <div className="min-h-screen bg-[#FFFBF2] pb-24 text-[#1F2A55] md:pb-10">
       {/* Compact Sticky Top App Bar (<= 56px height to respect 15% mobile sticky cap) */}
-      <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b-2 border-slate-900 bg-amber-100/95 px-4 backdrop-blur-xs">
+      <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-[#EFE9DA] bg-white/90 px-4 backdrop-blur-md">
         <div className="flex items-center gap-2.5 truncate">
-          <a href="/" className="flex shrink-0 items-center gap-1.5 border-r-2 border-slate-900/15 pr-2.5" aria-label="MimoEDU – Trang chủ">
+          <a href="/" className="flex shrink-0 items-center gap-1.5 border-r border-[#EFE9DA] pr-2.5" aria-label="MimoEDU – Trang chủ">
             <MimoMascot size={32} className="ring-2" />
-            <span className="hidden font-display text-sm font-extrabold text-slate-900 sm:inline">
+            <span className="hidden font-display text-sm font-extrabold text-[#1F2A55] sm:inline">
               Mimo<span className="text-[#1267E9]">EDU</span>
             </span>
           </a>
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-2 border-slate-900 bg-white font-display text-sm font-black text-blue-600">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E3F4FF] font-display text-sm font-black text-[#3B7FC4]">
             {student.fullName.slice(0, 1).toUpperCase()}
           </div>
           <div className="truncate">
-            <div className="truncate font-display text-sm font-extrabold text-slate-900">
+            <div className="truncate font-display text-sm font-extrabold text-[#1F2A55]">
               {student.fullName}
             </div>
-            <div className="font-mono text-[11px] font-bold text-slate-600">
+            <div className="font-mono text-[11px] font-bold text-[#56608A]">
               {student.grade} · Mã: {student.accessCode}
             </div>
           </div>
@@ -460,7 +497,7 @@ export const StudentPortalPage: React.FC = () => {
           <button
             type="button"
             onClick={loadPortalData}
-            className="flex min-h-[40px] min-w-[40px] items-center justify-center rounded-xl border-2 border-slate-900 bg-white text-slate-700 hover:bg-slate-50"
+            className="flex min-h-[40px] min-w-[40px] items-center justify-center rounded-xl bg-[#E3F4FF] text-[#3B7FC4] hover:bg-[#D3ECFD]"
             title="Làm mới dữ liệu"
           >
             <RefreshCw className="h-4 w-4" />
@@ -468,7 +505,7 @@ export const StudentPortalPage: React.FC = () => {
           <button
             type="button"
             onClick={handleExitPortal}
-            className="cartoon-button flex min-h-[40px] items-center gap-1.5 rounded-xl bg-white px-3 py-1.5 text-xs font-extrabold text-rose-700 whitespace-nowrap"
+            className="flex min-h-[40px] items-center gap-1.5 rounded-xl bg-[#FFE9EF] px-3 py-1.5 text-xs font-extrabold text-[#C2416B] whitespace-nowrap hover:bg-[#FFDCE6]"
           >
             <LogOut className="h-3.5 w-3.5" />
             Thoát
@@ -479,11 +516,11 @@ export const StudentPortalPage: React.FC = () => {
       {/* Main Responsive Container (expands cleanly on desktop) */}
       <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
         {/* Desktop Tab Pills for large screens */}
-        <div className="mb-6 hidden items-center justify-between rounded-2xl border-2 border-slate-900 bg-white p-2 md:flex">
+        <div className="mb-6 hidden items-center justify-between rounded-2xl bg-white p-2 ring-1 ring-[#EFE9DA] md:flex">
           <div className="flex items-center gap-2">
             {(
               [
-                { id: 'overview', label: 'Tổng quan', icon: Home },
+                { id: 'overview', label: 'Trang chủ', icon: Home },
                 {
                   id: 'homework',
                   label: `Bài tập (${pendingAssignments.length})`,
@@ -511,10 +548,10 @@ export const StudentPortalPage: React.FC = () => {
                     setActiveTab(t.id);
                     if (t.id !== 'homework') setActiveAssignmentId(null);
                   }}
-                  className={`flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-extrabold transition-colors whitespace-nowrap ${
+                  className={`flex min-h-[40px] items-center gap-2 rounded-xl px-4 py-2 text-sm font-extrabold transition-colors whitespace-nowrap ${
                     isActive
-                      ? 'border-2 border-slate-900 bg-blue-600 text-white shadow-[0_2px_0_0_#1E293B]'
-                      : 'text-slate-700 hover:bg-slate-100'
+                      ? 'bg-[#3BA4E8] text-white shadow-sm'
+                      : 'text-[#56608A] hover:bg-[#E3F4FF]'
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -536,178 +573,19 @@ export const StudentPortalPage: React.FC = () => {
         {/* TAB 1: TỔNG QUAN (OVERVIEW)                                      */}
         {/* ================================================================ */}
         {activeTab === 'overview' && (
-          <div className="space-y-6">
-            {/* Student Welcome Banner */}
-            <div className="cartoon-card bg-gradient-to-r from-sky-100 via-white to-amber-100 p-5 sm:p-6">
-              <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-                <div>
-                  <span className="text-xs font-extrabold text-blue-700">
-                    GÓC HỌC TẬP TOÁN HỌC
-                  </span>
-                  <h1 className="mt-1 font-display text-2xl font-extrabold text-slate-900">
-                    Chào {student.nickname || student.fullName}!
-                  </h1>
-                  <p className="mt-1 text-sm text-slate-700">
-                    Lớp đang tham gia:{' '}
-                    <strong>
-                      {classes.map((c) => c.name).join(', ') || 'Chưa phân lớp'}
-                    </strong>
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 sm:w-auto">
-                  <div className="rounded-2xl border-2 border-slate-900 bg-amber-300 px-4 py-2.5 text-center">
-                    <div className="font-mono text-2xl font-black text-slate-900 tabular-nums">
-                      {pendingAssignments.length}
-                    </div>
-                    <div className="text-[11px] font-bold text-slate-800">
-                      BTVN cần làm
-                    </div>
-                  </div>
-                  <div className="rounded-2xl border-2 border-slate-900 bg-emerald-300 px-4 py-2.5 text-center">
-                    <div className="font-mono text-2xl font-black text-slate-900 tabular-nums">
-                      {publishedScoreList.length}
-                    </div>
-                    <div className="text-[11px] font-bold text-slate-800">
-                      Bài đã có điểm
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-              {/* Pending / Upcoming Homework */}
-              <div className="cartoon-card bg-white p-5 lg:col-span-7">
-                <div className="flex items-center justify-between">
-                  <h2 className="font-display text-base font-extrabold text-slate-900">
-                    Bài Tập Cần Hoàn Thành & Sắp Đến Hạn
-                  </h2>
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab('homework')}
-                    className="text-xs font-bold text-blue-700 hover:underline"
-                  >
-                    Tất cả bài tập →
-                  </button>
-                </div>
-
-                {pendingAssignments.length === 0 ? (
-                  <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-emerald-50/50 p-6 text-center">
-                    <CheckCircle2 className="mx-auto h-7 w-7 text-emerald-600" />
-                    <p className="mt-2 font-display text-sm font-bold text-slate-900">
-                      Tuyệt vời! Con đã hoàn thành hết tất cả BTVN.
-                    </p>
-                  </div>
-                ) : (
-                  <div className="mt-4 space-y-3">
-                    {pendingAssignments.map((sa) => {
-                      const asg = assignmentsMap[sa.assignmentId];
-                      if (!asg) return null;
-                      return (
-                        <div
-                          key={sa.id}
-                          className="flex flex-col justify-between gap-3 rounded-2xl border-2 border-slate-900 bg-amber-50/60 p-4 sm:flex-row sm:items-center"
-                        >
-                          <div>
-                            <div className="text-xs font-bold text-amber-900">
-                              {sa.status === 'returned'
-                                ? 'Cần sửa lại theo nhận xét giáo viên'
-                                : sa.status === 'in_progress'
-                                ? 'Đang làm dở (Đã lưu nháp)'
-                                : 'Bài tập mới chưa làm'}{' '}
-                              · Hạn nộp:{' '}
-                              <span className="font-mono">{asg.dueAt}</span>
-                            </div>
-                            <h3 className="mt-1 font-display text-base font-extrabold text-slate-900">
-                              {asg.title}
-                            </h3>
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() =>
-                              openAssignmentWorkspace(sa.assignmentId)
-                            }
-                            className="cartoon-button min-h-[44px] rounded-xl bg-blue-600 px-4 py-2 text-xs font-extrabold text-white whitespace-nowrap shrink-0"
-                          >
-                            Vào làm bài ngay
-                          </button>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-
-              {/* Recent Grades & Latest Teacher Comment */}
-              <div className="space-y-6 lg:col-span-5">
-                <div className="cartoon-card bg-white p-5">
-                  <h2 className="font-display text-base font-extrabold text-slate-900">
-                    Điểm Số Mới Công Bố
-                  </h2>
-                  {publishedScoreList.length === 0 ? (
-                    <p className="mt-3 text-xs text-slate-500">
-                      Chưa có bài tập nào công bố điểm.
-                    </p>
-                  ) : (
-                    <div className="mt-3 divide-y divide-slate-200">
-                      {publishedScoreList.slice(0, 4).map((sa) => {
-                        const asg = assignmentsMap[sa.assignmentId];
-                        return (
-                          <div
-                            key={sa.id}
-                            className="flex items-center justify-between py-2.5 text-xs"
-                          >
-                            <span className="font-bold text-slate-800">
-                              {asg?.title || 'BTVN'}
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                openAssignmentWorkspace(sa.assignmentId)
-                              }
-                              className="font-mono text-sm font-black text-emerald-700 hover:underline"
-                            >
-                              {sa.score}/{sa.maxScore}đ →
-                            </button>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-
-                <div className="cartoon-card bg-white p-5">
-                  <div className="flex items-center justify-between">
-                    <h2 className="font-display text-base font-extrabold text-slate-900">
-                      Nhận Xét Mới Từ Giáo Viên
-                    </h2>
-                    <button
-                      type="button"
-                      onClick={() => setActiveTab('comments')}
-                      className="text-xs font-bold text-blue-700 hover:underline"
-                    >
-                      Xem sổ nhận xét →
-                    </button>
-                  </div>
-                  {comments.length === 0 ? (
-                    <p className="mt-3 text-xs text-slate-500">
-                      Chưa có nhận xét tháng nào được công bố.
-                    </p>
-                  ) : (
-                    <div className="mt-3 rounded-xl border border-slate-200 bg-sky-50/70 p-3.5 text-xs">
-                      <div className="font-mono font-bold text-blue-800">
-                        Nhận xét Tháng {comments[0].month}/{comments[0].year}
-                      </div>
-                      <p className="mt-1.5 text-slate-800">
-                        <strong>Điểm mạnh:</strong> {comments[0].strengths}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+          <StudentHome
+            name={student.nickname || student.fullName}
+            classes={classes}
+            pending={pendingAssignments}
+            completedCount={completedAssignments.length}
+            assignmentsMap={assignmentsMap}
+            openTopics={openTopics}
+            totalTopics={TOTAL_PRACTICE_TOPICS}
+            comments={comments}
+            gamesCount={games.length}
+            onNavigate={(target) => setActiveTab(target)}
+            onOpenAssignment={openAssignmentWorkspace}
+          />
         )}
 
         {/* ================================================================ */}
@@ -1079,16 +957,16 @@ export const StudentPortalPage: React.FC = () => {
               <div className="space-y-5">
                 <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
                   <div>
-                    <h1 className="font-display text-2xl font-extrabold text-slate-900">
-                      Danh Sách Bài Tập Về Nhà
+                    <h1 className="font-display text-2xl font-extrabold text-[#1F2A55]">
+                      Bài tập của con
                     </h1>
-                    <p className="text-xs text-slate-600">
+                    <p className="text-sm text-[#56608A]">
                       Bấm vào từng bài tập để làm bài, lưu nháp hoặc xem điểm và
                       lời giải sau khi chấm.
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-1 rounded-xl border-2 border-slate-900 bg-white p-1">
+                  <div className="flex items-center gap-1 overflow-x-auto rounded-2xl bg-white p-1 ring-1 ring-[#EFE9DA]">
                     {(
                       [
                         { id: 'all', label: 'Tất cả' },
@@ -1100,10 +978,10 @@ export const StudentPortalPage: React.FC = () => {
                         key={f.id}
                         type="button"
                         onClick={() => setHwFilter(f.id)}
-                        className={`rounded-lg px-3 py-1.5 text-xs font-extrabold whitespace-nowrap ${
+                        className={`min-h-[40px] rounded-xl px-3.5 text-sm font-extrabold whitespace-nowrap ${
                           hwFilter === f.id
-                            ? 'bg-slate-900 text-white'
-                            : 'text-slate-700'
+                            ? 'bg-[#3BA4E8] text-white'
+                            : 'text-[#56608A] hover:bg-[#E3F4FF]'
                         }`}
                       >
                         {f.label}
@@ -1112,23 +990,30 @@ export const StudentPortalPage: React.FC = () => {
                   </div>
                 </div>
 
+                {!hasClass ? (
+                  <NoClassNotice />
+                ) : visibleAssignments.length === 0 ? (
+                  <div className="rounded-3xl bg-[#E3F4FF] p-8 text-center ring-1 ring-[#B9E2FB]">
+                    <BookOpen className="mx-auto h-9 w-9 text-[#3BA4E8]" />
+                    <p className="mt-3 font-display text-base font-extrabold text-[#1F2A55]">
+                      Cô chưa giao bài tập nào cho con.
+                    </p>
+                    <p className="mt-1 text-sm text-[#56608A]">
+                      Trong lúc chờ, con vào Luyện Toán cùng Mimo nhé!
+                    </p>
+                  </div>
+                ) : (
+                  filteredAssignments.length === 0 && (
+                    <div className="rounded-3xl bg-white p-8 text-center text-sm font-bold text-[#56608A] ring-1 ring-[#EFE9DA]">
+                      {hwFilter === 'pending'
+                        ? 'Con đã làm hết bài cần hoàn thành rồi! 🎉'
+                        : 'Chưa có bài nào trong mục này.'}
+                    </div>
+                  )
+                )}
+
                 <div className="space-y-4">
-                  {studentAssignments
-                    .filter((sa) => {
-                      if (hwFilter === 'pending') {
-                        return (
-                          sa.status === 'assigned' ||
-                          sa.status === 'in_progress' ||
-                          sa.status === 'returned'
-                        );
-                      }
-                      if (hwFilter === 'completed') {
-                        return (
-                          sa.status === 'submitted' || sa.status === 'graded'
-                        );
-                      }
-                      return true;
-                    })
+                  {[...filteredAssignments]
                     .sort((a, b) => {
                       const dueA = assignmentsMap[a.assignmentId]?.dueAt || '';
                       const dueB = assignmentsMap[b.assignmentId]?.dueAt || '';
@@ -1558,10 +1443,10 @@ export const StudentPortalPage: React.FC = () => {
       )}
 
       {/* Fixed Mobile Bottom Navigation Bar (5 Mandatory Tabs, <= 64px height) */}
-      <nav className="fixed right-0 bottom-0 left-0 z-40 grid h-16 grid-cols-6 items-center border-t-2 border-slate-900 bg-white/95 px-1 backdrop-blur-md md:hidden">
+      <nav className="fixed right-0 bottom-0 left-0 z-40 grid h-16 grid-cols-6 items-center border-t border-[#EFE9DA] bg-white/95 px-1 pb-[env(safe-area-inset-bottom)] backdrop-blur-md md:hidden">
         {(
           [
-            { id: 'overview', label: 'Tổng quan', icon: Home },
+            { id: 'overview', label: 'Trang chủ', icon: Home },
             {
               id: 'homework',
               label: `Bài tập${
@@ -1588,8 +1473,8 @@ export const StudentPortalPage: React.FC = () => {
                 setActiveTab(tab.id);
                 if (tab.id !== 'homework') setActiveAssignmentId(null);
               }}
-              className={`flex min-h-[44px] flex-col items-center justify-center rounded-xl py-1 transition-colors ${
-                isActive ? 'text-blue-600 font-extrabold' : 'text-slate-600'
+              className={`flex min-h-[48px] flex-col items-center justify-center rounded-xl py-1 transition-colors ${
+                isActive ? 'bg-[#E3F4FF] font-extrabold text-[#3B7FC4]' : 'text-[#56608A]'
               }`}
             >
               <Icon className="h-5 w-5" />
