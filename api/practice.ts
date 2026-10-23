@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import express, { NextFunction, Request, Response, Router } from 'express';
-import { findPracticeTopic } from '../src/data/practiceCatalog';
+import { findPracticeTopic } from '../src/data/practiceCatalog.js';
 import {
   PRACTICE_LEVELS,
   PracticeAttempt,
@@ -10,15 +10,15 @@ import {
   PracticeQuestion,
   PracticeStartResponse,
   PracticeSubmitResponse,
-} from '../src/types/practice';
+} from '../src/types/practice.js';
 import {
   buildAttemptQuestions,
   gradePracticeAttempt,
   pickPracticeQuestions,
   Rng,
   toPublicQuestion,
-} from '../src/utils/practiceEngine';
-import type { PracticeStore } from './practiceStore';
+} from '../src/utils/practiceEngine.js';
+import type { PracticeStore } from './practiceStore.js';
 
 /**
  * Student API for "Luyện Toán cùng Mimo". Answers and explanations never leave

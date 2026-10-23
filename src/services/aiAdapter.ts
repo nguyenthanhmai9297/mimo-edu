@@ -5,13 +5,13 @@ import { z } from 'zod';
 import {
   aiEssayGradingSuggestionSchema,
   aiParsedHomeworkResponseSchema,
-} from '../schemas/validation';
+} from '../schemas/validation.js';
 import {
   ChoiceOption,
   HomeworkQuestion,
   TrueFalseStatement,
-} from '../types/domain';
-import { richTextFromAIText } from '../utils/richText';
+} from '../types/domain.js';
+import { richTextFromAIText } from '../utils/richText.js';
 
 export { richTextFromAIText };
 

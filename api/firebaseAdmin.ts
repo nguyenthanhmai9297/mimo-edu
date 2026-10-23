@@ -14,7 +14,7 @@ import { Firestore, getFirestore } from 'firebase-admin/firestore';
  */
 
 export const EMULATOR_PROJECT_ID = 'demo-lop-chung-minh';
-const DEFAULT_DATABASE_ID = 'ai-studio-61c10e80-066b-4298-9fa9-96b167747f9a';
+const DEFAULT_DATABASE_ID = '(default)';
 const APP_NAME = 'practice-admin';
 
 let cachedDb: Firestore | null | undefined;

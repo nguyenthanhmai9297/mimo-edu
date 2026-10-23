@@ -38,8 +38,9 @@ import {
   createRandom6CharCode,
   createRichTextFromPlain,
 } from '../utils/gradingEngine';
+import { apiUrl } from '../lib/apiUrl';
 
-const BOOTSTRAP_ADMIN_EMAIL = 'dang.nh.aprotrain@gmail.com';
+const BOOTSTRAP_ADMIN_EMAIL = 'nguyenthanhmai9297@gmail.com';
 
 function makeId(prefix: string): string {
   return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
@@ -211,7 +212,7 @@ export async function createStudent(values: StudentFormValues): Promise<Student>
   let code = '';
 
   try {
-    const res = await fetch('/api/admin/generate-student-code', {
+    const res = await fetch(apiUrl('/api/admin/generate-student-code'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ studentId }),

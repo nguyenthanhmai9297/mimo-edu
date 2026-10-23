@@ -8,7 +8,7 @@ describe('Firestore Security Rules Specification Verification', () => {
 
   it('enforces admin allowlist verification helper', () => {
     expect(rulesContent).toContain('function isAdmin()');
-    expect(rulesContent).toContain('dang.nh.aprotrain@gmail.com');
+    expect(rulesContent).toContain('nguyenthanhmai9297@gmail.com');
     expect(rulesContent).toContain('adminAllowlist');
   });
 

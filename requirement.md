@@ -22,7 +22,7 @@ Hệ thống bao gồm 2 phân hệ độc lập nhưng đồng bộ thời gian
 
 1. **Quản trị viên (Admin Allowlist)**:
    - Không cho phép người dùng tự đăng ký làm Admin.
-   - Chỉ email nằm trong collection `adminAllowlist` (hoặc email khởi tạo `dang.nh.aprotrain@gmail.com`) mới vượt qua `RequireAdminGuard` và `isAdmin()` trong `firestore.rules`.
+   - Chỉ email nằm trong collection `adminAllowlist` (hoặc email khởi tạo `nguyenthanhmai9297@gmail.com`) mới vượt qua `RequireAdminGuard` và `isAdmin()` trong `firestore.rules`.
 2. **Mã truy cập học sinh 6 ký tự**:
    - Sinh phía server (`POST /api/admin/generate-student-code`), chỉ dùng bộ ký tự rõ ràng `ABCDEFGHJKLMNPQRSTUVWXYZ23456789`.
    - Lưu cố định trong `students/{id}.accessCode` và đánh chỉ mục tại `studentCodeIndex/{code}` để đảm bảo duy nhất trên toàn hệ thống, kể cả khi học sinh đã lưu trữ/ngừng học.

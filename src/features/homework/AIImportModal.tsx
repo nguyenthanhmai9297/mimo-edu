@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { HomeworkQuestion } from '../../types/domain';
 import { cropFigure, NormalizedBox, padBox, pdfToPageImages } from './figureCrop';
+import { apiUrl } from '../../lib/apiUrl';
 
 /** A page of the original exam, kept so the teacher can compare while reviewing. */
 export interface SourceFile {
@@ -273,7 +274,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
     setError(null);
     setLoading(true);
     try {
-      const res = await fetch('/api/ai/parse-homework', {
+      const res = await fetch(apiUrl('/api/ai/parse-homework'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

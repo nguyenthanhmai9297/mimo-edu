@@ -13,6 +13,7 @@ import {
   Submission,
 } from '../../types/domain';
 import { gradeFullSubmission } from '../../utils/gradingEngine';
+import { apiUrl } from '../../lib/apiUrl';
 
 export const GradingPage: React.FC = () => {
   const { submissions, assignments, students } = useAppContext();
@@ -86,7 +87,7 @@ export const GradingPage: React.FC = () => {
 
     setAiLoadingQuestionId(question.id);
     try {
-      const res = await fetch('/api/ai/suggest-grading', {
+      const res = await fetch(apiUrl('/api/ai/suggest-grading'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

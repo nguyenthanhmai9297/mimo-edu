@@ -6,8 +6,8 @@ import type {
   LiveQuizPlayView,
   LiveQuizQuestion,
   LiveQuizSession,
-} from '../src/types/liveQuiz';
-import type { LiveQuizStore } from './liveQuizStore';
+} from '../src/types/liveQuiz.js';
+import type { LiveQuizStore } from './liveQuizStore.js';
 
 /**
  * Mimo Quiz – students join with a code and answer on their own devices.

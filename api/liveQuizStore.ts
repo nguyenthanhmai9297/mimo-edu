@@ -1,5 +1,5 @@
 import type { Firestore } from 'firebase-admin/firestore';
-import type { LiveQuizAnswer, LiveQuizPlayer, LiveQuizSession } from '../src/types/liveQuiz';
+import type { LiveQuizAnswer, LiveQuizPlayer, LiveQuizSession } from '../src/types/liveQuiz.js';
 
 /** Storage for the Mimo Quiz join mode; Firestore (server-only collections) in the app, in-memory in tests. */
 export interface LiveQuizStore {

@@ -9,3 +9,5 @@ coverage/
 
 # Dữ liệu thử nghiệm của Firebase Emulator (chỉ trên máy)
 emulator-data/
+.vercel
+.firebase/

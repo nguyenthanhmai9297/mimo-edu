@@ -1,6 +1,6 @@
 import type { Firestore } from 'firebase-admin/firestore';
-import type { PracticeAttempt, PracticeQuestion, PracticeSet } from '../src/types/practice';
-import { servableQuestions } from '../src/utils/practiceEngine';
+import type { PracticeAttempt, PracticeQuestion, PracticeSet } from '../src/types/practice.js';
+import { servableQuestions } from '../src/utils/practiceEngine.js';
 
 /** Storage used by the practice API; Firestore in the app, in-memory in unit tests. */
 export interface PracticeStore {

@@ -1,4 +1,4 @@
-import { findPracticeTopic } from '../data/practiceCatalog';
+import { findPracticeTopic } from '../data/practiceCatalog.js';
 import {
   PRACTICE_LEVELS,
   PracticeAttempt,
@@ -8,7 +8,7 @@ import {
   PracticeQuestion,
   PracticeQuestionResult,
   PracticeSkillSummary,
-} from '../types/practice';
+} from '../types/practice.js';
 
 /**
  * Pure logic for "Luyện Toán cùng Mimo", shared by the API server, the teacher

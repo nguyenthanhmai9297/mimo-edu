@@ -2,12 +2,13 @@ import { auth } from '../lib/firebase/config';
 import type { LiveQuizHostView, LiveQuizPlayView } from '../types/liveQuiz';
 import type { ToolQuestion } from '../features/tools/toolQuestions';
 import { getSavedStudentToken } from './studentPortalService';
+import { apiUrl } from '../lib/apiUrl';
 
 /** Calls to the Mimo Quiz join-mode API (prototype; enabled on the Firebase Emulator only). */
 
 async function request<T>(path: string, token: string | null | undefined, body?: unknown): Promise<T> {
   if (!token) throw new Error('Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.');
-  const res = await fetch(`/api/live-quiz${path}`, {
+  const res = await fetch(apiUrl(`/api/live-quiz${path}`), {
     method: body === undefined ? 'GET' : 'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: body === undefined ? undefined : JSON.stringify(body),

@@ -3,7 +3,7 @@
 ## 1. Data Invariants
 
 1. **Default Deny**: All unlisted paths in Firestore are strictly denied (`allow read, write: if false;`).
-2. **Admin Identity Verification**: Admin privileges (`isAdmin()`) require an authenticated user (`request.auth != null`), a verified email (`request.auth.token.email_verified == true`), and either the bootstrapped owner email (`dang.nh.aprotrain@gmail.com`) or an existing document in `/adminAllowlist/$(request.auth.token.email)`.
+2. **Admin Identity Verification**: Admin privileges (`isAdmin()`) require an authenticated user (`request.auth != null`), a verified email (`request.auth.token.email_verified == true`), and either the bootstrapped owner email (`nguyenthanhmai9297@gmail.com`) or an existing document in `/adminAllowlist/$(request.auth.token.email)`.
 3. **No Public Collection Scraping (`list` Isolation)**: Listing `/students`, `/studentCodeIndex`, `/homework`, `/assignments`, `/studentAssignments`, `/submissions`, `/comments`, `/classes`, `/aiJobs`, and `/adminAllowlist` is restricted strictly to verified Admins (`isAdmin()`). Unauthenticated clients can never enumerate student profiles or 6-character codes.
 4. **Path ID Hardening**: Every single-document operation (`get`, `create`, `update`, `delete`) enforces `isValidId(id)` (`^[a-zA-Z0-9_\-@\.]+$`, `<= 128` chars) to block ID poisoning.
 5. **Schema & Volumetric Bounds (`isValid[Entity]`)**: Every `create` and `update` operation validates exact allowed keys (`hasOnly`), required keys (`hasAll`), string length bounds, and bounded array sizes before any relational read (`get`/`exists`).
@@ -12,7 +12,7 @@
 
 ## 2. The "Dirty Dozen" Payloads
 
-1. **Unverified Admin Email Spoof**: Authenticated user with `email == 'dang.nh.aprotrain@gmail.com'` but `email_verified == false` attempting to create a class. -> `PERMISSION_DENIED`
+1. **Unverified Admin Email Spoof**: Authenticated user with `email == 'nguyenthanhmai9297@gmail.com'` but `email_verified == false` attempting to create a class. -> `PERMISSION_DENIED`
 2. **Shadow Field Injection on Class Creation**: Admin payload containing `{ ..., isSuperAdmin: true }` not in allowed keys. -> `PERMISSION_DENIED`
 3. **Unauthenticated Student Enumeration**: Client calling `getDocs(collection(db, 'students'))` without admin auth. -> `PERMISSION_DENIED`
 4. **Unauthenticated Code Index Enumeration**: Client calling `getDocs(collection(db, 'studentCodeIndex'))` to scrape 6-char codes. -> `PERMISSION_DENIED`

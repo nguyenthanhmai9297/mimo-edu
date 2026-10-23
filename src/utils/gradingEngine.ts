@@ -3,7 +3,7 @@ import {
   QuestionGradingResult,
   RichTextContent,
   StudentQuestionAnswer,
-} from '../types/domain';
+} from '../types/domain.js';
 
 /**
  * Normalizes a short-answer string:

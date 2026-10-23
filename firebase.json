@@ -1,15 +1,49 @@
 {
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ]
+  },
   "firestore": [
     {
-      "database": "ai-studio-61c10e80-066b-4298-9fa9-96b167747f9a",
+      "database": "(default)",
       "rules": "firestore.rules",
       "indexes": "firestore.indexes.json"
     }
   ],
   "emulators": {
     "singleProjectMode": true,
-    "firestore": { "host": "127.0.0.1", "port": 8080 },
-    "auth": { "host": "127.0.0.1", "port": 9099 },
-    "ui": { "enabled": true, "port": 4000 }
+    "firestore": {
+      "host": "127.0.0.1",
+      "port": 8080
+    },
+    "auth": {
+      "host": "127.0.0.1",
+      "port": 9099
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4000
+    }
   }
 }

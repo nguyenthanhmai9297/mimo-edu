@@ -1,4 +1,4 @@
-import type { PracticeLevel } from './domain';
+import type { PracticeLevel } from './domain.js';
 
 export type { PracticeLevel };
 

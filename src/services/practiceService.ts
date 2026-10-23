@@ -6,6 +6,7 @@ import type {
   PracticeSubmitResponse,
 } from '../types/practice';
 import { getSavedStudentToken } from './studentPortalService';
+import { apiUrl } from '../lib/apiUrl';
 
 /** Student-side calls to the practice API; answers only ever arrive after submitting. */
 
@@ -35,7 +36,7 @@ export type PracticeAttemptDetail =
 async function practiceRequest<T>(path: string, body?: unknown): Promise<T> {
   const token = getSavedStudentToken();
   if (!token) throw new Error('Phiên đăng nhập đã hết hạn, con hãy nhập lại mã nhé.');
-  const res = await fetch(`/api/practice${path}`, {
+  const res = await fetch(apiUrl(`/api/practice${path}`), {
     method: body === undefined ? 'GET' : 'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: body === undefined ? undefined : JSON.stringify(body),

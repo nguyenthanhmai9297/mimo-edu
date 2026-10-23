@@ -1,0 +1,6 @@
+.env*
+!.env.example
+.firebase/
+emulator-data/
+node_modules/
+dist/

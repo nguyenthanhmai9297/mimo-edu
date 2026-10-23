@@ -93,13 +93,13 @@ AI_MODEL="claude-sonnet-5-5"
 STUDENT_SESSION_SECRET="lop-chung-toi-hmac-secret-key-2025"
 
 # Email Quản trị viên mặc định được cấp quyền
-INITIAL_ADMIN_EMAIL="dang.nh.aprotrain@gmail.com"
+INITIAL_ADMIN_EMAIL="nguyenthanhmai9297@gmail.com"
 ```
 
 ### Bước 3: Cấu hình Firebase & Google OAuth
 1. Dự án đã được kết nối với Firebase thông qua `firebase-applet-config.json`.
 2. Trong **Firebase Console > Authentication > Sign-in method**, bật **Google Sign-In**.
-3. Sau khi đăng nhập bằng email quản trị mặc định (`dang.nh.aprotrain@gmail.com`), bạn có thể mở mục **Quản trị & AI** (`/admin/settings`) để thêm các email giáo viên khác vào `adminAllowlist`.
+3. Sau khi đăng nhập bằng email quản trị mặc định (`nguyenthanhmai9297@gmail.com`), bạn có thể mở mục **Quản trị & AI** (`/admin/settings`) để thêm các email giáo viên khác vào `adminAllowlist`.
 4. Để cập nhật quy tắc bảo mật Firestore:
    ```bash
    npx eslint DRAFT_firestore.rules

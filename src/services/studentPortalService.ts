@@ -24,6 +24,7 @@ import {
   createPublicQuestionsSnapshot,
   gradeFullSubmission,
 } from '../utils/gradingEngine';
+import { apiUrl } from '../lib/apiUrl';
 
 const TOKEN_STORAGE_KEY = 'lop_chung_toi_student_session_token';
 const STUDENT_PROFILE_STORAGE_KEY = 'lop_chung_toi_student_profile';
@@ -118,7 +119,7 @@ export async function loginWithStudentCode(rawCode: string): Promise<{
 
   // Attempt Server API
   try {
-    const response = await fetch('/api/student-auth/login', {
+    const response = await fetch(apiUrl('/api/student-auth/login'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ code }),
@@ -221,7 +222,7 @@ export async function fetchStudentPortalData(): Promise<StudentPortalBundle> {
 
   // Attempt Server API
   try {
-    const response = await fetch('/api/student-portal/data', {
+    const response = await fetch(apiUrl('/api/student-portal/data'), {
       method: 'GET',
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -406,7 +407,7 @@ export async function submitStudentHomework(params: {
 
   // Attempt Server API
   try {
-    const response = await fetch('/api/student-portal/submit', {
+    const response = await fetch(apiUrl('/api/student-portal/submit'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

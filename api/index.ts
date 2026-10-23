@@ -14,12 +14,12 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore';
-import { getAIAdapter } from '../src/services/aiAdapter';
-import { EMULATOR_PROJECT_ID, getAdminAuth, getAdminDb, isUsingFirebaseEmulator } from './firebaseAdmin';
-import { createLiveQuizRouter } from './liveQuiz';
-import { createFirestoreLiveQuizStore, LiveQuizStore } from './liveQuizStore';
-import { createPracticeRouter } from './practice';
-import { createFirestorePracticeStore, PracticeStore } from './practiceStore';
+import { getAIAdapter } from '../src/services/aiAdapter.js';
+import { EMULATOR_PROJECT_ID, getAdminAuth, getAdminDb, isUsingFirebaseEmulator } from './firebaseAdmin.js';
+import { createLiveQuizRouter } from './liveQuiz.js';
+import { createFirestoreLiveQuizStore, LiveQuizStore } from './liveQuizStore.js';
+import { createPracticeRouter } from './practice.js';
+import { createFirestorePracticeStore, PracticeStore } from './practiceStore.js';
 import {
   Assignment,
   ClassRoom,
@@ -30,27 +30,26 @@ import {
   StudentAssignment,
   StudentQuestionAnswer,
   Submission,
-} from '../src/types/domain';
+} from '../src/types/domain.js';
 import {
   createPublicQuestionsSnapshot,
   createRandom6CharCode,
   gradeFullSubmission,
-} from '../src/utils/gradingEngine';
+} from '../src/utils/gradingEngine.js';
 
 dotenv.config();
 
 // Embedded Firebase Configuration to guarantee zero file-resolution crashes on Vercel Serverless
 const firebaseConfig = {
-  projectId: 'gen-lang-client-0867841400',
-  appId: '1:3952257583:web:9f204c566969e88a83f4da',
-  apiKey: 'AIzaSyCA_h5gZZV8NwUsuGAFsWsUBIcwl5_NxEw',
-  authDomain: 'gen-lang-client-0867841400.firebaseapp.com',
-  firestoreDatabaseId: 'ai-studio-61c10e80-066b-4298-9fa9-96b167747f9a',
-  storageBucket: 'gen-lang-client-0867841400.firebasestorage.app',
-  messagingSenderId: '3952257583',
-  measurementId: '',
-  oAuthClientId:
-    '3952257583-tita4b09emrq71ieu853rof281k37fn7.apps.googleusercontent.com',
+  projectId: 'mimoedu-3b862',
+  appId: '1:791665221556:web:c3c33acb0fd4703df69ce1',
+  apiKey: 'AIzaSyDpvsPl-2XXwDICad157PXRdUWYBpbxFKE',
+  authDomain: 'mimoedu-3b862.firebaseapp.com',
+  firestoreDatabaseId: '(default)',
+  storageBucket: 'mimoedu-3b862.firebasestorage.app',
+  messagingSenderId: '791665221556',
+  measurementId: 'G-44762WLNWH',
+  oAuthClientId: '',
   recaptchaSiteKey: '',
 };
 
@@ -159,6 +158,33 @@ async function logAIJob(jobData: {
 
 export function createApiApp() {
   const app = express();
+
+  // The frontend is served from Firebase Hosting, so the browser calls this
+  // API cross-origin. Extra origins can be listed in CORS_ALLOWED_ORIGINS.
+  const allowedOrigins = new Set([
+    'https://mimoedu-3b862.web.app',
+    'https://mimoedu-3b862.firebaseapp.com',
+    ...(process.env.CORS_ALLOWED_ORIGINS || '')
+      .split(',')
+      .map((o) => o.trim())
+      .filter(Boolean),
+  ]);
+  app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (origin && allowedOrigins.has(origin)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+      res.setHeader('Vary', 'Origin');
+      res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Authorization,Content-Type');
+      res.setHeader('Access-Control-Max-Age', '86400');
+    }
+    if (req.method === 'OPTIONS') {
+      res.status(204).end();
+      return;
+    }
+    next();
+  });
+
   app.use(express.json({ limit: '15mb' }));
 
   // Middleware to support both /api/... and direct /... routes when rewritten by Vercel
@@ -362,7 +388,7 @@ export function createApiApp() {
   app.use(['/api/practice', '/practice'], practiceRouter);
 
   // Mimo Quiz – học sinh tham gia: prototype, only on the Firebase Emulator unless LIVE_QUIZ_ENABLED=true
-  const OWNER_EMAIL = 'dang.nh.aprotrain@gmail.com'; // same owner as firestore.rules isAdmin()
+  const OWNER_EMAIL = 'nguyenthanhmai9297@gmail.com'; // same owner as firestore.rules isAdmin()
   const requireTeacher = async (req: Request, res: Response, next: NextFunction) => {
     const header = req.headers.authorization;
     const auth = getAdminAuth();

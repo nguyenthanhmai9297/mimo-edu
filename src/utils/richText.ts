@@ -1,4 +1,4 @@
-import { RichBlockNode, RichTextContent } from '../types/domain';
+import { RichBlockNode, RichTextContent } from '../types/domain.js';
 
 /**
  * Converts AI text (inline `$...$` LaTeX, `\n` line breaks, standalone

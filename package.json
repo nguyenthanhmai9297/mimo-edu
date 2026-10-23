@@ -17,7 +17,8 @@
     "dev:emulator": "FIRESTORE_EMULATOR_HOST=127.0.0.1:8080 FIREBASE_AUTH_EMULATOR_HOST=127.0.0.1:9099 VITE_USE_FIREBASE_EMULATOR=true tsx server.ts",
     "seed:emulator": "FIRESTORE_EMULATOR_HOST=127.0.0.1:8080 FIREBASE_AUTH_EMULATOR_HOST=127.0.0.1:9099 tsx scripts/seedEmulator.ts",
     "test:emulator": "firebase emulators:exec --only firestore --project demo-lop-chung-minh 'vitest run --config vitest.emulator.config.ts'",
-    "demo": "firebase emulators:exec --only firestore,auth --project demo-lop-chung-minh 'npm run seed:emulator -- --with-n01 && npm run dev:emulator'"
+    "demo": "firebase emulators:exec --only firestore,auth --project demo-lop-chung-minh 'npm run seed:emulator -- --with-n01 && npm run dev:emulator'",
+    "deploy:firebase": "VITE_API_BASE_URL=https://mimo-edu.vercel.app vite build && firebase deploy --only hosting"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.1.0",
@@ -67,5 +68,8 @@
     "tsx": "^4.21.0",
     "typescript": "^7.0.2",
     "vitest": "^5.0.5"
+  },
+  "overrides": {
+    "jwks-rsa": "3.2.2"
   }
 }
