@@ -8,6 +8,8 @@ import { GeometryRenderer } from './GeometryRenderer';
 interface RichContentRendererProps {
   content?: RichTextContent | null;
   className?: string;
+  /** Let paragraphs and lists take the font size of `className` (e.g. large projector text). */
+  inheritSize?: boolean;
 }
 
 /**
@@ -50,6 +52,7 @@ function renderInlineTextWithMath(text: string): React.ReactNode[] {
 export const RichContentRenderer: React.FC<RichContentRendererProps> = ({
   content,
   className = '',
+  inheritSize = false,
 }) => {
   if (!content || !Array.isArray(content.blocks) || content.blocks.length === 0) {
     return (
@@ -74,7 +77,7 @@ export const RichContentRenderer: React.FC<RichContentRendererProps> = ({
           return (
             <p
               key={index}
-              className={`text-[15px] break-words ${alignClass} ${fontStyle}`}
+              className={`${inheritSize ? '' : 'text-[15px]'} break-words ${alignClass} ${fontStyle}`}
             >
               {renderInlineTextWithMath(block.text)}
             </p>
@@ -115,7 +118,7 @@ export const RichContentRenderer: React.FC<RichContentRendererProps> = ({
           return (
             <ListTag
               key={index}
-              className={`ml-5 space-y-1 text-[15px] ${
+              className={`ml-5 space-y-1 ${inheritSize ? '' : 'text-[15px]'} ${
                 block.ordered ? 'list-decimal' : 'list-disc'
               }`}
             >

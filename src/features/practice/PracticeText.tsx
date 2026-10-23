@@ -5,5 +5,5 @@ import { richTextFromAIText } from '../../utils/richText';
 /** Renders practice text: $...$ formulas and line breaks. */
 export const PracticeText: React.FC<{ text: string; className?: string }> = ({ text, className = '' }) => {
   const content = useMemo(() => richTextFromAIText(text), [text]);
-  return <RichContentRenderer content={content} className={className} />;
+  return <RichContentRenderer content={content} className={className} inheritSize />;
 };

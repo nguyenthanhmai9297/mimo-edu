@@ -128,3 +128,30 @@ export const PracticeArt = () => (
     <path d="M60 84 L70 98 L80 84 Z" fill="#FF76B5" />
   </Frame>
 );
+
+export const TugOfWarArt = () => (
+  <Frame bg="#EAF5FF">
+    <path d="M18 70 C 60 74, 100 66, 142 70" stroke="#B7790A" strokeWidth="5" fill="none" strokeLinecap="round" />
+    {[[34, '#1267E9'], [54, '#1267E9'], [106, '#E5484D'], [126, '#E5484D']].map(([x, c]) => (
+      <g key={`${x}`} transform={`translate(${x} 0)`}>
+        <rect x="-7" y="62" width="14" height="22" rx="5" fill={c as string} />
+        <circle cy="54" r="9" fill="#FFFFFF" stroke={c as string} strokeWidth="3" />
+      </g>
+    ))}
+    <rect x="78" y="44" width="3" height="30" fill="#071A63" />
+    <path d="M81 44 L98 50 L81 56 Z" fill="#FF76B5" />
+  </Frame>
+);
+
+export const MindMapArt = () => (
+  <Frame bg="#FFF6DC">
+    {[[34, 30, '#1267E9'], [126, 30, '#FF76B5'], [34, 84, '#7B5CFF'], [126, 84, '#22C38E']].map(([x, y, c]) => (
+      <g key={`${x}-${y}`}>
+        <path d={`M80 57 Q ${(80 + (x as number)) / 2} ${y} ${x} ${y}`} stroke={c as string} strokeWidth="4" fill="none" />
+        <rect x={(x as number) - 16} y={(y as number) - 9} width="32" height="18" rx="9" fill={c as string} />
+      </g>
+    ))}
+    <rect x="58" y="44" width="44" height="26" rx="13" fill="#071A63" />
+    <circle cx="80" cy="57" r="5" fill="#FFD34E" />
+  </Frame>
+);

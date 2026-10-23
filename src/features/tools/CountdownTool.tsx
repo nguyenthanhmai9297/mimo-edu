@@ -1,33 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { BellRing, Pause, Play, Plus, RotateCcw, Volume2, VolumeX } from 'lucide-react';
+import { playChime } from './toolSound';
 import { formatClock } from './toolUtils';
 
 const PRESETS = [1, 2, 3, 5, 10, 15];
 const R = 120;
 const CIRC = 2 * Math.PI * R;
-
-/** Three short beeps generated with Web Audio (no sound files). */
-function playChime() {
-  try {
-    const Ctx = window.AudioContext ?? (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-    const ctx = new Ctx();
-    [0, 0.35, 0.7].forEach((t, i) => {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = 'sine';
-      osc.frequency.value = i === 2 ? 1046 : 784;
-      gain.gain.setValueAtTime(0.0001, ctx.currentTime + t);
-      gain.gain.exponentialRampToValueAtTime(0.35, ctx.currentTime + t + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + t + 0.3);
-      osc.connect(gain).connect(ctx.destination);
-      osc.start(ctx.currentTime + t);
-      osc.stop(ctx.currentTime + t + 0.32);
-    });
-    window.setTimeout(() => void ctx.close(), 1500);
-  } catch {
-    // Audio unavailable: the visual "Hết giờ!" still shows
-  }
-}
 
 /** "Đồng hồ đếm ngược": wall-clock based so it stays accurate in background tabs. */
 export const CountdownTool: React.FC<{ presenting: boolean }> = ({ presenting }) => {

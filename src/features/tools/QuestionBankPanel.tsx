@@ -56,8 +56,8 @@ export const QuestionBankPanel: React.FC<{ search: string }> = ({ search }) => {
     <div className="space-y-8">
       <div className="flex flex-col gap-3 rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] p-4 text-sm text-[#5E6C84] sm:flex-row sm:items-center sm:justify-between">
         <p>
-          Các bộ câu hỏi dưới đây sẽ được chọn trực tiếp khi mở <b className="text-[#172B4D]">Câu hỏi nhanh</b> và{' '}
-          <b className="text-[#172B4D]">Lật mảnh ghép Mimo</b> (sắp ra mắt). Giáo viên cũng sẽ nhập được câu hỏi thủ công ngay trong công cụ.
+          Các bộ câu hỏi dưới đây sẽ được chọn trực tiếp khi mở <b className="text-[#172B4D]">Kéo co kiến thức</b>,{' '}
+          <b className="text-[#172B4D]">Mimo Quiz</b> và các trò chơi giáo viên điều khiển. Giáo viên cũng sẽ nhập được câu hỏi thủ công ngay trong công cụ.
         </p>
         <Link to="/admin/homework" className="studio-btn studio-btn-primary shrink-0">
           <PenLine className="h-4 w-4" /> Soạn bộ câu hỏi mới
