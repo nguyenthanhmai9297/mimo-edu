@@ -302,5 +302,69 @@ service cloud.firestore {
       allow update: if isValidId(jobId) && isValidAIJob(incoming()) && incoming().createdAt == existing().createdAt;
       allow delete: if false;
     }
+    // ------------------------------------------------------------------
+    // Luyện Toán cùng Mimo
+    // Questions carry answer keys, so browsers other than teachers' can
+    // never read them; students reach the bank only through the server
+    // API (Admin SDK), which strips answers until an attempt is submitted.
+    // ------------------------------------------------------------------
+    function isValidPracticeLevel(level) {
+      return level in ['nhan_biet', 'thong_hieu', 'van_dung', 'thu_thach'];
+    }
+
+    function isValidPracticeSet(data) {
+      return data.keys().hasAll(['topicId', 'title', 'schemaVersion', 'questionCount', 'status', 'importedAt', 'importedBy', 'updatedAt']) &&
+        data.keys().hasOnly(['topicId', 'title', 'schemaVersion', 'questionCount', 'status', 'notes', 'importedAt', 'importedBy', 'publishedAt', 'updatedAt']) &&
+        data.topicId is string && data.topicId.matches('^N[0-9]{2}$') &&
+        data.title is string && data.title.size() >= 1 && data.title.size() <= 200 &&
+        data.schemaVersion is string && data.schemaVersion.size() <= 20 &&
+        data.questionCount is int && data.questionCount >= 0 && data.questionCount <= 1000 &&
+        (data.status == 'draft' || data.status == 'published') &&
+        (!('notes' in data) || (data.notes is string && data.notes.size() <= 2000)) &&
+        data.importedAt is string && data.importedAt.size() <= 50 &&
+        data.importedBy is string && data.importedBy.size() <= 128 &&
+        (!('publishedAt' in data) || (data.publishedAt is string && data.publishedAt.size() <= 50)) &&
+        data.updatedAt is string && data.updatedAt.size() <= 50;
+    }
+
+    function isValidPracticeQuestion(data) {
+      return data.keys().hasAll(['datasetId', 'topicId', 'skillId', 'level', 'type', 'prompt', 'options', 'correctAnswers', 'explanation', 'status', 'order', 'updatedAt']) &&
+        data.keys().hasOnly(['datasetId', 'topicId', 'skillId', 'level', 'type', 'prompt', 'options', 'correctAnswers', 'explanation', 'status', 'order', 'sourceStatus', 'updatedAt', 'updatedBy']) &&
+        isValidId(data.datasetId) &&
+        data.topicId is string && data.topicId.matches('^N[0-9]{2}$') &&
+        data.skillId is string && data.skillId.size() >= 5 && data.skillId.size() <= 80 &&
+        isValidPracticeLevel(data.level) &&
+        (data.type == 'single_choice' || data.type == 'multiple_choice') &&
+        data.prompt is string && data.prompt.size() >= 1 && data.prompt.size() <= 2000 &&
+        data.options is list && data.options.size() >= 2 && data.options.size() <= 6 &&
+        data.correctAnswers is list && data.correctAnswers.size() >= 1 && data.correctAnswers.size() <= 6 &&
+        data.explanation is string && data.explanation.size() <= 4000 &&
+        (data.status == 'draft' || data.status == 'approved') &&
+        data.order is int &&
+        data.updatedAt is string && data.updatedAt.size() <= 50;
+    }
+
+    match /practiceSets/{setId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidId(setId) && isValidPracticeSet(incoming());
+      allow update: if isAdmin() && isValidId(setId) && isValidPracticeSet(incoming()) &&
+        incoming().topicId == existing().topicId &&
+        incoming().importedAt == existing().importedAt;
+      allow delete: if false;
+    }
+
+    match /practiceQuestions/{questionId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidId(questionId) && isValidPracticeQuestion(incoming());
+      allow update: if isAdmin() && isValidId(questionId) && isValidPracticeQuestion(incoming()) &&
+        incoming().topicId == existing().topicId;
+      allow delete: if false;
+    }
+
+    // Attempts are written by the server only; teachers may read them for statistics.
+    match /practiceAttempts/{attemptId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
   }
 }

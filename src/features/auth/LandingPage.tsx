@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   ArrowRight,
   BookOpenCheck,
-  CheckCircle2,
-  Compass,
-  FileSpreadsheet,
   Gamepad2,
+  GraduationCap,
   KeyRound,
   LogIn,
   ShieldAlert,
   Sparkles,
-  Users,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
-import { HeroClassroomIllustration } from '../../components/ui/CartoonIllustrations';
 import { loginWithStudentCode } from '../../services/studentPortalService';
+import { MimoMascot, SpaceDecor } from '../practice/student/practiceTheme';
+
+/** Student portal tab to open after the access code is accepted. */
+type PortalTarget = 'overview' | 'practice' | 'homework' | 'games';
+
+const HOME_BANNER = '/images/mimo-home-banner.png';
+/** [width, path] – generated from the PNG with cwebp (q85, sharp YUV). */
+const HOME_BANNER_WEBP: [number, string][] = [
+  [800, '/images/mimo-home-banner-800.webp'],
+  [1280, '/images/mimo-home-banner-1280.webp'],
+  [2048, '/images/mimo-home-banner-2048.webp'],
+];
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -25,6 +33,7 @@ export const LandingPage: React.FC = () => {
     authError,
     loginAdminWithGoogle,
     logoutAdmin,
+    hasStudentSession,
     refreshStudentSessionState,
   } = useAppContext();
 
@@ -32,6 +41,11 @@ export const LandingPage: React.FC = () => {
   const [codeLoading, setCodeLoading] = useState(false);
   const [codeError, setCodeError] = useState<string | null>(null);
   const [adminLoginLoading, setAdminLoginLoading] = useState(false);
+  const [target, setTarget] = useState<PortalTarget>('overview');
+  const codeSectionRef = useRef<HTMLElement>(null);
+  const codeInputRef = useRef<HTMLInputElement>(null);
+
+  const portalPath = (tab: PortalTarget) => (tab === 'overview' ? '/portal' : `/portal?tab=${tab}`);
 
   const handleAdminSignIn = async () => {
     if (user && isAdminAuthorized) {
@@ -49,6 +63,18 @@ export const LandingPage: React.FC = () => {
     }
   };
 
+  /** Students go straight in when already signed in, otherwise to the code box. */
+  const openStudentArea = (tab: PortalTarget) => {
+    if (hasStudentSession) {
+      navigate(portalPath(tab));
+      return;
+    }
+    setTarget(tab);
+    setCodeError(null);
+    codeSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    window.setTimeout(() => codeInputRef.current?.focus({ preventScroll: true }), 400);
+  };
+
   const handleStudentCodeSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setCodeError(null);
@@ -62,7 +88,7 @@ export const LandingPage: React.FC = () => {
     try {
       await loginWithStudentCode(cleaned);
       refreshStudentSessionState();
-      navigate('/portal');
+      navigate(portalPath(target));
     } catch (err) {
       setCodeError(
         err instanceof Error
@@ -74,71 +100,112 @@ export const LandingPage: React.FC = () => {
     }
   };
 
-  return (
-    <div className="min-h-screen bg-[#FFFDF7] text-slate-900">
-      {/* Strict 3-Zone Top Bar Contract */}
-      <header className="sticky top-0 z-30 flex items-center justify-between gap-8 border-b-2 border-slate-900 bg-[#FFFDF7]/95 px-6 py-4 backdrop-blur-xs">
-        <a
-          href="/"
-          className="font-display text-xl font-extrabold tracking-tight text-slate-900 whitespace-nowrap shrink-0"
+  const adminLabel =
+    user && isAdminAuthorized ? 'Vào trang giáo viên' : adminLoginLoading ? 'Đang xác thực...' : 'Dành cho giáo viên';
+
+  const heroCopy = (
+    <>
+      <h1 className="font-display text-3xl leading-tight font-extrabold text-white sm:text-4xl xl:text-5xl" style={{ textWrap: 'balance' }}>
+        Học Toán vui, <span className="text-[#FFD34E]">tiến bộ</span> mỗi ngày!
+      </h1>
+      <p className="mt-3 text-base font-semibold text-white/90 sm:text-lg">
+        Cùng Mimo khám phá thế giới Toán học đầy màu sắc.
+      </p>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <button
+          type="button"
+          onClick={() => openStudentArea('overview')}
+          className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl bg-[#FFD34E] px-6 text-base font-extrabold text-[#071A63] shadow-[0_12px_28px_-12px_rgba(255,211,78,0.9)] transition hover:-translate-y-0.5 hover:brightness-105"
         >
-          Lớp Chúng Tôi
-        </a>
+          <KeyRound className="h-5 w-5" /> Vào lớp của em
+        </button>
+        <button
+          type="button"
+          onClick={handleAdminSignIn}
+          disabled={adminLoginLoading}
+          className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl bg-white/10 px-6 text-base font-bold text-white ring-2 ring-white/50 backdrop-blur transition hover:bg-white/20"
+        >
+          <LogIn className="h-5 w-5" /> {adminLabel}
+        </button>
+      </div>
+    </>
+  );
 
-        <nav className="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
-          <a
-            href="#tinh-nang"
-            className="hover:text-blue-600 hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
-          >
-            Tính năng
-          </a>
-          <a
-            href="#cong-hoc-sinh"
-            className="hover:text-blue-600 hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
-          >
-            Cổng học sinh
-          </a>
-          <a
-            href="#loi-ich"
-            className="hover:text-blue-600 hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
-          >
-            Lợi ích
-          </a>
-          <a
-            href="#tro-choi"
-            className="hover:text-blue-600 hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
-          >
-            Trò chơi Toán
-          </a>
-        </nav>
+  const features: {
+    title: string;
+    desc: string;
+    icon: React.ReactNode;
+    gradient: string;
+    onClick: () => void;
+  }[] = [
+    {
+      title: 'Luyện Toán cùng Mimo',
+      desc: 'Luyện theo chuyên đề và mức độ',
+      icon: <Sparkles className="h-6 w-6" />,
+      gradient: 'from-[#1267E9] to-[#54C8FF]',
+      onClick: () => openStudentArea('practice'),
+    },
+    {
+      title: 'Bài tập của em',
+      desc: 'Làm bài thầy cô giao, xem điểm',
+      icon: <BookOpenCheck className="h-6 w-6" />,
+      gradient: 'from-[#FF76B5] to-[#FFB3D6]',
+      onClick: () => openStudentArea('homework'),
+    },
+    {
+      title: 'Trò chơi Toán học',
+      desc: 'Vừa học vừa chơi thật vui',
+      icon: <Gamepad2 className="h-6 w-6" />,
+      gradient: 'from-[#FFB800] to-[#FFD34E]',
+      onClick: () => openStudentArea('games'),
+    },
+    {
+      title: 'Dành cho giáo viên',
+      desc: 'Soạn đề, giao bài, theo dõi lớp',
+      icon: <GraduationCap className="h-6 w-6" />,
+      gradient: 'from-[#7B5CFF] to-[#FF76B5]',
+      onClick: handleAdminSignIn,
+    },
+  ];
 
-        <div className="flex items-center gap-3 shrink-0">
-          <button
-            type="button"
-            onClick={handleAdminSignIn}
-            disabled={adminLoginLoading}
-            className="cartoon-button flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-xs font-extrabold text-white whitespace-nowrap shrink-0"
-          >
-            <LogIn className="h-4 w-4" />
-            {user && isAdminAuthorized
-              ? 'Vào Quản Trị Lớp'
-              : adminLoginLoading
-              ? 'Đang xác thực...'
-              : 'Đăng nhập quản trị'}
-          </button>
+  return (
+    <div className="min-h-screen bg-[#071A63] text-white">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#071A63]/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+          <a href="/" className="flex shrink-0 items-center gap-2.5" aria-label="MimoEDU – Trang chủ">
+            <MimoMascot size={40} eager className="ring-2" />
+            <span className="font-display text-xl font-extrabold tracking-tight">
+              Mimo<span className="text-[#54C8FF]">EDU</span>
+            </span>
+          </a>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => openStudentArea('overview')}
+              className="hidden min-h-[40px] rounded-full px-4 text-sm font-bold text-white/90 transition hover:bg-white/10 sm:inline-flex sm:items-center"
+            >
+              Vào lớp
+            </button>
+            <button
+              type="button"
+              onClick={handleAdminSignIn}
+              disabled={adminLoginLoading}
+              className="inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-white px-4 text-sm font-extrabold text-[#1267E9] shadow-sm transition hover:bg-[#EAF6FF]"
+            >
+              <LogIn className="h-4 w-4" />
+              {user && isAdminAuthorized ? 'Trang giáo viên' : 'Giáo viên đăng nhập'}
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Unauthorized Admin Alert Banner */}
       {authError && (
-        <div className="mx-auto max-w-6xl px-6 pt-6">
-          <div className="cartoon-card flex flex-col justify-between gap-4 bg-rose-50 p-4 sm:flex-row sm:items-center">
+        <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6">
+          <div className="flex flex-col justify-between gap-3 rounded-2xl bg-white p-4 text-slate-800 sm:flex-row sm:items-center">
             <div className="flex items-start gap-3">
               <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-rose-600" />
               <div>
-                <h2 className="font-display text-sm font-extrabold text-rose-900">
-                  Từ chối quyền truy cập Quản trị
-                </h2>
+                <h2 className="font-display text-sm font-extrabold text-rose-900">Từ chối quyền truy cập Quản trị</h2>
                 <p className="mt-0.5 text-xs text-rose-800">{authError}</p>
               </div>
             </div>
@@ -146,7 +213,7 @@ export const LandingPage: React.FC = () => {
               <button
                 type="button"
                 onClick={logoutAdmin}
-                className="cartoon-button shrink-0 rounded-xl bg-white px-3 py-1.5 text-xs font-bold text-slate-800"
+                className="shrink-0 rounded-xl bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-800"
               >
                 Đổi tài khoản Google khác
               </button>
@@ -155,316 +222,105 @@ export const LandingPage: React.FC = () => {
         </div>
       )}
 
-      {/* Hero Section */}
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:py-16">
-        <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12">
-          {/* Left Hero Copy + Student Code Entry */}
-          <div className="flex flex-col justify-between lg:col-span-6">
-            <div>
-              <p className="text-xs font-extrabold tracking-wide text-blue-700">
-                NỀN TẢNG QUẢN LÝ LỚP HỌC & BÀI TẬP TOÁN HỌC
-              </p>
-              <h1
-                className="mt-3 font-display text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl"
-                style={{ textWrap: 'balance' }}
+      <main className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_left,rgba(84,200,255,0.25),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(255,118,181,0.18),transparent_55%)]">
+        <SpaceDecor />
+
+        {/* Hero: the banner keeps its natural ratio; copy sits on the empty sky on the left */}
+        <section className="relative mx-auto max-w-7xl px-4 pt-6 sm:px-6 sm:pt-8">
+          <div className="relative overflow-hidden rounded-[2rem] shadow-[0_30px_80px_-40px_rgba(84,200,255,0.9)] ring-1 ring-white/15">
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={HOME_BANNER_WEBP.map(([w, src]) => `${src} ${w}w`).join(', ')}
+                sizes="(min-width: 1280px) 1232px, calc(100vw - 32px)"
+              />
+              <img
+                src={HOME_BANNER}
+                width={2048}
+                height={768}
+                alt="Mimo ngồi trên mặt trăng giữa vũ trụ Toán học với các con số, hình học và ngôi sao"
+                className="block h-auto w-full"
+                loading="eager"
+                decoding="async"
+              />
+            </picture>
+            <div className="absolute inset-y-0 left-0 hidden w-[52%] items-center bg-gradient-to-r from-[#071A63]/75 via-[#071A63]/35 to-transparent pl-10 xl:pl-14 lg:flex">
+              <div className="max-w-md">{heroCopy}</div>
+            </div>
+          </div>
+          {/* Narrow screens: the banner is too short to carry text, so the copy follows it */}
+          <div className="px-1 pt-6 text-center sm:text-left lg:hidden">{heroCopy}</div>
+        </section>
+
+        <section className="relative mx-auto max-w-7xl px-4 pt-10 sm:px-6">
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {features.map((f) => (
+              <button
+                key={f.title}
+                type="button"
+                onClick={f.onClick}
+                className="group flex min-h-[148px] flex-col items-start gap-2.5 rounded-3xl bg-white p-4 text-left sm:gap-3 sm:p-5 shadow-md transition duration-200 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(84,200,255,0.9)]"
               >
-                Dạy Toán Sáng Tạo, Giao Bài Thông Minh & Gắn Kết Phụ Huynh
-              </h1>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-700">
-                Hệ thống quản lý lớp học chuyên biệt cho giáo viên dạy Toán:
-                soạn đề với công thức LaTeX và hình học phẳng, bóc tách đề từ
-                ảnh/PDF bằng AI, tự động chấm bài và kết nối phụ huynh chỉ qua
-                một mã học sinh 6 ký tự.
-              </p>
-            </div>
+                <span className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-md transition group-hover:scale-110 group-hover:rotate-6 ${f.gradient}`}>
+                  {f.icon}
+                </span>
+                <span className="font-display text-base leading-snug font-extrabold text-[#071A63] sm:text-lg">{f.title}</span>
+                <span className="text-xs text-slate-500 sm:text-sm">{f.desc}</span>
+                <span className="mt-auto inline-flex items-center gap-1 text-sm font-extrabold text-[#1267E9] transition group-hover:gap-2">
+                  Bắt đầu <ArrowRight className="h-4 w-4" />
+                </span>
+              </button>
+            ))}
+          </div>
+        </section>
 
-            {/* Cổng Phụ Huynh / Học Sinh Quick Entry Box */}
-            <div
-              id="cong-hoc-sinh"
-              className="cartoon-card mt-8 bg-amber-50 p-6"
-            >
-              <div className="flex items-center gap-2.5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-slate-900 bg-amber-300">
-                  <KeyRound className="h-5 w-5 text-slate-900" />
-                </div>
-                <div>
-                  <h2 className="font-display text-lg font-extrabold text-slate-900">
-                    Cổng Phụ Huynh & Học Sinh
-                  </h2>
-                  <p className="text-xs text-slate-600">
-                    Nhập mã truy cập 6 ký tự do thầy/cô cung cấp để làm BTVN và
-                    xem điểm
-                  </p>
-                </div>
+        {/* Student access code – same login flow as before */}
+        <section ref={codeSectionRef} id="cong-hoc-sinh" className="relative mx-auto max-w-3xl scroll-mt-24 px-4 py-12 sm:px-6">
+          <div className="rounded-[2rem] bg-white p-6 text-[#071A63] shadow-lg sm:p-8">
+            <div className="flex items-center gap-3">
+              <MimoMascot size={56} />
+              <div>
+                <h2 className="font-display text-xl font-extrabold">Vào lớp của em</h2>
+                <p className="text-sm text-slate-500">Nhập mã 6 ký tự thầy cô đã gửi cho em.</p>
               </div>
-
-              <form
-                onSubmit={handleStudentCodeSubmit}
-                className="mt-4 flex flex-col gap-3 sm:flex-row"
+            </div>
+            <form onSubmit={handleStudentCodeSubmit} className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <input
+                ref={codeInputRef}
+                type="text"
+                maxLength={6}
+                value={studentCode}
+                onChange={(e) => setStudentCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))}
+                placeholder="VD: 8K9P2A"
+                aria-label="Mã học sinh 6 ký tự"
+                className="min-h-[56px] flex-1 rounded-2xl border-2 border-[#BFE3FF] bg-[#F4FAFF] px-5 font-mono text-xl font-bold tracking-[0.3em] text-[#071A63] uppercase placeholder:font-sans placeholder:text-base placeholder:tracking-normal placeholder:text-slate-400 focus:border-[#1267E9] focus:outline-none"
+              />
+              <button
+                type="submit"
+                disabled={codeLoading}
+                className="inline-flex min-h-[56px] items-center justify-center gap-2 rounded-2xl bg-[#1267E9] px-6 text-base font-extrabold text-white shadow-md transition hover:bg-[#0F59CC]"
               >
-                <input
-                  type="text"
-                  maxLength={6}
-                  value={studentCode}
-                  onChange={(e) =>
-                    setStudentCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))
-                  }
-                  placeholder="NHẬP MÃ 6 KÝ TỰ (VD: 8K9P2A)"
-                  className="flex-1 rounded-xl border-2 border-slate-900 bg-white px-4 py-3 font-mono text-base font-bold tracking-widest text-slate-900 uppercase placeholder:font-sans placeholder:text-xs placeholder:tracking-normal placeholder:text-slate-400 focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  disabled={codeLoading}
-                  className="cartoon-button flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-6 py-3 font-display text-sm font-extrabold text-slate-900 whitespace-nowrap shrink-0"
-                >
-                  {codeLoading ? 'Đang kiểm tra...' : 'Vào Lớp Ngay'}
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
-
-              {codeError && (
-                <p className="mt-2.5 text-xs font-bold text-rose-600">
-                  {codeError}
-                </p>
-              )}
-
-              <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
-                <span>Không cần tài khoản Google · Bảo mật theo phiên</span>
-                <button
-                  type="button"
-                  onClick={() => navigate('/portal')}
-                  className="font-bold text-blue-700 hover:underline"
-                >
-                  Mở trang đăng nhập học sinh riêng →
-                </button>
-              </div>
-            </div>
+                {codeLoading ? 'Đang kiểm tra...' : 'Vào lớp'}
+                <ArrowRight className="h-5 w-5" />
+              </button>
+            </form>
+            {codeError && <p className="mt-3 text-sm font-bold text-rose-600">{codeError}</p>}
+            <p className="mt-3 text-xs text-slate-500">Không cần tài khoản · Phụ huynh có thể dùng cùng mã để xem bài và điểm của con.</p>
           </div>
+        </section>
+      </main>
 
-          {/* Right Hero Illustration */}
-          <div className="flex flex-col justify-center lg:col-span-6">
-            <HeroClassroomIllustration className="h-full" />
-          </div>
-        </div>
-      </section>
-
-      {/* Core Features Section */}
-      <section
-        id="tinh-nang"
-        className="border-y-2 border-slate-900 bg-sky-50/70 py-16"
-      >
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-2xl">
-            <h2
-              className="font-display text-3xl font-extrabold text-slate-900"
-              style={{ textWrap: 'balance' }}
-            >
-              Trọn Bộ Công Cụ Dành Riêng Cho Lớp Học Toán
-            </h2>
-            <p className="mt-2 text-base text-slate-700">
-              Từ quản lý danh sách lớp, biên soạn đề hình học phức tạp đến chấm
-              bài tự luận có AI trợ giúp.
-            </p>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="cartoon-card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-slate-900 bg-blue-100">
-                <Users className="h-6 w-6 text-blue-700" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-extrabold text-slate-900">
-                01. Quản Lý Lớp & Mã Học Sinh 6 Ký Tự
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                Tạo lớp theo năm học, quản lý hồ sơ học sinh và tự động sinh mã
-                truy cập 6 ký tự duy nhất phía server để gửi cho phụ huynh chỉ
-                với một cú nhấp chuột.
-              </p>
-            </div>
-
-            <div className="cartoon-card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-slate-900 bg-amber-100">
-                <Compass className="h-6 w-6 text-amber-800" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-extrabold text-slate-900">
-                02. Trình Soạn Đề Toán & Vẽ Hình Học
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                Hỗ trợ đầy đủ 5 dạng câu hỏi Toán, gõ công thức KaTeX siêu tốc và
-                dựng hình học phẳng (điểm, đoạn thẳng, góc, tam giác, đường tròn)
-                ngay trong trình soạn thảo.
-              </p>
-            </div>
-
-            <div className="cartoon-card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-slate-900 bg-purple-100">
-                <Sparkles className="h-6 w-6 text-purple-800" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-extrabold text-slate-900">
-                03. Chuyển Ảnh/PDF Thành Đề Bằng AI
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                Tải lên ảnh chụp hoặc PDF phiếu bài tập. AI tự động nhận diện
-                công thức, phân loại câu hỏi và tùy chọn tự giải đề để giáo viên
-                duyệt trước khi lưu.
-              </p>
-            </div>
-
-            <div className="cartoon-card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-slate-900 bg-emerald-100">
-                <BookOpenCheck className="h-6 w-6 text-emerald-800" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-extrabold text-slate-900">
-                04. Giao Bài Snapshot & Tự Động Chấm
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                Đóng băng nội dung đề tại thời điểm giao, ẩn tuyệt đối đáp án
-                chuẩn dưới trình duyệt. Tự chấm trắc nghiệm, đúng/sai nhiều ý,
-                trả lời ngắn và gợi ý chấm tự luận.
-              </p>
-            </div>
-
-            <div className="cartoon-card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-slate-900 bg-rose-100">
-                <FileSpreadsheet className="h-6 w-6 text-rose-800" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-extrabold text-slate-900">
-                05. Sổ Nhận Xét Tháng Cho Phụ Huynh
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                Tổng hợp điểm mạnh, nội dung cần cải thiện, tỷ lệ hoàn thành
-                BTVN và gợi ý luyện tập hàng tháng giúp phụ huynh nắm bắt sát
-                sao việc học của con.
-              </p>
-            </div>
-
-            <div id="tro-choi" className="cartoon-card p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-slate-900 bg-orange-100">
-                <Gamepad2 className="h-6 w-6 text-orange-800" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-extrabold text-slate-900">
-                06. Kho Trò Chơi Toán Học Tương Tác
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                Tích hợp các trò chơi rèn luyện Số học, Phép tính, Hình học và
-                Tư duy logic qua HTTPS iframe an toàn, giúp học sinh hứng thú
-                ôn luyện mỗi ngày.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Comparison for Teachers & Parents */}
-      <section id="loi-ich" className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <div className="cartoon-card bg-white p-8">
-            <p className="text-xs font-extrabold text-blue-700">
-              DÀNH CHO GIÁO VIÊN TOÁN
-            </p>
-            <h3 className="mt-2 font-display text-2xl font-extrabold text-slate-900">
-              Tiết Kiệm 70% Thời Gian Soạn Đề & Chấm Bài
-            </h3>
-            <ul className="mt-5 space-y-3 text-sm text-slate-700">
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
-                <span>
-                  Soạn đề Toán chuẩn cấu trúc 5 loại câu hỏi mới nhất, có sẵn
-                  bảng dựng hình học phẳng trực quan.
-                </span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
-                <span>
-                  Chuyển phiếu bài tập giấy hoặc file PDF thành học liệu Toán 3
-                  số hóa chỉ trong vài giây nhờ AI.
-                </span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
-                <span>
-                  Theo dõi tức thì học sinh nào chưa làm, đang làm hoặc đã nộp
-                  bài trên bảng điều khiển trung tâm.
-                </span>
-              </li>
-            </ul>
-            <button
-              type="button"
-              onClick={handleAdminSignIn}
-              className="cartoon-button mt-6 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-xs font-extrabold text-white"
-            >
-              <LogIn className="h-4 w-4" />
-              Đăng nhập Quản trị Giáo viên
+      <footer className="border-t border-white/10 py-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 text-sm text-white/70 sm:flex-row sm:px-6">
+          <span>
+            <b className="font-display text-white">MimoEDU</b> · Học Toán vui cùng Mimo
+          </span>
+          <div className="flex items-center gap-5">
+            <button type="button" onClick={() => openStudentArea('overview')} className="hover:text-white">
+              Cổng học sinh
             </button>
-          </div>
-
-          <div className="cartoon-card bg-amber-50/70 p-8">
-            <p className="text-xs font-extrabold text-amber-900">
-              DÀNH CHO PHỤ HUYNH & HỌC SINH
-            </p>
-            <h3 className="mt-2 font-display text-2xl font-extrabold text-slate-900">
-              Truy Cập Dễ Dàng Trên Điện Thoại — Không Cần Tạo Tài Khoản
-            </h3>
-            <ul className="mt-5 space-y-3 text-sm text-slate-700">
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                <span>
-                  Chỉ cần nhập 6 ký tự mã học sinh để vào ngay góc học tập cá
-                  nhân trên điện thoại hoặc máy tính bảng.
-                </span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                <span>
-                  Làm bài tập về nhà rõ nét, có lưu nháp tự động và bộ gõ công
-                  thức Toán thân thiện cho câu tự luận.
-                </span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-700" />
-                <span>
-                  Phụ huynh xem trực tiếp điểm số, lời giải chi tiết sau khi
-                  chấm và nhận xét định kỳ hàng tháng từ giáo viên.
-                </span>
-              </li>
-            </ul>
-            <a
-              href="#cong-hoc-sinh"
-              className="cartoon-button mt-6 inline-flex items-center gap-2 rounded-xl bg-amber-400 px-5 py-2.5 text-xs font-extrabold text-slate-900"
-            >
-              <KeyRound className="h-4 w-4" />
-              Nhập Mã Học Sinh Ngay
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Quiet Footer */}
-      <footer className="border-t-2 border-slate-900 bg-white py-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-          <div>
-            <span className="font-display text-base font-extrabold text-slate-900">
-              Lớp Chúng Tôi
-            </span>
-            <span className="mx-2 text-slate-400">·</span>
-            <span className="text-xs text-slate-600">
-              Hệ thống quản lý lớp học Toán, giao chấm BTVN và cổng phụ huynh
-            </span>
-          </div>
-          <div className="flex items-center gap-6 text-xs font-semibold text-slate-600">
-            <button
-              type="button"
-              onClick={handleAdminSignIn}
-              className="hover:text-blue-600"
-            >
-              Quản trị Giáo viên
-            </button>
-            <button
-              type="button"
-              onClick={() => navigate('/portal')}
-              className="hover:text-blue-600"
-            >
-              Cổng Học Sinh
+            <button type="button" onClick={handleAdminSignIn} className="hover:text-white">
+              Giáo viên
             </button>
           </div>
         </div>

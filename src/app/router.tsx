@@ -14,6 +14,7 @@ import { CommentsPage } from '../features/comments/CommentsPage';
 import { GamesAdminPage } from '../features/games/GamesAdminPage';
 import { Geometry3DPage } from '../features/geometry3d/Geometry3DPage';
 import { AdminAllowlistPage } from '../features/auth/AdminAllowlistPage';
+import { PracticeAdminPage } from '../features/practice/admin/PracticeAdminPage';
 
 export const AppRouter: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ export const AppRouter: React.FC = () => {
             <Route path="students" element={<StudentsPage />} />
             <Route path="homework" element={<HomeworkPage />} />
             <Route path="geometry3d" element={<Geometry3DPage />} />
+            <Route path="practice" element={<PracticeAdminPage />} />
             <Route path="assignments" element={<AssignmentsPage />} />
             <Route path="grading" element={<GradingPage />} />
             <Route path="comments" element={<CommentsPage />} />

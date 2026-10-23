@@ -1,0 +1,1409 @@
+{
+  "schemaVersion": "1.0",
+  "datasetId": "mimoedu-toan3-n01-v1",
+  "title": "Số tự nhiên trong phạm vi 100 000",
+  "language": "vi",
+  "notes": "Bộ 40 câu biên soạn phục vụ nhập thử. Cần giáo viên duyệt và ánh xạ schema với ứng dụng trước khi công bố.",
+  "questions": [
+    {
+      "id": "M3-N01-001",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.read_write",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số “ba mươi hai nghìn bốn trăm mười lăm” viết là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "32 415"
+        },
+        {
+          "id": "B",
+          "text": "32 451"
+        },
+        {
+          "id": "C",
+          "text": "23 415"
+        },
+        {
+          "id": "D",
+          "text": "32 514"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ba mươi hai nghìn là 32 000; bốn trăm mười lăm là 415. Số cần tìm là 32 415.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-002",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.read_write",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 70 308 được đọc là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bảy mươi nghìn ba trăm linh tám"
+        },
+        {
+          "id": "B",
+          "text": "Bảy nghìn ba trăm linh tám"
+        },
+        {
+          "id": "C",
+          "text": "Bảy mươi nghìn ba mươi tám"
+        },
+        {
+          "id": "D",
+          "text": "Bảy mươi nghìn ba trăm tám mươi"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "70 308 gồm 70 nghìn, 3 trăm, 0 chục và 8 đơn vị; đọc là bảy mươi nghìn ba trăm linh tám.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-003",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Chữ số 6 trong số 46 215 thuộc hàng nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hàng chục nghìn"
+        },
+        {
+          "id": "B",
+          "text": "Hàng nghìn"
+        },
+        {
+          "id": "C",
+          "text": "Hàng trăm"
+        },
+        {
+          "id": "D",
+          "text": "Hàng chục"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong 46 215, chữ số 6 nằm ở hàng nghìn.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-004",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong số 83 741, chữ số hàng trăm là chữ số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8"
+        },
+        {
+          "id": "B",
+          "text": "3"
+        },
+        {
+          "id": "C",
+          "text": "7"
+        },
+        {
+          "id": "D",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Từ phải sang trái: đơn vị 1, chục 4, trăm 7.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-005",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.successor",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số liền sau của 59 999 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "59 998"
+        },
+        {
+          "id": "B",
+          "text": "60 000"
+        },
+        {
+          "id": "C",
+          "text": "59 990"
+        },
+        {
+          "id": "D",
+          "text": "60 001"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số liền sau lớn hơn số đã cho 1 đơn vị: 59 999 + 1 = 60 000.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-006",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.successor",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số liền trước của 40 000 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "39 999"
+        },
+        {
+          "id": "B",
+          "text": "40 001"
+        },
+        {
+          "id": "C",
+          "text": "39 990"
+        },
+        {
+          "id": "D",
+          "text": "30 999"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Số liền trước bé hơn số đã cho 1 đơn vị: 40 000 − 1 = 39 999.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-007",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.digits",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số nào dưới đây là số có năm chữ số?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 999"
+        },
+        {
+          "id": "B",
+          "text": "10 000"
+        },
+        {
+          "id": "C",
+          "text": "999"
+        },
+        {
+          "id": "D",
+          "text": "1 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "10 000 có năm chữ số; các số còn lại có ít hơn năm chữ số.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-008",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số 25 600 gồm bao nhiêu chục nghìn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "2"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "0"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chữ số hàng chục nghìn là 2.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-009",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.read_write",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Số nào dưới đây được viết đúng theo “chín mươi nghìn không trăm linh năm”?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90 500"
+        },
+        {
+          "id": "B",
+          "text": "90 050"
+        },
+        {
+          "id": "C",
+          "text": "90 005"
+        },
+        {
+          "id": "D",
+          "text": "90 505"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chín mươi nghìn và năm đơn vị tạo thành số 90 005.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-010",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.read_write",
+      "level": "nhan_biet",
+      "type": "multiple_choice",
+      "prompt": "Trong các số sau, số nào bằng 100 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "10 000"
+        },
+        {
+          "id": "B",
+          "text": "100 000"
+        },
+        {
+          "id": "C",
+          "text": "99 999"
+        },
+        {
+          "id": "D",
+          "text": "1 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Một trăm nghìn được viết là 100 000.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-011",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.decompose",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 54 203 được phân tích thành tổng nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "50 000 + 4 000 + 200 + 3"
+        },
+        {
+          "id": "B",
+          "text": "50 000 + 400 + 20 + 3"
+        },
+        {
+          "id": "C",
+          "text": "5 000 + 4 000 + 200 + 3"
+        },
+        {
+          "id": "D",
+          "text": "50 000 + 4 000 + 20 + 3"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "54 203 gồm 5 chục nghìn, 4 nghìn, 2 trăm, 0 chục và 3 đơn vị.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-012",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Giá trị của chữ số 7 trong số 27 615 là bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "7"
+        },
+        {
+          "id": "B",
+          "text": "70"
+        },
+        {
+          "id": "C",
+          "text": "700"
+        },
+        {
+          "id": "D",
+          "text": "7 000"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Chữ số 7 ở hàng nghìn nên có giá trị 7 000.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-013",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compose",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số gồm 4 chục nghìn, 0 nghìn, 6 trăm, 2 chục và 9 đơn vị là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "46 029"
+        },
+        {
+          "id": "B",
+          "text": "40 629"
+        },
+        {
+          "id": "C",
+          "text": "40 692"
+        },
+        {
+          "id": "D",
+          "text": "40 269"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Viết các chữ số theo từng hàng: 4, 0, 6, 2, 9 được 40 629.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-014",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compare",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Dãy số nào được xếp theo thứ tự từ bé đến lớn?",
+      "options": [
+        {
+          "id": "A",
+          "text": "31 205; 31 250; 31 502"
+        },
+        {
+          "id": "B",
+          "text": "31 502; 31 250; 31 205"
+        },
+        {
+          "id": "C",
+          "text": "31 250; 31 205; 31 502"
+        },
+        {
+          "id": "D",
+          "text": "31 205; 31 502; 31 250"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "So sánh lần lượt: 31 205 < 31 250 < 31 502.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-015",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compare",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong các số 68 420, 68 402, 68 240, 68 204, số lớn nhất là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "68 402"
+        },
+        {
+          "id": "B",
+          "text": "68 240"
+        },
+        {
+          "id": "C",
+          "text": "68 420"
+        },
+        {
+          "id": "D",
+          "text": "68 204"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cùng 68 nghìn; so sánh các hàng tiếp theo, 420 lớn nhất.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-016",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Trong các số sau, số nào có chữ số hàng nghìn bằng 0?",
+      "options": [
+        {
+          "id": "A",
+          "text": "51 203"
+        },
+        {
+          "id": "B",
+          "text": "50 123"
+        },
+        {
+          "id": "C",
+          "text": "15 023"
+        },
+        {
+          "id": "D",
+          "text": "70 321"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Trong 50 123, chữ số hàng nghìn là 0.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-017",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 90 090 gồm bao nhiêu chục và bao nhiêu đơn vị ở hai hàng cuối?",
+      "options": [
+        {
+          "id": "A",
+          "text": "9 chục và 0 đơn vị"
+        },
+        {
+          "id": "B",
+          "text": "0 chục và 9 đơn vị"
+        },
+        {
+          "id": "C",
+          "text": "9 chục và 9 đơn vị"
+        },
+        {
+          "id": "D",
+          "text": "0 chục và 0 đơn vị"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hai chữ số cuối là 90: hàng chục là 9, hàng đơn vị là 0.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-018",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.successor",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số nào nằm giữa 45 678 và 45 680?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45 677"
+        },
+        {
+          "id": "B",
+          "text": "45 679"
+        },
+        {
+          "id": "C",
+          "text": "45 681"
+        },
+        {
+          "id": "D",
+          "text": "45 670"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hai số tự nhiên liên tiếp 45 678 và 45 679, tiếp theo là 45 680.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-019",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compare",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Viết số lớn nhất từ bốn số 76 451, 76 415, 76 541, 76 514.",
+      "options": [
+        {
+          "id": "A",
+          "text": "76 415"
+        },
+        {
+          "id": "B",
+          "text": "76 451"
+        },
+        {
+          "id": "C",
+          "text": "76 514"
+        },
+        {
+          "id": "D",
+          "text": "76 541"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bốn số đều có 76 nghìn; so sánh phần còn lại: 541 lớn nhất.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-020",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.decompose",
+      "level": "thong_hieu",
+      "type": "multiple_choice",
+      "prompt": "Số 38 070 được viết thành tổng nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "30 000 + 8 000 + 700"
+        },
+        {
+          "id": "B",
+          "text": "30 000 + 8 000 + 70"
+        },
+        {
+          "id": "C",
+          "text": "3 000 + 800 + 70"
+        },
+        {
+          "id": "D",
+          "text": "30 000 + 800 + 70"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "38 070 có 3 chục nghìn, 8 nghìn và 7 chục.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-021",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một thư viện có 23 405 quyển sách. Trong số đó, chữ số 4 biểu thị bao nhiêu quyển sách?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4 quyển"
+        },
+        {
+          "id": "B",
+          "text": "40 quyển"
+        },
+        {
+          "id": "C",
+          "text": "400 quyển"
+        },
+        {
+          "id": "D",
+          "text": "4 000 quyển"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chữ số 4 ở hàng trăm nên biểu thị 400 quyển sách.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-022",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compose",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mã một thùng hàng là số gồm 6 chục nghìn, 2 nghìn, 5 trăm và 8 đơn vị. Mã đó là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "62 508"
+        },
+        {
+          "id": "B",
+          "text": "62 580"
+        },
+        {
+          "id": "C",
+          "text": "60 258"
+        },
+        {
+          "id": "D",
+          "text": "65 208"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "6 chục nghìn = 60 000; cộng 2 000, 500 và 8 được 62 508.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-023",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compare",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Bốn bạn có số thẻ lần lượt là 35 078, 35 807, 35 780 và 35 708. Số thẻ nhỏ nhất là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "35 807"
+        },
+        {
+          "id": "B",
+          "text": "35 780"
+        },
+        {
+          "id": "C",
+          "text": "35 708"
+        },
+        {
+          "id": "D",
+          "text": "35 078"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "Các số cùng 35 nghìn; 078 là phần còn lại nhỏ nhất.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-024",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.sequence",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một cửa hàng ghi mã sản phẩm bắt đầu từ 48 997 và tăng 1 cho mỗi sản phẩm tiếp theo. Mã của sản phẩm thứ tư là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "48 999"
+        },
+        {
+          "id": "B",
+          "text": "49 000"
+        },
+        {
+          "id": "C",
+          "text": "49 001"
+        },
+        {
+          "id": "D",
+          "text": "48 998"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thứ nhất 48 997, thứ hai 48 998, thứ ba 48 999, thứ tư 49 000.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-025",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.sequence",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một bảng điện tử lần lượt hiển thị 19 998, 19 999, … . Số tiếp theo là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "19 990"
+        },
+        {
+          "id": "B",
+          "text": "20 000"
+        },
+        {
+          "id": "C",
+          "text": "20 001"
+        },
+        {
+          "id": "D",
+          "text": "19 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dãy số tăng thêm 1; 19 999 + 1 = 20 000.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-026",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.successor",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một trường đánh số ghế theo thứ tự tăng dần. Ghế mang số 70 099 đứng ngay trước ghế mang số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "70 098"
+        },
+        {
+          "id": "B",
+          "text": "70 100"
+        },
+        {
+          "id": "C",
+          "text": "70 090"
+        },
+        {
+          "id": "D",
+          "text": "71 000"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số liền sau 70 099 là 70 100.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-027",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compose",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Mã bưu kiện có năm chữ số: hàng chục nghìn là 8, hàng nghìn là 0, hàng trăm là 3, hàng chục là 0, hàng đơn vị là 6. Đó là mã nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "83 006"
+        },
+        {
+          "id": "B",
+          "text": "80 360"
+        },
+        {
+          "id": "C",
+          "text": "80 306"
+        },
+        {
+          "id": "D",
+          "text": "80 036"
+        }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Các chữ số theo thứ tự hàng là 8–0–3–0–6, tạo số 80 306.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-028",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.sequence",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một máy đếm tăng từ 49 995 đến 50 000, mỗi lần tăng 1. Máy đã tăng bao nhiêu lần?",
+      "options": [
+        {
+          "id": "A",
+          "text": "4"
+        },
+        {
+          "id": "B",
+          "text": "5"
+        },
+        {
+          "id": "C",
+          "text": "6"
+        },
+        {
+          "id": "D",
+          "text": "10"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "50 000 − 49 995 = 5, nên có 5 lần tăng.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-029",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compare",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Sắp xếp các mã 12 909, 12 990, 12 099 theo thứ tự từ bé đến lớn.",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 099; 12 909; 12 990"
+        },
+        {
+          "id": "B",
+          "text": "12 909; 12 099; 12 990"
+        },
+        {
+          "id": "C",
+          "text": "12 990; 12 909; 12 099"
+        },
+        {
+          "id": "D",
+          "text": "12 099; 12 990; 12 909"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "12 099 < 12 909 < 12 990.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-030",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.compose",
+      "level": "van_dung",
+      "type": "multiple_choice",
+      "prompt": "Một số gồm 45 nghìn và 72 đơn vị. Số đó được viết là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45 720"
+        },
+        {
+          "id": "B",
+          "text": "45 072"
+        },
+        {
+          "id": "C",
+          "text": "45 702"
+        },
+        {
+          "id": "D",
+          "text": "45 027"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "45 000 + 72 = 45 072.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-031",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.digit_puzzle",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dùng mỗi chữ số 0, 2, 5, 8, 9 đúng một lần để lập số có năm chữ số lớn nhất. Số đó là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "98 520"
+        },
+        {
+          "id": "B",
+          "text": "98 502"
+        },
+        {
+          "id": "C",
+          "text": "95 820"
+        },
+        {
+          "id": "D",
+          "text": "89 520"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Xếp các chữ số từ lớn đến bé: 9, 8, 5, 2, 0 được 98 520.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-032",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.digit_puzzle",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dùng mỗi chữ số 0, 3, 4, 7, 8 đúng một lần để lập số có năm chữ số bé nhất. Số đó là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "03 478"
+        },
+        {
+          "id": "B",
+          "text": "30 478"
+        },
+        {
+          "id": "C",
+          "text": "34 078"
+        },
+        {
+          "id": "D",
+          "text": "30 487"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Chữ số đầu không thể là 0. Chọn 3 ở đầu rồi xếp 0, 4, 7, 8 theo thứ tự tăng dần: 30 478.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-033",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một số có năm chữ số. Nếu đổi chỗ chữ số hàng nghìn là 2 với chữ số hàng trăm là 7, số đó tăng thêm bao nhiêu?",
+      "options": [
+        {
+          "id": "A",
+          "text": "450"
+        },
+        {
+          "id": "B",
+          "text": "4 500"
+        },
+        {
+          "id": "C",
+          "text": "5 000"
+        },
+        {
+          "id": "D",
+          "text": "900"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Đổi từ 2 nghìn 7 trăm thành 7 nghìn 2 trăm làm tăng 5 000 − 500 = 4 500.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-034",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.digit_puzzle",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ các chữ số 1, 4, 6, 9, 0 (mỗi chữ số dùng một lần), số có năm chữ số lớn thứ hai là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "96 410"
+        },
+        {
+          "id": "B",
+          "text": "96 401"
+        },
+        {
+          "id": "C",
+          "text": "94 610"
+        },
+        {
+          "id": "D",
+          "text": "96 140"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số lớn nhất là 96 410; số liền sau trong thứ tự giảm dần các hoán vị là 96 401.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-035",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.logic",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Tìm số có năm chữ số biết: chữ số hàng chục nghìn là 5; hàng nghìn gấp đôi hàng đơn vị; hàng trăm là 0; hàng chục là 3; hàng đơn vị là 4.",
+      "options": [
+        {
+          "id": "A",
+          "text": "58 034"
+        },
+        {
+          "id": "B",
+          "text": "54 038"
+        },
+        {
+          "id": "C",
+          "text": "58 304"
+        },
+        {
+          "id": "D",
+          "text": "58 043"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Hàng đơn vị là 4 nên hàng nghìn là 8; các chữ số là 5, 8, 0, 3, 4.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-036",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.sequence",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Một dãy ghi các số 12 345, 12 445, 12 545, … . Số thứ năm trong dãy là gì?",
+      "options": [
+        {
+          "id": "A",
+          "text": "12 645"
+        },
+        {
+          "id": "B",
+          "text": "12 745"
+        },
+        {
+          "id": "C",
+          "text": "12 845"
+        },
+        {
+          "id": "D",
+          "text": "12 705"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Mỗi số tăng 100; số thứ tư 12 645, số thứ năm 12 745.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-037",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.logic",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Có bao nhiêu số tự nhiên gồm năm chữ số nằm giữa 99 995 và 100 000?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3"
+        },
+        {
+          "id": "B",
+          "text": "4"
+        },
+        {
+          "id": "C",
+          "text": "5"
+        },
+        {
+          "id": "D",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Các số là 99 996, 99 997, 99 998, 99 999: có 4 số.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-038",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.digit_puzzle",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Dùng các chữ số 2, 3, 5, 7, 0 (mỗi chữ số dùng một lần), số bé nhất có năm chữ số và chữ số hàng đơn vị là 5 là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 375"
+        },
+        {
+          "id": "B",
+          "text": "20 735"
+        },
+        {
+          "id": "C",
+          "text": "23 075"
+        },
+        {
+          "id": "D",
+          "text": "30 275"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Giữ 5 ở cuối. Chọn chữ số đầu nhỏ nhất khác 0 là 2; các chữ số còn lại xếp 0, 3, 7.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-039",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.place_value",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Từ số 54 321, đổi chỗ chữ số hàng chục nghìn và hàng nghìn thì được số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "45 321"
+        },
+        {
+          "id": "B",
+          "text": "53 421"
+        },
+        {
+          "id": "C",
+          "text": "54 312"
+        },
+        {
+          "id": "D",
+          "text": "43 521"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Đổi 5 và 4 ở hai hàng đầu được số 45 321.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    },
+    {
+      "id": "M3-N01-040",
+      "grade": 3,
+      "topicId": "N01",
+      "topicName": "Số tự nhiên trong phạm vi 100 000",
+      "skillId": "N01.digit_puzzle",
+      "level": "thu_thach",
+      "type": "multiple_choice",
+      "prompt": "Trong các số có năm chữ số mà tất cả chữ số đều khác nhau và chữ số hàng chục nghìn là 9, số bé nhất là số nào?",
+      "options": [
+        {
+          "id": "A",
+          "text": "90 123"
+        },
+        {
+          "id": "B",
+          "text": "90 012"
+        },
+        {
+          "id": "C",
+          "text": "90 213"
+        },
+        {
+          "id": "D",
+          "text": "91 023"
+        }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Sau 9 ở đầu, chọn lần lượt các chữ số nhỏ nhất chưa dùng: 0, 1, 2, 3 được 90 123.",
+      "tags": [
+        "toan-3",
+        "so-tu-nhien"
+      ],
+      "status": "reviewed_draft"
+    }
+  ]
+}

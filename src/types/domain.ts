@@ -1,5 +1,5 @@
 /**
- * Core Domain Types for Lớp Chúng Tôi
+ * Core Domain Types for MimoEDU
  */
 
 export type QuestionType =

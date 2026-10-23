@@ -4,6 +4,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import { getApps, initializeApp } from 'firebase/app';
 import {
   collection,
+  connectFirestoreEmulator,
   doc,
   getDoc,
   getDocs,
@@ -14,6 +15,9 @@ import {
   where,
 } from 'firebase/firestore';
 import { getAIAdapter } from '../src/services/aiAdapter';
+import { EMULATOR_PROJECT_ID, getAdminDb } from './firebaseAdmin';
+import { createPracticeRouter } from './practice';
+import { createFirestorePracticeStore, PracticeStore } from './practiceStore';
 import {
   Assignment,
   ClassRoom,
@@ -52,8 +56,20 @@ let serverDbInstance: ReturnType<typeof getFirestore> | null = null;
 function getServerDb() {
   if (!serverDbInstance) {
     const existing = getApps().find((a) => a.name === 'server-firebase-app');
-    const app = existing || initializeApp(firebaseConfig, 'server-firebase-app');
+    // Local testing: point at the Firestore emulator under a demo-* project so
+    // nothing can reach the real database.
+    const emulatorHost = process.env.FIRESTORE_EMULATOR_HOST;
+    const app =
+      existing ||
+      initializeApp(
+        emulatorHost ? { ...firebaseConfig, projectId: EMULATOR_PROJECT_ID } : firebaseConfig,
+        'server-firebase-app'
+      );
     serverDbInstance = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+    if (emulatorHost && !existing) {
+      const [host, port] = emulatorHost.split(':');
+      connectFirestoreEmulator(serverDbInstance, host, Number(port));
+    }
   }
   return serverDbInstance;
 }
@@ -323,6 +339,25 @@ export function createApiApp() {
       payload;
     next();
   };
+
+  // Luyện Toán cùng Mimo: served through the Admin SDK so answer keys stay server-side
+  let practiceStore: PracticeStore | null | undefined;
+  const practiceRouter = createPracticeRouter({
+    requireStudentAuth,
+    getStore: () => {
+      if (practiceStore === undefined) {
+        try {
+          const adminDb = getAdminDb();
+          practiceStore = adminDb ? createFirestorePracticeStore(adminDb) : null;
+        } catch (error) {
+          console.error('Firebase Admin init failed (FIREBASE_SERVICE_ACCOUNT?):', error);
+          practiceStore = null;
+        }
+      }
+      return practiceStore;
+    },
+  });
+  app.use(['/api/practice', '/practice'], practiceRouter);
 
   // 3. Student Portal Data Endpoint
   const handleStudentPortalData = async (req: Request, res: Response) => {

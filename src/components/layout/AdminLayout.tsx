@@ -13,6 +13,7 @@ import {
   MessageSquareHeart,
   School,
   ShieldCheck,
+  Sparkles,
   X,
 } from 'lucide-react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
@@ -24,6 +25,7 @@ const NAV_ITEMS = [
   { to: '/admin/students', label: 'Học sinh & Mã', icon: GraduationCap },
   { to: '/admin/homework', label: 'Kho học liệu Toán 3', icon: BookOpen },
   { to: '/admin/geometry3d', label: 'Hình học 3D', icon: Box },
+  { to: '/admin/practice', label: 'Luyện Toán cùng Mimo', icon: Sparkles },
   { to: '/admin/assignments', label: 'Giao bài tập', icon: CalendarCheck },
   { to: '/admin/grading', label: 'Chấm bài nộp', icon: CheckSquare },
   { to: '/admin/comments', label: 'Nhận xét tháng', icon: MessageSquareHeart },
@@ -62,7 +64,7 @@ export const AdminLayout: React.FC = () => {
             to="/admin"
             className="font-display text-lg font-extrabold tracking-tight text-slate-900 whitespace-nowrap"
           >
-            Lớp Chúng Tôi
+            Mimo<span className="text-[#1267E9]">EDU</span>
           </Link>
           <span className="text-xs font-bold text-slate-600">Giáo viên</span>
         </div>
@@ -131,7 +133,7 @@ export const AdminLayout: React.FC = () => {
           <aside className="relative z-10 flex w-72 flex-col border-r-2 border-slate-900 bg-white">
             <div className="flex h-16 items-center justify-between border-b-2 border-slate-900 bg-amber-100 px-5">
               <span className="font-display text-lg font-extrabold text-slate-900">
-                Lớp Chúng Tôi
+                Mimo<span className="text-[#1267E9]">EDU</span>
               </span>
               <button
                 type="button"

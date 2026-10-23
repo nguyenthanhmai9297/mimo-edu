@@ -42,7 +42,7 @@ export const RequireAdminGuard: React.FC = () => {
             Tài khoản chưa được cấp quyền
           </h1>
           <p className="text-sm font-medium text-[#475569] mb-4">
-            Email <span className="font-mono font-bold text-[#1E1B4B]">{user.email}</span> hiện chưa nằm trong danh sách Quản trị viên (Allowlist) của Lớp Chúng Tôi.
+            Email <span className="font-mono font-bold text-[#1E1B4B]">{user.email}</span> hiện chưa nằm trong danh sách Quản trị viên (Allowlist) của MimoEDU.
           </p>
           <div className="p-3 rounded-xl bg-[#FFFAF0] border-2 border-[#1E1B4B] text-xs font-semibold text-[#475569] mb-6 text-left">
             Chỉ những tài khoản Google đã được Quản trị viên cấp phép trong hệ thống mới có quyền truy cập phân hệ Giáo viên. Hệ thống không cho phép tự đăng ký làm Admin.

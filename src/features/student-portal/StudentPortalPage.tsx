@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   AlertTriangle,
@@ -10,6 +10,7 @@ import {
   Copy,
   ExternalLink,
   Gamepad2,
+  Sparkles,
   Home,
   KeyRound,
   LogOut,
@@ -24,8 +25,13 @@ import { useAppContext } from '../../app/providers';
 import { MathRichEditor } from '../../components/editor/MathRichEditor';
 import { RichContentRenderer } from '../../components/editor/RichContentRenderer';
 import { GamePortalBannerIllustration } from '../../components/ui/CartoonIllustrations';
+import { PracticePortal } from '../practice/student/PracticePortal';
+import { MimoMascot } from '../practice/student/practiceTheme';
+import { usingFirebaseEmulator } from '../../lib/firebase/config';
 import {
+  clearStudentToken,
   fetchStudentPortalData,
+  getSavedStudentProfile,
   loginWithStudentCode,
   StudentPortalBundle,
   submitStudentHomework,
@@ -39,7 +45,11 @@ import {
 } from '../../types/domain';
 import { createRichTextFromPlain } from '../../utils/gradingEngine';
 
-type PortalTab = 'overview' | 'homework' | 'comments' | 'games' | 'profile';
+type PortalTab = 'overview' | 'homework' | 'practice' | 'comments' | 'games' | 'profile';
+const PORTAL_TABS: PortalTab[] = ['overview', 'homework', 'practice', 'comments', 'games', 'profile'];
+
+// Local testing only: /portal?demo=1 signs in the emulator's test student
+const EMULATOR_DEMO_STUDENT_CODE = 'MIMO03';
 
 /** True when rich content has something to show (not just an empty paragraph). */
 function hasRichContent(content?: RichTextContent): boolean {
@@ -58,7 +68,11 @@ export const StudentPortalPage: React.FC = () => {
     logoutStudentPortal,
   } = useAppContext();
 
-  const [activeTab, setActiveTab] = useState<PortalTab>('overview');
+  // ?tab=practice opens a tab directly (used by shared links)
+  const [activeTab, setActiveTab] = useState<PortalTab>(() => {
+    const requested = new URLSearchParams(window.location.search).get('tab');
+    return PORTAL_TABS.includes(requested as PortalTab) ? (requested as PortalTab) : 'overview';
+  });
   const [bundle, setBundle] = useState<StudentPortalBundle | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -116,6 +130,24 @@ export const StudentPortalPage: React.FC = () => {
       setLoading(false);
     }
   }, [refreshStudentSessionState]);
+
+  const demoLoginStarted = useRef(false);
+  useEffect(() => {
+    if (
+      !usingFirebaseEmulator ||
+      demoLoginStarted.current ||
+      new URLSearchParams(window.location.search).get('demo') !== '1'
+    ) {
+      return;
+    }
+    demoLoginStarted.current = true;
+    // A session left over from a real student code would not exist in the emulator
+    if (hasStudentSession && getSavedStudentProfile()?.accessCode === EMULATOR_DEMO_STUDENT_CODE) return;
+    clearStudentToken();
+    loginWithStudentCode(EMULATOR_DEMO_STUDENT_CODE)
+      .then(() => refreshStudentSessionState())
+      .catch((err) => setLoginError(err instanceof Error ? err.message : 'Đăng nhập thử không thành công.'));
+  }, [hasStudentSession, refreshStudentSessionState]);
 
   useEffect(() => {
     if (hasStudentSession) {
@@ -258,7 +290,7 @@ export const StudentPortalPage: React.FC = () => {
               Trang chủ
             </button>
             <span className="font-display text-xs font-extrabold text-blue-700">
-              LỚP CHÚNG TÔI
+              MIMOEDU
             </span>
           </div>
 
@@ -405,6 +437,12 @@ export const StudentPortalPage: React.FC = () => {
       {/* Compact Sticky Top App Bar (<= 56px height to respect 15% mobile sticky cap) */}
       <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b-2 border-slate-900 bg-amber-100/95 px-4 backdrop-blur-xs">
         <div className="flex items-center gap-2.5 truncate">
+          <a href="/" className="flex shrink-0 items-center gap-1.5 border-r-2 border-slate-900/15 pr-2.5" aria-label="MimoEDU – Trang chủ">
+            <MimoMascot size={32} className="ring-2" />
+            <span className="hidden font-display text-sm font-extrabold text-slate-900 sm:inline">
+              Mimo<span className="text-[#1267E9]">EDU</span>
+            </span>
+          </a>
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-2 border-slate-900 bg-white font-display text-sm font-black text-blue-600">
             {student.fullName.slice(0, 1).toUpperCase()}
           </div>
@@ -448,10 +486,15 @@ export const StudentPortalPage: React.FC = () => {
                 { id: 'overview', label: 'Tổng quan', icon: Home },
                 {
                   id: 'homework',
-                  label: `Luyện Toán cùng Mimo (${pendingAssignments.length})`,
-                  // Tablet widths can't fit the full name alongside the other tabs
-                  shortLabel: `Luyện Toán (${pendingAssignments.length})`,
+                  label: `Bài tập (${pendingAssignments.length})`,
                   icon: BookOpen,
+                },
+                {
+                  id: 'practice',
+                  label: 'Luyện Toán cùng Mimo',
+                  // Tablet widths can't fit the full name alongside the other tabs
+                  shortLabel: 'Luyện Toán',
+                  icon: Sparkles,
                 },
                 { id: 'comments', label: 'Nhận xét', icon: MessageSquareHeart },
                 { id: 'games', label: 'Trò chơi Toán', icon: Gamepad2 },
@@ -545,7 +588,7 @@ export const StudentPortalPage: React.FC = () => {
                     onClick={() => setActiveTab('homework')}
                     className="text-xs font-bold text-blue-700 hover:underline"
                   >
-                    Vào Luyện Toán cùng Mimo →
+                    Tất cả bài tập →
                   </button>
                 </div>
 
@@ -1036,14 +1079,11 @@ export const StudentPortalPage: React.FC = () => {
               <div className="space-y-5">
                 <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
                   <div>
-                    <h1 className="font-display text-2xl font-extrabold uppercase text-slate-900">
-                      Luyện Toán cùng Mimo
+                    <h1 className="font-display text-2xl font-extrabold text-slate-900">
+                      Danh Sách Bài Tập Về Nhà
                     </h1>
-                    <p className="text-sm font-bold text-blue-700">
-                      Khám phá kiến thức – Rèn luyện tư duy – Chinh phục Toán học!
-                    </p>
-                    <p className="mt-1 text-xs text-slate-600">
-                      Bấm vào từng bài để làm bài, lưu nháp hoặc xem điểm và
+                    <p className="text-xs text-slate-600">
+                      Bấm vào từng bài tập để làm bài, lưu nháp hoặc xem điểm và
                       lời giải sau khi chấm.
                     </p>
                   </div>
@@ -1246,6 +1286,8 @@ export const StudentPortalPage: React.FC = () => {
         {/* ================================================================ */}
         {/* TAB 4: KHO TRÒ CHƠI TOÁN HỌC                                     */}
         {/* ================================================================ */}
+        {activeTab === 'practice' && <PracticePortal />}
+
         {activeTab === 'games' && (
           <div className="space-y-6">
             <GamePortalBannerIllustration />
@@ -1516,20 +1558,21 @@ export const StudentPortalPage: React.FC = () => {
       )}
 
       {/* Fixed Mobile Bottom Navigation Bar (5 Mandatory Tabs, <= 64px height) */}
-      <nav className="fixed right-0 bottom-0 left-0 z-40 grid h-16 grid-cols-5 items-center border-t-2 border-slate-900 bg-white/95 px-2 backdrop-blur-md md:hidden">
+      <nav className="fixed right-0 bottom-0 left-0 z-40 grid h-16 grid-cols-6 items-center border-t-2 border-slate-900 bg-white/95 px-1 backdrop-blur-md md:hidden">
         {(
           [
             { id: 'overview', label: 'Tổng quan', icon: Home },
             {
               id: 'homework',
-              // Short label: the mobile bottom bar has no room for the full name
-              label: `Luyện Toán${
+              label: `Bài tập${
                 pendingAssignments.length > 0
                   ? ` (${pendingAssignments.length})`
                   : ''
               }`,
               icon: BookOpen,
             },
+            // Short label: the mobile bottom bar has no room for the full name
+            { id: 'practice', label: 'Luyện Toán', icon: Sparkles },
             { id: 'comments', label: 'Nhận xét', icon: MessageSquareHeart },
             { id: 'games', label: 'Trò chơi', icon: Gamepad2 },
             { id: 'profile', label: 'Hồ sơ', icon: User },

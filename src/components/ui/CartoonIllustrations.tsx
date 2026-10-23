@@ -10,7 +10,7 @@ export const HeroClassroomIllustration: React.FC<{ className?: string }> = ({
       viewBox="0 0 560 360"
       className="h-auto w-full select-none"
       role="img"
-      aria-label="Minh họa lớp học Toán Lớp Chúng Tôi"
+      aria-label="Minh họa lớp học Toán MimoEDU"
     >
       {/* Classroom Board */}
       <rect

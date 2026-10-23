@@ -1,12 +1,32 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { doc, getDocFromServer, getFirestore } from 'firebase/firestore';
+import { connectAuthEmulator, getAuth, GoogleAuthProvider } from 'firebase/auth';
+import {
+  connectFirestoreEmulator,
+  doc,
+  getDocFromServer,
+  getFirestore,
+} from 'firebase/firestore';
 import firebaseConfig from '../../../firebase-applet-config.json';
 
-const app = initializeApp(firebaseConfig);
+/**
+ * `npm run dev:emulator` sets VITE_USE_FIREBASE_EMULATOR: the app then talks to
+ * the local Firebase emulators under a demo-* project and never to real data.
+ */
+export const usingFirebaseEmulator = import.meta.env.VITE_USE_FIREBASE_EMULATOR === 'true';
+
+// A separately named app keeps its own auth persistence, so a real Google
+// session saved in this browser is never reused against the emulator.
+const app = usingFirebaseEmulator
+  ? initializeApp({ ...firebaseConfig, projectId: 'demo-lop-chung-minh' }, 'emulator')
+  : initializeApp(firebaseConfig);
 export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+
+if (usingFirebaseEmulator) {
+  connectFirestoreEmulator(db, '127.0.0.1', 8080);
+  connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
+}
 
 export enum OperationType {
   CREATE = 'create',

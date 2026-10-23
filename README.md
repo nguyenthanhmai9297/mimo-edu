@@ -1,4 +1,6 @@
-# Lớp Chúng Tôi — Hệ Thống Quản Lý Lớp Học Toán & Cổng Phụ Huynh/Học Sinh
+# MimoEDU — Học Toán vui, tiến bộ mỗi ngày!
+
+> Tên thương hiệu trước đây: *Lớp Chúng Tôi*. Thư mục dự án, Firebase project và địa chỉ Vercel giữ nguyên.
 
 Ứng dụng web quản lý lớp học dành cho giáo viên dạy Toán với phong cách **Cartoon UI** thân thiện, hiện đại, kết hợp trình soạn thảo công thức Toán học **KaTeX + Hình học phẳng SVG**, giao bài tập theo bản chụp bất biến (**Snapshot**), tự động chấm câu hỏi khách quan phía server và tích hợp trợ lý AI qua kiến trúc **AIProviderAdapter**.
 

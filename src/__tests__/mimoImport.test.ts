@@ -9,7 +9,7 @@ import {
 import { homeworkImportSchema } from '../schemas/validation';
 import { createPublicQuestionsSnapshot, gradeSingleQuestion } from '../utils/gradingEngine';
 
-const DATASET_PATH = 'question/MimoEDU_Toan3_ChuyenDe01_40cau.json';
+const DATASET_PATH = 'question-bank/MimoEDU_Toan3_ChuyenDe01_40cau.json';
 const hasDataset = fs.existsSync(DATASET_PATH);
 
 const sample = {
