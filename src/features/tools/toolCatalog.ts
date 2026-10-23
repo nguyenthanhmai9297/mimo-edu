@@ -1,0 +1,159 @@
+import type React from 'react';
+import {
+  CountdownArt,
+  GamesArt,
+  Geometry3DArt,
+  PracticeArt,
+  PuzzleArt,
+  QuickQuizArt,
+  RandomPickerArt,
+  ScoreboardArt,
+} from './ToolIllustrations';
+
+export type ToolCategory = 'game' | 'activity' | 'visual' | 'quiz';
+
+export const TOOL_CATEGORIES: { id: ToolCategory; label: string; badge: string }[] = [
+  { id: 'game', label: 'Trò chơi tương tác', badge: 'bg-[#F3EFFF] text-[#6A4BE6]' },
+  { id: 'activity', label: 'Hoạt động trên lớp', badge: 'bg-[#EAF5FF] text-[#1267E9]' },
+  { id: 'visual', label: 'Công cụ trực quan', badge: 'bg-[#FFF6DC] text-[#B7790A]' },
+  { id: 'quiz', label: 'Kiểm tra nhanh', badge: 'bg-[#FFEDF6] text-[#D9468C]' },
+];
+
+export interface TeachingTool {
+  id: string;
+  name: string;
+  description: string;
+  category: ToolCategory;
+  art: React.FC;
+  /** Uses question sets from Kho học liệu Toán 3 / Luyện Toán cùng Mimo. */
+  usesQuestions: boolean;
+  audience: string;
+  duration?: string;
+  /** ready: built-in tool page · link: existing MimoEDU page · soon: not built yet */
+  status: 'ready' | 'link' | 'soon';
+  /** Route to open (built-in tools live under /admin/tools/:id). */
+  to?: string;
+  /** Shortcut to a student-facing feature (e.g. Kho trò chơi) – previewed, not run by the teacher. */
+  studentShortcut?: boolean;
+  featured?: boolean;
+  isNew?: boolean;
+  keywords?: string;
+}
+
+export const TEACHING_TOOLS: TeachingTool[] = [
+  {
+    id: 'goi-ten',
+    name: 'Gọi tên & Chia nhóm',
+    description: 'Gọi ngẫu nhiên học sinh trong lớp, không gọi trùng, và chia nhóm đều chỉ trong một chạm.',
+    category: 'activity',
+    art: RandomPickerArt,
+    usesQuestions: false,
+    audience: 'Cả lớp',
+    duration: '1 phút',
+    status: 'ready',
+    to: '/admin/tools/goi-ten',
+    featured: true,
+    isNew: true,
+    keywords: 'ngẫu nhiên vòng quay bốc thăm chia đội nhóm học sinh',
+  },
+  {
+    id: 'dong-ho',
+    name: 'Đồng hồ đếm ngược',
+    description: 'Đặt thời gian cho hoạt động, số to rõ khi trình chiếu, có chuông báo hết giờ.',
+    category: 'activity',
+    art: CountdownArt,
+    usesQuestions: false,
+    audience: 'Cả lớp',
+    duration: 'Tùy chọn',
+    status: 'ready',
+    to: '/admin/tools/dong-ho',
+    isNew: true,
+    keywords: 'hẹn giờ bấm giờ thời gian timer',
+  },
+  {
+    id: 'cau-hoi-nhanh',
+    name: 'Câu hỏi nhanh',
+    description: 'Chiếu từng câu hỏi lên bảng, học sinh trả lời, hiện đáp án khi giáo viên cho phép.',
+    category: 'quiz',
+    art: QuickQuizArt,
+    usesQuestions: true,
+    audience: 'Cả lớp',
+    duration: '5–10 phút',
+    status: 'soon',
+    keywords: 'trắc nghiệm trình chiếu đáp án',
+  },
+  {
+    id: 'lat-manh-ghep',
+    name: 'Lật mảnh ghép Mimo',
+    description: 'Trả lời đúng để lật từng mảnh ghép và đoán bức hình bí mật.',
+    category: 'game',
+    art: PuzzleArt,
+    usesQuestions: true,
+    audience: '2–4 đội',
+    duration: '10 phút',
+    status: 'soon',
+    keywords: 'mảnh ghép bí mật đoán hình trò chơi',
+  },
+  {
+    id: 'bang-diem',
+    name: 'Bảng điểm thi đua',
+    description: 'Cộng, trừ điểm và theo dõi thứ hạng các đội ngay trong tiết học.',
+    category: 'activity',
+    art: ScoreboardArt,
+    usesQuestions: false,
+    audience: '2–6 đội',
+    duration: 'Cả tiết',
+    status: 'soon',
+    keywords: 'điểm thi đua đội nhóm xếp hạng',
+  },
+  {
+    id: 'kho-tro-choi',
+    name: 'Kho trò chơi (học sinh)',
+    description: 'Xem trước các trò chơi Toán học sinh tự chọn và tự chơi ở cổng học sinh.',
+    category: 'game',
+    art: GamesArt,
+    usesQuestions: false,
+    audience: 'Cá nhân',
+    status: 'link',
+    to: '/admin/games',
+    studentShortcut: true,
+    keywords: 'trò chơi game phet iframe',
+  },
+  {
+    id: 'hinh-hoc-3d',
+    name: 'Hình học 3D',
+    description: 'Quan sát, xoay, trải phẳng và đổ đầy các khối hình không gian.',
+    category: 'visual',
+    art: Geometry3DArt,
+    usesQuestions: false,
+    audience: 'Cả lớp',
+    status: 'link',
+    to: '/admin/geometry3d',
+    keywords: 'khối lập phương hộp chữ nhật trụ cầu nón',
+  },
+  {
+    id: 'luyen-toan',
+    name: 'Luyện Toán cùng Mimo',
+    description: 'Ngân hàng câu hỏi theo chuyên đề và 4 mức độ để học sinh tự luyện.',
+    category: 'quiz',
+    art: PracticeArt,
+    usesQuestions: true,
+    audience: 'Cá nhân',
+    status: 'link',
+    to: '/admin/practice',
+    keywords: 'luyện tập chuyên đề mức độ ngân hàng câu hỏi',
+  },
+];
+
+export function findTool(id: string | undefined): TeachingTool | undefined {
+  return TEACHING_TOOLS.find((t) => t.id === id);
+}
+
+/** Case- and accent-insensitive search over name, description and keywords. */
+export function matchesToolSearch(tool: TeachingTool, query: string): boolean {
+  const fold = (s: string) =>
+    s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+  const q = fold(query.trim());
+  if (!q) return true;
+  return fold(`${tool.name} ${tool.description} ${tool.keywords ?? ''}`).includes(q);
+}

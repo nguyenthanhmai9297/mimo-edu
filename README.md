@@ -2,6 +2,18 @@
 
 > Tên thương hiệu trước đây: *Lớp Chúng Tôi*. Thư mục dự án, Firebase project và địa chỉ Vercel giữ nguyên.
 
+## Cấu trúc sản phẩm chính thức
+
+| Tính năng | Dành cho | Mục đích | Vị trí |
+|---|---|---|---|
+| **Công cụ dạy học** | Giáo viên | Tạo, thiết lập và **điều khiển** hoạt động trên lớp (gọi tên ngẫu nhiên, chia nhóm, đồng hồ, câu hỏi nhanh, lật mảnh ghép, kéo co kiến thức, bảng điểm thi đua…), dùng câu hỏi tự tạo hoặc từ Kho học liệu Toán 3, **trình chiếu** lên màn hình lớn | `/admin/tools` |
+| **Kho trò chơi** | Học sinh | Học sinh **tự chọn và tự chơi** các trò chơi Toán có sẵn, nhận phản hồi và kết quả theo thiết kế từng trò chơi | Cổng học sinh (tab *Trò chơi Toán*), quản lý tại `/admin/games` |
+
+Quy ước khi phát triển:
+- Hai tính năng **luôn tách riêng**, không gộp. Trò chơi do giáo viên điều khiển thuộc *Công cụ dạy học*.
+- Trong khu vực giáo viên, *Kho trò chơi* chỉ xuất hiện như **lối tắt xem trước** nội dung của học sinh.
+- Giai đoạn sau (chưa triển khai): giáo viên giao trò chơi tự tạo cho học sinh.
+
 Ứng dụng web quản lý lớp học dành cho giáo viên dạy Toán với phong cách **Cartoon UI** thân thiện, hiện đại, kết hợp trình soạn thảo công thức Toán học **KaTeX + Hình học phẳng SVG**, giao bài tập theo bản chụp bất biến (**Snapshot**), tự động chấm câu hỏi khách quan phía server và tích hợp trợ lý AI qua kiến trúc **AIProviderAdapter**.
 
 ---

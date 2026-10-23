@@ -39,6 +39,24 @@ async function main() {
     code: STUDENT_CODE, studentId: 'hs-demo-01', status: 'active', createdAt: now,
   });
 
+  // A fuller test class for the classroom tools (Gọi tên & Chia nhóm)
+  const DEMO_NAMES = [
+    'Nguyễn Minh An', 'Trần Bảo Ngọc', 'Lê Gia Huy', 'Phạm Khánh Linh', 'Hoàng Đức Minh',
+    'Vũ Thảo Vy', 'Đặng Quốc Bảo', 'Bùi Ngọc Hân', 'Đỗ Tuấn Kiệt', 'Ngô Phương Anh',
+    'Dương Hải Đăng', 'Lý Mai Chi', 'Phan Nhật Nam', 'Võ Tường Vi', 'Trịnh Gia Bảo',
+  ];
+  const batch = db.batch();
+  DEMO_NAMES.forEach((fullName, i) => {
+    const id = `hs-demo-${String(i + 2).padStart(2, '0')}`;
+    const code = `MIMO${String(i + 10).padStart(2, '0')}`;
+    batch.set(db.doc(`students/${id}`), {
+      fullName, nickname: fullName.split(' ').pop(), grade: 'Khối 3', classIds: ['lop-3a-demo'],
+      status: 'active', accessCode: code, createdAt: now, updatedAt: now,
+    });
+    batch.set(db.doc(`studentCodeIndex/${code}`), { code, studentId: id, status: 'active', createdAt: now });
+  });
+  await batch.commit();
+
   if (process.argv.includes('--with-n01')) {
     if (!fs.existsSync(N01_FILE)) throw new Error(`Thiếu tệp ${N01_FILE}.`);
     const v = validatePracticeImport(JSON.parse(fs.readFileSync(N01_FILE, 'utf8')));

@@ -96,3 +96,99 @@
 @media (prefers-reduced-motion: reduce) {
   .mimo-float, .mimo-pop, .mimo-twinkle { animation: none; }
 }
+
+/* ==========================================================================
+   MimoEDU Studio – teacher workspace design system
+   Mostly white, very light blue surfaces, navy/blue/yellow/pink accents.
+   Scoped to the admin area: nothing here changes the homepage or student UI.
+   ========================================================================== */
+:root {
+  --studio-navy: #071A63;
+  --studio-blue: #1267E9;
+  --studio-blue-hover: #0F59CC;
+  --studio-sky: #54C8FF;
+  --studio-soft: #EAF5FF;
+  --studio-surface: #F6FAFF;
+  --studio-yellow: #FFD34E;
+  --studio-pink: #FF76B5;
+  --studio-text: #172B4D;
+  --studio-muted: #5E6C84;
+  --studio-border: #DCE7F3;
+  --studio-success: #1F9D6B;
+  --studio-warning: #B7790A;
+  --studio-danger: #D93B5B;
+  --studio-radius: 16px;
+  --studio-radius-sm: 12px;
+  --studio-shadow: 0 1px 2px rgba(23, 43, 77, 0.04), 0 8px 24px -14px rgba(23, 43, 77, 0.18);
+  --studio-shadow-hover: 0 2px 4px rgba(23, 43, 77, 0.05), 0 14px 32px -16px rgba(18, 103, 233, 0.35);
+}
+
+/* Components sit in Tailwind's components layer so utilities (sizes, padding) can refine them */
+@layer components {
+  .studio-card {
+    background: #FFFFFF;
+    border: 1px solid var(--studio-border);
+    border-radius: var(--studio-radius);
+    box-shadow: var(--studio-shadow);
+  }
+
+  .studio-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    min-height: 2.5rem;
+    padding: 0 1rem;
+    border-radius: var(--studio-radius-sm);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background-color 150ms, box-shadow 150ms, color 150ms, border-color 150ms;
+  }
+  .studio-btn:focus-visible { outline: 3px solid rgba(84, 200, 255, 0.6); outline-offset: 2px; }
+  .studio-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+  .studio-btn-primary { background: var(--studio-blue); color: #FFFFFF; box-shadow: 0 6px 16px -8px rgba(18, 103, 233, 0.7); }
+  .studio-btn-primary:hover:not(:disabled) { background: var(--studio-blue-hover); }
+  .studio-btn-secondary { background: #FFFFFF; color: var(--studio-text); border: 1px solid var(--studio-border); }
+  .studio-btn-secondary:hover:not(:disabled) { background: var(--studio-surface); border-color: #BFD6EE; }
+  .studio-btn-accent { background: var(--studio-yellow); color: var(--studio-navy); }
+  .studio-btn-accent:hover:not(:disabled) { filter: brightness(1.04); }
+  .studio-btn-navy { background: var(--studio-navy); color: #FFFFFF; }
+  .studio-btn-navy:hover:not(:disabled) { background: #0B2585; }
+  .studio-btn-danger { background: #FFFFFF; color: var(--studio-danger); border: 1px solid #F5C6D1; }
+  .studio-btn-danger:hover:not(:disabled) { background: #FFF1F4; }
+
+  .studio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+  }
+  .studio-badge-info { background: var(--studio-soft); color: var(--studio-blue); }
+  .studio-badge-success { background: #E7F7F0; color: var(--studio-success); }
+  .studio-badge-warning { background: #FFF6DC; color: var(--studio-warning); }
+  .studio-badge-danger { background: #FFEDF1; color: var(--studio-danger); }
+}
+
+/* Pages inside .studio-skin: legacy cartoon cards/buttons adopt the Studio look */
+.studio-skin .cartoon-card {
+  border: 1px solid var(--studio-border);
+  border-radius: var(--studio-radius);
+  box-shadow: var(--studio-shadow);
+}
+.studio-skin .cartoon-button {
+  border: 1px solid rgba(23, 43, 77, 0.1);
+  border-radius: var(--studio-radius-sm);
+  box-shadow: 0 1px 2px rgba(23, 43, 77, 0.06);
+}
+.studio-skin .cartoon-button:hover:not(:disabled) {
+  transform: none;
+  box-shadow: var(--studio-shadow-hover);
+}
+.studio-skin .cartoon-button:active:not(:disabled) {
+  transform: none;
+  box-shadow: 0 1px 2px rgba(23, 43, 77, 0.06);
+}

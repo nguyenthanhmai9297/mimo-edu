@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Plus,
   School,
+  Send,
   Sparkles,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
@@ -72,326 +73,244 @@ export const AdminDashboard: React.FC = () => {
   if (adminDataLoading) {
     return (
       <div className="space-y-6">
-        <div className="h-28 animate-pulse rounded-2xl border-2 border-slate-200 bg-white" />
+        <div className="h-32 animate-pulse rounded-2xl bg-[#EAF5FF]" />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[1, 2, 3, 4].map((i) => (
-            <div
-              key={i}
-              className="h-28 animate-pulse rounded-2xl border-2 border-slate-200 bg-white"
-            />
+            <div key={i} className="studio-card h-32 animate-pulse" />
           ))}
         </div>
       </div>
     );
   }
 
+  const recentSubmissions = studentAssignments.filter(
+    (sa) => sa.status === 'submitted' || sa.status === 'graded'
+  );
+
+  const kpis = [
+    {
+      label: 'Lớp đang hoạt động',
+      value: activeClasses.length,
+      note: `Tổng số lớp: ${classes.length} lớp`,
+      icon: School,
+      tone: 'bg-[#EAF5FF] text-[#1267E9]',
+    },
+    {
+      label: 'Tổng số học sinh',
+      value: activeStudents.length,
+      note: `Đã cấp ${students.length} mã 6 ký tự`,
+      icon: GraduationCap,
+      tone: 'bg-[#E7F7F0] text-[#1F9D6B]',
+    },
+    {
+      label: 'Đợt BTVN đã giao',
+      value: activeAssignments.length,
+      note: `Chưa hoàn thành: ${notStartedCount} lượt`,
+      icon: CalendarClock,
+      tone: 'bg-[#FFF6DC] text-[#B7790A]',
+    },
+    {
+      label: 'Bài nộp & Chấm điểm',
+      value: pendingGradingList.length,
+      note: `Đang chờ chấm · Đã chấm: ${gradedCount}`,
+      icon: CheckCircle2,
+      tone: 'bg-[#FFEDF6] text-[#D9468C]',
+    },
+  ];
+
   return (
-    <div className="space-y-8">
-      {/* Welcome & Quick Actions Banner */}
-      <div className="cartoon-card bg-gradient-to-r from-amber-100 via-white to-sky-100 p-6">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
+    <div className="studio-skin space-y-6">
+      {/* Welcome & quick actions */}
+      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#1267E9] via-[#2E86F0] to-[#54C8FF] p-6 text-white shadow-[0_18px_40px_-24px_rgba(18,103,233,0.8)] sm:p-7">
+        <div className="pointer-events-none absolute -top-16 -right-10 h-48 w-48 rounded-full bg-white/15 blur-2xl" />
+        <div className="pointer-events-none absolute -bottom-20 right-1/3 h-40 w-40 rounded-full bg-[#FFD34E]/20 blur-2xl" />
+        <div className="relative flex flex-col justify-between gap-5 lg:flex-row lg:items-center">
           <div>
-            <h1 className="font-display text-2xl font-extrabold text-slate-900 sm:text-3xl">
-              Bảng Điều Khiển Lớp Học Toán
-            </h1>
-            <p className="mt-1 text-sm text-slate-700">
-              Theo dõi tình hình lớp học, tiến độ làm BTVN và chấm bài tập trung
-              theo thời gian thực từ Firestore.
+            <h1 className="font-display text-2xl font-extrabold sm:text-3xl">Bảng điều khiển lớp học</h1>
+            <p className="mt-1.5 text-sm text-white/90 sm:text-base">
+              Quản lý lớp học, giao bài và theo dõi tiến bộ của học sinh.
             </p>
           </div>
-
-          <div className="flex flex-wrap items-center gap-2.5">
-            <button
-              type="button"
-              onClick={() => navigate('/admin/classes')}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-slate-900 whitespace-nowrap"
-            >
-              <Plus className="h-4 w-4 text-blue-600" />
+          <div className="flex flex-wrap items-center gap-2">
+            <button type="button" onClick={() => navigate('/admin/classes')} className="studio-btn studio-btn-secondary border-white/0">
+              <Plus className="h-4 w-4 text-[#1267E9]" />
               Tạo lớp
             </button>
-            <button
-              type="button"
-              onClick={() => navigate('/admin/students')}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-slate-900 whitespace-nowrap"
-            >
-              <Plus className="h-4 w-4 text-emerald-600" />
+            <button type="button" onClick={() => navigate('/admin/students')} className="studio-btn studio-btn-secondary border-white/0">
+              <Plus className="h-4 w-4 text-[#1F9D6B]" />
               Thêm học sinh
             </button>
-            <button
-              type="button"
-              onClick={() => navigate('/admin/homework')}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-blue-600 px-4 py-2 text-xs font-extrabold text-white whitespace-nowrap"
-            >
+            <button type="button" onClick={() => navigate('/admin/homework')} className="studio-btn studio-btn-navy">
               <BookOpen className="h-4 w-4" />
               Soạn BTVN
             </button>
-            <button
-              type="button"
-              onClick={() => navigate('/admin/assignments')}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-amber-400 px-4 py-2 text-xs font-extrabold text-slate-900 whitespace-nowrap"
-            >
+            <button type="button" onClick={() => navigate('/admin/assignments')} className="studio-btn studio-btn-accent">
+              <Send className="h-4 w-4" />
               Giao bài tập
             </button>
           </div>
         </div>
+      </section>
 
-        {/* One-Click Real Firestore Seed Callout when database is empty */}
-        {classes.length === 0 && (
-          <div className="mt-5 flex flex-col items-start justify-between gap-4 rounded-2xl border-2 border-slate-900 bg-white p-4 sm:flex-row sm:items-center">
-            <div>
-              <h2 className="font-display text-sm font-extrabold text-slate-900">
-                Cơ sở dữ liệu lớp học đang trống
-              </h2>
-              <p className="mt-0.5 text-xs text-slate-600">
-                Bạn có thể tự tạo từng lớp/học sinh mới hoặc nhấn nút bên cạnh
-                để khởi tạo bộ dữ liệu mẫu thật vào Firestore (gồm Lớp 5A, 2 học
-                sinh có mã 6 ký tự, đề Toán đủ 5 loại câu hỏi có hình học, đợt
-                giao bài, nhận xét tháng và 4 trò chơi tương tác).
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={handleSeedDemoData}
-              disabled={seeding}
-              className="cartoon-button flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-extrabold text-white whitespace-nowrap shrink-0"
-            >
-              <Sparkles className="h-4 w-4" />
-              {seeding
-                ? 'Đang khởi tạo vào Firestore...'
-                : 'Khởi tạo Dữ liệu Mẫu Thật'}
+      {/* Empty-database helper (unchanged behaviour) */}
+      {classes.length === 0 && (
+        <section className="studio-card flex flex-col items-start justify-between gap-4 p-5 sm:flex-row sm:items-center">
+          <div>
+            <h2 className="font-display text-sm font-extrabold text-[#172B4D]">Cơ sở dữ liệu lớp học đang trống</h2>
+            <p className="mt-1 max-w-2xl text-xs leading-relaxed text-[#5E6C84]">
+              Bạn có thể tự tạo từng lớp/học sinh mới hoặc nhấn nút bên cạnh để khởi tạo bộ dữ liệu mẫu thật vào
+              Firestore (gồm Lớp 5A, 2 học sinh có mã 6 ký tự, đề Toán đủ 5 loại câu hỏi có hình học, đợt giao bài,
+              nhận xét tháng và 4 trò chơi tương tác).
+            </p>
+          </div>
+          <button type="button" onClick={handleSeedDemoData} disabled={seeding} className="studio-btn studio-btn-primary shrink-0">
+            <Sparkles className="h-4 w-4" />
+            {seeding ? 'Đang khởi tạo vào Firestore...' : 'Khởi tạo Dữ liệu Mẫu Thật'}
+          </button>
+        </section>
+      )}
+
+      {seededInfo && (
+        <section className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#BFE8D4] bg-[#E7F7F0] p-4">
+          <div className="text-sm text-[#172B4D]">
+            Đã tạo dữ liệu mẫu trên Firestore! Học sinh <strong>{seededInfo.studentName}</strong> có mã truy cập cổng học
+            sinh là: <span className="font-mono text-base font-black text-[#1267E9]">{seededInfo.studentCode}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <button type="button" onClick={() => handleCopyCode(seededInfo.studentCode)} className="studio-btn studio-btn-secondary">
+              <Copy className="h-3.5 w-3.5" />
+              {copiedCode ? 'Đã sao chép!' : 'Sao chép mã'}
+            </button>
+            <button type="button" onClick={() => navigate('/portal')} className="studio-btn studio-btn-accent">
+              Thử Cổng Học Sinh →
             </button>
           </div>
-        )}
+        </section>
+      )}
 
-        {seededInfo && (
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-slate-900 bg-emerald-50 p-4">
-            <div className="text-xs text-slate-800">
-              Đã tạo dữ liệu mẫu trên Firestore! Học sinh{' '}
-              <strong>{seededInfo.studentName}</strong> có mã truy cập cổng học
-              sinh là:{' '}
-              <span className="font-mono text-sm font-black text-blue-700">
-                {seededInfo.studentCode}
-              </span>
+      {/* KPI cards */}
+      <section className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+        {kpis.map((k) => {
+          const Icon = k.icon;
+          return (
+            <div key={k.label} className="studio-card p-4 transition hover:shadow-[var(--studio-shadow-hover)] sm:p-5">
+              <div className="flex items-start justify-between gap-3">
+                <span className="text-xs font-semibold text-[#5E6C84] sm:text-sm">{k.label}</span>
+                <span className={`flex h-9 w-9 shrink-0 sm:h-10 sm:w-10 items-center justify-center rounded-xl ${k.tone}`}>
+                  <Icon className="h-5 w-5" />
+                </span>
+              </div>
+              <div className="mt-2 font-display text-3xl font-extrabold text-[#172B4D] [font-variant-numeric:tabular-nums]">{k.value}</div>
+              <div className="mt-1 text-xs text-[#5E6C84]">{k.note}</div>
             </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => handleCopyCode(seededInfo.studentCode)}
-                className="cartoon-button flex items-center gap-1 rounded-lg bg-white px-3 py-1.5 text-xs font-bold text-slate-900"
-              >
-                <Copy className="h-3.5 w-3.5" />
-                {copiedCode ? 'Đã sao chép!' : 'Sao chép mã'}
-              </button>
-              <button
-                type="button"
-                onClick={() => navigate('/portal')}
-                className="cartoon-button rounded-lg bg-amber-300 px-3 py-1.5 text-xs font-extrabold text-slate-900"
-              >
-                Thử Cổng Học Sinh →
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
+          );
+        })}
+      </section>
 
-      {/* 4-Column KPI Grid */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="cartoon-card p-5">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-600">
-              Lớp đang hoạt động
-            </span>
-            <School className="h-5 w-5 text-blue-600" />
-          </div>
-          <div className="mt-3 font-mono text-3xl font-extrabold text-slate-900 tabular-nums">
-            {activeClasses.length}
-          </div>
-          <div className="mt-1 text-xs text-slate-500">
-            Tổng số lớp: {classes.length} lớp
-          </div>
-        </div>
-
-        <div className="cartoon-card p-5">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-600">
-              Tổng số học sinh
-            </span>
-            <GraduationCap className="h-5 w-5 text-emerald-600" />
-          </div>
-          <div className="mt-3 font-mono text-3xl font-extrabold text-slate-900 tabular-nums">
-            {activeStudents.length}
-          </div>
-          <div className="mt-1 text-xs text-slate-500">
-            Đã cấp {students.length} mã 6 ký tự
-          </div>
-        </div>
-
-        <div className="cartoon-card p-5">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-600">
-              Đợt BTVN đã giao
-            </span>
-            <CalendarClock className="h-5 w-5 text-amber-600" />
-          </div>
-          <div className="mt-3 font-mono text-3xl font-extrabold text-slate-900 tabular-nums">
-            {activeAssignments.length}
-          </div>
-          <div className="mt-1 text-xs text-slate-500">
-            Chưa hoàn thành: {notStartedCount} lượt
-          </div>
-        </div>
-
-        <div className="cartoon-card p-5">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-600">
-              Bài nộp & Chấm điểm
-            </span>
-            <CheckCircle2 className="h-5 w-5 text-purple-600" />
-          </div>
-          <div className="mt-3 font-mono text-3xl font-extrabold text-slate-900 tabular-nums">
-            {pendingGradingList.length}
-          </div>
-          <div className="mt-1 text-xs text-slate-500">
-            Đang chờ chấm · Đã chấm: {gradedCount}
-          </div>
-        </div>
-      </div>
-
-      {/* 2-Column Operational Details: Upcoming Deadlines & Recent Submissions */}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-        {/* Upcoming Assignments */}
-        <div className="cartoon-card p-6 lg:col-span-6">
-          <div className="flex items-center justify-between">
-            <h2 className="font-display text-lg font-extrabold text-slate-900">
-              Bài Tập Đang Giao & Sắp Đến Hạn
+      {/* Upcoming assignments & recent submissions */}
+      <section className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+        <div className="studio-card overflow-hidden">
+          <div className="flex items-center justify-between gap-3 border-b border-[#DCE7F3] px-5 py-4">
+            <h2 className="flex items-center gap-2 font-display text-base font-extrabold text-[#172B4D]">
+              <CalendarClock className="h-5 w-5 text-[#1267E9]" />
+              Bài tập đang giao & sắp đến hạn
             </h2>
-            <button
-              type="button"
-              onClick={() => navigate('/admin/assignments')}
-              className="text-xs font-bold text-blue-700 hover:underline"
-            >
+            <button type="button" onClick={() => navigate('/admin/assignments')} className="text-xs font-bold text-[#1267E9] hover:underline">
               Xem tất cả →
             </button>
           </div>
 
           {upcomingAssignments.length === 0 ? (
-            <div className="mt-6 rounded-xl border border-dashed border-slate-300 p-8 text-center">
-              <p className="text-sm text-slate-600">
-                Chưa có đợt bài tập nào đang giao.
-              </p>
-              <button
-                type="button"
-                onClick={() => navigate('/admin/assignments')}
-                className="cartoon-button mt-3 rounded-xl bg-amber-300 px-4 py-2 text-xs font-extrabold text-slate-900"
-              >
+            <div className="flex flex-col items-center px-5 py-10 text-center">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF5FF] text-[#1267E9]">
+                <CalendarClock className="h-6 w-6" />
+              </span>
+              <p className="mt-3 text-sm text-[#5E6C84]">Chưa có đợt bài tập nào đang giao.</p>
+              <button type="button" onClick={() => navigate('/admin/assignments')} className="studio-btn studio-btn-accent mt-4">
                 Giao BTVN đầu tiên
               </button>
             </div>
           ) : (
-            <div className="mt-4 divide-y divide-slate-200">
+            <ul className="divide-y divide-[#EEF3F9]">
               {upcomingAssignments.map((asg) => {
-                const relatedSA = studentAssignments.filter(
-                  (sa) => sa.assignmentId === asg.id
-                );
-                const doneCount = relatedSA.filter(
-                  (sa) => sa.status === 'submitted' || sa.status === 'graded'
-                ).length;
-
+                const relatedSA = studentAssignments.filter((sa) => sa.assignmentId === asg.id);
+                const doneCount = relatedSA.filter((sa) => sa.status === 'submitted' || sa.status === 'graded').length;
+                const ratio = relatedSA.length ? doneCount / relatedSA.length : 0;
                 return (
-                  <div
-                    key={asg.id}
-                    className="flex items-center justify-between gap-4 py-3.5"
-                  >
-                    <div>
-                      <h3 className="font-display text-sm font-bold text-slate-900">
-                        {asg.title}
-                      </h3>
-                      <p className="mt-0.5 text-xs text-slate-500">
-                        Hạn nộp:{' '}
-                        <span className="font-mono font-semibold text-slate-700">
-                          {asg.dueAt}
-                        </span>{' '}
-                        · Thang điểm:{' '}
-                        <span className="font-mono">{asg.maxScore}đ</span>
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <span className="font-mono text-xs font-bold text-slate-800">
+                  <li key={asg.id} className="px-5 py-3.5 transition-colors hover:bg-[#F6FAFF]">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="min-w-0">
+                        <h3 className="truncate text-sm font-bold text-[#172B4D]">{asg.title}</h3>
+                        <p className="mt-0.5 text-xs text-[#5E6C84]">
+                          Hạn nộp: <span className="font-mono font-semibold text-[#172B4D]">{asg.dueAt}</span> · Thang
+                          điểm: <span className="font-mono">{asg.maxScore}đ</span>
+                        </p>
+                      </div>
+                      <span className="studio-badge studio-badge-info shrink-0">
                         Đã nộp {doneCount}/{relatedSA.length}
                       </span>
                     </div>
-                  </div>
+                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#EAF5FF]">
+                      <div className="h-full rounded-full bg-[#1267E9]" style={{ width: `${Math.round(ratio * 100)}%` }} />
+                    </div>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           )}
         </div>
 
-        {/* Recent Submissions Needing Processing */}
-        <div className="cartoon-card p-6 lg:col-span-6">
-          <div className="flex items-center justify-between">
-            <h2 className="font-display text-lg font-extrabold text-slate-900">
-              Bài Nộp Gần Đây Cần Xử Lý
+        <div className="studio-card overflow-hidden">
+          <div className="flex items-center justify-between gap-3 border-b border-[#DCE7F3] px-5 py-4">
+            <h2 className="flex items-center gap-2 font-display text-base font-extrabold text-[#172B4D]">
+              <CheckCircle2 className="h-5 w-5 text-[#FF76B5]" />
+              Bài nộp gần đây cần xử lý
             </h2>
-            <button
-              type="button"
-              onClick={() => navigate('/admin/grading')}
-              className="text-xs font-bold text-blue-700 hover:underline"
-            >
+            <button type="button" onClick={() => navigate('/admin/grading')} className="text-xs font-bold text-[#1267E9] hover:underline">
               Mở bàn chấm bài →
             </button>
           </div>
 
-          {studentAssignments.filter(
-            (sa) => sa.status === 'submitted' || sa.status === 'graded'
-          ).length === 0 ? (
-            <div className="mt-6 rounded-xl border border-dashed border-slate-300 p-8 text-center">
-              <Clock className="mx-auto h-6 w-6 text-slate-400" />
-              <p className="mt-2 text-sm text-slate-600">
-                Hiện chưa có bài nộp mới từ học sinh.
-              </p>
+          {recentSubmissions.length === 0 ? (
+            <div className="flex flex-col items-center px-5 py-10 text-center">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFEDF6] text-[#D9468C]">
+                <Clock className="h-6 w-6" />
+              </span>
+              <p className="mt-3 text-sm text-[#5E6C84]">Hiện chưa có bài nộp mới từ học sinh.</p>
             </div>
           ) : (
-            <div className="mt-4 divide-y divide-slate-200">
-              {studentAssignments
-                .filter(
-                  (sa) => sa.status === 'submitted' || sa.status === 'graded'
-                )
-                .slice(0, 6)
-                .map((sa) => {
-                  const stu = students.find((s) => s.id === sa.studentId);
-                  const asg = assignments.find((a) => a.id === sa.assignmentId);
-                  return (
-                    <div
-                      key={sa.id}
-                      className="flex items-center justify-between gap-4 py-3.5"
-                    >
-                      <div>
-                        <div className="font-display text-sm font-bold text-slate-900">
-                          {stu?.fullName || 'Học sinh'}
-                        </div>
-                        <div className="mt-0.5 text-xs text-slate-500">
-                          {asg?.title || 'Bài tập'} ·{' '}
-                          {sa.status === 'submitted'
-                            ? 'Đang chờ chấm tự luận'
-                            : `Đã chấm (${sa.score ?? 0}/${sa.maxScore}đ)`}
+            <ul className="divide-y divide-[#EEF3F9]">
+              {recentSubmissions.slice(0, 6).map((sa) => {
+                const stu = students.find((s) => s.id === sa.studentId);
+                const asg = assignments.find((a) => a.id === sa.assignmentId);
+                const waiting = sa.status === 'submitted';
+                return (
+                  <li key={sa.id} className="flex items-center justify-between gap-4 px-5 py-3.5 transition-colors hover:bg-[#F6FAFF]">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#EAF5FF] text-sm font-extrabold text-[#1267E9]">
+                        {(stu?.fullName || 'H').slice(0, 1).toUpperCase()}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="truncate text-sm font-bold text-[#172B4D]">{stu?.fullName || 'Học sinh'}</div>
+                        <div className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs text-[#5E6C84]">
+                          <span className="truncate">{asg?.title || 'Bài tập'}</span>
+                          <span className={`studio-badge ${waiting ? 'studio-badge-warning' : 'studio-badge-success'}`}>
+                            {waiting ? 'Đang chờ chấm tự luận' : `Đã chấm (${sa.score ?? 0}/${sa.maxScore}đ)`}
+                          </span>
                         </div>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => navigate('/admin/grading')}
-                        className="cartoon-button flex items-center gap-1 rounded-xl bg-white px-3 py-1.5 text-xs font-bold text-slate-900 whitespace-nowrap"
-                      >
-                        Chấm / Xem
-                        <ArrowRight className="h-3.5 w-3.5" />
-                      </button>
                     </div>
-                  );
-                })}
-            </div>
+                    <button type="button" onClick={() => navigate('/admin/grading')} className="studio-btn studio-btn-secondary shrink-0 px-3 text-xs">
+                      Chấm / Xem
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           )}
         </div>
-      </div>
+      </section>
     </div>
   );
 };

@@ -15,6 +15,8 @@ import { GamesAdminPage } from '../features/games/GamesAdminPage';
 import { Geometry3DPage } from '../features/geometry3d/Geometry3DPage';
 import { AdminAllowlistPage } from '../features/auth/AdminAllowlistPage';
 import { PracticeAdminPage } from '../features/practice/admin/PracticeAdminPage';
+import { TeachingToolsPage } from '../features/tools/TeachingToolsPage';
+import { TeachingToolRunner } from '../features/tools/TeachingToolRunner';
 
 export const AppRouter: React.FC = () => {
   return (
@@ -30,6 +32,8 @@ export const AppRouter: React.FC = () => {
         <Route element={<RequireAdminGuard />}>
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
+            <Route path="tools" element={<TeachingToolsPage />} />
+            <Route path="tools/:toolId" element={<TeachingToolRunner />} />
             <Route path="classes" element={<ClassesPage />} />
             <Route path="classes/:classId" element={<ClassesPage />} />
             <Route path="students" element={<StudentsPage />} />

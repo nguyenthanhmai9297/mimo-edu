@@ -11,16 +11,20 @@ import {
   LogOut,
   Menu,
   MessageSquareHeart,
+  Plus,
   School,
   ShieldCheck,
   Sparkles,
+  Wand2,
   X,
 } from 'lucide-react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../app/providers';
+import { MimoMascot } from '../../features/practice/student/practiceTheme';
 
 const NAV_ITEMS = [
   { to: '/admin', label: 'Tổng quan', icon: LayoutDashboard, end: true },
+  { to: '/admin/tools', label: 'Công cụ dạy học', icon: Wand2 },
   { to: '/admin/classes', label: 'Lớp học', icon: School },
   { to: '/admin/students', label: 'Học sinh & Mã', icon: GraduationCap },
   { to: '/admin/homework', label: 'Kho học liệu Toán 3', icon: BookOpen },
@@ -55,67 +59,73 @@ export const AdminLayout: React.FC = () => {
     navigate('/');
   };
 
-  return (
-    <div className="flex min-h-screen bg-[#FFFDF7] text-slate-900">
-      {/* Desktop Sidebar */}
-      <aside className="hidden w-64 shrink-0 flex-col border-r-2 border-slate-900 bg-white lg:flex">
-        <div className="flex h-16 items-center justify-between border-b-2 border-slate-900 bg-amber-100 px-5">
-          <Link
-            to="/admin"
-            className="font-display text-lg font-extrabold tracking-tight text-slate-900 whitespace-nowrap"
-          >
-            Mimo<span className="text-[#1267E9]">EDU</span>
-          </Link>
-          <span className="text-xs font-bold text-slate-600">Giáo viên</span>
-        </div>
+  const brand = (
+    <span className="flex items-center gap-2.5">
+      <MimoMascot size={34} eager className="ring-2" />
+      <span className="leading-tight">
+        <span className="block font-display text-lg font-extrabold tracking-tight text-white">
+          Mimo<span className="text-[#54C8FF]">EDU</span>
+        </span>
+        <span className="block text-[10px] font-bold tracking-[0.18em] text-white/60 uppercase">Studio giáo viên</span>
+      </span>
+    </span>
+  );
 
-        <nav className="flex-1 space-y-1.5 p-4">
-          {NAV_ITEMS.map((item) => {
-            const Icon = item.icon;
-            return (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                end={item.end}
-                className={({ isActive }) =>
-                  `flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-bold transition-colors whitespace-nowrap ${
-                    isActive
-                      ? 'border-2 border-slate-900 bg-blue-600 text-white shadow-[0_3px_0_0_#1E293B]'
-                      : 'text-slate-700 hover:bg-slate-100'
-                  }`
-                }
-              >
+  const navLinkClass = (isActive: boolean) =>
+    `flex items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors whitespace-nowrap ${
+      isActive
+        ? 'bg-[#1267E9] text-white shadow-[0_8px_18px_-10px_rgba(18,103,233,0.8)]'
+        : 'text-[#172B4D] hover:bg-[#EAF5FF]'
+    }`;
+
+  const renderNav = (onNavigate?: () => void) => (
+    <nav className="flex-1 space-y-1 overflow-y-auto p-3">
+      {NAV_ITEMS.map((item) => {
+        const Icon = item.icon;
+        return (
+          <NavLink key={item.to} to={item.to} end={item.end} onClick={onNavigate} className={({ isActive }) => navLinkClass(isActive)}>
+            {({ isActive }) => (
+              <>
                 <span className="flex items-center gap-2.5">
-                  <Icon className="h-4 w-4 shrink-0" />
+                  <Icon className={`h-[18px] w-[18px] shrink-0 ${isActive ? 'text-white' : 'text-[#1267E9]'}`} />
                   <span>{item.label}</span>
                 </span>
                 {item.to === '/admin/grading' && pendingGradingCount > 0 && (
-                  <span className="font-mono text-xs font-extrabold underline">
-                    ({pendingGradingCount})
+                  <span className={`rounded-full px-2 py-0.5 text-[11px] font-extrabold ${isActive ? 'bg-white/25 text-white' : 'bg-[#FF76B5] text-white'}`}>
+                    {pendingGradingCount}
                   </span>
                 )}
-              </NavLink>
-            );
-          })}
-        </nav>
+              </>
+            )}
+          </NavLink>
+        );
+      })}
+    </nav>
+  );
 
-        <div className="border-t-2 border-slate-900 bg-slate-50 p-4">
-          <div className="mb-3 truncate text-xs font-semibold text-slate-600">
-            {user?.email}
+  return (
+    <div className="flex min-h-screen bg-[#F6FAFF] text-[#172B4D]">
+      {/* Desktop Sidebar */}
+      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r border-[#DCE7F3] bg-white lg:flex">
+        <Link to="/admin" className="flex h-16 items-center bg-[#071A63] px-4">
+          {brand}
+        </Link>
+
+        {renderNav()}
+
+        <div className="border-t border-[#DCE7F3] p-3">
+          <div className="mb-2.5 flex items-center gap-2 rounded-xl bg-[#F6FAFF] px-3 py-2">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#EAF5FF] text-xs font-extrabold text-[#1267E9]">
+              {(user?.email ?? '?').slice(0, 1).toUpperCase()}
+            </span>
+            <span className="truncate text-xs font-semibold text-[#5E6C84]">{user?.email}</span>
           </div>
-          <div className="flex flex-col gap-2">
-            <Link
-              to="/portal"
-              className="cartoon-button flex items-center justify-center gap-1.5 rounded-xl bg-amber-300 px-3 py-2 text-xs font-extrabold text-slate-900 whitespace-nowrap"
-            >
-              <KeyRound className="h-3.5 w-3.5" />
-              Mở Cổng Học Sinh
+          <div className="grid grid-cols-2 gap-2">
+            <Link to="/portal" className="studio-btn studio-btn-secondary px-2 text-xs">
+              <KeyRound className="h-3.5 w-3.5 text-[#1267E9]" />
+              Cổng học sinh
             </Link>
-            <button
-              type="button"
-              onClick={handleSignOut}
-              className="cartoon-button flex items-center justify-center gap-1.5 rounded-xl bg-white px-3 py-2 text-xs font-bold text-rose-700 whitespace-nowrap"
-            >
+            <button type="button" onClick={handleSignOut} className="studio-btn studio-btn-danger px-2 text-xs">
               <LogOut className="h-3.5 w-3.5" />
               Đăng xuất
             </button>
@@ -126,82 +136,60 @@ export const AdminLayout: React.FC = () => {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 flex lg:hidden">
-          <div
-            className="fixed inset-0 bg-slate-900/50"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          <aside className="relative z-10 flex w-72 flex-col border-r-2 border-slate-900 bg-white">
-            <div className="flex h-16 items-center justify-between border-b-2 border-slate-900 bg-amber-100 px-5">
-              <span className="font-display text-lg font-extrabold text-slate-900">
-                Mimo<span className="text-[#1267E9]">EDU</span>
-              </span>
+          <div className="fixed inset-0 bg-[#071A63]/40 backdrop-blur-[2px]" onClick={() => setMobileMenuOpen(false)} />
+          <aside className="relative z-10 flex w-72 flex-col bg-white shadow-2xl">
+            <div className="flex h-16 items-center justify-between bg-[#071A63] px-4">
+              {brand}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-lg border border-slate-900 bg-white p-1"
+                aria-label="Đóng menu"
+                className="rounded-lg p-1.5 text-white/80 hover:bg-white/10"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
-            <nav className="flex-1 space-y-1.5 p-4">
-              {NAV_ITEMS.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <NavLink
-                    key={item.to}
-                    to={item.to}
-                    end={item.end}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 text-sm font-bold ${
-                        isActive
-                          ? 'border-2 border-slate-900 bg-blue-600 text-white'
-                          : 'text-slate-700 hover:bg-slate-100'
-                      }`
-                    }
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span>{item.label}</span>
-                  </NavLink>
-                );
-              })}
-            </nav>
+            {renderNav(() => setMobileMenuOpen(false))}
+            <div className="grid grid-cols-2 gap-2 border-t border-[#DCE7F3] p-3">
+              <Link to="/portal" className="studio-btn studio-btn-secondary px-2 text-xs">
+                <KeyRound className="h-3.5 w-3.5 text-[#1267E9]" />
+                Cổng học sinh
+              </Link>
+              <button type="button" onClick={handleSignOut} className="studio-btn studio-btn-danger px-2 text-xs">
+                <LogOut className="h-3.5 w-3.5" />
+                Đăng xuất
+              </button>
+            </div>
           </aside>
         </div>
       )}
 
       {/* Main Content Area */}
       <div className="flex min-w-0 flex-1 flex-col">
-        {/* Top Header */}
-        <header className="sticky top-0 z-20 flex h-16 items-center justify-between gap-4 border-b-2 border-slate-900 bg-white px-6">
-          <div className="flex items-center gap-3">
+        <header className="sticky top-0 z-20 flex h-16 items-center justify-between gap-4 border-b border-[#DCE7F3] bg-white/95 px-4 backdrop-blur sm:px-6">
+          <div className="flex min-w-0 items-center gap-3">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="rounded-xl border-2 border-slate-900 bg-amber-100 p-2 lg:hidden"
+              aria-label="Mở menu"
+              className="rounded-xl border border-[#DCE7F3] bg-white p-2 text-[#172B4D] hover:bg-[#F6FAFF] lg:hidden"
             >
               <Menu className="h-5 w-5" />
             </button>
-            <div className="flex items-center gap-2 text-sm">
-              <span className="font-semibold text-slate-500">Quản trị</span>
-              <span className="text-slate-400">/</span>
-              <span className="font-display font-extrabold text-slate-900">
-                {currentNav.label}
-              </span>
+            <div className="flex min-w-0 items-center gap-2 text-sm">
+              <span className="hidden font-semibold text-[#5E6C84] sm:inline">Quản trị</span>
+              <span className="hidden text-[#BFD6EE] sm:inline">/</span>
+              <span className="truncate font-display font-extrabold text-[#172B4D]">{currentNav.label}</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <Link
-              to="/admin/homework"
-              className="cartoon-button hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-blue-600 px-3.5 py-1.5 text-xs font-extrabold text-white whitespace-nowrap shrink-0"
-            >
-              + Soạn BTVN Toán
-            </Link>
-          </div>
+          <Link to="/admin/homework" className="studio-btn studio-btn-primary hidden shrink-0 sm:inline-flex">
+            <Plus className="h-4 w-4" />
+            Soạn BTVN Toán
+          </Link>
         </header>
 
-        <main className="flex-1 p-6 lg:p-8">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8">
           <Outlet />
         </main>
       </div>
