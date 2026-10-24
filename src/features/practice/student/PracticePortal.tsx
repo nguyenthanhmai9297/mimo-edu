@@ -294,6 +294,16 @@ export const PracticePortal: React.FC = () => {
             <div className="flex items-center gap-2 rounded-3xl bg-white p-6 text-base font-bold text-[#56608A]">
               <Loader2 className="h-5 w-5 animate-spin" /> Mimo đang tải chuyên đề…
             </div>
+          ) : !catalog ? (
+            // Without the catalogue nothing is known about the topics: never show them as "Chưa mở"
+            errorBox || (
+              <div className="rounded-3xl bg-white p-6 text-base font-bold text-[#56608A]">
+                Chưa tải được danh sách chuyên đề.{' '}
+                <button type="button" onClick={() => void loadOverview()} className="font-extrabold text-[#2F8CFF] underline">
+                  Tải lại
+                </button>
+              </div>
+            )
           ) : (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {group.topics.map((t) => {
