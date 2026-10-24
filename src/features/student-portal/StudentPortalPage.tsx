@@ -18,6 +18,7 @@ import {
   Send,
   ShieldAlert,
   User,
+  UserRound,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
 import { MimoLoading } from '../../components/ui/MimoLoading';
@@ -25,9 +26,10 @@ import { loadMathRichEditor, loadPracticePortal, loadStudentGames, prefetchWhenI
 import { RichContentRenderer } from '../../components/editor/RichContentRenderer';
 import { MimoMascot } from '../practice/student/practiceTheme';
 import { formatDate, homeworkStatus, NoClassNotice, StudentHome } from './StudentHome';
-import { Avatar, EmptyState, INK, MUTED, SectionTitle, StatusBadge, StudentCard, studentButton, TONE, Tone } from './studentUi';
+import { Avatar, EmptyState, INK, MUTED, SectionTitle, StatusBadge, StudentBanner, StudentCard, studentButton, TONE, Tone } from './studentUi';
 import { PRACTICE_CATALOG } from '../../data/practiceCatalog';
-import { usingFirebaseEmulator } from '../../lib/firebase/config';
+// Read from the env directly: importing lib/firebase/config would pull the whole Firebase SDK into the student portal
+const usingFirebaseEmulator = import.meta.env.VITE_USE_FIREBASE_EMULATOR === 'true';
 import { fetchPracticeCatalog, fetchPracticeHistory } from '../../services/practiceService';
 import {
   clearStudentToken,
@@ -92,7 +94,7 @@ const PortalChrome: React.FC<{
   onExit: () => void;
   children: React.ReactNode;
 }> = ({ student, classLabel, activeTab, onSelectTab, pendingCount, refreshing, onRefresh, onExit, children }) => (
-  <div className="student-skin min-h-screen bg-[#FFFBF2] bg-[radial-gradient(ellipse_at_top_left,#E3F1FF_0%,transparent_45%),radial-gradient(ellipse_at_top_right,#FFE6F0_0%,transparent_40%)] pb-28 md:pb-12">
+  <div className="student-skin min-h-screen bg-[#EEF5FF] bg-[radial-gradient(ellipse_at_top_left,#DBEAFE_0%,transparent_45%),radial-gradient(ellipse_at_top_right,#E0F2FE_0%,transparent_40%),radial-gradient(ellipse_at_bottom,#FEF3C7_0%,transparent_55%)] pb-28 md:pb-12">
     {/* Compact sticky top bar (<= 64px) */}
     <header className="sticky top-0 z-30 bg-white/85 backdrop-blur-md">
       {/* Same Mimo gradient line as the teacher Studio header */}
@@ -469,7 +471,7 @@ export const StudentPortalPage: React.FC = () => {
   // ==========================================================================
   if (!hasStudentSession) {
     return (
-      <div className="student-skin flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#DDF0FF] via-[#FFFBF2] to-[#FFE6F0] p-4">
+      <div className="student-skin flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#1E40AF] via-[#2563EB] to-[#38BDF8] p-4">
         <StudentCard className="relative w-full max-w-md overflow-hidden sm:p-8">
           <div className="flex items-center justify-between">
             <button
@@ -553,7 +555,7 @@ export const StudentPortalPage: React.FC = () => {
         {content}
       </PortalChrome>
     ) : (
-      <div className="student-skin min-h-screen bg-[#FFFBF2]">{content}</div>
+      <div className="student-skin min-h-screen bg-[#EEF5FF]">{content}</div>
     );
 
   if (loading && !bundle) {
@@ -1038,10 +1040,8 @@ export const StudentPortalPage: React.FC = () => {
             ) : (
               /* Homework List View */
               <div className="space-y-6">
-                <SectionTitle
-                  as="h1"
+                <StudentBanner
                   icon={BookOpen}
-                  tone="blue"
                   title="Bài tập của con"
                   subtitle="Bấm vào bài để làm, lưu nháp hoặc xem điểm và lời giải sau khi cô chấm."
                 />
@@ -1156,10 +1156,8 @@ export const StudentPortalPage: React.FC = () => {
         {/* ================================================================ */}
         {activeTab === 'comments' && (
           <div className="space-y-6">
-            <SectionTitle
-              as="h1"
+            <StudentBanner
               icon={MessageSquareHeart}
-              tone="pink"
               title="Nhận xét của cô"
               subtitle="Những lời nhận xét hằng tháng cô gửi cho con."
             />
@@ -1235,11 +1233,12 @@ export const StudentPortalPage: React.FC = () => {
         {/* ================================================================ */}
         {activeTab === 'profile' && (
           <div className="mx-auto max-w-3xl space-y-6">
+            <StudentBanner icon={UserRound} title="Hồ sơ & lớp học" subtitle="Thông tin của con, mã đăng nhập và lớp học." />
             <StudentCard className="space-y-5">
               <div className="flex items-center gap-4">
                 <Avatar name={student.nickname || student.fullName} size={72} />
                 <div className="min-w-0">
-                  <h1 className={`truncate font-display text-2xl font-extrabold ${INK}`}>{student.fullName}</h1>
+                  <h2 className={`truncate font-display text-2xl font-extrabold ${INK}`}>{student.fullName}</h2>
                   {student.nickname && <p className={`text-base ${MUTED}`}>Tên ở nhà: {student.nickname}</p>}
                 </div>
               </div>

@@ -128,16 +128,16 @@ export const StudentHome: React.FC<StudentHomeProps> = ({
   return (
     <div className="space-y-6 sm:space-y-8">
       {/* Greeting */}
-      <section className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#DDF0FF] via-[#F1E9FF] to-[#FFEFD2] p-5 ring-1 ring-white sm:p-8">
-        <div className="pointer-events-none absolute -top-16 -right-10 h-56 w-56 rounded-full bg-white/45" aria-hidden="true" />
-        <div className="pointer-events-none absolute -bottom-20 left-1/4 h-44 w-44 rounded-full bg-[#FFE6F0]/70" aria-hidden="true" />
+      <section className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#1E40AF] via-[#2563EB] to-[#38BDF8] p-5 text-white shadow-[0_20px_44px_-24px_rgba(37,99,235,0.9)] sm:p-8">
+        <div className="pointer-events-none absolute -top-16 -right-10 h-56 w-56 rounded-full bg-white/15" aria-hidden="true" />
+        <div className="pointer-events-none absolute -bottom-20 left-1/4 h-44 w-44 rounded-full bg-[#FFD34E]/30 blur-xl" aria-hidden="true" />
         <span className="pointer-events-none absolute top-6 left-1/2 text-2xl opacity-70" aria-hidden="true">✨</span>
         <div className="relative flex flex-col gap-5 md:flex-row md:items-center">
           <div className="flex min-w-0 flex-1 items-start gap-4">
             <Avatar name={name} size={64} className="shadow-sm" />
             <div className="min-w-0">
-              <h1 className={`font-display text-2xl leading-tight font-extrabold sm:text-4xl ${INK}`}>Chào con, {name}! 👋</h1>
-              <p className="mt-1 text-base font-bold text-[#3B5FA8] sm:text-lg">Sẵn sàng học Toán cùng Mimo chưa?</p>
+              <h1 className="font-display text-2xl leading-tight font-extrabold text-white sm:text-4xl">Chào con, {name}! 👋</h1>
+              <p className="mt-1 text-base font-bold text-[#FFE08A] sm:text-lg">Sẵn sàng học Toán cùng Mimo chưa?</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {hasClass && (
                   <span className="inline-flex max-w-full items-center gap-1.5 rounded-full bg-white/85 px-3 py-1.5 text-sm font-bold text-[#1F2A55]">
@@ -162,7 +162,7 @@ export const StudentHome: React.FC<StudentHomeProps> = ({
             <Rocket className="h-5 w-5" /> Luyện Toán ngay
           </button>
           {hasClass && pending.length > 0 && (
-            <button type="button" onClick={() => onNavigate('homework')} className={studentButton('primary', 'blue')}>
+            <button type="button" onClick={() => onNavigate('homework')} className={studentButton('quiet')}>
               <BookOpen className="h-5 w-5" /> Làm bài tập ({pending.length})
             </button>
           )}

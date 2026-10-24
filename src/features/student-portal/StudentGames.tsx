@@ -3,7 +3,7 @@ import { ArrowLeft, ExternalLink, Gamepad2, Maximize2, RefreshCw, TriangleAlert 
 import { MimoLoading } from '../../components/ui/MimoLoading';
 import { fetchStudentGames, peekStudentGames, StudentGame } from '../../services/studentPortalService';
 import type { GameCategory } from '../../types/domain';
-import { EmptyState, INK, MUTED, StudentCard, studentButton, Tone, TONE } from './studentUi';
+import { EmptyState, INK, MUTED, StudentBanner, StudentCard, studentButton, Tone, TONE } from './studentUi';
 import { GameCover } from '../games/gameCovers';
 
 /**
@@ -99,19 +99,7 @@ export const StudentGames: React.FC<{ onUnauthenticated: () => void }> = ({ onUn
 
   return (
     <div className="space-y-6">
-      <section className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#DDF7F3] via-[#E3F1FF] to-[#FFF3C4] p-5 sm:p-7">
-        <span className="pointer-events-none absolute -top-6 right-8 text-6xl opacity-60" aria-hidden="true">🎲</span>
-        <span className="pointer-events-none absolute right-40 bottom-2 hidden text-4xl opacity-50 sm:block" aria-hidden="true">🧩</span>
-        <div className="relative flex items-center gap-4">
-          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#14B8A6] text-white shadow-[0_4px_0_0_#0F766E]">
-            <Gamepad2 className="h-7 w-7" />
-          </span>
-          <div>
-            <h1 className={`font-display text-2xl font-extrabold sm:text-3xl ${INK}`}>Trò chơi Toán</h1>
-            <p className={`text-base ${MUTED}`}>Vừa chơi vừa học – chọn một trò chơi con thích nhé!</p>
-          </div>
-        </div>
-      </section>
+      <StudentBanner icon={Gamepad2} title="Trò chơi Toán" subtitle="Vừa chơi vừa học – chọn một trò chơi con thích nhé!" />
 
       {playing ? (
         <GamePlayer game={playing} onBack={() => setPlaying(null)} />

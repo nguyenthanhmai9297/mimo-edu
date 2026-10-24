@@ -1,22 +1,11 @@
 import React, {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useState,
 } from 'react';
-import { onAuthStateChanged, signInWithPopup, signOut, User } from 'firebase/auth';
-import { auth, googleProvider } from '../lib/firebase/config';
-import {
-  subscribeAssignments,
-  subscribeClasses,
-  subscribeComments,
-  subscribeHomeworkList,
-  subscribeMathGames,
-  subscribeStudentAssignments,
-  subscribeStudents,
-  subscribeSubmissions,
-  verifyAdminAccess,
-} from '../services/firestoreRepository';
+import type { User } from 'firebase/auth';
 import {
   clearStudentToken,
   getSavedStudentToken,
@@ -32,9 +21,28 @@ import {
   Submission,
 } from '../types/domain';
 
+/**
+ * The Firebase SDK (auth + Firestore, ~170 KB gzipped) is only needed by
+ * teachers. It is loaded on demand, and never on the student pages, which
+ * talk to the API with their own session token.
+ */
+const loadTeacherFirebase = async () => {
+  const [fbAuth, config, repo] = await Promise.all([
+    import('firebase/auth'),
+    import('../lib/firebase/config'),
+    import('../services/firestoreRepository'),
+  ]);
+  return { fbAuth, config, repo };
+};
+
+/** Student-only pages: the teacher login is not started there. */
+const isStudentOnlyPath = (path: string) => /^\/(portal|quiz)(\/|$)/.test(path);
+
 interface AppContextValue {
   // Admin Auth
   user: User | null;
+  /** Starts the teacher sign-in check (loads Firebase) if not started yet. */
+  ensureTeacherAuth: () => void;
   authReady: boolean;
   isAdminAuthorized: boolean;
   adminCheckLoading: boolean;
@@ -90,36 +98,50 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   const [hasStudentSession, setHasStudentSession] = useState<boolean>(() =>
     Boolean(getSavedStudentToken())
   );
+  const [teacherAuthWanted, setTeacherAuthWanted] = useState(
+    () => !isStudentOnlyPath(window.location.pathname)
+  );
+  const ensureTeacherAuth = useCallback(() => setTeacherAuthWanted(true), []);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (firebaseUser) => {
-      setUser(firebaseUser);
-      if (firebaseUser) {
-        setAdminCheckLoading(true);
-        try {
-          const allowed = await verifyAdminAccess(firebaseUser.email);
-          setIsAdminAuthorized(allowed);
-          if (!allowed) {
-            setAuthError(
-              `Tài khoản (${firebaseUser.email}) chưa nằm trong danh sách Admin Allowlist. Chỉ giáo viên được cấp quyền mới có thể truy cập quản trị.`
-            );
+    if (!teacherAuthWanted) return;
+    let cancelled = false;
+    let unsub: (() => void) | undefined;
+    void loadTeacherFirebase().then(({ fbAuth, config, repo }) => {
+      if (cancelled) return;
+      unsub = fbAuth.onAuthStateChanged(config.auth, async (firebaseUser) => {
+        const { verifyAdminAccess } = repo;
+          setUser(firebaseUser);
+          if (firebaseUser) {
+            setAdminCheckLoading(true);
+            try {
+              const allowed = await verifyAdminAccess(firebaseUser.email);
+              setIsAdminAuthorized(allowed);
+              if (!allowed) {
+                setAuthError(
+                  `Tài khoản (${firebaseUser.email}) chưa nằm trong danh sách Admin Allowlist. Chỉ giáo viên được cấp quyền mới có thể truy cập quản trị.`
+                );
+              } else {
+                setAuthError(null);
+              }
+            } catch (err) {
+              console.error('Admin verification error:', err);
+              setIsAdminAuthorized(false);
+            } finally {
+              setAdminCheckLoading(false);
+            }
           } else {
-            setAuthError(null);
+            setIsAdminAuthorized(false);
+            setAdminCheckLoading(false);
           }
-        } catch (err) {
-          console.error('Admin verification error:', err);
-          setIsAdminAuthorized(false);
-        } finally {
-          setAdminCheckLoading(false);
-        }
-      } else {
-        setIsAdminAuthorized(false);
-        setAdminCheckLoading(false);
-      }
-      setAuthReady(true);
+          setAuthReady(true);
+      });
     });
-    return () => unsub();
-  }, []);
+    return () => {
+      cancelled = true;
+      unsub?.();
+    };
+  }, [teacherAuthWanted]);
 
   useEffect(() => {
     if (!authReady || !user || !isAdminAuthorized) {
@@ -139,7 +161,21 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
     setAdminDataLoading(true);
     setGamesLoading(true);
     setGamesError(null);
-    const unsubs = [
+    let cancelled = false;
+    let unsubs: (() => void)[] = [];
+    void loadTeacherFirebase().then(({ repo }) => {
+      if (cancelled) return;
+      const {
+        subscribeAssignments,
+        subscribeClasses,
+        subscribeComments,
+        subscribeHomeworkList,
+        subscribeMathGames,
+        subscribeStudentAssignments,
+        subscribeStudents,
+        subscribeSubmissions,
+      } = repo;
+      unsubs = [
       subscribeClasses((c) => {
         setClasses(c);
         setAdminDataLoading(false);
@@ -161,9 +197,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
           setGamesError(message);
         }
       ),
-    ];
+      ];
+    });
 
     return () => {
+      cancelled = true;
       unsubs.forEach((u) => u());
     };
   }, [authReady, user, isAdminAuthorized]);
@@ -171,8 +209,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   const loginAdminWithGoogle = async (): Promise<boolean> => {
     setAuthError(null);
     try {
-      const cred = await signInWithPopup(auth, googleProvider);
-      const allowed = await verifyAdminAccess(cred.user.email);
+      setTeacherAuthWanted(true);
+      const { fbAuth, config, repo } = await loadTeacherFirebase();
+      const cred = await fbAuth.signInWithPopup(config.auth, config.googleProvider);
+      const allowed = await repo.verifyAdminAccess(cred.user.email);
       setIsAdminAuthorized(allowed);
       if (!allowed) {
         setAuthError(
@@ -191,7 +231,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const logoutAdmin = async () => {
-    await signOut(auth);
+    const { fbAuth, config } = await loadTeacherFirebase();
+    await fbAuth.signOut(config.auth);
     setIsAdminAuthorized(false);
     setAuthError(null);
   };
@@ -209,6 +250,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
     <AppContext.Provider
       value={{
         user,
+        ensureTeacherAuth,
         authReady,
         isAdminAuthorized,
         adminCheckLoading,

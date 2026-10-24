@@ -1,4 +1,3 @@
-import { auth } from '../lib/firebase/config';
 import type { LiveQuizHostView, LiveQuizPlayView } from '../types/liveQuiz';
 import type { ToolQuestion } from '../features/tools/toolQuestions';
 import { getSavedStudentToken } from './studentPortalService';
@@ -23,7 +22,9 @@ async function request<T>(path: string, token: string | null | undefined, body?:
   return data as T;
 }
 
-const teacher = async <T>(path: string, body?: unknown) => request<T>(path, await auth.currentUser?.getIdToken(), body);
+// Teacher calls load Firebase Auth on demand, so students joining a quiz never download it
+const teacherToken = async () => (await import('../lib/firebase/config')).auth.currentUser?.getIdToken();
+const teacher = async <T>(path: string, body?: unknown) => request<T>(path, await teacherToken(), body);
 const student = <T>(path: string, body?: unknown) => request<T>(path, getSavedStudentToken(), body);
 
 export const createLiveQuiz = (questions: ToolQuestion[], perQuestionSec: number | null, title: string) =>

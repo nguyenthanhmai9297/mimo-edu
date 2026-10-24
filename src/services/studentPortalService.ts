@@ -1,14 +1,11 @@
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  query,
-  setDoc,
-  updateDoc,
-  where,
-} from 'firebase/firestore';
-import { db } from '../lib/firebase/config';
+/**
+ * Students talk to the API; the Firebase SDK (large) is only loaded on the
+ * rare fallback paths below, so the student portal never downloads it.
+ */
+const loadFirestore = async () => {
+  const [firestore, { db }] = await Promise.all([import('firebase/firestore'), import('../lib/firebase/config')]);
+  return { ...firestore, db };
+};
 import {
   Assignment,
   ClassRoom,
@@ -157,6 +154,7 @@ export async function loginWithStudentCode(rawCode: string): Promise<{
   }
 
   // Seamless Direct Firestore Fallback
+  const { collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where, db } = await loadFirestore();
   try {
     const indexSnap = await getDoc(doc(db, 'studentCodeIndex', code));
     if (!indexSnap.exists()) {
@@ -253,6 +251,7 @@ export async function fetchStudentPortalData(): Promise<StudentPortalBundle> {
   }
 
   // Direct Firestore Fallback
+  const { collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where, db } = await loadFirestore();
   const studentId =
     parseTokenStudentId(token) || getSavedStudentProfile()?.id;
   if (!studentId) {
@@ -432,6 +431,7 @@ export async function submitStudentHomework(params: {
   }
 
   // Direct Firestore Fallback
+  const { collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where, db } = await loadFirestore();
   const studentId =
     parseTokenStudentId(token) || getSavedStudentProfile()?.id;
   if (!studentId) {

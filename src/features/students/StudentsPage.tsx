@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DEFAULT_GRADE } from '../../utils/grade';
 import {
   Archive,
   Check,
@@ -52,7 +53,7 @@ export const StudentsPage: React.FC = () => {
     fullName: '',
     nickname: '',
     avatarUrl: '',
-    grade: 'Khối 5',
+    grade: DEFAULT_GRADE,
     classIds: [],
     dob: '',
     internalNotes: '',
@@ -85,7 +86,7 @@ export const StudentsPage: React.FC = () => {
       fullName: '',
       nickname: '',
       avatarUrl: '',
-      grade: 'Khối 5',
+      grade: DEFAULT_GRADE,
       classIds: classes[0] ? [classes[0].id] : [],
       dob: '',
       internalNotes: '',

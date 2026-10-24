@@ -17,7 +17,7 @@ import {
 import { MimoMascot } from '../practice/student/practiceTheme';
 
 /**
- * Shared look of the student portal: bright pastel tones on a cream page,
+ * Shared look of the student portal: Mimo-blue banners and bright pastel tones on a sky-blue page,
  * big rounded cards with soft shadows, chunky buttons. Teacher pages don't use
  * any of this (see also `.student-skin` in index.css).
  */
@@ -38,7 +38,7 @@ export const TONE: Record<Tone, { soft: string; text: string; solid: string; rin
 
 export const INK = 'text-[#1F2A55]';
 export const MUTED = 'text-[#56608A]';
-export const CARD = 'rounded-[1.75rem] bg-white ring-1 ring-[#EFE9DA] shadow-[0_10px_28px_-18px_rgba(31,42,85,0.45)]';
+export const CARD = 'rounded-[1.75rem] bg-white ring-1 ring-[#DBE5F7] shadow-[0_10px_28px_-18px_rgba(30,64,175,0.45)]';
 const FOCUS = 'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2563EB]/40';
 
 export const StudentCard: React.FC<React.HTMLAttributes<HTMLDivElement> & { padded?: boolean }> = ({
@@ -50,6 +50,31 @@ export const StudentCard: React.FC<React.HTMLAttributes<HTMLDivElement> & { padd
   <div className={`${CARD} ${padded ? 'p-5 sm:p-6' : ''} ${className}`} {...rest}>
     {children}
   </div>
+);
+
+/** Page banner of a portal tab: Mimo-blue gradient, white title, robot Mimo on the right. */
+export const StudentBanner: React.FC<{
+  icon: LucideIcon;
+  title: React.ReactNode;
+  subtitle?: React.ReactNode;
+  children?: React.ReactNode;
+}> = ({ icon: Icon, title, subtitle, children }) => (
+  <section className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#1E40AF] via-[#2563EB] to-[#38BDF8] p-5 text-white shadow-[0_18px_40px_-22px_rgba(37,99,235,0.85)] sm:p-7">
+    <div className="pointer-events-none absolute -top-16 -right-12 h-52 w-52 rounded-full bg-white/15" aria-hidden="true" />
+    <div className="pointer-events-none absolute -bottom-16 left-1/3 h-36 w-36 rounded-full bg-[#FFD34E]/30 blur-xl" aria-hidden="true" />
+    <span className="pointer-events-none absolute top-5 left-[55%] text-xl" aria-hidden="true">✨</span>
+    <div className="relative flex items-center gap-4">
+      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/20 ring-1 ring-white/40">
+        <Icon className="h-7 w-7" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <h1 className="font-display text-2xl leading-tight font-extrabold sm:text-3xl">{title}</h1>
+        {subtitle && <p className="mt-1 text-base text-white/90">{subtitle}</p>}
+      </div>
+      <MimoMascot size={88} className="hidden sm:block" />
+    </div>
+    {children && <div className="relative mt-4">{children}</div>}
+  </section>
 );
 
 export const SectionTitle: React.FC<{
@@ -120,7 +145,7 @@ export function studentButton(variant: ButtonVariant = 'primary', tone: Tone = '
     primary: `${TONE[tone].solid} text-white ${TONE[tone].shadow} hover:brightness-105 active:shadow-none`,
     accent: `bg-[#FFD34E] text-[#1F2A55] shadow-[0_4px_0_0_#C99A00] hover:brightness-105 active:shadow-none`,
     soft: `${TONE[tone].soft} ${TONE[tone].text} hover:brightness-[0.97]`,
-    quiet: `bg-white ${INK} ring-1 ring-[#EFE9DA] hover:bg-[#FFFBF2]`,
+    quiet: `bg-white ${INK} ring-1 ring-[#DBE5F7] hover:bg-[#EFF6FF]`,
   }[variant];
   return `${base} ${look} ${extra}`;
 }

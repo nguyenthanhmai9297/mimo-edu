@@ -35,10 +35,13 @@ export const LandingPage: React.FC = () => {
     isAdminAuthorized,
     authError,
     loginAdminWithGoogle,
+    ensureTeacherAuth,
     logoutAdmin,
     hasStudentSession,
     refreshStudentSessionState,
   } = useAppContext();
+  // Shows "Trang giáo viên" when a teacher is already signed in; Firebase loads once the page is idle
+  useEffect(() => prefetchWhenIdle(async () => ensureTeacherAuth()), [ensureTeacherAuth]);
 
   const [studentCode, setStudentCode] = useState('');
   const [codeLoading, setCodeLoading] = useState(false);

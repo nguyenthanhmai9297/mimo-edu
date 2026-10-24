@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DEFAULT_GRADE } from '../../utils/grade';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
   Archive,
@@ -79,7 +80,7 @@ export const ClassesPage: React.FC = () => {
   const [editingClass, setEditingClass] = useState<ClassRoom | null>(null);
   const [classFormValues, setClassFormValues] = useState<ClassFormValues>({
     name: '',
-    grade: 'Khối 5',
+    grade: DEFAULT_GRADE,
     schoolYear: '2026-2027',
     description: '',
     status: 'active',
@@ -98,7 +99,7 @@ export const ClassesPage: React.FC = () => {
     fullName: '',
     nickname: '',
     avatarUrl: '',
-    grade: 'Khối 5',
+    grade: DEFAULT_GRADE,
     classIds: [],
     dob: '',
     internalNotes: '',
@@ -130,7 +131,7 @@ export const ClassesPage: React.FC = () => {
     setEditingClass(null);
     setClassFormValues({
       name: '',
-      grade: 'Khối 5',
+      grade: DEFAULT_GRADE,
       schoolYear: '2026-2027',
       description: '',
       status: 'active',
@@ -189,7 +190,7 @@ export const ClassesPage: React.FC = () => {
       fullName: '',
       nickname: '',
       avatarUrl: '',
-      grade: cls.grade || 'Khối 5',
+      grade: cls.grade || DEFAULT_GRADE,
       classIds: [cls.id],
       dob: '',
       internalNotes: '',

@@ -4,10 +4,11 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
 import { AppProvider } from './app/providers';
 import { AppRouter } from './app/router';
-import { auth, usingFirebaseEmulator } from './lib/firebase/config';
+
+// Same flag as lib/firebase/config, read here so production never loads Firebase for it
+const usingFirebaseEmulator = import.meta.env.VITE_USE_FIREBASE_EMULATOR === 'true';
 
 /**
  * Local testing only: ?demo=giaovien signs in the emulator's test teacher.
@@ -19,9 +20,9 @@ function useEmulatorTeacherDemoLogin(): boolean {
   );
   useEffect(() => {
     if (!pending) return;
-    void auth
-      .authStateReady()
-      .then(() => {
+    void Promise.all([import('firebase/auth'), import('./lib/firebase/config')])
+      .then(async ([{ GoogleAuthProvider, signInWithCredential }, { auth }]) => {
+        await auth.authStateReady();
         if (auth.currentUser) return;
         const fakeIdToken = JSON.stringify({
           sub: 'giaovien-demo',

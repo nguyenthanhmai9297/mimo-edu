@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAppContext } from '../providers';
 import { ShieldAlert, LogOut } from 'lucide-react';
@@ -12,7 +12,10 @@ export const RequireAdminGuard: React.FC = () => {
     adminCheckLoading,
     logoutAdmin,
     loginAdminWithGoogle,
+    ensureTeacherAuth,
   } = useAppContext();
+  // Arriving from a student page: the teacher sign-in check has not started yet
+  useEffect(ensureTeacherAuth, [ensureTeacherAuth]);
 
   if (!authReady || adminCheckLoading) {
     return <MimoLoading variant="page" text="Đang xác thực quyền quản trị…" />;
