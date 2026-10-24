@@ -3,6 +3,7 @@ import {
   deleteDoc,
   doc,
   getDoc,
+  getDocFromServer,
   getDocs,
   onSnapshot,
   setDoc,
@@ -670,7 +671,10 @@ export async function deleteDraftComment(commentId: string): Promise<void> {
 // EDUCATIONAL MATH GAMES
 // ============================================================================
 
-export function subscribeMathGames(onData: (items: MathGame[]) => void) {
+export function subscribeMathGames(
+  onData: (items: MathGame[]) => void,
+  onError?: (message: string) => void
+) {
   const path = 'games';
   return onSnapshot(
     collection(db, path),
@@ -683,7 +687,11 @@ export function subscribeMathGames(onData: (items: MathGame[]) => void) {
         .sort((a, b) => a.order - b.order);
       onData(items);
     },
-    (error) => handleFirestoreError(error, OperationType.LIST, path)
+    (error) => {
+      // Let the Kho trò chơi page show the problem instead of an empty list
+      onError?.(error.message);
+      handleFirestoreError(error, OperationType.LIST, path);
+    }
   );
 }
 
@@ -707,10 +715,32 @@ export async function saveMathGame(
 
   try {
     await setDoc(doc(db, 'games', gameId), payload);
+    // Only report success once the server really holds the game (read back, no cache)
+    const saved = await getDocFromServer(doc(db, 'games', gameId));
+    if (!saved.exists()) {
+      throw new Error('Máy chủ chưa ghi nhận trò chơi. Vui lòng thử lại.');
+    }
     return gameId;
   } catch (error) {
     handleFirestoreError(error, OperationType.WRITE, `games/${gameId}`);
   }
+}
+
+/** Teacher-readable message for a failed Kho trò chơi write (handleFirestoreError wraps the raw error in JSON). */
+export function describeGameSaveError(err: unknown): string {
+  let raw = err instanceof Error ? err.message : String(err);
+  try {
+    raw = (JSON.parse(raw) as { error?: string }).error ?? raw;
+  } catch {
+    // not wrapped
+  }
+  if (/permission|insufficient/i.test(raw)) {
+    return 'Firestore từ chối lưu: tài khoản đang đăng nhập chưa có quyền quản trị Kho trò chơi, hoặc dữ liệu không hợp lệ. Trò chơi CHƯA được lưu.';
+  }
+  if (/offline|unavailable|network|failed to get document/i.test(raw)) {
+    return 'Không kết nối được máy chủ nên trò chơi CHƯA được lưu. Kiểm tra mạng rồi bấm Lưu lại.';
+  }
+  return `Trò chơi CHƯA được lưu: ${raw}`;
 }
 
 export async function deleteMathGame(gameId: string): Promise<void> {

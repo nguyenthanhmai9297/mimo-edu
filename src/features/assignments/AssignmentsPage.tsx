@@ -1,20 +1,63 @@
 import React, { useState } from 'react';
 import {
+  ArrowLeft,
+  ArrowRight,
   Ban,
+  BookOpen,
   CalendarCheck,
+  CalendarClock,
   CheckCircle2,
+  ClipboardCheck,
   Eye,
   Plus,
   RotateCcw,
+  Search,
+  Send,
   Users,
-  X,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
 import {
   createAssignmentFromHomework,
   updateAssignmentStatus,
 } from '../../services/firestoreRepository';
-import { Assignment } from '../../types/domain';
+import { Assignment, StudentAssignment } from '../../types/domain';
+import {
+  ConfirmDialog,
+  EmptyState,
+  ErrorState,
+  FilterSelect,
+  PageHeader,
+  SearchInput,
+  SegmentedFilter,
+  StatCard,
+  StatusBadge,
+  STUDIO_INPUT,
+  STUDIO_LABEL,
+  STUDIO_TONE,
+  StudioModal,
+  Toolbar,
+} from '../../components/studio/StudioUi';
+
+const STEPS = ['Chọn bài', 'Chọn lớp / học sinh', 'Thiết lập thời hạn', 'Giao bài'] as const;
+
+const PROGRESS: { key: StudentAssignment['status']; label: string; bar: string; text: string }[] = [
+  { key: 'assigned', label: 'Chưa làm', bar: 'bg-[#DCE7F3]', text: 'text-[#5E6C84]' },
+  { key: 'in_progress', label: 'Đang làm', bar: 'bg-[#FFD34E]', text: 'text-[#B7790A]' },
+  { key: 'submitted', label: 'Đã nộp', bar: 'bg-[#54C8FF]', text: 'text-[#1267E9]' },
+  { key: 'graded', label: 'Đã chấm', bar: 'bg-[#1F9D6B]', text: 'text-[#1F9D6B]' },
+];
+
+const SA_BADGE: Record<StudentAssignment['status'], { kind: 'neutral' | 'warning' | 'info' | 'success' | 'danger'; label: string }> = {
+  assigned: { kind: 'neutral', label: 'Chưa làm' },
+  in_progress: { kind: 'warning', label: 'Đang làm nháp' },
+  submitted: { kind: 'info', label: 'Đã nộp · chờ chấm' },
+  graded: { kind: 'success', label: 'Đã chấm' },
+  returned: { kind: 'danger', label: 'Yêu cầu làm lại' },
+};
+
+/** 2026-10-30 → 30/10/2026 */
+const vnDate = (d: string) => (/^\d{4}-\d{2}-\d{2}/.test(d) ? d.slice(0, 10).split('-').reverse().join('/') : d);
+const today = () => new Date().toISOString().slice(0, 10);
 
 export const AssignmentsPage: React.FC = () => {
   const {
@@ -26,6 +69,7 @@ export const AssignmentsPage: React.FC = () => {
   } = useAppContext();
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [step, setStep] = useState(0);
   const [selectedHwId, setSelectedHwId] = useState('');
   const [title, setTitle] = useState('');
   const [instructions, setInstructions] = useState('');
@@ -44,6 +88,11 @@ export const AssignmentsPage: React.FC = () => {
 
   const [inspectingAssignment, setInspectingAssignment] =
     useState<Assignment | null>(null);
+  const [revoking, setRevoking] = useState<Assignment | null>(null);
+
+  const [search, setSearch] = useState('');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'revoked'>('all');
+  const [classFilter, setClassFilter] = useState('all');
 
   const openAssignModal = () => {
     const firstHw = homeworkList[0];
@@ -54,15 +103,30 @@ export const AssignmentsPage: React.FC = () => {
     setSelectedClassIds(classes[0] ? [classes[0].id] : []);
     setSelectedStudentIds([]);
     setErrorMsg(null);
+    setStep(0);
     setModalOpen(true);
   };
 
-  const handleCreateAssignment = async (e: React.FormEvent) => {
-    e.preventDefault();
+  /** Same checks as before, run when leaving the step they belong to. */
+  const stepProblem = (s: number): string | null => {
+    if (s === 0 && !homeworkList.some((h) => h.id === selectedHwId)) return 'Vui lòng chọn một bài tập để giao.';
+    if (s === 1 && targetType === 'class' && selectedClassIds.length === 0) return 'Vui lòng chọn ít nhất một lớp học.';
+    if (s === 1 && targetType === 'students' && selectedStudentIds.length === 0) return 'Vui lòng chọn ít nhất một học sinh.';
+    if (s === 2 && !dueAt) return 'Vui lòng chọn hạn nộp.';
+    return null;
+  };
+  const goNext = () => {
+    const problem = stepProblem(step);
+    setErrorMsg(problem);
+    if (!problem) setStep((s) => Math.min(STEPS.length - 1, s + 1));
+  };
+
+  const handleCreateAssignment = async (e?: React.FormEvent) => {
+    e?.preventDefault();
     setErrorMsg(null);
     const hw = homeworkList.find((h) => h.id === selectedHwId);
     if (!hw) {
-      setErrorMsg('Vui lòng chọn một đề BTVN để giao.');
+      setErrorMsg('Vui lòng chọn một bài tập để giao.');
       return;
     }
     if (targetType === 'class' && selectedClassIds.length === 0) {
@@ -98,300 +162,319 @@ export const AssignmentsPage: React.FC = () => {
     }
   };
 
+  // ---------------------------------------------------------------- derived
+  const saOf = (id: string) => studentAssignments.filter((sa) => sa.assignmentId === id);
+  const activeCount = assignments.filter((a) => a.status === 'active').length;
+  const waiting = studentAssignments.filter((sa) => sa.status === 'submitted').length;
+  const finished = studentAssignments.filter((sa) => sa.status === 'submitted' || sa.status === 'graded').length;
+  const shown = assignments
+    .filter((a) => statusFilter === 'all' || (statusFilter === 'active' ? a.status === 'active' : a.status !== 'active'))
+    .filter((a) => classFilter === 'all' || (a.classIds || []).includes(classFilter))
+    .filter((a) => {
+      const q = search.trim().toLowerCase();
+      return !q || a.title.toLowerCase().includes(q) || (a.instructions || '').toLowerCase().includes(q);
+    })
+    .sort((a, b) => b.assignedAt.localeCompare(a.assignedAt));
+  const targetLabel = (a: Assignment) => {
+    if (a.targetType === 'class') {
+      const names = (a.classIds || []).map((id) => classes.find((c) => c.id === id)?.name).filter(Boolean);
+      return names.length ? `Lớp ${names.join(', ')}` : 'Theo lớp';
+    }
+    return `${a.studentIds?.length ?? 0} học sinh`;
+  };
+
+  const selectedHw = homeworkList.find((h) => h.id === selectedHwId);
+  const receivers =
+    targetType === 'class'
+      ? students.filter((s) => s.status === 'active' && s.classIds.some((id) => selectedClassIds.includes(id))).length
+      : selectedStudentIds.length;
+
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-        <div>
-          <h1 className="font-display text-2xl font-extrabold text-slate-900">
-            Giao Bài Tập & Theo Dõi Tiến Độ Snapshot
-          </h1>
-          <p className="text-sm text-slate-600">
-            Mỗi đợt giao bài tự động đóng băng bản sao câu hỏi (Snapshot) tại
-            thời điểm giao để việc sửa đề gốc về sau không làm sai lệch bài học
-            sinh đã nhận.
-          </p>
-        </div>
+    <div className="studio-skin space-y-6">
+      <PageHeader
+        icon={CalendarCheck}
+        tone="yellow"
+        title="Giao bài tập"
+        description="Giao bài đã soạn cho lớp hoặc nhóm học sinh và theo dõi tiến độ. Mỗi đợt giao lưu một bản sao câu hỏi, nên sửa bài gốc về sau không làm thay đổi bài học sinh đã nhận."
+        actions={
+          <button type="button" onClick={openAssignModal} className="studio-btn studio-btn-accent">
+            <Plus className="h-4 w-4" />
+            Giao bài mới
+          </button>
+        }
+      />
 
-        <button
-          type="button"
-          onClick={openAssignModal}
-          className="cartoon-button flex items-center gap-2 rounded-xl bg-amber-400 px-4 py-2.5 text-xs font-extrabold text-slate-900 whitespace-nowrap self-start"
-        >
-          <Plus className="h-4 w-4" />
-          Giao BTVN Mới
-        </button>
-      </div>
+      {/* How it works */}
+      <ol className="studio-card grid grid-cols-2 gap-3 p-4 sm:p-5 lg:grid-cols-4">
+        {STEPS.map((label, i) => {
+          const Icon = [BookOpen, Users, CalendarClock, Send][i];
+          return (
+            <li key={label} className="flex items-center gap-3">
+              <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${STUDIO_TONE[(['blue', 'green', 'yellow', 'pink'] as const)[i]]}`}>
+                <Icon className="h-5 w-5" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-[11px] font-bold text-[#5E6C84]">Bước {i + 1}</span>
+                <span className="block text-sm font-extrabold text-[#172B4D]">{label}</span>
+              </span>
+            </li>
+          );
+        })}
+      </ol>
 
-      {/* Assignments List */}
+      {assignments.length > 0 && (
+        <section className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+          <StatCard icon={CalendarCheck} tone="blue" label="Đợt đang mở" value={activeCount} note={`Tổng ${assignments.length} đợt`} />
+          <StatCard icon={ClipboardCheck} tone="pink" label="Bài chờ chấm" value={waiting} note="Học sinh đã nộp" />
+          <StatCard icon={CheckCircle2} tone="green" label="Lượt đã nộp" value={finished} note={`Trên ${studentAssignments.length} lượt được giao`} />
+          <StatCard icon={Ban} tone="gray" label="Đã thu hồi" value={assignments.length - activeCount} />
+        </section>
+      )}
+
+      {assignments.length > 0 && (
+        <Toolbar>
+          <SearchInput value={search} onChange={setSearch} placeholder="Tìm theo tên đợt giao bài hoặc hướng dẫn…" />
+          <div className="flex flex-wrap items-center gap-3">
+            <FilterSelect label="Lớp" value={classFilter} onChange={setClassFilter}>
+              <option value="all">Tất cả</option>
+              {classes.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </FilterSelect>
+            <SegmentedFilter
+              label="Trạng thái đợt giao"
+              value={statusFilter}
+              onChange={setStatusFilter}
+              options={[
+                { id: 'all', label: 'Tất cả', count: assignments.length },
+                { id: 'active', label: 'Đang mở', count: activeCount },
+                { id: 'revoked', label: 'Đã thu hồi', count: assignments.length - activeCount },
+              ]}
+            />
+          </div>
+        </Toolbar>
+      )}
+
       {assignments.length === 0 ? (
-        <div className="cartoon-card p-12 text-center">
-          <CalendarCheck className="mx-auto h-8 w-8 text-slate-400" />
-          <p className="mt-2 font-display text-base font-bold text-slate-800">
-            Chưa có đợt giao bài tập nào
-          </p>
-          <p className="mt-1 text-xs text-slate-500">
-            Hãy chọn một BTVN trong kho để giao cho lớp hoặc nhóm học sinh.
-          </p>
-        </div>
+        <EmptyState
+          icon={CalendarCheck}
+          tone="yellow"
+          title="Chưa có đợt giao bài nào"
+          text={
+            homeworkList.length === 0
+              ? 'Hãy soạn một bài tập ở mục Soạn bài tập trước, rồi quay lại đây để giao cho lớp.'
+              : 'Chọn một bài tập đã soạn để giao cho lớp hoặc nhóm học sinh.'
+          }
+          action={
+            homeworkList.length > 0 && (
+              <button type="button" onClick={openAssignModal} className="studio-btn studio-btn-accent">
+                <Plus className="h-4 w-4" />
+                Giao bài đầu tiên
+              </button>
+            )
+          }
+        />
+      ) : shown.length === 0 ? (
+        <EmptyState icon={Search} tone="gray" title="Không có đợt giao bài phù hợp" text="Thử từ khóa hoặc bộ lọc khác." />
       ) : (
         <div className="space-y-4">
-          {assignments.map((asg) => {
-            const saList = studentAssignments.filter(
-              (sa) => sa.assignmentId === asg.id
-            );
-            const assignedCount = saList.filter(
-              (s) => s.status === 'assigned'
-            ).length;
-            const inProgressCount = saList.filter(
-              (s) => s.status === 'in_progress'
-            ).length;
-            const submittedCount = saList.filter(
-              (s) => s.status === 'submitted'
-            ).length;
-            const gradedCount = saList.filter(
-              (s) => s.status === 'graded'
-            ).length;
-
+          {shown.map((asg) => {
+            const saList = saOf(asg.id);
+            const total = saList.length;
+            const counts = PROGRESS.map((p) => saList.filter((sa) => sa.status === p.key).length);
+            const active = asg.status === 'active';
+            const overdue = active && asg.dueAt < today();
             return (
-              <div
-                key={asg.id}
-                className="cartoon-card flex flex-col justify-between gap-4 bg-white p-5 lg:flex-row lg:items-center"
-              >
-                <div className="space-y-1">
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                    <span className="font-mono font-bold text-blue-700">
-                      Giao ngày: {asg.assignedAt}
-                    </span>
-                    <span>·</span>
-                    <span className="font-mono font-bold text-rose-700">
-                      Hạn nộp: {asg.dueAt}
-                    </span>
-                    <span>·</span>
-                    <span>
-                      Snapshot:{' '}
-                      <strong className="font-mono">
-                        {asg.publicQuestionsSnapshot?.length || 0}
-                      </strong>{' '}
-                      câu ({asg.maxScore}đ)
-                    </span>
-                    <span>·</span>
-                    <span
-                      className={
-                        asg.status === 'active'
-                          ? 'font-bold text-emerald-700'
-                          : 'font-bold text-rose-700'
-                      }
-                    >
-                      {asg.status === 'active'
-                        ? 'Đang mở nhận bài'
-                        : 'Đã thu hồi / Đóng'}
-                    </span>
+              <article key={asg.id} className="studio-card p-5 transition hover:shadow-[var(--studio-shadow-hover)]">
+                <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-start">
+                  <div className="min-w-0 space-y-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <StatusBadge kind={active ? 'success' : 'neutral'}>{active ? 'Đang mở nhận bài' : 'Đã thu hồi'}</StatusBadge>
+                      {overdue && <StatusBadge kind="danger">Đã quá hạn</StatusBadge>}
+                      <StatusBadge kind="info">{targetLabel(asg)}</StatusBadge>
+                    </div>
+                    <h3 className="font-display text-lg font-extrabold text-[#172B4D]">{asg.title}</h3>
+                    {asg.instructions && <p className="line-clamp-2 text-sm text-[#5E6C84]">{asg.instructions}</p>}
+                    <p className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-[#5E6C84]">
+                      <span>Giao {vnDate(asg.assignedAt)}</span>
+                      <span className={overdue ? 'font-bold text-[#D93B5B]' : 'font-bold text-[#172B4D]'}>Hạn nộp {vnDate(asg.dueAt)}</span>
+                      <span>
+                        {asg.publicQuestionsSnapshot?.length || 0} câu · {asg.maxScore} điểm
+                      </span>
+                      <span>{asg.publishSolutions ? 'Cho xem lời giải sau khi chấm' : 'Không cho xem lời giải'}</span>
+                    </p>
                   </div>
-
-                  <h3 className="font-display text-lg font-extrabold text-slate-900">
-                    {asg.title}
-                  </h3>
-                  {asg.instructions && (
-                    <p className="text-xs text-slate-600">{asg.instructions}</p>
-                  )}
-                </div>
-
-                {/* Progress Counters */}
-                <div className="flex flex-wrap items-center gap-4">
-                  <div className="grid grid-cols-4 gap-2 rounded-xl border-2 border-slate-800 bg-slate-50 px-3 py-2 text-center text-xs">
-                    <div>
-                      <div className="font-mono font-extrabold text-slate-800">
-                        {assignedCount}
-                      </div>
-                      <div className="text-[10px] text-slate-500">Chưa làm</div>
-                    </div>
-                    <div>
-                      <div className="font-mono font-extrabold text-amber-700">
-                        {inProgressCount}
-                      </div>
-                      <div className="text-[10px] text-slate-500">Đang làm</div>
-                    </div>
-                    <div>
-                      <div className="font-mono font-extrabold text-blue-700">
-                        {submittedCount}
-                      </div>
-                      <div className="text-[10px] text-slate-500">Đã nộp</div>
-                    </div>
-                    <div>
-                      <div className="font-mono font-extrabold text-emerald-700">
-                        {gradedCount}
-                      </div>
-                      <div className="text-[10px] text-slate-500">Đã chấm</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setInspectingAssignment(asg)}
-                      className="cartoon-button flex items-center gap-1 rounded-xl bg-sky-100 px-3 py-2 text-xs font-bold text-slate-900"
-                    >
-                      <Eye className="h-3.5 w-3.5" />
+                  <div className="flex shrink-0 flex-wrap items-center gap-2">
+                    <button type="button" onClick={() => setInspectingAssignment(asg)} className="studio-btn studio-btn-secondary">
+                      <Eye className="h-4 w-4" />
                       Tiến độ học sinh
                     </button>
-
-                    {asg.status === 'active' ? (
-                      <button
-                        type="button"
-                        onClick={() => updateAssignmentStatus(asg, 'revoked')}
-                        className="cartoon-button flex items-center gap-1 rounded-xl bg-rose-50 px-3 py-2 text-xs font-bold text-rose-700"
-                      >
-                        <Ban className="h-3.5 w-3.5" />
+                    {active ? (
+                      <button type="button" onClick={() => setRevoking(asg)} className="studio-btn studio-btn-danger">
+                        <Ban className="h-4 w-4" />
                         Thu hồi
                       </button>
                     ) : (
-                      <button
-                        type="button"
-                        onClick={() => updateAssignmentStatus(asg, 'active')}
-                        className="cartoon-button flex items-center gap-1 rounded-xl bg-emerald-50 px-3 py-2 text-xs font-bold text-emerald-800"
-                      >
-                        <RotateCcw className="h-3.5 w-3.5" />
+                      <button type="button" onClick={() => updateAssignmentStatus(asg, 'active')} className="studio-btn studio-btn-secondary text-[#1F9D6B]">
+                        <RotateCcw className="h-4 w-4" />
                         Mở lại
                       </button>
                     )}
                   </div>
                 </div>
-              </div>
+
+                {/* Progress of the students who received it */}
+                <div className="mt-4 rounded-xl bg-[#F6FAFF] p-3">
+                  <div className="flex h-2.5 overflow-hidden rounded-full bg-white" role="img" aria-label="Tiến độ làm bài">
+                    {total > 0 &&
+                      PROGRESS.map((p, i) => (
+                        <span key={p.key} className={p.bar} style={{ width: `${(counts[i] / total) * 100}%` }} />
+                      ))}
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-xs">
+                    <span className="font-bold text-[#172B4D]">{total} học sinh nhận bài</span>
+                    {PROGRESS.map((p, i) => (
+                      <span key={p.key} className="inline-flex items-center gap-1.5 text-[#5E6C84]">
+                        <span className={`h-2 w-2 rounded-full ${p.bar}`} />
+                        {p.label} <b className={p.text}>{counts[i]}</b>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
             );
           })}
         </div>
       )}
 
-      {/* Assign Homework Modal */}
-      {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
-          <div className="cartoon-card max-h-[90vh] w-full max-w-xl overflow-y-auto bg-white p-6">
-            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-              <h2 className="font-display text-lg font-extrabold text-slate-900">
-                Giao Bài Tập Về Nhà Cho Học Sinh
-              </h2>
-              <button
-                type="button"
-                onClick={() => setModalOpen(false)}
-                className="rounded-lg border border-slate-300 p-1"
-              >
-                <X className="h-4 w-4" />
+      {/* Assign homework: 4 steps */}
+      <StudioModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title="Giao bài tập"
+        icon={Send}
+        tone="yellow"
+        width="lg"
+        footer={
+          <>
+            {step > 0 && (
+              <button type="button" onClick={() => setStep((s) => s - 1)} className="studio-btn studio-btn-secondary mr-auto">
+                <ArrowLeft className="h-4 w-4" />
+                Quay lại
               </button>
-            </div>
+            )}
+            <button type="button" onClick={() => setModalOpen(false)} className="studio-btn studio-btn-secondary">
+              Hủy
+            </button>
+            {step < STEPS.length - 1 ? (
+              <button type="button" onClick={goNext} className="studio-btn studio-btn-primary">
+                Tiếp tục
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            ) : (
+              <button type="button" disabled={saving} onClick={() => void handleCreateAssignment()} className="studio-btn studio-btn-accent">
+                <CheckCircle2 className="h-4 w-4" />
+                {saving ? 'Đang giao bài…' : 'Xác nhận giao bài'}
+              </button>
+            )}
+          </>
+        }
+      >
+        <ol className="mb-5 grid grid-cols-4 gap-2" aria-label="Các bước giao bài">
+          {STEPS.map((label, i) => (
+            <li key={label} className="text-center">
+              <span
+                className={`mx-auto flex h-8 w-8 items-center justify-center rounded-full text-xs font-extrabold ${
+                  i < step ? 'bg-[#1F9D6B] text-white' : i === step ? 'bg-[#1267E9] text-white' : 'bg-[#F1F4F9] text-[#5E6C84]'
+                }`}
+              >
+                {i < step ? <CheckCircle2 className="h-4 w-4" /> : i + 1}
+              </span>
+              <span className={`mt-1 block text-[11px] leading-tight font-bold ${i === step ? 'text-[#172B4D]' : 'text-[#5E6C84]'}`}>{label}</span>
+            </li>
+          ))}
+        </ol>
 
-            <form onSubmit={handleCreateAssignment} className="mt-4 space-y-4">
-              {errorMsg && (
-                <div className="rounded-xl border border-rose-300 bg-rose-50 p-3 text-xs font-bold text-rose-700">
-                  {errorMsg}
+        {errorMsg && (
+          <div className="mb-4">
+            <ErrorState message={errorMsg} />
+          </div>
+        )}
+
+        {step === 0 && (
+          <div className="space-y-4">
+            <div>
+              <label className={STUDIO_LABEL}>Bài tập đã soạn *</label>
+              {homeworkList.length === 0 ? (
+                <p className="rounded-xl bg-[#FFF6DC] p-3 text-sm text-[#7A5200]">Chưa có bài tập nào. Hãy soạn bài ở mục Soạn bài tập trước.</p>
+              ) : (
+                <div className="max-h-64 space-y-2 overflow-y-auto pr-1">
+                  {homeworkList.map((h) => {
+                    const on = h.id === selectedHwId;
+                    return (
+                      <label
+                        key={h.id}
+                        className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${on ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
+                      >
+                        <input
+                          type="radio"
+                          name="homework"
+                          checked={on}
+                          onChange={() => {
+                            setSelectedHwId(h.id);
+                            setTitle(h.title);
+                            setInstructions(h.description || '');
+                          }}
+                          className="h-4 w-4 accent-[#1267E9]"
+                        />
+                        <span className="min-w-0 flex-1">
+                          <span className="block truncate text-sm font-bold text-[#172B4D]">{h.title}</span>
+                          <span className="block text-xs text-[#5E6C84]">
+                            {h.questions.length} câu · {h.totalPoints} điểm · {h.grade || 'Toán'}
+                          </span>
+                        </span>
+                        <StatusBadge kind={h.status === 'published' ? 'success' : 'warning'}>{h.status === 'published' ? 'Đã xuất bản' : 'Bản nháp'}</StatusBadge>
+                      </label>
+                    );
+                  })}
                 </div>
               )}
+            </div>
+            <div>
+              <label className={STUDIO_LABEL}>Tên đợt giao bài</label>
+              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className={STUDIO_INPUT} />
+            </div>
+          </div>
+        )}
 
-              <div>
-                <label className="mb-1 block text-xs font-bold text-slate-700">
-                  Chọn đề BTVN trong kho *
-                </label>
-                <select
-                  value={selectedHwId}
-                  onChange={(e) => {
-                    const id = e.target.value;
-                    setSelectedHwId(id);
-                    const found = homeworkList.find((h) => h.id === id);
-                    if (found) {
-                      setTitle(found.title);
-                      setInstructions(found.description || '');
-                    }
-                  }}
-                  className="w-full rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-sm font-bold"
-                >
-                  <option value="">-- Chọn BTVN --</option>
-                  {homeworkList.map((h) => (
-                    <option key={h.id} value={h.id}>
-                      {h.title} ({h.questions.length} câu · {h.totalPoints}đ)
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs font-bold text-slate-700">
-                  Tiêu đề đợt giao bài
-                </label>
-                <input
-                  type="text"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
-                    Ngày giao
-                  </label>
-                  <input
-                    type="date"
-                    value={assignedAt}
-                    onChange={(e) => setAssignedAt(e.target.value)}
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
-                    Hạn nộp *
-                  </label>
-                  <input
-                    type="date"
-                    required
-                    value={dueAt}
-                    onChange={(e) => setDueAt(e.target.value)}
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-1.5 block text-xs font-bold text-slate-700">
-                  Đối tượng nhận bài
-                </label>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setTargetType('class')}
-                    className={`flex-1 rounded-xl border-2 border-slate-800 py-2 text-xs font-bold ${
-                      targetType === 'class'
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-white text-slate-800'
-                    }`}
-                  >
-                    Giao theo Lớp học
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setTargetType('students')}
-                    className={`flex-1 rounded-xl border-2 border-slate-800 py-2 text-xs font-bold ${
-                      targetType === 'students'
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-white text-slate-800'
-                    }`}
-                  >
-                    Giao cho Nhóm Học Sinh Cụ Thể
-                  </button>
-                </div>
-              </div>
-
-              {targetType === 'class' ? (
-                <div className="max-h-36 space-y-1.5 overflow-y-auto rounded-xl border-2 border-slate-800 bg-slate-50 p-3">
-                  {classes
-                    .filter((c) => c.status === 'active')
-                    .map((cls) => (
+        {step === 1 && (
+          <div className="space-y-4">
+            <SegmentedFilter
+              label="Đối tượng nhận bài"
+              value={targetType}
+              onChange={setTargetType}
+              options={[
+                { id: 'class', label: 'Giao theo lớp' },
+                { id: 'students', label: 'Giao cho học sinh cụ thể' },
+              ]}
+            />
+            {targetType === 'class' ? (
+              <div className="max-h-64 space-y-2 overflow-y-auto pr-1">
+                {classes
+                  .filter((c) => c.status === 'active')
+                  .map((cls) => {
+                    const on = selectedClassIds.includes(cls.id);
+                    const size = students.filter((s) => s.status === 'active' && s.classIds.includes(cls.id)).length;
+                    return (
                       <label
                         key={cls.id}
-                        className="flex cursor-pointer items-center gap-2 text-xs font-bold text-slate-800"
+                        className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${on ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
                       >
                         <input
                           type="checkbox"
-                          checked={selectedClassIds.includes(cls.id)}
+                          checked={on}
                           onChange={() =>
                             setSelectedClassIds((prev) =>
                               prev.includes(cls.id)
@@ -399,165 +482,167 @@ export const AssignmentsPage: React.FC = () => {
                                 : [...prev, cls.id]
                             )
                           }
-                          className="h-4 w-4"
+                          className="h-4 w-4 accent-[#1267E9]"
                         />
-                        <span>
-                          {cls.name} ({cls.grade})
+                        <span className="flex-1 text-sm font-bold text-[#172B4D]">
+                          {cls.name} <span className="font-normal text-[#5E6C84]">({cls.grade})</span>
                         </span>
+                        <span className="text-xs text-[#5E6C84]">{size} học sinh</span>
                       </label>
-                    ))}
-                </div>
-              ) : (
-                <div className="max-h-40 space-y-1.5 overflow-y-auto rounded-xl border-2 border-slate-800 bg-slate-50 p-3">
-                  {students
-                    .filter((s) => s.status === 'active')
-                    .map((st) => (
+                    );
+                  })}
+                {classes.filter((c) => c.status === 'active').length === 0 && (
+                  <p className="rounded-xl bg-[#FFF6DC] p-3 text-sm text-[#7A5200]">Chưa có lớp nào đang hoạt động.</p>
+                )}
+              </div>
+            ) : (
+              <div className="max-h-64 space-y-1.5 overflow-y-auto pr-1">
+                {students
+                  .filter((s) => s.status === 'active')
+                  .map((st) => {
+                    const on = selectedStudentIds.includes(st.id);
+                    return (
                       <label
                         key={st.id}
-                        className="flex cursor-pointer items-center justify-between text-xs font-bold text-slate-800"
+                        className={`flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2 transition ${on ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
                       >
-                        <span className="flex items-center gap-2">
-                          <input
-                            type="checkbox"
-                            checked={selectedStudentIds.includes(st.id)}
-                            onChange={() =>
-                              setSelectedStudentIds((prev) =>
-                                prev.includes(st.id)
-                                  ? prev.filter((id) => id !== st.id)
-                                  : [...prev, st.id]
-                              )
-                            }
-                            className="h-4 w-4"
-                          />
-                          <span>{st.fullName}</span>
-                        </span>
-                        <span className="font-mono text-blue-700">
-                          {st.accessCode}
-                        </span>
+                        <input
+                          type="checkbox"
+                          checked={on}
+                          onChange={() =>
+                            setSelectedStudentIds((prev) =>
+                              prev.includes(st.id)
+                                ? prev.filter((id) => id !== st.id)
+                                : [...prev, st.id]
+                            )
+                          }
+                          className="h-4 w-4 accent-[#1267E9]"
+                        />
+                        <span className="flex-1 text-sm font-bold text-[#172B4D]">{st.fullName}</span>
+                        <span className="font-mono text-xs text-[#1267E9]">{st.accessCode}</span>
                       </label>
-                    ))}
-                </div>
-              )}
-
-              <div>
-                <label className="mb-1 block text-xs font-bold text-slate-700">
-                  Hướng dẫn làm bài
-                </label>
-                <textarea
-                  rows={2}
-                  value={instructions}
-                  onChange={(e) => setInstructions(e.target.value)}
-                  className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
-                />
+                    );
+                  })}
               </div>
-
-              <label className="flex cursor-pointer items-center gap-2 text-xs font-bold text-slate-800">
-                <input
-                  type="checkbox"
-                  checked={publishSolutions}
-                  onChange={(e) => setPublishSolutions(e.target.checked)}
-                  className="h-4 w-4"
-                />
-                Cho phép học sinh xem đáp án & lời giải chuẩn sau khi bài được
-                chấm và công bố điểm
-              </label>
-
-              <div className="flex justify-end gap-3 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setModalOpen(false)}
-                  className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
-                >
-                  Hủy
-                </button>
-                <button
-                  type="submit"
-                  disabled={saving}
-                  className="cartoon-button flex items-center gap-1.5 rounded-xl bg-amber-400 px-5 py-2 text-xs font-extrabold text-slate-900"
-                >
-                  <CheckCircle2 className="h-4 w-4" />
-                  {saving ? 'Đang tạo Snapshot...' : 'Xác Nhận Giao Bài'}
-                </button>
-              </div>
-            </form>
+            )}
+            <p className="text-xs text-[#5E6C84]">
+              Giao theo lớp: chỉ những học sinh <b>đang trong lớp lúc giao</b> nhận được bài. Học sinh được ghép vào lớp sau sẽ không tự nhận bài cũ.
+            </p>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Inspect Student Progress Modal */}
-      {inspectingAssignment && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
-          <div className="cartoon-card max-h-[88vh] w-full max-w-2xl overflow-y-auto bg-white p-6">
-            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+        {step === 2 && (
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <h2 className="font-display text-lg font-extrabold text-slate-900">
-                  Tiến Độ Học Sinh: {inspectingAssignment.title}
-                </h2>
-                <p className="text-xs text-slate-500">
-                  Hạn nộp: {inspectingAssignment.dueAt} · Điểm tối đa:{' '}
-                  {inspectingAssignment.maxScore}đ
-                </p>
+                <label className={STUDIO_LABEL}>Ngày giao</label>
+                <input type="date" value={assignedAt} onChange={(e) => setAssignedAt(e.target.value)} className={`${STUDIO_INPUT} font-mono`} />
               </div>
-              <button
-                type="button"
-                onClick={() => setInspectingAssignment(null)}
-                className="rounded-lg border border-slate-300 p-1"
-              >
-                <X className="h-4 w-4" />
-              </button>
+              <div>
+                <label className={STUDIO_LABEL}>Hạn nộp *</label>
+                <input type="date" required value={dueAt} onChange={(e) => setDueAt(e.target.value)} className={`${STUDIO_INPUT} font-mono`} />
+              </div>
             </div>
+            <div>
+              <label className={STUDIO_LABEL}>Hướng dẫn làm bài</label>
+              <textarea rows={3} value={instructions} onChange={(e) => setInstructions(e.target.value)} className={`${STUDIO_INPUT} py-2`} />
+            </div>
+            <label className="flex cursor-pointer items-start gap-2.5 rounded-xl border border-[#DCE7F3] p-3 text-sm text-[#172B4D]">
+              <input
+                type="checkbox"
+                checked={publishSolutions}
+                onChange={(e) => setPublishSolutions(e.target.checked)}
+                className="mt-0.5 h-4 w-4 accent-[#1267E9]"
+              />
+              Cho học sinh xem đáp án và lời giải sau khi bài được chấm và công bố điểm
+            </label>
+          </div>
+        )}
 
-            <div className="mt-4 divide-y divide-slate-200">
-              {studentAssignments
-                .filter((sa) => sa.assignmentId === inspectingAssignment.id)
-                .map((sa) => {
+        {step === 3 && (
+          <dl className="divide-y divide-[#EEF3F9] rounded-xl border border-[#DCE7F3] text-sm">
+            {(
+              [
+                ['Bài tập', selectedHw ? `${selectedHw.title} (${selectedHw.questions.length} câu · ${selectedHw.totalPoints} điểm)` : '—'],
+                ['Tên đợt giao', title.trim() || selectedHw?.title || '—'],
+                [
+                  'Giao cho',
+                  targetType === 'class'
+                    ? `${selectedClassIds.map((id) => classes.find((c) => c.id === id)?.name).filter(Boolean).join(', ')} · ${receivers} học sinh`
+                    : `${receivers} học sinh`,
+                ],
+                ['Thời gian', `${vnDate(assignedAt)} → hạn nộp ${vnDate(dueAt)}`],
+                ['Lời giải', publishSolutions ? 'Cho xem sau khi chấm' : 'Không cho xem'],
+              ] as const
+            ).map(([k, v]) => (
+              <div key={k} className="grid grid-cols-[8rem_1fr] gap-3 px-4 py-2.5">
+                <dt className="font-bold text-[#5E6C84]">{k}</dt>
+                <dd className="text-[#172B4D]">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </StudioModal>
+
+      {/* Student progress of one assignment */}
+      <StudioModal
+        open={inspectingAssignment !== null}
+        onClose={() => setInspectingAssignment(null)}
+        title={inspectingAssignment ? `Tiến độ: ${inspectingAssignment.title}` : ''}
+        icon={Users}
+        width="lg"
+      >
+        {inspectingAssignment && (
+          <>
+            <p className="mb-3 text-xs text-[#5E6C84]">
+              Hạn nộp {vnDate(inspectingAssignment.dueAt)} · Điểm tối đa {inspectingAssignment.maxScore}
+            </p>
+            {saOf(inspectingAssignment.id).length === 0 ? (
+              <EmptyState bare icon={Users} tone="gray" title="Chưa có học sinh nào nhận bài này" />
+            ) : (
+              <ul className="divide-y divide-[#EEF3F9]">
+                {saOf(inspectingAssignment.id).map((sa) => {
                   const st = students.find((s) => s.id === sa.studentId);
+                  const b = SA_BADGE[sa.status];
                   return (
-                    <div
-                      key={sa.id}
-                      className="flex items-center justify-between py-3 text-xs"
-                    >
-                      <div className="flex items-center gap-3">
-                        <Users className="h-4 w-4 text-slate-400" />
-                        <div>
-                          <div className="font-bold text-slate-900">
-                            {st?.fullName || sa.studentId}
-                          </div>
-                          <div className="font-mono text-slate-500">
-                            Mã học sinh: {st?.accessCode || '—'}
-                          </div>
+                    <li key={sa.id} className="flex items-center justify-between gap-3 py-3">
+                      <div className="flex min-w-0 items-center gap-3">
+                        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-extrabold ${STUDIO_TONE.blue}`}>
+                          {(st?.fullName || '?').slice(0, 1).toUpperCase()}
+                        </span>
+                        <div className="min-w-0">
+                          <div className="truncate text-sm font-bold text-[#172B4D]">{st?.fullName || sa.studentId}</div>
+                          <div className="font-mono text-xs text-[#5E6C84]">{st?.accessCode || '—'}</div>
                         </div>
                       </div>
-                      <div className="text-right font-bold">
-                        {sa.status === 'assigned' && (
-                          <span className="text-slate-600">Chưa làm</span>
-                        )}
-                        {sa.status === 'in_progress' && (
-                          <span className="text-amber-700">Đang làm nháp</span>
-                        )}
-                        {sa.status === 'submitted' && (
-                          <span className="text-blue-700">
-                            Đã nộp (Chờ chấm)
-                          </span>
-                        )}
-                        {sa.status === 'graded' && (
-                          <span className="font-mono text-emerald-700">
-                            Đã chấm: {sa.score ?? 0}/{sa.maxScore}đ
-                          </span>
-                        )}
-                        {sa.status === 'returned' && (
-                          <span className="text-rose-700">
-                            Yêu cầu làm lại
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                      <StatusBadge kind={b.kind}>
+                        {sa.status === 'graded' ? `${b.label}: ${sa.score ?? 0}/${sa.maxScore}` : b.label}
+                      </StatusBadge>
+                    </li>
                   );
                 })}
-            </div>
-          </div>
-        </div>
-      )}
+              </ul>
+            )}
+          </>
+        )}
+      </StudioModal>
+
+      <ConfirmDialog
+        open={revoking !== null}
+        danger
+        title="Thu hồi đợt giao bài?"
+        message={
+          <>
+            Học sinh sẽ không còn thấy <b className="text-[#172B4D]">{revoking?.title}</b> trong cổng học sinh. Bài đã nộp vẫn được giữ, và cô có thể mở lại bất cứ lúc nào.
+          </>
+        }
+        confirmLabel="Thu hồi"
+        onCancel={() => setRevoking(null)}
+        onConfirm={() => {
+          if (revoking) void updateAssignmentStatus(revoking, 'revoked');
+          setRevoking(null);
+        }}
+      />
     </div>
   );
 };

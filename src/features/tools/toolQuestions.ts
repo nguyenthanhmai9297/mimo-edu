@@ -134,7 +134,7 @@ export function isAnswerCorrect(q: ToolQuestion, chosen: number[]): boolean {
 export function richToPlain(content: RichTextContent | undefined): string {
   if (!content) return '';
   return content.blocks
-    .map((b) => (b.type === 'paragraph' ? b.text : b.type === 'math' ? b.latex : b.type === 'list' ? b.items.join(', ') : ''))
+    .map((b) => (b.type === 'paragraph' ? b.text : b.type === 'math' ? b.latex : b.type === 'list' ? b.items.join(', ') : b.type === 'table' ? b.rows.map((r) => r.cells.join(' | ')).join('; ') : ''))
     .join(' ')
     .replace(/\$/g, '')
     .replace(/\s+/g, ' ')

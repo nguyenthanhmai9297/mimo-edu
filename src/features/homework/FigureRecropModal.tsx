@@ -47,23 +47,23 @@ export const FigureRecropModal: React.FC<FigureRecropModalProps> = ({
   const valid = box[2] - box[0] > 5 && box[3] - box[1] > 5;
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-900/60 p-4">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
       <div className="cartoon-card flex max-h-[94vh] w-full max-w-3xl flex-col bg-white">
-        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-3">
+        <div className="flex items-center justify-between border-b border-[#EEF3F9] px-5 py-3">
           <div className="flex items-center gap-2">
-            <Crop className="h-5 w-5 text-blue-600" />
-            <h2 className="font-display text-base font-extrabold text-slate-900">Cắt lại hình từ đề gốc</h2>
+            <Crop className="h-5 w-5 text-[#1267E9]" />
+            <h2 className="font-display text-base font-extrabold text-[#172B4D]">Cắt lại hình từ đề gốc</h2>
           </div>
           <button
             type="button"
             onClick={onCancel}
             aria-label="Đóng"
-            className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100"
+            className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF]"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
-        <p className="px-5 pt-3 text-xs text-slate-600">
+        <p className="px-5 pt-3 text-xs text-[#5E6C84]">
           Kéo chuột (hoặc ngón tay) để khoanh vùng hình cần dùng. Khung xanh là vùng sẽ được cắt.
         </p>
         <div className="flex-1 overflow-auto p-4">
@@ -91,11 +91,11 @@ export const FigureRecropModal: React.FC<FigureRecropModalProps> = ({
             />
           </div>
         </div>
-        <div className="flex justify-end gap-2 border-t border-slate-200 px-5 py-3">
+        <div className="flex justify-end gap-2 border-t border-[#EEF3F9] px-5 py-3">
           <button
             type="button"
             onClick={onCancel}
-            className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
+            className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-[#3B4A66]"
           >
             Hủy
           </button>
@@ -103,7 +103,7 @@ export const FigureRecropModal: React.FC<FigureRecropModalProps> = ({
             type="button"
             disabled={!valid}
             onClick={() => onConfirm(box)}
-            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-blue-600 px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
+            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1267E9] px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
           >
             <Check className="h-4 w-4" />
             Dùng vùng này

@@ -93,8 +93,13 @@
   50% { opacity: 0.25; }
 }
 .mimo-twinkle { animation: mimo-twinkle 3.2s ease-in-out infinite; }
+@keyframes mimo-dot {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.45; }
+  40% { transform: translateY(-7px); opacity: 1; }
+}
+.mimo-dot { animation: mimo-dot 1.1s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .mimo-float, .mimo-pop, .mimo-twinkle { animation: none; }
+  .mimo-float, .mimo-pop, .mimo-twinkle, .mimo-dot { animation: none; }
 }
 
 /* ==========================================================================

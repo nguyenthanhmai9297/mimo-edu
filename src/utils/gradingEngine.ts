@@ -6,18 +6,109 @@ import {
 } from '../types/domain.js';
 
 /**
- * Normalizes a short-answer string:
- * - trims leading/trailing whitespace
- * - collapses internal multiple spaces into one
- * - lowercases characters
- * - normalizes Vietnamese decimal comma (e.g. "12,5" -> "12.5") when numeric
+ * Normalizes a short-answer string so equivalent ways of writing the same
+ * answer compare equal (Vietnamese conventions: "." or a space groups
+ * thousands, "," is the decimal mark):
+ * - case, surrounding/extra whitespace and a trailing full stop are ignored
+ * - "1 000", "1.000" and "1000" are the same number; "12.345.678" too.
+ *   Only groups of exactly three digits count as thousands, so "2.5", "0.125"
+ *   and "2,5" stay decimals ("2,5" -> "2.5")
+ * - leading zeros and trailing decimal zeros are dropped ("05" -> "5", "2,50" -> "2.5")
+ * - spaces around operators and fraction bars are ignored ("3 / 4" -> "3/4");
+ *   "x", "*" between numbers mean "×", "÷" means ":"
+ * - a unit may touch the number or not ("42cm" -> "42 cm"); units themselves
+ *   are never converted, so "42 cm" and "42 mm" (or a bare "42") stay different
+ * - LaTeX from AI answers reads as typed text: "$7\,023$" -> "7023",
+ *   "\frac{3}{4}" -> "3/4", "\text{cm}" -> "cm", "\times" -> "×", "2{,}5" -> "2.5"
  */
 export function normalizeShortAnswer(raw: string): string {
-  const trimmed = raw.trim().replace(/\s+/g, ' ').toLowerCase();
-  if (/^-?\d+,\d+$/.test(trimmed)) {
-    return trimmed.replace(',', '.');
-  }
-  return trimmed;
+  let s = latexToPlain(raw)
+    .normalize('NFC')
+    .toLowerCase()
+    .replace(/[  ]/g, ' ')
+    .replace(/[−–]/g, '-')
+    .replace(/²/g, '2')
+    .replace(/³/g, '3')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/[.!;]+$/, '')
+    .trim();
+
+  // Thousands separators: one kind per number, first group 1–3 digits (not 0)
+  s = s.replace(
+    /(?<![\d.,])([1-9]\d{0,2})([ .])(\d{3}(?:\2\d{3})*)(?=$|[^\d.,]|,\d|[.,](?!\d))/g,
+    (_m, head: string, sep: string, rest: string) => head + rest.split(sep).join('')
+  );
+  // Decimal comma
+  s = s.replace(/(\d),(\d)/g, '$1.$2');
+  // Canonical numbers: no leading zeros, no trailing decimal zeros
+  s = s.replace(/\d+(?:\.\d+)?/g, (n) => {
+    let [int, frac = ''] = n.split('.');
+    int = int.replace(/^0+(?=\d)/, '');
+    frac = frac.replace(/0+$/, '');
+    return frac ? `${int}.${frac}` : int;
+  });
+  // Operators and fraction bars
+  s = s
+    .replace(/(\d)\s*[x*×]\s*(?=\d)/g, '$1×')
+    .replace(/÷/g, ':')
+    .replace(/\s*([+×:/=<>])\s*/g, '$1')
+    .replace(/(^|[\d(+×:/=<>])\s*-\s*(?=\d)/g, '$1-')
+    .replace(/(\d)\s*-\s*(?=\d)/g, '$1-');
+  // Units: "42cm" and "42 cm" alike; "%" and "°" stay attached
+  s = s.replace(/(\d)\s+([%°])/g, '$1$2').replace(/(\d)\s*(\p{L})/gu, '$1 $2');
+  return s.replace(/\s+/g, ' ').trim();
+}
+
+/** LaTeX an AI (or a teacher) may leave in an answer, rewritten as plain typed text. */
+function latexToPlain(raw: string): string {
+  return raw
+    .replace(/\$/g, '')
+    .replace(/\\[dt]?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, '$1/$2')
+    .replace(/\\(?:text|mathrm|textrm|mbox)\s*\{([^{}]*)\}/g, ' $1 ')
+    .replace(/\{,\}/g, ',')
+    .replace(/\\(?:times|cdot)/g, '×')
+    .replace(/\\div/g, '÷')
+    .replace(/\\(?:[,;:! ]|quad|qquad)|~/g, ' ');
+}
+
+/** A normalized answer split into its value and a single trailing unit word ("42 cm"). */
+function splitUnit(normalized: string): { value: string; unit: string } | null {
+  const m = /^([^\p{L}]*\d[^\p{L}]*?)(?: ([\p{L}][\p{L}\d]*))?$/u.exec(normalized);
+  return m ? { value: m[1], unit: m[2] ?? '' } : null;
+}
+
+/** "a/b" and "c/d" are the same fraction value (integers, non-zero denominators). */
+function equivalentFractions(a: string, b: string): boolean {
+  const fa = /^(-?\d+)\/(\d+)$/.exec(a);
+  const fb = /^(-?\d+)\/(\d+)$/.exec(b);
+  if (!fa || !fb || /^0+$/.test(fa[2]) || /^0+$/.test(fb[2])) return false;
+  return BigInt(fa[1]) * BigInt(fb[2]) === BigInt(fb[1]) * BigInt(fa[2]);
+}
+
+/**
+ * Whether a pupil's short answer matches one key answer. Beyond the written
+ * forms normalizeShortAnswer() unifies, only what the question allows counts:
+ * a missing unit with unitMode 'optional', an equal-value fraction with
+ * acceptEquivalentFractions. Different numbers or units never match.
+ */
+export function shortAnswerMatches(
+  studentText: string,
+  keyAnswer: string,
+  options: Pick<HomeworkQuestion, 'unitMode' | 'acceptEquivalentFractions'> = {}
+): boolean {
+  const student = normalizeShortAnswer(studentText);
+  const key = normalizeShortAnswer(keyAnswer);
+  if (!student || !key) return false;
+  if (student === key) return true;
+  if (options.unitMode !== 'optional' && !options.acceptEquivalentFractions) return false;
+
+  const s = splitUnit(student);
+  const k = splitUnit(key);
+  if (!s || !k) return false;
+  const unitOk = s.unit === k.unit || (options.unitMode === 'optional' && (!s.unit || !k.unit));
+  if (!unitOk) return false;
+  return s.value === k.value || (Boolean(options.acceptEquivalentFractions) && equivalentFractions(s.value, k.value));
 }
 
 /**
@@ -144,10 +235,9 @@ export function gradeSingleQuestion(
 
     case 'short_answer': {
       const rawAns = studentAnswer.shortAnswerText || '';
-      const normalizedActual = normalizeShortAnswer(rawAns);
-      const acceptable = (keyQuestion.acceptableAnswers || []).map(normalizeShortAnswer);
-      const isCorrect =
-        normalizedActual.length > 0 && acceptable.includes(normalizedActual);
+      const isCorrect = (keyQuestion.acceptableAnswers || []).some((key) =>
+        shortAnswerMatches(rawAns, key, keyQuestion)
+      );
       return {
         questionId: keyQuestion.id,
         score: isCorrect ? maxScore : 0,

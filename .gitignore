@@ -12,3 +12,6 @@ emulator-data/
 .vercel
 .firebase/
 backups/
+
+# Kết quả chạy thử AI thật (chỉ trên máy)
+scripts/ai-eval/out/

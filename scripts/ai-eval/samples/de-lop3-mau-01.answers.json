@@ -1,0 +1,170 @@
+{
+  "file": "de-lop3-mau-01.png",
+  "mimeType": "image/png",
+  "description": "Đề Toán lớp 3 tự soạn để kiểm thử AI (không có dữ liệu học sinh). Mỗi câu: dạng câu đúng, các chi tiết phải chép được (mustContain, mỗi phần tử là danh sách cách viết chấp nhận), và đáp án đúng.",
+  "grade": "Khối 3",
+  "questions": [
+    {
+      "no": 1,
+      "type": "single_choice",
+      "mustContain": [
+        [
+          "Bảy nghìn không trăm linh năm"
+        ]
+      ],
+      "options": 4,
+      "correct": "B",
+      "skill": "đọc viết số"
+    },
+    {
+      "no": 2,
+      "type": "single_choice",
+      "mustContain": [
+        [
+          "125"
+        ],
+        [
+          "× 4",
+          "\\times 4",
+          "x 4"
+        ]
+      ],
+      "options": 4,
+      "correct": "B",
+      "skill": "phép nhân"
+    },
+    {
+      "no": 3,
+      "type": "single_choice",
+      "mustContain": [
+        [
+          "\\frac{1}{4}",
+          "1/4"
+        ],
+        [
+          "24"
+        ]
+      ],
+      "options": 4,
+      "correct": "B",
+      "skill": "phân số"
+    },
+    {
+      "no": 4,
+      "type": "multiple_choice",
+      "mustContain": [
+        [
+          "36"
+        ]
+      ],
+      "options": 4,
+      "correct": [
+        "A",
+        "B",
+        "D"
+      ],
+      "skill": "nhiều đáp án"
+    },
+    {
+      "no": 5,
+      "type": "true_false_multi",
+      "statements": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "skill": "đúng/sai, đơn vị đo"
+    },
+    {
+      "no": 6,
+      "type": "short_answer",
+      "mustContain": [
+        [
+          "4 m 5 cm",
+          "4m 5cm",
+          "4 \\text{ m } 5 \\text{ cm}",
+          "4\\text{ m }5\\text{ cm}"
+        ]
+      ],
+      "answer": "405",
+      "unitMode": "optional",
+      "keyUnit": "cm",
+      "skill": "đổi đơn vị"
+    },
+    {
+      "no": 7,
+      "type": "short_answer",
+      "mustContain": [
+        [
+          "125"
+        ],
+        [
+          "108"
+        ],
+        [
+          "132"
+        ]
+      ],
+      "answer": "365",
+      "unitMode": "optional",
+      "keyUnit": "quyển",
+      "skill": "bảng số liệu",
+      "allowEssay": true,
+      "table": true
+    },
+    {
+      "no": 8,
+      "type": "short_answer",
+      "mustContain": [
+        [
+          "chu vi"
+        ]
+      ],
+      "answer": "26 cm",
+      "unitMode": "optional",
+      "keyUnit": "cm",
+      "figure": true,
+      "figureMustShow": "8 cm và 5 cm",
+      "skill": "hình học (có hình)",
+      "allowEssay": true
+    },
+    {
+      "no": 9,
+      "type": "short_answer",
+      "mustContain": [
+        [
+          "2 345",
+          "2345",
+          "2\\,345"
+        ],
+        [
+          "4 678",
+          "4678",
+          "4\\,678"
+        ]
+      ],
+      "answer": "7023",
+      "allowEssay": true,
+      "skill": "đặt tính"
+    },
+    {
+      "no": 10,
+      "type": "essay",
+      "mustContain": [
+        [
+          "1 250",
+          "1250",
+          "1\\,250"
+        ],
+        [
+          "\\frac{1}{5}",
+          "1/5"
+        ]
+      ],
+      "answer": "1000 kg",
+      "allowShortAnswer": true,
+      "skill": "bài toán có lời văn"
+    }
+  ]
+}

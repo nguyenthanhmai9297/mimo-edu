@@ -1,14 +1,14 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import katex from 'katex';
-import { Check, Crop, Pencil, Trash2, X } from 'lucide-react';
+import { Check, Columns3, Crop, Pencil, Rows3, Trash2, X } from 'lucide-react';
 import { InputRule, mergeAttributes, Node, nodePasteRule } from '@tiptap/core';
 import {
   NodeViewProps,
   NodeViewWrapper,
   ReactNodeViewRenderer,
 } from '@tiptap/react';
-import { GeometryDrawingData } from '../../types/domain';
+import { GeometryDrawingData, TableRow } from '../../types/domain';
 import { GeometryBuilderModal } from './GeometryBuilderModal';
 import { GeometryRenderer } from './GeometryRenderer';
 import { MathField } from './MathField';
@@ -391,5 +391,143 @@ export const Geometry = Node.create({
   },
   addNodeView() {
     return ReactNodeViewRenderer(GeometryView, { stopEvent });
+  },
+});
+
+/** A fresh table: header row + two data rows, three columns. */
+export const NEW_TABLE: { header: boolean; rows: TableRow[] } = {
+  header: true,
+  rows: [{ cells: ['', '', ''] }, { cells: ['', '', ''] }, { cells: ['', '', ''] }],
+};
+
+const MAX_TABLE_ROWS = 20;
+const MAX_TABLE_COLS = 10;
+
+const TableButton: React.FC<{ onClick: () => void; title: string; disabled?: boolean; children: React.ReactNode }> = ({
+  onClick,
+  title,
+  disabled,
+  children,
+}) => (
+  <button
+    type="button"
+    onClick={onClick}
+    disabled={disabled}
+    title={title}
+    className="flex items-center gap-1 rounded-lg border border-slate-300 bg-white px-2 py-1 text-[11px] font-bold text-slate-700 hover:bg-slate-50 disabled:opacity-40"
+  >
+    {children}
+  </button>
+);
+
+/** Bảng số liệu: each cell is a plain input (inline $math$ allowed), with row/column controls. */
+const DataTableView: React.FC<NodeViewProps> = ({ node, selected, updateAttributes, deleteNode }) => {
+  const rows = (node.attrs.rows as TableRow[]) ?? [];
+  const header = Boolean(node.attrs.header);
+  const cols = Math.max(1, ...rows.map((r) => r.cells.length));
+  const setRows = (next: TableRow[]) => updateAttributes({ rows: next });
+  const setCell = (r: number, c: number, value: string) =>
+    setRows(rows.map((row, i) => (i === r ? { cells: row.cells.map((cell, j) => (j === c ? value : cell)) } : row)));
+
+  return (
+    <NodeViewWrapper
+      className={`group relative my-2 rounded-xl border-2 p-2 ${
+        selected ? 'border-blue-500' : 'border-transparent hover:border-slate-300'
+      }`}
+    >
+      <div contentEditable={false}>
+        <div className="max-w-full overflow-x-auto">
+          <table className="border-collapse text-sm">
+            <tbody>
+              {rows.map((row, r) => (
+                <tr key={r}>
+                  {Array.from({ length: cols }, (_, c) => (
+                    <td key={c} className="border border-slate-400 p-0">
+                      <input
+                        type="text"
+                        value={row.cells[c] ?? ''}
+                        onChange={(e) => setCell(r, c, e.target.value)}
+                        aria-label={`Ô hàng ${r + 1} cột ${c + 1}`}
+                        className={`w-24 min-w-0 bg-transparent px-2 py-1 text-center focus:bg-blue-50 focus:outline-none ${
+                          header && r === 0 ? 'bg-slate-100 font-bold' : ''
+                        }`}
+                      />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+          <TableButton
+            title="Thêm hàng"
+            disabled={rows.length >= MAX_TABLE_ROWS}
+            onClick={() => setRows([...rows, { cells: Array(cols).fill('') }])}
+          >
+            <Rows3 className="h-3.5 w-3.5" />+ Hàng
+          </TableButton>
+          <TableButton title="Bớt hàng cuối" disabled={rows.length <= 1} onClick={() => setRows(rows.slice(0, -1))}>
+            − Hàng
+          </TableButton>
+          <TableButton
+            title="Thêm cột"
+            disabled={cols >= MAX_TABLE_COLS}
+            onClick={() => setRows(rows.map((row) => ({ cells: [...row.cells, ...Array(cols + 1 - row.cells.length).fill('')] })))}
+          >
+            <Columns3 className="h-3.5 w-3.5" />+ Cột
+          </TableButton>
+          <TableButton
+            title="Bớt cột cuối"
+            disabled={cols <= 1}
+            onClick={() => setRows(rows.map((row) => ({ cells: row.cells.slice(0, cols - 1) })))}
+          >
+            − Cột
+          </TableButton>
+          <label className="flex items-center gap-1 text-[11px] font-bold text-slate-700">
+            <input type="checkbox" checked={header} onChange={(e) => updateAttributes({ header: e.target.checked })} />
+            Hàng đầu là tiêu đề
+          </label>
+        </div>
+        <NodeActions onDelete={deleteNode} />
+      </div>
+    </NodeViewWrapper>
+  );
+};
+
+export const DataTable = Node.create({
+  name: 'dataTable',
+  group: 'block',
+  atom: true,
+  draggable: true,
+  addAttributes() {
+    return {
+      header: {
+        default: true,
+        parseHTML: (el) => el.getAttribute('data-header') === 'true',
+        renderHTML: (attrs) => ({ 'data-header': String(attrs.header) }),
+      },
+      rows: {
+        default: NEW_TABLE.rows,
+        // Serialized so copy/paste inside the editor keeps the cells.
+        parseHTML: (el) => {
+          try {
+            return JSON.parse(el.getAttribute('data-rows') || '[]');
+          } catch {
+            return [];
+          }
+        },
+        renderHTML: (attrs) => ({ 'data-rows': JSON.stringify(attrs.rows) }),
+      },
+    };
+  },
+  parseHTML() {
+    return [{ tag: 'div[data-table]' }];
+  },
+  renderHTML({ HTMLAttributes }) {
+    return ['div', mergeAttributes(HTMLAttributes, { 'data-table': '' })];
+  },
+  addNodeView() {
+    return ReactNodeViewRenderer(DataTableView, { stopEvent });
   },
 });

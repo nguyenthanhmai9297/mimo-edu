@@ -45,30 +45,30 @@ export const PracticeImportModal: React.FC<PracticeImportModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
       <div className="cartoon-card flex max-h-[92vh] w-full max-w-3xl flex-col bg-white">
-        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-3">
+        <div className="flex items-center justify-between border-b border-[#EEF3F9] px-5 py-3">
           <div className="flex items-center gap-2">
-            <FileJson className="h-5 w-5 text-blue-600" />
-            <h2 className="font-display text-base font-extrabold text-slate-900">Kiểm tra tệp trước khi nhập</h2>
+            <FileJson className="h-5 w-5 text-[#1267E9]" />
+            <h2 className="font-display text-base font-extrabold text-[#172B4D]">Kiểm tra tệp trước khi nhập</h2>
           </div>
-          <button type="button" onClick={onCancel} aria-label="Đóng" className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100">
+          <button type="button" onClick={onCancel} aria-label="Đóng" className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF]">
             <X className="h-4 w-4" />
           </button>
         </div>
 
         <div className="flex-1 space-y-4 overflow-y-auto px-5 py-4 text-sm">
-          <div className="rounded-xl border-2 border-slate-800 bg-amber-50 p-3">
-            <div className="text-xs text-slate-500">{fileName}</div>
-            <div className="font-display font-extrabold text-slate-900">{dataset?.title || 'Không đọc được tiêu đề'}</div>
-            <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-700">
+          <div className="rounded-xl border border-[#DCE7F3] bg-amber-50 p-3">
+            <div className="text-xs text-[#5E6C84]">{fileName}</div>
+            <div className="font-display font-extrabold text-[#172B4D]">{dataset?.title || 'Không đọc được tiêu đề'}</div>
+            <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[#3B4A66]">
               <span>Mã bộ: <b className="font-mono">{dataset?.id || '—'}</b></span>
               <span>Chuyên đề: <b>{topic ? `${topic.id}. ${topic.name}` : dataset?.topicId || '—'}</b></span>
               <span>{questions.length} câu · {skills.length} kĩ năng</span>
             </div>
             <div className="mt-2 flex flex-wrap gap-1.5">
               {levelCounts.map(({ level, count }) => (
-                <span key={level} className="rounded-lg bg-white px-2 py-0.5 text-[11px] font-bold text-slate-700">
+                <span key={level} className="rounded-lg bg-white px-2 py-0.5 text-[11px] font-bold text-[#3B4A66]">
                   {PRACTICE_LEVEL_LABELS[level]}: {count}
                 </span>
               ))}
@@ -106,7 +106,7 @@ export const PracticeImportModal: React.FC<PracticeImportModalProps> = ({
           )}
 
           {conflictIds.length > 0 && errors.length === 0 && (
-            <label className="flex cursor-pointer items-start gap-2 rounded-xl border-2 border-slate-300 p-3 text-xs">
+            <label className="flex cursor-pointer items-start gap-2 rounded-xl border border-[#DCE7F3] p-3 text-xs">
               <input type="checkbox" checked={replaceConflicts} onChange={(e) => setReplaceConflicts(e.target.checked)} className="mt-0.5 h-4 w-4" />
               <span>
                 <b>Thay thế {conflictIds.length} câu trùng mã bằng bản trong tệp.</b> Các câu này sẽ trở về trạng thái
@@ -116,9 +116,9 @@ export const PracticeImportModal: React.FC<PracticeImportModalProps> = ({
           )}
 
           {preview && (
-            <div className="rounded-xl border-2 border-slate-200 p-3">
+            <div className="rounded-xl border-2 border-[#EEF3F9] p-3">
               <div className="mb-2 flex items-center justify-between text-xs">
-                <span className="font-extrabold text-slate-700">
+                <span className="font-extrabold text-[#3B4A66]">
                   Xem trước: {preview.id} · {PRACTICE_LEVEL_LABELS[preview.level] ?? preview.level} · {practiceSkillLabel(preview.skillId)}
                 </span>
                 <span className="flex gap-1">
@@ -130,30 +130,30 @@ export const PracticeImportModal: React.FC<PracticeImportModalProps> = ({
               <PracticeText text={preview.prompt} />
               <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                 {preview.options.map((o) => (
-                  <div key={o.id} className={`rounded-lg border px-2.5 py-1.5 text-xs ${preview.correctAnswers.includes(o.id) ? 'border-emerald-500 bg-emerald-50 font-bold' : 'border-slate-200'}`}>
+                  <div key={o.id} className={`rounded-lg border px-2.5 py-1.5 text-xs ${preview.correctAnswers.includes(o.id) ? 'border-emerald-500 bg-emerald-50 font-bold' : 'border-[#EEF3F9]'}`}>
                     {o.id}. {o.text}
                   </div>
                 ))}
               </div>
               {preview.explanation && (
-                <div className="mt-2 rounded-lg bg-slate-50 p-2 text-xs text-slate-700"><b>Lời giải:</b> {preview.explanation}</div>
+                <div className="mt-2 rounded-lg bg-[#F6FAFF] p-2 text-xs text-[#3B4A66]"><b>Lời giải:</b> {preview.explanation}</div>
               )}
             </div>
           )}
 
-          <p className="text-[11px] text-slate-500">
+          <p className="text-[11px] text-[#5E6C84]">
             Câu hỏi được nhập ở trạng thái <b>Chờ duyệt</b> trong bộ <b>Nháp</b>. Học sinh chỉ thấy câu đã duyệt trong bộ đã xuất bản.
           </p>
           {saveError && <div className="rounded-xl bg-rose-50 p-3 text-xs font-bold text-rose-700">{saveError}</div>}
         </div>
 
-        <div className="flex justify-end gap-2 border-t border-slate-200 px-5 py-3">
-          <button type="button" onClick={onCancel} className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700">Hủy</button>
+        <div className="flex justify-end gap-2 border-t border-[#EEF3F9] px-5 py-3">
+          <button type="button" onClick={onCancel} className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-[#3B4A66]">Hủy</button>
           <button
             type="button"
             disabled={!canImport || saving}
             onClick={confirm}
-            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-blue-600 px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
+            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1267E9] px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
           >
             {saving && <Loader2 className="h-4 w-4 animate-spin" />}
             Nhập {questions.length} câu (chờ duyệt)

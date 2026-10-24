@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   ArrowRight,
-  BookOpen,
   CalendarClock,
   CheckCircle2,
   Clock,
@@ -139,10 +138,6 @@ export const AdminDashboard: React.FC = () => {
             <button type="button" onClick={() => navigate('/admin/students')} className="studio-btn studio-btn-secondary border-white/0">
               <Plus className="h-4 w-4 text-[#1F9D6B]" />
               Thêm học sinh
-            </button>
-            <button type="button" onClick={() => navigate('/admin/homework')} className="studio-btn studio-btn-navy">
-              <BookOpen className="h-4 w-4" />
-              Soạn BTVN
             </button>
             <button type="button" onClick={() => navigate('/admin/assignments')} className="studio-btn studio-btn-accent">
               <Send className="h-4 w-4" />

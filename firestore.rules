@@ -178,18 +178,6 @@ service cloud.firestore {
         data.updatedAt is string && data.updatedAt.size() <= 50;
     }
 
-    function isValidAIJob(data) {
-      return data.keys().hasAll(['taskType', 'provider', 'model', 'status', 'createdAt']) &&
-        data.keys().hasOnly(['taskType', 'provider', 'model', 'status', 'durationMs', 'estimatedCostUsd', 'createdAt']) &&
-        (data.taskType == 'ocr_parse' || data.taskType == 'solve_math' || data.taskType == 'essay_grade') &&
-        data.provider is string && data.provider.size() >= 1 && data.provider.size() <= 50 &&
-        data.model is string && data.model.size() >= 1 && data.model.size() <= 80 &&
-        (data.status == 'processing' || data.status == 'completed' || data.status == 'failed') &&
-        (!('durationMs' in data) || (data.durationMs is number && data.durationMs >= 0)) &&
-        (!('estimatedCostUsd' in data) || (data.estimatedCostUsd is number && data.estimatedCostUsd >= 0)) &&
-        data.createdAt is string && data.createdAt.size() <= 50;
-    }
-
     match /adminAllowlist/{emailId} {
       allow get: if isSignedIn() && isValidId(emailId) && (request.auth.token.email == emailId || isAdmin());
       allow list: if isAdmin();
@@ -295,12 +283,12 @@ service cloud.firestore {
       allow delete: if isAdmin() && isValidId(gameId);
     }
 
+    // AI usage log: written only by the API server through the Admin SDK
+    // (which bypasses these rules) after a teacher-authenticated AI call.
+    // No browser may create, change or delete entries; teachers may read them.
     match /aiJobs/{jobId} {
-      allow get: if isValidId(jobId);
-      allow list: if isAdmin();
-      allow create: if isValidId(jobId) && isValidAIJob(incoming());
-      allow update: if isValidId(jobId) && isValidAIJob(incoming()) && incoming().createdAt == existing().createdAt;
-      allow delete: if false;
+      allow get, list: if isAdmin();
+      allow create, update, delete: if false;
     }
     // ------------------------------------------------------------------
     // Luyện Toán cùng Mimo

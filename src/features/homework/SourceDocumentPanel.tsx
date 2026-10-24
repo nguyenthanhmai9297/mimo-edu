@@ -21,8 +21,8 @@ export const SourceDocumentPanel: React.FC<SourceDocumentPanelProps> = ({
 
   return (
     <aside className="cartoon-card flex flex-col bg-white lg:sticky lg:top-36 lg:max-h-[calc(100vh-10rem)]">
-      <div className="flex items-center justify-between gap-2 border-b border-slate-200 px-4 py-2.5">
-        <div className="text-xs font-extrabold text-slate-900">
+      <div className="flex items-center justify-between gap-2 border-b border-[#EEF3F9] px-4 py-2.5">
+        <div className="text-xs font-extrabold text-[#172B4D]">
           ĐỀ GỐC · đối chiếu trước khi lưu
         </div>
         <div className="flex items-center gap-1">
@@ -32,18 +32,18 @@ export const SourceDocumentPanel: React.FC<SourceDocumentPanelProps> = ({
                 type="button"
                 onClick={() => setZoom((z) => Math.max(0.5, z - 0.25))}
                 aria-label="Thu nhỏ"
-                className="rounded p-1 hover:bg-slate-100"
+                className="rounded p-1 hover:bg-[#F6FAFF]"
               >
                 <ZoomOut className="h-4 w-4" />
               </button>
-              <span className="w-10 text-center font-mono text-[11px] text-slate-600">
+              <span className="w-10 text-center font-mono text-[11px] text-[#5E6C84]">
                 {Math.round(zoom * 100)}%
               </span>
               <button
                 type="button"
                 onClick={() => setZoom((z) => Math.min(3, z + 0.25))}
                 aria-label="Phóng to"
-                className="rounded p-1 hover:bg-slate-100"
+                className="rounded p-1 hover:bg-[#F6FAFF]"
               >
                 <ZoomIn className="h-4 w-4" />
               </button>
@@ -52,7 +52,7 @@ export const SourceDocumentPanel: React.FC<SourceDocumentPanelProps> = ({
           <button
             type="button"
             onClick={onHide}
-            className="ml-1 flex items-center gap-1 rounded-lg border border-slate-300 px-2 py-1 text-[11px] font-bold text-slate-700 hover:bg-slate-100"
+            className="ml-1 flex items-center gap-1 rounded-lg border border-[#DCE7F3] px-2 py-1 text-[11px] font-bold text-[#3B4A66] hover:bg-[#F6FAFF]"
           >
             <EyeOff className="h-3.5 w-3.5" />
             Ẩn
@@ -61,7 +61,7 @@ export const SourceDocumentPanel: React.FC<SourceDocumentPanelProps> = ({
       </div>
 
       {files.length > 1 && (
-        <div className="flex gap-1.5 overflow-x-auto border-b border-slate-200 px-4 py-2">
+        <div className="flex gap-1.5 overflow-x-auto border-b border-[#EEF3F9] px-4 py-2">
           {files.map((f, idx) => (
             <button
               key={f.id}
@@ -70,8 +70,8 @@ export const SourceDocumentPanel: React.FC<SourceDocumentPanelProps> = ({
               title={f.name}
               className={`shrink-0 rounded-lg border-2 px-2.5 py-1 text-[11px] font-bold ${
                 idx === activeIdx
-                  ? 'border-blue-600 bg-blue-50 text-blue-700'
-                  : 'border-slate-300 text-slate-600 hover:border-slate-500'
+                  ? 'border-blue-600 bg-blue-50 text-[#1267E9]'
+                  : 'border-[#DCE7F3] text-[#5E6C84] hover:border-slate-500'
               }`}
             >
               Trang {idx + 1}
@@ -80,7 +80,7 @@ export const SourceDocumentPanel: React.FC<SourceDocumentPanelProps> = ({
         </div>
       )}
 
-      <div className="min-h-[60vh] flex-1 overflow-auto bg-slate-100 p-2">
+      <div className="min-h-[60vh] flex-1 overflow-auto bg-[#F6FAFF] p-2">
         {active &&
           (active.mimeType === 'application/pdf' ? (
             <iframe

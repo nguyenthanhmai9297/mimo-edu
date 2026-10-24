@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFE7FF"/><stop offset="1" stop-color="#D9CCFF"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#071A63" flood-opacity="0.18"/></filter>
+</defs>
+<rect width="800" height="500" fill="url(#bg)"/>
+<circle cx="700" cy="70" r="140" fill="#B49CFF" opacity="0.18"/>
+<circle cx="90" cy="460" r="160" fill="#B49CFF" opacity="0.14"/>
+<g fill="#FFFFFF" opacity="0.7"><circle cx="150" cy="80" r="5"/><circle cx="620" cy="420" r="4"/><circle cx="420" cy="60" r="3"/><circle cx="730" cy="260" r="4"/></g>
+<path d="M95 150 l6 15 15 6 -15 6 -6 15 -6 -15 -15 -6 15 -6z" fill="#FFD34E"/>
+<path d="M690 380 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5z" fill="#FFFFFF" opacity="0.9"/>
+<g transform="rotate(0 205.0 215.0)" filter="url(#sh)"><rect x="140" y="150" width="130" height="130" rx="28" fill="#7B5CFF"/><text x="205.0" y="215.0" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="800" font-size="120" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">+</text></g><g transform="rotate(6 355.0 295.0)" filter="url(#sh)"><rect x="290" y="230" width="130" height="130" rx="28" fill="#FF76B5"/><text x="355.0" y="295.0" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="800" font-size="120" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">−</text></g><g transform="rotate(-6 505.0 205.0)" filter="url(#sh)"><rect x="440" y="140" width="130" height="130" rx="28" fill="#1267E9"/><text x="505.0" y="205.0" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="800" font-size="110" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">×</text></g><g transform="rotate(0 655.0 290.0)" filter="url(#sh)"><rect x="590" y="225" width="130" height="130" rx="28" fill="#FFB800"/><text x="655.0" y="290.0" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="800" font-size="110" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">÷</text></g>
+</svg>

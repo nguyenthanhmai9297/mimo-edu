@@ -127,7 +127,7 @@ export const PracticeAdminPage: React.FC = () => {
     }`;
 
   return (
-    <div className="space-y-6">
+    <div className="studio-skin space-y-6">
       {/* Header: navy accent strip, content stays on light backgrounds */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#071A63] via-[#0E3AA8] to-[#1267E9] p-5 text-white shadow-md sm:p-6">
         <div className="pointer-events-none absolute -top-8 right-24 h-28 w-28 rounded-full bg-[#54C8FF]/30 blur-2xl" />

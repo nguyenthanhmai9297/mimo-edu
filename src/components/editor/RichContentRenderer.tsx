@@ -160,6 +160,34 @@ export const RichContentRenderer: React.FC<RichContentRendererProps> = ({
           return <GeometryRenderer key={index} drawing={block.drawing} />;
         }
 
+        if (block.type === 'table') {
+          return (
+            <div key={index} className="my-2 max-w-full overflow-x-auto">
+              <table className={`border-collapse ${inheritSize ? '' : 'text-[15px]'}`}>
+                <tbody>
+                  {block.rows.map((row, r) => (
+                    <tr key={r}>
+                      {row.cells.map((cell, c) => {
+                        const Cell = block.header && r === 0 ? 'th' : 'td';
+                        return (
+                          <Cell
+                            key={c}
+                            className={`border border-slate-400 px-3 py-1.5 text-center ${
+                              Cell === 'th' ? 'bg-slate-100 font-bold' : ''
+                            }`}
+                          >
+                            {renderInlineTextWithMath(cell)}
+                          </Cell>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
         return null;
       })}
     </div>

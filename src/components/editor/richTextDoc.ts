@@ -70,6 +70,9 @@ export function richTextToDoc(value?: RichTextContent | null): JSONContent {
       case 'geometry':
         content.push({ type: 'geometry', attrs: { drawing: block.drawing } });
         break;
+      case 'table':
+        content.push({ type: 'dataTable', attrs: { header: block.header, rows: block.rows } });
+        break;
     }
   }
   if (content.length === 0) content.push(paragraph([]));
@@ -146,6 +149,13 @@ export function docToRichText(doc: JSONContent): RichTextContent {
           blocks.push({ type: 'geometry', drawing: node.attrs.drawing });
         }
         break;
+      case 'dataTable': {
+        const rows = ((node.attrs?.rows ?? []) as { cells?: unknown[] }[])
+          .map((row) => ({ cells: (row.cells ?? []).map((c) => String(c ?? '').trim()) }))
+          .filter((row) => row.cells.some(Boolean));
+        if (rows.length) blocks.push({ type: 'table', header: Boolean(node.attrs?.header), rows });
+        break;
+      }
     }
   }
   if (blocks.length === 0) blocks.push({ type: 'paragraph', align: 'left', text: '' });

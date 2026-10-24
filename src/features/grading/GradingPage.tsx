@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import {
   CheckCircle2,
+  ClipboardCheck,
+  Clock,
+  EyeOff,
+  Inbox,
+  MousePointerClick,
   RotateCcw,
+  Search,
   Sparkles,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
@@ -14,6 +20,19 @@ import {
 } from '../../types/domain';
 import { gradeFullSubmission } from '../../utils/gradingEngine';
 import { apiUrl } from '../../lib/apiUrl';
+import { auth } from '../../lib/firebase/config';
+import {
+  EmptyState,
+  ErrorState,
+  PageHeader,
+  SearchInput,
+  SegmentedFilter,
+  StatCard,
+  StatusBadge,
+  STUDIO_INPUT,
+  STUDIO_LABEL,
+  STUDIO_TONE,
+} from '../../components/studio/StudioUi';
 
 export const GradingPage: React.FC = () => {
   const { submissions, assignments, students } = useAppContext();
@@ -28,6 +47,8 @@ export const GradingPage: React.FC = () => {
   );
   const [saving, setSaving] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [listFilter, setListFilter] = useState<'waiting' | 'done' | 'all'>('waiting');
+  const [listSearch, setListSearch] = useState('');
 
   const activeSubmission = submissions.find((s) => s.id === selectedSubId);
   const activeAssignment = activeSubmission
@@ -87,9 +108,11 @@ export const GradingPage: React.FC = () => {
 
     setAiLoadingQuestionId(question.id);
     try {
+      const token = await auth.currentUser?.getIdToken();
+      if (!token) throw new Error('Phiên đăng nhập đã hết hạn, vui lòng tải lại trang và đăng nhập lại.');
       const res = await fetch(apiUrl('/api/ai/suggest-grading'), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
           questionPrompt: promptText || 'Bài toán tự luận',
           maxPoints: question.points,
@@ -109,7 +132,7 @@ export const GradingPage: React.FC = () => {
         data = JSON.parse(rawText);
       } catch {
         throw new Error(
-          `Máy chủ AI trả về phản hồi không hợp lệ (HTTP ${res.status}). Hãy kiểm tra cấu hình /api và GEMINI_API_KEY.`
+          `Máy chủ AI trả về phản hồi không hợp lệ (HTTP ${res.status}). Vui lòng thử lại sau.`
         );
       }
       if (!res.ok) {
@@ -169,337 +192,361 @@ export const GradingPage: React.FC = () => {
       .toFixed(2)
   );
 
+  const subStatus: Record<Submission['status'], { kind: 'warning' | 'success' | 'danger' | 'neutral'; label: string }> = {
+    submitted: { kind: 'warning', label: 'Chờ chấm' },
+    graded: { kind: 'success', label: 'Đã chấm' },
+    returned: { kind: 'danger', label: 'Yêu cầu sửa lại' },
+    in_progress: { kind: 'neutral', label: 'Đang làm' },
+  };
+  const waitingCount = submissions.filter((s) => s.status === 'submitted').length;
+  const gradedCount = submissions.filter((s) => s.status === 'graded').length;
+  const unpublishedCount = submissions.filter((s) => s.status === 'graded' && !s.isPublished).length;
+  const shownSubmissions = submissions
+    .filter((s) => listFilter === 'all' || (listFilter === 'waiting' ? s.status === 'submitted' : s.status !== 'submitted'))
+    .filter((s) => {
+      const q = listSearch.trim().toLowerCase();
+      if (!q) return true;
+      const st = students.find((x) => x.id === s.studentId);
+      const asg = assignments.find((a) => a.id === s.assignmentId);
+      return (st?.fullName || '').toLowerCase().includes(q) || (asg?.title || '').toLowerCase().includes(q) || (st?.accessCode || '').toLowerCase().includes(q);
+    });
+  const statusOk = statusMessage?.startsWith('Đã') ?? false;
+
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="font-display text-2xl font-extrabold text-slate-900">
-          Bàn Chấm Bài & Gợi Ý Chấm Tự Luận Bằng AI
-        </h1>
-        <p className="text-sm text-slate-600">
-          Các câu khách quan được hệ thống tự chấm theo đáp án chuẩn. Giáo viên
-          chấm câu tự luận, sử dụng AI đề xuất điểm theo rubric và công bố kết
-          quả.
-        </p>
-      </div>
+    <div className="studio-skin space-y-6">
+      <PageHeader
+        icon={ClipboardCheck}
+        tone="pink"
+        title="Chấm bài nộp"
+        description="Câu trắc nghiệm, đúng/sai và trả lời ngắn được hệ thống tự chấm theo đáp án. Cô chấm câu tự luận (có thể nhờ AI gợi ý điểm theo rubric), viết nhận xét rồi công bố điểm."
+      />
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-        {/* Left List of Submissions */}
-        <div className="cartoon-card overflow-hidden bg-white lg:col-span-4">
-          <div className="border-b-2 border-slate-900 bg-amber-100 px-4 py-3 font-display text-sm font-extrabold text-slate-900">
-            Danh Sách Bài Làm ({submissions.length})
-          </div>
+      {submissions.length > 0 && (
+        <section className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+          <StatCard icon={Clock} tone="yellow" label="Chờ chấm" value={waitingCount} note="Có câu tự luận cần cô chấm" />
+          <StatCard icon={CheckCircle2} tone="green" label="Đã chấm" value={gradedCount} />
+          <StatCard icon={EyeOff} tone="pink" label="Đã chấm, chưa công bố" value={unpublishedCount} />
+          <StatCard icon={Inbox} tone="blue" label="Tổng bài nộp" value={submissions.length} />
+        </section>
+      )}
 
-          {submissions.length === 0 ? (
-            <div className="p-8 text-center text-xs text-slate-500">
-              Chưa có bài nộp nào từ học sinh.
+      {submissions.length === 0 ? (
+        <EmptyState
+          icon={Inbox}
+          tone="pink"
+          title="Chưa có bài nộp nào"
+          text="Khi học sinh nộp bài ở cổng học sinh, bài sẽ hiện ở đây. Bài chỉ có câu tự động chấm sẽ được chấm và công bố ngay."
+        />
+      ) : (
+        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
+          {/* Left: submissions */}
+          <aside className="studio-card overflow-hidden lg:sticky lg:top-20 lg:col-span-4">
+            <div className="space-y-3 border-b border-[#DCE7F3] p-4">
+              <h2 className="flex items-center justify-between font-display text-base font-extrabold text-[#172B4D]">
+                Bài nộp
+                <span className="text-xs font-bold text-[#5E6C84]">{shownSubmissions.length}</span>
+              </h2>
+              <SearchInput value={listSearch} onChange={setListSearch} placeholder="Tìm học sinh, mã hoặc bài tập…" />
+              <SegmentedFilter
+                label="Lọc bài nộp"
+                value={listFilter}
+                onChange={setListFilter}
+                options={[
+                  { id: 'waiting', label: 'Chờ chấm', count: waitingCount },
+                  { id: 'done', label: 'Đã xử lý', count: submissions.length - waitingCount },
+                  { id: 'all', label: 'Tất cả', count: submissions.length },
+                ]}
+              />
             </div>
-          ) : (
-            <div className="divide-y divide-slate-200">
-              {submissions.map((sub) => {
-                const st = students.find((s) => s.id === sub.studentId);
-                const asg = assignments.find((a) => a.id === sub.assignmentId);
-                const isSelected = sub.id === selectedSubId;
-
-                return (
-                  <button
-                    key={sub.id}
-                    type="button"
-                    onClick={() => selectSubmission(sub)}
-                    className={`flex w-full flex-col gap-1 p-4 text-left transition-colors ${
-                      isSelected ? 'bg-sky-100' : 'hover:bg-slate-50'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-display text-sm font-extrabold text-slate-900">
-                        {st?.fullName || sub.studentId}
-                      </span>
-                      <span className="font-mono text-xs font-bold text-blue-700">
-                        {sub.totalScore ?? '—'}/{sub.maxScore}đ
-                      </span>
-                    </div>
-                    <div className="text-xs text-slate-600">
-                      {asg?.title || 'Bài tập'}
-                    </div>
-                    <div className="mt-1 flex items-center justify-between text-[11px] text-slate-500">
-                      <span>
-                        Trạng thái:{' '}
-                        <strong>
-                          {sub.status === 'submitted'
-                            ? 'Chờ chấm'
-                            : sub.status === 'graded'
-                            ? 'Đã chấm'
-                            : sub.status === 'returned'
-                            ? 'Yêu cầu sửa lại'
-                            : 'Đang làm'}
-                        </strong>
-                      </span>
-                      <span>
-                        {sub.isPublished ? 'Đã công bố' : 'Chưa công bố'}
-                      </span>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          )}
-        </div>
-
-        {/* Right Detailed Grading Workspace */}
-        <div className="lg:col-span-8">
-          {!activeSubmission || !activeAssignment ? (
-            <div className="cartoon-card flex h-72 items-center justify-center bg-white p-8 text-center text-sm text-slate-500">
-              Chọn một bài nộp bên trái để xem chi tiết câu trả lời, chấm tự
-              luận hoặc yêu cầu AI đề xuất điểm.
-            </div>
-          ) : (
-            <div className="space-y-5">
-              {/* Summary Header */}
-              <div className="cartoon-card flex flex-wrap items-center justify-between gap-4 bg-white p-5">
-                <div>
-                  <div className="text-xs font-bold text-blue-700">
-                    HỌC SINH: {activeStudent?.fullName} (Mã:{' '}
-                    {activeStudent?.accessCode})
-                  </div>
-                  <h2 className="font-display text-lg font-extrabold text-slate-900">
-                    {activeAssignment.title}
-                  </h2>
-                </div>
-                <div className="rounded-2xl border-2 border-slate-900 bg-amber-200 px-4 py-2 text-right">
-                  <div className="text-[11px] font-bold text-slate-700">
-                    TỔNG ĐIỂM CHÍNH THỨC
-                  </div>
-                  <div className="font-mono text-2xl font-black text-slate-900 tabular-nums">
-                    {currentTotalScore} / {activeSubmission.maxScore}
-                  </div>
-                </div>
-              </div>
-
-              {statusMessage && (
-                <div className="cartoon-card bg-emerald-50 p-4 text-xs font-extrabold text-emerald-900">
-                  {statusMessage}
-                </div>
-              )}
-
-              {/* Questions Breakdown */}
-              {(
-                activeAssignment.gradingKeySnapshot ||
-                activeAssignment.publicQuestionsSnapshot ||
-                []
-              ).map((q, idx) => {
-                const stuAns = activeSubmission.answers.find(
-                  (a) => a.questionId === q.id
-                );
-                const qRes = questionResults.find(
-                  (r) => r.questionId === q.id
-                );
-
-                return (
-                  <div key={q.id} className="cartoon-card bg-white p-5">
-                    <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2.5">
-                      <span className="font-display text-sm font-extrabold text-slate-900">
-                        Câu {idx + 1} · {q.type === 'essay' ? 'Tự luận' : 'Tự động chấm'}
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold text-slate-700">
-                          Điểm câu này:
+            {shownSubmissions.length === 0 ? (
+              <EmptyState bare icon={listFilter === 'waiting' ? CheckCircle2 : Search} tone={listFilter === 'waiting' ? 'green' : 'gray'} title={listFilter === 'waiting' ? 'Đã chấm hết bài!' : 'Không có bài phù hợp'} />
+            ) : (
+              <ul className="max-h-[65vh] divide-y divide-[#EEF3F9] overflow-y-auto">
+                {shownSubmissions.map((sub) => {
+                  const st = students.find((s) => s.id === sub.studentId);
+                  const asg = assignments.find((a) => a.id === sub.assignmentId);
+                  const isSelected = sub.id === selectedSubId;
+                  const b = subStatus[sub.status] ?? subStatus.in_progress;
+                  return (
+                    <li key={sub.id}>
+                      <button
+                        type="button"
+                        onClick={() => selectSubmission(sub)}
+                        aria-current={isSelected ? 'true' : undefined}
+                        className={`flex w-full items-start gap-3 border-l-4 px-4 py-3 text-left transition-colors ${
+                          isSelected ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-transparent hover:bg-[#F6FAFF]'
+                        }`}
+                      >
+                        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-extrabold ${STUDIO_TONE.blue}`}>
+                          {(st?.fullName || '?').slice(0, 1).toUpperCase()}
                         </span>
-                        <input
-                          type="number"
-                          step="0.25"
-                          min="0"
-                          max={q.points}
-                          value={qRes?.score ?? 0}
-                          onChange={(e) =>
-                            updateSingleResult(q.id, {
-                              score: Math.min(
-                                q.points,
-                                Math.max(0, Number(e.target.value) || 0)
-                              ),
-                            })
-                          }
-                          className="w-20 rounded-xl border-2 border-slate-800 px-2.5 py-1 font-mono text-xs font-extrabold"
-                        />
-                        <span className="font-mono text-xs text-slate-500">
-                          / {q.points}đ
+                        <span className="min-w-0 flex-1">
+                          <span className="flex items-center justify-between gap-2">
+                            <span className="truncate text-sm font-bold text-[#172B4D]">{st?.fullName || sub.studentId}</span>
+                            <span className="shrink-0 font-mono text-xs font-bold text-[#1267E9]">
+                              {sub.totalScore ?? '—'}/{sub.maxScore}
+                            </span>
+                          </span>
+                          <span className="block truncate text-xs text-[#5E6C84]">{asg?.title || 'Bài tập'}</span>
+                          <span className="mt-1.5 flex flex-wrap gap-1.5">
+                            <StatusBadge kind={b.kind}>{b.label}</StatusBadge>
+                            {sub.status === 'graded' && <StatusBadge kind={sub.isPublished ? 'info' : 'neutral'}>{sub.isPublished ? 'Đã công bố' : 'Chưa công bố'}</StatusBadge>}
+                          </span>
                         </span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </aside>
+
+          {/* Right: grading workspace */}
+          <div className="lg:col-span-8">
+            {!activeSubmission || !activeAssignment ? (
+              <EmptyState
+                icon={MousePointerClick}
+                title="Chọn một bài nộp để chấm"
+                text="Bấm vào bài nộp ở cột bên trái để xem bài làm, chỉnh điểm từng câu, nhờ AI gợi ý chấm tự luận và công bố kết quả."
+              />
+            ) : (
+              <div className="space-y-5">
+                {/* Summary */}
+                <section className="studio-card flex flex-wrap items-center justify-between gap-4 p-5">
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-lg font-extrabold ${STUDIO_TONE.blue}`}>
+                      {(activeStudent?.fullName || '?').slice(0, 1).toUpperCase()}
+                    </span>
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-[#1267E9]">
+                        {activeStudent?.fullName} · Mã {activeStudent?.accessCode}
                       </div>
+                      <h2 className="truncate font-display text-lg font-extrabold text-[#172B4D]">{activeAssignment.title}</h2>
                     </div>
+                  </div>
+                  <div className="rounded-2xl bg-[#FFF6DC] px-5 py-2 text-right">
+                    <div className="text-[11px] font-bold text-[#B7790A] uppercase">Tổng điểm</div>
+                    <div className="font-display text-2xl font-extrabold text-[#172B4D] [font-variant-numeric:tabular-nums]">
+                      {currentTotalScore} / {activeSubmission.maxScore}
+                    </div>
+                  </div>
+                </section>
 
-                    <RichContentRenderer content={q.prompt} />
+                {statusMessage &&
+                  (statusOk ? (
+                    <div role="status" className="flex items-center gap-2 rounded-2xl border border-[#BFE8D4] bg-[#E7F7F0] p-4 text-sm font-bold text-[#1F7A55]">
+                      <CheckCircle2 className="h-4 w-4 shrink-0" />
+                      {statusMessage}
+                    </div>
+                  ) : (
+                    <ErrorState message={statusMessage} />
+                  ))}
 
-                    {/* Student Answer Display */}
-                    <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-xs">
-                      <div className="mb-1 font-extrabold text-slate-700">
-                        Bài làm của học sinh:
+                {/* Questions */}
+                {(
+                  activeAssignment.gradingKeySnapshot ||
+                  activeAssignment.publicQuestionsSnapshot ||
+                  []
+                ).map((q, idx) => {
+                  const stuAns = activeSubmission.answers.find(
+                    (a) => a.questionId === q.id
+                  );
+                  const qRes = questionResults.find(
+                    (r) => r.questionId === q.id
+                  );
+                  const essay = q.type === 'essay';
+
+                  return (
+                    <section key={q.id} className="studio-card p-5">
+                      <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-[#EEF3F9] pb-3">
+                        <span className="flex items-center gap-2">
+                          <span className="font-display text-sm font-extrabold text-[#172B4D]">Câu {idx + 1}</span>
+                          <StatusBadge kind={essay ? 'warning' : 'info'}>{essay ? 'Tự luận · cô chấm' : 'Tự động chấm'}</StatusBadge>
+                        </span>
+                        <label className="flex items-center gap-2 text-xs font-bold text-[#5E6C84]">
+                          Điểm
+                          <input
+                            type="number"
+                            step="0.25"
+                            min="0"
+                            max={q.points}
+                            value={qRes?.score ?? 0}
+                            onChange={(e) =>
+                              updateSingleResult(q.id, {
+                                score: Math.min(
+                                  q.points,
+                                  Math.max(0, Number(e.target.value) || 0)
+                                ),
+                              })
+                            }
+                            className={`${STUDIO_INPUT} w-20 text-center font-mono font-extrabold`}
+                          />
+                          <span className="font-mono">/ {q.points}</span>
+                        </label>
                       </div>
-                      {q.type === 'single_choice' && (
-                        <div>
-                          Đã chọn:{' '}
-                          <strong>
-                            {q.options?.find(
-                              (o) => o.id === stuAns?.selectedOptionId
-                            )?.label || 'Chưa chọn'}
-                          </strong>{' '}
-                          (Đáp án đúng:{' '}
-                          <strong>
-                            {q.options?.find((o) => o.id === q.correctOptionId)
-                              ?.label || '—'}
-                          </strong>
-                          )
-                        </div>
-                      )}
 
-                      {q.type === 'multiple_choice' && (
-                        <div>
-                          Đã chọn:{' '}
-                          <strong>
-                            {(stuAns?.selectedOptionIds || [])
-                              .map(
-                                (id) =>
-                                  q.options?.find((o) => o.id === id)?.label
+                      <RichContentRenderer content={q.prompt} />
+
+                      {/* Student answer */}
+                      <div className="mt-3 rounded-xl bg-[#F6FAFF] p-3.5 text-sm text-[#172B4D]">
+                        <div className="mb-1 text-xs font-bold text-[#5E6C84]">Bài làm của học sinh</div>
+                        {q.type === 'single_choice' && (
+                          <div>
+                            Đã chọn:{' '}
+                            <strong>
+                              {q.options?.find(
+                                (o) => o.id === stuAns?.selectedOptionId
+                              )?.label || 'Chưa chọn'}
+                            </strong>{' '}
+                            <span className="text-[#5E6C84]">
+                              (đáp án đúng:{' '}
+                              <strong className="text-[#1F9D6B]">
+                                {q.options?.find((o) => o.id === q.correctOptionId)
+                                  ?.label || '—'}
+                              </strong>
                               )
-                              .join(', ') || 'Chưa chọn'}
-                          </strong>
-                        </div>
-                      )}
+                            </span>
+                          </div>
+                        )}
 
-                      {q.type === 'true_false_multi' && (
-                        <div className="space-y-1">
-                          {(q.statements || []).map((st) => (
-                            <div key={st.id}>
-                              Ý {st.label}): Học sinh chọn{' '}
-                              <strong>
-                                {stuAns?.statementAnswers?.[st.id] === true
-                                  ? 'Đúng'
-                                  : stuAns?.statementAnswers?.[st.id] === false
-                                  ? 'Sai'
-                                  : 'Chưa chọn'}
-                              </strong>{' '}
-                              (Đáp án chuẩn: {st.isTrue ? 'Đúng' : 'Sai'})
-                            </div>
-                          ))}
-                        </div>
-                      )}
+                        {q.type === 'multiple_choice' && (
+                          <div>
+                            Đã chọn:{' '}
+                            <strong>
+                              {(stuAns?.selectedOptionIds || [])
+                                .map(
+                                  (id) =>
+                                    q.options?.find((o) => o.id === id)?.label
+                                )
+                                .join(', ') || 'Chưa chọn'}
+                            </strong>
+                          </div>
+                        )}
 
-                      {q.type === 'short_answer' && (
-                        <div>
-                          Trả lời:{' '}
-                          <strong className="font-mono">
-                            {stuAns?.shortAnswerText || '(Trống)'}
-                          </strong>{' '}
-                          · Đáp án chuẩn:{' '}
-                          <span className="font-mono">
-                            {(q.acceptableAnswers || []).join(' / ')}
-                          </span>
-                        </div>
-                      )}
+                        {q.type === 'true_false_multi' && (
+                          <div className="space-y-1">
+                            {(q.statements || []).map((st) => (
+                              <div key={st.id}>
+                                Ý {st.label}): học sinh chọn{' '}
+                                <strong>
+                                  {stuAns?.statementAnswers?.[st.id] === true
+                                    ? 'Đúng'
+                                    : stuAns?.statementAnswers?.[st.id] === false
+                                    ? 'Sai'
+                                    : 'Chưa chọn'}
+                                </strong>{' '}
+                                <span className="text-[#5E6C84]">(đáp án: {st.isTrue ? 'Đúng' : 'Sai'})</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
 
-                      {q.type === 'essay' && (
-                        <div className="mt-2 rounded-lg bg-white p-3">
-                          <RichContentRenderer content={stuAns?.essayContent} />
-                        </div>
-                      )}
-                    </div>
+                        {q.type === 'short_answer' && (
+                          <div>
+                            Trả lời: <strong className="font-mono">{stuAns?.shortAnswerText || '(Trống)'}</strong>{' '}
+                            <span className="text-[#5E6C84]">
+                              · Đáp án chuẩn: <span className="font-mono">{(q.acceptableAnswers || []).join(' / ')}</span>
+                            </span>
+                          </div>
+                        )}
 
-                    {/* AI Essay Grading Assistant */}
-                    {q.type === 'essay' && (
-                      <div className="mt-3 rounded-xl border-2 border-slate-800 bg-amber-50 p-3.5">
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <span className="text-xs font-extrabold text-slate-900">
-                            Trợ lý AI gợi ý chấm tự luận theo Rubric
-                          </span>
-                          <button
-                            type="button"
-                            onClick={() => handleRequestAISuggestion(q)}
-                            disabled={aiLoadingQuestionId === q.id}
-                            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-amber-300 px-3 py-1.5 text-xs font-extrabold text-slate-900"
-                          >
-                            <Sparkles className="h-3.5 w-3.5" />
-                            {aiLoadingQuestionId === q.id
-                              ? 'AI đang phân tích lời giải...'
-                              : 'AI Đề Xuất Điểm & Nhận Xét'}
-                          </button>
-                        </div>
-
-                        {qRes?.aiExplanation && (
-                          <div className="mt-2.5 space-y-1 text-xs text-slate-800">
-                            <div>
-                              <strong>Điểm AI đề xuất:</strong>{' '}
-                              <span className="font-mono font-bold text-blue-700">
-                                {qRes.aiSuggestedScore}/{q.points}đ
-                              </span>
-                            </div>
-                            <div>
-                              <strong>Giải thích cho giáo viên:</strong>{' '}
-                              {qRes.aiExplanation}
-                            </div>
+                        {essay && (
+                          <div className="mt-2 rounded-lg bg-white p-3 ring-1 ring-[#DCE7F3]">
+                            <RichContentRenderer content={stuAns?.essayContent} />
                           </div>
                         )}
                       </div>
-                    )}
 
-                    {/* Per-question Teacher Comment */}
-                    <div className="mt-3">
-                      <label className="mb-1 block text-xs font-bold text-slate-700">
-                        Nhận xét của giáo viên cho câu {idx + 1}:
-                      </label>
-                      <input
-                        type="text"
-                        value={qRes?.teacherComment || ''}
-                        onChange={(e) =>
-                          updateSingleResult(q.id, {
-                            teacherComment: e.target.value,
-                          })
-                        }
-                        placeholder="Nhận xét hoặc hướng dẫn sửa sai cho học sinh..."
-                        className="w-full rounded-xl border border-slate-300 px-3 py-1.5 text-xs"
-                      />
-                    </div>
+                      {/* AI essay assistant */}
+                      {essay && (
+                        <div className="mt-3 rounded-xl border border-[#FFE7A3] bg-[#FFFBEB] p-3.5">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <span className="flex items-center gap-1.5 text-sm font-bold text-[#7A5200]">
+                              <Sparkles className="h-4 w-4" />
+                              Trợ lý AI gợi ý chấm theo rubric
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => handleRequestAISuggestion(q)}
+                              disabled={aiLoadingQuestionId === q.id}
+                              className="studio-btn studio-btn-accent"
+                            >
+                              <Sparkles className="h-4 w-4" />
+                              {aiLoadingQuestionId === q.id ? 'AI đang đọc bài…' : 'AI gợi ý điểm & nhận xét'}
+                            </button>
+                          </div>
+
+                          {qRes?.aiExplanation && (
+                            <div className="mt-2.5 space-y-1 text-sm text-[#172B4D]">
+                              <div>
+                                <strong>Điểm AI gợi ý:</strong>{' '}
+                                <span className="font-mono font-bold text-[#1267E9]">
+                                  {qRes.aiSuggestedScore}/{q.points}
+                                </span>
+                              </div>
+                              <div>
+                                <strong>Giải thích cho cô:</strong> {qRes.aiExplanation}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Per-question comment */}
+                      <div className="mt-3">
+                        <label className={STUDIO_LABEL}>Nhận xét cho câu {idx + 1}</label>
+                        <input
+                          type="text"
+                          value={qRes?.teacherComment || ''}
+                          onChange={(e) =>
+                            updateSingleResult(q.id, {
+                              teacherComment: e.target.value,
+                            })
+                          }
+                          placeholder="Lời khen hoặc hướng dẫn sửa sai cho học sinh…"
+                          className={STUDIO_INPUT}
+                        />
+                      </div>
+                    </section>
+                  );
+                })}
+
+                {/* Overall comment & publish */}
+                <section className="studio-card p-5 lg:sticky lg:bottom-4">
+                  <label className={STUDIO_LABEL}>Nhận xét toàn bài</label>
+                  <textarea
+                    rows={3}
+                    value={overallComment}
+                    onChange={(e) => setOverallComment(e.target.value)}
+                    placeholder="Lời khen và dặn dò chung cho bài làm của học sinh…"
+                    className={`${STUDIO_INPUT} py-2`}
+                  />
+                  <div className="mt-4 flex flex-wrap justify-end gap-2">
+                    <button
+                      type="button"
+                      disabled={saving}
+                      onClick={() => handleSaveGrading(false, true)}
+                      className="studio-btn studio-btn-danger"
+                    >
+                      <RotateCcw className="h-4 w-4" />
+                      Trả bài, yêu cầu sửa lại
+                    </button>
+                    <button
+                      type="button"
+                      disabled={saving}
+                      onClick={() => handleSaveGrading(true, false)}
+                      className="studio-btn bg-[#1F9D6B] text-white hover:bg-[#188A5D]"
+                    >
+                      <CheckCircle2 className="h-4 w-4" />
+                      {saving ? 'Đang lưu…' : 'Hoàn tất chấm & công bố điểm'}
+                    </button>
                   </div>
-                );
-              })}
-
-              {/* Overall Feedback & Publish Bar */}
-              <div className="cartoon-card bg-white p-5">
-                <label className="mb-1.5 block text-xs font-bold text-slate-700">
-                  Nhận xét toàn bài của Giáo viên:
-                </label>
-                <textarea
-                  rows={3}
-                  value={overallComment}
-                  onChange={(e) => setOverallComment(e.target.value)}
-                  placeholder="Lời khen và dặn dò chung cho bài làm của học sinh..."
-                  className="w-full rounded-xl border-2 border-slate-800 px-3.5 py-2 text-sm"
-                />
-
-                <div className="mt-4 flex flex-wrap justify-end gap-3">
-                  <button
-                    type="button"
-                    disabled={saving}
-                    onClick={() => handleSaveGrading(false, true)}
-                    className="cartoon-button flex items-center gap-1.5 rounded-xl bg-rose-100 px-4 py-2 text-xs font-extrabold text-rose-900"
-                  >
-                    <RotateCcw className="h-4 w-4" />
-                    Trả Bài Yêu Cầu Sửa Lại
-                  </button>
-
-                  <button
-                    type="button"
-                    disabled={saving}
-                    onClick={() => handleSaveGrading(true, false)}
-                    className="cartoon-button flex items-center gap-1.5 rounded-xl bg-emerald-600 px-5 py-2 text-xs font-extrabold text-white"
-                  >
-                    <CheckCircle2 className="h-4 w-4" />
-                    {saving
-                      ? 'Đang lưu...'
-                      : 'Hoàn Tất Chấm & Công Bố Điểm'}
-                  </button>
-                </div>
+                </section>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

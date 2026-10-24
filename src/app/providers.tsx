@@ -51,6 +51,9 @@ interface AppContextValue {
   submissions: Submission[];
   comments: CommentReport[];
   games: MathGame[];
+  /** Kho trò chơi: true until the first snapshot arrives. */
+  gamesLoading: boolean;
+  gamesError: string | null;
   adminDataLoading: boolean;
 
   // Student Portal Token State
@@ -80,6 +83,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [comments, setComments] = useState<CommentReport[]>([]);
   const [games, setGames] = useState<MathGame[]>([]);
+  const [gamesLoading, setGamesLoading] = useState(false);
+  const [gamesError, setGamesError] = useState<string | null>(null);
   const [adminDataLoading, setAdminDataLoading] = useState(false);
 
   const [hasStudentSession, setHasStudentSession] = useState<boolean>(() =>
@@ -126,10 +131,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
       setSubmissions([]);
       setComments([]);
       setGames([]);
+      setGamesLoading(false);
+      setGamesError(null);
       return;
     }
 
     setAdminDataLoading(true);
+    setGamesLoading(true);
+    setGamesError(null);
     const unsubs = [
       subscribeClasses((c) => {
         setClasses(c);
@@ -141,7 +150,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
       subscribeStudentAssignments(setStudentAssignments),
       subscribeSubmissions(setSubmissions),
       subscribeComments(setComments),
-      subscribeMathGames(setGames),
+      subscribeMathGames(
+        (g) => {
+          setGames(g);
+          setGamesLoading(false);
+          setGamesError(null);
+        },
+        (message) => {
+          setGamesLoading(false);
+          setGamesError(message);
+        }
+      ),
     ];
 
     return () => {
@@ -204,6 +223,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
         submissions,
         comments,
         games,
+        gamesLoading,
+        gamesError,
         adminDataLoading,
         hasStudentSession,
         refreshStudentSessionState,

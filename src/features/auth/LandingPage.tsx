@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   ArrowRight,
@@ -11,6 +11,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
+import { loadStudentPortal, prefetchWhenIdle } from '../../app/studentChunks';
 import { loginWithStudentCode } from '../../services/studentPortalService';
 import { MimoMascot, SpaceDecor } from '../practice/student/practiceTheme';
 
@@ -27,6 +28,8 @@ const HOME_BANNER_WEBP: [number, string][] = [
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
+  // Most visitors go on to the student portal: fetch its code while idle
+  useEffect(() => prefetchWhenIdle(loadStudentPortal), []);
   const {
     user,
     isAdminAuthorized,

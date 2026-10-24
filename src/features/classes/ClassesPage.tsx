@@ -5,12 +5,14 @@ import {
   ArrowLeft,
   BookOpen,
   Check,
+  CheckCircle2,
   Copy,
   Edit3,
   Eye,
   KeyRound,
   Plus,
   RotateCcw,
+  School,
   Search,
   UserMinus,
   UserPlus,
@@ -32,6 +34,18 @@ import {
   updateStudent,
 } from '../../services/firestoreRepository';
 import { ClassRoom, Student } from '../../types/domain';
+import {
+  EmptyState,
+  FilterSelect,
+  PageHeader,
+  SectionHeading,
+  SearchInput,
+  SegmentedFilter,
+  StatCard,
+  StatusBadge,
+  STUDIO_TONE,
+  Toolbar,
+} from '../../components/studio/StudioUi';
 
 const GRADE_OPTIONS = [
   'Khối 1',
@@ -309,23 +323,12 @@ export const ClassesPage: React.FC = () => {
   if (classId) {
     if (!activeDetailClass) {
       return (
-        <div className="space-y-4">
-          <button
-            type="button"
-            onClick={() => navigate('/admin/classes')}
-            className="cartoon-button inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs font-extrabold text-slate-800"
-          >
+        <div className="studio-skin space-y-4">
+          <button type="button" onClick={() => navigate('/admin/classes')} className="studio-btn studio-btn-secondary">
             <ArrowLeft className="h-4 w-4" />
-            Quay lại Danh sách Lớp học
+            Danh sách lớp học
           </button>
-          <div className="cartoon-card bg-white p-12 text-center">
-            <p className="font-display text-lg font-extrabold text-slate-900">
-              Không tìm thấy lớp học này
-            </p>
-            <p className="mt-1 text-xs text-slate-500">
-              Lớp học có thể không tồn tại hoặc đang được tải.
-            </p>
-          </div>
+          <EmptyState icon={School} tone="gray" title="Không tìm thấy lớp học này" text="Lớp có thể không tồn tại hoặc dữ liệu đang được tải." />
         </div>
       );
     }
@@ -362,208 +365,132 @@ export const ClassesPage: React.FC = () => {
       (a.classIds || []).includes(activeDetailClass.id)
     );
 
+    const archivedClass = activeDetailClass.status !== 'active';
+    const studentCounts = {
+      all: classStudentsAll.length,
+      active: classStudentsAll.filter((s) => s.status === 'active').length,
+      dropped: classStudentsAll.filter((s) => s.status === 'dropped').length,
+      archived: classStudentsAll.filter((s) => s.status === 'archived').length,
+    };
+
     return (
-      <div className="space-y-6">
-        {/* Top Navigation & Class Info Banner */}
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <button
-            type="button"
-            onClick={() => navigate('/admin/classes')}
-            className="cartoon-button inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-xs font-extrabold text-slate-800"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Quay lại Danh sách Lớp học
-          </button>
+      <div className="studio-skin space-y-6">
+        <button type="button" onClick={() => navigate('/admin/classes')} className="studio-btn studio-btn-secondary">
+          <ArrowLeft className="h-4 w-4" />
+          Danh sách lớp học
+        </button>
 
-          <div className="flex flex-wrap items-center gap-2">
-            <button
-              type="button"
-              onClick={() => openEditClassModal(activeDetailClass)}
-              className="cartoon-button inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-slate-800"
-            >
-              <Edit3 className="h-3.5 w-3.5" />
-              Sửa thông tin lớp
-            </button>
-            <button
-              type="button"
-              onClick={() => toggleArchiveClassRoom(activeDetailClass)}
-              className="cartoon-button inline-flex items-center gap-1.5 rounded-xl bg-amber-100 px-3.5 py-2 text-xs font-bold text-amber-900"
-            >
-              {activeDetailClass.status === 'active' ? (
-                <>
-                  <Archive className="h-3.5 w-3.5" />
-                  Lưu trữ lớp
-                </>
-              ) : (
-                <>
-                  <RotateCcw className="h-3.5 w-3.5" />
-                  Khôi phục lớp
-                </>
-              )}
-            </button>
-          </div>
-        </div>
+        <PageHeader
+          icon={School}
+          tone={archivedClass ? 'gray' : 'blue'}
+          eyebrow={
+            <span className="flex flex-wrap items-center gap-2">
+              {activeDetailClass.grade} · Năm học {activeDetailClass.schoolYear}
+              <StatusBadge kind={archivedClass ? 'neutral' : 'success'}>{archivedClass ? 'Đã lưu trữ' : 'Đang hoạt động'}</StatusBadge>
+            </span>
+          }
+          title={activeDetailClass.name}
+          description={activeDetailClass.description}
+          actions={
+            <>
+              <button type="button" onClick={() => openEditClassModal(activeDetailClass)} className="studio-btn studio-btn-secondary">
+                <Edit3 className="h-4 w-4" />
+                Sửa thông tin lớp
+              </button>
+              <button type="button" onClick={() => toggleArchiveClassRoom(activeDetailClass)} className="studio-btn studio-btn-secondary text-[#B7790A]">
+                {archivedClass ? <RotateCcw className="h-4 w-4" /> : <Archive className="h-4 w-4" />}
+                {archivedClass ? 'Khôi phục lớp' : 'Lưu trữ lớp'}
+              </button>
+            </>
+          }
+        />
 
-        {/* Class Header Card */}
-        <div className="cartoon-card bg-gradient-to-r from-sky-100 via-white to-amber-50 p-6">
-          <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
-            <div>
-              <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600">
-                <span className="font-bold text-blue-700">
-                  {activeDetailClass.grade}
-                </span>
-                <span>·</span>
-                <span className="font-mono">
-                  Năm học {activeDetailClass.schoolYear}
-                </span>
-                <span>·</span>
-                <span
-                  className={
-                    activeDetailClass.status === 'active'
-                      ? 'font-bold text-emerald-700'
-                      : 'font-bold text-amber-700'
-                  }
-                >
-                  {activeDetailClass.status === 'active'
-                    ? 'Đang hoạt động'
-                    : 'Đã lưu trữ'}
-                </span>
-              </div>
-
-              <h1 className="mt-1 font-display text-2xl font-extrabold text-slate-900 sm:text-3xl">
-                {activeDetailClass.name}
-              </h1>
-
-              {activeDetailClass.description && (
-                <p className="mt-2 max-w-3xl text-sm text-slate-700">
-                  {activeDetailClass.description}
-                </p>
-              )}
-            </div>
-
-            <div className="flex items-center gap-3 self-start lg:self-center">
-              <div className="rounded-2xl border-2 border-slate-900 bg-white px-4 py-3 text-center">
-                <div className="font-mono text-2xl font-black text-slate-900 tabular-nums">
-                  {classStudentsAll.length}
-                </div>
-                <div className="text-xs font-bold text-slate-600">
-                  Học sinh trong lớp
-                </div>
-              </div>
-              <div className="rounded-2xl border-2 border-slate-900 bg-white px-4 py-3 text-center">
-                <div className="font-mono text-2xl font-black text-blue-700 tabular-nums">
-                  {classAssignments.length}
-                </div>
-                <div className="text-xs font-bold text-slate-600">
-                  Đợt BTVN đã giao
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <section className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+          <StatCard icon={Users} tone="blue" label="Sĩ số đang học" value={studentCounts.active} note={`Tổng ${studentCounts.all} hồ sơ`} />
+          <StatCard icon={BookOpen} tone="yellow" label="Đợt bài tập đã giao" value={classAssignments.length} />
+          <StatCard icon={UserMinus} tone="pink" label="Nghỉ học" value={studentCounts.dropped} />
+          <StatCard icon={Archive} tone="gray" label="Hồ sơ lưu trữ" value={studentCounts.archived} />
+        </section>
 
         {/* ================================================================ */}
         {/* STUDENT CRUD SECTION INSIDE CLASS DETAIL                         */}
         {/* ================================================================ */}
         <div className="space-y-4">
-          <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
-            <div>
-              <h2 className="font-display text-xl font-extrabold text-slate-900">
-                Danh Sách Học Sinh Lớp {activeDetailClass.name}
-              </h2>
-              <p className="text-xs text-slate-600">
-                Thêm mới, chỉnh sửa hồ sơ, sao chép mã truy cập 6 ký tự hoặc gỡ
-                học sinh khỏi lớp.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => {
-                  setExistingSearchQuery('');
-                  setAssignExistingModalOpen(true);
-                }}
-                className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2.5 text-xs font-extrabold text-slate-800 whitespace-nowrap"
-              >
-                <Users className="h-4 w-4 text-blue-600" />
-                Gán Học Sinh Đã Có ({unassignedStudents.length})
-              </button>
-              <button
-                type="button"
-                onClick={() => openCreateStudentInClassModal(activeDetailClass)}
-                className="cartoon-button flex items-center gap-1.5 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-extrabold text-white whitespace-nowrap"
-              >
-                <UserPlus className="h-4 w-4" />
-                Thêm Học Sinh Mới Vào Lớp
-              </button>
-            </div>
-          </div>
-
-          {/* Search & Status Filter for Students in Class */}
-          <div className="cartoon-card flex flex-col justify-between gap-4 bg-white p-4 md:flex-row md:items-center">
-            <div className="relative flex-1">
-              <Search className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-slate-400" />
-              <input
-                type="text"
-                value={studentSearchQuery}
-                onChange={(e) => setStudentSearchQuery(e.target.value)}
-                placeholder="Tìm học sinh trong lớp theo họ tên, biệt danh hoặc mã 6 ký tự..."
-                className="w-full rounded-xl border-2 border-slate-800 bg-white py-2 pr-4 pl-10 text-sm focus:outline-none"
-              />
-            </div>
-
-            <div className="flex flex-wrap items-center gap-1 rounded-xl border-2 border-slate-800 bg-slate-100 p-1">
-              {(
-                [
-                  { id: 'all', label: 'Tất cả' },
-                  { id: 'active', label: 'Đang theo học' },
-                  { id: 'dropped', label: 'Nghỉ học' },
-                  { id: 'archived', label: 'Đã lưu trữ' },
-                ] as const
-              ).map((tab) => (
+          <SectionHeading
+            icon={Users}
+            title="Học sinh của lớp"
+            note="Thêm mới, sửa hồ sơ, sao chép mã 6 ký tự hoặc gỡ học sinh khỏi lớp."
+            actions={
+              <>
                 <button
-                  key={tab.id}
                   type="button"
-                  onClick={() => setStudentStatusFilter(tab.id)}
-                  className={`rounded-lg px-3 py-1 text-xs font-bold transition-colors whitespace-nowrap ${
-                    studentStatusFilter === tab.id
-                      ? 'bg-slate-900 text-white'
-                      : 'text-slate-700 hover:text-slate-900'
-                  }`}
+                  onClick={() => {
+                    setExistingSearchQuery('');
+                    setAssignExistingModalOpen(true);
+                  }}
+                  className="studio-btn studio-btn-secondary"
                 >
-                  {tab.label}
+                  <Users className="h-4 w-4 text-[#1267E9]" />
+                  Gán học sinh đã có ({unassignedStudents.length})
                 </button>
-              ))}
-            </div>
-          </div>
+                <button type="button" onClick={() => openCreateStudentInClassModal(activeDetailClass)} className="studio-btn studio-btn-primary">
+                  <UserPlus className="h-4 w-4" />
+                  Thêm học sinh mới
+                </button>
+              </>
+            }
+          />
+
+          {classStudentsAll.length > 0 && (
+            <Toolbar>
+              <SearchInput value={studentSearchQuery} onChange={setStudentSearchQuery} placeholder="Tìm theo họ tên, tên gọi hoặc mã 6 ký tự…" />
+              <SegmentedFilter
+                label="Trạng thái học sinh"
+                value={studentStatusFilter}
+                onChange={setStudentStatusFilter}
+                options={[
+                  { id: 'all', label: 'Tất cả', count: studentCounts.all },
+                  { id: 'active', label: 'Đang học', count: studentCounts.active },
+                  { id: 'dropped', label: 'Nghỉ học', count: studentCounts.dropped },
+                  { id: 'archived', label: 'Lưu trữ', count: studentCounts.archived },
+                ]}
+              />
+            </Toolbar>
+          )}
 
           {/* Students Table */}
           {filteredClassStudents.length === 0 ? (
-            <div className="cartoon-card bg-white p-10 text-center">
-              <p className="font-display text-base font-bold text-slate-800">
-                Chưa có học sinh nào trong danh sách này
-              </p>
-              <p className="mt-1 text-xs text-slate-500">
-                Nhấn &ldquo;Thêm Học Sinh Mới Vào Lớp&rdquo; hoặc &ldquo;Gán Học
-                Sinh Đã Có&rdquo; để bắt đầu.
-              </p>
-            </div>
+            classStudentsAll.length === 0 ? (
+              <EmptyState
+                icon={UserPlus}
+                tone="green"
+                title="Lớp chưa có học sinh"
+                text="Thêm học sinh mới (mỗi em sẽ nhận một mã 6 ký tự để vào cổng học sinh) hoặc gán học sinh đã có vào lớp."
+                action={
+                  <button type="button" onClick={() => openCreateStudentInClassModal(activeDetailClass)} className="studio-btn studio-btn-primary">
+                    <UserPlus className="h-4 w-4" />
+                    Thêm học sinh đầu tiên
+                  </button>
+                }
+              />
+            ) : (
+              <EmptyState icon={Search} tone="gray" title="Không có học sinh phù hợp" text="Thử từ khóa hoặc trạng thái khác." />
+            )
           ) : (
             <div className="cartoon-card overflow-hidden bg-white">
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-left text-sm">
                   <thead>
-                    <tr className="border-b-2 border-slate-800 bg-amber-100/70 text-xs font-extrabold text-slate-800">
+                    <tr className="border-b border-[#DCE7F3] bg-[#F6FAFF] text-xs font-bold tracking-wide text-[#5E6C84] uppercase">
                       <th className="px-4 py-3.5">Học sinh</th>
                       <th className="px-4 py-3.5">Khối</th>
                       <th className="px-4 py-3.5">Mã truy cập (6 ký tự)</th>
                       <th className="px-4 py-3.5">Ghi chú nội bộ (GV)</th>
                       <th className="px-4 py-3.5">Trạng thái</th>
-                      <th className="px-4 py-3.5 text-right">Thao tác CRUD</th>
+                      <th className="px-4 py-3.5 text-right">Thao tác</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200">
+                  <tbody className="divide-y divide-[#EEF3F9]">
                     {filteredClassStudents.map((st) => {
                       const statusLabel =
                         st.status === 'active'
@@ -573,7 +500,7 @@ export const ClassesPage: React.FC = () => {
                           : 'Lưu trữ';
                       const statusColor =
                         st.status === 'active'
-                          ? 'text-emerald-700'
+                          ? 'text-[#1F9D6B]'
                           : st.status === 'dropped'
                           ? 'text-rose-700'
                           : 'text-amber-700';
@@ -585,14 +512,14 @@ export const ClassesPage: React.FC = () => {
                         >
                           <td className="px-4 py-3.5">
                             <div className="flex items-center gap-3">
-                              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border-2 border-slate-800 bg-sky-100 font-display text-sm font-extrabold text-slate-900">
+                              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#DCE7F3] bg-[#EAF5FF] font-display text-sm font-extrabold text-[#172B4D]">
                                 {st.fullName.slice(0, 1).toUpperCase()}
                               </div>
                               <div>
-                                <div className="font-bold text-slate-900">
+                                <div className="font-bold text-[#172B4D]">
                                   {st.fullName}
                                 </div>
-                                <div className="text-xs text-slate-500">
+                                <div className="text-xs text-[#5E6C84]">
                                   {st.nickname
                                     ? `Biệt danh: ${st.nickname}`
                                     : st.dob
@@ -603,25 +530,25 @@ export const ClassesPage: React.FC = () => {
                             </div>
                           </td>
 
-                          <td className="px-4 py-3.5 text-xs font-semibold text-slate-700">
+                          <td className="px-4 py-3.5 text-xs font-semibold text-[#3B4A66]">
                             {st.grade}
                           </td>
 
                           <td className="px-4 py-3.5">
                             <div className="flex items-center gap-2">
-                              <span className="inline-flex items-center gap-1 rounded-lg border-2 border-slate-800 bg-amber-200 px-2.5 py-1 font-mono text-xs font-black tracking-wider text-slate-900">
+                              <span className="inline-flex items-center gap-1 rounded-lg border border-[#DCE7F3] bg-amber-200 px-2.5 py-1 font-mono text-xs font-black tracking-wider text-[#172B4D]">
                                 <KeyRound className="h-3 w-3" />
                                 {st.accessCode}
                               </span>
                               <button
                                 type="button"
                                 onClick={() => handleCopyAccessCode(st)}
-                                className="cartoon-button flex items-center gap-1 rounded-lg bg-white px-2 py-1 text-[11px] font-bold text-slate-800"
+                                className="cartoon-button flex items-center gap-1 rounded-lg bg-white px-2 py-1 text-[11px] font-bold text-[#172B4D]"
                                 title="Sao chép mã gửi phụ huynh"
                               >
                                 {copiedCodeId === st.id ? (
                                   <>
-                                    <Check className="h-3 w-3 text-emerald-600" />
+                                    <Check className="h-3 w-3 text-[#1F9D6B]" />
                                     Đã chép
                                   </>
                                 ) : (
@@ -634,7 +561,7 @@ export const ClassesPage: React.FC = () => {
                             </div>
                           </td>
 
-                          <td className="max-w-xs px-4 py-3.5 text-xs text-slate-600">
+                          <td className="max-w-xs px-4 py-3.5 text-xs text-[#5E6C84]">
                             <span className="line-clamp-2">
                               {st.internalNotes || '—'}
                             </span>
@@ -651,7 +578,7 @@ export const ClassesPage: React.FC = () => {
                               <button
                                 type="button"
                                 onClick={() => openEditStudentInClassModal(st)}
-                                className="cartoon-button inline-flex items-center gap-1 rounded-lg bg-white px-2.5 py-1.5 text-xs font-bold text-slate-800"
+                                className="cartoon-button inline-flex items-center gap-1 rounded-lg bg-white px-2.5 py-1.5 text-xs font-bold text-[#172B4D]"
                               >
                                 <Edit3 className="h-3.5 w-3.5" />
                                 Sửa
@@ -707,22 +634,22 @@ export const ClassesPage: React.FC = () => {
         <div className="cartoon-card bg-white p-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <BookOpen className="h-4 w-4 text-blue-600" />
-              <h3 className="font-display text-base font-extrabold text-slate-900">
-                Các Đợt BTVN Đã Giao Cho Lớp {activeDetailClass.name}
+              <BookOpen className="h-4 w-4 text-[#1267E9]" />
+              <h3 className="font-display text-base font-extrabold text-[#172B4D]">
+                Bài tập đã giao cho lớp
               </h3>
             </div>
             <button
               type="button"
               onClick={() => navigate('/admin/assignments')}
-              className="text-xs font-bold text-blue-700 hover:underline"
+              className="text-xs font-bold text-[#1267E9] hover:underline"
             >
               Quản lý giao bài →
             </button>
           </div>
 
           {classAssignments.length === 0 ? (
-            <p className="mt-3 text-xs text-slate-500">
+            <p className="mt-3 text-xs text-[#5E6C84]">
               Chưa có đợt BTVN nào được giao cho lớp này.
             </p>
           ) : (
@@ -730,10 +657,10 @@ export const ClassesPage: React.FC = () => {
               {classAssignments.map((asg) => (
                 <div
                   key={asg.id}
-                  className="rounded-xl border-2 border-slate-800 bg-slate-50 p-3.5 text-xs"
+                  className="rounded-xl border border-[#DCE7F3] bg-[#F6FAFF] p-3.5 text-xs"
                 >
-                  <div className="font-bold text-slate-900">{asg.title}</div>
-                  <div className="mt-1 text-slate-600">
+                  <div className="font-bold text-[#172B4D]">{asg.title}</div>
+                  <div className="mt-1 text-[#5E6C84]">
                     Ngày giao: {asg.assignedAt} · Hạn nộp: {asg.dueAt}
                   </div>
                 </div>
@@ -746,10 +673,10 @@ export const ClassesPage: React.FC = () => {
         {/* MODAL: CREATE / EDIT STUDENT INSIDE CLASS                        */}
         {/* ================================================================ */}
         {studentModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
             <div className="cartoon-card max-h-[90vh] w-full max-w-xl overflow-y-auto bg-white p-6">
-              <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-                <h2 className="font-display text-lg font-extrabold text-slate-900">
+              <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
+                <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
                   {editingStudent
                     ? `Chỉnh Sửa Học Sinh (${editingStudent.accessCode})`
                     : `Thêm Học Sinh Vào Lớp ${activeDetailClass.name}`}
@@ -757,7 +684,7 @@ export const ClassesPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setStudentModalOpen(false)}
-                  className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100"
+                  className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF]"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -780,7 +707,7 @@ export const ClassesPage: React.FC = () => {
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-1 block text-xs font-bold text-slate-700">
+                    <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                       Họ và tên học sinh *
                     </label>
                     <input
@@ -794,11 +721,11 @@ export const ClassesPage: React.FC = () => {
                         })
                       }
                       placeholder="Ví dụ: Nguyễn Minh Khôi"
-                      className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                      className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                     />
                   </div>
                   <div>
-                    <label className="mb-1 block text-xs font-bold text-slate-700">
+                    <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                       Biệt danh (Nickname)
                     </label>
                     <input
@@ -811,14 +738,14 @@ export const ClassesPage: React.FC = () => {
                         })
                       }
                       placeholder="Ví dụ: Bé Khôi"
-                      className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                      className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div>
-                    <label className="mb-1 block text-xs font-bold text-slate-700">
+                    <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                       Khối / Lớp *
                     </label>
                     <select
@@ -829,7 +756,7 @@ export const ClassesPage: React.FC = () => {
                           grade: e.target.value,
                         })
                       }
-                      className="w-full rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-sm"
+                      className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3 py-2 text-sm"
                     >
                       {GRADE_OPTIONS.map((g) => (
                         <option key={g} value={g}>
@@ -839,7 +766,7 @@ export const ClassesPage: React.FC = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="mb-1 block text-xs font-bold text-slate-700">
+                    <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                       Ngày sinh
                     </label>
                     <input
@@ -851,11 +778,11 @@ export const ClassesPage: React.FC = () => {
                           dob: e.target.value,
                         })
                       }
-                      className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
+                      className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 font-mono text-sm"
                     />
                   </div>
                   <div>
-                    <label className="mb-1 block text-xs font-bold text-slate-700">
+                    <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                       Trạng thái
                     </label>
                     <select
@@ -869,7 +796,7 @@ export const ClassesPage: React.FC = () => {
                             | 'archived',
                         })
                       }
-                      className="w-full rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-sm"
+                      className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3 py-2 text-sm"
                     >
                       <option value="active">Đang theo học</option>
                       <option value="dropped">Đã nghỉ học</option>
@@ -879,10 +806,10 @@ export const ClassesPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="mb-1.5 block text-xs font-bold text-slate-700">
+                  <label className="mb-1.5 block text-xs font-bold text-[#3B4A66]">
                     Các lớp đang tham gia
                   </label>
-                  <div className="grid max-h-36 grid-cols-1 gap-2 overflow-y-auto rounded-xl border-2 border-slate-800 bg-slate-50 p-3 sm:grid-cols-2">
+                  <div className="grid max-h-36 grid-cols-1 gap-2 overflow-y-auto rounded-xl border border-[#DCE7F3] bg-[#F6FAFF] p-3 sm:grid-cols-2">
                     {classes.map((cls) => {
                       const checked = studentFormValues.classIds.includes(
                         cls.id
@@ -890,7 +817,7 @@ export const ClassesPage: React.FC = () => {
                       return (
                         <label
                           key={cls.id}
-                          className="flex cursor-pointer items-center gap-2 text-xs font-semibold text-slate-800"
+                          className="flex cursor-pointer items-center gap-2 text-xs font-semibold text-[#172B4D]"
                         >
                           <input
                             type="checkbox"
@@ -898,7 +825,7 @@ export const ClassesPage: React.FC = () => {
                             onChange={() =>
                               toggleStudentClassSelection(cls.id)
                             }
-                            className="h-4 w-4 rounded border-slate-800"
+                            className="h-4 w-4 rounded border-[#DCE7F3]"
                           />
                           <span>
                             {cls.name} ({cls.grade})
@@ -910,7 +837,7 @@ export const ClassesPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Ghi chú nội bộ của giáo viên (Phụ huynh/Học sinh KHÔNG nhìn
                     thấy)
                   </label>
@@ -924,7 +851,7 @@ export const ClassesPage: React.FC = () => {
                       })
                     }
                     placeholder="Ghi chú riêng về lực học, tính cách hoặc lưu ý cần rèn thêm..."
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                   />
                 </div>
 
@@ -932,14 +859,14 @@ export const ClassesPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setStudentModalOpen(false)}
-                    className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
+                    className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-[#3B4A66]"
                   >
                     Hủy
                   </button>
                   <button
                     type="submit"
                     disabled={savingStudent}
-                    className="cartoon-button rounded-xl bg-emerald-600 px-5 py-2 text-xs font-extrabold text-white"
+                    className="cartoon-button rounded-xl bg-[#1F9D6B] px-5 py-2 text-xs font-extrabold text-white"
                   >
                     {savingStudent
                       ? 'Đang xử lý...'
@@ -957,16 +884,16 @@ export const ClassesPage: React.FC = () => {
         {/* MODAL: ASSIGN EXISTING STUDENT TO THIS CLASS                     */}
         {/* ================================================================ */}
         {assignExistingModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
             <div className="cartoon-card max-h-[85vh] w-full max-w-lg overflow-y-auto bg-white p-6">
-              <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-                <h2 className="font-display text-lg font-extrabold text-slate-900">
+              <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
+                <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
                   Gán Học Sinh Đã Có Vào Lớp {activeDetailClass.name}
                 </h2>
                 <button
                   type="button"
                   onClick={() => setAssignExistingModalOpen(false)}
-                  className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100"
+                  className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF]"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -978,20 +905,20 @@ export const ClassesPage: React.FC = () => {
                   value={existingSearchQuery}
                   onChange={(e) => setExistingSearchQuery(e.target.value)}
                   placeholder="Tìm học sinh theo tên hoặc mã 6 ký tự..."
-                  className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                  className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                 />
 
-                <div className="mt-3 max-h-72 divide-y divide-slate-200 overflow-y-auto rounded-xl border-2 border-slate-800">
+                <div className="mt-3 max-h-72 divide-y divide-[#EEF3F9] overflow-y-auto rounded-xl border border-[#DCE7F3]">
                   {unassignedStudents.map((st) => (
                     <div
                       key={st.id}
                       className="flex items-center justify-between px-3.5 py-2.5 text-xs"
                     >
                       <div>
-                        <div className="font-bold text-slate-900">
+                        <div className="font-bold text-[#172B4D]">
                           {st.fullName}
                         </div>
-                        <div className="text-slate-500">
+                        <div className="text-[#5E6C84]">
                           {st.grade} · Mã:{' '}
                           <span className="font-mono font-bold">
                             {st.accessCode}
@@ -1002,7 +929,7 @@ export const ClassesPage: React.FC = () => {
                         type="button"
                         disabled={assigningStudentId === st.id}
                         onClick={() => handleAssignExistingStudentToClass(st)}
-                        className="cartoon-button rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-extrabold text-white"
+                        className="cartoon-button rounded-lg bg-[#1267E9] px-3 py-1.5 text-xs font-extrabold text-white"
                       >
                         {assigningStudentId === st.id
                           ? 'Đang thêm...'
@@ -1011,7 +938,7 @@ export const ClassesPage: React.FC = () => {
                     </div>
                   ))}
                   {unassignedStudents.length === 0 && (
-                    <div className="p-6 text-center text-xs text-slate-500">
+                    <div className="p-6 text-center text-xs text-[#5E6C84]">
                       Tất cả học sinh trong hệ thống đều đã có trong lớp này
                       (hoặc không khớp từ khóa tìm kiếm).
                     </div>
@@ -1026,12 +953,12 @@ export const ClassesPage: React.FC = () => {
         {/* MODAL: CONFIRM REMOVE STUDENT FROM CLASS                         */}
         {/* ================================================================ */}
         {removingStudent && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
             <div className="cartoon-card w-full max-w-md bg-white p-6">
-              <h3 className="font-display text-lg font-extrabold text-slate-900">
+              <h3 className="font-display text-lg font-extrabold text-[#172B4D]">
                 Gỡ học sinh khỏi lớp {activeDetailClass.name}?
               </h3>
-              <p className="mt-2 text-xs text-slate-600">
+              <p className="mt-2 text-xs text-[#5E6C84]">
                 Học sinh <strong>{removingStudent.fullName}</strong> (Mã:{' '}
                 <span className="font-mono font-bold">
                   {removingStudent.accessCode}
@@ -1044,7 +971,7 @@ export const ClassesPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setRemovingStudent(null)}
-                  className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
+                  className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-[#3B4A66]"
                 >
                   Hủy
                 </button>
@@ -1063,16 +990,16 @@ export const ClassesPage: React.FC = () => {
 
         {/* Class Edit Modal (reused when clicking "Sửa thông tin lớp" in Detail View) */}
         {classModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
             <div className="cartoon-card max-h-[90vh] w-full max-w-lg overflow-y-auto bg-white p-6">
-              <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-                <h2 className="font-display text-lg font-extrabold text-slate-900">
+              <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
+                <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
                   {editingClass ? 'Chỉnh Sửa Lớp Học' : 'Tạo Lớp Học Mới'}
                 </h2>
                 <button
                   type="button"
                   onClick={() => setClassModalOpen(false)}
-                  className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100"
+                  className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF]"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -1086,7 +1013,7 @@ export const ClassesPage: React.FC = () => {
                 )}
 
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Tên lớp học *
                   </label>
                   <input
@@ -1100,13 +1027,13 @@ export const ClassesPage: React.FC = () => {
                       })
                     }
                     placeholder="Ví dụ: Toán Tư Duy 5A"
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="mb-1 block text-xs font-bold text-slate-700">
+                    <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                       Khối / Lớp *
                     </label>
                     <select
@@ -1117,7 +1044,7 @@ export const ClassesPage: React.FC = () => {
                           grade: e.target.value,
                         })
                       }
-                      className="w-full rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-sm"
+                      className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3 py-2 text-sm"
                     >
                       {GRADE_OPTIONS.map((g) => (
                         <option key={g} value={g}>
@@ -1128,7 +1055,7 @@ export const ClassesPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="mb-1 block text-xs font-bold text-slate-700">
+                    <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                       Năm học *
                     </label>
                     <input
@@ -1142,13 +1069,13 @@ export const ClassesPage: React.FC = () => {
                         })
                       }
                       placeholder="2026-2027"
-                      className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
+                      className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 font-mono text-sm"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Mô tả lớp học
                   </label>
                   <textarea
@@ -1161,7 +1088,7 @@ export const ClassesPage: React.FC = () => {
                       })
                     }
                     placeholder="Mục tiêu lớp học, giáo trình hoặc ghi chú chung..."
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                   />
                 </div>
 
@@ -1169,14 +1096,14 @@ export const ClassesPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setClassModalOpen(false)}
-                    className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
+                    className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-[#3B4A66]"
                   >
                     Hủy
                   </button>
                   <button
                     type="submit"
                     disabled={savingClass}
-                    className="cartoon-button rounded-xl bg-blue-600 px-5 py-2 text-xs font-extrabold text-white"
+                    className="cartoon-button rounded-xl bg-[#1267E9] px-5 py-2 text-xs font-extrabold text-white"
                   >
                     {savingClass ? 'Đang lưu...' : 'Lưu Lớp Học'}
                   </button>
@@ -1207,191 +1134,162 @@ export const ClassesPage: React.FC = () => {
     );
   });
 
+  const activeCount = classes.filter((c) => c.status === 'active').length;
+  const filtersOn = searchQuery.trim() !== '' || statusFilter !== 'all' || gradeFilter !== 'all';
+
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-        <div>
-          <h1 className="font-display text-2xl font-extrabold text-slate-900">
-            Quản Lý Lớp Học
-          </h1>
-          <p className="text-sm text-slate-600">
-            Nhấn vào &ldquo;Chi tiết&rdquo; từng lớp để xem và quản lý (thêm, sửa,
-            lưu trữ, gỡ) danh sách học sinh trong lớp.
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={openCreateClassModal}
-          className="cartoon-button flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-xs font-extrabold text-white whitespace-nowrap self-start"
-        >
-          <Plus className="h-4 w-4" />
-          Tạo Lớp Học Mới
-        </button>
-      </div>
+    <div className="studio-skin space-y-6">
+      <PageHeader
+        icon={School}
+        title="Lớp học"
+        description="Tạo lớp, theo dõi sĩ số và mở từng lớp để quản lý học sinh và bài tập đã giao."
+        actions={
+          <button type="button" onClick={openCreateClassModal} className="studio-btn studio-btn-primary">
+            <Plus className="h-4 w-4" />
+            Tạo lớp học
+          </button>
+        }
+      />
 
-      {/* Filters & Search Bar */}
-      <div className="cartoon-card flex flex-col justify-between gap-4 p-4 md:flex-row md:items-center">
-        <div className="relative flex-1">
-          <Search className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-slate-400" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Tìm theo tên lớp học, khối/lớp, năm học hoặc mô tả..."
-            className="w-full rounded-xl border-2 border-slate-800 bg-white py-2 pr-4 pl-10 text-sm focus:outline-none"
-          />
-        </div>
+      {classes.length > 0 && (
+        <section className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+          <StatCard icon={School} tone="blue" label="Tổng số lớp" value={classes.length} note={`${grades.length} khối lớp`} />
+          <StatCard icon={CheckCircle2} tone="green" label="Đang hoạt động" value={activeCount} note="Lớp đang dạy" />
+          <StatCard icon={Users} tone="yellow" label="Học sinh trong lớp" value={students.filter((s) => s.classIds.length > 0).length} note={`Tổng ${students.length} học sinh`} />
+          <StatCard icon={Archive} tone="gray" label="Đã lưu trữ" value={classes.length - activeCount} note="Giữ lại lịch sử học tập" />
+        </section>
+      )}
 
-        <div className="flex flex-wrap items-center gap-2">
-          <select
-            value={gradeFilter}
-            onChange={(e) => setGradeFilter(e.target.value)}
-            className="rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-xs font-bold text-slate-800"
-          >
-            <option value="all">Tất cả khối lớp</option>
-            {grades.map((g) => (
-              <option key={g} value={g}>
-                {g}
-              </option>
-            ))}
-          </select>
-
-          <div className="flex items-center gap-1 rounded-xl border-2 border-slate-800 bg-slate-100 p-1">
-            {(
-              [
-                { id: 'all', label: 'Tất cả' },
-                { id: 'active', label: 'Đang hoạt động' },
-                { id: 'archived', label: 'Lưu trữ' },
-              ] as const
-            ).map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setStatusFilter(tab.id)}
-                className={`rounded-lg px-3 py-1 text-xs font-bold transition-colors whitespace-nowrap ${
-                  statusFilter === tab.id
-                    ? 'bg-slate-900 text-white'
-                    : 'text-slate-700 hover:text-slate-900'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+      {classes.length > 0 && (
+        <Toolbar>
+          <SearchInput value={searchQuery} onChange={setSearchQuery} placeholder="Tìm theo tên lớp, khối, năm học hoặc mô tả…" />
+          <div className="flex flex-wrap items-center gap-3">
+            <FilterSelect label="Khối" value={gradeFilter} onChange={setGradeFilter}>
+              <option value="all">Tất cả</option>
+              {grades.map((g) => (
+                <option key={g} value={g}>
+                  {g}
+                </option>
+              ))}
+            </FilterSelect>
+            <SegmentedFilter
+              label="Trạng thái lớp"
+              value={statusFilter}
+              onChange={setStatusFilter}
+              options={[
+                { id: 'all', label: 'Tất cả', count: classes.length },
+                { id: 'active', label: 'Đang hoạt động', count: activeCount },
+                { id: 'archived', label: 'Lưu trữ', count: classes.length - activeCount },
+              ]}
+            />
           </div>
-        </div>
-      </div>
+        </Toolbar>
+      )}
 
-      {/* Classes Grid */}
-      {filteredClasses.length === 0 ? (
-        <div className="cartoon-card p-12 text-center">
-          <p className="font-display text-base font-bold text-slate-800">
-            Không tìm thấy lớp học nào phù hợp
-          </p>
-          <p className="mt-1 text-xs text-slate-500">
-            Hãy tạo lớp học mới hoặc thay đổi bộ lọc tìm kiếm.
-          </p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {filteredClasses.map((cls) => {
-            const classStudents = students.filter((s) =>
-              s.classIds.includes(cls.id)
-            );
-            const classAssignments = assignments.filter((a) =>
-              (a.classIds || []).includes(cls.id)
-            );
-
-            return (
-              <div
-                key={cls.id}
-                className={`cartoon-card flex flex-col justify-between p-5 ${
-                  cls.status === 'archived' ? 'bg-slate-50 opacity-85' : 'bg-white'
-                }`}
+      {classes.length === 0 ? (
+        <EmptyState
+          icon={School}
+          title="Chưa có lớp học nào"
+          text="Bắt đầu bằng việc tạo lớp đầu tiên, ví dụ “Lớp 3A – 2026-2027”. Sau đó thêm học sinh để mỗi em nhận mã 6 ký tự vào cổng học sinh."
+          action={
+            <button type="button" onClick={openCreateClassModal} className="studio-btn studio-btn-primary">
+              <Plus className="h-4 w-4" />
+              Tạo lớp học đầu tiên
+            </button>
+          }
+        />
+      ) : filteredClasses.length === 0 ? (
+        <EmptyState
+          icon={Search}
+          tone="gray"
+          title="Không tìm thấy lớp phù hợp"
+          text="Thử từ khóa khác hoặc bỏ bớt bộ lọc."
+          action={
+            filtersOn && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchQuery('');
+                  setStatusFilter('all');
+                  setGradeFilter('all');
+                }}
+                className="studio-btn studio-btn-secondary"
               >
-                <div>
-                  <div className="flex items-center gap-2 text-xs text-slate-500">
-                    <span className="font-bold text-blue-700">{cls.grade}</span>
-                    <span>·</span>
-                    <span className="font-mono">{cls.schoolYear}</span>
-                    <span>·</span>
+                Xóa bộ lọc
+              </button>
+            )
+          }
+        />
+      ) : (
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {filteredClasses.map((cls) => {
+            const classStudents = students.filter((s) => s.classIds.includes(cls.id));
+            const activeStudents = classStudents.filter((s) => s.status === 'active').length;
+            const classAssignments = assignments.filter((a) => (a.classIds || []).includes(cls.id));
+            const archived = cls.status === 'archived';
+            return (
+              <article
+                key={cls.id}
+                className={`studio-card group flex flex-col p-5 transition hover:shadow-[var(--studio-shadow-hover)] ${archived ? 'bg-[#FAFBFD]' : ''}`}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <button type="button" onClick={() => navigate(`/admin/classes/${cls.id}`)} className="flex min-w-0 items-center gap-3 text-left">
                     <span
-                      className={
-                        cls.status === 'active'
-                          ? 'font-bold text-emerald-700'
-                          : 'font-bold text-amber-700'
-                      }
+                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl font-display text-base font-extrabold ${
+                        archived ? STUDIO_TONE.gray : STUDIO_TONE.blue
+                      }`}
                     >
-                      {cls.status === 'active' ? 'Đang hoạt động' : 'Đã lưu trữ'}
+                      {cls.name.replace(/^(lớp|lop)\s*/i, '').slice(0, 3).toUpperCase()}
                     </span>
-                  </div>
+                    <span className="min-w-0">
+                      <span className="block truncate font-display text-lg font-extrabold text-[#172B4D] group-hover:text-[#1267E9]">{cls.name}</span>
+                      <span className="block text-xs text-[#5E6C84]">
+                        {cls.grade} · Năm học {cls.schoolYear}
+                      </span>
+                    </span>
+                  </button>
+                  <StatusBadge kind={archived ? 'neutral' : 'success'}>{archived ? 'Lưu trữ' : 'Đang hoạt động'}</StatusBadge>
+                </div>
 
-                  <h3
-                    onClick={() => navigate(`/admin/classes/${cls.id}`)}
-                    className="mt-2 cursor-pointer font-display text-lg font-extrabold text-slate-900 hover:text-blue-700"
+                {cls.description ? (
+                  <p className="mt-3 line-clamp-2 text-sm text-[#5E6C84]">{cls.description}</p>
+                ) : (
+                  <p className="mt-3 text-sm text-[#94A3B8] italic">Chưa có mô tả</p>
+                )}
+
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  <div className="rounded-xl bg-[#F6FAFF] px-3 py-2">
+                    <div className="font-display text-xl font-extrabold text-[#172B4D] [font-variant-numeric:tabular-nums]">{activeStudents}</div>
+                    <div className="text-xs text-[#5E6C84]">
+                      Sĩ số{classStudents.length > activeStudents ? ` (+${classStudents.length - activeStudents} lưu trữ)` : ''}
+                    </div>
+                  </div>
+                  <div className="rounded-xl bg-[#FFF8E6] px-3 py-2">
+                    <div className="font-display text-xl font-extrabold text-[#172B4D] [font-variant-numeric:tabular-nums]">{classAssignments.length}</div>
+                    <div className="text-xs text-[#5E6C84]">Bài tập đã giao</div>
+                  </div>
+                </div>
+
+                <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-[#EEF3F9] pt-4">
+                  <button type="button" onClick={() => navigate(`/admin/classes/${cls.id}`)} className="studio-btn studio-btn-primary flex-1">
+                    <Eye className="h-4 w-4" />
+                    Quản lý lớp
+                  </button>
+                  <button type="button" onClick={() => openEditClassModal(cls)} className="studio-btn studio-btn-secondary px-3" title="Sửa thông tin lớp">
+                    <Edit3 className="h-4 w-4" />
+                    <span className="sr-only sm:not-sr-only">Sửa</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => toggleArchiveClassRoom(cls)}
+                    className="studio-btn studio-btn-secondary px-3 text-[#B7790A]"
+                    title="Không xóa hẳn lớp học để giữ lịch sử học tập"
                   >
-                    {cls.name}
-                  </h3>
-                  {cls.description && (
-                    <p className="mt-1.5 line-clamp-3 text-xs text-slate-600">
-                      {cls.description}
-                    </p>
-                  )}
+                    {archived ? <RotateCcw className="h-4 w-4" /> : <Archive className="h-4 w-4" />}
+                    <span className="sr-only sm:not-sr-only">{archived ? 'Khôi phục' : 'Lưu trữ'}</span>
+                  </button>
                 </div>
-
-                <div className="mt-5 border-t border-slate-200 pt-4">
-                  <div className="flex items-center justify-between text-xs font-semibold text-slate-700">
-                    <span className="flex items-center gap-1.5">
-                      <Users className="h-4 w-4 text-slate-500" />
-                      <span className="font-mono">{classStudents.length}</span> học
-                      sinh
-                    </span>
-                    <span>
-                      <span className="font-mono">
-                        {classAssignments.length}
-                      </span>{' '}
-                      bài tập đã giao
-                    </span>
-                  </div>
-
-                  <div className="mt-3 flex items-center justify-end gap-2">
-                    <button
-                      type="button"
-                      onClick={() => navigate(`/admin/classes/${cls.id}`)}
-                      className="cartoon-button flex items-center gap-1 rounded-lg bg-sky-100 px-3 py-1.5 text-xs font-extrabold text-slate-900"
-                    >
-                      <Eye className="h-3.5 w-3.5" />
-                      Chi tiết
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => openEditClassModal(cls)}
-                      className="cartoon-button flex items-center gap-1 rounded-lg bg-white px-2.5 py-1.5 text-xs font-bold text-slate-800"
-                    >
-                      <Edit3 className="h-3.5 w-3.5" />
-                      Sửa
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => toggleArchiveClassRoom(cls)}
-                      className="cartoon-button flex items-center gap-1 rounded-lg bg-white px-2.5 py-1.5 text-xs font-bold text-amber-800"
-                      title="Không xóa cứng lớp học để bảo toàn lịch sử học tập"
-                    >
-                      {cls.status === 'active' ? (
-                        <>
-                          <Archive className="h-3.5 w-3.5" />
-                          Lưu trữ
-                        </>
-                      ) : (
-                        <>
-                          <RotateCcw className="h-3.5 w-3.5" />
-                          Khôi phục
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
+              </article>
             );
           })}
         </div>
@@ -1399,16 +1297,16 @@ export const ClassesPage: React.FC = () => {
 
       {/* Create / Edit Class Modal */}
       {classModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
           <div className="cartoon-card max-h-[90vh] w-full max-w-lg overflow-y-auto bg-white p-6">
-            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-              <h2 className="font-display text-lg font-extrabold text-slate-900">
+            <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
+              <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
                 {editingClass ? 'Chỉnh Sửa Lớp Học' : 'Tạo Lớp Học Mới'}
               </h2>
               <button
                 type="button"
                 onClick={() => setClassModalOpen(false)}
-                className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100"
+                className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF]"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -1422,7 +1320,7 @@ export const ClassesPage: React.FC = () => {
               )}
 
               <div>
-                <label className="mb-1 block text-xs font-bold text-slate-700">
+                <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                   Tên lớp học *
                 </label>
                 <input
@@ -1436,13 +1334,13 @@ export const ClassesPage: React.FC = () => {
                     })
                   }
                   placeholder="Ví dụ: Toán Tư Duy 5A"
-                  className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                  className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                 />
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Khối / Lớp *
                   </label>
                   <select
@@ -1453,7 +1351,7 @@ export const ClassesPage: React.FC = () => {
                         grade: e.target.value,
                       })
                     }
-                    className="w-full rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3 py-2 text-sm"
                   >
                     {GRADE_OPTIONS.map((g) => (
                       <option key={g} value={g}>
@@ -1464,7 +1362,7 @@ export const ClassesPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Năm học *
                   </label>
                   <input
@@ -1478,13 +1376,13 @@ export const ClassesPage: React.FC = () => {
                       })
                     }
                     placeholder="2026-2027"
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 font-mono text-sm"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="mb-1 block text-xs font-bold text-slate-700">
+                <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                   Mô tả lớp học
                 </label>
                 <textarea
@@ -1497,7 +1395,7 @@ export const ClassesPage: React.FC = () => {
                     })
                   }
                   placeholder="Mục tiêu lớp học, giáo trình hoặc ghi chú chung..."
-                  className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                  className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                 />
               </div>
 
@@ -1505,14 +1403,14 @@ export const ClassesPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setClassModalOpen(false)}
-                  className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
+                  className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-[#3B4A66]"
                 >
                   Hủy
                 </button>
                 <button
                   type="submit"
                   disabled={savingClass}
-                  className="cartoon-button rounded-xl bg-blue-600 px-5 py-2 text-xs font-extrabold text-white"
+                  className="cartoon-button rounded-xl bg-[#1267E9] px-5 py-2 text-xs font-extrabold text-white"
                 >
                   {savingClass ? 'Đang lưu...' : 'Lưu Lớp Học'}
                 </button>

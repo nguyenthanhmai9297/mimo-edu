@@ -11,9 +11,11 @@ import {
   HomeworkQuestion,
   TrueFalseStatement,
 } from '../types/domain.js';
+import { AICompleteness, checkCompleteness } from '../utils/aiCompleteness.js';
+import { DEFAULT_GRADE, normalizeGrade } from '../utils/grade.js';
 import { richTextFromAIText } from '../utils/richText.js';
 
-export { richTextFromAIText };
+export { DEFAULT_GRADE, normalizeGrade, richTextFromAIText };
 
 export interface MediaFileInput {
   mimeType: string;
@@ -45,6 +47,8 @@ export interface ParsedHomeworkOutput {
   questions: HomeworkQuestion[];
   /** Figure regions to crop from the source pages (client-side) into question prompts. */
   figures: FigureRequest[];
+  /** Whether every question of the paper came back; the editor warns when not. */
+  completeness: AICompleteness;
   answerSource: 'teacher' | 'ai';
   aiSolverEnabled: boolean;
   provider: string;
@@ -72,6 +76,23 @@ export interface EssayGradingOutput {
 }
 
 /**
+ * The AI service cannot be used right now (no key, or the key was rejected).
+ * The message is for teachers; server configuration details stay in the logs.
+ */
+export class AIUnavailableError extends Error {
+  readonly code = 'AI_UNAVAILABLE';
+  constructor(readonly detail: string) {
+    super('Chức năng AI đang tạm chưa sẵn sàng. Thầy cô vẫn có thể soạn bài thủ công, hoặc báo người quản trị hệ thống để bật AI.');
+  }
+}
+
+/** Whether the configured provider has its key, checked before any AI work starts. */
+export function isAIConfigured(): boolean {
+  return Boolean(process.env.AI_PROVIDER === 'gemini' ? process.env.GEMINI_API_KEY : process.env.ANTHROPIC_API_KEY);
+}
+
+
+/**
  * Provider-agnostic AI interface so the system can switch or add providers
  * without rewriting business logic.
  */
@@ -80,6 +101,15 @@ export interface AIProviderAdapter {
   readonly defaultModel: string;
   parseHomeworkFromMedia(input: ParseHomeworkInput): Promise<ParsedHomeworkOutput>;
   suggestEssayGrading(input: EssayGradingInput): Promise<EssayGradingOutput>;
+}
+
+/** An AI short answer as a teacher would type it: no $…$, no LaTeX spacing commands. */
+function plainAnswer(answer: string): string {
+  return answer
+    .replace(/\$/g, '')
+    .replace(/\\[,;:! ]|~/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 export function mapParsedQuestions(
@@ -124,7 +154,7 @@ export function mapParsedQuestions(
                 o.label.toUpperCase() ===
                 q.correctOptionLabel?.trim().toUpperCase()
             );
-            correctOptionId = found?.id || options[0]?.id;
+            correctOptionId = found?.id; // no match: left empty and flagged below, never guessed
           }
           if (q.type === 'multiple_choice' && q.correctOptionLabels) {
             const upperLabels = q.correctOptionLabels.map((l) =>
@@ -143,10 +173,24 @@ export function mapParsedQuestions(
           id: `${qId}_st_${sIdx + 1}`,
           label: st.label || String.fromCharCode(97 + sIdx),
           statement: richTextFromAIText(st.text),
-          isTrue: solveWithAI ? (st.isTrue ?? true) : undefined,
+          // Missing verdicts stay empty (flagged below) instead of defaulting to "Đúng"
+          ...(solveWithAI && typeof st.isTrue === 'boolean' ? { isTrue: st.isTrue } : {}),
           points: st.points || 0.5,
         }));
       }
+
+      const acceptableAnswers = (q.acceptableAnswers || []).map(plainAnswer).filter(Boolean);
+      const unsolved =
+        solveWithAI &&
+        ((q.type === 'single_choice' && !correctOptionId) ||
+          (q.type === 'multiple_choice' && !correctOptionIds?.length) ||
+          (q.type === 'true_false_multi' && (!statements?.length || statements.some((s) => s.isTrue === undefined))) ||
+          (q.type === 'short_answer' && acceptableAnswers.length === 0) ||
+          (q.type === 'essay' && !q.sampleSolutionText?.trim()));
+      const reviewNotes = [
+        q.needsReview ? q.reviewNote?.trim() || 'AI chưa chắc chắn ở câu này, vui lòng kiểm tra.' : '',
+        unsolved ? 'AI chưa giải được câu này, thầy cô hãy nhập đáp án hoặc lời giải.' : '',
+      ].filter(Boolean);
 
       return {
         id: qId,
@@ -160,14 +204,10 @@ export function mapParsedQuestions(
         ...(statements ? { statements } : {}),
         ...(q.type === 'short_answer'
           ? {
-              acceptableAnswers: solveWithAI
-                ? q.acceptableAnswers || []
-                : [],
+              acceptableAnswers: solveWithAI ? acceptableAnswers : [],
             }
           : {}),
-        ...(q.needsReview
-          ? { aiReviewNote: q.reviewNote?.trim() || 'AI chưa chắc chắn ở câu này, vui lòng kiểm tra.' }
-          : {}),
+        ...(reviewNotes.length ? { aiReviewNote: reviewNotes.join(' ') } : {}),
         ...(q.type === 'essay'
           ? {
               rubric: q.rubric || '',
@@ -208,7 +248,7 @@ export class GeminiAIAdapter implements AIProviderAdapter {
   private getClient(): GoogleGenAI {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      throw new Error('GEMINI_API_KEY chưa được cấu hình trên server.');
+      throw new AIUnavailableError('GEMINI_API_KEY is not set');
     }
     return new GoogleGenAI({
       apiKey,
@@ -275,7 +315,7 @@ Quy tắc:
             },
             grade: {
               type: Type.STRING,
-              description: 'Khối lớp ước tính, ví dụ Khối 5',
+              description: 'Khối lớp in trên đề, ví dụ Khối 3; bỏ trống nếu đề không ghi',
             },
             questions: {
               type: Type.ARRAY,
@@ -378,9 +418,15 @@ Quy tắc:
     return {
       title: validated.title,
       description: validated.description || 'Đề bài được trích xuất bằng AI',
-      grade: validated.grade || 'Khối 5',
+      grade: normalizeGrade(validated.grade),
       questions: mappedQuestions,
       figures: [],
+      // Gemini's schema has no printed numbers, so only a stated count can reveal gaps
+      completeness: checkCompleteness(
+        validated.questions.map((q) => q.sourceNumber),
+        validated.questionCountOnExam,
+        false
+      ),
       answerSource: input.solveWithAI ? 'ai' : 'teacher',
       aiSolverEnabled: input.solveWithAI,
       provider: this.providerName,
@@ -459,8 +505,10 @@ const claudeParsedHomeworkSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
   grade: z.string().optional(),
+  questionCountOnExam: z.number().optional(),
   questions: z.array(
     z.object({
+      sourceNumber: z.string().optional(),
       type: z.enum([
         'single_choice',
         'multiple_choice',
@@ -501,26 +549,46 @@ const claudeParsedHomeworkSchema = z.object({
   ),
 });
 
-const CLAUDE_PRICING_PER_MTOK: Record<string, { input: number; output: number }> = {
+export const CLAUDE_PRICING_PER_MTOK: Record<string, { input: number; output: number }> = {
   'claude-sonnet-5-5': { input: 2, output: 10 },
   'claude-opus-5-5': { input: 4, output: 20 },
   'claude-haiku-5-5': { input: 0.1, output: 0.5 },
 };
 
+/**
+ * Output ceiling for one conversion, scaled by page count. A measured 10-question
+ * page with solving used ~2,500 output tokens (thinking included), so 12k for
+ * the first page and 4k per extra page leaves several times that headroom,
+ * while the worst case of a 1-page exam costs ~0.12 USD instead of ~0.64 USD.
+ * Hitting it stops with "đề quá dài", never with a silently truncated exam.
+ */
+export function parseOutputTokenLimit(pages: number): number {
+  return Math.min(64000, 12000 + 4000 * Math.max(0, pages - 1));
+}
+
 export class AnthropicAIAdapter implements AIProviderAdapter {
   public readonly providerName = 'anthropic-claude';
   public readonly defaultModel: string;
   private client: Anthropic | null = null;
+  /** Token usage of the last conversion, also kept when the result was unusable. */
+  public lastUsage: { inputTokens: number; outputTokens: number; costUsd: number; stopReason: string | null } | null = null;
 
-  constructor(model?: string) {
+  /**
+   * Limits for cost-capped runs (the real-AI check script). Production uses
+   * the defaults: SDK retries, 64k output tokens, refusal fallback on.
+   */
+  constructor(
+    model?: string,
+    private readonly limits: { maxRetries?: number; maxOutputTokens?: number; fallbacks?: boolean } = {}
+  ) {
     this.defaultModel = model?.startsWith('claude-') ? model : 'claude-sonnet-5-5';
   }
 
   private getClient(): Anthropic {
     if (!process.env.ANTHROPIC_API_KEY) {
-      throw new Error('ANTHROPIC_API_KEY chưa được cấu hình trên server.');
+      throw new AIUnavailableError('ANTHROPIC_API_KEY is not set');
     }
-    this.client ??= new Anthropic();
+    this.client ??= new Anthropic(this.limits.maxRetries === undefined ? {} : { maxRetries: this.limits.maxRetries });
     return this.client;
   }
 
@@ -541,35 +609,39 @@ export class AnthropicAIAdapter implements AIProviderAdapter {
 
   private toFriendlyError(error: unknown): Error {
     if (error instanceof Anthropic.AuthenticationError) {
-      return new Error('ANTHROPIC_API_KEY không hợp lệ. Vui lòng kiểm tra cấu hình server.');
+      return new AIUnavailableError(`ANTHROPIC_API_KEY rejected: ${error.message}`);
     }
     if (error instanceof Anthropic.RateLimitError) {
       return new Error('Claude đang quá tải hoặc vượt hạn mức. Vui lòng thử lại sau ít phút.');
     }
+    // Raw API details go to the server log only; teachers get a plain instruction
     if (error instanceof Anthropic.BadRequestError) {
-      return new Error(`Yêu cầu không hợp lệ: ${error.message}`);
+      console.error('Claude API rejected the request:', error.message);
+      return new Error('AI chưa đọc được tệp này (tệp hỏng, có mật khẩu hoặc quá nhiều trang). Hãy thử ảnh chụp rõ hơn hoặc tách đề thành nhiều phần.');
     }
     if (error instanceof Anthropic.APIError) {
-      return new Error(`Lỗi Claude API (${error.status ?? 'mạng'}): ${error.message}`);
+      console.error(`Claude API error (${error.status ?? 'network'}):`, error.message);
+      return new Error('Dịch vụ AI đang gặp sự cố tạm thời. Vui lòng thử lại sau ít phút.');
     }
     return error instanceof Error ? error : new Error(String(error));
   }
 
-  async parseHomeworkFromMedia(
-    input: ParseHomeworkInput
-  ): Promise<ParsedHomeworkOutput> {
-    const startTime = Date.now();
-    const model = this.resolveModel(input.preferredModel);
-    const client = this.getClient();
-
+  /** System prompt and page blocks of one conversion request. */
+  private buildParseRequest(input: ParseHomeworkInput) {
     const solverInstruction = input.solveWithAI
-      ? 'Giáo viên BẬT chế độ AI giải đề: hãy giải cẩn thận từng câu và điền đáp án (correctOptionLabel, correctOptionLabels, isTrue của từng mệnh đề, acceptableAnswers) cùng sampleSolutionText cho câu tự luận. Đáp án sẽ được giáo viên duyệt lại.'
+      ? `Giáo viên BẬT chế độ AI giải đề: hãy giải cẩn thận TỪNG câu và điền đáp án (correctOptionLabel, correctOptionLabels, isTrue của từng mệnh đề, acceptableAnswers) cùng sampleSolutionText cho câu tự luận. Đáp án sẽ được giáo viên duyệt lại.
+- Số đo, độ dài, góc và nhãn ghi trên hình vẽ là dữ kiện của bài: đọc chúng từ hình và dùng trong lời giải (ví dụ hình vuông cạnh 4 cm ghi trên hình thì chu vi là 4 × 4 = 16 (cm)).
+- Lời giải tự luận trình bày như học sinh lớp 3: câu lời giải, phép tính kèm đơn vị trong ngoặc, dòng cuối "Đáp số: …".
+- acceptableAnswers ghi đáp số dạng chữ thường, không dùng $…$; nếu đáp số có đơn vị thì ghi cả dạng có đơn vị và không đơn vị (ví dụ "16 cm", "16").
+- Không đoán: nếu hình mờ, thiếu số đo hoặc không đủ dữ kiện để giải chắc chắn, bỏ trống đáp án của câu đó, đặt needsReview = true và ghi rõ thiếu gì trong reviewNote.`
       : 'Giáo viên TẮT chế độ AI giải đề: chỉ chép đề. Chỉ điền đáp án khi tài liệu ghi sẵn đáp án rõ ràng; nếu không, bỏ trống các trường đáp án.';
 
     const system = `Bạn số hóa đề kiểm tra / bài tập Toán tiếng Việt từ ảnh chụp hoặc PDF thành dữ liệu có cấu trúc. Giáo viên sẽ soát lại kết quả bên cạnh đề gốc trước khi giao cho học sinh, nên hãy chép trung thực, đầy đủ, đúng thứ tự.
 
 Phạm vi:
 - Bỏ qua phần đầu đề không phải câu hỏi: tên trường/phòng, họ tên, lớp, ô điểm, nhận xét của giáo viên, chữ ký.
+- Trước khi chép, đếm tất cả các câu hỏi in trên đề (Câu 1, Câu 2, … ở mọi trang) và ghi tổng vào questionCountOnExam. Phải chép ĐỦ tất cả các câu đến câu cuối cùng, không dừng giữa chừng.
+- sourceNumber: số câu như in trên đề, ví dụ "7"; ý tách riêng ghi "3a", "3b".
 - title: tên bài kiểm tra như in trên đề. grade: khối lớp dạng "Khối 3" lấy từ đề (ví dụ "Lớp 3"); bỏ trống nếu đề không ghi.
 - Hướng dẫn chung của cả đề hoặc một phần (ví dụ "Khoanh vào chữ cái trước câu trả lời đúng") đưa vào description, không lặp lại trong từng câu.
 
@@ -589,7 +661,8 @@ Cách viết nội dung:
   - page: số thứ tự trang/file chứa hình (bắt đầu từ 1).
   - box: [xMin, yMin, xMax, yMax] là khung bao quanh hình, theo thang 0–1000 của chiều rộng và chiều cao trang (0,0 là góc trên bên trái). Khung phải chứa trọn hình kể cả nhãn chữ trên hình, không lấy phần chữ của câu hỏi hay phương án.
   - description: mô tả ngắn hình đó.
-  Bảng số liệu đơn giản thì chép thành chữ thay vì cắt hình.
+- Bảng số liệu: chép thành bảng ngay trong promptText, mỗi hàng một dòng dạng "| Lớp | 3A | 3B |"; nếu hàng đầu là tiêu đề thì thêm dòng "|---|---|---|" ngay sau nó. Chỉ cắt bảng thành hình khi bảng có hình vẽ hoặc ô gộp không chép được.
+- Số có hàng nghìn viết như in trên đề, với dấu cách thường (ví dụ 2 345); không dùng lệnh LaTeX \\, để tách hàng nghìn.
 - points: dùng điểm ghi trong đề; nếu đề không ghi, chia hợp lý để tổng là 10 điểm.
 - Nếu tài liệu có nhiều file, đó là các trang liên tiếp của cùng một đề theo thứ tự gửi.
 
@@ -620,26 +693,54 @@ ${solverInstruction}`;
       type: 'text',
       text: 'Hãy chuyển toàn bộ đề Toán trên thành dữ liệu theo schema.',
     });
+    return {
+      system,
+      messages: [{ role: 'user' as const, content }],
+      output_config: {
+        effort: input.solveWithAI ? ('high' as const) : ('medium' as const),
+        format: zodOutputFormat(claudeParsedHomeworkSchema),
+      },
+    };
+  }
+
+  /** Exact input tokens of a conversion request, output schema included (count_tokens is free). */
+  async countParseInputTokens(input: ParseHomeworkInput): Promise<number> {
+    const result = await this.getClient().beta.messages.countTokens({
+      model: this.resolveModel(input.preferredModel),
+      ...this.buildParseRequest(input),
+    });
+    return result.input_tokens;
+  }
+
+  async parseHomeworkFromMedia(
+    input: ParseHomeworkInput
+  ): Promise<ParsedHomeworkOutput> {
+    const startTime = Date.now();
+    const model = this.resolveModel(input.preferredModel);
+    const client = this.getClient();
+    const request = this.buildParseRequest(input);
 
     let message: Anthropic.Beta.BetaMessage;
     try {
       // Streaming keeps long exams (large outputs) clear of HTTP timeouts.
       const stream = client.beta.messages.stream({
         model,
-        max_tokens: 64000,
-        betas: ['server-side-fallback-2026-07-01'],
-        fallbacks: 'default',
-        output_config: {
-          effort: input.solveWithAI ? 'high' : 'medium',
-          format: zodOutputFormat(claudeParsedHomeworkSchema),
-        },
-        system,
-        messages: [{ role: 'user', content }],
+        max_tokens: this.limits.maxOutputTokens ?? parseOutputTokenLimit(input.files.length),
+        ...(this.limits.fallbacks === false
+          ? {}
+          : { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const }),
+        ...request,
       });
       message = await stream.finalMessage();
     } catch (error) {
       throw this.toFriendlyError(error);
     }
+    this.lastUsage = {
+      inputTokens: message.usage.input_tokens,
+      outputTokens: message.usage.output_tokens,
+      costUsd: this.estimateCost(model, message.usage),
+      stopReason: message.stop_reason,
+    };
 
     if (message.stop_reason === 'refusal') {
       throw new Error('Claude từ chối xử lý tài liệu này. Vui lòng kiểm tra lại nội dung file.');
@@ -676,9 +777,14 @@ ${solverInstruction}`;
     return {
       title: validated.title,
       description: validated.description || 'Đề bài được trích xuất bằng AI',
-      grade: validated.grade || 'Khối 5',
+      grade: normalizeGrade(validated.grade),
       questions,
       figures: collectFigureRequests(validated.questions, questions),
+      completeness: checkCompleteness(
+        validated.questions.map((q) => q.sourceNumber),
+        validated.questionCountOnExam,
+        message.stop_reason !== 'end_turn'
+      ),
       answerSource: input.solveWithAI ? 'ai' : 'teacher',
       aiSolverEnabled: input.solveWithAI,
       provider: this.providerName,

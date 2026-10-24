@@ -76,6 +76,8 @@ export const aiParsedQuestionSchema = z.object({
     'essay',
   ]),
   promptText: z.string().min(1),
+  /** Question number as printed on the paper ("7", "3a"), to detect skipped questions. */
+  sourceNumber: z.string().optional(),
   latexFormulas: z.array(z.string()).optional(),
   points: z.number().positive().default(2),
   options: z
@@ -119,6 +121,8 @@ export const aiParsedHomeworkResponseSchema = z.object({
   title: z.string().min(1),
   description: z.string().optional(),
   grade: z.string().optional(),
+  /** How many questions the AI counted on the paper before copying them. */
+  questionCountOnExam: z.number().optional(),
   questions: z.array(aiParsedQuestionSchema).min(1),
 });
 

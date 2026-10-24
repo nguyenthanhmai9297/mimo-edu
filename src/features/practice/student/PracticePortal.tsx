@@ -23,6 +23,8 @@ import {
   fetchPracticeAttempt,
   fetchPracticeCatalog,
   fetchPracticeHistory,
+  peekPracticeCatalog,
+  peekPracticeHistory,
   PracticeHistoryItem,
   startPractice,
   submitPractice,
@@ -122,10 +124,11 @@ const ScoreRing: React.FC<{ score: number; total: number }> = ({ score, total })
 
 export const PracticePortal: React.FC = () => {
   const [stage, setStage] = useState<Stage>({ name: 'browse' });
-  const [catalog, setCatalog] = useState<PracticeCatalogAvailability | null>(null);
-  const [history, setHistory] = useState<PracticeHistoryItem[]>([]);
+  // Data the portal home already loaded shows at once; it is refreshed in the background
+  const [catalog, setCatalog] = useState<PracticeCatalogAvailability | null>(() => peekPracticeCatalog() ?? null);
+  const [history, setHistory] = useState<PracticeHistoryItem[]>(() => peekPracticeHistory() ?? []);
   const [groupId, setGroupId] = useState<string>(PRACTICE_CATALOG[0].id);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => !peekPracticeCatalog());
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [skillId, setSkillId] = useState<string | null>(null);
@@ -137,7 +140,7 @@ export const PracticePortal: React.FC = () => {
   const progress = useTopicProgress(history);
 
   const loadOverview = useCallback(async () => {
-    setLoading(true);
+    if (!peekPracticeCatalog()) setLoading(true);
     setError(null);
     try {
       const [c, h] = await Promise.all([fetchPracticeCatalog(), fetchPracticeHistory()]);
@@ -213,7 +216,18 @@ export const PracticePortal: React.FC = () => {
   };
 
   const errorBox = error && (
-    <div className="rounded-2xl bg-white p-4 text-sm font-bold text-rose-600 shadow-sm ring-2 ring-rose-200">{error}</div>
+    <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-white p-4 text-base font-bold text-rose-600 shadow-sm ring-2 ring-rose-200">
+      {error}
+      {stage.name === 'browse' && (
+        <button
+          type="button"
+          onClick={() => void loadOverview()}
+          className="inline-flex min-h-[44px] items-center gap-2 rounded-2xl bg-[#2F8CFF] px-4 font-extrabold text-white shadow-[0_4px_0_0_#1D5FB8] active:translate-y-0.5 active:shadow-none"
+        >
+          <RotateCcw className="h-4 w-4" /> Thử lại
+        </button>
+      )}
+    </div>
   );
 
   let content: React.ReactNode;

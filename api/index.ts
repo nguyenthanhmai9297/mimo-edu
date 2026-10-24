@@ -14,12 +14,14 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore';
-import { getAIAdapter } from '../src/services/aiAdapter.js';
 import { EMULATOR_PROJECT_ID, getAdminAuth, getAdminDb, isUsingFirebaseEmulator } from './firebaseAdmin.js';
+import { AIJobLog, createAIRouter } from './aiRoutes.js';
+import { checkEmbeddable } from './gameEmbed.js';
 import { createLiveQuizRouter } from './liveQuiz.js';
 import { createFirestoreLiveQuizStore, LiveQuizStore } from './liveQuizStore.js';
 import { createPracticeRouter } from './practice.js';
 import { createFirestorePracticeStore, PracticeStore } from './practiceStore.js';
+import { createRequireTeacher } from './teacherAuth.js';
 import {
   Assignment,
   ClassRoom,
@@ -38,6 +40,13 @@ import {
 } from '../src/utils/gradingEngine.js';
 
 dotenv.config();
+
+// The AI SDKs are large: load them only when an AI endpoint is used, so the
+// student endpoints start faster on a cold serverless instance.
+const loadAIAdapter = async () => (await import('../src/services/aiAdapter.js')).getAIAdapter();
+// Mirrors isAIConfigured() in aiAdapter.ts without loading the SDKs
+const isAIConfigured = () =>
+  Boolean(process.env.AI_PROVIDER === 'gemini' ? process.env.GEMINI_API_KEY : process.env.ANTHROPIC_API_KEY);
 
 // Embedded Firebase Configuration to guarantee zero file-resolution crashes on Vercel Serverless
 const firebaseConfig = {
@@ -136,21 +145,14 @@ function toPublicStudent(student: Student): PublicStudentProfile {
   };
 }
 
-async function logAIJob(jobData: {
-  taskType: 'ocr_parse' | 'solve_math' | 'essay_grade';
-  provider: string;
-  model: string;
-  status: 'processing' | 'completed' | 'failed';
-  durationMs?: number;
-  estimatedCostUsd?: number;
-}) {
+// aiJobs is written by this server only, through the Admin SDK (Security Rules
+// deny every browser write). Without server credentials the log is skipped.
+async function logAIJob(job: AIJobLog) {
   try {
-    const db = getServerDb();
-    const jobId = `aijob_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
-    await setDoc(doc(db, 'aiJobs', jobId), {
-      ...jobData,
-      createdAt: new Date().toISOString(),
-    });
+    const adminDb = getAdminDb();
+    if (!adminDb) return;
+    const jobId = `aijob_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
+    await adminDb.collection('aiJobs').doc(jobId).set({ ...job, createdAt: new Date().toISOString() });
   } catch (err) {
     console.warn('Non-fatal: Could not record aiJob log:', err);
   }
@@ -387,33 +389,15 @@ export function createApiApp() {
   });
   app.use(['/api/practice', '/practice'], practiceRouter);
 
-  // Mimo Quiz – học sinh tham gia: prototype, only on the Firebase Emulator unless LIVE_QUIZ_ENABLED=true
-  const OWNER_EMAIL = 'nguyenthanhmai9297@gmail.com'; // same owner as firestore.rules isAdmin()
-  const requireTeacher = async (req: Request, res: Response, next: NextFunction) => {
-    const header = req.headers.authorization;
+  // Teacher-only APIs (Mimo Quiz, AI) check the Firebase ID token on the server
+  const requireTeacher = createRequireTeacher(() => {
     const auth = getAdminAuth();
     const adminDb = getAdminDb();
-    if (!header?.startsWith('Bearer ') || !auth || !adminDb) {
-      res.status(401).json({ error: 'Cần đăng nhập tài khoản giáo viên.' });
-      return;
-    }
-    try {
-      const decoded = await auth.verifyIdToken(header.slice(7));
-      const email = decoded.email;
-      const allowed =
-        Boolean(email) &&
-        decoded.email_verified === true &&
-        (email === OWNER_EMAIL || (await adminDb.collection('adminAllowlist').doc(email!).get()).exists);
-      if (!allowed) {
-        res.status(403).json({ error: 'Tài khoản này không có quyền giáo viên.' });
-        return;
-      }
-      (req as Request & { teacherEmail?: string }).teacherEmail = email;
-      next();
-    } catch {
-      res.status(401).json({ error: 'Phiên đăng nhập giáo viên đã hết hạn, vui lòng tải lại trang.' });
-    }
-  };
+    return {
+      verifyIdToken: auth && adminDb ? (token: string) => auth.verifyIdToken(token) : null,
+      isAllowlisted: async (email: string) => (await adminDb!.collection('adminAllowlist').doc(email).get()).exists,
+    };
+  });
   let liveQuizStore: LiveQuizStore | null | undefined;
   const liveQuizRouter = createLiveQuizRouter({
     enabled: () => isUsingFirebaseEmulator() || process.env.LIVE_QUIZ_ENABLED === 'true',
@@ -466,100 +450,73 @@ export function createApiApp() {
         return;
       }
 
-      const classes: ClassRoom[] = [];
-      for (const classId of student.classIds || []) {
-        const cSnap = await getDoc(doc(db, 'classes', classId));
-        if (cSnap.exists()) {
-          classes.push({
-            id: cSnap.id,
-            ...(cSnap.data() as Omit<ClassRoom, 'id'>),
-          });
-        }
-      }
-
-      const saQuery = query(
-        collection(db, 'studentAssignments'),
-        where('studentId', '==', student.id)
-      );
-      const saSnap = await getDocs(saQuery);
-      const studentAssignments: StudentAssignment[] = saSnap.docs.map(
-        (d) => ({
-          id: d.id,
-          ...(d.data() as Omit<StudentAssignment, 'id'>),
-        })
-      );
+      // Every read below is independent: run them together instead of one by one
+      const [classes, studentAssignments, comments, games] = await Promise.all([
+        Promise.all(
+          (student.classIds || []).map(async (classId) => {
+            const cSnap = await getDoc(doc(db, 'classes', classId));
+            return cSnap.exists() ? ({ id: cSnap.id, ...(cSnap.data() as Omit<ClassRoom, 'id'>) } as ClassRoom) : null;
+          })
+        ).then((list) => list.filter((c): c is ClassRoom => c !== null)),
+        getDocs(query(collection(db, 'studentAssignments'), where('studentId', '==', student.id))).then((snap) =>
+          snap.docs.map((d) => ({ id: d.id, ...(d.data() as Omit<StudentAssignment, 'id'>) }))
+        ),
+        // Only this student's published comments (was: every published comment, filtered here)
+        getDocs(
+          query(collection(db, 'comments'), where('status', '==', 'published'), where('studentId', '==', student.id))
+        ).then((snap) => snap.docs.map((d) => ({ id: d.id, ...(d.data() as Omit<CommentReport, 'id'>) }))),
+        getDocs(query(collection(db, 'games'), where('status', '==', 'published'))).then((snap) =>
+          snap.docs.map((d) => ({ id: d.id, ...(d.data() as Omit<MathGame, 'id'>) })).sort((a, b) => a.order - b.order)
+        ),
+      ]);
 
       const assignmentsMap: Record<string, Assignment> = {};
       const submissionsMap: Record<string, Submission> = {};
 
-      for (const sa of studentAssignments) {
-        const assignSnap = await getDoc(
-          doc(db, 'assignments', sa.assignmentId)
-        );
-        if (assignSnap.exists()) {
-          const rawAssign = {
-            id: assignSnap.id,
-            ...(assignSnap.data() as Omit<Assignment, 'id'>),
-          };
-          if (rawAssign.status !== 'revoked') {
-            const allowSolutions =
-              Boolean(rawAssign.publishSolutions) &&
-              Boolean(sa.isScorePublished) &&
-              sa.status === 'graded';
-
-            assignmentsMap[rawAssign.id] = {
-              ...rawAssign,
-              publicQuestionsSnapshot: createPublicQuestionsSnapshot(
-                rawAssign.publicQuestionsSnapshot || []
-              ),
-              gradingKeySnapshot: allowSolutions
-                ? rawAssign.gradingKeySnapshot
-                : undefined,
+      await Promise.all(
+        studentAssignments.map(async (sa) => {
+          const [assignSnap, subSnap] = await Promise.all([
+            getDoc(doc(db, 'assignments', sa.assignmentId)),
+            getDoc(doc(db, 'submissions', `${sa.assignmentId}_${student.id}`)),
+          ]);
+          if (assignSnap.exists()) {
+            const rawAssign = {
+              id: assignSnap.id,
+              ...(assignSnap.data() as Omit<Assignment, 'id'>),
             };
-          }
-        }
+            if (rawAssign.status !== 'revoked') {
+              const allowSolutions =
+                Boolean(rawAssign.publishSolutions) &&
+                Boolean(sa.isScorePublished) &&
+                sa.status === 'graded';
 
-        const subId = `${sa.assignmentId}_${student.id}`;
-        const subSnap = await getDoc(doc(db, 'submissions', subId));
-        if (subSnap.exists()) {
-          const rawSub = {
-            id: subSnap.id,
-            ...(subSnap.data() as Omit<Submission, 'id'>),
-          };
-          submissionsMap[sa.assignmentId] = rawSub.isPublished
-            ? rawSub
-            : {
-                ...rawSub,
-                totalScore: undefined,
-                questionResults: undefined,
-                teacherOverallComment: undefined,
+              assignmentsMap[rawAssign.id] = {
+                ...rawAssign,
+                publicQuestionsSnapshot: createPublicQuestionsSnapshot(
+                  rawAssign.publicQuestionsSnapshot || []
+                ),
+                gradingKeySnapshot: allowSolutions
+                  ? rawAssign.gradingKeySnapshot
+                  : undefined,
               };
-        }
-      }
-
-      const commentsQuery = query(
-        collection(db, 'comments'),
-        where('status', '==', 'published')
+            }
+          }
+          if (subSnap.exists()) {
+            const rawSub = {
+              id: subSnap.id,
+              ...(subSnap.data() as Omit<Submission, 'id'>),
+            };
+            submissionsMap[sa.assignmentId] = rawSub.isPublished
+              ? rawSub
+              : {
+                  ...rawSub,
+                  totalScore: undefined,
+                  questionResults: undefined,
+                  teacherOverallComment: undefined,
+                };
+          }
+        })
       );
-      const commentsSnap = await getDocs(commentsQuery);
-      const comments: CommentReport[] = commentsSnap.docs
-        .map((d) => ({
-          id: d.id,
-          ...(d.data() as Omit<CommentReport, 'id'>),
-        }))
-        .filter((c) => c.studentId === student.id);
-
-      const gamesQuery = query(
-        collection(db, 'games'),
-        where('status', '==', 'published')
-      );
-      const gamesSnap = await getDocs(gamesQuery);
-      const games: MathGame[] = gamesSnap.docs
-        .map((d) => ({
-          id: d.id,
-          ...(d.data() as Omit<MathGame, 'id'>),
-        }))
-        .sort((a, b) => a.order - b.order);
 
       res.json({
         student: toPublicStudent(student),
@@ -581,6 +538,28 @@ export function createApiApp() {
   };
   app.get('/api/student-portal/data', requireStudentAuth, handleStudentPortalData);
   app.get('/student-portal/data', requireStudentAuth, handleStudentPortalData);
+
+  // Trò chơi Toán: published games of the teachers' Kho trò chơi, for every
+  // signed-in student (with or without a class), plus whether each game site
+  // lets MimoEDU show it in an iframe or it must open in a new tab.
+  const handleStudentGames = async (req: Request, res: Response) => {
+    try {
+      const db = getServerDb();
+      const snap = await getDocs(query(collection(db, 'games'), where('status', '==', 'published')));
+      const games = snap.docs
+        .map((d) => ({ id: d.id, ...(d.data() as Omit<MathGame, 'id'>) }))
+        .sort((a, b) => a.order - b.order);
+      const sent = req.headers.origin || (req.headers.referer ? new URL(req.headers.referer).origin : '');
+      const parentOrigin = sent || 'https://mimoedu-3b862.web.app';
+      const embeddable = await Promise.all(games.map((g) => checkEmbeddable(g.embedUrl, parentOrigin)));
+      res.json({ games: games.map((g, i) => ({ ...g, embeddable: embeddable[i] })) });
+    } catch (error) {
+      console.error('Error in student-portal/games:', error);
+      res.status(500).json({ error: 'Không tải được danh sách trò chơi. Con thử lại nhé!' });
+    }
+  };
+  app.get('/api/student-portal/games', requireStudentAuth, handleStudentGames);
+  app.get('/student-portal/games', requireStudentAuth, handleStudentGames);
 
   // 4. Student Portal Save Draft / Submit Homework
   const handleStudentSubmit = async (req: Request, res: Response) => {
@@ -701,169 +680,14 @@ export function createApiApp() {
   app.post('/api/student-portal/submit', requireStudentAuth, handleStudentSubmit);
   app.post('/student-portal/submit', requireStudentAuth, handleStudentSubmit);
 
-  // 5. AI Endpoint: Parse PDF/Image into Structured Homework
-  const handleAIParsing = async (req: Request, res: Response) => {
-    const adapter = getAIAdapter();
-    try {
-      const { files, mimeType, base64Data, solveWithAI, preferredModel } =
-        req.body as {
-          files?: { mimeType?: string; base64Data?: string }[];
-          mimeType?: string;
-          base64Data?: string;
-          solveWithAI?: boolean;
-          preferredModel?: string;
-        };
-
-      // Accept a list of pages, or the legacy single-file body.
-      const requestedFiles = Array.isArray(files)
-        ? files
-        : [{ mimeType, base64Data }];
-
-      const allowedMimeTypes = [
-        'image/png',
-        'image/jpeg',
-        'image/webp',
-        'application/pdf',
-      ];
-      if (requestedFiles.length === 0 || requestedFiles.length > 20) {
-        res.status(400).json({
-          error: 'Vui lòng chọn từ 1 đến 20 file ảnh/PDF cho một đề.',
-        });
-        return;
-      }
-      if (
-        requestedFiles.some(
-          (f) => !f?.mimeType || !allowedMimeTypes.includes(f.mimeType)
-        )
-      ) {
-        res.status(400).json({
-          error:
-            'Định dạng file không hỗ trợ. Chỉ chấp nhận PNG, JPG, WEBP hoặc PDF.',
-        });
-        return;
-      }
-
-      const totalBase64Length = requestedFiles.reduce(
-        (sum, f) => sum + (f.base64Data?.length ?? 0),
-        0
-      );
-      if (
-        requestedFiles.some((f) => !f.base64Data) ||
-        totalBase64Length > 14_000_000
-      ) {
-        res.status(400).json({
-          error: 'File rỗng hoặc tổng dung lượng vượt quá giới hạn 10MB.',
-        });
-        return;
-      }
-
-      const result = await adapter.parseHomeworkFromMedia({
-        files: requestedFiles.map((f) => ({
-          mimeType: f.mimeType as string,
-          base64Data: f.base64Data as string,
-        })),
-        solveWithAI: Boolean(solveWithAI),
-        preferredModel,
-      });
-
-      await logAIJob({
-        taskType: solveWithAI ? 'solve_math' : 'ocr_parse',
-        provider: result.provider,
-        model: result.model,
-        status: 'completed',
-        durationMs: result.durationMs,
-        estimatedCostUsd: result.estimatedCostUsd,
-      });
-
-      res.json(result);
-    } catch (error) {
-      console.error('AI parse-homework error:', error);
-      await logAIJob({
-        taskType: 'ocr_parse',
-        provider: adapter.providerName,
-        model: adapter.defaultModel,
-        status: 'failed',
-      });
-      res.status(500).json({
-        error:
-          error instanceof Error
-            ? `AI không thể chuyển đổi đề: ${error.message}`
-            : 'Lỗi xử lý AI khi phân tích đề Toán. Vui lòng thử lại.',
-      });
-    }
-  };
-  app.post('/api/ai/parse-homework', handleAIParsing);
-  app.post('/ai/parse-homework', handleAIParsing);
-
-  // 6. AI Endpoint: Suggest Essay Grading
-  const handleAIGrading = async (req: Request, res: Response) => {
-    const adapter = getAIAdapter();
-    try {
-      const {
-        questionPrompt,
-        maxPoints,
-        rubric,
-        sampleSolution,
-        studentEssayText,
-        preferredModel,
-      } = req.body as {
-        questionPrompt?: string;
-        maxPoints?: number;
-        rubric?: string;
-        sampleSolution?: string;
-        studentEssayText?: string;
-        preferredModel?: string;
-      };
-
-      if (
-        !questionPrompt ||
-        typeof maxPoints !== 'number' ||
-        !studentEssayText
-      ) {
-        res.status(400).json({
-          error:
-            'Thiếu đề bài, thang điểm hoặc nội dung bài làm của học sinh.',
-        });
-        return;
-      }
-
-      const result = await adapter.suggestEssayGrading({
-        questionPrompt,
-        maxPoints,
-        rubric,
-        sampleSolution,
-        studentEssayText,
-        preferredModel,
-      });
-
-      await logAIJob({
-        taskType: 'essay_grade',
-        provider: result.provider,
-        model: result.model,
-        status: 'completed',
-        durationMs: result.durationMs,
-        estimatedCostUsd: 0.0005,
-      });
-
-      res.json(result);
-    } catch (error) {
-      console.error('AI suggest-grading error:', error);
-      await logAIJob({
-        taskType: 'essay_grade',
-        provider: adapter.providerName,
-        model: adapter.defaultModel,
-        status: 'failed',
-      });
-      res.status(500).json({
-        error:
-          error instanceof Error
-            ? error.message
-            : 'Không thể lấy gợi ý chấm điểm từ AI lúc này.',
-      });
-    }
-  };
-  app.post('/api/ai/suggest-grading', handleAIGrading);
-  app.post('/ai/suggest-grading', handleAIGrading);
+  // 5. AI endpoints (teacher only, rate-limited; see api/aiRoutes.ts)
+  const aiRouter = createAIRouter({
+    requireTeacher,
+    isConfigured: isAIConfigured,
+    loadAdapter: loadAIAdapter,
+    logJob: logAIJob,
+  });
+  app.use(['/api/ai', '/ai'], aiRouter);
 
   return app;
 }

@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import {
   ArrowDown,
   AlertTriangle,
+  ArrowRight,
   ArrowUp,
+  BookOpen,
   CheckCircle2,
   Copy,
   Edit3,
   Eye,
   FileJson,
   FileText,
+  PenLine,
   Plus,
   Save,
+  Search,
   Sparkles,
   Trash2,
   X,
@@ -46,9 +50,23 @@ import {
   TrueFalseStatement,
 } from '../../types/domain';
 import { createRichTextFromPlain } from '../../utils/gradingEngine';
+import { DEFAULT_GRADE, normalizeGrade } from '../../utils/grade';
+import { incompletenessMessage } from '../../utils/aiCompleteness';
 import { homeworkImportSchema } from '../../schemas/validation';
 import { buildHomeworkFromMimo, isMimoDataset, MimoDataset } from './mimoImport';
 import { MimoImportModal } from './MimoImportModal';
+import {
+  ConfirmDialog,
+  EmptyState,
+  ErrorState,
+  PageHeader,
+  SearchInput,
+  SectionHeading,
+  SegmentedFilter,
+  StatusBadge,
+  STUDIO_TONE,
+  Toolbar,
+} from '../../components/studio/StudioUi';
 
 const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
   single_choice: '1. Trắc nghiệm 1 đáp án',
@@ -136,7 +154,7 @@ export const HomeworkPage: React.FC = () => {
   // Homework Form State
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [grade, setGrade] = useState('Khối 5');
+  const [grade, setGrade] = useState(DEFAULT_GRADE);
   const [answerSource, setAnswerSource] = useState<'teacher' | 'ai'>('teacher');
   const [aiSolverEnabled, setAiSolverEnabled] = useState(true);
   const [questions, setQuestions] = useState<HomeworkQuestion[]>([]);
@@ -156,6 +174,14 @@ export const HomeworkPage: React.FC = () => {
     resolve: (newUrl: string | null) => void;
   } | null>(null);
   const [confirmPublish, setConfirmPublish] = useState(false);
+  // Set when an AI conversion may have skipped questions; cleared once the teacher has compared with the paper
+  const [missingQuestionsWarning, setMissingQuestionsWarning] = useState<string | null>(null);
+
+  // Homework list filters and delete confirmation
+  const [hwSearch, setHwSearch] = useState('');
+  const [hwStatus, setHwStatus] = useState<'all' | 'draft' | 'published'>('all');
+  const [deletingHw, setDeletingHw] = useState<Homework | null>(null);
+  const [deletingBusy, setDeletingBusy] = useState(false);
 
   const clearSourceFiles = () => {
     sourceFiles.forEach((f) => URL.revokeObjectURL(f.objectUrl));
@@ -204,11 +230,12 @@ export const HomeworkPage: React.FC = () => {
   };
 
   const startNewHomework = () => {
+    setMissingQuestionsWarning(null);
     clearSourceFiles();
     setEditingHw(null);
     setTitle('');
     setDescription('');
-    setGrade('Khối 5');
+    setGrade(DEFAULT_GRADE);
     setAnswerSource('teacher');
     setAiSolverEnabled(true);
     setQuestions([createDefaultQuestion('single_choice', 1)]);
@@ -220,9 +247,10 @@ export const HomeworkPage: React.FC = () => {
   const openEditHomework = (hw: Homework) => {
     clearSourceFiles();
     setEditingHw(hw);
+    setMissingQuestionsWarning(null);
     setTitle(hw.title);
     setDescription(hw.description || '');
-    setGrade(hw.grade || 'Khối 5');
+    setGrade(hw.grade || DEFAULT_GRADE);
     setAnswerSource(hw.answerSource);
     setAiSolverEnabled(hw.aiSolverEnabled);
     setQuestions(hw.questions || []);
@@ -275,6 +303,10 @@ export const HomeworkPage: React.FC = () => {
 
   const handleSave = async (status: 'draft' | 'published') => {
     setErrorMsg(null);
+    if (status === 'published' && missingQuestionsWarning) {
+      setErrorMsg('Chưa thể xuất bản: AI có thể đã bỏ sót câu hỏi. Hãy đối chiếu với đề gốc rồi bấm "Đã đối chiếu đủ câu".');
+      return;
+    }
     if (status === 'published' && pendingReviewCount > 0 && !confirmPublish) {
       setConfirmPublish(true);
       setErrorMsg(
@@ -336,10 +368,11 @@ export const HomeworkPage: React.FC = () => {
     questions: HomeworkQuestion[];
   }) => {
     clearSourceFiles();
+    setMissingQuestionsWarning(null);
     setEditingHw(null);
     setTitle(draft.title);
     setDescription(draft.description || '');
-    setGrade(draft.grade || 'Khối 5');
+    setGrade(draft.grade || DEFAULT_GRADE);
     setAnswerSource(draft.answerSource);
     setAiSolverEnabled(draft.aiSolverEnabled);
     setQuestions(draft.questions.map((q, i) => ({ ...q, order: i + 1 })));
@@ -406,7 +439,8 @@ export const HomeworkPage: React.FC = () => {
     setEditingHw(null);
     setTitle(data.title || 'Đề Toán trích xuất từ AI');
     setDescription(data.description || '');
-    setGrade(data.grade || 'Khối 5');
+    setGrade(normalizeGrade(data.grade));
+    setMissingQuestionsWarning(incompletenessMessage(data.completeness));
     setAnswerSource(solveWithAI ? 'ai' : 'teacher');
     setAiSolverEnabled(solveWithAI);
     setQuestions(data.questions || []);
@@ -422,14 +456,14 @@ export const HomeworkPage: React.FC = () => {
 
     return (
       <FigureCropContext.Provider value={figureCropContext}>
-      <div className="space-y-6">
+      <div className="studio-skin space-y-6">
         {/* Top Editor Action Bar */}
-        <div className="cartoon-card sticky top-16 z-10 flex flex-wrap items-center justify-between gap-4 bg-amber-100 p-4">
+        <div className="cartoon-card sticky top-16 z-10 flex flex-wrap items-center justify-between gap-4 bg-white/95 p-4 backdrop-blur">
           <div>
-            <h1 className="font-display text-lg font-extrabold text-slate-900">
-              {editingHw ? 'Chỉnh Sửa BTVN Toán' : 'Soạn Bài Tập Về Nhà Mới'}
+            <h1 className="font-display text-lg font-extrabold text-[#172B4D]">
+              {editingHw ? 'Chỉnh sửa bài tập' : 'Soạn bài tập mới'}
             </h1>
-            <p className="text-xs text-slate-700">
+            <p className="text-xs text-[#3B4A66]">
               Tổng số câu:{' '}
               <span className="font-mono font-bold">{questions.length}</span> ·
               Tổng điểm:{' '}
@@ -455,7 +489,7 @@ export const HomeworkPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowSource(true)}
-                className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-slate-900"
+                className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-[#172B4D]"
               >
                 <FileText className="h-4 w-4" />
                 Hiện đề gốc
@@ -467,7 +501,7 @@ export const HomeworkPage: React.FC = () => {
               className={`cartoon-button flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-extrabold ${
                 studentPreviewMode
                   ? 'bg-purple-600 text-white'
-                  : 'bg-white text-slate-900'
+                  : 'bg-white text-[#172B4D]'
               }`}
             >
               <Eye className="h-4 w-4" />
@@ -480,7 +514,7 @@ export const HomeworkPage: React.FC = () => {
               type="button"
               onClick={() => handleSave('draft')}
               disabled={saving}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-slate-900"
+              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-[#172B4D]"
             >
               <Save className="h-4 w-4" />
               Lưu Bản Nháp
@@ -490,7 +524,7 @@ export const HomeworkPage: React.FC = () => {
               type="button"
               onClick={() => handleSave('published')}
               disabled={saving}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-blue-600 px-4 py-2 text-xs font-extrabold text-white"
+              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1267E9] px-4 py-2 text-xs font-extrabold text-white"
             >
               Xuất Bản Đề
             </button>
@@ -501,7 +535,7 @@ export const HomeworkPage: React.FC = () => {
                 clearSourceFiles();
                 setEditorMode(false);
               }}
-              className="cartoon-button rounded-xl bg-slate-100 px-3 py-2 text-xs font-bold text-slate-700"
+              className="cartoon-button rounded-xl bg-[#F6FAFF] px-3 py-2 text-xs font-bold text-[#3B4A66]"
             >
               Đóng
             </button>
@@ -514,28 +548,48 @@ export const HomeworkPage: React.FC = () => {
           </div>
         )}
 
+        {missingQuestionsWarning && (
+          <div role="alert" className="flex flex-wrap items-start gap-3 rounded-2xl border-2 border-rose-400 bg-rose-50 p-4 text-sm text-rose-800">
+            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-rose-600" />
+            <div className="min-w-0 flex-1">
+              <div className="font-extrabold">Đề có thể chưa đủ câu</div>
+              <div className="mt-0.5">{missingQuestionsWarning}</div>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setMissingQuestionsWarning(null);
+                setErrorMsg(null);
+              }}
+              className="shrink-0 rounded-xl border border-rose-400 bg-white px-3 py-1.5 text-xs font-extrabold text-rose-700 hover:bg-rose-100"
+            >
+              Đã đối chiếu đủ câu
+            </button>
+          </div>
+        )}
+
         {/* Student Preview Mode */}
         {studentPreviewMode ? (
           <div className="mx-auto max-w-2xl space-y-5">
             <div className="cartoon-card bg-sky-50 p-5">
-              <div className="text-xs font-extrabold text-blue-700">
+              <div className="text-xs font-extrabold text-[#1267E9]">
                 CHẾ ĐỘ XEM TRƯỚC GIAO DIỆN HỌC SINH (ĐÃ ẨN ĐÁP ÁN CHUẨN)
               </div>
-              <h2 className="mt-1 font-display text-xl font-extrabold text-slate-900">
+              <h2 className="mt-1 font-display text-xl font-extrabold text-[#172B4D]">
                 {title || 'Chưa đặt tiêu đề'}
               </h2>
               {description && (
-                <p className="mt-1 text-sm text-slate-700">{description}</p>
+                <p className="mt-1 text-sm text-[#3B4A66]">{description}</p>
               )}
             </div>
 
             {questions.map((q, idx) => (
               <div key={q.id} className="cartoon-card p-5">
-                <div className="mb-3 flex items-center justify-between border-b border-slate-200 pb-2">
-                  <span className="font-display text-sm font-extrabold text-blue-700">
+                <div className="mb-3 flex items-center justify-between border-b border-[#EEF3F9] pb-2">
+                  <span className="font-display text-sm font-extrabold text-[#1267E9]">
                     Câu {idx + 1} ({q.points} điểm)
                   </span>
-                  <span className="text-xs text-slate-500">
+                  <span className="text-xs text-[#5E6C84]">
                     {QUESTION_TYPE_LABELS[q.type]}
                   </span>
                 </div>
@@ -546,7 +600,7 @@ export const HomeworkPage: React.FC = () => {
                     {(q.options || []).map((opt) => (
                       <div
                         key={opt.id}
-                        className="flex items-center gap-3 rounded-xl border-2 border-slate-300 bg-slate-50 px-3.5 py-2.5"
+                        className="flex items-center gap-3 rounded-xl border border-[#DCE7F3] bg-[#F6FAFF] px-3.5 py-2.5"
                       >
                         <input
                           type={
@@ -555,7 +609,7 @@ export const HomeworkPage: React.FC = () => {
                           disabled
                           className="h-4 w-4"
                         />
-                        <span className="font-display text-sm font-bold text-slate-800">
+                        <span className="font-display text-sm font-bold text-[#172B4D]">
                           {opt.label}.
                         </span>
                         <RichContentRenderer content={opt.content} />
@@ -569,10 +623,10 @@ export const HomeworkPage: React.FC = () => {
                     {(q.statements || []).map((st) => (
                       <div
                         key={st.id}
-                        className="flex items-center justify-between gap-4 rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5"
+                        className="flex items-center justify-between gap-4 rounded-xl border border-[#DCE7F3] bg-[#F6FAFF] px-3.5 py-2.5"
                       >
                         <div className="flex items-center gap-2">
-                          <span className="font-bold text-slate-800">
+                          <span className="font-bold text-[#172B4D]">
                             {st.label})
                           </span>
                           <RichContentRenderer content={st.statement} />
@@ -592,13 +646,13 @@ export const HomeworkPage: React.FC = () => {
                       type="text"
                       disabled
                       placeholder="Học sinh nhập đáp số ngắn tại đây..."
-                      className="w-full rounded-xl border-2 border-slate-300 bg-slate-50 px-3.5 py-2 text-sm"
+                      className="w-full rounded-xl border border-[#DCE7F3] bg-[#F6FAFF] px-3.5 py-2 text-sm"
                     />
                   </div>
                 )}
 
                 {q.type === 'essay' && (
-                  <div className="mt-4 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-4 text-xs text-slate-500">
+                  <div className="mt-4 rounded-xl border-2 border-dashed border-[#DCE7F3] bg-[#F6FAFF] p-4 text-xs text-[#5E6C84]">
                     Khu vực học sinh trình bày lời giải tự luận (Rich-text, công
                     thức LaTeX, vẽ hình học hoặc tải ảnh bài làm).
                   </div>
@@ -626,7 +680,7 @@ export const HomeworkPage: React.FC = () => {
             <div className="cartoon-card p-6">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
                 <div className="md:col-span-6">
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Tiêu đề BTVN *
                   </label>
                   <input
@@ -634,17 +688,17 @@ export const HomeworkPage: React.FC = () => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="Ví dụ: Phiếu BTVN Tuần 8: Phân Số & Diện Tích Tam Giác"
-                    className="w-full rounded-xl border-2 border-slate-800 px-3.5 py-2 text-sm font-bold"
+                    className="w-full rounded-xl border border-[#DCE7F3] px-3.5 py-2 text-sm font-bold"
                   />
                 </div>
                 <div className="md:col-span-3">
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Khối lớp / Mức độ
                   </label>
                   <select
                     value={grade}
                     onChange={(e) => setGrade(e.target.value)}
-                    className="w-full rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3 py-2 text-sm"
                   >
                     {[
                       'Khối 1',
@@ -664,7 +718,7 @@ export const HomeworkPage: React.FC = () => {
                   </select>
                 </div>
                 <div className="flex items-end md:col-span-3">
-                  <label className="flex cursor-pointer items-center gap-2 rounded-xl border-2 border-slate-800 bg-amber-50 px-3 py-2 text-xs font-bold text-slate-800 w-full">
+                  <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-[#DCE7F3] bg-amber-50 px-3 py-2 text-xs font-bold text-[#172B4D] w-full">
                     <input
                       type="checkbox"
                       checked={aiSolverEnabled}
@@ -677,7 +731,7 @@ export const HomeworkPage: React.FC = () => {
               </div>
 
               <div className="mt-4">
-                <label className="mb-1 block text-xs font-bold text-slate-700">
+                <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                   Mô tả / Hướng dẫn làm bài chung
                 </label>
                 <textarea
@@ -685,7 +739,7 @@ export const HomeworkPage: React.FC = () => {
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   placeholder="Lời dặn dò cho học sinh trước khi làm bài..."
-                  className="w-full rounded-xl border-2 border-slate-800 px-3.5 py-2 text-sm"
+                  className="w-full rounded-xl border border-[#DCE7F3] px-3.5 py-2 text-sm"
                 />
               </div>
             </div>
@@ -716,9 +770,9 @@ export const HomeworkPage: React.FC = () => {
                   </div>
                 )}
                 {/* Question Header */}
-                <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b-2 border-slate-200 pb-3">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b-2 border-[#EEF3F9] pb-3">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="rounded-xl border-2 border-slate-900 bg-amber-300 px-3 py-1 font-display text-sm font-extrabold text-slate-900">
+                    <span className="rounded-xl border border-[#DCE7F3] bg-amber-300 px-3 py-1 font-display text-sm font-extrabold text-[#172B4D]">
                       Câu {qIdx + 1}
                     </span>
 
@@ -742,7 +796,7 @@ export const HomeworkPage: React.FC = () => {
                           )
                         )
                       }
-                      className="rounded-xl border-2 border-slate-800 bg-white px-3 py-1.5 text-xs font-bold text-slate-900"
+                      className="rounded-xl border border-[#DCE7F3] bg-white px-3 py-1.5 text-xs font-bold text-[#172B4D]"
                     >
                       {(
                         Object.keys(QUESTION_TYPE_LABELS) as QuestionType[]
@@ -754,7 +808,7 @@ export const HomeworkPage: React.FC = () => {
                     </select>
 
                     <div className="flex items-center gap-1.5">
-                      <span className="text-xs font-bold text-slate-700">
+                      <span className="text-xs font-bold text-[#3B4A66]">
                         Điểm:
                       </span>
                       <input
@@ -768,7 +822,7 @@ export const HomeworkPage: React.FC = () => {
                             points: Number(e.target.value) || 1,
                           })
                         }
-                        className="w-20 rounded-xl border-2 border-slate-800 px-2.5 py-1 font-mono text-xs font-bold"
+                        className="w-20 rounded-xl border border-[#DCE7F3] px-2.5 py-1 font-mono text-xs font-bold"
                       />
                     </div>
                   </div>
@@ -778,7 +832,7 @@ export const HomeworkPage: React.FC = () => {
                       type="button"
                       onClick={() => moveQuestion(qIdx, -1)}
                       disabled={qIdx === 0}
-                      className="rounded-lg border border-slate-300 p-1.5 hover:bg-slate-100 disabled:opacity-40"
+                      className="rounded-lg border border-[#DCE7F3] p-1.5 hover:bg-[#F6FAFF] disabled:opacity-40"
                       title="Chuyển lên"
                     >
                       <ArrowUp className="h-4 w-4" />
@@ -787,7 +841,7 @@ export const HomeworkPage: React.FC = () => {
                       type="button"
                       onClick={() => moveQuestion(qIdx, 1)}
                       disabled={qIdx === questions.length - 1}
-                      className="rounded-lg border border-slate-300 p-1.5 hover:bg-slate-100 disabled:opacity-40"
+                      className="rounded-lg border border-[#DCE7F3] p-1.5 hover:bg-[#F6FAFF] disabled:opacity-40"
                       title="Chuyển xuống"
                     >
                       <ArrowDown className="h-4 w-4" />
@@ -795,7 +849,7 @@ export const HomeworkPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => duplicateQuestionAt(qIdx)}
-                      className="rounded-lg border border-slate-300 px-2.5 py-1 text-xs font-bold text-slate-700 hover:bg-slate-100"
+                      className="rounded-lg border border-[#DCE7F3] px-2.5 py-1 text-xs font-bold text-[#3B4A66] hover:bg-[#F6FAFF]"
                     >
                       <Copy className="mr-1 inline h-3.5 w-3.5" />
                       Nhân bản
@@ -823,7 +877,7 @@ export const HomeworkPage: React.FC = () => {
                 />
 
                 {/* Answer Key Section separated cleanly for Teacher */}
-                <div className="mt-4 rounded-2xl border-2 border-slate-800 bg-emerald-50/60 p-4">
+                <div className="mt-4 rounded-2xl border border-[#DCE7F3] bg-emerald-50/60 p-4">
                   <div className="mb-2 text-xs font-extrabold text-emerald-950">
                     CẤU HÌNH ĐÁP ÁN CHUẨN (CHỈ GIÁO VIÊN & MÁY CHỦ CHẤM ĐIỂM ĐƯỢC XEM)
                   </div>
@@ -841,9 +895,9 @@ export const HomeworkPage: React.FC = () => {
                         return (
                           <div
                             key={opt.id}
-                            className="flex flex-col gap-2 rounded-xl border border-slate-300 bg-white p-3 sm:flex-row sm:items-center"
+                            className="flex flex-col gap-2 rounded-xl border border-[#DCE7F3] bg-white p-3 sm:flex-row sm:items-center"
                           >
-                            <label className="flex shrink-0 cursor-pointer items-center gap-2 font-display text-sm font-extrabold text-slate-900">
+                            <label className="flex shrink-0 cursor-pointer items-center gap-2 font-display text-sm font-extrabold text-[#172B4D]">
                               <input
                                 type={
                                   q.type === 'single_choice'
@@ -895,7 +949,7 @@ export const HomeworkPage: React.FC = () => {
                                 });
                               }}
                               placeholder={`Nội dung phương án ${opt.label} (hỗ trợ $LaTeX$)`}
-                              className="flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm"
+                              className="flex-1 rounded-lg border border-[#DCE7F3] px-3 py-1.5 text-sm"
                             />
                           </div>
                         );
@@ -909,9 +963,9 @@ export const HomeworkPage: React.FC = () => {
                       {(q.statements || []).map((st, sIdx) => (
                         <div
                           key={st.id}
-                          className="flex flex-col gap-2 rounded-xl border border-slate-300 bg-white p-3 sm:flex-row sm:items-center"
+                          className="flex flex-col gap-2 rounded-xl border border-[#DCE7F3] bg-white p-3 sm:flex-row sm:items-center"
                         >
-                          <span className="font-display text-sm font-extrabold text-slate-900">
+                          <span className="font-display text-sm font-extrabold text-[#172B4D]">
                             Ý {st.label})
                           </span>
                           <input
@@ -935,7 +989,7 @@ export const HomeworkPage: React.FC = () => {
                               });
                             }}
                             placeholder="Nhập mệnh đề Toán học..."
-                            className="flex-1 rounded-lg border border-slate-300 px-3 py-1.5 text-sm"
+                            className="flex-1 rounded-lg border border-[#DCE7F3] px-3 py-1.5 text-sm"
                           />
                           <div className="flex items-center gap-3">
                             <select
@@ -951,7 +1005,7 @@ export const HomeworkPage: React.FC = () => {
                                   statements: nextSt,
                                 });
                               }}
-                              className="rounded-lg border border-slate-800 bg-amber-100 px-2.5 py-1 text-xs font-extrabold text-slate-900"
+                              className="rounded-lg border border-[#DCE7F3] bg-amber-100 px-2.5 py-1 text-xs font-extrabold text-[#172B4D]"
                             >
                               <option value="true">ĐÚNG</option>
                               <option value="false">SAI</option>
@@ -974,7 +1028,7 @@ export const HomeworkPage: React.FC = () => {
                                     statements: nextSt,
                                   });
                                 }}
-                                className="w-16 rounded-lg border border-slate-300 px-2 py-1 font-mono"
+                                className="w-16 rounded-lg border border-[#DCE7F3] px-2 py-1 font-mono"
                               />
                             </div>
                           </div>
@@ -986,7 +1040,7 @@ export const HomeworkPage: React.FC = () => {
                   {/* Type 4: Short Answer */}
                   {q.type === 'short_answer' && (
                     <div>
-                      <label className="mb-1 block text-xs font-semibold text-slate-700">
+                      <label className="mb-1 block text-xs font-semibold text-[#3B4A66]">
                         Các đáp án tương đương được chấp nhận (phân cách bằng dấu
                         phẩy `;`, hệ thống tự chuẩn hóa khoảng trắng & dấu thập
                         phân):
@@ -1004,8 +1058,38 @@ export const HomeworkPage: React.FC = () => {
                           })
                         }
                         placeholder="Ví dụ: 41; 41m; 41 m; 41,0"
-                        className="w-full rounded-xl border border-slate-400 bg-white px-3.5 py-2 font-mono text-sm"
+                        className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3.5 py-2 font-mono text-sm"
                       />
+                      <p className="mt-1 text-[11px] text-[#5E6C84]">
+                        Tự chấp nhận: 1000 = 1 000 = 1.000 · 3/4 = 3 / 4 · 42cm = 42 cm. Đơn vị khác nhau luôn bị chấm sai.
+                      </p>
+                      <div className="mt-2 flex flex-col gap-1.5 text-xs text-[#3B4A66] sm:flex-row sm:gap-5">
+                        {(
+                          [
+                            ['unitMode', 'Cho phép bỏ đơn vị (đề đã ghi sẵn đơn vị)'],
+                            ['acceptEquivalentFractions', 'Chấp nhận phân số bằng nhau (6/8 = 3/4)'],
+                          ] as const
+                        ).map(([field, label]) => {
+                          const checked = field === 'unitMode' ? q.unitMode === 'optional' : Boolean(q.acceptEquivalentFractions);
+                          return (
+                            <label key={field} className="flex items-center gap-2">
+                              <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={(e) => {
+                                  // Firestore rejects undefined, so an option that is off is removed
+                                  const next = { ...q };
+                                  delete next[field];
+                                  if (e.target.checked) Object.assign(next, field === 'unitMode' ? { unitMode: 'optional' } : { acceptEquivalentFractions: true });
+                                  updateQuestionAt(qIdx, next);
+                                }}
+                                className="h-4 w-4 rounded border-[#DCE7F3]"
+                              />
+                              {label}
+                            </label>
+                          );
+                        })}
+                      </div>
                     </div>
                   )}
 
@@ -1013,7 +1097,7 @@ export const HomeworkPage: React.FC = () => {
                   {q.type === 'essay' && (
                     <div className="space-y-3">
                       <div>
-                        <label className="mb-1 block text-xs font-semibold text-slate-700">
+                        <label className="mb-1 block text-xs font-semibold text-[#3B4A66]">
                           Hướng dẫn chấm / Biểu điểm thành phần (Rubric cho Giáo
                           viên & AI):
                         </label>
@@ -1027,7 +1111,7 @@ export const HomeworkPage: React.FC = () => {
                             })
                           }
                           placeholder="Ví dụ: Tìm được số phần bể chảy trong 1 giờ (1 điểm); Tính đúng thời gian vòi 2 chảy riêng (1 điểm)..."
-                          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm"
+                          className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3 py-2 text-sm"
                         />
                       </div>
                       <MathRichEditor
@@ -1066,7 +1150,7 @@ export const HomeworkPage: React.FC = () => {
 
             {/* Add Question Bar */}
             <div className="cartoon-card bg-white p-4">
-              <div className="mb-2 text-xs font-extrabold text-slate-700">
+              <div className="mb-2 text-xs font-extrabold text-[#3B4A66]">
                 + THÊM CÂU HỎI MỚI VÀO ĐỀ (ĐỦ 5 LOẠI CÂU HỎI BẮT BUỘC):
               </div>
               <div className="flex flex-wrap gap-2">
@@ -1076,7 +1160,7 @@ export const HomeworkPage: React.FC = () => {
                       key={t}
                       type="button"
                       onClick={() => addQuestion(t)}
-                      className="cartoon-button flex items-center gap-1.5 rounded-xl bg-amber-100 px-3.5 py-2 text-xs font-extrabold text-slate-900"
+                      className="cartoon-button flex items-center gap-1.5 rounded-xl bg-amber-100 px-3.5 py-2 text-xs font-extrabold text-[#172B4D]"
                     >
                       <Plus className="h-3.5 w-3.5" />
                       {QUESTION_TYPE_LABELS[t]}
@@ -1105,147 +1189,182 @@ export const HomeworkPage: React.FC = () => {
     );
   }
 
+  const hwCounts = {
+    all: homeworkList.length,
+    draft: homeworkList.filter((h) => h.status === 'draft').length,
+    published: homeworkList.filter((h) => h.status === 'published').length,
+  };
+  const shownHomework = homeworkList.filter((hw) => {
+    if (hwStatus !== 'all' && hw.status !== hwStatus) return false;
+    const q = hwSearch.trim().toLowerCase();
+    return !q || hw.title.toLowerCase().includes(q) || (hw.description || '').toLowerCase().includes(q) || (hw.grade || '').toLowerCase().includes(q);
+  });
+  const tools = [
+    {
+      key: 'ai',
+      icon: Sparkles,
+      tone: 'yellow' as const,
+      title: 'Tạo bài tập bằng AI',
+      text: 'Tải ảnh chụp hoặc PDF đề bài, AI chuyển thành câu hỏi có cấu trúc để cô xem lại.',
+      cta: 'Tải ảnh / PDF',
+    },
+    {
+      key: 'manual',
+      icon: PenLine,
+      tone: 'blue' as const,
+      title: 'Soạn bài tập thủ công',
+      text: 'Soạn từng câu với công thức Toán, hình vẽ và 5 dạng câu hỏi.',
+      cta: 'Bắt đầu soạn',
+    },
+    {
+      key: 'file',
+      icon: FileJson,
+      tone: 'teal' as const,
+      title: 'Nhập bài tập từ tệp',
+      text: 'Mở tệp .json đã soạn sẵn (định dạng MimoEDU hoặc bộ câu hỏi Mimo).',
+      cta: 'Chọn tệp .json',
+    },
+  ];
+
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-        <div>
-          <h1 className="font-display text-2xl font-extrabold text-slate-900">
-            Kho học liệu Toán 3
-          </h1>
-          <p className="text-sm text-slate-600">
-            Soạn đề Toán thủ công với công thức KaTeX và hình học phẳng, hoặc
-            tải ảnh/PDF để AI chuyển đổi thành câu hỏi có cấu trúc.
-          </p>
-        </div>
+    <div className="studio-skin space-y-6">
+      <PageHeader
+        icon={BookOpen}
+        title="Soạn bài tập"
+        description="Soạn bài tập Toán với công thức và hình học, tạo đề bằng AI từ ảnh/PDF, hoặc nhập từ tệp. Bài đã xuất bản dùng được ở mục Giao bài tập."
+      />
 
-        <div className="flex flex-wrap items-center gap-3">
-          <button
-            type="button"
-            onClick={() => setAiModalOpen(true)}
-            className="cartoon-button flex items-center gap-2 rounded-xl bg-amber-300 px-4 py-2.5 text-xs font-extrabold text-slate-900 whitespace-nowrap"
-          >
-            <Sparkles className="h-4 w-4" />
-            Upload Ảnh/PDF Tạo Đề Bằng AI
-          </button>
+      <section aria-label="Cách tạo bài tập" className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {tools.map((t) => {
+          const Icon = t.icon;
+          const body = (
+            <>
+              <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${STUDIO_TONE[t.tone]}`}>
+                <Icon className="h-6 w-6" />
+              </span>
+              <span className="mt-4 block font-display text-base font-extrabold text-[#172B4D]">{t.title}</span>
+              <span className="mt-1 block text-sm leading-relaxed text-[#5E6C84]">{t.text}</span>
+              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#1267E9] transition group-hover:gap-2">
+                {t.cta} <ArrowRight className="h-4 w-4" />
+              </span>
+            </>
+          );
+          const cls =
+            'studio-card group flex h-full flex-col p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-within:ring-4 focus-within:ring-[#54C8FF]/30';
+          return t.key === 'file' ? (
+            <label key={t.key} className={`${cls} cursor-pointer`}>
+              {body}
+              <input type="file" accept="application/json,.json" onChange={handleImportFile} className="sr-only" />
+            </label>
+          ) : (
+            <button key={t.key} type="button" onClick={t.key === 'ai' ? () => setAiModalOpen(true) : startNewHomework} className={cls}>
+              {body}
+            </button>
+          );
+        })}
+      </section>
 
-          <button
-            type="button"
-            onClick={startNewHomework}
-            className="cartoon-button flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-xs font-extrabold text-white whitespace-nowrap"
-          >
-            <Plus className="h-4 w-4" />
-            Soạn BTVN Thủ Công
-          </button>
+      {importError && <ErrorState message={importError} />}
 
-          <label
-            className="cartoon-button flex cursor-pointer items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-xs font-extrabold text-slate-900 whitespace-nowrap"
-            title="Mở đề đã soạn sẵn dạng file .json"
-          >
-            <FileJson className="h-4 w-4" />
-            Nhập đề từ file
-            <input
-              type="file"
-              accept="application/json,.json"
-              onChange={handleImportFile}
-              className="hidden"
-            />
-          </label>
-        </div>
-      </div>
+      <SectionHeading icon={FileText} title="Bài tập đã soạn" note={`${hwCounts.all} bài · ${hwCounts.published} đã xuất bản · ${hwCounts.draft} bản nháp`} />
 
-      {importError && (
-        <div className="cartoon-card bg-rose-50 p-4 text-xs font-bold text-rose-700">
-          {importError}
-        </div>
+      {homeworkList.length > 0 && (
+        <Toolbar>
+          <SearchInput value={hwSearch} onChange={setHwSearch} placeholder="Tìm theo tên bài, mô tả hoặc khối…" />
+          <SegmentedFilter
+            label="Trạng thái bài tập"
+            value={hwStatus}
+            onChange={setHwStatus}
+            options={[
+              { id: 'all', label: 'Tất cả', count: hwCounts.all },
+              { id: 'published', label: 'Đã xuất bản', count: hwCounts.published },
+              { id: 'draft', label: 'Bản nháp', count: hwCounts.draft },
+            ]}
+          />
+        </Toolbar>
       )}
 
-      {/* Homework List */}
       {homeworkList.length === 0 ? (
-        <div className="cartoon-card p-12 text-center">
-          <p className="font-display text-base font-bold text-slate-800">
-            Kho học liệu Toán 3 chưa có đề nào
-          </p>
-          <p className="mt-1 text-xs text-slate-500">
-            Hãy nhấn &ldquo;Soạn BTVN Thủ Công&rdquo; hoặc &ldquo;Upload Ảnh/PDF
-            Tạo Đề Bằng AI&rdquo; để bắt đầu.
-          </p>
-        </div>
+        <EmptyState
+          icon={BookOpen}
+          title="Chưa có bài tập nào"
+          text="Chọn một trong ba cách ở trên để tạo bài tập đầu tiên. Bài soạn xong có thể lưu nháp hoặc xuất bản để giao cho lớp."
+        />
+      ) : shownHomework.length === 0 ? (
+        <EmptyState icon={Search} tone="gray" title="Không có bài tập phù hợp" text="Thử từ khóa hoặc trạng thái khác." />
       ) : (
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          {homeworkList.map((hw) => (
-            <div
-              key={hw.id}
-              className="cartoon-card flex flex-col justify-between bg-white p-5"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 text-xs text-slate-500">
-                  <span className="font-bold text-blue-700">
-                    {hw.grade || 'Toán'}
-                  </span>
-                  <span>·</span>
-                  <span>
-                    <strong className="font-mono">{hw.questions.length}</strong>{' '}
-                    câu hỏi ({hw.totalPoints} điểm)
-                  </span>
-                  <span>·</span>
-                  <span>
-                    Đáp án: {hw.answerSource === 'ai' ? 'AI giải đề' : 'Giáo viên'}
-                  </span>
-                  <span>·</span>
-                  <span
-                    className={
-                      hw.status === 'published'
-                        ? 'font-bold text-emerald-700'
-                        : 'font-bold text-amber-700'
-                    }
-                  >
-                    {hw.status === 'published' ? 'Đã xuất bản' : 'Bản nháp'}
-                  </span>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+          {shownHomework.map((hw) => {
+            const published = hw.status === 'published';
+            return (
+              <article key={hw.id} className="studio-card flex flex-col p-5 transition hover:shadow-[var(--studio-shadow-hover)]">
+                <div className="flex flex-wrap items-center gap-2">
+                  <StatusBadge kind={published ? 'success' : hw.status === 'draft' ? 'warning' : 'neutral'}>
+                    {published ? 'Đã xuất bản' : hw.status === 'draft' ? 'Bản nháp' : 'Lưu trữ'}
+                  </StatusBadge>
+                  <StatusBadge kind="info">{hw.grade || 'Toán'}</StatusBadge>
+                  {hw.answerSource === 'ai' && (
+                    <StatusBadge kind="neutral" icon={Sparkles}>
+                      Đáp án AI
+                    </StatusBadge>
+                  )}
                 </div>
-
-                <h3 className="mt-2 font-display text-lg font-extrabold text-slate-900">
-                  {hw.title}
-                </h3>
-                {hw.description && (
-                  <p className="mt-1 line-clamp-2 text-xs text-slate-600">
-                    {hw.description}
-                  </p>
-                )}
-              </div>
-
-              <div className="mt-5 flex flex-wrap items-center justify-end gap-2 border-t border-slate-200 pt-4">
-                <button
-                  type="button"
-                  onClick={() => openEditHomework(hw)}
-                  className="cartoon-button flex items-center gap-1 rounded-lg bg-white px-3 py-1.5 text-xs font-bold text-slate-900"
-                >
-                  <Edit3 className="h-3.5 w-3.5" />
-                  Mở / Chỉnh sửa
-                </button>
-                <button
-                  type="button"
-                  onClick={() => duplicateHomework(hw)}
-                  className="cartoon-button flex items-center gap-1 rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-800"
-                >
-                  <Copy className="h-3.5 w-3.5" />
-                  Nhân bản
-                </button>
-                {hw.status === 'draft' && (
-                  <button
-                    type="button"
-                    onClick={() => deleteDraftHomework(hw.id)}
-                    className="cartoon-button flex items-center gap-1 rounded-lg bg-rose-50 px-3 py-1.5 text-xs font-bold text-rose-700"
-                  >
-                    <Trash2 className="h-3.5 w-3.5" />
-                    Xóa nháp
+                <h3 className="mt-3 font-display text-lg leading-snug font-extrabold text-[#172B4D]">{hw.title}</h3>
+                {hw.description && <p className="mt-1 line-clamp-2 text-sm text-[#5E6C84]">{hw.description}</p>}
+                <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-[#5E6C84]">
+                  <span>
+                    <b className="text-[#172B4D]">{hw.questions.length}</b> câu hỏi
+                  </span>
+                  <span>
+                    <b className="text-[#172B4D]">{hw.totalPoints}</b> điểm
+                  </span>
+                  <span>Cập nhật {hw.updatedAt.slice(0, 10).split('-').reverse().join('/')}</span>
+                </div>
+                <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-[#EEF3F9] pt-4">
+                  <button type="button" onClick={() => openEditHomework(hw)} className="studio-btn studio-btn-primary flex-1">
+                    <Edit3 className="h-4 w-4" />
+                    Mở / chỉnh sửa
                   </button>
-                )}
-              </div>
-            </div>
-          ))}
+                  <button type="button" onClick={() => duplicateHomework(hw)} className="studio-btn studio-btn-secondary px-3" title="Nhân bản bài tập">
+                    <Copy className="h-4 w-4" />
+                    <span className="sr-only sm:not-sr-only">Nhân bản</span>
+                  </button>
+                  {hw.status === 'draft' && (
+                    <button type="button" onClick={() => setDeletingHw(hw)} className="studio-btn studio-btn-danger px-3" title="Xóa bản nháp">
+                      <Trash2 className="h-4 w-4" />
+                      <span className="sr-only">Xóa nháp</span>
+                    </button>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
       )}
+
+      <ConfirmDialog
+        open={deletingHw !== null}
+        danger
+        busy={deletingBusy}
+        title="Xóa bản nháp?"
+        message={
+          <>
+            Bản nháp <b className="text-[#172B4D]">{deletingHw?.title}</b> sẽ bị xóa và không khôi phục được.
+          </>
+        }
+        confirmLabel="Xóa bản nháp"
+        onCancel={() => setDeletingHw(null)}
+        onConfirm={async () => {
+          if (!deletingHw) return;
+          setDeletingBusy(true);
+          try {
+            await deleteDraftHomework(deletingHw.id);
+            setDeletingHw(null);
+          } finally {
+            setDeletingBusy(false);
+          }
+        }}
+      />
 
       {mimoDataset && (
         <MimoImportModal
@@ -1258,6 +1377,7 @@ export const HomeworkPage: React.FC = () => {
       <AIImportModal
         open={aiModalOpen}
         onClose={() => setAiModalOpen(false)}
+        onManual={startNewHomework}
         onExtracted={handleExtracted}
       />
     </div>

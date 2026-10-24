@@ -7,6 +7,7 @@ import type {
 } from '../types/practice';
 import { getSavedStudentToken } from './studentPortalService';
 import { apiUrl } from '../lib/apiUrl';
+import { cachedRequest, invalidateCached, peekCached } from './studentCache';
 
 /** Student-side calls to the practice API; answers only ever arrive after submitting. */
 
@@ -54,15 +55,29 @@ async function practiceRequest<T>(path: string, body?: unknown): Promise<T> {
   return data as T;
 }
 
-export const fetchPracticeCatalog = () => practiceRequest<PracticeCatalogAvailability>('/catalog');
+// Catalogue (the server caches it for 60 s too) and history are reused between
+// portal tabs; history is dropped whenever an attempt starts or is submitted.
+const CATALOG_TTL = 60_000;
+const HISTORY_TTL = 30_000;
 
-export const startPractice = (params: { topicId: string; level: PracticeLevel; skillId: string | null }) =>
-  practiceRequest<PracticeStartResponse>('/start', params);
+const cached = <T,>(name: string, ttl: number, path: string) => {
+  const token = getSavedStudentToken();
+  return token ? cachedRequest(token, name, ttl, () => practiceRequest<T>(path)) : practiceRequest<T>(path);
+};
+
+export const fetchPracticeCatalog = () => cached<PracticeCatalogAvailability>('practice-catalog', CATALOG_TTL, '/catalog');
+export const peekPracticeCatalog = () => peekCached<PracticeCatalogAvailability>(getSavedStudentToken(), 'practice-catalog', CATALOG_TTL);
+
+export const startPractice = (params: { topicId: string; level: PracticeLevel; skillId: string | null }) => {
+  invalidateCached('practice-history');
+  return practiceRequest<PracticeStartResponse>('/start', params);
+};
 
 export const submitPractice = (attemptId: string, answers: Record<string, number[]>) =>
-  practiceRequest<PracticeSubmitResponse>('/submit', { attemptId, answers });
+  practiceRequest<PracticeSubmitResponse>('/submit', { attemptId, answers }).finally(() => invalidateCached('practice-history'));
 
-export const fetchPracticeHistory = () => practiceRequest<PracticeHistoryItem[]>('/attempts');
+export const fetchPracticeHistory = () => cached<PracticeHistoryItem[]>('practice-history', HISTORY_TTL, '/attempts');
+export const peekPracticeHistory = () => peekCached<PracticeHistoryItem[]>(getSavedStudentToken(), 'practice-history', HISTORY_TTL);
 
 export const fetchPracticeAttempt = (id: string) =>
   practiceRequest<PracticeAttemptDetail>(`/attempts/${encodeURIComponent(id)}`);

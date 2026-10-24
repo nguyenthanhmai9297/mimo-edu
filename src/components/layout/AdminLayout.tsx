@@ -10,7 +10,6 @@ import {
   LogOut,
   Menu,
   MessageSquareHeart,
-  Plus,
   School,
   ShieldCheck,
   Sparkles,
@@ -26,7 +25,7 @@ const NAV_ITEMS = [
   { to: '/admin/tools', label: 'Công cụ dạy học', icon: Wand2 },
   { to: '/admin/classes', label: 'Lớp học', icon: School },
   { to: '/admin/students', label: 'Học sinh & Mã', icon: GraduationCap },
-  { to: '/admin/homework', label: 'Kho học liệu Toán 3', icon: BookOpen },
+  { to: '/admin/homework', label: 'Soạn bài tập', icon: BookOpen },
   { to: '/admin/practice', label: 'Luyện Toán cùng Mimo', icon: Sparkles },
   { to: '/admin/assignments', label: 'Giao bài tập', icon: CalendarCheck },
   { to: '/admin/grading', label: 'Chấm bài nộp', icon: CheckSquare },
@@ -181,10 +180,6 @@ export const AdminLayout: React.FC = () => {
             </div>
           </div>
 
-          <Link to="/admin/homework" className="studio-btn studio-btn-primary hidden shrink-0 sm:inline-flex">
-            <Plus className="h-4 w-4" />
-            Soạn BTVN Toán
-          </Link>
         </header>
 
         <main className="flex-1 p-4 sm:p-6 lg:p-8">

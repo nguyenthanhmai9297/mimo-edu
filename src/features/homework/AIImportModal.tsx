@@ -10,8 +10,10 @@ import {
   X,
 } from 'lucide-react';
 import { HomeworkQuestion } from '../../types/domain';
+import type { AICompleteness } from '../../utils/aiCompleteness';
 import { cropFigure, NormalizedBox, padBox, pdfToPageImages } from './figureCrop';
 import { apiUrl } from '../../lib/apiUrl';
+import { auth } from '../../lib/firebase/config';
 
 /** A page of the original exam, kept so the teacher can compare while reviewing. */
 export interface SourceFile {
@@ -32,6 +34,7 @@ export interface ExtractedHomework {
     box: NormalizedBox;
     description: string;
   }[];
+  completeness?: AICompleteness;
 }
 
 /** Where a cropped figure came from, so the teacher can adjust the crop later. */
@@ -47,6 +50,8 @@ interface PendingFile extends SourceFile {
 interface AIImportModalProps {
   open: boolean;
   onClose: () => void;
+  /** Opens the manual editor; offered when the AI service is not available. */
+  onManual?: () => void;
   onExtracted: (
     data: ExtractedHomework,
     solveWithAI: boolean,
@@ -178,6 +183,7 @@ function loadingMessage(seconds: number, solveWithAI: boolean): string {
 export const AIImportModal: React.FC<AIImportModalProps> = ({
   open,
   onClose,
+  onManual,
   onExtracted,
 }) => {
   const [files, setFiles] = useState<PendingFile[]>([]);
@@ -187,6 +193,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
   const [loading, setLoading] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [aiUnavailable, setAiUnavailable] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const totalBase64 = files.reduce((sum, f) => sum + f.base64.length, 0);
@@ -259,6 +266,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
     files.forEach((f) => URL.revokeObjectURL(f.objectUrl));
     setFiles([]);
     setError(null);
+    setAiUnavailable(false);
     onClose();
   };
 
@@ -272,11 +280,15 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
       return;
     }
     setError(null);
+    setAiUnavailable(false);
     setLoading(true);
     try {
+      // The server checks this teacher's Firebase sign-in before any AI call
+      const token = await auth.currentUser?.getIdToken();
+      if (!token) throw new Error('Phiên đăng nhập đã hết hạn, vui lòng tải lại trang và đăng nhập lại.');
       const res = await fetch(apiUrl('/api/ai/parse-homework'), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
           files: files.map((f) => ({ mimeType: f.mimeType, base64Data: f.base64 })),
           solveWithAI,
@@ -284,7 +296,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
       });
 
       const rawText = await res.text();
-      let data: ExtractedHomework & { error?: string };
+      let data: ExtractedHomework & { error?: string; code?: string };
       try {
         data = JSON.parse(rawText);
       } catch {
@@ -300,6 +312,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
         throw new Error(`Máy chủ trả về phản hồi không hợp lệ (HTTP ${res.status}).`);
       }
       if (!res.ok) {
+        if (data.code === 'AI_UNAVAILABLE') setAiUnavailable(true);
         throw new Error(data.error || 'AI không thể chuyển đổi file này.');
       }
 
@@ -321,12 +334,12 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
       <div className="cartoon-card flex max-h-[92vh] w-full max-w-2xl flex-col bg-white">
-        <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+        <div className="flex items-center justify-between border-b border-[#EEF3F9] px-6 py-4">
           <div className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-amber-600" />
-            <h2 className="font-display text-lg font-extrabold text-slate-900">
+            <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
               Chuyển ảnh / PDF thành đề
             </h2>
           </div>
@@ -335,7 +348,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
             onClick={closeAndReset}
             disabled={loading}
             aria-label="Đóng"
-            className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100 disabled:opacity-40"
+            className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF] disabled:opacity-40"
           >
             <X className="h-4 w-4" />
           </button>
@@ -345,6 +358,18 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
           {error && (
             <div className="rounded-xl border border-rose-300 bg-rose-50 p-3 text-xs font-bold text-rose-700">
               {error}
+              {aiUnavailable && onManual && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeAndReset();
+                    onManual();
+                  }}
+                  className="mt-2 block rounded-lg border border-rose-300 bg-white px-3 py-1.5 font-extrabold text-rose-700 hover:bg-rose-100"
+                >
+                  Soạn bài tập thủ công
+                </button>
+              )}
             </div>
           )}
 
@@ -369,18 +394,18 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
             className={`flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed p-6 text-center transition ${
               dragOver
                 ? 'border-blue-600 bg-blue-50'
-                : 'border-slate-800 bg-amber-50/60 hover:bg-amber-100/50'
+                : 'border-[#DCE7F3] bg-amber-50/60 hover:bg-amber-100/50'
             }`}
           >
             {preparing ? (
-              <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+              <Loader2 className="h-8 w-8 animate-spin text-[#1267E9]" />
             ) : (
-              <FileUp className="h-8 w-8 text-blue-600" />
+              <FileUp className="h-8 w-8 text-[#1267E9]" />
             )}
-            <span className="mt-2 font-display text-sm font-extrabold text-slate-900">
+            <span className="mt-2 font-display text-sm font-extrabold text-[#172B4D]">
               Kéo thả, nhấn để chọn, hoặc dán (Ctrl+V) ảnh chụp đề
             </span>
-            <span className="mt-1 text-xs text-slate-500">
+            <span className="mt-1 text-xs text-[#5E6C84]">
               Chọn được nhiều trang cùng lúc · PNG, JPG, WEBP, PDF · PDF được tách thành từng trang · Hình vẽ trong đề được tự cắt vào câu hỏi
             </span>
             <input
@@ -399,15 +424,15 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
           {/* Selected pages */}
           {files.length > 0 && (
             <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs font-bold text-slate-700">
+              <div className="flex items-center justify-between text-xs font-bold text-[#3B4A66]">
                 <span>{files.length} trang/file · theo đúng thứ tự trong đề</span>
-                <span className={overBudget ? 'text-rose-600' : 'text-slate-500'}>
+                <span className={overBudget ? 'text-rose-600' : 'text-[#5E6C84]'}>
                   {formatMB(totalBase64)} / 4 MB
                 </span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-slate-200">
                 <div
-                  className={`h-full rounded-full ${overBudget ? 'bg-rose-500' : 'bg-blue-600'}`}
+                  className={`h-full rounded-full ${overBudget ? 'bg-rose-500' : 'bg-[#1267E9]'}`}
                   style={{ width: `${Math.min(100, (totalBase64 / MAX_TOTAL_BASE64) * 100)}%` }}
                 />
               </div>
@@ -415,9 +440,9 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
                 {files.map((f, idx) => (
                   <li
                     key={f.id}
-                    className="flex items-center gap-3 rounded-xl border-2 border-slate-800 bg-white p-2"
+                    className="flex items-center gap-3 rounded-xl border border-[#DCE7F3] bg-white p-2"
                   >
-                    <span className="w-5 text-center font-mono text-xs font-bold text-slate-500">
+                    <span className="w-5 text-center font-mono text-xs font-bold text-[#5E6C84]">
                       {idx + 1}
                     </span>
                     {f.mimeType === 'application/pdf' ? (
@@ -428,12 +453,12 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
                       <img
                         src={f.objectUrl}
                         alt=""
-                        className="h-14 w-11 shrink-0 rounded-md border border-slate-200 object-cover"
+                        className="h-14 w-11 shrink-0 rounded-md border border-[#EEF3F9] object-cover"
                       />
                     )}
                     <div className="min-w-0 flex-1">
-                      <div className="truncate text-xs font-bold text-slate-900">{f.name}</div>
-                      <div className="text-[11px] text-slate-500">{formatMB(f.base64.length)}</div>
+                      <div className="truncate text-xs font-bold text-[#172B4D]">{f.name}</div>
+                      <div className="text-[11px] text-[#5E6C84]">{formatMB(f.base64.length)}</div>
                     </div>
                     <div className="flex items-center gap-0.5">
                       <button
@@ -441,7 +466,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
                         onClick={() => moveFile(idx, -1)}
                         disabled={idx === 0 || loading}
                         aria-label="Lên trên"
-                        className="rounded p-1 hover:bg-slate-100 disabled:opacity-30"
+                        className="rounded p-1 hover:bg-[#F6FAFF] disabled:opacity-30"
                       >
                         <ArrowUp className="h-3.5 w-3.5" />
                       </button>
@@ -450,7 +475,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
                         onClick={() => moveFile(idx, 1)}
                         disabled={idx === files.length - 1 || loading}
                         aria-label="Xuống dưới"
-                        className="rounded p-1 hover:bg-slate-100 disabled:opacity-30"
+                        className="rounded p-1 hover:bg-[#F6FAFF] disabled:opacity-30"
                       >
                         <ArrowDown className="h-3.5 w-3.5" />
                       </button>
@@ -492,28 +517,28 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
                 className={`rounded-xl border-2 p-3 text-left transition ${
                   solveWithAI === mode.value
                     ? 'border-blue-600 bg-blue-50'
-                    : 'border-slate-300 bg-white hover:border-slate-500'
+                    : 'border-[#DCE7F3] bg-white hover:border-slate-500'
                 }`}
               >
-                <div className="text-xs font-extrabold text-slate-900">{mode.title}</div>
-                <div className="mt-0.5 text-xs text-slate-600">{mode.desc}</div>
+                <div className="text-xs font-extrabold text-[#172B4D]">{mode.title}</div>
+                <div className="mt-0.5 text-xs text-[#5E6C84]">{mode.desc}</div>
               </button>
             ))}
           </div>
 
           {loading && (
             <div className="flex items-center gap-3 rounded-xl border-2 border-blue-600 bg-blue-50 p-3">
-              <Loader2 className="h-5 w-5 shrink-0 animate-spin text-blue-600" />
-              <div className="text-xs text-slate-800">
+              <Loader2 className="h-5 w-5 shrink-0 animate-spin text-[#1267E9]" />
+              <div className="text-xs text-[#172B4D]">
                 <div className="font-bold">{loadingMessage(elapsed, solveWithAI)}</div>
-                <div className="text-slate-500">Đã chạy {elapsed} giây · Không đóng cửa sổ này</div>
+                <div className="text-[#5E6C84]">Đã chạy {elapsed} giây · Không đóng cửa sổ này</div>
               </div>
             </div>
           )}
         </div>
 
-        <div className="flex items-center justify-between gap-3 border-t border-slate-200 px-6 py-4">
-          <span className="text-[11px] text-slate-500">
+        <div className="flex items-center justify-between gap-3 border-t border-[#EEF3F9] px-6 py-4">
+          <span className="text-[11px] text-[#5E6C84]">
             Kết quả mở trong trình soạn đề, đặt cạnh đề gốc để bạn soát lại trước khi lưu.
           </span>
           <div className="flex shrink-0 gap-2">
@@ -521,7 +546,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
               type="button"
               onClick={closeAndReset}
               disabled={loading}
-              className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
+              className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-[#3B4A66]"
             >
               Hủy
             </button>
@@ -529,7 +554,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
               type="button"
               onClick={runExtraction}
               disabled={loading || preparing || files.length === 0 || overBudget}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-blue-600 px-5 py-2 text-xs font-extrabold text-white disabled:opacity-50"
+              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1267E9] px-5 py-2 text-xs font-extrabold text-white disabled:opacity-50"
             >
               <Sparkles className="h-4 w-4" />
               {loading ? 'Đang xử lý…' : 'Nhận diện đề'}

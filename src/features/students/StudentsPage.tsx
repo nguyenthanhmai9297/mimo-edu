@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import {
+  Archive,
   Check,
+  CheckCircle2,
   Copy,
   Edit3,
+  GraduationCap,
   KeyRound,
   Plus,
+  School,
   Search,
   UserPlus,
   X,
@@ -13,6 +17,21 @@ import { useAppContext } from '../../app/providers';
 import { studentFormSchema, StudentFormValues } from '../../schemas/validation';
 import { createStudent, updateStudent } from '../../services/firestoreRepository';
 import { Student } from '../../types/domain';
+import {
+  DataTable,
+  EmptyState,
+  FilterSelect,
+  PageHeader,
+  SearchInput,
+  StatCard,
+  StatusBadge,
+  STUDIO_TONE,
+  TD,
+  TH,
+  THEAD,
+  Toolbar,
+  TR,
+} from '../../components/studio/StudioUi';
 
 export const StudentsPage: React.FC = () => {
   const { students, classes } = useAppContext();
@@ -22,6 +41,8 @@ export const StudentsPage: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState<
     'all' | 'active' | 'dropped' | 'archived'
   >('all');
+
+  const [gradeFilter, setGradeFilter] = useState('all');
 
   const [modalOpen, setModalOpen] = useState(false);
   const [editingStudent, setEditingStudent] = useState<Student | null>(null);
@@ -42,6 +63,7 @@ export const StudentsPage: React.FC = () => {
 
   const filteredStudents = students.filter((st) => {
     if (statusFilter !== 'all' && st.status !== statusFilter) return false;
+    if (gradeFilter !== 'all' && st.grade !== gradeFilter) return false;
     if (
       selectedClassFilter !== 'all' &&
       !st.classIds.includes(selectedClassFilter)
@@ -130,202 +152,186 @@ export const StudentsPage: React.FC = () => {
     }
   };
 
+  const grades = Array.from(new Set(students.map((s) => s.grade))).sort();
+  const count = (status: Student['status']) => students.filter((s) => s.status === status).length;
+  const filtersOn = searchQuery.trim() !== '' || selectedClassFilter !== 'all' || gradeFilter !== 'all' || statusFilter !== 'all';
+  const STATUS_BADGE: Record<Student['status'], { kind: 'success' | 'danger' | 'neutral'; label: string }> = {
+    active: { kind: 'success', label: 'Đang học' },
+    dropped: { kind: 'danger', label: 'Nghỉ học' },
+    archived: { kind: 'neutral', label: 'Lưu trữ' },
+  };
+
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-        <div>
-          <h1 className="font-display text-2xl font-extrabold text-slate-900">
-            Quản Lý Học Sinh & Mã Truy Cập
-          </h1>
-          <p className="text-sm text-slate-600">
-            Mỗi học sinh được máy chủ tự động cấp một mã 6 ký tự duy nhất để phụ
-            huynh và học sinh đăng nhập.
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={openCreateModal}
-          className="cartoon-button flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-extrabold text-white whitespace-nowrap self-start"
-        >
-          <UserPlus className="h-4 w-4" />
-          Thêm Học Sinh Mới
-        </button>
-      </div>
+    <div className="studio-skin space-y-6">
+      <PageHeader
+        icon={GraduationCap}
+        tone="green"
+        title="Học sinh & Mã"
+        description="Mỗi học sinh được máy chủ tự cấp một mã 6 ký tự duy nhất để học sinh và phụ huynh vào cổng học sinh."
+        actions={
+          <button type="button" onClick={openCreateModal} className="studio-btn studio-btn-primary">
+            <UserPlus className="h-4 w-4" />
+            Thêm học sinh
+          </button>
+        }
+      />
 
-      {/* Search & Filters */}
-      <div className="cartoon-card flex flex-col justify-between gap-4 p-4 md:flex-row md:items-center">
-        <div className="relative flex-1">
-          <Search className="pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-slate-400" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Tìm theo họ tên, biệt danh hoặc mã 6 ký tự..."
-            className="w-full rounded-xl border-2 border-slate-800 bg-white py-2 pr-4 pl-10 text-sm focus:outline-none"
-          />
-        </div>
+      {students.length > 0 && (
+        <section className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+          <StatCard icon={GraduationCap} tone="blue" label="Tổng số học sinh" value={students.length} note={`${grades.length} khối lớp`} />
+          <StatCard icon={CheckCircle2} tone="green" label="Đang học" value={count('active')} />
+          <StatCard icon={School} tone="yellow" label="Chưa ghép lớp" value={students.filter((s) => s.classIds.length === 0).length} note="Vẫn luyện Toán cùng Mimo được" />
+          <StatCard icon={Archive} tone="gray" label="Nghỉ học / lưu trữ" value={count('dropped') + count('archived')} />
+        </section>
+      )}
 
-        <div className="flex flex-wrap items-center gap-2">
-          <select
-            value={selectedClassFilter}
-            onChange={(e) => setSelectedClassFilter(e.target.value)}
-            className="rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-xs font-bold text-slate-800"
-          >
-            <option value="all">Tất cả lớp học</option>
-            {classes.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name} ({c.grade})
-              </option>
-            ))}
-          </select>
+      {students.length > 0 && (
+        <Toolbar>
+          <SearchInput value={searchQuery} onChange={setSearchQuery} placeholder="Tìm theo họ tên, tên gọi hoặc mã 6 ký tự…" />
+          <div className="flex flex-wrap items-center gap-3">
+            <FilterSelect label="Lớp" value={selectedClassFilter} onChange={setSelectedClassFilter}>
+              <option value="all">Tất cả</option>
+              {classes.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </FilterSelect>
+            <FilterSelect label="Khối" value={gradeFilter} onChange={setGradeFilter}>
+              <option value="all">Tất cả</option>
+              {grades.map((g) => (
+                <option key={g} value={g}>
+                  {g}
+                </option>
+              ))}
+            </FilterSelect>
+            <FilterSelect label="Trạng thái" value={statusFilter} onChange={(v) => setStatusFilter(v as typeof statusFilter)}>
+              <option value="all">Tất cả</option>
+              <option value="active">Đang học</option>
+              <option value="dropped">Nghỉ học</option>
+              <option value="archived">Lưu trữ</option>
+            </FilterSelect>
+          </div>
+        </Toolbar>
+      )}
 
-          <select
-            value={statusFilter}
-            onChange={(e) =>
-              setStatusFilter(
-                e.target.value as 'all' | 'active' | 'dropped' | 'archived'
-              )
-            }
-            className="rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-xs font-bold text-slate-800"
-          >
-            <option value="all">Tất cả trạng thái</option>
-            <option value="active">Đang học</option>
-            <option value="dropped">Ngừng học</option>
-            <option value="archived">Lưu trữ</option>
-          </select>
-        </div>
-      </div>
-
-      {/* Students Table */}
-      <div className="cartoon-card overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-left text-sm">
-            <thead>
-              <tr className="border-b-2 border-slate-900 bg-amber-100/80 text-xs font-extrabold text-slate-900">
-                <th className="px-4 py-3.5">Học sinh</th>
-                <th className="px-4 py-3.5">Khối & Lớp tham gia</th>
-                <th className="px-4 py-3.5">Mã truy cập (6 ký tự)</th>
-                <th className="px-4 py-3.5">Ghi chú nội bộ (Giáo viên)</th>
-                <th className="px-4 py-3.5">Trạng thái</th>
-                <th className="px-4 py-3.5 text-right">Thao tác</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200">
-              {filteredStudents.length === 0 ? (
-                <tr>
-                  <td
-                    colSpan={6}
-                    className="px-6 py-10 text-center text-sm text-slate-500"
-                  >
-                    Chưa có hồ sơ học sinh nào khớp với bộ lọc.
+      {students.length === 0 ? (
+        <EmptyState
+          icon={GraduationCap}
+          tone="green"
+          title="Chưa có học sinh nào"
+          text="Thêm học sinh đầu tiên: hệ thống sẽ tự cấp mã 6 ký tự để em đăng nhập cổng học sinh. Có thể ghép lớp ngay hoặc để sau."
+          action={
+            <button type="button" onClick={openCreateModal} className="studio-btn studio-btn-primary">
+              <UserPlus className="h-4 w-4" />
+              Thêm học sinh đầu tiên
+            </button>
+          }
+        />
+      ) : filteredStudents.length === 0 ? (
+        <EmptyState
+          icon={Search}
+          tone="gray"
+          title="Không có học sinh phù hợp"
+          text="Thử từ khóa khác hoặc bỏ bớt bộ lọc."
+          action={
+            filtersOn && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedClassFilter('all');
+                  setGradeFilter('all');
+                  setStatusFilter('all');
+                }}
+                className="studio-btn studio-btn-secondary"
+              >
+                Xóa bộ lọc
+              </button>
+            )
+          }
+        />
+      ) : (
+        <DataTable minWidth={860}>
+          <thead className={THEAD}>
+            <tr>
+              <th className={TH}>Học sinh</th>
+              <th className={TH}>Khối & lớp</th>
+              <th className={TH}>Mã truy cập</th>
+              <th className={TH}>Ghi chú của giáo viên</th>
+              <th className={TH}>Trạng thái</th>
+              <th className={`${TH} text-right`}>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredStudents.map((st) => {
+              const enrolledNames = st.classIds
+                .map((cid) => classes.find((c) => c.id === cid)?.name)
+                .filter(Boolean)
+                .join(' · ');
+              const badge = STATUS_BADGE[st.status];
+              return (
+                <tr key={st.id} className={TR}>
+                  <td className={TD}>
+                    <div className="flex items-center gap-3">
+                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-display text-sm font-extrabold ${STUDIO_TONE.blue}`}>
+                        {st.fullName.slice(0, 1).toUpperCase()}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="truncate font-bold text-[#172B4D]">{st.fullName}</div>
+                        <div className="text-xs text-[#5E6C84]">
+                          {[st.nickname && `Tên gọi: ${st.nickname}`, st.dob && `NS: ${st.dob}`].filter(Boolean).join(' · ') || '—'}
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className={`${TD} text-xs`}>
+                    <div className="font-bold text-[#172B4D]">{st.grade}</div>
+                    <div className={`mt-0.5 ${enrolledNames ? 'text-[#5E6C84]' : 'text-[#B7790A]'}`}>{enrolledNames || 'Chưa ghép lớp'}</div>
+                  </td>
+                  <td className={TD}>
+                    <button
+                      type="button"
+                      onClick={() => handleCopyAccessCode(st)}
+                      title="Bấm để sao chép mã gửi cho phụ huynh"
+                      className="group inline-flex items-center gap-2 rounded-xl border border-[#FFE7A3] bg-[#FFF8E1] py-1 pr-2 pl-3 transition hover:border-[#FFD34E]"
+                    >
+                      <span className="font-mono text-base font-black tracking-[0.18em] text-[#071A63]">{st.accessCode}</span>
+                      <span
+                        className={`flex items-center gap-1 rounded-lg px-1.5 py-0.5 text-[11px] font-bold ${
+                          copiedCodeId === st.id ? 'bg-[#E7F7F0] text-[#1F9D6B]' : 'bg-white text-[#5E6C84] group-hover:text-[#172B4D]'
+                        }`}
+                      >
+                        {copiedCodeId === st.id ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                        {copiedCodeId === st.id ? 'Đã chép' : 'Chép'}
+                      </span>
+                    </button>
+                  </td>
+                  <td className={`${TD} max-w-xs text-xs text-[#5E6C84]`}>
+                    <span className="line-clamp-2">{st.internalNotes || '—'}</span>
+                  </td>
+                  <td className={TD}>
+                    <StatusBadge kind={badge.kind}>{badge.label}</StatusBadge>
+                  </td>
+                  <td className={`${TD} text-right`}>
+                    <button type="button" onClick={() => openEditModal(st)} className="studio-btn studio-btn-secondary px-3 text-xs">
+                      <Edit3 className="h-3.5 w-3.5" />
+                      Sửa hồ sơ
+                    </button>
                   </td>
                 </tr>
-              ) : (
-                filteredStudents.map((st) => {
-                  const enrolledNames = st.classIds
-                    .map((cid) => classes.find((c) => c.id === cid)?.name)
-                    .filter(Boolean)
-                    .join(' · ');
-
-                  return (
-                    <tr
-                      key={st.id}
-                      className="hover:bg-slate-50/80 transition-colors"
-                    >
-                      <td className="px-4 py-3.5">
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border-2 border-slate-900 bg-sky-200 font-display text-sm font-extrabold text-slate-900">
-                            {st.fullName.slice(0, 1).toUpperCase()}
-                          </div>
-                          <div>
-                            <div className="font-display font-bold text-slate-900">
-                              {st.fullName}
-                            </div>
-                            <div className="text-xs text-slate-500">
-                              {st.nickname ? `Biệt danh: ${st.nickname}` : ''}
-                              {st.dob ? ` · NS: ${st.dob}` : ''}
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-
-                      <td className="px-4 py-3.5 text-xs">
-                        <div className="font-bold text-slate-800">{st.grade}</div>
-                        <div className="mt-0.5 text-slate-500">
-                          {enrolledNames || 'Chưa gán lớp'}
-                        </div>
-                      </td>
-
-                      <td className="px-4 py-3.5">
-                        <div className="flex items-center gap-2">
-                          <span className="rounded-lg border-2 border-slate-900 bg-amber-200 px-2.5 py-1 font-mono text-sm font-black tracking-wider text-slate-900">
-                            {st.accessCode}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={() => handleCopyAccessCode(st)}
-                            className="cartoon-button flex items-center gap-1 rounded-lg bg-white px-2.5 py-1 text-xs font-bold text-slate-800 whitespace-nowrap"
-                            title="Sao chép mã gửi cho phụ huynh"
-                          >
-                            {copiedCodeId === st.id ? (
-                              <>
-                                <Check className="h-3.5 w-3.5 text-emerald-600" />
-                                Đã chép
-                              </>
-                            ) : (
-                              <>
-                                <Copy className="h-3.5 w-3.5" />
-                                Sao chép
-                              </>
-                            )}
-                          </button>
-                        </div>
-                      </td>
-
-                      <td className="max-w-xs px-4 py-3.5 text-xs text-slate-600">
-                        <span className="line-clamp-2">
-                          {st.internalNotes || '—'}
-                        </span>
-                      </td>
-
-                      <td className="px-4 py-3.5 text-xs font-bold">
-                        {st.status === 'active' && (
-                          <span className="text-emerald-700">Đang học</span>
-                        )}
-                        {st.status === 'dropped' && (
-                          <span className="text-rose-700">Ngừng học</span>
-                        )}
-                        {st.status === 'archived' && (
-                          <span className="text-amber-700">Lưu trữ</span>
-                        )}
-                      </td>
-
-                      <td className="px-4 py-3.5 text-right">
-                        <button
-                          type="button"
-                          onClick={() => openEditModal(st)}
-                          className="cartoon-button inline-flex items-center gap-1 rounded-lg bg-white px-3 py-1.5 text-xs font-bold text-slate-800"
-                        >
-                          <Edit3 className="h-3.5 w-3.5" />
-                          Sửa hồ sơ
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
+              );
+            })}
+          </tbody>
+        </DataTable>
+      )}
 
       {/* Create / Edit Student Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
           <div className="cartoon-card max-h-[90vh] w-full max-w-xl overflow-y-auto bg-white p-6">
-            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-              <h2 className="font-display text-lg font-extrabold text-slate-900">
+            <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
+              <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
                 {editingStudent
                   ? 'Chỉnh Sửa Hồ Sơ Học Sinh'
                   : 'Thêm Hồ Sơ Học Sinh Mới'}
@@ -333,7 +339,7 @@ export const StudentsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setModalOpen(false)}
-                className="rounded-lg border border-slate-300 p-1 hover:bg-slate-100"
+                className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF]"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -347,14 +353,14 @@ export const StudentsPage: React.FC = () => {
               )}
 
               {editingStudent && (
-                <div className="flex items-center justify-between rounded-xl border-2 border-slate-900 bg-amber-50 p-3">
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
+                <div className="flex items-center justify-between rounded-xl border border-[#DCE7F3] bg-amber-50 p-3">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#172B4D]">
                     <KeyRound className="h-4 w-4 text-amber-700" />
                     <span>
                       Mã truy cập cố định (không thể chỉnh sửa thủ công):
                     </span>
                   </div>
-                  <span className="font-mono text-base font-black tracking-widest text-blue-700">
+                  <span className="font-mono text-base font-black tracking-widest text-[#1267E9]">
                     {editingStudent.accessCode}
                   </span>
                 </div>
@@ -362,7 +368,7 @@ export const StudentsPage: React.FC = () => {
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Họ và tên học sinh *
                   </label>
                   <input
@@ -373,11 +379,11 @@ export const StudentsPage: React.FC = () => {
                       setFormValues({ ...formValues, fullName: e.target.value })
                     }
                     placeholder="Ví dụ: Nguyễn Minh Khôi"
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Tên gọi thân mật (Tùy chọn)
                   </label>
                   <input
@@ -387,14 +393,14 @@ export const StudentsPage: React.FC = () => {
                       setFormValues({ ...formValues, nickname: e.target.value })
                     }
                     placeholder="Ví dụ: Bé Khôi"
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Khối lớp *
                   </label>
                   <select
@@ -402,7 +408,7 @@ export const StudentsPage: React.FC = () => {
                     onChange={(e) =>
                       setFormValues({ ...formValues, grade: e.target.value })
                     }
-                    className="w-full rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3 py-2 text-sm"
                   >
                     {[
                       'Khối 1',
@@ -422,7 +428,7 @@ export const StudentsPage: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Ngày sinh
                   </label>
                   <input
@@ -431,11 +437,11 @@ export const StudentsPage: React.FC = () => {
                     onChange={(e) =>
                       setFormValues({ ...formValues, dob: e.target.value })
                     }
-                    className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 font-mono text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 font-mono text-sm"
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-bold text-slate-700">
+                  <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                     Trạng thái
                   </label>
                   <select
@@ -449,7 +455,7 @@ export const StudentsPage: React.FC = () => {
                           | 'archived',
                       })
                     }
-                    className="w-full rounded-xl border-2 border-slate-800 bg-white px-3 py-2 text-sm"
+                    className="w-full rounded-xl border border-[#DCE7F3] bg-white px-3 py-2 text-sm"
                   >
                     <option value="active">Đang học</option>
                     <option value="dropped">Ngừng học</option>
@@ -459,22 +465,22 @@ export const StudentsPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="mb-1.5 block text-xs font-bold text-slate-700">
+                <label className="mb-1.5 block text-xs font-bold text-[#3B4A66]">
                   Gán vào các lớp học đang hoạt động
                 </label>
-                <div className="grid max-h-36 grid-cols-1 gap-2 overflow-y-auto rounded-xl border-2 border-slate-800 bg-slate-50 p-3 sm:grid-cols-2">
+                <div className="grid max-h-36 grid-cols-1 gap-2 overflow-y-auto rounded-xl border border-[#DCE7F3] bg-[#F6FAFF] p-3 sm:grid-cols-2">
                   {classes.map((cls) => {
                     const checked = formValues.classIds.includes(cls.id);
                     return (
                       <label
                         key={cls.id}
-                        className="flex cursor-pointer items-center gap-2 text-xs font-semibold text-slate-800"
+                        className="flex cursor-pointer items-center gap-2 text-xs font-semibold text-[#172B4D]"
                       >
                         <input
                           type="checkbox"
                           checked={checked}
                           onChange={() => toggleClassSelection(cls.id)}
-                          className="h-4 w-4 rounded border-slate-800"
+                          className="h-4 w-4 rounded border-[#DCE7F3]"
                         />
                         <span>
                           {cls.name} ({cls.grade})
@@ -483,7 +489,7 @@ export const StudentsPage: React.FC = () => {
                     );
                   })}
                   {classes.length === 0 && (
-                    <span className="text-xs text-slate-500">
+                    <span className="text-xs text-[#5E6C84]">
                       Chưa có lớp học nào. Bạn có thể tạo lớp trước.
                     </span>
                   )}
@@ -491,7 +497,7 @@ export const StudentsPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="mb-1 block text-xs font-bold text-slate-700">
+                <label className="mb-1 block text-xs font-bold text-[#3B4A66]">
                   Ghi chú nội bộ của giáo viên (Phụ huynh/Học sinh KHÔNG nhìn thấy)
                 </label>
                 <textarea
@@ -504,7 +510,7 @@ export const StudentsPage: React.FC = () => {
                     })
                   }
                   placeholder="Nhận xét riêng tư cho giáo viên về tính cách, học lực..."
-                  className="w-full rounded-xl border-2 border-slate-800 px-3 py-2 text-sm"
+                  className="w-full rounded-xl border border-[#DCE7F3] px-3 py-2 text-sm"
                 />
               </div>
 
@@ -512,14 +518,14 @@ export const StudentsPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
+                  className="cartoon-button rounded-xl bg-white px-4 py-2 text-xs font-bold text-[#3B4A66]"
                 >
                   Hủy
                 </button>
                 <button
                   type="submit"
                   disabled={saving}
-                  className="cartoon-button flex items-center gap-1.5 rounded-xl bg-emerald-600 px-5 py-2 text-xs font-extrabold text-white"
+                  className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1F9D6B] px-5 py-2 text-xs font-extrabold text-white"
                 >
                   <Plus className="h-4 w-4" />
                   {saving

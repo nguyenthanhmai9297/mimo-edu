@@ -5,6 +5,7 @@ import {
   subscribeAdminAllowlist,
 } from '../../services/firestoreRepository';
 import { AdminAllowlistEntry } from '../../types/domain';
+import { PageHeader, STUDIO_INPUT } from '../../components/studio/StudioUi';
 
 export const AdminAllowlistPage: React.FC = () => {
   const [entries, setEntries] = useState<AdminAllowlistEntry[]>([]);
@@ -40,20 +41,16 @@ export const AdminAllowlistPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-3xl space-y-6">
-      <div>
-        <h1 className="font-display text-2xl font-extrabold text-slate-900">
-          Quản Lý Quyền Truy Cập Admin (Allowlist)
-        </h1>
-        <p className="text-sm text-slate-600">
-          Chỉ những địa chỉ email Google có trong danh sách dưới đây mới được
-          phép truy cập phân hệ Quản trị Giáo viên. Người dùng không thể tự
-          đăng ký làm Admin.
-        </p>
-      </div>
+    <div className="studio-skin max-w-3xl space-y-6">
+      <PageHeader
+        icon={ShieldCheck}
+        tone="navy"
+        title="Quyền Admin"
+        description="Chỉ email Google có trong danh sách này mới vào được MimoEDU Studio. Người dùng không thể tự đăng ký làm admin."
+      />
 
-      <form onSubmit={handleAdd} className="cartoon-card bg-white p-5">
-        <label className="mb-1.5 block text-xs font-bold text-slate-700">
+      <form onSubmit={handleAdd} className="studio-card p-5">
+        <label className="mb-1.5 block text-xs font-bold text-[#3B4A66]">
           Cấp quyền cho email Giáo viên / Quản trị viên mới
         </label>
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -63,15 +60,11 @@ export const AdminAllowlistPage: React.FC = () => {
             value={newEmail}
             onChange={(e) => setNewEmail(e.target.value)}
             placeholder="giaovientoan@gmail.com"
-            className="flex-1 rounded-xl border-2 border-slate-800 px-3.5 py-2 text-sm"
+            className={`${STUDIO_INPUT} flex-1`}
           />
-          <button
-            type="submit"
-            disabled={saving}
-            className="cartoon-button flex items-center justify-center gap-1.5 rounded-xl bg-blue-600 px-5 py-2 text-xs font-extrabold text-white whitespace-nowrap"
-          >
+          <button type="submit" disabled={saving} className="studio-btn studio-btn-primary">
             <Plus className="h-4 w-4" />
-            {saving ? 'Đang cấp quyền...' : 'Cấp Quyền Admin'}
+            {saving ? 'Đang cấp quyền…' : 'Cấp quyền admin'}
           </button>
         </div>
         {errorMsg && (
@@ -79,23 +72,23 @@ export const AdminAllowlistPage: React.FC = () => {
         )}
       </form>
 
-      <div className="cartoon-card overflow-hidden bg-white">
-        <div className="border-b-2 border-slate-900 bg-amber-100 px-5 py-3 font-display text-sm font-extrabold text-slate-900">
-          Danh Sách Email Được Cấp Quyền ({entries.length})
+      <div className="studio-card overflow-hidden">
+        <div className="border-b border-[#DCE7F3] bg-[#F6FAFF] px-5 py-3 font-display text-sm font-extrabold text-[#172B4D]">
+          Email được cấp quyền ({entries.length})
         </div>
-        <div className="divide-y divide-slate-200">
+        <div className="divide-y divide-[#EEF3F9]">
           {entries.map((entry) => (
             <div
               key={entry.id}
               className="flex items-center justify-between px-5 py-3.5 text-sm"
             >
               <div className="flex items-center gap-2.5">
-                <ShieldCheck className="h-4 w-4 text-emerald-600" />
-                <span className="font-mono font-bold text-slate-900">
+                <ShieldCheck className="h-4 w-4 text-[#1F9D6B]" />
+                <span className="font-mono font-bold text-[#172B4D]">
                   {entry.email}
                 </span>
               </div>
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-[#5E6C84]">
                 Vai trò: <strong>{entry.role}</strong> · Cấp bởi:{' '}
                 {entry.addedBy}
               </span>

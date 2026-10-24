@@ -73,7 +73,18 @@ export type RichBlockNode =
   | {
       type: 'geometry';
       drawing: GeometryDrawingData;
+    }
+  | {
+      // Data table (bảng số liệu). Rows are objects because Firestore cannot
+      // store an array directly inside another array. Cells may hold $math$.
+      type: 'table';
+      header: boolean;
+      rows: TableRow[];
     };
+
+export interface TableRow {
+  cells: string[];
+}
 
 export interface RichTextContent {
   version: 1;
@@ -108,6 +119,13 @@ export interface HomeworkQuestion {
   statements?: TrueFalseStatement[];
   // Type 4: short_answer
   acceptableAnswers?: string[]; // Equivalent answers (normalized)
+  // How the unit is checked: 'required' (default) the unit must be written as
+  // in the key; 'optional' it may be left out, but a unit that is written must
+  // still be the key's unit. Units are never converted (420 mm ≠ 42 cm).
+  unitMode?: 'required' | 'optional';
+  // Fractions of equal value count as correct (6/8 for 3/4); off by default
+  // because many questions ask for one specific fraction.
+  acceptEquivalentFractions?: boolean;
   // Type 5: essay
   rubric?: string;
   sampleSolution?: RichTextContent;

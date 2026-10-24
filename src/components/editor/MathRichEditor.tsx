@@ -12,6 +12,7 @@ import {
   ListOrdered,
   Sigma,
   SquareSigma,
+  Table,
 } from 'lucide-react';
 import { EditorContent, useEditor, useEditorState } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
@@ -20,7 +21,7 @@ import Placeholder from '@tiptap/extension-placeholder';
 import { GeometryDrawingData, RichTextContent } from '../../types/domain';
 import { GeometryBuilderModal } from './GeometryBuilderModal';
 import { Geometry3DModal } from '../geometry3d/Geometry3DModal';
-import { BlockMath, Geometry, ImageBlock, InlineMath } from './editorNodes';
+import { BlockMath, DataTable, Geometry, ImageBlock, InlineMath, NEW_TABLE } from './editorNodes';
 import { docToRichText, richTextToDoc } from './richTextDoc';
 
 interface MathRichEditorProps {
@@ -99,6 +100,7 @@ export const MathRichEditor: React.FC<MathRichEditorProps> = ({
       BlockMath,
       ImageBlock,
       Geometry,
+      DataTable,
     ],
     content: richTextToDoc(value),
     editorProps: {
@@ -249,6 +251,13 @@ export const MathRichEditor: React.FC<MathRichEditorProps> = ({
         <ToolbarButton title="Hình học không gian 3D" onClick={() => setShow3DModal(true)}>
           <Box className="h-3.5 w-3.5 text-indigo-700" />
           {!compact && '3D'}
+        </ToolbarButton>
+        <ToolbarButton
+          title="Chèn bảng số liệu"
+          onClick={() => editor.chain().focus().insertContent({ type: 'dataTable', attrs: NEW_TABLE }).run()}
+        >
+          <Table className="h-3.5 w-3.5 text-sky-700" />
+          {!compact && 'Bảng'}
         </ToolbarButton>
         <ToolbarButton title="Chèn ảnh (tối đa 2MB)" onClick={() => imageInputRef.current?.click()}>
           <ImageIcon className="h-3.5 w-3.5 text-emerald-600" />

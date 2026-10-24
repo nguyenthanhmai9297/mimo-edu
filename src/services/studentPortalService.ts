@@ -25,6 +25,7 @@ import {
   gradeFullSubmission,
 } from '../utils/gradingEngine';
 import { apiUrl } from '../lib/apiUrl';
+import { cachedRequest, clearStudentCache, peekCached } from './studentCache';
 
 const TOKEN_STORAGE_KEY = 'lop_chung_toi_student_session_token';
 const STUDENT_PROFILE_STORAGE_KEY = 'lop_chung_toi_student_profile';
@@ -71,6 +72,7 @@ export function getSavedStudentProfile(): PublicStudentProfile | null {
 }
 
 export function clearStudentToken(): void {
+  clearStudentCache();
   sessionStorage.removeItem(TOKEN_STORAGE_KEY);
   localStorage.removeItem(TOKEN_STORAGE_KEY);
   sessionStorage.removeItem(STUDENT_PROFILE_STORAGE_KEY);
@@ -517,4 +519,38 @@ export async function submitStudentHomework(params: {
     maxScore: graded.maxScore,
     submittedAt: nowIso,
   };
+}
+
+/** A published game from the teachers' Kho trò chơi. embeddable: null = the site could not be checked. */
+export type StudentGame = MathGame & { embeddable: boolean | null };
+
+const GAMES_TTL = 60_000;
+
+export const peekStudentGames = () => peekCached<StudentGame[]>(getSavedStudentToken(), 'games', GAMES_TTL);
+
+/** Trò chơi Toán for the signed-in student (any student, with or without a class); reused for a minute. */
+export function fetchStudentGames(): Promise<StudentGame[]> {
+  const token = getSavedStudentToken();
+  if (!token) return Promise.reject(new Error('UNAUTHENTICATED'));
+  return cachedRequest(token, 'games', GAMES_TTL, () => loadStudentGames(token));
+}
+
+async function loadStudentGames(token: string): Promise<StudentGame[]> {
+  const response = await fetch(apiUrl('/api/student-portal/games'), {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (response.status === 401 || response.status === 403) {
+    clearStudentToken();
+    throw new Error('UNAUTHENTICATED');
+  }
+  let data: { games?: StudentGame[]; error?: string } = {};
+  try {
+    data = await response.json();
+  } catch {
+    // non-JSON (e.g. proxy error page)
+  }
+  if (!response.ok || !Array.isArray(data.games)) {
+    throw new Error(data.error || 'Không tải được danh sách trò chơi. Con thử lại nhé!');
+  }
+  return data.games;
 }

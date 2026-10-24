@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6F7FF"/><stop offset="1" stop-color="#CFE9FF"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#071A63" flood-opacity="0.18"/></filter>
+</defs>
+<rect width="800" height="500" fill="url(#bg)"/>
+<circle cx="700" cy="70" r="140" fill="#1267E9" opacity="0.18"/>
+<circle cx="90" cy="460" r="160" fill="#1267E9" opacity="0.14"/>
+<g fill="#FFFFFF" opacity="0.7"><circle cx="150" cy="80" r="5"/><circle cx="620" cy="420" r="4"/><circle cx="420" cy="60" r="3"/><circle cx="730" cy="260" r="4"/></g>
+<path d="M95 150 l6 15 15 6 -15 6 -6 15 -6 -15 -15 -6 15 -6z" fill="#FFD34E"/>
+<path d="M690 380 l5 12 12 5 -12 5 -5 12 -5 -12 -12 -5 12 -5z" fill="#FFFFFF" opacity="0.9"/>
+<circle cx="220" cy="170" r="34" fill="#1267E9" filter="url(#sh)"/><circle cx="310" cy="170" r="34" fill="#54C8FF" filter="url(#sh)"/><circle cx="400" cy="170" r="34" fill="#FFB800" filter="url(#sh)"/><circle cx="490" cy="170" r="34" fill="#FF76B5" filter="url(#sh)"/><circle cx="580" cy="170" r="34" fill="#7B5CFF" filter="url(#sh)"/><circle cx="220" cy="270" r="34" fill="#22C38E" filter="url(#sh)"/><circle cx="310" cy="270" r="34" fill="#1267E9" filter="url(#sh)"/><circle cx="400" cy="270" r="34" fill="#FFB800" filter="url(#sh)"/><circle cx="490" cy="270" r="34" fill="#FF76B5" filter="url(#sh)"/><circle cx="580" cy="270" r="34" fill="#54C8FF" filter="url(#sh)"/><rect x="180" y="355" width="440" height="22" rx="11" fill="#FFFFFF" opacity="0.8"/>
+</svg>

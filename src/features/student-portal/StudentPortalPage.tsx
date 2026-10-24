@@ -1,12 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  AlertTriangle,
   ArrowLeft,
   BookOpen,
   Check,
   Copy,
-  ExternalLink,
   Gamepad2,
   Home,
   KeyRound,
@@ -22,9 +20,9 @@ import {
   User,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
-import { MathRichEditor } from '../../components/editor/MathRichEditor';
+import { MimoLoading } from '../../components/ui/MimoLoading';
+import { loadMathRichEditor, loadPracticePortal, loadStudentGames, prefetchWhenIdle } from '../../app/studentChunks';
 import { RichContentRenderer } from '../../components/editor/RichContentRenderer';
-import { PracticePortal } from '../practice/student/PracticePortal';
 import { MimoMascot } from '../practice/student/practiceTheme';
 import { formatDate, homeworkStatus, NoClassNotice, StudentHome } from './StudentHome';
 import { Avatar, EmptyState, INK, MUTED, SectionTitle, StatusBadge, StudentCard, studentButton, TONE, Tone } from './studentUi';
@@ -33,6 +31,7 @@ import { usingFirebaseEmulator } from '../../lib/firebase/config';
 import { fetchPracticeCatalog, fetchPracticeHistory } from '../../services/practiceService';
 import {
   clearStudentToken,
+  fetchStudentGames,
   fetchStudentPortalData,
   getSavedStudentProfile,
   loginWithStudentCode,
@@ -40,9 +39,8 @@ import {
   submitStudentHomework,
 } from '../../services/studentPortalService';
 import {
-  GameCategory,
   HomeworkQuestion,
-  MathGame,
+  PublicStudentProfile,
   RichTextContent,
   StudentQuestionAnswer,
 } from '../../types/domain';
@@ -67,15 +65,6 @@ const PRACTICE_HISTORY_LIMIT = 20;
 // Local testing only: /portal?demo=1 signs in the emulator's test student
 const EMULATOR_DEMO_STUDENT_CODE = 'MIMO03';
 
-/** Card colour of each game category. */
-const GAME_TONES: Record<string, Tone> = {
-  'Số học': 'blue',
-  'Phép tính': 'purple',
-  'Hình học': 'yellow',
-  'Tư duy logic': 'pink',
-  'Ôn tập kiến thức': 'teal',
-};
-
 const TOTAL_PRACTICE_TOPICS = PRACTICE_CATALOG.reduce((n, g) => n + g.topics.length, 0);
 
 /** True when rich content has something to show (not just an empty paragraph). */
@@ -86,6 +75,148 @@ function hasRichContent(content?: RichTextContent): boolean {
     )
   );
 }
+
+/**
+ * Header, tabs and mobile bottom bar of the portal. Rendered around the
+ * content, and already while the portal data is loading, so moving between
+ * sections never blanks the whole page.
+ */
+const PortalChrome: React.FC<{
+  student: Pick<PublicStudentProfile, 'fullName' | 'nickname' | 'accessCode'>;
+  classLabel: string;
+  activeTab: PortalTab;
+  onSelectTab: (tab: PortalTab) => void;
+  pendingCount: number;
+  refreshing: boolean;
+  onRefresh: () => void;
+  onExit: () => void;
+  children: React.ReactNode;
+}> = ({ student, classLabel, activeTab, onSelectTab, pendingCount, refreshing, onRefresh, onExit, children }) => (
+  <div className="student-skin min-h-screen bg-[#FFFBF2] bg-[radial-gradient(ellipse_at_top_left,#E3F1FF_0%,transparent_45%),radial-gradient(ellipse_at_top_right,#FFE6F0_0%,transparent_40%)] pb-28 md:pb-12">
+    {/* Compact sticky top bar (<= 64px) */}
+    <header className="sticky top-0 z-30 border-b border-[#EFE9DA] bg-white/85 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+        <div className="flex min-w-0 items-center gap-3">
+          <a href="/" className="flex shrink-0 items-center gap-2" aria-label="MimoEDU – Trang chủ">
+            <MimoMascot size={38} eager className="ring-2" />
+            <span className="hidden font-display text-lg font-extrabold text-[#1F2A55] sm:inline">
+              Mimo<span className="text-[#2F8CFF]">EDU</span>
+            </span>
+          </a>
+          <span className="hidden h-8 w-px bg-[#EFE9DA] sm:block" aria-hidden="true" />
+          <Avatar name={student.nickname || student.fullName} size={38} className="ring-2" />
+          <div className="min-w-0">
+            <div className="truncate font-display text-sm font-extrabold text-[#1F2A55] sm:text-base">{student.fullName}</div>
+            <div className="truncate text-xs font-bold text-[#56608A]">
+              {classLabel} · Mã {student.accessCode}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex shrink-0 items-center gap-2">
+          <button
+            type="button"
+            onClick={onRefresh}
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E3F1FF] text-[#1D5FB8] transition hover:bg-[#D3E8FF]"
+            title="Làm mới"
+            aria-label="Làm mới dữ liệu"
+          >
+            <RefreshCw className={`h-5 w-5 ${refreshing ? 'animate-spin' : ''}`} />
+          </button>
+          <button
+            type="button"
+            onClick={onExit}
+            className="flex h-11 items-center gap-1.5 rounded-2xl bg-white px-3.5 text-sm font-extrabold text-[#56608A] ring-1 ring-[#EFE9DA] transition hover:bg-[#FFF3F8] hover:text-[#B83270]"
+          >
+            <LogOut className="h-4 w-4" />
+            <span className="hidden sm:inline">Thoát</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
+      {/* Desktop / tablet tabs */}
+      <nav aria-label="Mục của cổng học sinh" className="mb-7 hidden md:block">
+        <div className="flex items-center gap-1.5 overflow-x-auto rounded-[1.5rem] bg-white p-2 ring-1 ring-[#EFE9DA] shadow-[0_10px_28px_-20px_rgba(31,42,85,0.45)]">
+          {PORTAL_NAV.map((t) => {
+            const Icon = t.icon;
+            const isActive = activeTab === t.id;
+            const badge = t.id === 'homework' && pendingCount > 0 ? pendingCount : null;
+            return (
+              <button
+                key={t.id}
+                type="button"
+                aria-current={isActive ? 'page' : undefined}
+                onClick={() => onSelectTab(t.id)}
+                onPointerEnter={() => prefetchTab(t.id)}
+                className={`flex min-h-[48px] items-center gap-2 rounded-2xl px-4 font-display text-[15px] font-extrabold whitespace-nowrap transition ${
+                  isActive ? `${TONE[t.tone].solid} text-white ${TONE[t.tone].shadow}` : 'text-[#56608A] hover:bg-[#F4F7FF] hover:text-[#1F2A55]'
+                }`}
+              >
+                <Icon className="h-5 w-5" />
+                <span className="lg:hidden">{t.short}</span>
+                <span className="hidden lg:inline">{t.label}</span>
+                {badge !== null && (
+                  <span className={`rounded-full px-2 py-0.5 text-xs ${isActive ? 'bg-white/25' : 'bg-[#FFF3C4] text-[#7A5600]'}`}>{badge}</span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </nav>
+
+      {children}
+    </main>
+
+    {/* Mobile bottom bar (<= 72px) */}
+    <nav
+      aria-label="Mục của cổng học sinh"
+      className="fixed right-0 bottom-0 left-0 z-40 grid grid-cols-6 gap-0.5 border-t border-[#EFE9DA] bg-white/95 px-1 pt-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] backdrop-blur-md md:hidden"
+    >
+      {PORTAL_NAV.map((tab) => {
+        const Icon = tab.icon;
+        const isActive = activeTab === tab.id;
+        const badge = tab.id === 'homework' && pendingCount > 0 ? pendingCount : null;
+        return (
+          <button
+            key={tab.id}
+            type="button"
+            aria-current={isActive ? 'page' : undefined}
+            onClick={() => onSelectTab(tab.id)}
+            onTouchStart={() => prefetchTab(tab.id)}
+            className={`relative flex min-h-[52px] flex-col items-center justify-center rounded-2xl transition ${
+              isActive ? `${TONE[tab.tone].soft} ${TONE[tab.tone].text} font-extrabold` : 'text-[#56608A]'
+            }`}
+          >
+            <Icon className={`h-[22px] w-[22px] ${isActive ? 'scale-110' : ''}`} />
+            <span className="mt-1 text-[11px] leading-none whitespace-nowrap">{tab.short}</span>
+            {badge !== null && (
+              <span className="absolute top-0.5 right-1.5 min-w-[18px] rounded-full bg-[#F0506E] px-1 text-center text-[10px] leading-[18px] font-extrabold text-white">
+                {badge}
+              </span>
+            )}
+          </button>
+        );
+      })}
+    </nav>
+  </div>
+);
+
+/** Starts loading a tab's code (and its data) as soon as the finger or mouse gets near it. */
+function prefetchTab(tab: PortalTab) {
+  if (tab === 'practice') {
+    void loadPracticePortal().catch(() => undefined);
+    void fetchPracticeCatalog().catch(() => undefined);
+  } else if (tab === 'games') {
+    void loadStudentGames().catch(() => undefined);
+    void fetchStudentGames().catch(() => undefined);
+  }
+}
+
+const PracticePortal = lazy(() => loadPracticePortal().then((m) => ({ default: m.PracticePortal })));
+const StudentGames = lazy(() => loadStudentGames().then((m) => ({ default: m.StudentGames })));
+const MathRichEditor = lazy(() => loadMathRichEditor().then((m) => ({ default: m.MathRichEditor })));
 
 export const StudentPortalPage: React.FC = () => {
   const navigate = useNavigate();
@@ -101,7 +232,7 @@ export const StudentPortalPage: React.FC = () => {
     return PORTAL_TABS.includes(requested as PortalTab) ? (requested as PortalTab) : 'overview';
   });
   const [bundle, setBundle] = useState<StudentPortalBundle | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(hasStudentSession);
   const [error, setError] = useState<string | null>(null);
 
   // Login gate state when not authenticated
@@ -126,12 +257,6 @@ export const StudentPortalPage: React.FC = () => {
   const [examFeedbackBanner, setExamFeedbackBanner] = useState<string | null>(
     null
   );
-
-  // Games filter & active game state
-  const [selectedCategory, setSelectedCategory] = useState<
-    'all' | GameCategory
-  >('all');
-  const [playingGame, setPlayingGame] = useState<MathGame | null>(null);
 
   // Profile code copy state
   const [copiedMyCode, setCopiedMyCode] = useState(false);
@@ -184,6 +309,12 @@ export const StudentPortalPage: React.FC = () => {
     }
   }, [hasStudentSession, loadPortalData]);
 
+  // Once the portal is on screen, fetch the other sections' code (and the games list) while idle
+  useEffect(() => {
+    if (!bundle) return;
+    return prefetchWhenIdle(loadPracticePortal, loadStudentGames, fetchStudentGames);
+  }, [bundle]);
+
   // Home counters: practice topics with published questions and practice attempts
   const [openTopics, setOpenTopics] = useState<number | null>(null);
   const [practiceCount, setPracticeCount] = useState<number | null>(null);
@@ -209,6 +340,11 @@ export const StudentPortalPage: React.FC = () => {
       cancelled = true;
     };
   }, [bundle]);
+
+  const selectTab = (tab: PortalTab) => {
+    setActiveTab(tab);
+    if (tab !== 'homework') setActiveAssignmentId(null);
+  };
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -398,26 +534,33 @@ export const StudentPortalPage: React.FC = () => {
   // ==========================================================================
   // LOADING OR ERROR STATES
   // ==========================================================================
-  if (loading && !bundle) {
-    return (
-      <div className="student-skin flex min-h-screen flex-col items-center justify-center gap-4 bg-[#FFFBF2] p-4">
-        <MimoMascot size={96} eager className="mimo-float" />
-        <p className={`font-display text-lg font-extrabold ${INK}`}>Mimo đang mở góc học tập…</p>
-        <div className="w-full max-w-3xl space-y-3" aria-hidden="true">
-          <div className="h-28 animate-pulse rounded-[1.75rem] bg-white" />
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="h-20 animate-pulse rounded-3xl bg-white" />
-            ))}
-          </div>
-        </div>
-      </div>
+  // Header and tabs stay on screen (from the profile saved at sign-in) while data loads
+  const savedProfile = getSavedStudentProfile();
+  const chromeWhileWaiting = (content: React.ReactNode) =>
+    savedProfile ? (
+      <PortalChrome
+        student={savedProfile}
+        classLabel={savedProfile.grade}
+        activeTab={activeTab}
+        onSelectTab={selectTab}
+        pendingCount={0}
+        refreshing={loading}
+        onRefresh={loadPortalData}
+        onExit={handleExitPortal}
+      >
+        {content}
+      </PortalChrome>
+    ) : (
+      <div className="student-skin min-h-screen bg-[#FFFBF2]">{content}</div>
     );
+
+  if (loading && !bundle) {
+    return chromeWhileWaiting(<MimoLoading variant={savedProfile ? 'section' : 'page'} />);
   }
 
   if (error || !bundle) {
-    return (
-      <div className="student-skin flex min-h-screen items-center justify-center bg-[#FFFBF2] p-4">
+    return chromeWhileWaiting(
+      <div className="flex justify-center p-4">
         <StudentCard className="w-full max-w-md text-center">
           <MimoMascot size={88} eager className="mx-auto" />
           <h2 className={`mt-3 font-display text-xl font-extrabold ${INK}`}>Ôi, chưa tải được dữ liệu</h2>
@@ -488,86 +631,16 @@ export const StudentPortalPage: React.FC = () => {
     currentStudentAssignment?.status === 'graded';
 
   return (
-    <div className="student-skin min-h-screen bg-[#FFFBF2] bg-[radial-gradient(ellipse_at_top_left,#E3F1FF_0%,transparent_45%),radial-gradient(ellipse_at_top_right,#FFE6F0_0%,transparent_40%)] pb-28 md:pb-12">
-      {/* Compact sticky top bar (<= 64px) */}
-      <header className="sticky top-0 z-30 border-b border-[#EFE9DA] bg-white/85 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
-          <div className="flex min-w-0 items-center gap-3">
-            <a href="/" className="flex shrink-0 items-center gap-2" aria-label="MimoEDU – Trang chủ">
-              <MimoMascot size={38} className="ring-2" />
-              <span className="hidden font-display text-lg font-extrabold text-[#1F2A55] sm:inline">
-                Mimo<span className="text-[#2F8CFF]">EDU</span>
-              </span>
-            </a>
-            <span className="hidden h-8 w-px bg-[#EFE9DA] sm:block" aria-hidden="true" />
-            <Avatar name={student.nickname || student.fullName} size={38} className="ring-2" />
-            <div className="min-w-0">
-              <div className="truncate font-display text-sm font-extrabold text-[#1F2A55] sm:text-base">
-                {student.fullName}
-              </div>
-              <div className="truncate text-xs font-bold text-[#56608A]">
-                {classes[0] ? `Lớp ${classes[0].name}` : student.grade} · Mã {student.accessCode}
-              </div>
-            </div>
-          </div>
-
-          <div className="flex shrink-0 items-center gap-2">
-            <button
-              type="button"
-              onClick={loadPortalData}
-              className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E3F1FF] text-[#1D5FB8] transition hover:bg-[#D3E8FF]"
-              title="Làm mới"
-              aria-label="Làm mới dữ liệu"
-            >
-              <RefreshCw className={`h-5 w-5 ${loading ? 'animate-spin' : ''}`} />
-            </button>
-            <button
-              type="button"
-              onClick={handleExitPortal}
-              className="flex h-11 items-center gap-1.5 rounded-2xl bg-white px-3.5 text-sm font-extrabold text-[#56608A] ring-1 ring-[#EFE9DA] transition hover:bg-[#FFF3F8] hover:text-[#B83270]"
-            >
-              <LogOut className="h-4 w-4" />
-              <span className="hidden sm:inline">Thoát</span>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
-        {/* Desktop / tablet tabs */}
-        <nav aria-label="Mục của cổng học sinh" className="mb-7 hidden md:block">
-          <div className="flex items-center gap-1.5 overflow-x-auto rounded-[1.5rem] bg-white p-2 ring-1 ring-[#EFE9DA] shadow-[0_10px_28px_-20px_rgba(31,42,85,0.45)]">
-            {PORTAL_NAV.map((t) => {
-              const Icon = t.icon;
-              const isActive = activeTab === t.id;
-              const badge = t.id === 'homework' && pendingAssignments.length > 0 ? pendingAssignments.length : null;
-              return (
-                <button
-                  key={t.id}
-                  type="button"
-                  aria-current={isActive ? 'page' : undefined}
-                  onClick={() => {
-                    setActiveTab(t.id);
-                    if (t.id !== 'homework') setActiveAssignmentId(null);
-                  }}
-                  className={`flex min-h-[48px] items-center gap-2 rounded-2xl px-4 font-display text-[15px] font-extrabold whitespace-nowrap transition ${
-                    isActive
-                      ? `${TONE[t.tone].solid} text-white ${TONE[t.tone].shadow}`
-                      : 'text-[#56608A] hover:bg-[#F4F7FF] hover:text-[#1F2A55]'
-                  }`}
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="lg:hidden">{t.short}</span>
-                  <span className="hidden lg:inline">{t.label}</span>
-                  {badge !== null && (
-                    <span className={`rounded-full px-2 py-0.5 text-xs ${isActive ? 'bg-white/25' : 'bg-[#FFF3C4] text-[#7A5600]'}`}>{badge}</span>
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        </nav>
-
+    <PortalChrome
+      student={student}
+      classLabel={classes[0] ? `Lớp ${classes[0].name}` : student.grade}
+      activeTab={activeTab}
+      onSelectTab={selectTab}
+      pendingCount={pendingAssignments.length}
+      refreshing={loading}
+      onRefresh={loadPortalData}
+      onExit={handleExitPortal}
+    >
         {/* ================================================================ */}
         {/* TAB 1: TỔNG QUAN (OVERVIEW)                                      */}
         {/* ================================================================ */}
@@ -910,6 +983,7 @@ export const StudentPortalPage: React.FC = () => {
                                 />
                               </div>
                             ) : (
+                              <Suspense fallback={<p className="rounded-xl bg-[#F7F3FF] p-4 text-sm font-bold text-[#5B3FB8]">Đang mở khung trình bày lời giải…</p>}>
                               <MathRichEditor
                                 label="Trình bày lời giải tự luận (hỗ trợ gõ công thức Toán, vẽ hình và chèn ảnh bài vở):"
                                 value={
@@ -922,6 +996,7 @@ export const StudentPortalPage: React.FC = () => {
                                   })
                                 }
                               />
+                              </Suspense>
                             )}
                           </div>
                         )}
@@ -1133,105 +1208,24 @@ export const StudentPortalPage: React.FC = () => {
           </div>
         )}
 
-        {activeTab === 'practice' && <PracticePortal />}
+        {activeTab === 'practice' && (
+          <Suspense fallback={<MimoLoading />}>
+            <PracticePortal />
+          </Suspense>
+        )}
 
         {/* ================================================================ */}
         {/* TRÒ CHƠI TOÁN                                                      */}
         {/* ================================================================ */}
         {activeTab === 'games' && (
-          <div className="space-y-6">
-            <section className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#DDF7F3] via-[#E3F1FF] to-[#FFF3C4] p-5 sm:p-7">
-              <span className="pointer-events-none absolute -top-6 right-8 text-6xl opacity-60" aria-hidden="true">🎲</span>
-              <span className="pointer-events-none absolute right-40 bottom-2 hidden text-4xl opacity-50 sm:block" aria-hidden="true">🧩</span>
-              <div className="relative flex items-center gap-4">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#14B8A6] text-white shadow-[0_4px_0_0_#0F766E]">
-                  <Gamepad2 className="h-7 w-7" />
-                </span>
-                <div>
-                  <h1 className={`font-display text-2xl font-extrabold sm:text-3xl ${INK}`}>Trò chơi Toán</h1>
-                  <p className={`text-base ${MUTED}`}>Vừa chơi vừa học – chọn một trò chơi con thích nhé!</p>
-                </div>
-              </div>
-            </section>
-
-            {games.length > 0 && (
-              <div className="flex gap-2 overflow-x-auto pb-1">
-                {(['all', 'Số học', 'Phép tính', 'Hình học', 'Tư duy logic', 'Ôn tập kiến thức'] as const).map((cat) => {
-                  const on = selectedCategory === cat;
-                  return (
-                    <button
-                      key={cat}
-                      type="button"
-                      aria-pressed={on}
-                      onClick={() => setSelectedCategory(cat)}
-                      className={`min-h-[44px] shrink-0 rounded-full px-4 text-sm font-extrabold whitespace-nowrap transition ${
-                        on ? 'bg-[#14B8A6] text-white' : `bg-white ${MUTED} ring-1 ring-[#EFE9DA] hover:bg-[#DDF7F3]`
-                      }`}
-                    >
-                      {cat === 'all' ? 'Tất cả' : cat}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
-
-            {playingGame ? (
-              <StudentCard padded={false} className="overflow-hidden">
-                <div className="flex flex-wrap items-center justify-between gap-3 bg-[#DDF7F3] px-5 py-4">
-                  <div>
-                    <h3 className={`font-display text-lg font-extrabold ${INK}`}>{playingGame.title}</h3>
-                    <p className={`text-sm ${MUTED}`}>{playingGame.category}</p>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <a href={playingGame.embedUrl} target="_blank" rel="noopener noreferrer" className={studentButton('quiet', 'blue', 'min-h-[44px] text-sm')}>
-                      Mở toàn màn hình <ExternalLink className="h-4 w-4" />
-                    </a>
-                    <button type="button" onClick={() => setPlayingGame(null)} className={studentButton('primary', 'pink', 'min-h-[44px] text-sm')}>
-                      Đóng trò chơi
-                    </button>
-                  </div>
-                </div>
-                <div className="h-[68vh] w-full bg-[#1F2A55]">
-                  <iframe
-                    src={playingGame.embedUrl}
-                    title={playingGame.title}
-                    sandbox="allow-scripts allow-same-origin allow-forms"
-                    className="h-full w-full border-0"
-                    allowFullScreen
-                  />
-                </div>
-                <div className={`flex items-center gap-2 bg-[#FFF3C4] px-5 py-3 text-sm ${INK}`}>
-                  <AlertTriangle className="h-4 w-4 shrink-0 text-[#B98700]" />
-                  Nếu trò chơi không hiện ra, con bấm “Mở toàn màn hình” ở trên nhé!
-                </div>
-              </StudentCard>
-            ) : games.length === 0 ? (
-              <EmptyState mascot tone="teal" title="Trò chơi sắp ra mắt!" text="Cô đang chuẩn bị những trò chơi Toán thật vui cho con." />
-            ) : (
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {games
-                  .filter((g) => selectedCategory === 'all' || g.category === selectedCategory)
-                  .map((g) => {
-                    const tone = GAME_TONES[g.category] ?? 'teal';
-                    return (
-                      <StudentCard key={g.id} className="group flex flex-col gap-3 transition hover:-translate-y-1">
-                        <div className="flex items-center justify-between gap-2">
-                          <span className={`flex h-12 w-12 items-center justify-center rounded-2xl text-white ${TONE[tone].solid} ${TONE[tone].shadow}`}>
-                            <Gamepad2 className="h-6 w-6" />
-                          </span>
-                          <span className={`rounded-full px-3 py-1 text-xs font-extrabold ${TONE[tone].soft} ${TONE[tone].text}`}>{g.category}</span>
-                        </div>
-                        <h3 className={`font-display text-lg leading-snug font-extrabold ${INK}`}>{g.title}</h3>
-                        {g.description && <p className={`line-clamp-3 text-sm leading-relaxed ${MUTED}`}>{g.description}</p>}
-                        <button type="button" onClick={() => setPlayingGame(g)} className={studentButton('accent', 'yellow', 'mt-auto w-full')}>
-                          <Gamepad2 className="h-5 w-5" /> Chơi ngay
-                        </button>
-                      </StudentCard>
-                    );
-                  })}
-              </div>
-            )}
-          </div>
+          <Suspense fallback={<MimoLoading text="Mimo đang mở Kho trò chơi..." />}>
+            <StudentGames
+              onUnauthenticated={() => {
+                refreshStudentSessionState();
+                setBundle(null);
+              }}
+            />
+          </Suspense>
         )}
 
         {/* ================================================================ */}
@@ -1314,74 +1308,39 @@ export const StudentPortalPage: React.FC = () => {
             </StudentCard>
           </div>
         )}
-      </main>
-
-      {/* Confirm Final Submission Modal */}
-      {confirmSubmitModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4">
-          <div className="cartoon-card w-full max-w-md bg-white p-6">
-            <h3 className="font-display text-lg font-extrabold text-[#1F2A55]">
-              Xác nhận nộp bài tập?
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              Con hãy kiểm tra kỹ lại tất cả các câu trả lời trước khi nộp nhé.
-              Sau khi nộp, hệ thống sẽ chấm điểm các câu trắc nghiệm và gửi bài
-              cho thầy/cô.
-            </p>
-            <div className="mt-6 flex justify-end gap-3">
-              <button
-                type="button"
-                onClick={() => setConfirmSubmitModal(false)}
-                className="cartoon-button min-h-[44px] rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
-              >
-                Kiểm tra lại
-              </button>
-              <button
-                type="button"
-                disabled={submittingExam}
-                onClick={() => handleSaveOrSubmit(true)}
-                className="cartoon-button min-h-[44px] rounded-xl bg-[#34B36F] px-5 py-2 text-xs font-extrabold text-white"
-              >
-                {submittingExam ? 'Đang nộp bài...' : 'Chắc chắn nộp bài'}
-              </button>
+        {/* Confirm Final Submission Modal */}
+        {confirmSubmitModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4">
+            <div className="cartoon-card w-full max-w-md bg-white p-6">
+              <h3 className="font-display text-lg font-extrabold text-[#1F2A55]">
+                Xác nhận nộp bài tập?
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                Con hãy kiểm tra kỹ lại tất cả các câu trả lời trước khi nộp nhé.
+                Sau khi nộp, hệ thống sẽ chấm điểm các câu trắc nghiệm và gửi bài
+                cho thầy/cô.
+              </p>
+              <div className="mt-6 flex justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setConfirmSubmitModal(false)}
+                  className="cartoon-button min-h-[44px] rounded-xl bg-white px-4 py-2 text-xs font-bold text-slate-700"
+                >
+                  Kiểm tra lại
+                </button>
+                <button
+                  type="button"
+                  disabled={submittingExam}
+                  onClick={() => handleSaveOrSubmit(true)}
+                  className="cartoon-button min-h-[44px] rounded-xl bg-[#34B36F] px-5 py-2 text-xs font-extrabold text-white"
+                >
+                  {submittingExam ? 'Đang nộp bài...' : 'Chắc chắn nộp bài'}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Mobile bottom bar (<= 72px) */}
-      <nav
-        aria-label="Mục của cổng học sinh"
-        className="fixed right-0 bottom-0 left-0 z-40 grid grid-cols-6 gap-0.5 border-t border-[#EFE9DA] bg-white/95 px-1 pt-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] backdrop-blur-md md:hidden"
-      >
-        {PORTAL_NAV.map((tab) => {
-          const Icon = tab.icon;
-          const isActive = activeTab === tab.id;
-          const badge = tab.id === 'homework' && pendingAssignments.length > 0 ? pendingAssignments.length : null;
-          return (
-            <button
-              key={tab.id}
-              type="button"
-              aria-current={isActive ? 'page' : undefined}
-              onClick={() => {
-                setActiveTab(tab.id);
-                if (tab.id !== 'homework') setActiveAssignmentId(null);
-              }}
-              className={`relative flex min-h-[52px] flex-col items-center justify-center rounded-2xl transition ${
-                isActive ? `${TONE[tab.tone].soft} ${TONE[tab.tone].text} font-extrabold` : 'text-[#56608A]'
-              }`}
-            >
-              <Icon className={`h-[22px] w-[22px] ${isActive ? 'scale-110' : ''}`} />
-              <span className="mt-1 text-[11px] leading-none whitespace-nowrap">{tab.short}</span>
-              {badge !== null && (
-                <span className="absolute top-0.5 right-1.5 min-w-[18px] rounded-full bg-[#F0506E] px-1 text-center text-[10px] leading-[18px] font-extrabold text-white">
-                  {badge}
-                </span>
-              )}
-            </button>
-          );
-        })}
-      </nav>
-    </div>
+    </PortalChrome>
   );
 };
