@@ -15,11 +15,11 @@ import type { PracticeLevel } from '../../../types/practice';
 
 /**
  * MimoEDU space theme for "Luyện Toán cùng Mimo".
- * Palette: space #071A63 · blue #1267E9 · sky #54C8FF · yellow #FFD34E · pink #FF76B5 · white.
+ * Palette: space #1E3A8A · blue #2563EB · sky #54C8FF · yellow #FFD34E · pink #FF76B5 · white.
  */
 export const SPACE = {
-  navy: '#071A63',
-  blue: '#1267E9',
+  navy: '#1E3A8A',
+  blue: '#2563EB',
   sky: '#54C8FF',
   yellow: '#FFD34E',
   pink: '#FF76B5',
@@ -35,7 +35,7 @@ export interface GroupTheme {
 }
 
 export const GROUP_THEMES: Record<string, GroupTheme> = {
-  I: { icon: Calculator, gradient: 'from-[#1267E9] to-[#54C8FF]', text: 'text-[#1267E9]', ring: 'ring-[#54C8FF]', soft: 'bg-[#EAF6FF]' },
+  I: { icon: Calculator, gradient: 'from-[#2563EB] to-[#54C8FF]', text: 'text-[#2563EB]', ring: 'ring-[#54C8FF]', soft: 'bg-[#EAF6FF]' },
   II: { icon: BookOpenText, gradient: 'from-[#FF76B5] to-[#FFB3D6]', text: 'text-[#D9468C]', ring: 'ring-[#FF76B5]', soft: 'bg-[#FFF0F7]' },
   III: { icon: Ruler, gradient: 'from-[#FFB800] to-[#FFD34E]', text: 'text-[#B7790A]', ring: 'ring-[#FFD34E]', soft: 'bg-[#FFF8E1]' },
   IV: { icon: BarChart3, gradient: 'from-[#13B5C9] to-[#54C8FF]', text: 'text-[#0E8FA3]', ring: 'ring-[#54C8FF]', soft: 'bg-[#E8FAFC]' },
@@ -52,7 +52,7 @@ export interface LevelTheme {
 
 export const LEVEL_THEMES: Record<PracticeLevel, LevelTheme> = {
   nhan_biet: { icon: Sprout, gradient: 'from-[#22C38E] to-[#54C8FF]', soft: 'bg-[#EAFBF4]', text: 'text-[#119468]', hint: 'Làm quen kiến thức' },
-  thong_hieu: { icon: Lightbulb, gradient: 'from-[#1267E9] to-[#54C8FF]', soft: 'bg-[#EAF6FF]', text: 'text-[#1267E9]', hint: 'Hiểu sâu hơn' },
+  thong_hieu: { icon: Lightbulb, gradient: 'from-[#2563EB] to-[#54C8FF]', soft: 'bg-[#EAF6FF]', text: 'text-[#2563EB]', hint: 'Hiểu sâu hơn' },
   van_dung: { icon: Rocket, gradient: 'from-[#FFB800] to-[#FFD34E]', soft: 'bg-[#FFF8E1]', text: 'text-[#B7790A]', hint: 'Áp dụng vào bài toán' },
   thu_thach: { icon: Crown, gradient: 'from-[#FF76B5] to-[#7B5CFF]', soft: 'bg-[#FFF0F7]', text: 'text-[#D9468C]', hint: 'Dành cho nhà vô địch' },
 };
@@ -85,7 +85,7 @@ export const MimoMascot: React.FC<{ size: number; className?: string; eager?: bo
 export const MimoSays: React.FC<{ children: React.ReactNode; size?: number }> = ({ children, size = 64 }) => (
   <div className="flex items-center gap-3">
     <MimoMascot size={size} />
-    <div className="relative rounded-2xl bg-white px-4 py-2.5 text-sm font-bold text-[#071A63] shadow-sm ring-1 ring-[#54C8FF]/40">
+    <div className="relative rounded-2xl bg-white px-4 py-2.5 text-sm font-bold text-[#1E3A8A] shadow-sm ring-1 ring-[#54C8FF]/40">
       {children}
     </div>
   </div>
@@ -95,7 +95,7 @@ export const ProgressBar: React.FC<{ value: number; className?: string; track?: 
   value,
   className = '',
   track = 'bg-[#EAF6FF]',
-  fill = 'bg-gradient-to-r from-[#54C8FF] via-[#1267E9] to-[#FF76B5]',
+  fill = 'bg-gradient-to-r from-[#54C8FF] via-[#2563EB] to-[#FF76B5]',
 }) => (
   <div className={`h-3 overflow-hidden rounded-full ${track} ${className}`}>
     <div
@@ -177,14 +177,14 @@ export const HeroBanner: React.FC<{ onStart: () => void }> = ({ onStart }) => {
       <button
         type="button"
         onClick={onStart}
-        className="relative flex w-full flex-col-reverse items-center gap-4 overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#0B2A8F] via-[#1267E9] to-[#54C8FF] p-6 text-center text-white shadow-[0_24px_60px_-30px_rgba(18,103,233,0.9)] sm:flex-row sm:justify-between sm:p-8 sm:text-left"
+        className="relative flex w-full flex-col-reverse items-center gap-4 overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#0B2A8F] via-[#2563EB] to-[#54C8FF] p-6 text-center text-white shadow-[0_24px_60px_-30px_rgba(37,99,235,0.9)] sm:flex-row sm:justify-between sm:p-8 sm:text-left"
       >
         <div>
           <h1 className="font-display text-3xl font-extrabold sm:text-4xl">
             Luyện Toán cùng <span className="text-[#FFD34E]">Mimo</span>
           </h1>
           <p className="mt-2 text-base font-bold text-white/90 sm:text-lg">Mỗi bài toán là một khám phá thú vị!</p>
-          <span className="mt-4 inline-flex min-h-[48px] items-center rounded-full bg-[#FFD34E] px-6 text-base font-extrabold text-[#071A63] shadow-md">
+          <span className="mt-4 inline-flex min-h-[48px] items-center rounded-full bg-[#FFD34E] px-6 text-base font-extrabold text-[#1E3A8A] shadow-md">
             Bắt đầu ngay
           </span>
         </div>

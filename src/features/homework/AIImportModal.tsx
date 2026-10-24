@@ -334,7 +334,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
       <div className="cartoon-card flex max-h-[92vh] w-full max-w-2xl flex-col bg-white">
         <div className="flex items-center justify-between border-b border-[#EEF3F9] px-6 py-4">
           <div className="flex items-center gap-2">
@@ -398,9 +398,9 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
             }`}
           >
             {preparing ? (
-              <Loader2 className="h-8 w-8 animate-spin text-[#1267E9]" />
+              <Loader2 className="h-8 w-8 animate-spin text-[#2563EB]" />
             ) : (
-              <FileUp className="h-8 w-8 text-[#1267E9]" />
+              <FileUp className="h-8 w-8 text-[#2563EB]" />
             )}
             <span className="mt-2 font-display text-sm font-extrabold text-[#172B4D]">
               Kéo thả, nhấn để chọn, hoặc dán (Ctrl+V) ảnh chụp đề
@@ -432,7 +432,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-slate-200">
                 <div
-                  className={`h-full rounded-full ${overBudget ? 'bg-rose-500' : 'bg-[#1267E9]'}`}
+                  className={`h-full rounded-full ${overBudget ? 'bg-rose-500' : 'bg-[#2563EB]'}`}
                   style={{ width: `${Math.min(100, (totalBase64 / MAX_TOTAL_BASE64) * 100)}%` }}
                 />
               </div>
@@ -528,7 +528,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
 
           {loading && (
             <div className="flex items-center gap-3 rounded-xl border-2 border-blue-600 bg-blue-50 p-3">
-              <Loader2 className="h-5 w-5 shrink-0 animate-spin text-[#1267E9]" />
+              <Loader2 className="h-5 w-5 shrink-0 animate-spin text-[#2563EB]" />
               <div className="text-xs text-[#172B4D]">
                 <div className="font-bold">{loadingMessage(elapsed, solveWithAI)}</div>
                 <div className="text-[#5E6C84]">Đã chạy {elapsed} giây · Không đóng cửa sổ này</div>
@@ -554,7 +554,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
               type="button"
               onClick={runExtraction}
               disabled={loading || preparing || files.length === 0 || overBudget}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1267E9] px-5 py-2 text-xs font-extrabold text-white disabled:opacity-50"
+              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#2563EB] px-5 py-2 text-xs font-extrabold text-white disabled:opacity-50"
             >
               <Sparkles className="h-4 w-4" />
               {loading ? 'Đang xử lý…' : 'Nhận diện đề'}

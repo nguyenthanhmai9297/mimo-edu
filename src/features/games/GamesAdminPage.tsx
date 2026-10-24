@@ -46,7 +46,7 @@ import {
 
 /** Category chip colours (MimoEDU pastel accents). */
 const CATEGORY_CHIP: Record<GameCategory, string> = {
-  'Số học': 'bg-[#EAF5FF] text-[#1267E9]',
+  'Số học': 'bg-[#EAF5FF] text-[#2563EB]',
   'Phép tính': 'bg-[#F3EFFF] text-[#6A4BE6]',
   'Hình học': 'bg-[#FFF6DC] text-[#B7790A]',
   'Tư duy logic': 'bg-[#FFEDF6] text-[#D9468C]',
@@ -328,8 +328,8 @@ export const GamesAdminPage: React.FC = () => {
                   <span className="absolute top-2.5 left-2.5">
                     <StatusBadge kind={badge.kind}>{badge.label}</StatusBadge>
                   </span>
-                  <span className="absolute inset-0 flex items-center justify-center bg-[#071A63]/0 opacity-0 transition group-hover:bg-[#071A63]/25 group-hover:opacity-100">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#1267E9] shadow-lg">
+                  <span className="absolute inset-0 flex items-center justify-center bg-[#1E3A8A]/0 opacity-0 transition group-hover:bg-[#1E3A8A]/25 group-hover:opacity-100">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#2563EB] shadow-lg">
                       <Play className="ml-0.5 h-5 w-5 fill-current" />
                     </span>
                   </span>
@@ -456,14 +456,14 @@ export const GamesAdminPage: React.FC = () => {
                         onClick={() => set('thumbnailUrl', c.src)}
                         aria-pressed={on}
                         title={c.label}
-                        className={`relative overflow-hidden rounded-xl ring-2 transition ${on ? 'ring-[#1267E9]' : 'ring-transparent hover:ring-[#BFD6EE]'}`}
+                        className={`relative overflow-hidden rounded-xl ring-2 transition ${on ? 'ring-[#2563EB]' : 'ring-transparent hover:ring-[#BFD6EE]'}`}
                       >
                         <GameCover game={{ category: formValues.category, thumbnailUrl: c.src }} className="aspect-[16/10]" />
                         {c.src === '' && (
                           <span className="absolute inset-x-0 bottom-0 bg-white/85 px-1 py-0.5 text-[10px] leading-tight font-bold text-[#172B4D]">Mặc định</span>
                         )}
                         {on && (
-                          <span className="absolute top-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#1267E9] text-white">
+                          <span className="absolute top-1 right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#2563EB] text-white">
                             <Check className="h-3 w-3" />
                           </span>
                         )}
@@ -509,7 +509,7 @@ export const GamesAdminPage: React.FC = () => {
       {/* Preview */}
       {previewGame && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/50 p-4 backdrop-blur-[2px]"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/50 p-4 backdrop-blur-[2px]"
           onMouseDown={(e) => e.target === e.currentTarget && setPreviewGame(null)}
         >
           <div role="dialog" aria-modal="true" className="studio-card flex h-[85vh] w-full max-w-5xl flex-col overflow-hidden">

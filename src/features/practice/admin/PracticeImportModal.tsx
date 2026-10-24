@@ -45,11 +45,11 @@ export const PracticeImportModal: React.FC<PracticeImportModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
       <div className="cartoon-card flex max-h-[92vh] w-full max-w-3xl flex-col bg-white">
         <div className="flex items-center justify-between border-b border-[#EEF3F9] px-5 py-3">
           <div className="flex items-center gap-2">
-            <FileJson className="h-5 w-5 text-[#1267E9]" />
+            <FileJson className="h-5 w-5 text-[#2563EB]" />
             <h2 className="font-display text-base font-extrabold text-[#172B4D]">Kiểm tra tệp trước khi nhập</h2>
           </div>
           <button type="button" onClick={onCancel} aria-label="Đóng" className="rounded-lg border border-[#DCE7F3] p-1 hover:bg-[#F6FAFF]">
@@ -153,7 +153,7 @@ export const PracticeImportModal: React.FC<PracticeImportModalProps> = ({
             type="button"
             disabled={!canImport || saving}
             onClick={confirm}
-            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1267E9] px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
+            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#2563EB] px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
           >
             {saving && <Loader2 className="h-4 w-4 animate-spin" />}
             Nhập {questions.length} câu (chờ duyệt)

@@ -141,7 +141,7 @@ export const StudentHome: React.FC<StudentHomeProps> = ({
               <div className="mt-3 flex flex-wrap gap-2">
                 {hasClass && (
                   <span className="inline-flex max-w-full items-center gap-1.5 rounded-full bg-white/85 px-3 py-1.5 text-sm font-bold text-[#1F2A55]">
-                    <School className="h-4 w-4 shrink-0 text-[#2F8CFF]" />
+                    <School className="h-4 w-4 shrink-0 text-[#2563EB]" />
                     <span className="truncate">Lớp {classes.map((c) => c.name).join(', ')}</span>
                   </span>
                 )}
@@ -225,7 +225,7 @@ export const StudentHome: React.FC<StudentHomeProps> = ({
             title="Bài tập cần hoàn thành"
             action={
               hasClass && pending.length > 0 ? (
-                <button type="button" onClick={() => onNavigate('homework')} className="min-h-[44px] text-sm font-extrabold text-[#1D5FB8] hover:underline">
+                <button type="button" onClick={() => onNavigate('homework')} className="min-h-[44px] text-sm font-extrabold text-[#1E40AF] hover:underline">
                   Xem tất cả →
                 </button>
               ) : undefined

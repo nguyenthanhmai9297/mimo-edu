@@ -13,6 +13,8 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
+import { StatCard } from '../../components/studio/StudioUi';
+import { MimoMascot } from '../practice/student/practiceTheme';
 import { seedSampleClassroomData } from '../../services/firestoreRepository';
 
 export const AdminDashboard: React.FC = () => {
@@ -92,51 +94,56 @@ export const AdminDashboard: React.FC = () => {
       value: activeClasses.length,
       note: `Tổng số lớp: ${classes.length} lớp`,
       icon: School,
-      tone: 'bg-[#EAF5FF] text-[#1267E9]',
+      tone: 'blue' as const,
     },
     {
       label: 'Tổng số học sinh',
       value: activeStudents.length,
       note: `Đã cấp ${students.length} mã 6 ký tự`,
       icon: GraduationCap,
-      tone: 'bg-[#E7F7F0] text-[#1F9D6B]',
+      tone: 'green' as const,
     },
     {
       label: 'Đợt BTVN đã giao',
       value: activeAssignments.length,
       note: `Chưa hoàn thành: ${notStartedCount} lượt`,
       icon: CalendarClock,
-      tone: 'bg-[#FFF6DC] text-[#B7790A]',
+      tone: 'yellow' as const,
     },
     {
       label: 'Bài nộp & Chấm điểm',
       value: pendingGradingList.length,
       note: `Đang chờ chấm · Đã chấm: ${gradedCount}`,
       icon: CheckCircle2,
-      tone: 'bg-[#FFEDF6] text-[#D9468C]',
+      tone: 'pink' as const,
     },
   ];
 
   return (
     <div className="studio-skin space-y-6">
       {/* Welcome & quick actions */}
-      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#1267E9] via-[#2E86F0] to-[#54C8FF] p-6 text-white shadow-[0_18px_40px_-24px_rgba(18,103,233,0.8)] sm:p-7">
+      <section className="studio-hero p-6 sm:p-7">
         <div className="pointer-events-none absolute -top-16 -right-10 h-48 w-48 rounded-full bg-white/15 blur-2xl" />
-        <div className="pointer-events-none absolute -bottom-20 right-1/3 h-40 w-40 rounded-full bg-[#FFD34E]/20 blur-2xl" />
+        <div className="pointer-events-none absolute -bottom-20 right-1/3 h-40 w-40 rounded-full bg-[#FFD34E]/30 blur-2xl" />
+        <div className="pointer-events-none absolute top-6 left-[46%] h-3 w-3 rounded-full bg-[#FF76B5]/80" />
         <div className="relative flex flex-col justify-between gap-5 lg:flex-row lg:items-center">
-          <div>
+          <div className="flex items-center gap-4">
+            <MimoMascot size={68} eager className="hidden sm:block" />
+            <div>
+            <div className="text-xs font-bold tracking-wide text-[#FFE08A] uppercase">Xin chào thầy cô 👋</div>
             <h1 className="font-display text-2xl font-extrabold sm:text-3xl">Bảng điều khiển lớp học</h1>
             <p className="mt-1.5 text-sm text-white/90 sm:text-base">
               Quản lý lớp học, giao bài và theo dõi tiến bộ của học sinh.
             </p>
+            </div>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <button type="button" onClick={() => navigate('/admin/classes')} className="studio-btn studio-btn-secondary border-white/0">
-              <Plus className="h-4 w-4 text-[#1267E9]" />
+              <Plus className="h-4 w-4" />
               Tạo lớp
             </button>
             <button type="button" onClick={() => navigate('/admin/students')} className="studio-btn studio-btn-secondary border-white/0">
-              <Plus className="h-4 w-4 text-[#1F9D6B]" />
+              <Plus className="h-4 w-4" />
               Thêm học sinh
             </button>
             <button type="button" onClick={() => navigate('/admin/assignments')} className="studio-btn studio-btn-accent">
@@ -169,7 +176,7 @@ export const AdminDashboard: React.FC = () => {
         <section className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#BFE8D4] bg-[#E7F7F0] p-4">
           <div className="text-sm text-[#172B4D]">
             Đã tạo dữ liệu mẫu trên Firestore! Học sinh <strong>{seededInfo.studentName}</strong> có mã truy cập cổng học
-            sinh là: <span className="font-mono text-base font-black text-[#1267E9]">{seededInfo.studentCode}</span>
+            sinh là: <span className="font-mono text-base font-black text-[#2563EB]">{seededInfo.studentCode}</span>
           </div>
           <div className="flex items-center gap-2">
             <button type="button" onClick={() => handleCopyCode(seededInfo.studentCode)} className="studio-btn studio-btn-secondary">
@@ -185,21 +192,9 @@ export const AdminDashboard: React.FC = () => {
 
       {/* KPI cards */}
       <section className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
-        {kpis.map((k) => {
-          const Icon = k.icon;
-          return (
-            <div key={k.label} className="studio-card p-4 transition hover:shadow-[var(--studio-shadow-hover)] sm:p-5">
-              <div className="flex items-start justify-between gap-3">
-                <span className="text-xs font-semibold text-[#5E6C84] sm:text-sm">{k.label}</span>
-                <span className={`flex h-9 w-9 shrink-0 sm:h-10 sm:w-10 items-center justify-center rounded-xl ${k.tone}`}>
-                  <Icon className="h-5 w-5" />
-                </span>
-              </div>
-              <div className="mt-2 font-display text-3xl font-extrabold text-[#172B4D] [font-variant-numeric:tabular-nums]">{k.value}</div>
-              <div className="mt-1 text-xs text-[#5E6C84]">{k.note}</div>
-            </div>
-          );
-        })}
+        {kpis.map((k) => (
+          <StatCard key={k.label} icon={k.icon} tone={k.tone} label={k.label} value={k.value} note={k.note} />
+        ))}
       </section>
 
       {/* Upcoming assignments & recent submissions */}
@@ -207,17 +202,17 @@ export const AdminDashboard: React.FC = () => {
         <div className="studio-card overflow-hidden">
           <div className="flex items-center justify-between gap-3 border-b border-[#DCE7F3] px-5 py-4">
             <h2 className="flex items-center gap-2 font-display text-base font-extrabold text-[#172B4D]">
-              <CalendarClock className="h-5 w-5 text-[#1267E9]" />
+              <CalendarClock className="h-5 w-5 text-[#2563EB]" />
               Bài tập đang giao & sắp đến hạn
             </h2>
-            <button type="button" onClick={() => navigate('/admin/assignments')} className="text-xs font-bold text-[#1267E9] hover:underline">
+            <button type="button" onClick={() => navigate('/admin/assignments')} className="text-xs font-bold text-[#2563EB] hover:underline">
               Xem tất cả →
             </button>
           </div>
 
           {upcomingAssignments.length === 0 ? (
             <div className="flex flex-col items-center px-5 py-10 text-center">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF5FF] text-[#1267E9]">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EAF5FF] text-[#2563EB]">
                 <CalendarClock className="h-6 w-6" />
               </span>
               <p className="mt-3 text-sm text-[#5E6C84]">Chưa có đợt bài tập nào đang giao.</p>
@@ -246,7 +241,7 @@ export const AdminDashboard: React.FC = () => {
                       </span>
                     </div>
                     <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#EAF5FF]">
-                      <div className="h-full rounded-full bg-[#1267E9]" style={{ width: `${Math.round(ratio * 100)}%` }} />
+                      <div className="h-full rounded-full bg-[#2563EB]" style={{ width: `${Math.round(ratio * 100)}%` }} />
                     </div>
                   </li>
                 );
@@ -261,7 +256,7 @@ export const AdminDashboard: React.FC = () => {
               <CheckCircle2 className="h-5 w-5 text-[#FF76B5]" />
               Bài nộp gần đây cần xử lý
             </h2>
-            <button type="button" onClick={() => navigate('/admin/grading')} className="text-xs font-bold text-[#1267E9] hover:underline">
+            <button type="button" onClick={() => navigate('/admin/grading')} className="text-xs font-bold text-[#2563EB] hover:underline">
               Mở bàn chấm bài →
             </button>
           </div>
@@ -282,7 +277,7 @@ export const AdminDashboard: React.FC = () => {
                 return (
                   <li key={sa.id} className="flex items-center justify-between gap-4 px-5 py-3.5 transition-colors hover:bg-[#F6FAFF]">
                     <div className="flex min-w-0 items-center gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#EAF5FF] text-sm font-extrabold text-[#1267E9]">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#EAF5FF] text-sm font-extrabold text-[#2563EB]">
                         {(stu?.fullName || 'H').slice(0, 1).toUpperCase()}
                       </span>
                       <div className="min-w-0">

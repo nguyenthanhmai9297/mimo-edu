@@ -2,22 +2,23 @@ import React, { useEffect } from 'react';
 import { AlertTriangle, LucideIcon, Search, X } from 'lucide-react';
 
 /**
- * Shared building blocks of MimoEDU Studio, matching the Tổng quan page:
- * white cards with a light blue border and soft shadow (studio-card), blue /
- * navy / yellow buttons (studio-btn-*), pill badges (studio-badge-*), all
- * driven by the --studio-* tokens in index.css. Teacher pages only.
+ * Shared building blocks of MimoEDU Studio: a Mimo-blue gradient title banner
+ * (studio-hero), colour-tinted stat cards, white cards with a light blue
+ * border (studio-card), gradient / white / yellow buttons (studio-btn-*) and
+ * pill badges (studio-badge-*), all driven by the --studio-* tokens in
+ * index.css. Teacher pages only.
  */
 
 export type StudioTone = 'blue' | 'green' | 'yellow' | 'pink' | 'teal' | 'navy' | 'gray';
 
 /** Icon tile colours, as on the Tổng quan KPI cards. */
 export const STUDIO_TONE: Record<StudioTone, string> = {
-  blue: 'bg-[#EAF5FF] text-[#1267E9]',
+  blue: 'bg-[#EAF5FF] text-[#2563EB]',
   green: 'bg-[#E7F7F0] text-[#1F9D6B]',
   yellow: 'bg-[#FFF6DC] text-[#B7790A]',
   pink: 'bg-[#FFEDF6] text-[#D9468C]',
   teal: 'bg-[#E6FAFC] text-[#0E8A9A]',
-  navy: 'bg-[#E8ECF8] text-[#071A63]',
+  navy: 'bg-[#E8ECF8] text-[#1E3A8A]',
   gray: 'bg-[#F1F4F9] text-[#5E6C84]',
 };
 
@@ -28,7 +29,18 @@ export const STUDIO_INPUT =
   'min-h-[40px] w-full rounded-xl border border-[#DCE7F3] bg-white px-3 text-sm text-[#172B4D] placeholder:text-[#94A3B8] transition focus:border-[#54C8FF] focus:ring-4 focus:ring-[#54C8FF]/20 focus:outline-none';
 export const STUDIO_LABEL = 'mb-1 block text-xs font-bold text-[#5E6C84]';
 
-/** Page title block: icon tile, title, one-line description and the page actions. */
+/** Stat card colours: a pastel wash for the card and a solid gradient icon tile. */
+const STAT_LOOK: Record<StudioTone, { card: string; tile: string }> = {
+  blue: { card: 'from-[#EFF6FF]', tile: 'from-[#2563EB] to-[#60A5FA]' },
+  green: { card: 'from-[#ECFDF5]', tile: 'from-[#10B981] to-[#34D399]' },
+  yellow: { card: 'from-[#FFF8E1]', tile: 'from-[#F59E0B] to-[#FCD34D]' },
+  pink: { card: 'from-[#FDF2F8]', tile: 'from-[#EC4899] to-[#F9A8D4]' },
+  teal: { card: 'from-[#ECFEFF]', tile: 'from-[#0EA5E9] to-[#67E8F9]' },
+  navy: { card: 'from-[#EEF2FF]', tile: 'from-[#1E3A8A] to-[#6366F1]' },
+  gray: { card: 'from-[#F5F3FF]', tile: 'from-[#8B5CF6] to-[#C4B5FD]' },
+};
+
+/** Page title banner: Mimo-blue gradient with icon tile, title, one-line description and the page actions. */
 export const PageHeader: React.FC<{
   icon: LucideIcon;
   tone?: StudioTone;
@@ -37,18 +49,20 @@ export const PageHeader: React.FC<{
   actions?: React.ReactNode;
   eyebrow?: React.ReactNode;
 }> = ({ icon: Icon, tone = 'blue', title, description, actions, eyebrow }) => (
-  <section className="studio-card relative overflow-hidden p-5 sm:p-6">
-    <div className="pointer-events-none absolute -top-16 -right-12 h-44 w-44 rounded-full bg-[#EAF5FF] blur-2xl" aria-hidden="true" />
-    <div className="pointer-events-none absolute -bottom-20 right-1/4 h-36 w-36 rounded-full bg-[#FFD34E]/15 blur-2xl" aria-hidden="true" />
+  <section className="studio-hero p-5 sm:p-6" data-tone={tone}>
+    <div className="pointer-events-none absolute -top-14 -right-10 h-44 w-44 rounded-full bg-white/15" aria-hidden="true" />
+    <div className="pointer-events-none absolute -bottom-16 right-[22%] h-32 w-32 rounded-full bg-[#FFD34E]/35 blur-xl" aria-hidden="true" />
+    <div className="pointer-events-none absolute top-4 right-[38%] h-3 w-3 rounded-full bg-[#FF76B5]/80" aria-hidden="true" />
+    <div className="pointer-events-none absolute bottom-5 right-[8%] h-2.5 w-2.5 rounded-full bg-white/70" aria-hidden="true" />
     <div className="relative flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
       <div className="flex min-w-0 items-start gap-4">
-        <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${STUDIO_TONE[tone]}`}>
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/20 text-white ring-1 ring-white/40 backdrop-blur-sm">
           <Icon className="h-6 w-6" />
         </span>
         <div className="min-w-0">
-          {eyebrow && <div className="mb-0.5 text-xs font-bold text-[#1267E9]">{eyebrow}</div>}
-          <h1 className={`font-display text-2xl font-extrabold sm:text-[1.7rem] ${STUDIO_TEXT}`}>{title}</h1>
-          {description && <p className={`mt-1 max-w-3xl text-sm leading-relaxed ${STUDIO_MUTED}`}>{description}</p>}
+          {eyebrow && <div className="mb-0.5 text-xs font-bold text-[#FFE08A]">{eyebrow}</div>}
+          <h1 className="font-display text-2xl font-extrabold text-white sm:text-[1.7rem]">{title}</h1>
+          {description && <p className="mt-1 max-w-3xl text-sm leading-relaxed text-white/85">{description}</p>}
         </div>
       </div>
       {actions && <div className="flex shrink-0 flex-wrap items-center gap-2">{actions}</div>}
@@ -65,7 +79,7 @@ export const SectionHeading: React.FC<{ icon?: LucideIcon; title: React.ReactNod
   <div className="flex flex-wrap items-center justify-between gap-3">
     <div>
       <h2 className={`flex items-center gap-2 font-display text-base font-extrabold sm:text-lg ${STUDIO_TEXT}`}>
-        {Icon && <Icon className="h-5 w-5 text-[#1267E9]" />}
+        {Icon && <Icon className="h-5 w-5 text-[#2563EB]" />}
         {title}
       </h2>
       {note && <p className={`text-xs ${STUDIO_MUTED}`}>{note}</p>}
@@ -81,10 +95,10 @@ export const StatCard: React.FC<{ icon: LucideIcon; tone: StudioTone; label: str
   value,
   note,
 }) => (
-  <div className="studio-card p-4 transition hover:shadow-[var(--studio-shadow-hover)] sm:p-5">
+  <div className={`studio-card bg-gradient-to-br ${STAT_LOOK[tone].card} to-white p-4 transition duration-200 hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] sm:p-5`}>
     <div className="flex items-start justify-between gap-3">
       <span className={`text-xs font-semibold sm:text-sm ${STUDIO_MUTED}`}>{label}</span>
-      <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl sm:h-10 sm:w-10 ${STUDIO_TONE[tone]}`}>
+      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-md sm:h-11 sm:w-11 ${STAT_LOOK[tone].tile}`}>
         <Icon className="h-5 w-5" />
       </span>
     </div>
@@ -134,7 +148,7 @@ export function SegmentedFilter<T extends string>({
   label: string;
 }) {
   return (
-    <div role="tablist" aria-label={label} className="flex shrink-0 gap-1 overflow-x-auto rounded-xl bg-[#F6FAFF] p-1">
+    <div role="tablist" aria-label={label} className="flex shrink-0 gap-1 overflow-x-auto rounded-xl bg-[#EEF4FF] p-1">
       {options.map((o) => {
         const on = o.id === value;
         return (
@@ -145,12 +159,12 @@ export function SegmentedFilter<T extends string>({
             aria-selected={on}
             onClick={() => onChange(o.id)}
             className={`flex min-h-[34px] items-center gap-1.5 rounded-lg px-3 text-xs font-bold whitespace-nowrap transition ${
-              on ? 'bg-white text-[#1267E9] shadow-sm ring-1 ring-[#DCE7F3]' : 'text-[#5E6C84] hover:text-[#172B4D]'
+              on ? 'bg-gradient-to-br from-[#2563EB] to-[#3B82F6] text-white shadow-[0_6px_14px_-8px_rgba(37,99,235,0.8)]' : 'text-[#5E6C84] hover:bg-white hover:text-[#2563EB]'
             }`}
           >
             {o.label}
             {o.count !== undefined && (
-              <span className={`rounded-full px-1.5 text-[11px] ${on ? 'bg-[#EAF5FF] text-[#1267E9]' : 'bg-white text-[#5E6C84]'}`}>{o.count}</span>
+              <span className={`rounded-full px-1.5 text-[11px] ${on ? 'bg-white/25 text-white' : 'bg-white text-[#5E6C84]'}`}>{o.count}</span>
             )}
           </button>
         );
@@ -258,7 +272,7 @@ export const StudioModal: React.FC<{
   if (!open) return null;
   const max = { sm: 'max-w-md', md: 'max-w-lg', lg: 'max-w-2xl' }[width];
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 p-4 backdrop-blur-[2px]" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 p-4 backdrop-blur-[2px]" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <div role="dialog" aria-modal="true" className={`studio-card flex max-h-[90vh] w-full flex-col ${max}`}>
         <div className="flex items-center justify-between gap-3 border-b border-[#DCE7F3] px-5 py-4">
           <h2 className={`flex items-center gap-2.5 font-display text-lg font-extrabold ${STUDIO_TEXT}`}>

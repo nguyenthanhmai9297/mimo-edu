@@ -94,13 +94,15 @@ const PortalChrome: React.FC<{
 }> = ({ student, classLabel, activeTab, onSelectTab, pendingCount, refreshing, onRefresh, onExit, children }) => (
   <div className="student-skin min-h-screen bg-[#FFFBF2] bg-[radial-gradient(ellipse_at_top_left,#E3F1FF_0%,transparent_45%),radial-gradient(ellipse_at_top_right,#FFE6F0_0%,transparent_40%)] pb-28 md:pb-12">
     {/* Compact sticky top bar (<= 64px) */}
-    <header className="sticky top-0 z-30 border-b border-[#EFE9DA] bg-white/85 backdrop-blur-md">
+    <header className="sticky top-0 z-30 bg-white/85 backdrop-blur-md">
+      {/* Same Mimo gradient line as the teacher Studio header */}
+      <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-[#2563EB] via-[#38BDF8] via-50% to-[#FF76B5]" aria-hidden="true" />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <div className="flex min-w-0 items-center gap-3">
           <a href="/" className="flex shrink-0 items-center gap-2" aria-label="MimoEDU – Trang chủ">
             <MimoMascot size={38} eager className="ring-2" />
             <span className="hidden font-display text-lg font-extrabold text-[#1F2A55] sm:inline">
-              Mimo<span className="text-[#2F8CFF]">EDU</span>
+              Mimo<span className="text-[#2563EB]">EDU</span>
             </span>
           </a>
           <span className="hidden h-8 w-px bg-[#EFE9DA] sm:block" aria-hidden="true" />
@@ -117,7 +119,7 @@ const PortalChrome: React.FC<{
           <button
             type="button"
             onClick={onRefresh}
-            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E3F1FF] text-[#1D5FB8] transition hover:bg-[#D3E8FF]"
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#E3F1FF] text-[#1E40AF] transition hover:bg-[#D3E8FF]"
             title="Làm mới"
             aria-label="Làm mới dữ liệu"
           >
@@ -479,7 +481,7 @@ export const StudentPortalPage: React.FC = () => {
               Trang chủ
             </button>
             <span className="font-display text-base font-extrabold text-[#1F2A55]">
-              Mimo<span className="text-[#2F8CFF]">EDU</span>
+              Mimo<span className="text-[#2563EB]">EDU</span>
             </span>
           </div>
 
@@ -805,7 +807,7 @@ export const StudentPortalPage: React.FC = () => {
                                   key={opt.id}
                                   className={`flex min-h-[48px] cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-2.5 transition-colors ${
                                     selected
-                                      ? 'border-[#2F8CFF] bg-[#E3F1FF]'
+                                      ? 'border-[#2563EB] bg-[#E3F1FF]'
                                       : 'border-slate-300 bg-white hover:bg-slate-50'
                                   }`}
                                 >
@@ -847,7 +849,7 @@ export const StudentPortalPage: React.FC = () => {
                                   key={opt.id}
                                   className={`flex min-h-[48px] cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-2.5 transition-colors ${
                                     checked
-                                      ? 'border-[#2F8CFF] bg-[#E3F1FF]'
+                                      ? 'border-[#2563EB] bg-[#E3F1FF]'
                                       : 'border-slate-300 bg-white hover:bg-slate-50'
                                   }`}
                                 >
@@ -1192,7 +1194,7 @@ export const StudentPortalPage: React.FC = () => {
                     )}
                     {cmt.practiceSuggestions && (
                       <div className="rounded-2xl bg-[#E3F1FF] p-4">
-                        <div className="text-sm font-extrabold text-[#1D5FB8]">📚 Gợi ý luyện tập thêm</div>
+                        <div className="text-sm font-extrabold text-[#1E40AF]">📚 Gợi ý luyện tập thêm</div>
                         <p className={`mt-1 text-base leading-relaxed ${INK}`}>{cmt.practiceSuggestions}</p>
                       </div>
                     )}
@@ -1243,7 +1245,7 @@ export const StudentPortalPage: React.FC = () => {
               </div>
               <dl className="grid grid-cols-2 gap-3">
                 <div className="rounded-2xl bg-[#E3F1FF] p-4">
-                  <dt className="text-sm font-bold text-[#1D5FB8]">Khối lớp</dt>
+                  <dt className="text-sm font-bold text-[#1E40AF]">Khối lớp</dt>
                   <dd className={`font-display text-lg font-extrabold ${INK}`}>{student.grade || '—'}</dd>
                 </div>
                 <div className="rounded-2xl bg-[#EFE7FF] p-4">
@@ -1295,7 +1297,7 @@ export const StudentPortalPage: React.FC = () => {
                 <ul className="space-y-3">
                   {classes.map((cls) => (
                     <li key={cls.id} className="rounded-2xl bg-[#E3F1FF] p-4">
-                      <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-bold text-[#1D5FB8]">
+                      <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-bold text-[#1E40AF]">
                         <span>{cls.grade}</span>
                         <span>Năm học {cls.schoolYear}</span>
                       </div>

@@ -26,7 +26,7 @@ export type Tone = 'blue' | 'teal' | 'yellow' | 'pink' | 'purple' | 'green' | 'r
 
 /** Full class strings so Tailwind keeps them. */
 export const TONE: Record<Tone, { soft: string; text: string; solid: string; ring: string; shadow: string }> = {
-  blue: { soft: 'bg-[#E3F1FF]', text: 'text-[#1D5FB8]', solid: 'bg-[#2F8CFF]', ring: 'ring-[#B9DBFF]', shadow: 'shadow-[0_4px_0_0_#1D5FB8]' },
+  blue: { soft: 'bg-[#E3F1FF]', text: 'text-[#1E40AF]', solid: 'bg-[#2563EB]', ring: 'ring-[#B9DBFF]', shadow: 'shadow-[0_4px_0_0_#1E40AF]' },
   teal: { soft: 'bg-[#DDF7F3]', text: 'text-[#0F766E]', solid: 'bg-[#14B8A6]', ring: 'ring-[#A8E8DE]', shadow: 'shadow-[0_4px_0_0_#0F766E]' },
   yellow: { soft: 'bg-[#FFF3C4]', text: 'text-[#7A5600]', solid: 'bg-[#F5B700]', ring: 'ring-[#F5D77A]', shadow: 'shadow-[0_4px_0_0_#B98700]' },
   pink: { soft: 'bg-[#FFE6F0]', text: 'text-[#B83270]', solid: 'bg-[#FF6FA8]', ring: 'ring-[#FFC2DA]', shadow: 'shadow-[0_4px_0_0_#C2457E]' },
@@ -39,7 +39,7 @@ export const TONE: Record<Tone, { soft: string; text: string; solid: string; rin
 export const INK = 'text-[#1F2A55]';
 export const MUTED = 'text-[#56608A]';
 export const CARD = 'rounded-[1.75rem] bg-white ring-1 ring-[#EFE9DA] shadow-[0_10px_28px_-18px_rgba(31,42,85,0.45)]';
-const FOCUS = 'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2F8CFF]/40';
+const FOCUS = 'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2563EB]/40';
 
 export const StudentCard: React.FC<React.HTMLAttributes<HTMLDivElement> & { padded?: boolean }> = ({
   className = '',

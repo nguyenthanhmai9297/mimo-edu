@@ -274,7 +274,7 @@ export const GradingPage: React.FC = () => {
                         onClick={() => selectSubmission(sub)}
                         aria-current={isSelected ? 'true' : undefined}
                         className={`flex w-full items-start gap-3 border-l-4 px-4 py-3 text-left transition-colors ${
-                          isSelected ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-transparent hover:bg-[#F6FAFF]'
+                          isSelected ? 'border-[#2563EB] bg-[#EAF5FF]' : 'border-transparent hover:bg-[#F6FAFF]'
                         }`}
                       >
                         <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-extrabold ${STUDIO_TONE.blue}`}>
@@ -283,7 +283,7 @@ export const GradingPage: React.FC = () => {
                         <span className="min-w-0 flex-1">
                           <span className="flex items-center justify-between gap-2">
                             <span className="truncate text-sm font-bold text-[#172B4D]">{st?.fullName || sub.studentId}</span>
-                            <span className="shrink-0 font-mono text-xs font-bold text-[#1267E9]">
+                            <span className="shrink-0 font-mono text-xs font-bold text-[#2563EB]">
                               {sub.totalScore ?? '—'}/{sub.maxScore}
                             </span>
                           </span>
@@ -318,7 +318,7 @@ export const GradingPage: React.FC = () => {
                       {(activeStudent?.fullName || '?').slice(0, 1).toUpperCase()}
                     </span>
                     <div className="min-w-0">
-                      <div className="text-xs font-bold text-[#1267E9]">
+                      <div className="text-xs font-bold text-[#2563EB]">
                         {activeStudent?.fullName} · Mã {activeStudent?.accessCode}
                       </div>
                       <h2 className="truncate font-display text-lg font-extrabold text-[#172B4D]">{activeAssignment.title}</h2>
@@ -480,7 +480,7 @@ export const GradingPage: React.FC = () => {
                             <div className="mt-2.5 space-y-1 text-sm text-[#172B4D]">
                               <div>
                                 <strong>Điểm AI gợi ý:</strong>{' '}
-                                <span className="font-mono font-bold text-[#1267E9]">
+                                <span className="font-mono font-bold text-[#2563EB]">
                                   {qRes.aiSuggestedScore}/{q.points}
                                 </span>
                               </div>

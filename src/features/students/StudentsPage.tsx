@@ -296,7 +296,7 @@ export const StudentsPage: React.FC = () => {
                       title="Bấm để sao chép mã gửi cho phụ huynh"
                       className="group inline-flex items-center gap-2 rounded-xl border border-[#FFE7A3] bg-[#FFF8E1] py-1 pr-2 pl-3 transition hover:border-[#FFD34E]"
                     >
-                      <span className="font-mono text-base font-black tracking-[0.18em] text-[#071A63]">{st.accessCode}</span>
+                      <span className="font-mono text-base font-black tracking-[0.18em] text-[#1E3A8A]">{st.accessCode}</span>
                       <span
                         className={`flex items-center gap-1 rounded-lg px-1.5 py-0.5 text-[11px] font-bold ${
                           copiedCodeId === st.id ? 'bg-[#E7F7F0] text-[#1F9D6B]' : 'bg-white text-[#5E6C84] group-hover:text-[#172B4D]'
@@ -328,7 +328,7 @@ export const StudentsPage: React.FC = () => {
 
       {/* Create / Edit Student Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
           <div className="cartoon-card max-h-[90vh] w-full max-w-xl overflow-y-auto bg-white p-6">
             <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
               <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
@@ -360,7 +360,7 @@ export const StudentsPage: React.FC = () => {
                       Mã truy cập cố định (không thể chỉnh sửa thủ công):
                     </span>
                   </div>
-                  <span className="font-mono text-base font-black tracking-widest text-[#1267E9]">
+                  <span className="font-mono text-base font-black tracking-widest text-[#2563EB]">
                     {editingStudent.accessCode}
                   </span>
                 </div>

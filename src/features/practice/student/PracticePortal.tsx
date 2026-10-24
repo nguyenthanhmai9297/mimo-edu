@@ -109,13 +109,13 @@ const ScoreRing: React.FC<{ score: number; total: number }> = ({ score, total })
         <defs>
           <linearGradient id="mimo-score" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#54C8FF" />
-            <stop offset="60%" stopColor="#1267E9" />
+            <stop offset="60%" stopColor="#2563EB" />
             <stop offset="100%" stopColor="#FF76B5" />
           </linearGradient>
         </defs>
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="font-display text-4xl font-extrabold text-[#071A63]">{score}</span>
+        <span className="font-display text-4xl font-extrabold text-[#1E3A8A]">{score}</span>
         <span className="text-sm font-bold text-slate-500">/ {total} câu đúng</span>
       </div>
     </div>
@@ -222,7 +222,7 @@ export const PracticePortal: React.FC = () => {
         <button
           type="button"
           onClick={() => void loadOverview()}
-          className="inline-flex min-h-[44px] items-center gap-2 rounded-2xl bg-[#2F8CFF] px-4 font-extrabold text-white shadow-[0_4px_0_0_#1D5FB8] active:translate-y-0.5 active:shadow-none"
+          className="inline-flex min-h-[44px] items-center gap-2 rounded-2xl bg-[#2563EB] px-4 font-extrabold text-white shadow-[0_4px_0_0_#1E40AF] active:translate-y-0.5 active:shadow-none"
         >
           <RotateCcw className="h-4 w-4" /> Thử lại
         </button>
@@ -299,7 +299,7 @@ export const PracticePortal: React.FC = () => {
             errorBox || (
               <div className="rounded-3xl bg-white p-6 text-base font-bold text-[#56608A]">
                 Chưa tải được danh sách chuyên đề.{' '}
-                <button type="button" onClick={() => void loadOverview()} className="font-extrabold text-[#2F8CFF] underline">
+                <button type="button" onClick={() => void loadOverview()} className="font-extrabold text-[#2563EB] underline">
                   Tải lại
                 </button>
               </div>
@@ -350,7 +350,7 @@ export const PracticePortal: React.FC = () => {
                     key={t.id}
                     type="button"
                     onClick={select}
-                    className={`group flex min-h-[196px] flex-col gap-2 rounded-[1.75rem] bg-white p-5 text-left ring-1 shadow-[0_10px_28px_-18px_rgba(31,42,85,0.45)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_36px_-18px_rgba(31,42,85,0.55)] focus-visible:ring-4 focus-visible:ring-[#2F8CFF]/40 focus-visible:outline-none ${
+                    className={`group flex min-h-[196px] flex-col gap-2 rounded-[1.75rem] bg-white p-5 text-left ring-1 shadow-[0_10px_28px_-18px_rgba(31,42,85,0.45)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_36px_-18px_rgba(31,42,85,0.55)] focus-visible:ring-4 focus-visible:ring-[#2563EB]/40 focus-visible:outline-none ${
                       status === 'learning' ? 'ring-[#D7C8FF]' : status === 'done' ? 'ring-[#F5D77A]' : 'ring-[#EFE9DA]'
                     }`}
                   >
@@ -399,8 +399,8 @@ export const PracticePortal: React.FC = () => {
 
         {history.length > 0 && (
           <section className="rounded-3xl bg-white p-5 shadow-md">
-            <h2 className="mb-3 flex items-center gap-2 font-display text-lg font-extrabold text-[#071A63]">
-              <History className="h-5 w-5 text-[#1267E9]" /> Hành trình gần đây
+            <h2 className="mb-3 flex items-center gap-2 font-display text-lg font-extrabold text-[#1E3A8A]">
+              <History className="h-5 w-5 text-[#2563EB]" /> Hành trình gần đây
             </h2>
             <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {history.slice(0, 6).map((h) => {
@@ -414,11 +414,11 @@ export const PracticePortal: React.FC = () => {
                       onClick={() => openHistory(h)}
                       className="flex min-h-[56px] w-full items-center gap-3 rounded-2xl bg-[#F4FAFF] px-3.5 py-2.5 text-left transition hover:bg-[#EAF6FF]"
                     >
-                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold ${done ? (ratio >= PASS_RATIO ? 'bg-[#EAFBF4] text-[#119468]' : 'bg-[#FFF8E1] text-[#B7790A]') : 'bg-[#EAF6FF] text-[#1267E9]'}`}>
+                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold ${done ? (ratio >= PASS_RATIO ? 'bg-[#EAFBF4] text-[#119468]' : 'bg-[#FFF8E1] text-[#B7790A]') : 'bg-[#EAF6FF] text-[#2563EB]'}`}>
                         {done ? `${h.score}/${h.total}` : '…'}
                       </span>
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate text-sm font-bold text-[#071A63]">{findPracticeTopic(h.topicId)?.name ?? h.topicId}</span>
+                        <span className="block truncate text-sm font-bold text-[#1E3A8A]">{findPracticeTopic(h.topicId)?.name ?? h.topicId}</span>
                         <span className="block text-xs text-slate-500">
                           {PRACTICE_LEVEL_LABELS[h.level]}{h.skillId ? ` · ${practiceSkillLabel(h.skillId)}` : ''}{done ? '' : ' · Đang làm dở'}
                         </span>
@@ -446,13 +446,13 @@ export const PracticePortal: React.FC = () => {
         <BackButton onClick={() => setStage({ name: 'browse' })}>Chọn chuyên đề khác</BackButton>
 
         <section className="rounded-[2rem] bg-white p-5 shadow-md sm:p-6">
-          <span className="rounded-full bg-[#EAF6FF] px-2.5 py-0.5 font-mono text-xs font-bold text-[#1267E9]">{topic.id}</span>
-          <h1 className="mt-2 font-display text-2xl font-extrabold text-[#071A63] sm:text-3xl">{topic.name}</h1>
+          <span className="rounded-full bg-[#EAF6FF] px-2.5 py-0.5 font-mono text-xs font-bold text-[#2563EB]">{topic.id}</span>
+          <h1 className="mt-2 font-display text-2xl font-extrabold text-[#1E3A8A] sm:text-3xl">{topic.name}</h1>
           <div className="mt-4">
             <MimoSays>Chọn kĩ năng con muốn luyện, rồi bấm vào một mức độ để bay vào vũ trụ Toán học nhé! 🚀</MimoSays>
           </div>
 
-          <h2 className="mt-6 mb-2.5 flex items-center gap-2 font-display text-base font-extrabold text-[#071A63]">
+          <h2 className="mt-6 mb-2.5 flex items-center gap-2 font-display text-base font-extrabold text-[#1E3A8A]">
             <Target className="h-5 w-5 text-[#FF76B5]" /> Kĩ năng
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -465,7 +465,7 @@ export const PracticePortal: React.FC = () => {
                   onClick={() => setSkillId(s)}
                   aria-pressed={active}
                   className={`inline-flex min-h-[44px] items-center gap-2 rounded-full px-4 text-sm font-bold transition ${
-                    active ? 'bg-[#1267E9] text-white shadow-md' : 'bg-[#F4FAFF] text-[#071A63] ring-1 ring-[#54C8FF]/40 hover:ring-[#1267E9]'
+                    active ? 'bg-[#2563EB] text-white shadow-md' : 'bg-[#F4FAFF] text-[#1E3A8A] ring-1 ring-[#54C8FF]/40 hover:ring-[#2563EB]'
                   }`}
                 >
                   {active && <Check className="h-4 w-4" />}
@@ -493,7 +493,7 @@ export const PracticePortal: React.FC = () => {
                       <Icon className="h-6 w-6" />
                     </span>
                     <div>
-                      <div className="font-display text-lg font-extrabold text-[#071A63]">{PRACTICE_LEVEL_LABELS[l]}</div>
+                      <div className="font-display text-lg font-extrabold text-[#1E3A8A]">{PRACTICE_LEVEL_LABELS[l]}</div>
                       <div className={`text-xs font-bold ${theme.text}`}>{theme.hint}</div>
                     </div>
                   </div>
@@ -550,12 +550,12 @@ export const PracticePortal: React.FC = () => {
         <div ref={sessionTopRef} className="scroll-mt-20 rounded-3xl bg-white p-4 shadow-lg">
           <div className="flex items-center justify-between gap-3">
             <div className="min-w-0">
-              <div className="truncate font-display text-base font-extrabold text-[#071A63]">{findPracticeTopic(session.topicId)?.name}</div>
+              <div className="truncate font-display text-base font-extrabold text-[#1E3A8A]">{findPracticeTopic(session.topicId)?.name}</div>
               <div className={`text-xs font-bold ${levelTheme.text}`}>
                 {PRACTICE_LEVEL_LABELS[session.level]}{session.skillId ? ` · ${practiceSkillLabel(session.skillId)}` : ''}
               </div>
             </div>
-            <span className="shrink-0 rounded-full bg-[#EAF6FF] px-3 py-1.5 text-sm font-extrabold text-[#1267E9]">
+            <span className="shrink-0 rounded-full bg-[#EAF6FF] px-3 py-1.5 text-sm font-extrabold text-[#2563EB]">
               Đã làm {answered}/{total}
             </span>
           </div>
@@ -571,7 +571,7 @@ export const PracticePortal: React.FC = () => {
                   aria-current={i === idx ? 'step' : undefined}
                   aria-label={`Câu ${i + 1}${done ? ' (đã làm)' : ''}`}
                   className={`h-8 w-8 rounded-full text-xs font-extrabold transition ${
-                    i === idx ? 'bg-[#FFD34E] text-[#071A63] ring-2 ring-[#071A63]' : done ? 'bg-[#1267E9] text-white' : 'bg-[#F4FAFF] text-slate-500 hover:bg-[#EAF6FF]'
+                    i === idx ? 'bg-[#FFD34E] text-[#1E3A8A] ring-2 ring-[#1E3A8A]' : done ? 'bg-[#2563EB] text-white' : 'bg-[#F4FAFF] text-slate-500 hover:bg-[#EAF6FF]'
                   }`}
                 >
                   {i + 1}
@@ -590,7 +590,7 @@ export const PracticePortal: React.FC = () => {
               <span className="rounded-full bg-[#F3EFFF] px-2.5 py-1 text-xs font-extrabold text-[#6A4BE6]">Chọn tất cả đáp án đúng</span>
             )}
           </div>
-          <PracticeText text={q.prompt} className="text-xl leading-relaxed font-semibold text-[#071A63] sm:text-2xl" />
+          <PracticeText text={q.prompt} className="text-xl leading-relaxed font-semibold text-[#1E3A8A] sm:text-2xl" />
           <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {q.options.map((text, pos) => {
               const picked = (answers[q.id] ?? []).includes(pos);
@@ -602,11 +602,11 @@ export const PracticePortal: React.FC = () => {
                   onClick={() => choose(q.id, pos, q.type === 'multiple_choice')}
                   className={`flex min-h-[64px] items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left text-lg transition duration-150 active:scale-[0.98] ${
                     picked
-                      ? 'border-[#1267E9] bg-[#EAF6FF] font-bold text-[#071A63] shadow-[0_8px_20px_-10px_rgba(18,103,233,0.8)]'
-                      : 'border-[#DCEEFF] bg-white text-[#071A63] hover:border-[#54C8FF] hover:bg-[#F4FAFF]'
+                      ? 'border-[#2563EB] bg-[#EAF6FF] font-bold text-[#1E3A8A] shadow-[0_8px_20px_-10px_rgba(37,99,235,0.8)]'
+                      : 'border-[#DCEEFF] bg-white text-[#1E3A8A] hover:border-[#54C8FF] hover:bg-[#F4FAFF]'
                   }`}
                 >
-                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-extrabold transition ${picked ? 'bg-[#1267E9] text-white' : 'bg-[#FFF8E1] text-[#B7790A] ring-1 ring-[#FFD34E]'}`}>
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-extrabold transition ${picked ? 'bg-[#2563EB] text-white' : 'bg-[#FFF8E1] text-[#B7790A] ring-1 ring-[#FFD34E]'}`}>
                     {picked ? <Check className="h-5 w-5" /> : LETTERS[pos]}
                   </span>
                   <PracticeText text={text} />
@@ -620,7 +620,7 @@ export const PracticePortal: React.FC = () => {
               type="button"
               disabled={idx === 0}
               onClick={() => go(idx - 1)}
-              className="inline-flex min-h-[52px] items-center gap-2 rounded-2xl bg-[#F4FAFF] px-5 text-base font-extrabold text-[#1267E9] transition hover:bg-[#EAF6FF] disabled:opacity-40"
+              className="inline-flex min-h-[52px] items-center gap-2 rounded-2xl bg-[#F4FAFF] px-5 text-base font-extrabold text-[#2563EB] transition hover:bg-[#EAF6FF] disabled:opacity-40"
             >
               <ArrowLeft className="h-5 w-5" /> Câu trước
             </button>
@@ -628,7 +628,7 @@ export const PracticePortal: React.FC = () => {
               <button
                 type="button"
                 onClick={() => go(idx + 1)}
-                className="inline-flex min-h-[52px] items-center gap-2 rounded-2xl bg-[#1267E9] px-5 text-base font-extrabold text-white shadow-md transition hover:bg-[#0F59CC]"
+                className="inline-flex min-h-[52px] items-center gap-2 rounded-2xl bg-[#2563EB] px-5 text-base font-extrabold text-white shadow-md transition hover:bg-[#1D4ED8]"
               >
                 Câu sau <ArrowRight className="h-5 w-5" />
               </button>
@@ -642,10 +642,10 @@ export const PracticePortal: React.FC = () => {
             <div className="space-y-3 rounded-2xl bg-white p-4">
               <MimoSays size={56}>Con còn {total - answered} câu chưa làm. Con vẫn muốn nộp bài chứ?</MimoSays>
               <div className="flex gap-2">
-                <button type="button" onClick={() => setConfirmSubmit(false)} className="min-h-[52px] flex-1 rounded-2xl bg-[#F4FAFF] text-base font-bold text-[#1267E9]">
+                <button type="button" onClick={() => setConfirmSubmit(false)} className="min-h-[52px] flex-1 rounded-2xl bg-[#F4FAFF] text-base font-bold text-[#2563EB]">
                   Làm tiếp
                 </button>
-                <button type="button" disabled={busy} onClick={() => submit(session)} className="min-h-[52px] flex-1 rounded-2xl bg-[#FFD34E] text-base font-extrabold text-[#071A63] shadow-md">
+                <button type="button" disabled={busy} onClick={() => submit(session)} className="min-h-[52px] flex-1 rounded-2xl bg-[#FFD34E] text-base font-extrabold text-[#1E3A8A] shadow-md">
                   Nộp bài
                 </button>
               </div>
@@ -655,7 +655,7 @@ export const PracticePortal: React.FC = () => {
               type="button"
               disabled={busy}
               onClick={() => (answered < total ? setConfirmSubmit(true) : submit(session))}
-              className="flex min-h-[60px] w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FFD34E] to-[#FFB800] text-lg font-extrabold text-[#071A63] shadow-[0_14px_30px_-12px_rgba(255,211,78,0.9)] transition hover:brightness-105"
+              className="flex min-h-[60px] w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FFD34E] to-[#FFB800] text-lg font-extrabold text-[#1E3A8A] shadow-[0_14px_30px_-12px_rgba(255,211,78,0.9)] transition hover:brightness-105"
             >
               {busy ? <Loader2 className="h-5 w-5 animate-spin" /> : <Rocket className="h-5 w-5" />} Nộp bài và xem kết quả
             </button>
@@ -706,23 +706,23 @@ export const PracticePortal: React.FC = () => {
             <span className="rounded-full bg-[#FFF0F7] px-3 py-1 text-[#D9468C]">✗ Chưa đúng {wrong}</span>
             {blank > 0 && <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-500">○ Bỏ trống {blank}</span>}
           </div>
-          <p className="mx-auto mt-4 max-w-md rounded-2xl bg-[#FFF8E1] px-4 py-3 text-base font-bold text-[#071A63]">{cheer}</p>
+          <p className="mx-auto mt-4 max-w-md rounded-2xl bg-[#FFF8E1] px-4 py-3 text-base font-bold text-[#1E3A8A]">{cheer}</p>
         </section>
 
         {weakSkills.length > 0 && (
           <section className="rounded-3xl bg-white p-5 shadow-md">
-            <h2 className="font-display text-base font-extrabold text-[#071A63]">Mimo gợi ý ôn tập</h2>
+            <h2 className="font-display text-base font-extrabold text-[#1E3A8A]">Mimo gợi ý ôn tập</h2>
             <ul className="mt-3 space-y-2">
               {weakSkills.map((s) => (
                 <li key={s.skillId} className="flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-[#F4FAFF] px-4 py-3">
-                  <span className="text-sm text-[#071A63]">
+                  <span className="text-sm text-[#1E3A8A]">
                     Ôn lại <b>{practiceSkillLabel(s.skillId)}</b> <span className="text-slate-500">(đúng {s.correct}/{s.total})</span>
                   </span>
                   <button
                     type="button"
                     disabled={busy}
                     onClick={() => begin(stage.topicId, stage.level, s.skillId)}
-                    className="min-h-[40px] rounded-full bg-[#1267E9] px-4 text-xs font-extrabold text-white hover:bg-[#0F59CC]"
+                    className="min-h-[40px] rounded-full bg-[#2563EB] px-4 text-xs font-extrabold text-white hover:bg-[#1D4ED8]"
                   >
                     Luyện kĩ năng này
                   </button>
@@ -748,7 +748,7 @@ export const PracticePortal: React.FC = () => {
                 Câu {i + 1} ·{' '}
                 {r.correct ? 'Chính xác! Con giỏi quá! 🎉' : isBlank ? 'Con chưa chọn đáp án cho câu này' : 'Chưa đúng rồi, cùng xem Mimo giải thích nhé! 💪'}
               </div>
-              <PracticeText text={q.prompt} className="text-lg font-semibold text-[#071A63]" />
+              <PracticeText text={q.prompt} className="text-lg font-semibold text-[#1E3A8A]" />
               <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {q.options.map((text, pos) => {
                   const isCorrect = r.correctPositions.includes(pos);
@@ -771,7 +771,7 @@ export const PracticePortal: React.FC = () => {
                 })}
               </div>
               {r.explanation && (
-                <div className="mt-3 flex gap-3 rounded-2xl bg-[#FFF8E1] p-4 text-base text-[#071A63]">
+                <div className="mt-3 flex gap-3 rounded-2xl bg-[#FFF8E1] p-4 text-base text-[#1E3A8A]">
                   <span className="text-xl" aria-hidden="true">💡</span>
                   <div>
                     <b className="text-[#B7790A]">Mimo giải thích: </b>
@@ -789,7 +789,7 @@ export const PracticePortal: React.FC = () => {
             type="button"
             disabled={busy}
             onClick={() => begin(stage.topicId, stage.level, stage.skillId)}
-            className="flex min-h-[56px] flex-1 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FFD34E] to-[#FFB800] text-base font-extrabold text-[#071A63] shadow-md"
+            className="flex min-h-[56px] flex-1 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#FFD34E] to-[#FFB800] text-base font-extrabold text-[#1E3A8A] shadow-md"
           >
             <RotateCcw className="h-5 w-5" /> Luyện lượt mới
           </button>
@@ -799,7 +799,7 @@ export const PracticePortal: React.FC = () => {
               setStage({ name: 'browse' });
               void loadOverview();
             }}
-            className="min-h-[56px] flex-1 rounded-2xl bg-white text-base font-extrabold text-[#1267E9] shadow-md"
+            className="min-h-[56px] flex-1 rounded-2xl bg-white text-base font-extrabold text-[#2563EB] shadow-md"
           >
             Chọn chuyên đề khác
           </button>

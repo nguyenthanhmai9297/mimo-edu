@@ -70,7 +70,7 @@ export const SourceDocumentPanel: React.FC<SourceDocumentPanelProps> = ({
               title={f.name}
               className={`shrink-0 rounded-lg border-2 px-2.5 py-1 text-[11px] font-bold ${
                 idx === activeIdx
-                  ? 'border-blue-600 bg-blue-50 text-[#1267E9]'
+                  ? 'border-blue-600 bg-blue-50 text-[#2563EB]'
                   : 'border-[#DCE7F3] text-[#5E6C84] hover:border-slate-500'
               }`}
             >

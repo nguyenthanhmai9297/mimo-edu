@@ -16,7 +16,7 @@ interface PracticeQuestionCardProps {
 /** One bank question: preview with the answer key, inline editing and approval. */
 const LEVEL_BORDER: Record<PracticeQuestion['level'], string> = {
   nhan_biet: 'border-l-[#22C38E]',
-  thong_hieu: 'border-l-[#1267E9]',
+  thong_hieu: 'border-l-[#2563EB]',
   van_dung: 'border-l-[#FFB800]',
   thu_thach: 'border-l-[#FF76B5]',
 };
@@ -66,8 +66,8 @@ export const PracticeQuestionCard: React.FC<PracticeQuestionCardProps> = ({
     <div className={`rounded-2xl border border-l-4 border-slate-200 bg-white p-4 shadow-sm transition hover:shadow-md sm:p-5 ${LEVEL_BORDER[question.level]}`}>
       <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-bold">
-          <span className="rounded-full bg-[#071A63] px-2.5 py-0.5 font-mono text-white">{question.id}</span>
-          <span className="rounded-full bg-[#EAF6FF] px-2.5 py-0.5 text-[#1267E9]">{PRACTICE_LEVEL_LABELS[question.level]}</span>
+          <span className="rounded-full bg-[#1E3A8A] px-2.5 py-0.5 font-mono text-white">{question.id}</span>
+          <span className="rounded-full bg-[#EAF6FF] px-2.5 py-0.5 text-[#2563EB]">{PRACTICE_LEVEL_LABELS[question.level]}</span>
           <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-slate-700" title={question.skillId}>{practiceSkillLabel(question.skillId)}</span>
           {question.type === 'multiple_choice' && <span className="rounded-full bg-[#F3EFFF] px-2.5 py-0.5 text-[#6A4BE6]">Nhiều đáp án</span>}
           <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 ${approved ? 'bg-[#EAFBF4] text-[#119468]' : 'bg-[#FFF8E1] text-[#B7790A]'}`}>
@@ -83,7 +83,7 @@ export const PracticeQuestionCard: React.FC<PracticeQuestionCardProps> = ({
                 setDraft(question);
                 setEditing(true);
               }}
-              className="flex min-h-[34px] items-center gap-1 rounded-full bg-white px-3 text-xs font-bold text-[#1267E9] ring-1 ring-[#BFE3FF] hover:bg-[#F4FAFF]"
+              className="flex min-h-[34px] items-center gap-1 rounded-full bg-white px-3 text-xs font-bold text-[#2563EB] ring-1 ring-[#BFE3FF] hover:bg-[#F4FAFF]"
             >
               <Pencil className="h-3.5 w-3.5" /> Sửa
             </button>
@@ -104,7 +104,7 @@ export const PracticeQuestionCard: React.FC<PracticeQuestionCardProps> = ({
 
       {!editing ? (
         <>
-          <PracticeText text={question.prompt} className="text-base font-semibold text-[#071A63]" />
+          <PracticeText text={question.prompt} className="text-base font-semibold text-[#1E3A8A]" />
           <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {question.options.map((o) => (
               <div
@@ -119,7 +119,7 @@ export const PracticeQuestionCard: React.FC<PracticeQuestionCardProps> = ({
             ))}
           </div>
           <div className="mt-3 rounded-xl bg-[#F4FAFF] p-3 text-sm text-slate-700">
-            <b className="text-[#1267E9]">Lời giải:</b> {question.explanation || <i className="text-slate-400">chưa có</i>}
+            <b className="text-[#2563EB]">Lời giải:</b> {question.explanation || <i className="text-slate-400">chưa có</i>}
           </div>
         </>
       ) : (

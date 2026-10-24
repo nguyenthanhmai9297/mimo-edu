@@ -27,7 +27,7 @@ function writeSession(id: string | null) {
 }
 
 const Shell: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div className="min-h-screen bg-gradient-to-b from-[#071A63] via-[#0F2C8A] to-[#1267E9] px-4 py-6">
+  <div className="min-h-screen bg-gradient-to-b from-[#1E3A8A] via-[#0F2C8A] to-[#2563EB] px-4 py-6">
     <div className="mx-auto flex max-w-xl flex-col gap-4">
       <div className="flex items-center gap-2 text-white">
         <MimoMascot size={44} />
@@ -105,7 +105,7 @@ export const StudentQuizPage: React.FC = () => {
       <Shell>
         <Card className="space-y-4 text-center">
           <MimoMascot size={110} eager className="mx-auto" />
-          <h1 className="font-display text-2xl font-extrabold text-[#071A63]">Con nhập mã học sinh nhé</h1>
+          <h1 className="font-display text-2xl font-extrabold text-[#1E3A8A]">Con nhập mã học sinh nhé</h1>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -123,7 +123,7 @@ export const StudentQuizPage: React.FC = () => {
               autoComplete="off"
               aria-label="Mã học sinh"
               placeholder="VD: MIMO03"
-              className="w-full rounded-2xl border-2 border-[#DCE7F3] px-4 py-3 text-center font-display text-2xl font-extrabold tracking-[0.2em] text-[#071A63] focus:border-[#1267E9] focus:outline-none"
+              className="w-full rounded-2xl border-2 border-[#DCE7F3] px-4 py-3 text-center font-display text-2xl font-extrabold tracking-[0.2em] text-[#1E3A8A] focus:border-[#2563EB] focus:outline-none"
             />
             <button type="submit" disabled={busy || studentCode.length !== 6} className="studio-btn studio-btn-primary min-h-[52px] w-full text-lg">
               <LogIn className="h-5 w-5" /> Đăng nhập
@@ -141,7 +141,7 @@ export const StudentQuizPage: React.FC = () => {
       <Shell>
         <Card className="space-y-4 text-center">
           <MimoMascot size={110} eager className="mx-auto" />
-          <h1 className="font-display text-2xl font-extrabold text-[#071A63]">Nhập mã phòng trên bảng</h1>
+          <h1 className="font-display text-2xl font-extrabold text-[#1E3A8A]">Nhập mã phòng trên bảng</h1>
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -161,7 +161,7 @@ export const StudentQuizPage: React.FC = () => {
               autoComplete="off"
               aria-label="Mã phòng"
               placeholder="ABC123"
-              className="w-full rounded-2xl border-2 border-[#DCE7F3] px-4 py-3 text-center font-display text-3xl font-extrabold tracking-[0.25em] text-[#071A63] focus:border-[#1267E9] focus:outline-none"
+              className="w-full rounded-2xl border-2 border-[#DCE7F3] px-4 py-3 text-center font-display text-3xl font-extrabold tracking-[0.25em] text-[#1E3A8A] focus:border-[#2563EB] focus:outline-none"
             />
             <button type="submit" disabled={busy || input.trim().length !== 6} className="studio-btn studio-btn-accent min-h-[52px] w-full text-lg">
               Vào phòng
@@ -196,7 +196,7 @@ export const StudentQuizPage: React.FC = () => {
         {header}
         <Card className="space-y-3 text-center">
           <MimoMascot size={120} eager className="mx-auto mimo-float" />
-          <h2 className="font-display text-2xl font-extrabold text-[#071A63]">Con đã vào phòng!</h2>
+          <h2 className="font-display text-2xl font-extrabold text-[#1E3A8A]">Con đã vào phòng!</h2>
           <p className="text-[#5E6C84]">Chờ thầy cô bắt đầu câu hỏi đầu tiên nhé.</p>
         </Card>
       </Shell>
@@ -209,8 +209,8 @@ export const StudentQuizPage: React.FC = () => {
       <Shell>
         <Card className="space-y-3 text-center">
           <MimoMascot size={130} eager className="mx-auto" />
-          <h2 className="font-display text-3xl font-extrabold text-[#071A63]">Hoàn thành Quiz!</h2>
-          <p className="font-display text-5xl font-extrabold text-[#1267E9]">
+          <h2 className="font-display text-3xl font-extrabold text-[#1E3A8A]">Hoàn thành Quiz!</h2>
+          <p className="font-display text-5xl font-extrabold text-[#2563EB]">
             {view.myScore}/{view.total}
           </p>
           <p className="text-[#5E6C84]">câu trả lời đúng. Giỏi lắm, {view.name}!</p>
@@ -243,17 +243,17 @@ export const StudentQuizPage: React.FC = () => {
       {header}
       <Card className="space-y-4">
         <div className="flex items-center gap-2">
-          <span className="rounded-full bg-[#071A63] px-3 py-1 text-sm font-extrabold text-white">
+          <span className="rounded-full bg-[#1E3A8A] px-3 py-1 text-sm font-extrabold text-white">
             Câu {view.index + 1}/{view.total}
           </span>
           {q.multi && <span className="rounded-full bg-[#F1ECFF] px-3 py-1 text-xs font-bold text-[#6A4BE6]">Chọn tất cả đáp án đúng</span>}
           {open && left !== null && (
-            <span data-testid="student-timer" className={`ml-auto font-display text-2xl font-extrabold ${left <= 5 ? 'text-[#E5484D]' : 'text-[#071A63]'}`}>
+            <span data-testid="student-timer" className={`ml-auto font-display text-2xl font-extrabold ${left <= 5 ? 'text-[#E5484D]' : 'text-[#1E3A8A]'}`}>
               {left}s
             </span>
           )}
         </div>
-        <RichContentRenderer content={q.prompt} inheritSize className="text-xl font-semibold text-[#071A63]" />
+        <RichContentRenderer content={q.prompt} inheritSize className="text-xl font-semibold text-[#1E3A8A]" />
         <div className="grid gap-2.5">
           {q.options.map((opt, i) => {
             const mine = (view.myAnswer ?? picked).includes(i);
@@ -266,7 +266,7 @@ export const StudentQuizPage: React.FC = () => {
                 aria-pressed={mine}
                 onClick={() => setPicked((p) => (q.multi ? (p.includes(i) ? p.filter((x) => x !== i) : [...p, i]) : [i]))}
                 className={`flex min-h-[64px] items-center gap-3 rounded-2xl px-3 text-left text-lg text-white transition ${TILE[i].bg} ${
-                  mine ? 'ring-4 ring-[#071A63] ring-offset-2' : ''
+                  mine ? 'ring-4 ring-[#1E3A8A] ring-offset-2' : ''
                 } ${!open && !right ? 'opacity-40' : ''} ${!canAnswer ? 'cursor-default' : 'active:scale-[0.98]'}`}
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/25 font-display text-xl font-extrabold">
@@ -295,7 +295,7 @@ export const StudentQuizPage: React.FC = () => {
           </button>
         )}
         {open && answered && (
-          <p className="rounded-2xl bg-[#EAF5FF] p-3 text-center font-bold text-[#1267E9]">
+          <p className="rounded-2xl bg-[#EAF5FF] p-3 text-center font-bold text-[#2563EB]">
             Đã gửi đáp án {view.myAnswer!.map((c) => LETTERS[c]).join(', ')}! Chờ thầy cô hiện kết quả nhé.
           </p>
         )}

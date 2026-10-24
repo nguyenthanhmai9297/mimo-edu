@@ -244,7 +244,7 @@ export const CommentsPage: React.FC = () => {
                     </span>
                     <div className="min-w-0">
                       <div className="truncate font-display text-base font-extrabold text-[#172B4D]">{stu?.fullName || 'Học sinh'}</div>
-                      <div className="text-xs font-bold text-[#1267E9]">
+                      <div className="text-xs font-bold text-[#2563EB]">
                         Tháng {cmt.month}/{cmt.year}
                       </div>
                     </div>
@@ -265,7 +265,7 @@ export const CommentsPage: React.FC = () => {
                   )}
                   {cmt.practiceSuggestions && (
                     <div className="rounded-xl bg-[#EAF5FF] px-3.5 py-2.5">
-                      <div className="text-xs font-bold text-[#1267E9]">Gợi ý luyện thêm</div>
+                      <div className="text-xs font-bold text-[#2563EB]">Gợi ý luyện thêm</div>
                       <p className="mt-0.5 line-clamp-3">{cmt.practiceSuggestions}</p>
                     </div>
                   )}
@@ -394,12 +394,12 @@ export const CommentsPage: React.FC = () => {
                 return (
                   <label
                     key={v}
-                    className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition ${on ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
+                    className={`flex cursor-pointer items-start gap-3 rounded-xl border p-3 transition ${on ? 'border-[#2563EB] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
                   >
-                    <input type="radio" name="comment-status" checked={on} onChange={() => set('status', v)} className="mt-1 h-4 w-4 accent-[#1267E9]" />
+                    <input type="radio" name="comment-status" checked={on} onChange={() => set('status', v)} className="mt-1 h-4 w-4 accent-[#2563EB]" />
                     <span>
                       <span className="flex items-center gap-1.5 text-sm font-bold text-[#172B4D]">
-                        <Icon className="h-4 w-4 text-[#1267E9]" /> {label}
+                        <Icon className="h-4 w-4 text-[#2563EB]" /> {label}
                       </span>
                       <span className="block text-xs text-[#5E6C84]">{note}</span>
                     </span>

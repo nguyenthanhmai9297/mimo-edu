@@ -104,28 +104,31 @@
 
 /* ==========================================================================
    MimoEDU Studio – teacher workspace design system
-   Mostly white, very light blue surfaces, navy/blue/yellow/pink accents.
+   Mimo blue (#2563EB) leads; sky, yellow, pink and lavender pastels give
+   each page colour without hurting legibility.
    Scoped to the admin area: nothing here changes the homepage or student UI.
    ========================================================================== */
 :root {
-  --studio-navy: #071A63;
-  --studio-blue: #1267E9;
-  --studio-blue-hover: #0F59CC;
-  --studio-sky: #54C8FF;
-  --studio-soft: #EAF5FF;
-  --studio-surface: #F6FAFF;
+  --studio-navy: #1E3A8A;
+  --studio-blue: #2563EB;
+  --studio-blue-hover: #1D4ED8;
+  --studio-sky: #38BDF8;
+  --studio-soft: #EFF6FF;
+  --studio-surface: #F5F8FF;
   --studio-yellow: #FFD34E;
   --studio-pink: #FF76B5;
+  --studio-lavender: #A78BFA;
   --studio-text: #172B4D;
   --studio-muted: #5E6C84;
-  --studio-border: #DCE7F3;
+  --studio-border: #DBE5F7;
   --studio-success: #1F9D6B;
   --studio-warning: #B7790A;
   --studio-danger: #D93B5B;
   --studio-radius: 16px;
   --studio-radius-sm: 12px;
-  --studio-shadow: 0 1px 2px rgba(23, 43, 77, 0.04), 0 8px 24px -14px rgba(23, 43, 77, 0.18);
-  --studio-shadow-hover: 0 2px 4px rgba(23, 43, 77, 0.05), 0 14px 32px -16px rgba(18, 103, 233, 0.35);
+  --studio-shadow: 0 1px 2px rgba(30, 58, 138, 0.05), 0 10px 26px -16px rgba(37, 99, 235, 0.28);
+  --studio-shadow-hover: 0 2px 4px rgba(30, 58, 138, 0.06), 0 18px 36px -18px rgba(37, 99, 235, 0.45);
+  --studio-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 55%, #38BDF8 100%);
 }
 
 /* Components sit in Tailwind's components layer so utilities (sizes, padding) can refine them */
@@ -136,6 +139,28 @@
     border-radius: var(--studio-radius);
     box-shadow: var(--studio-shadow);
   }
+
+  /* Page background of the Studio: soft blue → lavender wash with two colour blooms */
+  .studio-backdrop {
+    background:
+      radial-gradient(900px 420px at 100% -10%, rgba(56, 189, 248, 0.16), transparent 60%),
+      radial-gradient(700px 380px at -10% 110%, rgba(167, 139, 250, 0.14), transparent 60%),
+      linear-gradient(180deg, #EEF4FF 0%, #F6F4FF 100%);
+  }
+
+  /* Page title banner: Mimo blue gradient, white text, pastel bubbles */
+  .studio-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    background: var(--studio-gradient);
+    color: #FFFFFF;
+    box-shadow: 0 18px 40px -22px rgba(37, 99, 235, 0.75);
+  }
+  .studio-hero .studio-btn-primary { background: #FFFFFF; color: var(--studio-blue); box-shadow: 0 6px 16px -8px rgba(15, 23, 42, 0.45); }
+  .studio-hero .studio-btn-primary:hover:not(:disabled) { background: #EFF6FF; }
+  .studio-hero .studio-btn-secondary { background: rgba(255, 255, 255, 0.14); color: #FFFFFF; border-color: rgba(255, 255, 255, 0.4); }
+  .studio-hero .studio-btn-secondary:hover:not(:disabled) { background: rgba(255, 255, 255, 0.24); border-color: rgba(255, 255, 255, 0.6); }
 
   .studio-btn {
     display: inline-flex;
@@ -152,14 +177,14 @@
   }
   .studio-btn:focus-visible { outline: 3px solid rgba(84, 200, 255, 0.6); outline-offset: 2px; }
   .studio-btn:disabled { opacity: 0.55; cursor: not-allowed; }
-  .studio-btn-primary { background: var(--studio-blue); color: #FFFFFF; box-shadow: 0 6px 16px -8px rgba(18, 103, 233, 0.7); }
-  .studio-btn-primary:hover:not(:disabled) { background: var(--studio-blue-hover); }
+  .studio-btn-primary { background: linear-gradient(135deg, #2563EB, #3B82F6); color: #FFFFFF; box-shadow: 0 6px 16px -8px rgba(37, 99, 235, 0.75); }
+  .studio-btn-primary:hover:not(:disabled) { background: linear-gradient(135deg, #1D4ED8, #2563EB); box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.85); }
   .studio-btn-secondary { background: #FFFFFF; color: var(--studio-text); border: 1px solid var(--studio-border); }
-  .studio-btn-secondary:hover:not(:disabled) { background: var(--studio-surface); border-color: #BFD6EE; }
+  .studio-btn-secondary:hover:not(:disabled) { background: var(--studio-soft); border-color: #BFD3F5; color: var(--studio-blue); }
   .studio-btn-accent { background: var(--studio-yellow); color: var(--studio-navy); }
   .studio-btn-accent:hover:not(:disabled) { filter: brightness(1.04); }
   .studio-btn-navy { background: var(--studio-navy); color: #FFFFFF; }
-  .studio-btn-navy:hover:not(:disabled) { background: #0B2585; }
+  .studio-btn-navy:hover:not(:disabled) { background: #1E40AF; }
   .studio-btn-danger { background: #FFFFFF; color: var(--studio-danger); border: 1px solid #F5C6D1; }
   .studio-btn-danger:hover:not(:disabled) { background: #FFF1F4; }
 
@@ -225,6 +250,6 @@
   box-shadow: 0 1px 0 0 rgba(31, 42, 85, 0.16);
 }
 .student-skin :is(button, a, input, textarea, select, [tabindex]):focus-visible {
-  outline: 3px solid rgba(47, 140, 255, 0.55);
+  outline: 3px solid rgba(37, 99, 235, 0.5);
   outline-offset: 2px;
 }

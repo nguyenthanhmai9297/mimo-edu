@@ -23,7 +23,7 @@ export const MimoLoading: React.FC<{ variant?: 'page' | 'section'; text?: string
     <p className="font-display text-lg font-extrabold text-[#1F2A55] sm:text-xl">{text}</p>
     <span className="flex gap-2" aria-hidden="true">
       {[0, 1, 2].map((i) => (
-        <span key={i} className="mimo-dot h-3 w-3 rounded-full bg-[#2F8CFF]" style={{ animationDelay: `${i * 0.15}s` }} />
+        <span key={i} className="mimo-dot h-3 w-3 rounded-full bg-[#2563EB]" style={{ animationDelay: `${i * 0.15}s` }} />
       ))}
     </span>
   </div>

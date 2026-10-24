@@ -145,7 +145,7 @@ export const LandingPage: React.FC = () => {
       title: 'Luyện Toán cùng Mimo',
       desc: 'Luyện theo chuyên đề và mức độ',
       icon: <Sparkles className="h-6 w-6" />,
-      gradient: 'from-[#1267E9] to-[#54C8FF]',
+      gradient: 'from-[#2563EB] to-[#54C8FF]',
       onClick: () => openStudentArea('practice'),
     },
     {
@@ -193,7 +193,7 @@ export const LandingPage: React.FC = () => {
               type="button"
               onClick={handleAdminSignIn}
               disabled={adminLoginLoading}
-              className="inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-white px-4 text-sm font-extrabold text-[#1267E9] shadow-sm transition hover:bg-[#EAF6FF]"
+              className="inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-white px-4 text-sm font-extrabold text-[#2563EB] shadow-sm transition hover:bg-[#EAF6FF]"
             >
               <LogIn className="h-4 w-4" />
               {user && isAdminAuthorized ? 'Trang giáo viên' : 'Giáo viên đăng nhập'}
@@ -269,7 +269,7 @@ export const LandingPage: React.FC = () => {
                 </span>
                 <span className="font-display text-base leading-snug font-extrabold text-[#071A63] sm:text-lg">{f.title}</span>
                 <span className="text-xs text-slate-500 sm:text-sm">{f.desc}</span>
-                <span className="mt-auto inline-flex items-center gap-1 text-sm font-extrabold text-[#1267E9] transition group-hover:gap-2">
+                <span className="mt-auto inline-flex items-center gap-1 text-sm font-extrabold text-[#2563EB] transition group-hover:gap-2">
                   Bắt đầu <ArrowRight className="h-4 w-4" />
                 </span>
               </button>
@@ -296,12 +296,12 @@ export const LandingPage: React.FC = () => {
                 onChange={(e) => setStudentCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))}
                 placeholder="VD: 8K9P2A"
                 aria-label="Mã học sinh 6 ký tự"
-                className="min-h-[56px] flex-1 rounded-2xl border-2 border-[#BFE3FF] bg-[#F4FAFF] px-5 font-mono text-xl font-bold tracking-[0.3em] text-[#071A63] uppercase placeholder:font-sans placeholder:text-base placeholder:tracking-normal placeholder:text-slate-400 focus:border-[#1267E9] focus:outline-none"
+                className="min-h-[56px] flex-1 rounded-2xl border-2 border-[#BFE3FF] bg-[#F4FAFF] px-5 font-mono text-xl font-bold tracking-[0.3em] text-[#071A63] uppercase placeholder:font-sans placeholder:text-base placeholder:tracking-normal placeholder:text-slate-400 focus:border-[#2563EB] focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={codeLoading}
-                className="inline-flex min-h-[56px] items-center justify-center gap-2 rounded-2xl bg-[#1267E9] px-6 text-base font-extrabold text-white shadow-md transition hover:bg-[#0F59CC]"
+                className="inline-flex min-h-[56px] items-center justify-center gap-2 rounded-2xl bg-[#2563EB] px-6 text-base font-extrabold text-white shadow-md transition hover:bg-[#1D4ED8]"
               >
                 {codeLoading ? 'Đang kiểm tra...' : 'Vào lớp'}
                 <ArrowRight className="h-5 w-5" />

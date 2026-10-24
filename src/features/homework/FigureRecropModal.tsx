@@ -47,11 +47,11 @@ export const FigureRecropModal: React.FC<FigureRecropModalProps> = ({
   const valid = box[2] - box[0] > 5 && box[3] - box[1] > 5;
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
       <div className="cartoon-card flex max-h-[94vh] w-full max-w-3xl flex-col bg-white">
         <div className="flex items-center justify-between border-b border-[#EEF3F9] px-5 py-3">
           <div className="flex items-center gap-2">
-            <Crop className="h-5 w-5 text-[#1267E9]" />
+            <Crop className="h-5 w-5 text-[#2563EB]" />
             <h2 className="font-display text-base font-extrabold text-[#172B4D]">Cắt lại hình từ đề gốc</h2>
           </div>
           <button
@@ -103,7 +103,7 @@ export const FigureRecropModal: React.FC<FigureRecropModalProps> = ({
             type="button"
             disabled={!valid}
             onClick={() => onConfirm(box)}
-            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1267E9] px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
+            className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#2563EB] px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
           >
             <Check className="h-4 w-4" />
             Dùng vùng này

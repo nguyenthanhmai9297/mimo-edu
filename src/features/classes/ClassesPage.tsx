@@ -430,7 +430,7 @@ export const ClassesPage: React.FC = () => {
                   }}
                   className="studio-btn studio-btn-secondary"
                 >
-                  <Users className="h-4 w-4 text-[#1267E9]" />
+                  <Users className="h-4 w-4 text-[#2563EB]" />
                   Gán học sinh đã có ({unassignedStudents.length})
                 </button>
                 <button type="button" onClick={() => openCreateStudentInClassModal(activeDetailClass)} className="studio-btn studio-btn-primary">
@@ -634,7 +634,7 @@ export const ClassesPage: React.FC = () => {
         <div className="cartoon-card bg-white p-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <BookOpen className="h-4 w-4 text-[#1267E9]" />
+              <BookOpen className="h-4 w-4 text-[#2563EB]" />
               <h3 className="font-display text-base font-extrabold text-[#172B4D]">
                 Bài tập đã giao cho lớp
               </h3>
@@ -642,7 +642,7 @@ export const ClassesPage: React.FC = () => {
             <button
               type="button"
               onClick={() => navigate('/admin/assignments')}
-              className="text-xs font-bold text-[#1267E9] hover:underline"
+              className="text-xs font-bold text-[#2563EB] hover:underline"
             >
               Quản lý giao bài →
             </button>
@@ -673,7 +673,7 @@ export const ClassesPage: React.FC = () => {
         {/* MODAL: CREATE / EDIT STUDENT INSIDE CLASS                        */}
         {/* ================================================================ */}
         {studentModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
             <div className="cartoon-card max-h-[90vh] w-full max-w-xl overflow-y-auto bg-white p-6">
               <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
                 <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
@@ -884,7 +884,7 @@ export const ClassesPage: React.FC = () => {
         {/* MODAL: ASSIGN EXISTING STUDENT TO THIS CLASS                     */}
         {/* ================================================================ */}
         {assignExistingModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
             <div className="cartoon-card max-h-[85vh] w-full max-w-lg overflow-y-auto bg-white p-6">
               <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
                 <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
@@ -929,7 +929,7 @@ export const ClassesPage: React.FC = () => {
                         type="button"
                         disabled={assigningStudentId === st.id}
                         onClick={() => handleAssignExistingStudentToClass(st)}
-                        className="cartoon-button rounded-lg bg-[#1267E9] px-3 py-1.5 text-xs font-extrabold text-white"
+                        className="cartoon-button rounded-lg bg-[#2563EB] px-3 py-1.5 text-xs font-extrabold text-white"
                       >
                         {assigningStudentId === st.id
                           ? 'Đang thêm...'
@@ -953,7 +953,7 @@ export const ClassesPage: React.FC = () => {
         {/* MODAL: CONFIRM REMOVE STUDENT FROM CLASS                         */}
         {/* ================================================================ */}
         {removingStudent && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
             <div className="cartoon-card w-full max-w-md bg-white p-6">
               <h3 className="font-display text-lg font-extrabold text-[#172B4D]">
                 Gỡ học sinh khỏi lớp {activeDetailClass.name}?
@@ -990,7 +990,7 @@ export const ClassesPage: React.FC = () => {
 
         {/* Class Edit Modal (reused when clicking "Sửa thông tin lớp" in Detail View) */}
         {classModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
             <div className="cartoon-card max-h-[90vh] w-full max-w-lg overflow-y-auto bg-white p-6">
               <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
                 <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
@@ -1103,7 +1103,7 @@ export const ClassesPage: React.FC = () => {
                   <button
                     type="submit"
                     disabled={savingClass}
-                    className="cartoon-button rounded-xl bg-[#1267E9] px-5 py-2 text-xs font-extrabold text-white"
+                    className="cartoon-button rounded-xl bg-[#2563EB] px-5 py-2 text-xs font-extrabold text-white"
                   >
                     {savingClass ? 'Đang lưu...' : 'Lưu Lớp Học'}
                   </button>
@@ -1242,7 +1242,7 @@ export const ClassesPage: React.FC = () => {
                       {cls.name.replace(/^(lớp|lop)\s*/i, '').slice(0, 3).toUpperCase()}
                     </span>
                     <span className="min-w-0">
-                      <span className="block truncate font-display text-lg font-extrabold text-[#172B4D] group-hover:text-[#1267E9]">{cls.name}</span>
+                      <span className="block truncate font-display text-lg font-extrabold text-[#172B4D] group-hover:text-[#2563EB]">{cls.name}</span>
                       <span className="block text-xs text-[#5E6C84]">
                         {cls.grade} · Năm học {cls.schoolYear}
                       </span>
@@ -1297,7 +1297,7 @@ export const ClassesPage: React.FC = () => {
 
       {/* Create / Edit Class Modal */}
       {classModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
           <div className="cartoon-card max-h-[90vh] w-full max-w-lg overflow-y-auto bg-white p-6">
             <div className="flex items-center justify-between border-b border-[#EEF3F9] pb-3">
               <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
@@ -1410,7 +1410,7 @@ export const ClassesPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={savingClass}
-                  className="cartoon-button rounded-xl bg-[#1267E9] px-5 py-2 text-xs font-extrabold text-white"
+                  className="cartoon-button rounded-xl bg-[#2563EB] px-5 py-2 text-xs font-extrabold text-white"
                 >
                   {savingClass ? 'Đang lưu...' : 'Lưu Lớp Học'}
                 </button>

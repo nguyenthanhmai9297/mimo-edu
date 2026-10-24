@@ -29,11 +29,11 @@ export const MimoImportModal: React.FC<MimoImportModalProps> = ({
     );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#071A63]/40 backdrop-blur-[2px] p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E3A8A]/40 backdrop-blur-[2px] p-4">
       <div className="cartoon-card w-full max-w-lg bg-white">
         <div className="flex items-center justify-between border-b border-[#EEF3F9] px-5 py-3">
           <div className="flex items-center gap-2">
-            <FileJson className="h-5 w-5 text-[#1267E9]" />
+            <FileJson className="h-5 w-5 text-[#2563EB]" />
             <h2 className="font-display text-base font-extrabold text-[#172B4D]">Nhập bộ câu hỏi MimoEDU</h2>
           </div>
           <button
@@ -108,7 +108,7 @@ export const MimoImportModal: React.FC<MimoImportModalProps> = ({
             type="button"
             disabled={selected.length === 0}
             onClick={() => onConfirm(selected)}
-            className="cartoon-button rounded-xl bg-[#1267E9] px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
+            className="cartoon-button rounded-xl bg-[#2563EB] px-4 py-2 text-xs font-extrabold text-white disabled:opacity-50"
           >
             Mở {selectedCount} câu trong trình soạn
           </button>

@@ -123,13 +123,13 @@ export const PracticeAdminPage: React.FC = () => {
 
   const pill = (active: boolean) =>
     `inline-flex min-h-[36px] items-center rounded-full px-3.5 text-xs font-bold transition ${
-      active ? 'bg-[#1267E9] text-white shadow-sm' : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:ring-[#54C8FF]'
+      active ? 'bg-[#2563EB] text-white shadow-sm' : 'bg-white text-slate-600 ring-1 ring-slate-200 hover:ring-[#54C8FF]'
     }`;
 
   return (
     <div className="studio-skin space-y-6">
       {/* Header: navy accent strip, content stays on light backgrounds */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#071A63] via-[#0E3AA8] to-[#1267E9] p-5 text-white shadow-md sm:p-6">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#1E3A8A] via-[#0E3AA8] to-[#2563EB] p-5 text-white shadow-md sm:p-6">
         <div className="pointer-events-none absolute -top-8 right-24 h-28 w-28 rounded-full bg-[#54C8FF]/30 blur-2xl" />
         <div className="pointer-events-none absolute -bottom-10 right-4 h-32 w-32 rounded-full bg-[#FF76B5]/25 blur-2xl" />
         <div className="relative flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
@@ -141,7 +141,7 @@ export const PracticeAdminPage: React.FC = () => {
               Ngân hàng câu hỏi Toán 3 đã kiểm duyệt cho học sinh tự luyện · 5 nhóm kiến thức · 35 chuyên đề · 4 mức độ
             </p>
           </div>
-          <label className="flex min-h-[44px] cursor-pointer items-center gap-2 self-start rounded-2xl bg-[#FFD34E] px-4 text-sm font-extrabold whitespace-nowrap text-[#071A63] shadow-md transition hover:brightness-105">
+          <label className="flex min-h-[44px] cursor-pointer items-center gap-2 self-start rounded-2xl bg-[#FFD34E] px-4 text-sm font-extrabold whitespace-nowrap text-[#1E3A8A] shadow-md transition hover:brightness-105">
             <FileUp className="h-4 w-4" /> Nhập bộ câu hỏi (.json)
             <input type="file" accept="application/json,.json" onChange={handleFile} className="hidden" />
           </label>
@@ -164,7 +164,7 @@ export const PracticeAdminPage: React.FC = () => {
           const theme = GROUP_THEMES[group.id];
           return (
             <section key={group.id} className="space-y-3">
-              <h2 className="flex items-center gap-2 font-display text-base font-extrabold text-[#071A63]">
+              <h2 className="flex items-center gap-2 font-display text-base font-extrabold text-[#1E3A8A]">
                 <span className={`flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br text-white ${theme.gradient}`}>
                   <theme.icon className="h-4 w-4" />
                 </span>
@@ -186,14 +186,14 @@ export const PracticeAdminPage: React.FC = () => {
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className={`rounded-full px-2 py-0.5 font-mono text-[11px] font-bold ${s ? 'bg-[#EAF6FF] text-[#1267E9]' : 'bg-slate-200 text-slate-500'}`}>{t.id}</span>
+                        <span className={`rounded-full px-2 py-0.5 font-mono text-[11px] font-bold ${s ? 'bg-[#EAF6FF] text-[#2563EB]' : 'bg-slate-200 text-slate-500'}`}>{t.id}</span>
                         {s && (
                           <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${s.published ? 'bg-[#EAFBF4] text-[#119468]' : 'bg-[#FFF8E1] text-[#B7790A]'}`}>
                             {s.published ? 'Đang mở cho học sinh' : 'Chưa xuất bản'}
                           </span>
                         )}
                       </div>
-                      <div className={`mt-1.5 font-display text-sm font-extrabold ${s ? 'text-[#071A63]' : 'text-slate-500'}`}>{t.name}</div>
+                      <div className={`mt-1.5 font-display text-sm font-extrabold ${s ? 'text-[#1E3A8A]' : 'text-slate-500'}`}>{t.name}</div>
                       {s ? (
                         <div className="mt-3">
                           <div className="flex justify-between text-[11px] font-bold text-slate-500">
@@ -214,14 +214,14 @@ export const PracticeAdminPage: React.FC = () => {
         })
       ) : (
         <div className="space-y-4">
-          <button type="button" onClick={() => setTopicId(null)} className="inline-flex items-center gap-1 text-sm font-bold text-[#1267E9] hover:underline">
+          <button type="button" onClick={() => setTopicId(null)} className="inline-flex items-center gap-1 text-sm font-bold text-[#2563EB] hover:underline">
             <ArrowLeft className="h-4 w-4" /> Tất cả chuyên đề
           </button>
 
           <div className="rounded-3xl border border-[#BFE3FF] bg-white p-5 shadow-sm">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full bg-[#EAF6FF] px-2.5 py-0.5 font-mono text-xs font-bold text-[#1267E9]">{topic.id}</span>
-              <h2 className="font-display text-xl font-extrabold text-[#071A63]">{topic.name}</h2>
+              <span className="rounded-full bg-[#EAF6FF] px-2.5 py-0.5 font-mono text-xs font-bold text-[#2563EB]">{topic.id}</span>
+              <h2 className="font-display text-xl font-extrabold text-[#1E3A8A]">{topic.name}</h2>
             </div>
 
             {topicSets.length === 0 ? (
@@ -235,7 +235,7 @@ export const PracticeAdminPage: React.FC = () => {
                   return (
                     <div key={set.id} className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-[#F4FAFF] p-3.5">
                       <div className="min-w-0 flex-1 text-xs">
-                        <div className="font-bold text-[#071A63]">{set.title}</div>
+                        <div className="font-bold text-[#1E3A8A]">{set.title}</div>
                         <div className="mt-0.5 text-slate-500">
                           <span className="font-mono">{set.id}</span> · {approvedCount}/{inSet.length} câu đã duyệt ·{' '}
                           <b className={published ? 'text-[#119468]' : 'text-[#B7790A]'}>{published ? 'Đã xuất bản' : 'Nháp'}</b>
@@ -248,7 +248,7 @@ export const PracticeAdminPage: React.FC = () => {
                         title={!published && approvedCount === 0 ? 'Cần duyệt ít nhất một câu' : undefined}
                         onClick={() => withBusy(() => setPracticeSetStatus(set, published ? 'draft' : 'published'))}
                         className={`flex min-h-[40px] items-center gap-1.5 rounded-xl px-4 text-xs font-extrabold transition disabled:opacity-50 ${
-                          published ? 'bg-white text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50' : 'bg-[#1267E9] text-white shadow-sm hover:bg-[#0F59CC]'
+                          published ? 'bg-white text-slate-700 ring-1 ring-slate-300 hover:bg-slate-50' : 'bg-[#2563EB] text-white shadow-sm hover:bg-[#1D4ED8]'
                         }`}
                       >
                         {published ? <Undo2 className="h-4 w-4" /> : <Rocket className="h-4 w-4" />}
@@ -275,7 +275,7 @@ export const PracticeAdminPage: React.FC = () => {
                       setTopicId(e.target.value);
                       resetFilters();
                     }}
-                    className="min-h-[36px] rounded-full border border-slate-200 bg-white px-3 text-xs font-bold text-[#071A63]"
+                    className="min-h-[36px] rounded-full border border-slate-200 bg-white px-3 text-xs font-bold text-[#1E3A8A]"
                   >
                     {PRACTICE_CATALOG.flatMap((g) => g.topics).map((t) => (
                       <option key={t.id} value={t.id}>
@@ -298,7 +298,7 @@ export const PracticeAdminPage: React.FC = () => {
                   <select
                     value={skillFilter}
                     onChange={(e) => setSkillFilter(e.target.value)}
-                    className="min-h-[36px] rounded-full border border-slate-200 bg-white px-3 text-xs font-bold text-[#071A63]"
+                    className="min-h-[36px] rounded-full border border-slate-200 bg-white px-3 text-xs font-bold text-[#1E3A8A]"
                   >
                     <option value="all">Tất cả kĩ năng</option>
                     {skillOptions.map((s) => (

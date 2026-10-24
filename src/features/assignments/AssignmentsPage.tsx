@@ -43,7 +43,7 @@ const STEPS = ['Chọn bài', 'Chọn lớp / học sinh', 'Thiết lập thời
 const PROGRESS: { key: StudentAssignment['status']; label: string; bar: string; text: string }[] = [
   { key: 'assigned', label: 'Chưa làm', bar: 'bg-[#DCE7F3]', text: 'text-[#5E6C84]' },
   { key: 'in_progress', label: 'Đang làm', bar: 'bg-[#FFD34E]', text: 'text-[#B7790A]' },
-  { key: 'submitted', label: 'Đã nộp', bar: 'bg-[#54C8FF]', text: 'text-[#1267E9]' },
+  { key: 'submitted', label: 'Đã nộp', bar: 'bg-[#54C8FF]', text: 'text-[#2563EB]' },
   { key: 'graded', label: 'Đã chấm', bar: 'bg-[#1F9D6B]', text: 'text-[#1F9D6B]' },
 ];
 
@@ -387,7 +387,7 @@ export const AssignmentsPage: React.FC = () => {
             <li key={label} className="text-center">
               <span
                 className={`mx-auto flex h-8 w-8 items-center justify-center rounded-full text-xs font-extrabold ${
-                  i < step ? 'bg-[#1F9D6B] text-white' : i === step ? 'bg-[#1267E9] text-white' : 'bg-[#F1F4F9] text-[#5E6C84]'
+                  i < step ? 'bg-[#1F9D6B] text-white' : i === step ? 'bg-[#2563EB] text-white' : 'bg-[#F1F4F9] text-[#5E6C84]'
                 }`}
               >
                 {i < step ? <CheckCircle2 className="h-4 w-4" /> : i + 1}
@@ -416,7 +416,7 @@ export const AssignmentsPage: React.FC = () => {
                     return (
                       <label
                         key={h.id}
-                        className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${on ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
+                        className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${on ? 'border-[#2563EB] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
                       >
                         <input
                           type="radio"
@@ -427,7 +427,7 @@ export const AssignmentsPage: React.FC = () => {
                             setTitle(h.title);
                             setInstructions(h.description || '');
                           }}
-                          className="h-4 w-4 accent-[#1267E9]"
+                          className="h-4 w-4 accent-[#2563EB]"
                         />
                         <span className="min-w-0 flex-1">
                           <span className="block truncate text-sm font-bold text-[#172B4D]">{h.title}</span>
@@ -470,7 +470,7 @@ export const AssignmentsPage: React.FC = () => {
                     return (
                       <label
                         key={cls.id}
-                        className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${on ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
+                        className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 transition ${on ? 'border-[#2563EB] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
                       >
                         <input
                           type="checkbox"
@@ -482,7 +482,7 @@ export const AssignmentsPage: React.FC = () => {
                                 : [...prev, cls.id]
                             )
                           }
-                          className="h-4 w-4 accent-[#1267E9]"
+                          className="h-4 w-4 accent-[#2563EB]"
                         />
                         <span className="flex-1 text-sm font-bold text-[#172B4D]">
                           {cls.name} <span className="font-normal text-[#5E6C84]">({cls.grade})</span>
@@ -504,7 +504,7 @@ export const AssignmentsPage: React.FC = () => {
                     return (
                       <label
                         key={st.id}
-                        className={`flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2 transition ${on ? 'border-[#1267E9] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
+                        className={`flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2 transition ${on ? 'border-[#2563EB] bg-[#EAF5FF]' : 'border-[#DCE7F3] hover:bg-[#F6FAFF]'}`}
                       >
                         <input
                           type="checkbox"
@@ -516,10 +516,10 @@ export const AssignmentsPage: React.FC = () => {
                                 : [...prev, st.id]
                             )
                           }
-                          className="h-4 w-4 accent-[#1267E9]"
+                          className="h-4 w-4 accent-[#2563EB]"
                         />
                         <span className="flex-1 text-sm font-bold text-[#172B4D]">{st.fullName}</span>
-                        <span className="font-mono text-xs text-[#1267E9]">{st.accessCode}</span>
+                        <span className="font-mono text-xs text-[#2563EB]">{st.accessCode}</span>
                       </label>
                     );
                   })}
@@ -552,7 +552,7 @@ export const AssignmentsPage: React.FC = () => {
                 type="checkbox"
                 checked={publishSolutions}
                 onChange={(e) => setPublishSolutions(e.target.checked)}
-                className="mt-0.5 h-4 w-4 accent-[#1267E9]"
+                className="mt-0.5 h-4 w-4 accent-[#2563EB]"
               />
               Cho học sinh xem đáp án và lời giải sau khi bài được chấm và công bố điểm
             </label>

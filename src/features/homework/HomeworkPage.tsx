@@ -524,7 +524,7 @@ export const HomeworkPage: React.FC = () => {
               type="button"
               onClick={() => handleSave('published')}
               disabled={saving}
-              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#1267E9] px-4 py-2 text-xs font-extrabold text-white"
+              className="cartoon-button flex items-center gap-1.5 rounded-xl bg-[#2563EB] px-4 py-2 text-xs font-extrabold text-white"
             >
               Xuất Bản Đề
             </button>
@@ -572,7 +572,7 @@ export const HomeworkPage: React.FC = () => {
         {studentPreviewMode ? (
           <div className="mx-auto max-w-2xl space-y-5">
             <div className="cartoon-card bg-sky-50 p-5">
-              <div className="text-xs font-extrabold text-[#1267E9]">
+              <div className="text-xs font-extrabold text-[#2563EB]">
                 CHẾ ĐỘ XEM TRƯỚC GIAO DIỆN HỌC SINH (ĐÃ ẨN ĐÁP ÁN CHUẨN)
               </div>
               <h2 className="mt-1 font-display text-xl font-extrabold text-[#172B4D]">
@@ -586,7 +586,7 @@ export const HomeworkPage: React.FC = () => {
             {questions.map((q, idx) => (
               <div key={q.id} className="cartoon-card p-5">
                 <div className="mb-3 flex items-center justify-between border-b border-[#EEF3F9] pb-2">
-                  <span className="font-display text-sm font-extrabold text-[#1267E9]">
+                  <span className="font-display text-sm font-extrabold text-[#2563EB]">
                     Câu {idx + 1} ({q.points} điểm)
                   </span>
                   <span className="text-xs text-[#5E6C84]">
@@ -1244,13 +1244,13 @@ export const HomeworkPage: React.FC = () => {
               </span>
               <span className="mt-4 block font-display text-base font-extrabold text-[#172B4D]">{t.title}</span>
               <span className="mt-1 block text-sm leading-relaxed text-[#5E6C84]">{t.text}</span>
-              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#1267E9] transition group-hover:gap-2">
+              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#2563EB] transition group-hover:gap-2">
                 {t.cta} <ArrowRight className="h-4 w-4" />
               </span>
             </>
           );
-          const cls =
-            'studio-card group flex h-full flex-col p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-within:ring-4 focus-within:ring-[#54C8FF]/30';
+          const wash = { yellow: 'from-[#FFF8E1]', blue: 'from-[#EFF6FF]', teal: 'from-[#ECFEFF]' }[t.tone];
+          const cls = `studio-card group flex h-full flex-col bg-gradient-to-br ${wash} to-white p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-within:ring-4 focus-within:ring-[#54C8FF]/30`;
           return t.key === 'file' ? (
             <label key={t.key} className={`${cls} cursor-pointer`}>
               {body}
