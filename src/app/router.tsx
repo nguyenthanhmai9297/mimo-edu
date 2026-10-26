@@ -33,6 +33,8 @@ const TeachingToolsPage = named(() => import('../features/tools/TeachingToolsPag
 const TeachingToolRunner = named(() => import('../features/tools/TeachingToolRunner'), 'TeachingToolRunner');
 
 const pageFallback = <MimoLoading variant="page" />;
+/** Earlier address of Rung chuông vàng: keeps ?game= / ?homework= links working. */
+const BellOldPath: React.FC = () => <Navigate to={`/admin/homework/game/rung-chuong-vang${window.location.search}`} replace />;
 /** Teacher pages load inside the Studio layout, which stays on screen. */
 const AdminPages: React.FC = () => (
   <Suspense fallback={<MimoLoading text="Đang mở trang…" />}>
@@ -65,6 +67,8 @@ export const AppRouter: React.FC = () => {
                 <Route path="classes" element={<ClassesPage />} />
                 <Route path="classes/:classId" element={<ClassesPage />} />
                 <Route path="students" element={<StudentsPage />} />
+                {/* Rung chuông vàng sits under Soạn bài tập → Game (more specific, so it wins over homework/*) */}
+                <Route path="homework/game/rung-chuong-vang" element={<BellGamePage />} />
                 <Route path="homework/*" element={<HomeworkPage />} />
                 <Route path="geometry3d" element={<Geometry3DPage />} />
                 <Route path="practice" element={<PracticeAdminPage />} />
@@ -72,7 +76,7 @@ export const AppRouter: React.FC = () => {
                 <Route path="grading" element={<GradingPage />} />
                 <Route path="comments" element={<CommentsPage />} />
                 <Route path="games" element={<GamesAdminPage />} />
-                <Route path="games/rung-chuong-vang" element={<BellGamePage />} />
+                <Route path="games/rung-chuong-vang" element={<BellOldPath />} />
                 <Route path="settings" element={<AdminAllowlistPage />} />
               </Route>
             </Route>

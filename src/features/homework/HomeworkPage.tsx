@@ -1783,7 +1783,7 @@ export const HomeworkPage: React.FC = () => {
                     <span className="sr-only sm:not-sr-only">Nhân bản</span>
                   </button>
                   {openIn === 'game' && bellQuestionsOf(hw.questions).usable.length > 0 && (
-                    <Link to={`/admin/games/rung-chuong-vang?homework=${hw.id}`} className="studio-btn studio-btn-secondary px-3" title="Chơi Rung chuông vàng với đề này">
+                    <Link to={`/admin/homework/game/rung-chuong-vang?homework=${hw.id}`} className="studio-btn studio-btn-secondary px-3" title="Chơi Rung chuông vàng với đề này">
                       <Bell className="h-4 w-4" />
                       <span className="sr-only sm:not-sr-only">Rung chuông vàng</span>
                     </Link>
@@ -1867,6 +1867,27 @@ export const HomeworkPage: React.FC = () => {
           </Link>
         }
       />
+
+      {format === 'game' && (
+        <section aria-label="Trò chơi" className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <Link
+            to="/admin/homework/game/rung-chuong-vang"
+            data-testid="bell-game-card"
+            className="studio-card group flex h-full flex-col bg-gradient-to-br from-[#FFF4C2] to-white p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-visible:ring-4 focus-visible:ring-[#FFD34E]/40 focus-visible:outline-none"
+          >
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFD34E] text-[#5A3A00]">
+              <Bell className="h-6 w-6" />
+            </span>
+            <span className="mt-4 block font-display text-base font-extrabold text-[#172B4D]">🔔 Rung chuông vàng</span>
+            <span className="mt-1 block text-sm leading-relaxed text-[#5E6C84]">
+              Cả lớp cùng trả lời từ bộ đề đã lưu: Online trên điện thoại (mã phòng, QR) hoặc Offline với bảng con. Có cứu trợ, theo dõi từng học sinh và lưu kết quả.
+            </span>
+            <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#2563EB] transition group-hover:gap-2">
+              Tạo phòng chơi <ArrowRight className="h-4 w-4" />
+            </span>
+          </Link>
+        </section>
+      )}
 
       {format === 'game' && <GameStatus />}
 
@@ -1998,7 +2019,7 @@ const GameStatus: React.FC = () => {
   const ready = [
     <>Câu trắc nghiệm và Đúng/Sai dùng được ngay trong trò chơi</>,
     <>
-      <Link to="/admin/games/rung-chuong-vang" className="font-bold text-[#2563EB] hover:underline">
+      <Link to="/admin/homework/game/rung-chuong-vang" className="font-bold text-[#2563EB] hover:underline">
         Rung chuông vàng
       </Link>
       : cả lớp chơi trực tiếp từ đề đã lưu, trả lời trên điện thoại hoặc bảng con (dùng được cả câu trả lời ngắn)

@@ -123,7 +123,7 @@ const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
         questions: chosen.usable.slice(0, count),
         players: mode === 'offline' ? roster : [],
       });
-      navigate(`/admin/games/rung-chuong-vang?game=${view.id}`);
+      navigate(`/admin/homework/game/rung-chuong-vang?game=${view.id}`);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
     } finally {
@@ -261,7 +261,7 @@ const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
                   <td className={TD}>{s.players}</td>
                   <td className={TD}>{s.status === 'ended' ? s.winners.join(', ') || 'Không có' : <StatusBadge kind="warning">Đang diễn ra</StatusBadge>}</td>
                   <td className={TD}>
-                    <Link to={`/admin/games/rung-chuong-vang?game=${s.id}`} className="font-bold text-[#2563EB] hover:underline">
+                    <Link to={`/admin/homework/game/rung-chuong-vang?game=${s.id}`} className="font-bold text-[#2563EB] hover:underline">
                       {s.status === 'ended' ? 'Xem kết quả' : 'Mở lại sân'}
                     </Link>
                   </td>
@@ -382,7 +382,7 @@ const BellBoard: React.FC<{ id: string }> = ({ id }) => {
       {/* top bar */}
       <div className="flex flex-wrap items-center gap-3">
         {!full && (
-          <Link to="/admin/games/rung-chuong-vang" className="rounded-xl p-2 text-white/70 hover:bg-white/10" aria-label="Về trang Rung chuông vàng">
+          <Link to="/admin/homework/game/rung-chuong-vang" className="rounded-xl p-2 text-white/70 hover:bg-white/10" aria-label="Về trang Rung chuông vàng">
             <ArrowLeft className="h-5 w-5" />
           </Link>
         )}
