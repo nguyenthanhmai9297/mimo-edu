@@ -821,7 +821,7 @@ export const HomeworkPage: React.FC = () => {
     );
 
     return (
-      <FigureCropContext.Provider value={figureCropContext}>
+      <FigureCropContext.Provider value={{ ...figureCropContext, redrawing: Boolean(figureRedrawProgress) }}>
       <div className="studio-skin space-y-6">
         {/* Top Editor Action Bar */}
         <div className="cartoon-card sticky top-16 z-10 flex flex-wrap items-center justify-between gap-4 bg-white/95 p-4 backdrop-blur">

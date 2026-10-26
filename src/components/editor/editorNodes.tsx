@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import katex from 'katex';
-import { Check, Columns3, Crop, Pencil, Rows3, Trash2, X } from 'lucide-react';
+import { Check, Columns3, Crop, Loader2, Pencil, Rows3, Trash2, X } from 'lucide-react';
 import { InputRule, mergeAttributes, Node, nodePasteRule } from '@tiptap/core';
 import {
   NodeViewProps,
@@ -234,6 +234,11 @@ const ImageBlockView: React.FC<NodeViewProps> = ({ node, selected, updateAttribu
             className="max-h-72 w-auto max-w-full rounded-lg object-contain"
             draggable={false}
           />
+        )}
+        {figureCrop?.redrawing && !node.attrs.redraw && !node.attrs.redrawSkipped && (
+          <div className="mt-1 flex items-center justify-center gap-1.5 text-[11px] font-bold text-[#2563EB]" data-testid="figure-redrawing">
+            <Loader2 className="h-3.5 w-3.5 animate-spin" /> AI đang vẽ lại hình…
+          </div>
         )}
         {(redrawSpec || node.attrs.redrawSkipped) && (
           <div className="mt-1 flex flex-wrap items-center justify-center gap-1.5 text-[11px] font-bold" data-testid="figure-status">
