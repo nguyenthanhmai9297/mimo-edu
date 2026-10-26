@@ -1,8 +1,19 @@
 import crypto from 'crypto';
 import dotenv from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
-import { collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where } from './serverDb.js';
-import { getAdminAuth, getAdminDb, isUsingFirebaseEmulator } from './firebaseAdmin.js';
+import {
+  collection,
+  doc,
+  getAdminAuth,
+  getAdminDb,
+  getDoc,
+  getDocs,
+  isUsingFirebaseEmulator,
+  query,
+  setDoc,
+  updateDoc,
+  where,
+} from './firebaseAdmin.js';
 import { AIJobLog, createAIRouter } from './aiRoutes.js';
 import { cloudinaryConfigFromEnv, createMediaRouter } from './mediaRoutes.js';
 import { checkEmbeddable } from './gameEmbed.js';
