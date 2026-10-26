@@ -127,6 +127,7 @@ describe('MimoEDU Studio – các trang Giai đoạn 1', () => {
     const game = at('/admin/homework/game', '/admin/homework/*', <HomeworkPage />);
     expect(game).toContain('Soạn bài tập Game');
     expect(game).toContain('href="/admin/tools/mimo-quiz"');
+    expect(game).toContain('href="/admin/games/rung-chuong-vang"');
     expect(game).toContain('câu chơi được');
     expect(game).toContain('Chưa có trong phiên bản này');
     expect(game).toContain('Đã dùng được');

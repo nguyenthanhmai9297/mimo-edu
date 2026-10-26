@@ -45,6 +45,7 @@
     "mathlive": "0.111.0",
     "motion": "^12.23.24",
     "pdfjs-dist": "6.4.299",
+    "qrcode-generator": "2.0.4",
     "react": "^19.0.1",
     "react-dom": "^19.0.1",
     "react-hook-form": "^7.90.0",

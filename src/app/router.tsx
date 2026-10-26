@@ -15,6 +15,8 @@ const named = <K extends string>(load: () => Promise<Record<K, React.ComponentTy
 
 const StudentPortalPage = named(loadStudentPortal, 'StudentPortalPage');
 const StudentQuizPage = named(() => import('../features/student-portal/StudentQuizPage'), 'StudentQuizPage');
+const BellPlayPage = named(() => import('../features/games/bell/BellPlayPage'), 'BellPlayPage');
+const BellGamePage = named(() => import('../features/games/bell/BellGamePage'), 'BellGamePage');
 const AdminLayout = named(() => import('../components/layout/AdminLayout'), 'AdminLayout');
 const AdminDashboard = named(() => import('../features/dashboard/AdminDashboard'), 'AdminDashboard');
 const ClassesPage = named(() => import('../features/classes/ClassesPage'), 'ClassesPage');
@@ -50,6 +52,8 @@ export const AppRouter: React.FC = () => {
           <Route path="/portal" element={<StudentPortalPage />} />
           {/* Mimo Quiz: students join the teacher's room with a code */}
           <Route path="/quiz" element={<StudentQuizPage />} />
+          {/* Rung chuông vàng: pupils join with the room code, no account */}
+          <Route path="/rcv" element={<BellPlayPage />} />
 
           {/* Protected Admin / Teacher Portal */}
           <Route element={<RequireAdminGuard />}>
@@ -68,6 +72,7 @@ export const AppRouter: React.FC = () => {
                 <Route path="grading" element={<GradingPage />} />
                 <Route path="comments" element={<CommentsPage />} />
                 <Route path="games" element={<GamesAdminPage />} />
+                <Route path="games/rung-chuong-vang" element={<BellGamePage />} />
                 <Route path="settings" element={<AdminAllowlistPage />} />
               </Route>
             </Route>

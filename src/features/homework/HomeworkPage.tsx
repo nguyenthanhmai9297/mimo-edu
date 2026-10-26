@@ -12,6 +12,7 @@ import {
   Edit3,
   Eye,
   ArrowLeft,
+  Bell,
   FileText,
   Gamepad2,
   History,
@@ -38,6 +39,7 @@ import {
 import { FigureRecropModal } from './FigureRecropModal';
 import { withFigureRedraw } from './figureRedrawApply';
 import { useAutoFigureRedraw } from './useAutoFigureRedraw';
+import { bellQuestionsOf } from '../games/bell/bellQuestions';
 import { cropFigure, NormalizedBox } from './figureCrop';
 import {
   FigureCropContext,
@@ -1780,6 +1782,12 @@ export const HomeworkPage: React.FC = () => {
                     <Copy className="h-4 w-4" />
                     <span className="sr-only sm:not-sr-only">Nhân bản</span>
                   </button>
+                  {openIn === 'game' && bellQuestionsOf(hw.questions).usable.length > 0 && (
+                    <Link to={`/admin/games/rung-chuong-vang?homework=${hw.id}`} className="studio-btn studio-btn-secondary px-3" title="Chơi Rung chuông vàng với đề này">
+                      <Bell className="h-4 w-4" />
+                      <span className="sr-only sm:not-sr-only">Rung chuông vàng</span>
+                    </Link>
+                  )}
                   {hw.status === 'draft' && (
                     <button type="button" onClick={() => setDeletingHw(hw)} className="studio-btn studio-btn-danger px-3" title="Xóa bản nháp">
                       <Trash2 className="h-4 w-4" />
@@ -1990,6 +1998,12 @@ const GameStatus: React.FC = () => {
   const ready = [
     <>Câu trắc nghiệm và Đúng/Sai dùng được ngay trong trò chơi</>,
     <>
+      <Link to="/admin/games/rung-chuong-vang" className="font-bold text-[#2563EB] hover:underline">
+        Rung chuông vàng
+      </Link>
+      : cả lớp chơi trực tiếp từ đề đã lưu, trả lời trên điện thoại hoặc bảng con (dùng được cả câu trả lời ngắn)
+    </>,
+    <>
       Chơi trên lớp: mở{' '}
       <Link to="/admin/tools/mimo-quiz" className="font-bold text-[#2563EB] hover:underline">
         Mimo Quiz
@@ -2001,7 +2015,7 @@ const GameStatus: React.FC = () => {
       , chọn nguồn “Kho học liệu Toán 3” rồi chọn đề này
     </>,
   ];
-  const notYet = ['Tự chuyển đề thành một trò chơi riêng', 'Câu trả lời ngắn và tự luận chưa chơi được trong trò chơi'];
+  const notYet = ['Câu tự luận chưa chơi được trong trò chơi', 'Câu trả lời ngắn chưa chơi được trong Mimo Quiz và Đoàn tàu'];
   return (
     <section aria-label="Chức năng hiện có" className="grid grid-cols-1 gap-3 md:grid-cols-2">
       <div className="rounded-2xl border border-[#BFE3D0] bg-[#F0FBF5] p-4 text-sm text-[#14532D]">

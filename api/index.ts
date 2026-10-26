@@ -18,6 +18,8 @@ import { EMULATOR_PROJECT_ID, getAdminAuth, getAdminDb, isUsingFirebaseEmulator 
 import { AIJobLog, createAIRouter } from './aiRoutes.js';
 import { cloudinaryConfigFromEnv, createMediaRouter } from './mediaRoutes.js';
 import { checkEmbeddable } from './gameEmbed.js';
+import { createBellGameRouter } from './bellGame.js';
+import { BellGameStore, createFirestoreBellStore } from './bellGameStore.js';
 import { createLiveQuizRouter } from './liveQuiz.js';
 import { createFirestoreLiveQuizStore, LiveQuizStore } from './liveQuizStore.js';
 import { createPracticeRouter } from './practice.js';
@@ -424,6 +426,26 @@ export function createApiApp() {
     },
   });
   app.use(['/api/live-quiz', '/live-quiz'], liveQuizRouter);
+
+  // Rung chuông vàng: pupils join without an account, with a player token for one game
+  let bellStore: BellGameStore | null | undefined;
+  const bellRouter = createBellGameRouter({
+    requireTeacher,
+    sign: (data) => crypto.createHmac('sha256', `bell:${SESSION_SECRET}`).update(data).digest('base64url'),
+    getStore: () => {
+      if (bellStore === undefined) {
+        try {
+          const adminDb = getAdminDb();
+          bellStore = adminDb ? createFirestoreBellStore(adminDb) : null;
+        } catch (error) {
+          console.error('Firebase Admin init failed (bell game):', error);
+          bellStore = null;
+        }
+      }
+      return bellStore;
+    },
+  });
+  app.use(['/api/bell', '/bell'], bellRouter);
 
   // 3. Student Portal Data Endpoint
   const handleStudentPortalData = async (req: Request, res: Response) => {
