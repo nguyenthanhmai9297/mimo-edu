@@ -32,6 +32,47 @@ service cloud.firestore {
       );
     }
 
+    // ------------------------------------------------------------------
+    // Roles
+    // - Teacher: any signed-in account with a verified email (Google sign-in).
+    //   Teachers see and change only what they made (ownerUid = their uid).
+    // - Admin: the owner's email or adminAllowlist, which only admins can
+    //   write, so nobody can make themselves Admin. Admins may manage all data.
+    // Data made before teacher accounts has no ownerUid: it belongs to the admins.
+    // Students never sign in to Firebase; they reach their data through the
+    // server API (Admin SDK), so nothing here is open to anonymous browsers.
+    // ------------------------------------------------------------------
+    function isTeacher() {
+      return isSignedIn();
+    }
+
+    function ownerOf(data) {
+      return data.get('ownerUid', null);
+    }
+
+    function canManage(data) {
+      return isAdmin() || (isTeacher() && ownerOf(data) == request.auth.uid);
+    }
+
+    function createsOwn() {
+      return isAdmin() || (isTeacher() && ownerOf(incoming()) == request.auth.uid);
+    }
+
+    // The owner never changes; an admin may take over a document with no owner
+    function keepsOwner() {
+      return ownerOf(incoming()) == ownerOf(existing()) ||
+        (ownerOf(existing()) == null && isAdmin() && ownerOf(incoming()) == request.auth.uid);
+    }
+
+    // A teacher's query must ask for their own documents only
+    function listsOwn() {
+      return isAdmin() || (isTeacher() && resource.data.ownerUid == request.auth.uid);
+    }
+
+    function validOwner(data) {
+      return !('ownerUid' in data) || (data.ownerUid is string && data.ownerUid.size() >= 1 && data.ownerUid.size() <= 128);
+    }
+
     function isValidAdminAllowlist(data) {
       return data.keys().hasAll(['email', 'role', 'addedBy', 'createdAt']) &&
         data.keys().hasOnly(['email', 'role', 'addedBy', 'createdAt']) &&
@@ -42,8 +83,9 @@ service cloud.firestore {
     }
 
     function isValidClassRoom(data) {
-      return data.keys().hasAll(['name', 'grade', 'schoolYear', 'status', 'createdAt', 'updatedAt']) &&
-        data.keys().hasOnly(['name', 'grade', 'schoolYear', 'description', 'status', 'createdAt', 'updatedAt']) &&
+      return validOwner(data) &&
+        data.keys().hasAll(['name', 'grade', 'schoolYear', 'status', 'createdAt', 'updatedAt']) &&
+        data.keys().hasOnly(['ownerUid', 'name', 'grade', 'schoolYear', 'description', 'status', 'createdAt', 'updatedAt']) &&
         data.name is string && data.name.size() >= 1 && data.name.size() <= 100 &&
         data.grade is string && data.grade.size() >= 1 && data.grade.size() <= 30 &&
         data.schoolYear is string && data.schoolYear.size() >= 4 && data.schoolYear.size() <= 30 &&
@@ -54,8 +96,9 @@ service cloud.firestore {
     }
 
     function isValidStudent(data) {
-      return data.keys().hasAll(['fullName', 'grade', 'classIds', 'status', 'accessCode', 'createdAt', 'updatedAt']) &&
-        data.keys().hasOnly(['fullName', 'nickname', 'avatarUrl', 'grade', 'classIds', 'dob', 'internalNotes', 'status', 'accessCode', 'createdAt', 'updatedAt']) &&
+      return validOwner(data) &&
+        data.keys().hasAll(['fullName', 'grade', 'classIds', 'status', 'accessCode', 'createdAt', 'updatedAt']) &&
+        data.keys().hasOnly(['ownerUid', 'fullName', 'nickname', 'avatarUrl', 'grade', 'classIds', 'dob', 'internalNotes', 'status', 'accessCode', 'createdAt', 'updatedAt']) &&
         data.fullName is string && data.fullName.size() >= 1 && data.fullName.size() <= 120 &&
         (!('nickname' in data) || (data.nickname is string && data.nickname.size() <= 60)) &&
         (!('avatarUrl' in data) || (data.avatarUrl is string && data.avatarUrl.size() <= 500)) &&
@@ -80,8 +123,9 @@ service cloud.firestore {
     }
 
     function isValidHomework(data) {
-      return data.keys().hasAll(['title', 'subject', 'questions', 'answerSource', 'aiSolverEnabled', 'totalPoints', 'status', 'createdAt', 'updatedAt']) &&
-        data.keys().hasOnly(['title', 'description', 'subject', 'grade', 'questions', 'attachments', 'answerSource', 'aiSolverEnabled', 'totalPoints', 'status', 'createdAt', 'updatedAt']) &&
+      return validOwner(data) &&
+        data.keys().hasAll(['title', 'subject', 'questions', 'answerSource', 'aiSolverEnabled', 'totalPoints', 'status', 'createdAt', 'updatedAt']) &&
+        data.keys().hasOnly(['ownerUid', 'title', 'description', 'subject', 'grade', 'questions', 'attachments', 'answerSource', 'aiSolverEnabled', 'totalPoints', 'status', 'createdAt', 'updatedAt']) &&
         data.title is string && data.title.size() >= 1 && data.title.size() <= 200 &&
         (!('description' in data) || (data.description is string && data.description.size() <= 2000)) &&
         data.subject is string && data.subject.size() >= 1 && data.subject.size() <= 50 &&
@@ -97,8 +141,9 @@ service cloud.firestore {
     }
 
     function isValidAssignment(data) {
-      return data.keys().hasAll(['homeworkId', 'title', 'targetType', 'assignedAt', 'dueAt', 'publicQuestionsSnapshot', 'maxScore', 'status', 'createdAt', 'updatedAt']) &&
-        data.keys().hasOnly(['homeworkId', 'title', 'instructions', 'targetType', 'classIds', 'studentIds', 'assignedAt', 'dueAt', 'publicQuestionsSnapshot', 'gradingKeySnapshot', 'publishSolutions', 'maxScore', 'status', 'createdAt', 'updatedAt']) &&
+      return validOwner(data) &&
+        data.keys().hasAll(['homeworkId', 'title', 'targetType', 'assignedAt', 'dueAt', 'publicQuestionsSnapshot', 'maxScore', 'status', 'createdAt', 'updatedAt']) &&
+        data.keys().hasOnly(['ownerUid', 'homeworkId', 'title', 'instructions', 'targetType', 'classIds', 'studentIds', 'assignedAt', 'dueAt', 'publicQuestionsSnapshot', 'gradingKeySnapshot', 'publishSolutions', 'maxScore', 'status', 'createdAt', 'updatedAt']) &&
         isValidId(data.homeworkId) &&
         data.title is string && data.title.size() >= 1 && data.title.size() <= 200 &&
         (!('instructions' in data) || (data.instructions is string && data.instructions.size() <= 2000)) &&
@@ -117,8 +162,9 @@ service cloud.firestore {
     }
 
     function isValidStudentAssignment(data) {
-      return data.keys().hasAll(['assignmentId', 'studentId', 'status', 'maxScore', 'isScorePublished', 'updatedAt']) &&
-        data.keys().hasOnly(['assignmentId', 'studentId', 'status', 'score', 'maxScore', 'isScorePublished', 'submittedAt', 'gradedAt', 'updatedAt']) &&
+      return validOwner(data) &&
+        data.keys().hasAll(['assignmentId', 'studentId', 'status', 'maxScore', 'isScorePublished', 'updatedAt']) &&
+        data.keys().hasOnly(['ownerUid', 'assignmentId', 'studentId', 'status', 'score', 'maxScore', 'isScorePublished', 'submittedAt', 'gradedAt', 'updatedAt']) &&
         isValidId(data.assignmentId) &&
         isValidId(data.studentId) &&
         (data.status == 'assigned' || data.status == 'in_progress' || data.status == 'submitted' || data.status == 'graded' || data.status == 'returned') &&
@@ -131,8 +177,9 @@ service cloud.firestore {
     }
 
     function isValidSubmission(data) {
-      return data.keys().hasAll(['assignmentId', 'studentId', 'answers', 'maxScore', 'status', 'isPublished', 'updatedAt']) &&
-        data.keys().hasOnly(['assignmentId', 'studentId', 'answers', 'questionResults', 'totalScore', 'maxScore', 'status', 'teacherOverallComment', 'isPublished', 'submittedAt', 'gradedAt', 'updatedAt']) &&
+      return validOwner(data) &&
+        data.keys().hasAll(['assignmentId', 'studentId', 'answers', 'maxScore', 'status', 'isPublished', 'updatedAt']) &&
+        data.keys().hasOnly(['ownerUid', 'assignmentId', 'studentId', 'answers', 'questionResults', 'totalScore', 'maxScore', 'status', 'teacherOverallComment', 'isPublished', 'submittedAt', 'gradedAt', 'updatedAt']) &&
         isValidId(data.assignmentId) &&
         isValidId(data.studentId) &&
         data.answers is list && data.answers.size() <= 100 &&
@@ -148,8 +195,9 @@ service cloud.firestore {
     }
 
     function isValidCommentReport(data) {
-      return data.keys().hasAll(['studentId', 'type', 'strengths', 'status', 'createdAt', 'updatedAt']) &&
-        data.keys().hasOnly(['studentId', 'type', 'month', 'year', 'strengths', 'improvements', 'completionRate', 'practiceSuggestions', 'status', 'publishedAt', 'createdAt', 'updatedAt']) &&
+      return validOwner(data) &&
+        data.keys().hasAll(['studentId', 'type', 'strengths', 'status', 'createdAt', 'updatedAt']) &&
+        data.keys().hasOnly(['ownerUid', 'studentId', 'type', 'month', 'year', 'strengths', 'improvements', 'completionRate', 'practiceSuggestions', 'status', 'publishedAt', 'createdAt', 'updatedAt']) &&
         isValidId(data.studentId) &&
         (data.type == 'monthly' || data.type == 'submission') &&
         (!('month' in data) || (data.month is number && data.month >= 1 && data.month <= 12)) &&
@@ -187,28 +235,36 @@ service cloud.firestore {
     }
 
     match /classes/{classId} {
-      allow get: if isValidId(classId);
-      allow list: if isAdmin();
-      allow create: if isAdmin() && isValidId(classId) && isValidClassRoom(incoming());
-      allow update: if isAdmin() && isValidId(classId) && isValidClassRoom(incoming()) && incoming().createdAt == existing().createdAt;
+      allow get: if isValidId(classId) && canManage(existing());
+      allow list: if listsOwn();
+      allow create: if isValidId(classId) && createsOwn() && isValidClassRoom(incoming());
+      allow update: if isValidId(classId) && canManage(existing()) && keepsOwner() &&
+        isValidClassRoom(incoming()) && incoming().createdAt == existing().createdAt;
       allow delete: if false;
     }
 
     match /students/{studentId} {
-      allow get: if isValidId(studentId);
-      allow list: if isAdmin();
-      allow create: if isValidId(studentId) && isValidStudent(incoming());
-      allow update: if isAdmin() && isValidId(studentId) && isValidStudent(incoming()) &&
+      allow get: if isValidId(studentId) && canManage(existing());
+      allow list: if listsOwn();
+      allow create: if isValidId(studentId) && createsOwn() && isValidStudent(incoming());
+      allow update: if isValidId(studentId) && canManage(existing()) && keepsOwner() &&
+        isValidStudent(incoming()) &&
         incoming().accessCode == existing().accessCode &&
         incoming().createdAt == existing().createdAt;
       allow delete: if false;
     }
 
+    // Code → pupil. Teachers only check whether a code is free and point a
+    // code at a pupil of their own (a new one, or one they own).
     match /studentCodeIndex/{code} {
-      allow get: if isValidCode(code);
+      allow get: if isTeacher() && isValidCode(code);
       allow list: if isAdmin();
-      allow create: if isValidCode(code) && isValidStudentCodeIndex(incoming()) && incoming().code == code;
-      allow update: if isAdmin() && isValidCode(code) && isValidStudentCodeIndex(incoming()) &&
+      allow create: if isTeacher() && isValidCode(code) && isValidStudentCodeIndex(incoming()) && incoming().code == code && (
+        !exists(/databases/$(database)/documents/students/$(incoming().studentId)) ||
+        canManage(get(/databases/$(database)/documents/students/$(incoming().studentId)).data)
+      );
+      allow update: if isTeacher() && isValidCode(code) && isValidStudentCodeIndex(incoming()) &&
+        canManage(get(/databases/$(database)/documents/students/$(existing().studentId)).data) &&
         incoming().code == existing().code &&
         incoming().studentId == existing().studentId &&
         incoming().createdAt == existing().createdAt;
@@ -216,68 +272,69 @@ service cloud.firestore {
     }
 
     match /homework/{homeworkId} {
-      allow get: if isAdmin() && isValidId(homeworkId);
-      allow list: if isAdmin();
-      allow create: if isAdmin() && isValidId(homeworkId) && isValidHomework(incoming());
-      allow update: if isAdmin() && isValidId(homeworkId) && isValidHomework(incoming()) && incoming().createdAt == existing().createdAt;
-      allow delete: if isAdmin() && isValidId(homeworkId) && existing().status == 'draft';
+      allow get: if isValidId(homeworkId) && canManage(existing());
+      allow list: if listsOwn();
+      allow create: if isValidId(homeworkId) && createsOwn() && isValidHomework(incoming());
+      allow update: if isValidId(homeworkId) && canManage(existing()) && keepsOwner() &&
+        isValidHomework(incoming()) && incoming().createdAt == existing().createdAt;
+      allow delete: if isValidId(homeworkId) && canManage(existing()) && existing().status == 'draft';
     }
 
     match /assignments/{assignmentId} {
-      allow get: if isValidId(assignmentId);
-      allow list: if isAdmin();
-      allow create: if isAdmin() && isValidId(assignmentId) && isValidAssignment(incoming()) &&
-        exists(/databases/$(database)/documents/homework/$(incoming().homeworkId));
-      allow update: if isAdmin() && isValidId(assignmentId) && isValidAssignment(incoming()) &&
+      allow get: if isValidId(assignmentId) && canManage(existing());
+      allow list: if listsOwn();
+      allow create: if isValidId(assignmentId) && createsOwn() && isValidAssignment(incoming()) &&
+        exists(/databases/$(database)/documents/homework/$(incoming().homeworkId)) &&
+        canManage(get(/databases/$(database)/documents/homework/$(incoming().homeworkId)).data);
+      allow update: if isValidId(assignmentId) && canManage(existing()) && keepsOwner() &&
+        isValidAssignment(incoming()) &&
         incoming().homeworkId == existing().homeworkId &&
         incoming().createdAt == existing().createdAt;
       allow delete: if false;
     }
 
     match /studentAssignments/{studentAssignmentId} {
-      allow get: if isValidId(studentAssignmentId);
-      allow list: if isAdmin() || (resource.data.studentId is string && resource.data.studentId.size() <= 128);
-      allow create: if isValidId(studentAssignmentId) && isValidStudentAssignment(incoming()) &&
+      allow get: if isValidId(studentAssignmentId) && canManage(existing());
+      allow list: if listsOwn();
+      allow create: if isValidId(studentAssignmentId) && createsOwn() && isValidStudentAssignment(incoming()) &&
         exists(/databases/$(database)/documents/assignments/$(incoming().assignmentId)) &&
+        canManage(get(/databases/$(database)/documents/assignments/$(incoming().assignmentId)).data) &&
         exists(/databases/$(database)/documents/students/$(incoming().studentId));
-      allow update: if isValidId(studentAssignmentId) && isValidStudentAssignment(incoming()) &&
+      allow update: if isValidId(studentAssignmentId) && canManage(existing()) && keepsOwner() &&
+        isValidStudentAssignment(incoming()) &&
         incoming().assignmentId == existing().assignmentId &&
-        incoming().studentId == existing().studentId && (
-          isAdmin() ||
-          incoming().diff(existing()).affectedKeys().hasOnly(['status', 'score', 'submittedAt', 'gradedAt', 'updatedAt'])
-        );
+        incoming().studentId == existing().studentId;
       allow delete: if false;
     }
 
+    // Pupils' answers are written by the server; teachers grade their own.
     match /submissions/{submissionId} {
-      allow get: if isValidId(submissionId);
-      allow list: if isAdmin();
-      allow create: if isValidId(submissionId) && isValidSubmission(incoming()) &&
-        exists(/databases/$(database)/documents/assignments/$(incoming().assignmentId)) &&
-        exists(/databases/$(database)/documents/students/$(incoming().studentId));
-      allow update: if isValidId(submissionId) && isValidSubmission(incoming()) &&
+      allow get: if isValidId(submissionId) && canManage(existing());
+      allow list: if listsOwn();
+      allow create: if isAdmin() && isValidId(submissionId) && isValidSubmission(incoming());
+      allow update: if isValidId(submissionId) && canManage(existing()) && keepsOwner() &&
+        isValidSubmission(incoming()) &&
         incoming().assignmentId == existing().assignmentId &&
-        incoming().studentId == existing().studentId && (
-          isAdmin() ||
-          (existing().status != 'graded' && incoming().diff(existing()).affectedKeys().hasOnly(['answers', 'questionResults', 'totalScore', 'status', 'submittedAt', 'gradedAt', 'updatedAt']))
-        );
+        incoming().studentId == existing().studentId;
       allow delete: if false;
     }
 
     match /comments/{commentId} {
-      allow get: if isValidId(commentId) && (isAdmin() || existing().status == 'published');
-      allow list: if isAdmin() || resource.data.status == 'published';
-      allow create: if isAdmin() && isValidId(commentId) && isValidCommentReport(incoming()) &&
-        exists(/databases/$(database)/documents/students/$(incoming().studentId));
-      allow update: if isAdmin() && isValidId(commentId) && isValidCommentReport(incoming()) &&
+      allow get: if isValidId(commentId) && canManage(existing());
+      allow list: if listsOwn();
+      allow create: if isValidId(commentId) && createsOwn() && isValidCommentReport(incoming()) &&
+        exists(/databases/$(database)/documents/students/$(incoming().studentId)) &&
+        canManage(get(/databases/$(database)/documents/students/$(incoming().studentId)).data);
+      allow update: if isValidId(commentId) && canManage(existing()) && keepsOwner() &&
+        isValidCommentReport(incoming()) &&
         incoming().studentId == existing().studentId &&
         incoming().createdAt == existing().createdAt;
-      allow delete: if isAdmin() && isValidId(commentId) && existing().status == 'draft';
+      allow delete: if isValidId(commentId) && canManage(existing()) && existing().status == 'draft';
     }
 
     match /games/{gameId} {
-      allow get: if isValidId(gameId) && (isAdmin() || existing().status == 'published');
-      allow list: if isAdmin() || resource.data.status == 'published';
+      allow get: if isValidId(gameId) && (isAdmin() || (isTeacher() && existing().status == 'published'));
+      allow list: if isAdmin() || (isTeacher() && resource.data.status == 'published');
       allow create: if isAdmin() && isValidId(gameId) && isValidMathGame(incoming());
       allow update: if isAdmin() && isValidId(gameId) && isValidMathGame(incoming()) && incoming().createdAt == existing().createdAt;
       allow delete: if isAdmin() && isValidId(gameId);
@@ -332,8 +389,9 @@ service cloud.firestore {
         data.updatedAt is string && data.updatedAt.size() <= 50;
     }
 
+    // Teachers read the bank (teaching tools' "Kho học liệu"); only admins change it
     match /practiceSets/{setId} {
-      allow read: if isAdmin();
+      allow read: if isTeacher();
       allow create: if isAdmin() && isValidId(setId) && isValidPracticeSet(incoming());
       allow update: if isAdmin() && isValidId(setId) && isValidPracticeSet(incoming()) &&
         incoming().topicId == existing().topicId &&
@@ -342,7 +400,7 @@ service cloud.firestore {
     }
 
     match /practiceQuestions/{questionId} {
-      allow read: if isAdmin();
+      allow read: if isTeacher();
       allow create: if isAdmin() && isValidId(questionId) && isValidPracticeQuestion(incoming());
       allow update: if isAdmin() && isValidId(questionId) && isValidPracticeQuestion(incoming()) &&
         incoming().topicId == existing().topicId;

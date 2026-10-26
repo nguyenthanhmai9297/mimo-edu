@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { LandingPage } from '../features/auth/LandingPage';
-import { RequireAdminGuard } from './guards/RequireAdminGuard';
+import { RequireAdminGuard, RequireSystemAdmin } from './guards/RequireAdminGuard';
 import { MimoLoading } from '../components/ui/MimoLoading';
 import { loadStudentPortal } from './studentChunks';
 
@@ -71,13 +71,18 @@ export const AppRouter: React.FC = () => {
                 <Route path="homework/game/rung-chuong-vang" element={<BellGamePage />} />
                 <Route path="homework/*" element={<HomeworkPage />} />
                 <Route path="geometry3d" element={<Geometry3DPage />} />
-                <Route path="practice" element={<PracticeAdminPage />} />
+
                 <Route path="assignments" element={<AssignmentsPage />} />
                 <Route path="grading" element={<GradingPage />} />
                 <Route path="comments" element={<CommentsPage />} />
-                <Route path="games" element={<GamesAdminPage />} />
+
                 <Route path="games/rung-chuong-vang" element={<BellOldPath />} />
-                <Route path="settings" element={<AdminAllowlistPage />} />
+                {/* Teachers browse the shared practice bank; changing it is for admins */}
+                <Route path="practice" element={<PracticeAdminPage />} />
+                <Route element={<RequireSystemAdmin />}>
+                  <Route path="games" element={<GamesAdminPage />} />
+                  <Route path="settings" element={<AdminAllowlistPage />} />
+                </Route>
               </Route>
             </Route>
           </Route>

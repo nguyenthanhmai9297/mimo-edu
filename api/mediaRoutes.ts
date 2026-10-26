@@ -60,6 +60,11 @@ export const mediaPublicId = (homeworkId: string, hash: string) => `${MEDIA_ROOT
 interface MediaDeps {
   requireTeacher: RequestHandler;
   getConfig: () => CloudinaryConfig | null;
+  /**
+   * Whether this teacher may add or remove images of this homework: it is theirs,
+   * or not saved yet (a new homework). Left out (tests), every teacher may.
+   */
+  canUseHomework?: (homeworkId: string, req: express.Request) => Promise<boolean>;
   /** Whether any homework or assignment still shows this image (checked before deleting it). */
   isImageInUse: (publicId: string) => Promise<boolean>;
   /** Server-side calls to Cloudinary (replaced in tests). */
@@ -72,6 +77,17 @@ export function createMediaRouter(deps: MediaDeps) {
   const now = deps.now ?? (() => Date.now());
   router.use(deps.requireTeacher);
 
+  // Another teacher's homework folder is refused (an unknown failure too: nothing is signed)
+  const mayUse = async (homeworkId: string, req: express.Request, res: express.Response) => {
+    try {
+      if (!deps.canUseHomework || (await deps.canUseHomework(homeworkId, req))) return true;
+      res.status(403).json({ error: 'Bài tập này không thuộc tài khoản của thầy cô.' });
+    } catch {
+      res.status(503).json({ error: 'Chưa kiểm tra được quyền với bài tập, vui lòng thử lại.' });
+    }
+    return false;
+  };
+
   const config = (res: express.Response) => {
     const c = deps.getConfig();
     if (!c) res.status(503).json({ error: 'Chưa cấu hình kho ảnh Cloudinary.', code: 'MEDIA_NOT_CONFIGURED' });
@@ -83,7 +99,7 @@ export function createMediaRouter(deps: MediaDeps) {
   });
 
   // One signature per image: the folder, name, storage type and formats are fixed here, not by the browser
-  router.post('/sign', (req, res) => {
+  router.post('/sign', async (req, res) => {
     const c = config(res);
     if (!c) return;
     const { homeworkId, hash, format } = (req.body ?? {}) as { homeworkId?: unknown; hash?: unknown; format?: unknown };
@@ -99,6 +115,7 @@ export function createMediaRouter(deps: MediaDeps) {
       res.status(400).json({ error: 'Chỉ nhận ảnh JPG, PNG hoặc WEBP.' });
       return;
     }
+    if (!(await mayUse(homeworkId, req, res))) return;
     const params = {
       allowed_formats: MEDIA_FORMATS.join(','),
       overwrite: false,
@@ -125,6 +142,12 @@ export function createMediaRouter(deps: MediaDeps) {
       res.status(400).json({ error: 'Ảnh không thuộc kho bài tập.' });
       return;
     }
+    const homeworkId = publicId.slice(MEDIA_ROOT.length + 1).split('/')[0];
+    if (!HOMEWORK_ID.test(homeworkId)) {
+      res.status(400).json({ error: 'Ảnh không thuộc kho bài tập.' });
+      return;
+    }
+    if (!(await mayUse(homeworkId, req, res))) return;
     try {
       if (await deps.isImageInUse(publicId)) {
         res.status(409).json({ error: 'Ảnh vẫn đang được dùng trong một bài tập hoặc bài đã giao.', code: 'IN_USE' });

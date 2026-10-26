@@ -33,12 +33,14 @@ const NAV_ITEMS = [
   { to: '/admin/assignments', label: 'Giao bài tập', icon: CalendarCheck },
   { to: '/admin/grading', label: 'Chấm bài nộp', icon: CheckSquare },
   { to: '/admin/comments', label: 'Nhận xét tháng', icon: MessageSquareHeart },
-  { to: '/admin/games', label: 'Kho trò chơi', icon: Gamepad2 },
-  { to: '/admin/settings', label: 'Quyền Admin', icon: ShieldCheck },
+  { to: '/admin/games', label: 'Kho trò chơi', icon: Gamepad2, adminOnly: true },
+  { to: '/admin/settings', label: 'Quyền Admin', icon: ShieldCheck, adminOnly: true },
 ];
 
 export const AdminLayout: React.FC = () => {
-  const { user, logoutAdmin, studentAssignments } = useAppContext();
+  const { user, logoutAdmin, studentAssignments, isSystemAdmin } = useAppContext();
+  // Teachers see their Studio; the system pages are for admins
+  const navItems = NAV_ITEMS.filter((item) => !('adminOnly' in item) || isSystemAdmin);
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -80,7 +82,7 @@ export const AdminLayout: React.FC = () => {
 
   const renderNav = (onNavigate?: () => void) => (
     <nav className="flex-1 space-y-1 overflow-y-auto p-3">
-      {NAV_ITEMS.map((item, index) => {
+      {navItems.map((item, index) => {
         const Icon = item.icon;
         return (
           <NavLink key={item.to} to={item.to} end={item.end} onClick={onNavigate} className={({ isActive }) => navLinkClass(isActive)}>

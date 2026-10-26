@@ -11,6 +11,8 @@ interface PracticeQuestionCardProps {
   skillOptions: string[];
   onSave: (next: PracticeQuestion) => Promise<void>;
   onToggleApproved: (q: PracticeQuestion) => Promise<void>;
+  /** Teachers who are not admins only look at the bank. */
+  readOnly?: boolean;
 }
 
 /** One bank question: preview with the answer key, inline editing and approval. */
@@ -26,6 +28,7 @@ export const PracticeQuestionCard: React.FC<PracticeQuestionCardProps> = ({
   skillOptions,
   onSave,
   onToggleApproved,
+  readOnly = false,
 }) => {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(question);
@@ -75,7 +78,7 @@ export const PracticeQuestionCard: React.FC<PracticeQuestionCardProps> = ({
             {approved ? 'Đã duyệt' : 'Chờ duyệt'}
           </span>
         </div>
-        {!editing && (
+        {!editing && !readOnly && (
           <div className="flex gap-1.5">
             <button
               type="button"

@@ -1,20 +1,8 @@
 import crypto from 'crypto';
 import dotenv from 'dotenv';
 import express, { NextFunction, Request, Response } from 'express';
-import { getApps, initializeApp } from 'firebase/app';
-import {
-  collection,
-  connectFirestoreEmulator,
-  doc,
-  getDoc,
-  getDocs,
-  getFirestore,
-  query,
-  setDoc,
-  updateDoc,
-  where,
-} from 'firebase/firestore';
-import { EMULATOR_PROJECT_ID, getAdminAuth, getAdminDb, isUsingFirebaseEmulator } from './firebaseAdmin.js';
+import { collection, doc, getDoc, getDocs, query, setDoc, updateDoc, where } from './serverDb.js';
+import { getAdminAuth, getAdminDb, isUsingFirebaseEmulator } from './firebaseAdmin.js';
 import { AIJobLog, createAIRouter } from './aiRoutes.js';
 import { cloudinaryConfigFromEnv, createMediaRouter } from './mediaRoutes.js';
 import { checkEmbeddable } from './gameEmbed.js';
@@ -24,7 +12,7 @@ import { createLiveQuizRouter } from './liveQuiz.js';
 import { createFirestoreLiveQuizStore, LiveQuizStore } from './liveQuizStore.js';
 import { createPracticeRouter } from './practice.js';
 import { createFirestorePracticeStore, PracticeStore } from './practiceStore.js';
-import { createRequireTeacher } from './teacherAuth.js';
+import { createRequireTeacher, type TeacherRequest } from './teacherAuth.js';
 import {
   Assignment,
   ClassRoom,
@@ -52,40 +40,11 @@ const loadAIAdapter = async () => (await import('../src/services/aiAdapter.js'))
 const isAIConfigured = () =>
   Boolean(process.env.AI_PROVIDER === 'gemini' ? process.env.GEMINI_API_KEY : process.env.ANTHROPIC_API_KEY);
 
-// Embedded Firebase Configuration to guarantee zero file-resolution crashes on Vercel Serverless
-const firebaseConfig = {
-  projectId: 'mimoedu-3b862',
-  appId: '1:791665221556:web:c3c33acb0fd4703df69ce1',
-  apiKey: 'AIzaSyDpvsPl-2XXwDICad157PXRdUWYBpbxFKE',
-  authDomain: 'mimoedu-3b862.firebaseapp.com',
-  firestoreDatabaseId: '(default)',
-  storageBucket: 'mimoedu-3b862.firebasestorage.app',
-  messagingSenderId: '791665221556',
-  measurementId: 'G-44762WLNWH',
-  oAuthClientId: '',
-  recaptchaSiteKey: '',
-};
-
-let serverDbInstance: ReturnType<typeof getFirestore> | null = null;
+/** Student data is read and written with server credentials (Admin SDK); browsers have no access. */
 function getServerDb() {
-  if (!serverDbInstance) {
-    const existing = getApps().find((a) => a.name === 'server-firebase-app');
-    // Local testing: point at the Firestore emulator under a demo-* project so
-    // nothing can reach the real database.
-    const emulatorHost = process.env.FIRESTORE_EMULATOR_HOST;
-    const app =
-      existing ||
-      initializeApp(
-        emulatorHost ? { ...firebaseConfig, projectId: EMULATOR_PROJECT_ID } : firebaseConfig,
-        'server-firebase-app'
-      );
-    serverDbInstance = getFirestore(app, firebaseConfig.firestoreDatabaseId);
-    if (emulatorHost && !existing) {
-      const [host, port] = emulatorHost.split(':');
-      connectFirestoreEmulator(serverDbInstance, host, Number(port));
-    }
-  }
-  return serverDbInstance;
+  const db = getAdminDb();
+  if (!db) throw new Error('Máy chủ chưa được cấu hình Firebase Admin.');
+  return db;
 }
 
 const SESSION_SECRET =
@@ -134,6 +93,9 @@ interface RateLimitRecord {
 const loginAttemptsByIp = new Map<string, RateLimitRecord>();
 const MAX_FAILED_ATTEMPTS = 5;
 const COOLDOWN_MS = 60 * 1000;
+
+/** A pupil's submission belongs to the teacher who set the assignment. */
+const ownedBy = (a: { ownerUid?: string }) => (a.ownerUid ? { ownerUid: a.ownerUid } : {});
 
 function toPublicStudent(student: Student): PublicStudentProfile {
   return {
@@ -201,13 +163,30 @@ export function createApiApp() {
     next();
   });
 
-  // 1. Server-side unique 6-character student code generation
-  const handleGenerateStudentCode = async (req: Request, res: Response) => {
+  // Teacher APIs check the Firebase ID token on the server (any verified teacher; admins flagged)
+  const requireTeacher = createRequireTeacher(() => {
+    const auth = getAdminAuth();
+    const adminDb = getAdminDb();
+    return {
+      verifyIdToken: auth && adminDb ? (token: string) => auth.verifyIdToken(token) : null,
+      isAllowlisted: async (email: string) => (await adminDb!.collection('adminAllowlist').doc(email).get()).exists,
+    };
+  });
+
+  // 1. Server-side unique 6-character student code generation (teachers, for their own pupils)
+  const handleGenerateStudentCode = async (req: TeacherRequest, res: Response) => {
     try {
       const db = getServerDb();
       const { studentId } = req.body as { studentId?: string };
-      if (!studentId || typeof studentId !== 'string') {
+      if (!studentId || typeof studentId !== 'string' || !/^[A-Za-z0-9_\-]{1,128}$/.test(studentId)) {
         res.status(400).json({ error: 'Thiếu studentId hợp lệ.' });
+        return;
+      }
+      // A code may only point to a new pupil or to one of this teacher's own
+      const existing = await getDoc(doc(db, 'students', studentId));
+      const owner = existing.exists() ? (existing.data()?.ownerUid as string | undefined) : req.teacherUid;
+      if (owner ? owner !== req.teacherUid : !req.isAdmin) {
+        res.status(403).json({ error: 'Học sinh này không thuộc lớp của thầy cô.' });
         return;
       }
 
@@ -249,8 +228,8 @@ export function createApiApp() {
       });
     }
   };
-  app.post('/api/admin/generate-student-code', handleGenerateStudentCode);
-  app.post('/admin/generate-student-code', handleGenerateStudentCode);
+  app.post('/api/admin/generate-student-code', requireTeacher, handleGenerateStudentCode);
+  app.post('/admin/generate-student-code', requireTeacher, handleGenerateStudentCode);
 
   // 2. Parent / Student 6-character code login
   const handleStudentLogin = async (req: Request, res: Response) => {
@@ -393,15 +372,6 @@ export function createApiApp() {
   });
   app.use(['/api/practice', '/practice'], practiceRouter);
 
-  // Teacher-only APIs (Mimo Quiz, AI) check the Firebase ID token on the server
-  const requireTeacher = createRequireTeacher(() => {
-    const auth = getAdminAuth();
-    const adminDb = getAdminDb();
-    return {
-      verifyIdToken: auth && adminDb ? (token: string) => auth.verifyIdToken(token) : null,
-      isAllowlisted: async (email: string) => (await adminDb!.collection('adminAllowlist').doc(email).get()).exists,
-    };
-  });
   let liveQuizStore: LiveQuizStore | null | undefined;
   const liveQuizRouter = createLiveQuizRouter({
     enabled: () => isUsingFirebaseEmulator() || process.env.LIVE_QUIZ_ENABLED === 'true',
@@ -633,6 +603,7 @@ export function createApiApp() {
 
       if (!isFinalSubmit) {
         const draftPayload: Omit<Submission, 'id'> = {
+          ...ownedBy(assignment),
           assignmentId,
           studentId: session.studentId,
           answers,
@@ -661,6 +632,7 @@ export function createApiApp() {
       const isPublished = graded.allAutoGradable;
 
       const submissionData: Omit<Submission, 'id'> = {
+        ...ownedBy(assignment),
         assignmentId,
         studentId: session.studentId,
         answers,
@@ -717,6 +689,15 @@ export function createApiApp() {
   const mediaRouter = createMediaRouter({
     requireTeacher,
     getConfig: () => cloudinaryConfigFromEnv(),
+    canUseHomework: async (homeworkId, req) => {
+      const adminDb = getAdminDb();
+      if (!adminDb) throw new Error('Firestore Admin is not configured');
+      const { teacherUid, isAdmin } = req as TeacherRequest;
+      const snap = await adminDb.collection('homework').doc(homeworkId).get();
+      if (!snap.exists) return true;
+      const owner = snap.data()?.ownerUid as string | undefined;
+      return owner ? owner === teacherUid || Boolean(isAdmin) : Boolean(isAdmin);
+    },
     isImageInUse: async (publicId) => {
       const adminDb = getAdminDb();
       if (!adminDb) throw new Error('Firestore Admin is not configured');

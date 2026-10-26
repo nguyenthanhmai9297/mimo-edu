@@ -102,16 +102,20 @@ describe('API AI – phân quyền, giới hạn và xử lý lỗi', () => {
     clock += 60 * 60 * 1000; // a fresh rate-limit window for every test
   });
 
-  it('từ chối người chưa đăng nhập, token sai, email chưa xác minh và tài khoản không phải giáo viên, trước khi gọi AI', async () => {
+  it('từ chối người chưa đăng nhập, token sai và email chưa xác minh, trước khi gọi AI', async () => {
     for (const path of ['/parse-homework', '/suggest-grading']) {
       const body = path === '/parse-homework' ? page() : essay;
       expect((await call(path, body)).status).toBe(401);
       expect((await call(path, body, 'token-gia')).status).toBe(401);
       expect((await call(path, body, 'unverified')).status).toBe(403);
-      expect((await call(path, body, 'outsider')).status).toBe(403);
     }
     expect(adapterCalls).toBe(0);
     expect(jobs).toHaveLength(0);
+  });
+
+  it('giáo viên mới đăng nhập Google (không cần nằm trong Admin Allowlist) dùng được AI', async () => {
+    expect((await call('/parse-homework', page(), 'outsider')).status).toBe(200);
+    expect(adapterCalls).toBe(1);
   });
 
   it('cho chủ tài khoản và giáo viên trong danh sách được phép dùng AI', async () => {
@@ -242,7 +246,7 @@ describe('API AI – phân quyền, giới hạn và xử lý lỗi', () => {
   it('vẽ lại hình: chỉ giáo viên, kiểm tra ảnh, giới hạn số lần, ghi nhật ký chi phí', async () => {
     const img = { mimeType: 'image/png', base64Data: 'iVBORw0KGgo=' };
     expect((await call('/redraw-figure', { image: img })).status).toBe(401);
-    expect((await call('/compare-figure', { original: img, redrawn: img }, 'outsider')).status).toBe(403);
+    expect((await call('/compare-figure', { original: img, redrawn: img }, 'unverified')).status).toBe(403);
     expect((await call('/redraw-figure', { image: { mimeType: 'image/svg+xml', base64Data: 'PHN2Zz4=' } }, 'owner')).status).toBe(400);
     expect((await call('/redraw-figure', { image: { mimeType: 'image/png', base64Data: 'A'.repeat(1_600_000) } }, 'owner')).status).toBe(400);
     expect((await call('/compare-figure', { original: img }, 'owner')).status).toBe(400);

@@ -32,7 +32,7 @@ export const LandingPage: React.FC = () => {
   useEffect(() => prefetchWhenIdle(loadStudentPortal), []);
   const {
     user,
-    isAdminAuthorized,
+    isTeacherAuthorized,
     authError,
     loginAdminWithGoogle,
     ensureTeacherAuth,
@@ -54,7 +54,7 @@ export const LandingPage: React.FC = () => {
   const portalPath = (tab: PortalTarget) => (tab === 'overview' ? '/portal' : `/portal?tab=${tab}`);
 
   const handleAdminSignIn = async () => {
-    if (user && isAdminAuthorized) {
+    if (user && isTeacherAuthorized) {
       navigate('/admin');
       return;
     }
@@ -107,7 +107,7 @@ export const LandingPage: React.FC = () => {
   };
 
   const adminLabel =
-    user && isAdminAuthorized ? 'Vào trang giáo viên' : adminLoginLoading ? 'Đang xác thực...' : 'Dành cho giáo viên';
+    user && isTeacherAuthorized ? 'Vào trang giáo viên' : adminLoginLoading ? 'Đang xác thực...' : 'Dành cho giáo viên';
 
   const heroCopy = (
     <>
@@ -199,7 +199,7 @@ export const LandingPage: React.FC = () => {
               className="inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-white px-4 text-sm font-extrabold text-[#2563EB] shadow-sm transition hover:bg-[#EAF6FF]"
             >
               <LogIn className="h-4 w-4" />
-              {user && isAdminAuthorized ? 'Trang giáo viên' : 'Giáo viên đăng nhập'}
+              {user && isTeacherAuthorized ? 'Trang giáo viên' : 'Giáo viên đăng nhập'}
             </button>
           </div>
         </div>
@@ -211,7 +211,7 @@ export const LandingPage: React.FC = () => {
             <div className="flex items-start gap-3">
               <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-rose-600" />
               <div>
-                <h2 className="font-display text-sm font-extrabold text-rose-900">Từ chối quyền truy cập Quản trị</h2>
+                <h2 className="font-display text-sm font-extrabold text-rose-900">Chưa đăng nhập được</h2>
                 <p className="mt-0.5 text-xs text-rose-800">{authError}</p>
               </div>
             </div>

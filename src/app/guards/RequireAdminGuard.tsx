@@ -8,7 +8,7 @@ export const RequireAdminGuard: React.FC = () => {
   const {
     user,
     authReady,
-    isAdminAuthorized,
+    isTeacherAuthorized,
     adminCheckLoading,
     adminCheckFailed,
     logoutAdmin,
@@ -19,7 +19,7 @@ export const RequireAdminGuard: React.FC = () => {
   useEffect(ensureTeacherAuth, [ensureTeacherAuth]);
 
   if (!authReady || adminCheckLoading) {
-    return <MimoLoading variant="page" text="Đang xác thực quyền quản trị…" />;
+    return <MimoLoading variant="page" text="Đang đăng nhập…" />;
   }
 
   if (!user) {
@@ -52,20 +52,17 @@ export const RequireAdminGuard: React.FC = () => {
     );
   }
 
-  if (!isAdminAuthorized) {
+  if (!isTeacherAuthorized) {
     return (
       <div className="studio-skin flex min-h-screen items-center justify-center bg-[#F6FAFF] p-6">
         <div className="studio-card w-full max-w-md p-8 text-center">
           <span className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#FFEDF1] text-[#D93B5B]">
             <ShieldAlert className="h-8 w-8" />
           </span>
-          <h1 className="mb-2 font-display text-2xl font-extrabold text-[#172B4D]">Tài khoản chưa được cấp quyền</h1>
-          <p className="mb-4 text-sm text-[#5E6C84]">
-            Email <span className="font-mono font-bold text-[#172B4D]">{user.email}</span> chưa có trong danh sách quản trị viên của MimoEDU.
+          <h1 className="mb-2 font-display text-2xl font-extrabold text-[#172B4D]">Email chưa được xác minh</h1>
+          <p className="mb-6 text-sm text-[#5E6C84]">
+            Tài khoản <span className="font-mono font-bold text-[#172B4D]">{user.email}</span> chưa được Google xác minh email. Hãy đăng nhập bằng một tài khoản Google khác.
           </p>
-          <div className="mb-6 rounded-xl bg-[#F6FAFF] p-3 text-left text-xs text-[#5E6C84] ring-1 ring-[#DCE7F3]">
-            Chỉ tài khoản Google đã được quản trị viên cấp phép mới vào được MimoEDU Studio. Hệ thống không cho tự đăng ký làm admin.
-          </div>
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
             <button type="button" onClick={logoutAdmin} className="studio-btn studio-btn-danger">
               <LogOut className="h-4 w-4" /> Đăng xuất
@@ -80,4 +77,10 @@ export const RequireAdminGuard: React.FC = () => {
   }
 
   return <Outlet />;
+};
+
+/** System pages (Quyền Admin, Kho trò chơi): admins only; teachers go back to their Studio. */
+export const RequireSystemAdmin: React.FC = () => {
+  const { isSystemAdmin } = useAppContext();
+  return isSystemAdmin ? <Outlet /> : <Navigate to="/admin" replace />;
 };

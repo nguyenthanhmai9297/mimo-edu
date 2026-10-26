@@ -44,7 +44,10 @@ interface AppContextValue {
   /** Starts the teacher sign-in check (loads Firebase) if not started yet. */
   ensureTeacherAuth: () => void;
   authReady: boolean;
-  isAdminAuthorized: boolean;
+  /** Any signed-in account with a verified email (Google) is a teacher: Studio with their own data. */
+  isTeacherAuthorized: boolean;
+  /** Admin (owner or adminAllowlist): also the system pages (Quyền Admin, Kho trò chơi) and changing the practice bank. */
+  isSystemAdmin: boolean;
   adminCheckLoading: boolean;
   /** The allowlist could not be read (network/server), which is not the same as "no access". */
   adminCheckFailed: boolean;
@@ -79,7 +82,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [user, setUser] = useState<User | null>(null);
   const [authReady, setAuthReady] = useState(false);
-  const [isAdminAuthorized, setIsAdminAuthorized] = useState(false);
+  const [isTeacherAuthorized, setIsTeacherAuthorized] = useState(false);
+  const [isSystemAdmin, setIsSystemAdmin] = useState(false);
   const [adminCheckLoading, setAdminCheckLoading] = useState(false);
   const [adminCheckFailed, setAdminCheckFailed] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
@@ -112,19 +116,18 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
     let unsub: (() => void) | undefined;
     void loadTeacherFirebase().then(({ fbAuth, config, repo }) => {
       if (cancelled) return;
-      // Reads the allowlist; a failed read is retried once, then reported as a connection problem
+      // Every verified account is a teacher; the allowlist only says who is also Admin.
+      // A failed read is retried once, then reported as a connection problem.
       const checkAdmin = async (firebaseUser: User, attempt = 1): Promise<void> => {
         setAdminCheckLoading(true);
         setAdminCheckFailed(false);
+        const teacher = firebaseUser.emailVerified;
         try {
-          const allowed = await repo.verifyAdminAccess(firebaseUser.email);
+          const admin = teacher && (await repo.verifyAdminAccess(firebaseUser.email));
           if (cancelled) return;
-          setIsAdminAuthorized(allowed);
-          setAuthError(
-            allowed
-              ? null
-              : `Tài khoản (${firebaseUser.email}) chưa nằm trong danh sách Admin Allowlist. Chỉ giáo viên được cấp quyền mới có thể truy cập quản trị.`
-          );
+          setIsTeacherAuthorized(teacher);
+          setIsSystemAdmin(admin);
+          setAuthError(teacher ? null : `Email ${firebaseUser.email} chưa được Google xác minh.`);
           setAdminCheckLoading(false);
         } catch (err) {
           console.error('Admin verification error:', err);
@@ -134,7 +137,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
             if (!cancelled) return checkAdmin(firebaseUser, 2);
             return;
           }
-          setIsAdminAuthorized(false);
+          setIsTeacherAuthorized(false);
+          setIsSystemAdmin(false);
           setAdminCheckFailed(true);
           setAdminCheckLoading(false);
         }
@@ -144,7 +148,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
           if (firebaseUser) {
             await checkAdmin(firebaseUser);
           } else {
-            setIsAdminAuthorized(false);
+            setIsTeacherAuthorized(false);
+            setIsSystemAdmin(false);
             setAdminCheckFailed(false);
             setAdminCheckLoading(false);
           }
@@ -158,7 +163,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [teacherAuthWanted]);
 
   useEffect(() => {
-    if (!authReady || !user || !isAdminAuthorized) {
+    if (!authReady || !user || !isTeacherAuthorized) {
       setClasses([]);
       setStudents([]);
       setHomeworkList([]);
@@ -189,18 +194,21 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
         subscribeStudents,
         subscribeSubmissions,
       } = repo;
+      // Each teacher loads only their own data (admins: theirs and the data from before teacher accounts)
+      const scope = { uid: user.uid, admin: isSystemAdmin };
       unsubs = [
-      subscribeClasses((c) => {
+      subscribeClasses(scope, (c) => {
         setClasses(c);
         setAdminDataLoading(false);
       }),
-      subscribeStudents(setStudents),
-      subscribeHomeworkList(setHomeworkList),
-      subscribeAssignments(setAssignments),
-      subscribeStudentAssignments(setStudentAssignments),
-      subscribeSubmissions(setSubmissions),
-      subscribeComments(setComments),
+      subscribeStudents(scope, setStudents),
+      subscribeHomeworkList(scope, setHomeworkList),
+      subscribeAssignments(scope, setAssignments),
+      subscribeStudentAssignments(scope, setStudentAssignments),
+      subscribeSubmissions(scope, setSubmissions),
+      subscribeComments(scope, setComments),
       subscribeMathGames(
+        scope,
         (g) => {
           setGames(g);
           setGamesLoading(false);
@@ -218,7 +226,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
       cancelled = true;
       unsubs.forEach((u) => u());
     };
-  }, [authReady, user, isAdminAuthorized]);
+  }, [authReady, user, isTeacherAuthorized, isSystemAdmin]);
 
   const loginAdminWithGoogle = async (): Promise<boolean> => {
     setAuthError(null);
@@ -226,14 +234,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
       setTeacherAuthWanted(true);
       const { fbAuth, config, repo } = await loadTeacherFirebase();
       const cred = await fbAuth.signInWithPopup(config.auth, config.googleProvider);
-      const allowed = await repo.verifyAdminAccess(cred.user.email);
-      setIsAdminAuthorized(allowed);
-      if (!allowed) {
-        setAuthError(
-          `Email ${cred.user.email} chưa được cấp quyền Quản trị (Admin Allowlist).`
-        );
-      }
-      return allowed;
+      const teacher = cred.user.emailVerified;
+      setIsTeacherAuthorized(teacher);
+      setIsSystemAdmin(teacher && (await repo.verifyAdminAccess(cred.user.email)));
+      if (!teacher) setAuthError(`Email ${cred.user.email} chưa được Google xác minh.`);
+      return teacher;
     } catch (error) {
       const msg =
         error instanceof Error
@@ -247,7 +252,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   const logoutAdmin = async () => {
     const { fbAuth, config } = await loadTeacherFirebase();
     await fbAuth.signOut(config.auth);
-    setIsAdminAuthorized(false);
+    setIsTeacherAuthorized(false);
+    setIsSystemAdmin(false);
     setAuthError(null);
   };
 
@@ -266,7 +272,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
         user,
         ensureTeacherAuth,
         authReady,
-        isAdminAuthorized,
+        isTeacherAuthorized,
+        isSystemAdmin,
         adminCheckLoading,
         adminCheckFailed,
         authError,

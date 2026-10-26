@@ -177,6 +177,8 @@ export interface AdminAllowlistEntry {
 
 export interface ClassRoom {
   id: string;
+  /** The teacher who made it (Firebase uid); missing on data made before teacher accounts, which belongs to the admins. */
+  ownerUid?: string;
   name: string;
   grade: string;
   schoolYear: string;
@@ -188,6 +190,8 @@ export interface ClassRoom {
 
 export interface Student {
   id: string;
+  /** The teacher who made it (Firebase uid); missing on data made before teacher accounts, which belongs to the admins. */
+  ownerUid?: string;
   fullName: string;
   nickname?: string;
   avatarUrl?: string;
@@ -229,6 +233,8 @@ export interface HomeworkAttachment {
 
 export interface Homework {
   id: string;
+  /** The teacher who made it (Firebase uid); missing on data made before teacher accounts, which belongs to the admins. */
+  ownerUid?: string;
   title: string;
   description?: string;
   subject: string;
@@ -245,6 +251,8 @@ export interface Homework {
 
 export interface Assignment {
   id: string;
+  /** The teacher who made it (Firebase uid); missing on data made before teacher accounts, which belongs to the admins. */
+  ownerUid?: string;
   homeworkId: string;
   title: string;
   instructions?: string;
@@ -271,6 +279,8 @@ export type AssignmentProgressStatus =
 
 export interface StudentAssignment {
   id: string; // `${assignmentId}_${studentId}`
+  /** The teacher who made it (Firebase uid); missing on data made before teacher accounts, which belongs to the admins. */
+  ownerUid?: string;
   assignmentId: string;
   studentId: string;
   status: AssignmentProgressStatus;
@@ -306,6 +316,8 @@ export interface QuestionGradingResult {
 
 export interface Submission {
   id: string; // `${assignmentId}_${studentId}`
+  /** The teacher who made it (Firebase uid); missing on data made before teacher accounts, which belongs to the admins. */
+  ownerUid?: string;
   assignmentId: string;
   studentId: string;
   answers: StudentQuestionAnswer[];
@@ -322,6 +334,8 @@ export interface Submission {
 
 export interface CommentReport {
   id: string;
+  /** The teacher who made it (Firebase uid); missing on data made before teacher accounts, which belongs to the admins. */
+  ownerUid?: string;
   studentId: string;
   type: 'monthly' | 'submission';
   month?: number;

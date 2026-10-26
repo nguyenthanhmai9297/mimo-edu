@@ -6,8 +6,10 @@ import {
   getDocFromServer,
   getDocs,
   onSnapshot,
+  query,
   setDoc,
   updateDoc,
+  where,
 } from 'firebase/firestore';
 import {
   auth,
@@ -42,6 +44,38 @@ import {
 import { apiUrl } from '../lib/apiUrl';
 
 const BOOTSTRAP_ADMIN_EMAIL = 'nguyenthanhmai9297@gmail.com';
+
+/** Whose data a teacher page loads: a teacher's own; an admin's own plus the data from before teacher accounts. */
+export interface DataScope {
+  uid: string;
+  admin: boolean;
+}
+
+/** Every document a teacher writes carries their uid; Security Rules check it. */
+function ownerUid(): string {
+  const uid = auth.currentUser?.uid;
+  if (!uid) throw new Error('Phiên đăng nhập đã hết hạn, vui lòng tải lại trang.');
+  return uid;
+}
+
+function subscribeOwned<T extends { ownerUid?: string }>(
+  path: string,
+  scope: DataScope,
+  onData: (items: (T & { id: string })[]) => void
+) {
+  // A teacher's query must ask for their own documents (Security Rules refuse any other)
+  const source = scope.admin ? collection(db, path) : query(collection(db, path), where('ownerUid', '==', scope.uid));
+  return onSnapshot(
+    source,
+    (snapshot) =>
+      onData(
+        snapshot.docs
+          .map((d) => ({ id: d.id, ...(d.data() as T) }))
+          .filter((x) => !x.ownerUid || x.ownerUid === scope.uid)
+      ),
+    (error) => handleFirestoreError(error, OperationType.LIST, path)
+  );
+}
 
 function makeId(prefix: string): string {
   return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
@@ -116,27 +150,15 @@ export async function addAdminEmailToAllowlist(email: string): Promise<void> {
 // CLASSES CRUD
 // ============================================================================
 
-export function subscribeClasses(onData: (classes: ClassRoom[]) => void) {
-  const path = 'classes';
-  return onSnapshot(
-    collection(db, path),
-    (snapshot) => {
-      const items = snapshot.docs
-        .map((d) => ({
-          id: d.id,
-          ...(d.data() as Omit<ClassRoom, 'id'>),
-        }))
-        .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-      onData(items);
-    },
-    (error) => handleFirestoreError(error, OperationType.LIST, path)
-  );
+export function subscribeClasses(scope: DataScope, onData: (items: ClassRoom[]) => void) {
+  return subscribeOwned<Omit<ClassRoom, 'id'>>('classes', scope, (items) => onData(items.sort((a, b) => b.createdAt.localeCompare(a.createdAt))));
 }
 
 export async function createClassRoom(values: ClassFormValues): Promise<string> {
   const classId = makeId('cls');
   const now = new Date().toISOString();
   const payload: Omit<ClassRoom, 'id'> = {
+    ownerUid: ownerUid(),
     name: values.name.trim(),
     grade: values.grade.trim(),
     schoolYear: values.schoolYear.trim(),
@@ -160,6 +182,7 @@ export async function updateClassRoom(
 ): Promise<void> {
   const now = new Date().toISOString();
   const payload: Omit<ClassRoom, 'id'> = {
+    ownerUid: ownerUid(),
     name: values.name.trim(),
     grade: values.grade.trim(),
     schoolYear: values.schoolYear.trim(),
@@ -191,21 +214,8 @@ export async function toggleArchiveClassRoom(cls: ClassRoom): Promise<void> {
 // STUDENTS CRUD & 6-CHAR SERVER CODE GENERATION
 // ============================================================================
 
-export function subscribeStudents(onData: (students: Student[]) => void) {
-  const path = 'students';
-  return onSnapshot(
-    collection(db, path),
-    (snapshot) => {
-      const items = snapshot.docs
-        .map((d) => ({
-          id: d.id,
-          ...(d.data() as Omit<Student, 'id'>),
-        }))
-        .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-      onData(items);
-    },
-    (error) => handleFirestoreError(error, OperationType.LIST, path)
-  );
+export function subscribeStudents(scope: DataScope, onData: (items: Student[]) => void) {
+  return subscribeOwned<Omit<Student, 'id'>>('students', scope, (items) => onData(items.sort((a, b) => b.createdAt.localeCompare(a.createdAt))));
 }
 
 export async function createStudent(values: StudentFormValues): Promise<Student> {
@@ -215,7 +225,7 @@ export async function createStudent(values: StudentFormValues): Promise<Student>
   try {
     const res = await fetch(apiUrl('/api/admin/generate-student-code'), {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${await auth.currentUser?.getIdToken()}` },
       body: JSON.stringify({ studentId }),
     });
     if (res.ok) {
@@ -250,6 +260,7 @@ export async function createStudent(values: StudentFormValues): Promise<Student>
   const now = new Date().toISOString();
 
   const payload: Omit<Student, 'id'> = {
+    ownerUid: ownerUid(),
     fullName: values.fullName.trim(),
     ...(values.nickname ? { nickname: values.nickname.trim() } : {}),
     ...(values.avatarUrl ? { avatarUrl: values.avatarUrl.trim() } : {}),
@@ -280,6 +291,7 @@ export async function updateStudent(
 ): Promise<void> {
   const now = new Date().toISOString();
   const payload: Omit<Student, 'id'> = {
+    ownerUid: ownerUid(),
     fullName: values.fullName.trim(),
     ...(values.nickname ? { nickname: values.nickname.trim() } : {}),
     ...(values.avatarUrl ? { avatarUrl: values.avatarUrl.trim() } : {}),
@@ -315,21 +327,8 @@ export async function updateStudent(
 // HOMEWORK CRUD
 // ============================================================================
 
-export function subscribeHomeworkList(onData: (items: Homework[]) => void) {
-  const path = 'homework';
-  return onSnapshot(
-    collection(db, path),
-    (snapshot) => {
-      const items = snapshot.docs
-        .map((d) => ({
-          id: d.id,
-          ...(d.data() as Omit<Homework, 'id'>),
-        }))
-        .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
-      onData(items);
-    },
-    (error) => handleFirestoreError(error, OperationType.LIST, path)
-  );
+export function subscribeHomeworkList(scope: DataScope, onData: (items: Homework[]) => void) {
+  return subscribeOwned<Omit<Homework, 'id'>>('homework', scope, (items) => onData(items.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))));
 }
 
 /** Creates or overwrites a homework; returns its id and creation time so the editor can keep saving into it. */
@@ -351,6 +350,7 @@ export async function saveHomework(
   );
 
   const payload: Omit<Homework, 'id'> = {
+    ownerUid: ownerUid(),
     title: homeworkData.title.trim(),
     ...(homeworkData.description
       ? { description: homeworkData.description.trim() }
@@ -405,38 +405,12 @@ export async function deleteDraftHomework(hwId: string): Promise<void> {
 // ASSIGNMENTS & SNAPSHOT DELIVERY
 // ============================================================================
 
-export function subscribeAssignments(onData: (items: Assignment[]) => void) {
-  const path = 'assignments';
-  return onSnapshot(
-    collection(db, path),
-    (snapshot) => {
-      const items = snapshot.docs
-        .map((d) => ({
-          id: d.id,
-          ...(d.data() as Omit<Assignment, 'id'>),
-        }))
-        .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-      onData(items);
-    },
-    (error) => handleFirestoreError(error, OperationType.LIST, path)
-  );
+export function subscribeAssignments(scope: DataScope, onData: (items: Assignment[]) => void) {
+  return subscribeOwned<Omit<Assignment, 'id'>>('assignments', scope, (items) => onData(items.sort((a, b) => b.createdAt.localeCompare(a.createdAt))));
 }
 
-export function subscribeStudentAssignments(
-  onData: (items: StudentAssignment[]) => void
-) {
-  const path = 'studentAssignments';
-  return onSnapshot(
-    collection(db, path),
-    (snapshot) => {
-      const items = snapshot.docs.map((d) => ({
-        id: d.id,
-        ...(d.data() as Omit<StudentAssignment, 'id'>),
-      }));
-      onData(items);
-    },
-    (error) => handleFirestoreError(error, OperationType.LIST, path)
-  );
+export function subscribeStudentAssignments(scope: DataScope, onData: (items: StudentAssignment[]) => void) {
+  return subscribeOwned<Omit<StudentAssignment, 'id'>>('studentAssignments', scope, (items) => onData(items));
 }
 
 export async function createAssignmentFromHomework(params: {
@@ -477,6 +451,7 @@ export async function createAssignmentFromHomework(params: {
   );
 
   const assignmentPayload: Omit<Assignment, 'id'> = {
+    ownerUid: ownerUid(),
     homeworkId: params.homework.id,
     title: params.title.trim() || params.homework.title,
     ...(params.instructions
@@ -502,6 +477,7 @@ export async function createAssignmentFromHomework(params: {
     for (const studentId of resolvedStudentIds) {
       const saId = `${assignmentId}_${studentId}`;
       const saPayload: Omit<StudentAssignment, 'id'> = {
+        ownerUid: assignmentPayload.ownerUid,
         assignmentId,
         studentId,
         status: 'assigned',
@@ -528,8 +504,10 @@ export async function updateAssignmentStatus(
 ): Promise<void> {
   const now = new Date().toISOString();
   try {
+    const { id: _id, ...stored } = assignment;
     await setDoc(doc(db, 'assignments', assignment.id), {
-      ...assignment,
+      ...stored,
+      ownerUid: ownerUid(),
       status: nextStatus,
       publishSolutions: publishSolutions ?? assignment.publishSolutions ?? false,
       updatedAt: now,
@@ -547,19 +525,8 @@ export async function updateAssignmentStatus(
 // SUBMISSIONS & TEACHER GRADING
 // ============================================================================
 
-export function subscribeSubmissions(onData: (items: Submission[]) => void) {
-  const path = 'submissions';
-  return onSnapshot(
-    collection(db, path),
-    (snapshot) => {
-      const items = snapshot.docs.map((d) => ({
-        id: d.id,
-        ...(d.data() as Omit<Submission, 'id'>),
-      }));
-      onData(items);
-    },
-    (error) => handleFirestoreError(error, OperationType.LIST, path)
-  );
+export function subscribeSubmissions(scope: DataScope, onData: (items: Submission[]) => void) {
+  return subscribeOwned<Omit<Submission, 'id'>>('submissions', scope, (items) => onData(items));
 }
 
 export async function finalizeTeacherGrading(params: {
@@ -580,6 +547,7 @@ export async function finalizeTeacherGrading(params: {
   const subId = `${params.submission.assignmentId}_${params.submission.studentId}`;
 
   const updatedSubmission: Omit<Submission, 'id'> = {
+    ownerUid: ownerUid(),
     assignmentId: params.submission.assignmentId,
     studentId: params.submission.studentId,
     answers: params.submission.answers,
@@ -616,21 +584,8 @@ export async function finalizeTeacherGrading(params: {
 // MONTHLY & SUBMISSION COMMENTS
 // ============================================================================
 
-export function subscribeComments(onData: (items: CommentReport[]) => void) {
-  const path = 'comments';
-  return onSnapshot(
-    collection(db, path),
-    (snapshot) => {
-      const items = snapshot.docs
-        .map((d) => ({
-          id: d.id,
-          ...(d.data() as Omit<CommentReport, 'id'>),
-        }))
-        .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
-      onData(items);
-    },
-    (error) => handleFirestoreError(error, OperationType.LIST, path)
-  );
+export function subscribeComments(scope: DataScope, onData: (items: CommentReport[]) => void) {
+  return subscribeOwned<Omit<CommentReport, 'id'>>('comments', scope, (items) => onData(items.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))));
 }
 
 export async function saveCommentReport(
@@ -640,6 +595,7 @@ export async function saveCommentReport(
   const commentId = existing?.id || makeId('cmt');
   const now = new Date().toISOString();
   const payload: Omit<CommentReport, 'id'> = {
+    ownerUid: ownerUid(),
     studentId: values.studentId,
     type: values.type,
     month: values.month,
@@ -679,12 +635,14 @@ export async function deleteDraftComment(commentId: string): Promise<void> {
 // ============================================================================
 
 export function subscribeMathGames(
+  scope: DataScope,
   onData: (items: MathGame[]) => void,
   onError?: (message: string) => void
 ) {
   const path = 'games';
+  // Kho trò chơi is managed by admins; teachers see the published games
   return onSnapshot(
-    collection(db, path),
+    scope.admin ? collection(db, path) : query(collection(db, path), where('status', '==', 'published')),
     (snapshot) => {
       const items = snapshot.docs
         .map((d) => ({
@@ -766,9 +724,10 @@ export async function seedSampleClassroomData(): Promise<{
   studentCode: string;
   studentName: string;
 }> {
-  const existingClasses = await getDocs(collection(db, 'classes'));
+  const mine = (path: string) => query(collection(db, path), where('ownerUid', '==', ownerUid()));
+  const existingClasses = await getDocs(mine('classes'));
   if (!existingClasses.empty) {
-    const existingStudents = await getDocs(collection(db, 'students'));
+    const existingStudents = await getDocs(mine('students'));
     if (!existingStudents.empty) {
       const firstStu = existingStudents.docs[0].data() as Student;
       return {

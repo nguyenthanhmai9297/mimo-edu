@@ -46,12 +46,14 @@ describe('chữ ký Cloudinary khớp với SDK chính thức', () => {
   });
 });
 
-const TOKENS: Record<string, { email?: string; email_verified?: boolean }> = {
-  owner: { email: OWNER_EMAIL, email_verified: true },
-  allowlisted: { email: 'giaovien@truong.edu.vn', email_verified: true },
-  unverified: { email: 'giaovien@truong.edu.vn', email_verified: false },
-  outsider: { email: 'nguoila@gmail.com', email_verified: true },
+const TOKENS: Record<string, { uid?: string; email?: string; email_verified?: boolean }> = {
+  owner: { uid: 'u-owner', email: OWNER_EMAIL, email_verified: true },
+  allowlisted: { uid: 'u-allow', email: 'giaovien@truong.edu.vn', email_verified: true },
+  unverified: { uid: 'u-unv', email: 'giaovien@truong.edu.vn', email_verified: false },
+  outsider: { uid: 'u-out', email: 'nguoila@gmail.com', email_verified: true },
 };
+/** Homework owners, as the server reads them (missing: not saved yet). */
+const HOMEWORK_OWNERS: Record<string, string> = { hw_cua_gv_khac: 'u-other' };
 
 let config: CloudinaryConfig | null = TEST;
 let inUse = new Set<string>();
@@ -73,6 +75,11 @@ async function start(): Promise<{ url: string; server: Server }> {
     createMediaRouter({
       requireTeacher,
       getConfig: () => config,
+      canUseHomework: async (homeworkId, req) => {
+        const owner = HOMEWORK_OWNERS[homeworkId];
+        const r = req as typeof req & { teacherUid?: string; isAdmin?: boolean };
+        return !owner || owner === r.teacherUid || Boolean(r.isAdmin);
+      },
       isImageInUse: async (id) => inUse.has(id),
       now: () => 1761460000_000,
       fetchImpl: (async (_url: string, init: { body: URLSearchParams }) => {
@@ -105,17 +112,16 @@ describe('API kho ảnh /api/media', () => {
     });
   const goodSign = { homeworkId: 'hw_1', hash: HASH, format: 'jpg' };
 
-  it('học sinh (không có token Firebase), tài khoản lạ, email chưa xác minh: không xin được chữ ký, không xóa được ảnh', async () => {
+  it('học sinh (không có token Firebase), email chưa xác minh: không xin được chữ ký, không xóa được ảnh', async () => {
     expect((await post('/sign', goodSign)).status).toBe(401);
     expect((await post('/sign', goodSign, 'student-code-token')).status).toBe(401);
-    expect((await post('/sign', goodSign, 'outsider')).status).toBe(403);
     expect((await post('/sign', goodSign, 'unverified')).status).toBe(403);
-    expect((await post('/delete', { publicId: `mimoedu/homework/hw_1/${HASH}` }, 'outsider')).status).toBe(403);
+    expect((await post('/delete', { publicId: `mimoedu/homework/hw_1/${HASH}` }, 'unverified')).status).toBe(403);
     expect(destroyed).toHaveLength(0);
   });
 
   it('giáo viên được cấp quyền nhận chữ ký: thư mục, tên ảnh, kiểu riêng tư do máy chủ quyết định; không trả API Secret', async () => {
-    for (const who of ['owner', 'allowlisted']) {
+    for (const who of ['owner', 'allowlisted', 'outsider']) {
       const res = await post('/sign', goodSign, who);
       expect(res.status).toBe(200);
       const data = await res.json();
@@ -163,6 +169,15 @@ describe('API kho ảnh /api/media', () => {
     expect(sent.type).toBe('authenticated');
     expect(sent.signature).toBe(signApiParams({ invalidate: true, public_id: id, timestamp: 1761460000, type: 'authenticated' }, TEST.apiSecret));
     expect(sent.api_secret).toBeUndefined();
+  });
+
+  it('giáo viên khác không xin chữ ký, không xóa ảnh trong bài tập của người khác; Admin thì được', async () => {
+    const id = `mimoedu/homework/hw_cua_gv_khac/${HASH}`;
+    expect((await post('/sign', { ...goodSign, homeworkId: 'hw_cua_gv_khac' }, 'outsider')).status).toBe(403);
+    expect((await post('/delete', { publicId: id }, 'outsider')).status).toBe(403);
+    expect(destroyed).toHaveLength(0);
+    expect((await post('/sign', { ...goodSign, homeworkId: 'hw_cua_gv_khac' }, 'owner')).status).toBe(200);
+    expect((await post('/delete', { publicId: id }, 'allowlisted')).status).toBe(200);
   });
 
   it('không xóa được ảnh ngoài kho bài tập', async () => {

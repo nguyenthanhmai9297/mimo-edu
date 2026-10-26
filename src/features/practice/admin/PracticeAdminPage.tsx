@@ -22,7 +22,9 @@ import { GROUP_THEMES, ProgressBar } from '../student/practiceTheme';
 type StatusFilter = 'all' | 'draft' | 'approved';
 
 export const PracticeAdminPage: React.FC = () => {
-  const { user } = useAppContext();
+  const { user, isSystemAdmin } = useAppContext();
+  // The shared bank is changed by admins only (Security Rules too); teachers browse it
+  const readOnly = !isSystemAdmin;
   const teacherEmail = user?.email ?? 'unknown';
   const [sets, setSets] = useState<PracticeSet[]>([]);
   const [questions, setQuestions] = useState<PracticeQuestion[]>([]);
@@ -141,10 +143,14 @@ export const PracticeAdminPage: React.FC = () => {
               Ngân hàng câu hỏi Toán 3 đã kiểm duyệt cho học sinh tự luyện · 5 nhóm kiến thức · 35 chuyên đề · 4 mức độ
             </p>
           </div>
-          <label className="flex min-h-[44px] cursor-pointer items-center gap-2 self-start rounded-2xl bg-[#FFD34E] px-4 text-sm font-extrabold whitespace-nowrap text-[#1E3A8A] shadow-md transition hover:brightness-105">
-            <FileUp className="h-4 w-4" /> Nhập bộ câu hỏi (.json)
-            <input type="file" accept="application/json,.json" onChange={handleFile} className="hidden" />
-          </label>
+          {readOnly ? (
+            <span className="self-start rounded-2xl bg-white/15 px-4 py-2 text-xs font-bold text-white/90">Chỉ xem · quản trị viên cập nhật kho</span>
+          ) : (
+            <label className="flex min-h-[44px] cursor-pointer items-center gap-2 self-start rounded-2xl bg-[#FFD34E] px-4 text-sm font-extrabold whitespace-nowrap text-[#1E3A8A] shadow-md transition hover:brightness-105">
+              <FileUp className="h-4 w-4" /> Nhập bộ câu hỏi (.json)
+              <input type="file" accept="application/json,.json" onChange={handleFile} className="hidden" />
+            </label>
+          )}
         </div>
       </div>
 
@@ -242,7 +248,7 @@ export const PracticeAdminPage: React.FC = () => {
                         </div>
                         <ProgressBar value={inSet.length ? approvedCount / inSet.length : 0} className="mt-2 h-2 max-w-xs" track="bg-white" />
                       </div>
-                      <button
+                      {!readOnly && <button
                         type="button"
                         disabled={busy || (!published && approvedCount === 0)}
                         title={!published && approvedCount === 0 ? 'Cần duyệt ít nhất một câu' : undefined}
@@ -253,7 +259,7 @@ export const PracticeAdminPage: React.FC = () => {
                       >
                         {published ? <Undo2 className="h-4 w-4" /> : <Rocket className="h-4 w-4" />}
                         {published ? 'Gỡ xuất bản' : 'Xuất bản cho học sinh'}
-                      </button>
+                      </button>}
                     </div>
                   );
                 })}
@@ -315,7 +321,7 @@ export const PracticeAdminPage: React.FC = () => {
                   ))}
                   <span className="ml-auto text-xs font-bold text-slate-500">{visible.length} câu</span>
                 </div>
-                {pendingVisible.length > 0 && (
+                {pendingVisible.length > 0 && !readOnly && (
                   <div className="flex flex-wrap items-center gap-2 border-t border-slate-100 pt-3 text-xs">
                     {confirmBulk ? (
                       <>
@@ -356,6 +362,7 @@ export const PracticeAdminPage: React.FC = () => {
                     key={`${q.id}-${q.updatedAt}`}
                     question={q}
                     skillOptions={skillOptions}
+                    readOnly={readOnly}
                     // Errors propagate to the card so it can stay open and show them
                     onSave={async (next) => {
                       await updatePracticeQuestion(next, teacherEmail);

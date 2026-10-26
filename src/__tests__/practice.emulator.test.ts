@@ -51,11 +51,13 @@ describe('firestore.rules – practice collections', () => {
   });
 
   const anon = () => env.unauthenticatedContext().firestore();
-  const student = () => env.authenticatedContext('s1', { email: 'hocsinh@demo.test', email_verified: true }).firestore();
+  // Students never sign in to Firebase; a verified account that is not Admin is a teacher
+  const unverified = () => env.authenticatedContext('s1', { email: 'hocsinh@demo.test', email_verified: false }).firestore();
+  const otherTeacher = () => env.authenticatedContext('t9', { email: 'giaovienmoi@gmail.com', email_verified: true }).firestore();
   const teacher = () => env.authenticatedContext('t1', { email: TEACHER, email_verified: true }).firestore();
 
-  it('denies every read of answer keys to anonymous users and non-teachers', async () => {
-    for (const db of [anon(), student()]) {
+  it('denies every read of answer keys to anonymous users and unverified accounts', async () => {
+    for (const db of [anon(), unverified()]) {
       await assertFails(db.doc('practiceQuestions/M3-N01-001').get());
       await assertFails(db.collection('practiceQuestions').get());
       await assertFails(db.doc('practiceSets/set-n01').get());
@@ -63,11 +65,14 @@ describe('firestore.rules – practice collections', () => {
     }
   });
 
-  it('denies writes to anonymous users and non-teachers', async () => {
-    for (const db of [anon(), student()]) {
+  it('denies writes to anyone but admins; other teachers only read the bank (not pupils\' attempts)', async () => {
+    for (const db of [anon(), unverified(), otherTeacher()]) {
       await assertFails(db.doc('practiceQuestions/M3-N01-002').set(validQuestion));
       await assertFails(db.doc('practiceSets/set-n01').update({ status: 'published' }));
     }
+    await assertSucceeds(otherTeacher().doc('practiceQuestions/M3-N01-001').get());
+    await assertSucceeds(otherTeacher().collection('practiceSets').get());
+    await assertFails(otherTeacher().collection('practiceAttempts').get());
   });
 
   it('lets teachers read, import, edit, approve and publish', async () => {
