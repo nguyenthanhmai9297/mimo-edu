@@ -1,37 +1,26 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import {
   ArrowLeft,
   Bell,
   Check,
   Expand,
-  FilePlus2,
   Flag,
   LifeBuoy,
   Minimize,
   Pause,
   Play,
-  Smartphone,
   Trophy,
-  Upload,
   UserMinus,
   UserPlus,
   Users,
   X,
 } from 'lucide-react';
-import { useAppContext } from '../../../app/providers';
-import { homeworkPath, NEW_HOMEWORK } from '../../homework/homeworkFlow';
 import { RichContentRenderer } from '../../../components/editor/RichContentRenderer';
 import {
   ConfirmDialog,
-  DataTable,
-  EmptyState,
   ErrorState,
   LoadingState,
-  PageHeader,
-  SectionHeading,
-  STUDIO_INPUT,
-  STUDIO_LABEL,
   StatusBadge,
   StudioModal,
   TD,
@@ -39,25 +28,21 @@ import {
   THEAD,
   TR,
 } from '../../../components/studio/StudioUi';
-import { bellAction, createBellGame, getBellGame, listBellGames, type BellAction } from '../../../services/bellGameService';
+import { bellAction, getBellGame, type BellAction } from '../../../services/bellGameService';
 import { LETTERS } from '../../tools/quizStyle';
 import { playChime, playFanfare } from '../../tools/toolSound';
 import {
   answerLabel,
   isLastQuestion,
-  MAX_PLAYERS,
   MAX_RESCUES,
-  MAX_BELL_QUESTIONS,
   rightAnswerLabel,
   standings,
   winners,
   type BellGame,
   type BellHostView,
-  type BellMode,
   type BellPlayer,
-  type BellSummary,
 } from './bellEngine';
-import { bellQuestionsOf } from './bellQuestions';
+import { BellSetup } from './BellSetup';
 import { QrCode } from './QrCode';
 
 /** Rung chuông vàng – teacher side: set up a game from a saved homework, then run the field. */
@@ -65,256 +50,6 @@ export const BellGamePage: React.FC = () => {
   const [params] = useSearchParams();
   const gameId = params.get('game');
   return gameId ? <BellBoard key={gameId} id={gameId} /> : <BellSetup preselect={params.get('homework') ?? ''} />;
-};
-
-const SECONDS = [10, 15, 20, 30, 45, 60, 90];
-const fmtDate = (t: number) => new Date(t).toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-
-// ------------------------------------------------------------------ setup
-
-const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
-  const { homeworkList, classes, students, adminDataLoading } = useAppContext();
-  const navigate = useNavigate();
-  const [homeworkId, setHomeworkId] = useState(preselect);
-  const [mode, setMode] = useState<BellMode>('online');
-  const [count, setCount] = useState(10);
-  const [seconds, setSeconds] = useState(20);
-  const [classId, setClassId] = useState('');
-  const [names, setNames] = useState('');
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState('');
-  const [saved, setSaved] = useState<BellSummary[] | null>(null);
-  const [savedError, setSavedError] = useState('');
-
-  const all = useMemo(() => homeworkList.map((hw) => ({ hw, ...bellQuestionsOf(hw.questions) })), [homeworkList]);
-  const options = all.filter((o) => o.usable.length > 0);
-  /** Saved homework that cannot be played yet: shown so the teacher knows what to fix. */
-  const notPlayable = all.filter((o) => o.usable.length === 0 && o.hw.questions.length > 0);
-  const chosen = options.find((o) => o.hw.id === homeworkId) ?? null;
-  const max = Math.min(MAX_BELL_QUESTIONS, chosen?.usable.length ?? 0);
-  const roster = names.split('\n').map((n) => n.trim()).filter(Boolean);
-
-  useEffect(() => {
-    if (!homeworkId && options.length) setHomeworkId(options[0].hw.id);
-  }, [homeworkId, options]);
-  useEffect(() => {
-    if (max) setCount((c) => Math.min(Math.max(c, 1), max));
-  }, [max]);
-  useEffect(() => {
-    if (!classId) return;
-    const list = students.filter((s) => s.status === 'active' && s.classIds.includes(classId)).map((s) => s.fullName);
-    setNames(list.join('\n'));
-  }, [classId, students]);
-  const loadSaved = useCallback(() => {
-    setSavedError('');
-    listBellGames()
-      .then(setSaved)
-      .catch((e: Error) => setSavedError(e.message));
-  }, []);
-  useEffect(loadSaved, [loadSaved]);
-
-  const create = async () => {
-    if (!chosen) return;
-    setBusy(true);
-    setError('');
-    try {
-      const view = await createBellGame({
-        title: chosen.hw.title,
-        homeworkId: chosen.hw.id,
-        mode,
-        perQuestionSec: seconds,
-        questions: chosen.usable.slice(0, count),
-        players: mode === 'offline' ? roster : [],
-      });
-      navigate(`/admin/homework/game/rung-chuong-vang?game=${view.id}`);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : String(e));
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const canCreate = Boolean(chosen) && count >= 1 && (mode === 'online' || (roster.length > 0 && roster.length <= MAX_PLAYERS));
-
-  return (
-    <div className="studio-skin space-y-6">
-      <PageHeader
-        icon={Bell}
-        tone="yellow"
-        eyebrow={
-          <Link to="/admin/homework/game" className="inline-flex items-center gap-1 hover:underline">
-            <ArrowLeft className="h-3.5 w-3.5" /> Soạn bài tập Game
-          </Link>
-        }
-        title="Rung chuông vàng"
-        description="Cả lớp cùng trả lời từng câu; đúng thì ở lại sân, sai hoặc hết giờ thì rời sân. Người trụ lại đến câu cuối rung chuông vàng."
-      />
-
-      <section className="studio-card p-5" aria-label="Cách tổ chức" data-testid="bell-guide">
-        <h2 className="font-display text-base font-extrabold text-[#172B4D]">Cách tổ chức Rung chuông vàng</h2>
-        <ol className="mt-3 grid grid-cols-1 gap-3 text-sm text-[#3B4A66] md:grid-cols-3">
-          <li className="rounded-2xl bg-[#F6FAFF] p-3">
-            <b className="text-[#172B4D]">1. Chuẩn bị đề.</b> Soạn câu hỏi hoặc tạo đề từ ảnh/tệp, chọn sẵn đáp án đúng cho từng câu rồi bấm <b>Lưu Bản Nháp</b>.
-            Câu trắc nghiệm, Đúng/Sai và trả lời ngắn đều chơi được.
-          </li>
-          <li className="rounded-2xl bg-[#F6FAFF] p-3">
-            <b className="text-[#172B4D]">2. Tạo sân.</b> Chọn đề ở dưới, chọn Online (điện thoại) hoặc Offline (bảng con), số câu, thời gian mỗi câu, rồi bấm <b>Tạo sân thi đấu</b>.
-          </li>
-          <li className="rounded-2xl bg-[#F6FAFF] p-3">
-            <b className="text-[#172B4D]">3. Chơi trên máy chiếu.</b> Online: học sinh quét QR hoặc vào trang <b>/rcv</b>, nhập mã phòng và tên. Offline: học sinh giơ bảng con, thầy cô bấm vào ô của từng bạn để chấm.
-          </li>
-        </ol>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Link to={homeworkPath('game', NEW_HOMEWORK)} className="studio-btn studio-btn-secondary" data-testid="bell-new-homework">
-            <FilePlus2 className="h-4 w-4" /> Soạn đề mới
-          </Link>
-          <Link to={homeworkPath('game')} className="studio-btn studio-btn-secondary">
-            <Upload className="h-4 w-4" /> Tạo đề từ ảnh hoặc tệp
-          </Link>
-        </div>
-      </section>
-
-      <section className="studio-card space-y-5 p-5">
-        <div>
-          <label className={STUDIO_LABEL} htmlFor="bell-homework">Chọn đề đã lưu</label>
-          {adminDataLoading && !homeworkList.length ? (
-            <LoadingState rows={1} label="Đang tải bài tập…" />
-          ) : options.length === 0 ? (
-            <p className="text-sm text-[#5E6C84]" data-testid="bell-no-homework">
-              Chưa có đề nào chơi được. Bấm <b>Soạn đề mới</b> hoặc <b>Tạo đề từ ảnh hoặc tệp</b> ở trên, chọn đáp án đúng cho các câu rồi lưu; đề sẽ hiện ở đây.
-            </p>
-          ) : (
-            <select id="bell-homework" className={STUDIO_INPUT} value={homeworkId} onChange={(e) => setHomeworkId(e.target.value)}>
-              {options.map((o) => (
-                <option key={o.hw.id} value={o.hw.id}>
-                  {o.hw.title} – {o.usable.length} câu chơi được
-                </option>
-              ))}
-            </select>
-          )}
-          {notPlayable.length > 0 && (
-            <details className="mt-2 text-xs text-[#5E6C84]" open={options.length === 0}>
-              <summary className="cursor-pointer font-bold text-[#3B4A66]">{notPlayable.length} đề đã lưu chưa chơi được</summary>
-              <ul className="mt-1 space-y-1">
-                {notPlayable.map((o) => (
-                  <li key={o.hw.id}>
-                    {o.hw.title}: câu chưa có đáp án, còn “cần kiểm tra” hoặc là câu tự luận.{' '}
-                    <Link to={homeworkPath('game', o.hw.id)} className="font-bold text-[#2563EB] hover:underline">Mở để thêm đáp án</Link>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          )}
-          {chosen && chosen.skipped > 0 && (
-            <p className="mt-1 text-xs text-[#5E6C84]">
-              {chosen.skipped} câu không dùng được (tự luận, chưa có đáp án hoặc còn đánh dấu cần kiểm tra) – trò chơi không tự tạo đáp án cho các câu này.
-            </p>
-          )}
-        </div>
-
-        <fieldset>
-          <legend className={STUDIO_LABEL}>Cách học sinh trả lời</legend>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {[
-              { v: 'online' as const, icon: Smartphone, t: 'Online – điện thoại', d: 'Học sinh vào bằng mã 6 số hoặc QR, trả lời trên điện thoại; máy chấm đúng/sai.' },
-              { v: 'offline' as const, icon: Users, t: 'Offline – bảng con', d: 'Học sinh viết bảng con; thầy cô bấm vào ô từng bạn để chấm.' },
-            ].map((m) => (
-              <label key={m.v} className={`flex cursor-pointer gap-3 rounded-2xl border-2 p-3 ${mode === m.v ? 'border-[#2563EB] bg-[#EFF6FF]' : 'border-[#DCE7F3]'}`}>
-                <input type="radio" name="bell-mode" className="mt-1" checked={mode === m.v} onChange={() => setMode(m.v)} />
-                <m.icon className="mt-0.5 h-5 w-5 shrink-0 text-[#2563EB]" />
-                <span>
-                  <span className="block text-sm font-extrabold text-[#172B4D]">{m.t}</span>
-                  <span className="block text-xs text-[#5E6C84]">{m.d}</span>
-                </span>
-              </label>
-            ))}
-          </div>
-        </fieldset>
-
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <label className={STUDIO_LABEL} htmlFor="bell-count">Số câu (tối đa {max || '–'})</label>
-            <input id="bell-count" type="number" min={1} max={max || 1} className={STUDIO_INPUT} value={count} onChange={(e) => setCount(Math.min(max, Math.max(1, Number(e.target.value) || 1)))} />
-          </div>
-          <div>
-            <label className={STUDIO_LABEL} htmlFor="bell-seconds">Thời gian mỗi câu</label>
-            <select id="bell-seconds" className={STUDIO_INPUT} value={seconds} onChange={(e) => setSeconds(Number(e.target.value))}>
-              {SECONDS.map((s) => (
-                <option key={s} value={s}>{s} giây</option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        {mode === 'offline' && (
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-[240px_1fr]">
-            <div>
-              <label className={STUDIO_LABEL} htmlFor="bell-class">Lấy danh sách từ lớp</label>
-              <select id="bell-class" className={STUDIO_INPUT} value={classId} onChange={(e) => setClassId(e.target.value)}>
-                <option value="">– Tự nhập tên –</option>
-                {classes.filter((c) => c.status === 'active').map((c) => (
-                  <option key={c.id} value={c.id}>{c.name}</option>
-                ))}
-              </select>
-            </div>
-            <div>
-              <label className={STUDIO_LABEL} htmlFor="bell-names">Học sinh trên sân – mỗi dòng một bạn ({roster.length}/{MAX_PLAYERS})</label>
-              <textarea id="bell-names" rows={5} className={STUDIO_INPUT} value={names} onChange={(e) => setNames(e.target.value)} placeholder={'Nguyễn An\nTrần Bình\nLê Chi'} />
-            </div>
-          </div>
-        )}
-
-        {error && <ErrorState message={error} />}
-        <div className="flex justify-end">
-          <button type="button" disabled={!canCreate || busy} onClick={() => void create()} className="studio-btn studio-btn-primary">
-            <Bell className="h-4 w-4" />
-            {busy ? 'Đang tạo sân…' : 'Tạo sân thi đấu'}
-          </button>
-        </div>
-      </section>
-
-      <section className="space-y-3">
-        <SectionHeading icon={Trophy} title="Kết quả đã lưu" note="Các trận gần đây của thầy cô" />
-        {savedError ? (
-          <ErrorState message={savedError} onRetry={loadSaved} />
-        ) : saved === null ? (
-          <LoadingState rows={2} />
-        ) : saved.length === 0 ? (
-          <EmptyState icon={Trophy} title="Chưa có trận nào" text="Kết quả mỗi trận được lưu khi kết thúc." />
-        ) : (
-          <DataTable minWidth={640}>
-            <thead className={THEAD}>
-              <tr>
-                <th className={TH}>Trận</th>
-                <th className={TH}>Chế độ</th>
-                <th className={TH}>Người chơi</th>
-                <th className={TH}>Người thắng</th>
-                <th className={TH}></th>
-              </tr>
-            </thead>
-            <tbody>
-              {saved.map((s) => (
-                <tr key={s.id} className={TR}>
-                  <td className={TD}>
-                    <div className="font-bold text-[#172B4D]">{s.title}</div>
-                    <div className="text-xs text-[#5E6C84]">{fmtDate(s.createdAt)} · đến câu {Math.max(0, s.reached)}/{s.questions}</div>
-                  </td>
-                  <td className={TD}>{s.mode === 'online' ? 'Điện thoại' : 'Bảng con'}</td>
-                  <td className={TD}>{s.players}</td>
-                  <td className={TD}>{s.status === 'ended' ? s.winners.join(', ') || 'Không có' : <StatusBadge kind="warning">Đang diễn ra</StatusBadge>}</td>
-                  <td className={TD}>
-                    <Link to={`/admin/homework/game/rung-chuong-vang?game=${s.id}`} className="font-bold text-[#2563EB] hover:underline">
-                      {s.status === 'ended' ? 'Xem kết quả' : 'Mở lại sân'}
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </DataTable>
-        )}
-      </section>
-    </div>
-  );
 };
 
 // ------------------------------------------------------------------ board
