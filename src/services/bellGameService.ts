@@ -24,7 +24,8 @@ async function request<T>(path: string, token: string | null | undefined, body?:
 const teacherToken = async () => (await import('../lib/firebase/config')).auth.currentUser?.getIdToken();
 const teacher = async <T>(path: string, body?: unknown) => request<T>(path, await teacherToken(), body);
 
-export const createBellGame = (input: { title: string; homeworkId: string; mode: BellMode; perQuestionSec: number; questions: BellQuestion[]; players: string[] }) =>
+type Seated = { seat: number; name: string };
+export const createBellGame = (input: { title: string; homeworkId: string; mode: BellMode; perQuestionSec: number; questions: BellQuestion[]; players: Seated[]; roster: Seated[] }) =>
   teacher<BellHostView>('/games', input);
 export const listBellGames = () => teacher<BellSummary[]>('/games');
 export const getBellGame = (id: string) => teacher<BellHostView>(`/games/${id}`);
@@ -47,8 +48,10 @@ export const forgetPlayer = () => {
     // storage blocked: nothing kept anyway
   }
 };
-export async function joinBellGame(code: string, name: string) {
-  const r = await request<{ gameId: string; token: string }>('/join', null, { code, name }, true);
+/** The room's class list for picking one's name (null: the pupil types a name). */
+export const getBellRoster = (code: string) => request<{ roster: (Seated & { taken: boolean })[] | null }>(`/roster?code=${encodeURIComponent(code)}`, null, undefined, true);
+export async function joinBellGame(code: string, name: string, seat?: number) {
+  const r = await request<{ gameId: string; token: string }>('/join', null, { code, name, ...(seat ? { seat } : {}) }, true);
   try {
     localStorage.setItem(TOKEN_KEY, JSON.stringify(r));
   } catch {

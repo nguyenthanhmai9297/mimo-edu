@@ -2,11 +2,13 @@ import crypto from 'crypto';
 import express, { NextFunction, Request, Response, Router } from 'express';
 import {
   addPlayer,
+  cleanPlayerName,
   closeQuestion,
   endGame,
   hostView,
   judge,
   MAX_PLAYERS,
+  MAX_SEAT,
   pause,
   playView,
   rescue,
@@ -19,6 +21,7 @@ import {
   ANSWER_GRACE_MS,
   type BellGame,
   type BellMode,
+  type BellRosterEntry,
 } from '../src/features/games/bell/bellEngine.js';
 import type { BellGameStore } from './bellGameStore.js';
 
@@ -129,9 +132,25 @@ export function createBellGameRouter(deps: BellDeps): Router {
     const mode: BellMode = req.body?.mode === 'offline' ? 'offline' : 'online';
     const sec = Number(req.body?.perQuestionSec);
     if (!Number.isInteger(sec) || sec < 5 || sec > 300) return void send(res, 400, 'Thời gian mỗi câu phải từ 5 đến 300 giây.');
-    const names: string[] = Array.isArray(req.body?.players) ? req.body.players.filter((n: unknown) => typeof n === 'string' && n.trim()) : [];
+    // Names, or {seat, name} to keep each pupil's number from the class list
+    const list = (v: unknown): BellRosterEntry[] | string => {
+      if (!Array.isArray(v)) return [];
+      if (v.length > MAX_PLAYERS) return `Tối đa ${MAX_PLAYERS} học sinh.`;
+      const out: BellRosterEntry[] = [];
+      for (const [i, x] of v.entries()) {
+        const name = cleanPlayerName(typeof x === 'string' ? x : typeof x?.name === 'string' ? x.name : '');
+        if (!name) continue;
+        const seat = typeof x === 'string' ? i + 1 : Number(x?.seat);
+        if (!Number.isInteger(seat) || seat < 1 || seat > MAX_SEAT || out.some((e) => e.seat === seat)) return 'Số thứ tự học sinh bị trùng hoặc không hợp lệ.';
+        out.push({ seat, name });
+      }
+      return out;
+    };
+    const names = list(req.body?.players);
+    if (typeof names === 'string') return void send(res, 400, names);
     if (mode === 'offline' && names.length === 0) return void send(res, 400, 'Chế độ bảng con cần danh sách học sinh.');
-    if (names.length > MAX_PLAYERS) return void send(res, 400, `Tối đa ${MAX_PLAYERS} học sinh.`);
+    const roster = mode === 'online' ? list(req.body?.roster) : [];
+    if (typeof roster === 'string') return void send(res, 400, roster);
     const t = now();
     const id = `bell_${t.toString(36)}_${crypto.randomBytes(4).toString('hex')}`;
     let code = '';
@@ -155,12 +174,13 @@ export function createBellGameRouter(deps: BellDeps): Router {
       remainingMs: null,
       rescuesUsed: 0,
       players: [],
+      roster: roster.length ? roster : null,
       createdAt: t,
       endedAt: null,
       expiresAt: t + JOIN_TTL_MS,
     };
-    for (const [i, name] of names.entries()) {
-      const out = addPlayer(game, `p${i + 1}`, name);
+    for (const [i, p] of (mode === 'offline' ? names : []).entries()) {
+      const out = addPlayer(game, `p${i + 1}`, p.name, p.seat);
       if (typeof out === 'string') return void send(res, 400, out);
       game = out;
     }
@@ -239,6 +259,25 @@ export function createBellGameRouter(deps: BellDeps): Router {
     }
   };
 
+  /** The class list of an online room, so a pupil can pick their name (null: type a name). */
+  router.get('/roster', async (req, res) => {
+    const who = String(req.headers['x-forwarded-for'] ?? '').split(',')[0].trim() || req.ip || 'unknown';
+    const fail = joinFailures.get(who);
+    if (fail && now() - fail.since < JOIN_FAIL_WINDOW_MS && fail.count >= JOIN_FAIL_LIMIT) {
+      return void send(res, 429, 'Nhập sai mã nhiều lần quá, chờ vài phút rồi thử lại nhé.');
+    }
+    const code = String(req.query.code ?? '').replace(/\D/g, '');
+    const id = code.length === 6 ? await store().findGameIdByCode(code) : null;
+    const g = id ? await load(id, true) : null;
+    if (!g || g.mode !== 'online' || g.expiresAt < now() || g.status === 'ended') {
+      const rec = fail && now() - fail.since < JOIN_FAIL_WINDOW_MS ? fail : { count: 0, since: now() };
+      joinFailures.set(who, { ...rec, count: rec.count + 1 });
+      return void send(res, 404, 'Không tìm thấy phòng với mã này. Con kiểm tra lại mã trên màn chiếu nhé.');
+    }
+    const taken = new Set(g.players.map((p) => p.seat));
+    res.json({ roster: g.roster?.length ? g.roster.map((e) => ({ ...e, taken: taken.has(e.seat) })) : null });
+  });
+
   router.post('/join', async (req, res) => {
     // Behind the hosting proxy every request shares one address: the client's is the first forwarded one
     const who = String(req.headers['x-forwarded-for'] ?? '').split(',')[0].trim() || req.ip || 'unknown';
@@ -255,7 +294,12 @@ export function createBellGameRouter(deps: BellDeps): Router {
       return void send(res, 404, 'Không tìm thấy phòng với mã này. Con kiểm tra lại mã trên màn chiếu nhé.');
     }
     const playerId = `p_${crypto.randomBytes(6).toString('hex')}`;
-    const next = await step(res, found.id, (cur) => addPlayer(cur, playerId, String(req.body?.name ?? '')));
+    const next = await step(res, found.id, (cur) => {
+      if (!cur.roster?.length) return addPlayer(cur, playerId, String(req.body?.name ?? ''));
+      // A class list: the pupil picks their own name; each name joins once
+      const mine = cur.roster.find((e) => e.seat === Number(req.body?.seat));
+      return mine ? addPlayer(cur, playerId, mine.name, mine.seat) : 'Con chọn tên của mình trong danh sách nhé.';
+    });
     if (!next) return;
     res.status(201).json({ gameId: next.id, token: playerToken(next.id, playerId) });
   });

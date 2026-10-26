@@ -194,7 +194,7 @@ const BellBoard: React.FC<{ id: string }> = ({ id }) => {
                 <div className="font-bold break-all text-[#2563EB]">{window.location.host}/rcv</div>
                 <div className="mt-2 text-sm font-bold text-[#5E6C84]">rồi nhập mã phòng</div>
                 <div className="font-display text-6xl font-extrabold tracking-[0.2em] text-[#0B1F5C] [font-variant-numeric:tabular-nums]" data-testid="bell-join-code">{view.code}</div>
-                <div className="mt-1 text-sm text-[#5E6C84]">Không cần tài khoản – chỉ cần nhập tên.</div>
+                <div className="mt-1 text-sm text-[#5E6C84]">Không cần tài khoản – chỉ cần {view.roster?.length ? 'chọn tên trong danh sách lớp' : 'nhập tên'}.</div>
               </div>
             </div>
           ) : view.status === 'ended' ? (
@@ -244,13 +244,18 @@ const BellBoard: React.FC<{ id: string }> = ({ id }) => {
                   – bấm vào ô bạn SAI · Đúng {onField.length - wrongCount} · Sai {wrongCount} · Còn trên sân {onField.length}
                 </span>
               )}
+              {view.status === 'lobby' && view.roster?.length ? (
+                <span className="text-[#FFD34E]" data-testid="bell-joined">
+                  – đã vào {view.players.length}/{view.roster.length}
+                </span>
+              ) : null}
               {view.mode === 'online' && (view.status === 'question' || view.status === 'paused') && <span className="text-[#FFD34E]">– {view.answeredIds.length}/{onField.length} bạn đã trả lời</span>}
             </div>
             {view.players.length === 0 ? (
               <p className="py-6 text-center text-white/70">Chờ học sinh vào phòng…</p>
             ) : (
               <div className={`grid gap-2 ${full ? 'grid-cols-[repeat(auto-fill,minmax(130px,1fr))]' : 'grid-cols-[repeat(auto-fill,minmax(108px,1fr))]'}`}>
-                {view.players.map((p) => (
+                {[...view.players].sort((a, b) => a.seat - b.seat).map((p) => (
                   <Tile key={p.id} p={p} answered={view.answeredIds.includes(p.id)} mark={marks[p.id]} judging={view.status === 'judging'} onClick={() => clickTile(p)} />
                 ))}
               </div>
@@ -390,6 +395,12 @@ const Countdown: React.FC<{ left: number; total: number; big: boolean }> = ({ le
   );
 };
 
+/** A long name splits into family + middle names and the given name: "Nguyễn Hoàng Bảo Ngọc" / "Phương Anh". */
+const nameParts = (name: string): [string, string] => {
+  const w = name.split(' ');
+  return name.length <= 16 || w.length <= 2 ? ['', name] : [w.slice(0, -2).join(' '), w.slice(-2).join(' ')];
+};
+
 const Tile: React.FC<{ p: BellPlayer; answered: boolean; mark: boolean | undefined; judging: boolean; onClick: () => void }> = ({ p, answered, mark, judging, onClick }) => {
   const wrong = judging && p.alive && mark === false;
   const ring = judging && p.alive && !wrong ? 'ring-2 ring-[#22C38E]' : '';
@@ -399,7 +410,8 @@ const Tile: React.FC<{ p: BellPlayer; answered: boolean; mark: boolean | undefin
       onClick={onClick}
       data-testid="bell-tile"
       data-state={p.alive ? 'on' : 'out'}
-      className={`relative flex flex-col items-center rounded-2xl px-2 py-2 text-center transition ${ring} ${
+      title={`${p.seat}. ${p.name}`}
+      className={`@container relative flex flex-col items-center rounded-2xl px-2 py-2 text-center transition ${ring} ${
         wrong
           ? 'bg-[#E5484D] text-white shadow-[0_3px_0_#A8262B]'
           : p.alive
@@ -408,7 +420,9 @@ const Tile: React.FC<{ p: BellPlayer; answered: boolean; mark: boolean | undefin
       }`}
     >
       <span className="font-display text-2xl leading-none font-extrabold [font-variant-numeric:tabular-nums]">{p.seat}</span>
-      <span className="mt-1 line-clamp-1 w-full text-xs font-bold">{p.name}</span>
+      {/* Wide tile: the whole name, given name always in full; narrow: the given name only */}
+      {nameParts(p.name)[0] && <span className="mt-1 line-clamp-2 w-full text-[11px] leading-tight font-semibold opacity-80 @max-[99px]:hidden">{nameParts(p.name)[0]}</span>}
+      <span className={`line-clamp-1 w-full text-xs font-bold ${nameParts(p.name)[0] ? '@min-[100px]:mt-0' : ''} mt-1`}>{nameParts(p.name)[1]}</span>
       <span className="text-[10px] font-bold">
         {judging && p.alive ? (wrong ? 'Sai' : 'Đúng') : p.alive ? `${p.score} điểm` : `Loại ở câu ${(p.outAt ?? 0) + 1}`}
       </span>

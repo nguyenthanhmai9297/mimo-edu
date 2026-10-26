@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Bell, Check, LogOut, Send, X } from 'lucide-react';
 import { RichContentRenderer } from '../../../components/editor/RichContentRenderer';
-import { answerBell, forgetPlayer, getBellPlay, joinBellGame, savedPlayer } from '../../../services/bellGameService';
+import { answerBell, forgetPlayer, getBellPlay, getBellRoster, joinBellGame, savedPlayer } from '../../../services/bellGameService';
 import { LETTERS, TILE } from '../../tools/quizStyle';
 import type { BellPlayView } from './bellEngine';
 
@@ -14,6 +14,9 @@ export const BellPlayPage: React.FC = () => {
   const [token, setToken] = useState<string | null>(() => savedPlayer()?.token ?? null);
   const [code, setCode] = useState(params.get('code') ?? '');
   const [name, setName] = useState('');
+  // A room with a class list: the pupil picks their own name
+  const [roster, setRoster] = useState<{ seat: number; name: string; taken: boolean }[] | null>(null);
+  const [seat, setSeat] = useState(0);
   const [view, setView] = useState<BellPlayView | null>(null);
   const [offset, setOffset] = useState(0);
   const [now, setNow] = useState(Date.now());
@@ -62,15 +65,26 @@ export const BellPlayPage: React.FC = () => {
     return () => window.clearInterval(t);
   }, []);
 
+  const loadRoster = useCallback((c: string) => {
+    if (c.length !== 6) return setRoster(null);
+    getBellRoster(c)
+      .then((r) => setRoster(r.roster))
+      .catch(() => setRoster(null)); // a wrong code is reported when joining
+  }, []);
+  useEffect(() => {
+    if (!token) loadRoster(code);
+  }, [code, token, loadRoster]);
+
   const join = async () => {
     setBusy(true);
     setError('');
     try {
       // A new room replaces the one this phone played before
-      const r = await joinBellGame(code, name);
+      const r = await joinBellGame(code, name, roster ? seat : undefined);
       setToken(r.token);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
+      loadRoster(code);
     } finally {
       setBusy(false);
     }
@@ -127,9 +141,26 @@ export const BellPlayPage: React.FC = () => {
           onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))}
           className="w-full rounded-2xl border-2 border-[#DCE7F3] px-4 py-3 text-center font-display text-3xl font-extrabold tracking-[0.3em]"
         />
-        <label className="block text-sm font-bold" htmlFor="bell-name-input">Tên của con</label>
-        <input id="bell-name-input" maxLength={40} value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-2xl border-2 border-[#DCE7F3] px-4 py-3 text-lg font-bold" placeholder="Ví dụ: Minh Anh" />
-        <button type="submit" disabled={busy || code.length !== 6 || !name.trim()} className="w-full rounded-2xl bg-[#FFD34E] py-3 text-lg font-extrabold text-[#5A3A00] disabled:opacity-50">
+        {roster ? (
+          <>
+            <label className="block text-sm font-bold" htmlFor="bell-seat-input">Chọn tên của con</label>
+            <select id="bell-seat-input" value={seat} onChange={(e) => setSeat(Number(e.target.value))} className="w-full rounded-2xl border-2 border-[#DCE7F3] px-3 py-3 text-lg font-bold">
+              <option value={0}>– Tên của con –</option>
+              {roster.map((e) => (
+                <option key={e.seat} value={e.seat} disabled={e.taken}>
+                  {e.seat}. {e.name}
+                  {e.taken ? ' (đã vào)' : ''}
+                </option>
+              ))}
+            </select>
+          </>
+        ) : (
+          <>
+            <label className="block text-sm font-bold" htmlFor="bell-name-input">Tên của con</label>
+            <input id="bell-name-input" maxLength={40} value={name} onChange={(e) => setName(e.target.value)} className="w-full rounded-2xl border-2 border-[#DCE7F3] px-4 py-3 text-lg font-bold" placeholder="Ví dụ: Minh Anh" />
+          </>
+        )}
+        <button type="submit" disabled={busy || code.length !== 6 || (roster ? !seat : !name.trim())} className="w-full rounded-2xl bg-[#FFD34E] py-3 text-lg font-extrabold text-[#5A3A00] disabled:opacity-50">
           {busy ? 'Đang vào…' : 'Vào sân'}
         </button>
       </form>

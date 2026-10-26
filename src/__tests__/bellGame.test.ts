@@ -174,6 +174,38 @@ describe('Rung chuông vàng – Online (điện thoại học sinh)', () => {
   });
 });
 
+describe('Rung chuông vàng – danh sách lớp', () => {
+  it('Offline: giữ số thứ tự trong lớp, tên trùng vẫn là hai bạn', async () => {
+    const players = [{ seat: 1, name: 'Nguyễn An' }, { seat: 3, name: 'Lê Chi' }, { seat: 4, name: 'Nguyễn An' }];
+    const r = await call<BellHostView>('/games', { teacher: T, body: { title: 'Lớp', mode: 'offline', perQuestionSec: 15, questions: QUESTIONS, players } });
+    expect(r.status).toBe(201);
+    expect(r.data.players.map((p) => [p.seat, p.name])).toEqual([[1, 'Nguyễn An'], [3, 'Lê Chi'], [4, 'Nguyễn An']]);
+    const dup = await call('/games', { teacher: T, body: { title: 'Lớp', mode: 'offline', perQuestionSec: 15, questions: QUESTIONS, players: [{ seat: 2, name: 'A' }, { seat: 2, name: 'B' }] } });
+    expect(dup.status).toBe(400);
+  });
+
+  it('Online: học sinh chọn đúng tên mình; mỗi tên chỉ vào một lần; phòng không có danh sách vẫn gõ tên', async () => {
+    const roster = [{ seat: 1, name: 'Nguyễn An' }, { seat: 2, name: 'Trần Bình' }];
+    const r = await call<BellHostView>('/games', { teacher: T, body: { title: 'Lớp', mode: 'online', perQuestionSec: 15, questions: QUESTIONS, roster } });
+    expect(r.status).toBe(201);
+    expect(r.data.players).toEqual([]);
+    const code = r.data.code;
+    const list = (await call<{ roster: { seat: number; name: string; taken: boolean }[] }>(`/roster?code=${code}`)).data.roster;
+    expect(list).toEqual([{ seat: 1, name: 'Nguyễn An', taken: false }, { seat: 2, name: 'Trần Bình', taken: false }]);
+    expect((await call('/join', { body: { code, name: 'Ai đó' } })).status).toBe(409);
+    expect((await call('/join', { body: { code, seat: 2, name: 'Tên khác' } })).status).toBe(201);
+    const again = await call('/join', { body: { code, seat: 2 } });
+    expect(again.status).toBe(409);
+    expect(again.data.error).toContain('đã vào phòng');
+    expect((await call<{ roster: { taken: boolean }[] }>(`/roster?code=${code}`)).data.roster.map((e) => e.taken)).toEqual([false, true]);
+    const h = (await call<BellHostView>(`/games/${r.data.id}`, { teacher: T })).data;
+    expect(h.players.map((p) => [p.seat, p.name])).toEqual([[2, 'Trần Bình']]);
+    expect((await call('/roster?code=000000')).status).toBe(404);
+    const open = await call<BellHostView>('/games', { teacher: T, body: { title: 'Tự do', mode: 'online', perQuestionSec: 15, questions: QUESTIONS } });
+    expect((await call<{ roster: null }>(`/roster?code=${open.data.code}`)).data.roster).toBeNull();
+  });
+});
+
 describe('Rung chuông vàng – Offline (bảng con)', () => {
   it('giáo viên chấm từng ô; thiếu ô chưa chấm thì không chốt', async () => {
     const r = await call<BellHostView>('/games', { teacher: T, body: { title: 'Bảng con', mode: 'offline', perQuestionSec: 15, questions: QUESTIONS, players: ['An', 'Bình', 'Chi'] } });

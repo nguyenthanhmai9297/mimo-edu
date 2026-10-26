@@ -40,6 +40,7 @@
     "firebase": "^13.1.0",
     "firebase-admin": "14.5.0",
     "html-to-image": "1.11.13",
+    "jszip": "3.10.2",
     "katex": "^0.19.0",
     "lucide-react": "^0.546.0",
     "mathlive": "0.111.0",
@@ -52,6 +53,7 @@
     "react-router-dom": "^7.18.4",
     "three": "^0.186.1",
     "vite": "^8.3.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
     "zod": "^4.6.7"
   },
   "devDependencies": {

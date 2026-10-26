@@ -34,6 +34,7 @@ import {
 import { homeworkPath, NEW_HOMEWORK, withSaveTimeout } from '../../homework/homeworkFlow';
 import { MAX_BELL_QUESTIONS, MAX_PLAYERS, type BellMode, type BellSummary } from './bellEngine';
 import { bellQuestionsOf } from './bellQuestions';
+import { BellRosterPicker, keepRoster, loadRoster, rosterPlayers, type Roster } from './BellRoster';
 import { BellAnswerFix, needsAnswer } from './BellAnswerFix';
 
 const SECONDS = [10, 15, 20, 30, 45, 60, 90];
@@ -64,15 +65,18 @@ const tab = (on: boolean) =>
 
 /** Rung chuông vàng setup: choose a homework, choose how to play, start. */
 export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
-  const { homeworkList, classes, students, adminDataLoading } = useAppContext();
+  const { homeworkList, adminDataLoading } = useAppContext();
+  const [roster, setRosterState] = useState<Roster | null>(loadRoster);
+  const setRoster = (r: Roster | null) => {
+    setRosterState(r);
+    keepRoster(r);
+  };
   const navigate = useNavigate();
   const [source, setSource] = useState<'saved' | 'new'>('saved');
   const [homeworkId, setHomeworkId] = useState(preselect);
   const [mode, setMode] = useState<BellMode>('online');
   const [seconds, setSeconds] = useState(20);
   const [count, setCount] = useState(0);
-  const [classId, setClassId] = useState('');
-  const [names, setNames] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const [reading, setReading] = useState<number | null>(null);
@@ -96,22 +100,13 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
   );
   const chosen = all.find((o) => o.hw.id === homeworkId) ?? null;
   const max = Math.min(MAX_BELL_QUESTIONS, chosen?.usable.length ?? 0);
-  const activeClasses = classes.filter((c) => c.status === 'active');
-  const roster = names.split('\n').map((n) => n.trim()).filter(Boolean);
+  const players = rosterPlayers(roster);
 
   useEffect(() => {
     if (!homeworkId && all.length) setHomeworkId((all.find((o) => o.usable.length > 0) ?? all[0]).hw.id);
   }, [homeworkId, all]);
   // All playable questions by default (the game takes at most 30)
   useEffect(() => setCount(max), [max, homeworkId]);
-  useEffect(() => {
-    if (mode === 'offline' && !classId && !names && activeClasses.length) setClassId(activeClasses[0].id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode]);
-  useEffect(() => {
-    if (!classId) return;
-    setNames(students.filter((s) => s.status === 'active' && s.classIds.includes(classId)).map((s) => s.fullName).join('\n'));
-  }, [classId, students]);
   const loadSaved = useCallback(() => {
     setSavedError('');
     listBellGames()
@@ -214,7 +209,8 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
         mode,
         perQuestionSec: seconds,
         questions: chosen.usable.slice(0, Math.max(1, count)),
-        players: mode === 'offline' ? roster : [],
+        players: mode === 'offline' ? players : [],
+        roster: mode === 'online' ? players : [],
       });
       navigate(`${BELL_PATH}?game=${view.id}`);
     } catch (e) {
@@ -224,8 +220,8 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
     }
   };
 
-  const offlineReady = roster.length > 0 && roster.length <= MAX_PLAYERS;
-  const canStart = source === 'saved' && Boolean(chosen) && max > 0 && (mode === 'online' || offlineReady);
+  const playersReady = players.length <= MAX_PLAYERS && (mode === 'online' || players.length > 0);
+  const canStart = source === 'saved' && Boolean(chosen) && max > 0 && playersReady;
   const blocker =
     source === 'new'
       ? 'Tải đề lên trước.'
@@ -233,10 +229,10 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
         ? 'Chọn một đề.'
         : max === 0
           ? 'Bấm “Xác nhận đáp án”.'
-          : mode === 'offline' && !offlineReady
-            ? roster.length > MAX_PLAYERS
+          : !playersReady
+            ? players.length > MAX_PLAYERS
               ? `Tối đa ${MAX_PLAYERS} học sinh.`
-              : 'Chọn lớp hoặc nhập tên học sinh.'
+              : 'Chọn lớp hoặc tải danh sách học sinh.'
             : '';
 
   return (
@@ -342,22 +338,7 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
               </label>
             ))}
           </div>
-          {mode === 'offline' && (
-            <div className="space-y-2">
-              <select id="bell-class" aria-label="Lớp" className={STUDIO_INPUT} value={classId} onChange={(e) => setClassId(e.target.value)}>
-                <option value="">– Tự nhập tên học sinh –</option>
-                {activeClasses.map((c) => (
-                  <option key={c.id} value={c.id}>{c.name}</option>
-                ))}
-              </select>
-              <details open={!classId}>
-                <summary className="cursor-pointer text-xs font-bold text-[#3B4A66]">
-                  {roster.length} học sinh trên sân {classId ? '– sửa danh sách' : ''}
-                </summary>
-                <textarea id="bell-names" aria-label="Tên học sinh, mỗi dòng một bạn" rows={5} className={`${STUDIO_INPUT} mt-1`} value={names} onChange={(e) => setNames(e.target.value)} placeholder={'Nguyễn An\nTrần Bình\nLê Chi'} />
-              </details>
-            </div>
-          )}
+          <BellRosterPicker roster={roster} onChange={setRoster} optional={mode === 'online'} />
         </Step>
 
         <Step n={3} title="Thời gian mỗi câu">
@@ -380,7 +361,7 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
             {busy ? 'Đang chuẩn bị sân…' : 'Bắt đầu Rung chuông vàng'}
           </button>
           <p className="text-center text-xs text-[#5E6C84]" data-testid="bell-start-note">
-            {blocker || `${Math.min(count, max)} câu${mode === 'offline' ? ` · ${roster.length} học sinh` : ''}`}
+            {blocker || `${Math.min(count, max)} câu${players.length ? ` · ${players.length} học sinh` : ''}`}
           </p>
         </div>
 

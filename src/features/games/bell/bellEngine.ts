@@ -51,6 +51,11 @@ export interface BellPlayer {
   history: BellTurn[];
 }
 
+export interface BellRosterEntry {
+  seat: number;
+  name: string;
+}
+
 export interface BellGame {
   id: string;
   code: string;
@@ -68,6 +73,8 @@ export interface BellGame {
   remainingMs: number | null;
   rescuesUsed: number;
   players: BellPlayer[];
+  /** Online with a class list: pupils pick their own name (and its number) to join. */
+  roster?: BellRosterEntry[] | null;
   createdAt: number;
   endedAt: number | null;
   /** Pupils may join (online) until then. */
@@ -87,12 +94,20 @@ const alive = (g: BellGame) => g.players.filter((p) => p.alive);
 export const aliveCount = (g: BellGame) => alive(g).length;
 export const isLastQuestion = (g: BellGame) => g.index >= g.questions.length - 1;
 
-export function addPlayer(g: BellGame, id: string, name: string): Step {
+export const cleanPlayerName = (name: string) => name.replace(/\s+/g, ' ').trim().slice(0, 40);
+export const MAX_SEAT = 999;
+
+/** A pupil takes the next number, or a fixed one (their number in the class list). */
+export function addPlayer(g: BellGame, id: string, name: string, fixedSeat?: number): Step {
   if (g.status !== 'lobby') return 'Trận đấu đã bắt đầu, không vào thêm được.';
   if (g.players.length >= MAX_PLAYERS) return `Sân đã đủ ${MAX_PLAYERS} người chơi.`;
-  const clean = name.replace(/\s+/g, ' ').trim().slice(0, 40);
+  const clean = cleanPlayerName(name);
   if (!clean) return 'Cần nhập tên.';
-  const seat = Math.max(0, ...g.players.map((p) => p.seat)) + 1;
+  if (fixedSeat !== undefined) {
+    if (!Number.isInteger(fixedSeat) || fixedSeat < 1 || fixedSeat > MAX_SEAT) return 'Số thứ tự không hợp lệ.';
+    if (g.players.some((p) => p.seat === fixedSeat)) return `Bạn số ${fixedSeat} đã vào phòng rồi. Nếu đúng là con, hãy báo thầy cô.`;
+  }
+  const seat = fixedSeat ?? Math.max(0, ...g.players.map((p) => p.seat)) + 1;
   return { ...g, players: [...g.players, { id, seat, name: clean, alive: true, outAt: null, correct: 0, wrong: 0, score: 0, rescued: 0, history: [] }] };
 }
 
