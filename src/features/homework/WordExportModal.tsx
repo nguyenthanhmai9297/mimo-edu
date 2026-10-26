@@ -1,9 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { AlertTriangle, CheckCircle2, Download, Loader2, Sparkles, X } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, Download, Loader2, X } from 'lucide-react';
 import { STUDIO_INPUT, STUDIO_LABEL } from '../../components/studio/StudioUi';
-import { MAX_REDRAW_HISTORY, parseFigureSpec, type FigureRedraw, type FigureSpec } from './figureSpec';
-import { compareWithOriginal, figureForAI, redrawAutomatically, redrawWithAI, type RedrawAttempt } from './figureRedrawService';
-import { FigureRedrawReview, STATUS_TEXT, type ReviewFigure } from './FigureRedrawReview';
 import { collectFigures } from './figureRedrawApply';
 
 export { collectFigures };
@@ -12,7 +9,6 @@ import {
   DEFAULT_WORD_OPTIONS,
   WordExportError,
   wordFileName,
-  type FigureMode,
   type WordContent,
   type WordExportOptions,
   type WordHomework,
@@ -25,28 +21,9 @@ interface WordExportModalProps {
   homework: WordHomework;
   /** The editor has changes not saved yet (the file still follows what is on screen). */
   unsaved: boolean;
-  /**
-   * Sets (or with null, removes) the approved redraw of every picture with this
-   * key in the homework; without it the figure section is not offered.
-   */
-  onFigureRedraw?: (figureKey: string, redraw: FigureRedraw | null) => void;
-  /** Figures of a just-imported homework are still being redrawn automatically. */
+  /** AI is still redrawing figures in the editor; those not done yet go in as the original picture. */
   autoRedrawing?: boolean;
 }
-
-const FIGURE_MODES: { value: FigureMode; title: string; desc: string }[] = [
-  { value: 'selected', title: 'Dùng hình vẽ lại tự động', desc: 'Hình không vẽ lại được thì giữ hình gốc' },
-  { value: 'original', title: 'Dùng toàn bộ hình gốc', desc: 'Không dùng hình vẽ lại nào' },
-];
-
-
-interface FigureState {
-  attempts: RedrawAttempt[];
-  running: boolean;
-  error: string;
-}
-
-const usd = (n: number) => `${n.toFixed(2).replace('.', ',')} USD`;
 
 const CONTENT_CHOICES: { value: WordContent; title: string; desc: string }[] = [
   { value: 'exam', title: 'Đề không đáp án', desc: 'Phát cho học sinh làm bài' },
@@ -65,7 +42,7 @@ const STORAGE_KEY = 'mimo.wordExport.v1';
 function remembered(): Partial<WordExportOptions> {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    // The figure choice is not remembered: each export starts from the approved redraws
+    // Figures are not a choice any more: redraws in use go in, the rest stay original
     const { figureMode: _ignored, ...layout } = raw ? (JSON.parse(raw) as Partial<WordExportOptions>) : {};
     return layout;
   } catch {
@@ -75,29 +52,21 @@ function remembered(): Partial<WordExportOptions> {
 
 const kb = (bytes: number) => `${Math.max(1, Math.round(bytes / 1024))} KB`;
 
-export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose, homework, unsaved, onFigureRedraw, autoRedrawing }) => {
+export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose, homework, unsaved, autoRedrawing }) => {
   const [options, setOptions] = useState<WordExportOptions>(() => ({ ...DEFAULT_WORD_OPTIONS, ...remembered() }));
   const [building, setBuilding] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<string | null>(null);
   const [warnings, setWarnings] = useState<string[]>([]);
-  const [figureState, setFigureState] = useState<Record<string, FigureState>>({});
-  const [reviewing, setReviewing] = useState<string | null>(null);
-  const [batch, setBatch] = useState<{ done: number; total: number } | null>(null);
-  const [spent, setSpent] = useState(0);
-  const [approvedNote, setApprovedNote] = useState('');
-  const figures = useMemo(() => collectFigures(homework.questions), [homework.questions]);
-  const usable = (f: ReviewFigure) => Boolean(f.redraw?.active && parseFigureSpec(f.redraw.spec));
-  /** What the file will really contain, said plainly so a teacher never expects a redraw that is not there. */
-  const figureSummary = () => {
-    if (!figures.length) return '';
-    const redrawn = options.figureMode === 'original' ? 0 : figures.filter(usable).length;
-    return `Hình trong tệp Word: ${redrawn} hình vẽ lại, ${figures.length - redrawn} hình gốc.`;
-  };
   const preview = useRef<HTMLDivElement>(null);
   const run = useRef(0);
 
-  const effective: WordExportOptions = { ...options, title: options.title.trim() || homework.title };
+  const effective: WordExportOptions = { ...options, title: options.title.trim() || homework.title, figureMode: 'selected' };
+  /** Figures AI has not finished yet (they go into the file as the original picture). */
+  const pendingFigures = useMemo(
+    () => (autoRedrawing ? collectFigures(homework.questions).filter((f) => !f.redraw && !f.skipped).length : 0),
+    [autoRedrawing, homework.questions]
+  );
   const key = JSON.stringify([effective, homework]);
 
   const set = <K extends keyof WordExportOptions>(k: K, v: WordExportOptions[K]) => {
@@ -131,47 +100,6 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
     const found: string[] = [];
     const blob = await buildHomeworkDocx(homework, effective, { ...browserWordDeps, onWarning: (m) => found.push(m) });
     return { blob, found: [...new Set(found)] };
-  };
-
-  // ---- Figure redraws -------------------------------------------------------
-  const patchFigure = (key: string, patch: Partial<FigureState>) =>
-    setFigureState((prev) => ({ ...prev, [key]: { ...(prev[key] ?? { attempts: [], running: false, error: '' }), ...patch } }));
-
-  const runRedraw = async (fig: ReviewFigure, hint = '') => {
-    patchFigure(fig.key, { running: true, error: '' });
-    try {
-      const attempt = hint ? await redrawWithAI(fig.url, fig.questionText, hint) : await redrawAutomatically(fig.url, fig.questionText);
-      setSpent((s) => s + attempt.costUsd);
-      setFigureState((prev) => ({ ...prev, [fig.key]: { attempts: [...(prev[fig.key]?.attempts ?? []), attempt], running: false, error: '' } }));
-      // Same rule as after import: in use only when the AI comparison matches and no check found a problem
-      if (attempt.status === 'ok' && attempt.spec && !hint) approve(fig, attempt.spec, 'ai', false);
-    } catch (err) {
-      patchFigure(fig.key, { running: false, error: err instanceof Error ? err.message : String(err) });
-    }
-  };
-
-  const runBatch = async (list: ReviewFigure[]) => {
-    setBatch({ done: 0, total: list.length });
-    // One at a time: keeps within the AI limits and shows progress figure by figure
-    for (const [i, fig] of list.entries()) {
-      await runRedraw(fig);
-      setBatch({ done: i + 1, total: list.length });
-    }
-    setBatch(null);
-  };
-
-  const approve = (fig: ReviewFigure, spec: FigureSpec, origin: FigureRedraw['origin'], close = true) => {
-    const prev = fig.redraw;
-    const history = prev ? [{ spec: prev.spec, approvedAt: prev.approvedAt }, ...(prev.history ?? [])].slice(0, MAX_REDRAW_HISTORY) : [];
-    onFigureRedraw?.(fig.key, { active: true, spec, approvedAt: new Date().toISOString(), origin, history });
-    if (close) setReviewing(null);
-    setApprovedNote('Bấm “Lưu Bản Nháp” để lưu hình vẽ lại cùng đề.');
-  };
-
-  const keepOriginal = (fig: ReviewFigure) => {
-    // The drawing stays with the question (inactive) so it can be restored later
-    if (fig.redraw?.active) onFigureRedraw?.(fig.key, { ...fig.redraw, active: false });
-    setReviewing(null);
   };
 
   // Preview: the real .docx, rendered page by page, rebuilt shortly after each change
@@ -209,7 +137,7 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
       if (!blob.size) throw new WordExportError('Tệp tạo ra bị rỗng.');
       const name = wordFileName(effective.title, effective.content);
       saveFile(blob, name);
-      setDone(`Đã tạo và tải xuống ${name} (${kb(blob.size)}). ${figureSummary()}`.trim());
+      setDone(`Đã tải ${name} (${kb(blob.size)}).${pendingFigures ? ` ${pendingFigures} hình AI chưa vẽ xong nên dùng hình gốc.` : ''}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -220,29 +148,24 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
   if (!open) return null;
   const marginName = Object.entries(MARGIN_PRESETS).find(([, m]) => JSON.stringify(m) === JSON.stringify(options.margins))?.[0] ?? 'Chuẩn (trái 2,5 cm)';
   const hasEssay = homework.questions.some((q) => q.type === 'essay');
-  const figureMode = options.figureMode ?? 'selected';
-  const toRun = figures.filter((f) => !usable(f) && !(autoRedrawing && !f.redraw && !f.skipped));
-  const reviewFig = figures.find((f) => f.key === reviewing);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-3" role="dialog" aria-modal="true" aria-label="Tải Word">
       <div className="flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-3xl bg-white shadow-2xl">
         <div className="flex items-center justify-between border-b border-[#EEF3F9] px-5 py-3">
-          <div>
-            <h2 className="text-lg font-extrabold text-[#172B4D]">Tải Word (.docx)</h2>
-            <p className="text-xs text-[#5E6C84]">Chữ, bảng và công thức sửa được trong Word; hình được chèn riêng tại từng câu.</p>
-          </div>
+          <h2 className="text-lg font-extrabold text-[#172B4D]">Tải Word (.docx)</h2>
           <button type="button" onClick={onClose} aria-label="Đóng" className="rounded-xl p-2 text-[#5E6C84] hover:bg-[#F6FAFF]">
             <X className="h-5 w-5" />
           </button>
         </div>
 
-        <div className="grid min-h-0 flex-1 grid-cols-1 overflow-hidden lg:grid-cols-[340px_1fr]">
-          <div className="space-y-4 overflow-y-auto border-r border-[#EEF3F9] p-5 text-sm">
+        {/* Phone: settings then preview, one scroll; wide screen: settings left, preview right */}
+        <div className="grid min-h-0 flex-1 grid-cols-1 overflow-y-auto lg:grid-cols-[340px_1fr] lg:overflow-hidden">
+          <div className="space-y-4 border-b border-[#EEF3F9] p-5 text-sm lg:overflow-y-auto lg:border-r lg:border-b-0">
             {unsaved && (
               <div className="flex gap-2 rounded-xl border border-amber-300 bg-amber-50 p-3 text-xs text-amber-900">
                 <AlertTriangle className="h-4 w-4 shrink-0" />
-                Đề có thay đổi chưa lưu. Tệp Word theo đúng nội dung đang hiển thị trong trình soạn.
+                Đề chưa lưu – tệp Word theo nội dung đang soạn.
               </div>
             )}
             <fieldset>
@@ -259,73 +182,6 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
                 ))}
               </div>
             </fieldset>
-
-            {onFigureRedraw && figures.length > 0 && (
-              <fieldset data-testid="figure-section">
-                <legend className={STUDIO_LABEL}>Xử lý hình minh họa</legend>
-                <div className="space-y-1.5">
-                  {FIGURE_MODES.map((m) => (
-                    <label key={m.value} className={`flex cursor-pointer gap-2 rounded-xl border p-2.5 ${figureMode === m.value ? 'border-[#2563EB] bg-[#EFF6FF]' : 'border-[#DCE7F3]'}`}>
-                      <input type="radio" name="word-figures" checked={figureMode === m.value} onChange={() => set('figureMode', m.value)} />
-                      <span>
-                        <span className="block text-xs font-extrabold text-[#172B4D]">{m.title}</span>
-                        <span className="block text-xs text-[#5E6C84]">{m.desc}</span>
-                      </span>
-                    </label>
-                  ))}
-                </div>
-                {figureMode !== 'original' && (
-                  <div className="mt-2 space-y-1.5">
-                    {figures.map((f) => {
-                      const st = figureState[f.key];
-                      const last = st?.attempts[st.attempts.length - 1];
-                      const waiting = st?.running || (autoRedrawing && !f.redraw && !f.skipped);
-                      const reason = st?.error || (last && last.status !== 'ok' ? (last.status === 'unsupported' ? last.reason : STATUS_TEXT[last.status].text) : '') || f.skipped || '';
-                      return (
-                        <div key={f.key} className="flex items-center gap-2 rounded-xl border border-[#DCE7F3] p-2" data-testid="figure-row">
-                          <img src={f.url} alt="" className="h-10 w-14 rounded border border-[#EEF3F9] object-contain" />
-                          <div className="min-w-0 flex-1">
-                            <p className="text-xs font-extrabold text-[#172B4D]">{f.label}</p>
-                            {waiting ? (
-                              <p className="mt-0.5 inline-block rounded border border-[#DCE7F3] bg-[#F6FAFF] px-1.5 text-[11px] font-bold text-[#2563EB]">AI đang vẽ lại…</p>
-                            ) : usable(f) ? (
-                              <p className="mt-0.5 inline-block rounded border border-emerald-300 bg-emerald-50 px-1.5 text-[11px] font-bold text-emerald-800">Đã vẽ lại tự động</p>
-                            ) : (
-                              <>
-                                <p className="mt-0.5 inline-block rounded border border-slate-300 bg-slate-100 px-1.5 text-[11px] font-bold text-slate-700">Giữ hình gốc</p>
-                                {reason && <p className="text-[11px] text-[#5E6C84]">{reason}</p>}
-                              </>
-                            )}
-                          </div>
-                          {f.redraw && !waiting && (
-                            <button type="button" onClick={() => onFigureRedraw?.(f.key, { ...f.redraw!, active: !usable(f) })}
-                              className="shrink-0 rounded-lg border border-[#DCE7F3] px-2 py-1 text-[11px] font-bold text-[#2563EB]">
-                              {usable(f) ? 'Đổi lại hình gốc' : 'Dùng hình vẽ lại'}
-                            </button>
-                          )}
-                          <button type="button" disabled={!last && !f.redraw} onClick={() => setReviewing(f.key)}
-                            className="shrink-0 rounded-lg border border-[#DCE7F3] px-2 py-1 text-[11px] font-bold text-[#2563EB] disabled:opacity-40">
-                            Xem
-                          </button>
-                        </div>
-                      );
-                    })}
-                    {toRun.length > 0 && (
-                      <button type="button" disabled={Boolean(batch)} onClick={() => void runBatch(toRun)}
-                        className="flex w-full items-center justify-center gap-1.5 rounded-xl border border-[#2563EB] bg-white px-3 py-2 text-xs font-extrabold text-[#2563EB] disabled:opacity-50">
-                        {batch ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
-                        {batch ? `Đang vẽ lại ${batch.done}/${batch.total}…` : `AI vẽ lại hình đang giữ hình gốc (${toRun.length})`}
-                      </button>
-                    )}
-                    <p className="text-[11px] text-[#5E6C84]">
-                      Hình vẽ lại khớp hình gốc được dùng ngay; hình AI chưa chắc chắn thì giữ hình gốc. Mỗi hình khoảng 0,01–0,08 USD.
-                      {spent > 0 ? ` Đã dùng khoảng ${usd(spent)}.` : ''}
-                    </p>
-                    {approvedNote && <p className="text-[11px] font-bold text-[#1F9D6B]" data-testid="figure-approved-note">{approvedNote}</p>}
-                  </div>
-                )}
-              </fieldset>
-            )}
 
             <div>
               <label className={STUDIO_LABEL} htmlFor="word-title">Tiêu đề</label>
@@ -401,7 +257,7 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
             <div className="flex items-center gap-2 border-b border-[#DCE7F3] bg-white px-4 py-2 text-xs text-[#5E6C84]">
               {building ? <Loader2 className="h-4 w-4 animate-spin text-[#2563EB]" /> : null}
               <span className="font-bold text-[#172B4D]">Xem trước</span>
-              <span>{building ? 'Đang tạo tệp…' : error ? 'Chưa tạo được tệp' : 'Bố cục gần đúng; chỗ ngắt trang và dòng kẻ chấm xem chính xác khi mở bằng Word'}</span>
+              {building && <span>Đang tạo tệp…</span>}
             </div>
             <div className="min-h-[300px] flex-1 overflow-auto p-3">
               {error && (
@@ -420,8 +276,10 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
         </div>
 
         <div className="flex flex-wrap items-center justify-end gap-2 border-t border-[#EEF3F9] px-5 py-3">
-          {!done && figures.length > 0 && (
-            <span className="mr-auto text-xs font-bold text-[#3B4A66]" data-testid="figure-summary">{figureSummary()}</span>
+          {!done && pendingFigures > 0 && (
+            <span className="mr-auto text-xs text-[#5E6C84]" data-testid="figure-pending">
+              AI đang vẽ lại {pendingFigures} hình; tải lúc này thì các hình đó dùng bản gốc.
+            </span>
           )}
           {done && (
             <span role="status" className="mr-auto flex items-center gap-1.5 text-xs font-bold text-[#1F9D6B]">
@@ -442,23 +300,6 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
           </button>
         </div>
       </div>
-      {reviewFig && (
-        <FigureRedrawReview
-          figure={reviewFig}
-          attempts={figureState[reviewFig.key]?.attempts ?? []}
-          running={figureState[reviewFig.key]?.running ?? false}
-          error={figureState[reviewFig.key]?.error ?? ''}
-          onRedrawAgain={(hint) => void runRedraw(reviewFig, hint)}
-          onCompare={async (spec) => {
-            const res = await compareWithOriginal(await figureForAI(reviewFig.url), spec, reviewFig.questionText);
-            setSpent((s) => s + res.costUsd);
-            return res.verification;
-          }}
-          onApprove={(spec, origin) => approve(reviewFig, spec, origin)}
-          onKeepOriginal={() => keepOriginal(reviewFig)}
-          onClose={() => setReviewing(null)}
-        />
-      )}
     </div>
   );
 };

@@ -37,7 +37,6 @@ import {
   SourceFile,
 } from './AIImportModal';
 import { FigureRecropModal } from './FigureRecropModal';
-import { withFigureRedraw } from './figureRedrawApply';
 import { useAutoFigureRedraw } from './useAutoFigureRedraw';
 import { bellQuestionsOf } from '../games/bell/bellQuestions';
 import { cropFigure, NormalizedBox } from './figureCrop';
@@ -457,7 +456,13 @@ export const HomeworkPage: React.FC = () => {
   };
 
   const activeFormat: HomeworkFormat = format ?? 'word';
-  const figureRedrawProgress = useAutoFigureRedraw(questions, setQuestions, autoRedraw && Boolean(editorKey) && editorKey === loadedKey);
+  // Word editor: figures never tried are redrawn as soon as the homework is open (right after
+  // AI recognition, or an older homework), never waiting for the Word export window
+  const figureRedrawProgress = useAutoFigureRedraw(
+    questions,
+    setQuestions,
+    (autoRedraw || activeFormat === 'word') && Boolean(editorKey) && editorKey === loadedKey
+  );
 
   const startNewHomework = () => {
     clearSourceFiles();
@@ -1630,7 +1635,6 @@ export const HomeworkPage: React.FC = () => {
             onClose={() => setWordExportOpen(false)}
             homework={{ title: title.trim() || 'Bài tập', description, grade, questions }}
             unsaved={dirty}
-            onFigureRedraw={(key, redraw) => setQuestions((prev) => withFigureRedraw(prev, key, redraw))}
             autoRedrawing={Boolean(figureRedrawProgress)}
           />
         </Suspense>
