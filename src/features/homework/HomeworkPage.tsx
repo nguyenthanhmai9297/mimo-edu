@@ -16,6 +16,7 @@ import {
   Gamepad2,
   History,
   Info,
+  Loader2,
   PenLine,
   Plus,
   Save,
@@ -36,6 +37,7 @@ import {
 } from './AIImportModal';
 import { FigureRecropModal } from './FigureRecropModal';
 import { withFigureRedraw } from './figureRedrawApply';
+import { useAutoFigureRedraw } from './useAutoFigureRedraw';
 import { cropFigure, NormalizedBox } from './figureCrop';
 import {
   FigureCropContext,
@@ -237,6 +239,8 @@ export const HomeworkPage: React.FC = () => {
   const [answerSource, setAnswerSource] = useState<'teacher' | 'ai'>('teacher');
   const [aiSolverEnabled, setAiSolverEnabled] = useState(true);
   const [questions, setQuestions] = useState<HomeworkQuestion[]>([]);
+  // On for a homework just converted from exam pictures: its figures are redrawn without being chosen
+  const [autoRedraw, setAutoRedraw] = useState(false);
   const [saving, setSaving] = useState(false);
   const [wordExportOpen, setWordExportOpen] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -289,6 +293,7 @@ export const HomeworkPage: React.FC = () => {
     setAnswerSource(f.answerSource);
     setAiSolverEnabled(f.aiSolverEnabled);
     setQuestions(f.questions);
+    setAutoRedraw(false);
     setMissingQuestionsWarning(f.missingQuestionsWarning);
     setBaseline(savedSnapshot);
     setRestoredAt(restoredFrom);
@@ -450,6 +455,7 @@ export const HomeworkPage: React.FC = () => {
   };
 
   const activeFormat: HomeworkFormat = format ?? 'word';
+  const figureRedrawProgress = useAutoFigureRedraw(questions, setQuestions, autoRedraw && Boolean(editorKey) && editorKey === loadedKey);
 
   const startNewHomework = () => {
     clearSourceFiles();
@@ -648,7 +654,7 @@ export const HomeworkPage: React.FC = () => {
     aiSolverEnabled: boolean;
     questions: HomeworkQuestion[];
     missingQuestionsWarning?: string | null;
-  }, notice?: string) => {
+  }, notice?: string, autoRedrawFigures = false) => {
     const fields: EditorFields = {
       title: draft.title,
       description: draft.description || '',
@@ -661,6 +667,7 @@ export const HomeworkPage: React.FC = () => {
     // Not saved yet, so it counts as unsaved work from the start
     openInEditor(NEW_HOMEWORK, () => {
       loadEditor(NEW_HOMEWORK, fields, null, '');
+      if (autoRedrawFigures) setAutoRedraw(true);
       if (notice) setErrorMsg(notice);
     });
   };
@@ -726,7 +733,7 @@ export const HomeworkPage: React.FC = () => {
       aiSolverEnabled: solveWithAI,
       questions: data.questions || [],
       missingQuestionsWarning: incompletenessMessage(data.completeness),
-    });
+    }, undefined, format !== 'game');
   };
 
   const modals = (
@@ -964,6 +971,13 @@ export const HomeworkPage: React.FC = () => {
               <Link to="/admin/assignments" className="font-bold text-[#2563EB] hover:underline">Giao bài tập</Link>.
             </span>
             <span className="text-[#5E6C84]">Bấm <b>Tải Word (.docx)</b> để in đề, đề kèm đáp án hoặc file đáp án riêng.</span>
+          </div>
+        )}
+
+        {figureRedrawProgress && (
+          <div role="status" className="flex items-center gap-2 rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] px-4 py-2.5 text-xs font-bold text-[#2563EB]" data-testid="auto-redraw-progress">
+            <Loader2 className="h-4 w-4 animate-spin" />
+            AI đang tự vẽ lại hình minh họa ({figureRedrawProgress.done}/{figureRedrawProgress.total})… Thầy cô vẫn soạn tiếp được.
           </div>
         )}
 
@@ -1615,6 +1629,7 @@ export const HomeworkPage: React.FC = () => {
             homework={{ title: title.trim() || 'Bài tập', description, grade, questions }}
             unsaved={dirty}
             onFigureRedraw={(key, redraw) => setQuestions((prev) => withFigureRedraw(prev, key, redraw))}
+            autoRedrawing={Boolean(figureRedrawProgress)}
           />
         </Suspense>
       )}

@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { AlertTriangle, CheckCircle2, Download, Loader2, Sparkles, X } from 'lucide-react';
 import { STUDIO_INPUT, STUDIO_LABEL } from '../../components/studio/StudioUi';
-import type { HomeworkQuestion, RichTextContent } from '../../types/domain';
 import { MAX_REDRAW_HISTORY, parseFigureSpec, type FigureRedraw, type FigureSpec } from './figureSpec';
-import { compareWithOriginal, figureForAI, redrawWithAI, type RedrawAttempt } from './figureRedrawService';
+import { compareWithOriginal, figureForAI, redrawAutomatically, redrawWithAI, type RedrawAttempt } from './figureRedrawService';
 import { FigureRedrawReview, STATUS_TEXT, type ReviewFigure } from './FigureRedrawReview';
-import { figureKeyOf } from './figureRedrawApply';
+import { collectFigures } from './figureRedrawApply';
+
+export { collectFigures };
 import {
   buildHomeworkDocx,
   DEFAULT_WORD_OPTIONS,
-  groupQuestions,
   WordExportError,
   wordFileName,
   type FigureMode,
@@ -30,35 +30,15 @@ interface WordExportModalProps {
    * key in the homework; without it the figure section is not offered.
    */
   onFigureRedraw?: (figureKey: string, redraw: FigureRedraw | null) => void;
+  /** Figures of a just-imported homework are still being redrawn automatically. */
+  autoRedrawing?: boolean;
 }
 
 const FIGURE_MODES: { value: FigureMode; title: string; desc: string }[] = [
-  { value: 'original', title: 'Giữ nguyên hình gốc', desc: 'Không dùng hình vẽ lại nào' },
-  { value: 'selected', title: 'AI vẽ lại các hình được giáo viên chọn', desc: 'Đánh dấu hình cần vẽ lại bên dưới' },
-  { value: 'suggest', title: 'AI đề xuất vẽ lại tất cả hình phù hợp', desc: 'AI thử mọi hình, bỏ qua hình không hợp' },
+  { value: 'selected', title: 'Dùng hình vẽ lại tự động', desc: 'Hình không vẽ lại được thì giữ hình gốc' },
+  { value: 'original', title: 'Dùng toàn bộ hình gốc', desc: 'Không dùng hình vẽ lại nào' },
 ];
 
-
-/** Each distinct picture of the homework, with the question it belongs to. */
-export function collectFigures(questions: HomeworkQuestion[]): ReviewFigure[] {
-  const seen = new Map<string, ReviewFigure>();
-  const text = (c: RichTextContent | undefined) =>
-    (c?.blocks ?? []).map((b) => (b.type === 'paragraph' ? b.text : b.type === 'list' ? b.items.join('; ') : b.type === 'table' ? b.rows.map((r) => r.cells.join(' | ')).join('\n') : '')).filter(Boolean).join('\n');
-  groupQuestions(questions).forEach((group, i) => {
-    const questionText = group.map((q) => text(q.prompt)).join('\n');
-    for (const q of group) {
-      const contents = [q.prompt, ...(q.options ?? []).map((o) => o.content), ...(q.statements ?? []).map((st) => st.statement)];
-      for (const c of contents) {
-        for (const b of c?.blocks ?? []) {
-          if (b.type !== 'image' || !b.url) continue;
-          const key = figureKeyOf(b);
-          if (!seen.has(key)) seen.set(key, { key, url: b.url, label: `Câu ${i + 1}`, questionText, ...(b.redraw ? { redraw: b.redraw } : {}) });
-        }
-      }
-    }
-  });
-  return [...seen.values()];
-}
 
 interface FigureState {
   attempts: RedrawAttempt[];
@@ -95,14 +75,13 @@ function remembered(): Partial<WordExportOptions> {
 
 const kb = (bytes: number) => `${Math.max(1, Math.round(bytes / 1024))} KB`;
 
-export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose, homework, unsaved, onFigureRedraw }) => {
+export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose, homework, unsaved, onFigureRedraw, autoRedrawing }) => {
   const [options, setOptions] = useState<WordExportOptions>(() => ({ ...DEFAULT_WORD_OPTIONS, ...remembered() }));
   const [building, setBuilding] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<string | null>(null);
   const [warnings, setWarnings] = useState<string[]>([]);
   const [figureState, setFigureState] = useState<Record<string, FigureState>>({});
-  const [chosen, setChosen] = useState<Set<string>>(new Set());
   const [reviewing, setReviewing] = useState<string | null>(null);
   const [batch, setBatch] = useState<{ done: number; total: number } | null>(null);
   const [spent, setSpent] = useState(0);
@@ -113,13 +92,8 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
   const figureSummary = () => {
     if (!figures.length) return '';
     const redrawn = options.figureMode === 'original' ? 0 : figures.filter(usable).length;
-    return `Hình trong tệp Word: ${redrawn} hình vẽ lại đã duyệt, ${figures.length - redrawn} hình gốc.`;
+    return `Hình trong tệp Word: ${redrawn} hình vẽ lại, ${figures.length - redrawn} hình gốc.`;
   };
-  const pendingApproval = figures.filter((f) => {
-    const st = figureState[f.key];
-    const last = st?.attempts[st.attempts.length - 1];
-    return !usable(f) && last && last.status !== 'unsupported';
-  });
   const preview = useRef<HTMLDivElement>(null);
   const run = useRef(0);
 
@@ -166,9 +140,11 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
   const runRedraw = async (fig: ReviewFigure, hint = '') => {
     patchFigure(fig.key, { running: true, error: '' });
     try {
-      const attempt = await redrawWithAI(fig.url, fig.questionText, hint);
+      const attempt = hint ? await redrawWithAI(fig.url, fig.questionText, hint) : await redrawAutomatically(fig.url, fig.questionText);
       setSpent((s) => s + attempt.costUsd);
       setFigureState((prev) => ({ ...prev, [fig.key]: { attempts: [...(prev[fig.key]?.attempts ?? []), attempt], running: false, error: '' } }));
+      // Same rule as after import: in use only when the AI comparison matches and no check found a problem
+      if (attempt.status === 'ok' && attempt.spec && !hint) approve(fig, attempt.spec, 'ai', false);
     } catch (err) {
       patchFigure(fig.key, { running: false, error: err instanceof Error ? err.message : String(err) });
     }
@@ -184,12 +160,12 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
     setBatch(null);
   };
 
-  const approve = (fig: ReviewFigure, spec: FigureSpec, origin: FigureRedraw['origin']) => {
+  const approve = (fig: ReviewFigure, spec: FigureSpec, origin: FigureRedraw['origin'], close = true) => {
     const prev = fig.redraw;
     const history = prev ? [{ spec: prev.spec, approvedAt: prev.approvedAt }, ...(prev.history ?? [])].slice(0, MAX_REDRAW_HISTORY) : [];
     onFigureRedraw?.(fig.key, { active: true, spec, approvedAt: new Date().toISOString(), origin, history });
-    setReviewing(null);
-    setApprovedNote(`Đã duyệt hình ${fig.label}. Bấm “Lưu Bản Nháp” để lưu hình đã duyệt cùng đề.`);
+    if (close) setReviewing(null);
+    setApprovedNote('Bấm “Lưu Bản Nháp” để lưu hình vẽ lại cùng đề.');
   };
 
   const keepOriginal = (fig: ReviewFigure) => {
@@ -245,7 +221,7 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
   const marginName = Object.entries(MARGIN_PRESETS).find(([, m]) => JSON.stringify(m) === JSON.stringify(options.margins))?.[0] ?? 'Chuẩn (trái 2,5 cm)';
   const hasEssay = homework.questions.some((q) => q.type === 'essay');
   const figureMode = options.figureMode ?? 'selected';
-  const toRun = figureMode === 'suggest' ? figures.filter((f) => !usable(f) && !figureState[f.key]?.attempts.length) : figures.filter((f) => chosen.has(f.key));
+  const toRun = figures.filter((f) => !usable(f) && !(autoRedrawing && !f.redraw && !f.skipped));
   const reviewFig = figures.find((f) => f.key === reviewing);
 
   return (
@@ -303,52 +279,48 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
                     {figures.map((f) => {
                       const st = figureState[f.key];
                       const last = st?.attempts[st.attempts.length - 1];
-                      const failed = !usable(f) && (st?.error || last?.status === 'unsupported');
-                      const badge = usable(f)
-                        ? { text: 'Đã duyệt', tone: 'bg-emerald-50 text-emerald-800 border-emerald-300' }
-                        : failed
-                          ? { text: 'Không thể tái dựng chính xác, đang giữ hình gốc', tone: 'bg-slate-100 text-slate-700 border-slate-300' }
-                          : last
-                            ? { text: 'Đã vẽ lại – chờ duyệt', tone: 'bg-amber-50 text-amber-900 border-amber-300' }
-                            : { text: 'Hình gốc', tone: 'bg-white text-[#5E6C84] border-[#DCE7F3]' };
-                      // AI's own verdict on a pending redraw (matches / needs a check / has errors)
-                      const detail = !usable(f) && !failed && last ? STATUS_TEXT[last.status].text : '';
+                      const waiting = st?.running || (autoRedrawing && !f.redraw && !f.skipped);
+                      const reason = st?.error || (last && last.status !== 'ok' ? (last.status === 'unsupported' ? last.reason : STATUS_TEXT[last.status].text) : '') || f.skipped || '';
                       return (
                         <div key={f.key} className="flex items-center gap-2 rounded-xl border border-[#DCE7F3] p-2" data-testid="figure-row">
-                          {figureMode === 'selected' && (
-                            <input type="checkbox" aria-label={`Chọn hình ${f.label}`} checked={chosen.has(f.key)}
-                              onChange={(e) => setChosen((prev) => { const next = new Set(prev); if (e.target.checked) next.add(f.key); else next.delete(f.key); return next; })} />
-                          )}
                           <img src={f.url} alt="" className="h-10 w-14 rounded border border-[#EEF3F9] object-contain" />
                           <div className="min-w-0 flex-1">
                             <p className="text-xs font-extrabold text-[#172B4D]">{f.label}</p>
-                            <p className={`mt-0.5 inline-block rounded border px-1.5 text-[11px] font-bold ${badge.tone}`}>
-                              {st?.running ? 'AI đang vẽ lại…' : badge.text}
-                            </p>
-                            {detail && <p className="text-[11px] text-[#5E6C84]">{detail}</p>}
-                            {st?.error && <p className="text-[11px] text-rose-700">{st.error}</p>}
+                            {waiting ? (
+                              <p className="mt-0.5 inline-block rounded border border-[#DCE7F3] bg-[#F6FAFF] px-1.5 text-[11px] font-bold text-[#2563EB]">AI đang vẽ lại…</p>
+                            ) : usable(f) ? (
+                              <p className="mt-0.5 inline-block rounded border border-emerald-300 bg-emerald-50 px-1.5 text-[11px] font-bold text-emerald-800">Đã vẽ lại tự động</p>
+                            ) : (
+                              <>
+                                <p className="mt-0.5 inline-block rounded border border-slate-300 bg-slate-100 px-1.5 text-[11px] font-bold text-slate-700">Giữ hình gốc</p>
+                                {reason && <p className="text-[11px] text-[#5E6C84]">{reason}</p>}
+                              </>
+                            )}
                           </div>
+                          {f.redraw && !waiting && (
+                            <button type="button" onClick={() => onFigureRedraw?.(f.key, { ...f.redraw!, active: !usable(f) })}
+                              className="shrink-0 rounded-lg border border-[#DCE7F3] px-2 py-1 text-[11px] font-bold text-[#2563EB]">
+                              {usable(f) ? 'Đổi lại hình gốc' : 'Dùng hình vẽ lại'}
+                            </button>
+                          )}
                           <button type="button" disabled={!last && !f.redraw} onClick={() => setReviewing(f.key)}
                             className="shrink-0 rounded-lg border border-[#DCE7F3] px-2 py-1 text-[11px] font-bold text-[#2563EB] disabled:opacity-40">
-                            Xem &amp; duyệt
+                            Xem
                           </button>
                         </div>
                       );
                     })}
-                    <button type="button" disabled={!toRun.length || Boolean(batch)} onClick={() => void runBatch(toRun)}
-                      className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#2563EB] px-3 py-2 text-xs font-extrabold text-white disabled:opacity-50">
-                      {batch ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
-                      {batch ? `Đang vẽ lại ${batch.done}/${batch.total}…` : figureMode === 'suggest' ? `AI vẽ lại tất cả (${toRun.length})` : `AI vẽ lại hình đã chọn (${toRun.length})`}
-                    </button>
+                    {toRun.length > 0 && (
+                      <button type="button" disabled={Boolean(batch)} onClick={() => void runBatch(toRun)}
+                        className="flex w-full items-center justify-center gap-1.5 rounded-xl border border-[#2563EB] bg-white px-3 py-2 text-xs font-extrabold text-[#2563EB] disabled:opacity-50">
+                        {batch ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
+                        {batch ? `Đang vẽ lại ${batch.done}/${batch.total}…` : `AI vẽ lại hình đang giữ hình gốc (${toRun.length})`}
+                      </button>
+                    )}
                     <p className="text-[11px] text-[#5E6C84]">
-                      Mỗi hình dùng 2 lượt AI (đọc hình, so với hình gốc), khoảng 0,01–0,04 USD. Hình vẽ lại chỉ vào tệp Word sau khi thầy cô duyệt.
+                      Hình vẽ lại khớp hình gốc được dùng ngay; hình AI chưa chắc chắn thì giữ hình gốc. Mỗi hình khoảng 0,01–0,08 USD.
                       {spent > 0 ? ` Đã dùng khoảng ${usd(spent)}.` : ''}
                     </p>
-                    {pendingApproval.length > 0 && (
-                      <p className="rounded-lg border border-amber-300 bg-amber-50 p-2 text-[11px] font-bold text-amber-900" data-testid="figure-pending">
-                        {pendingApproval.map((f) => f.label).join(', ')}: đã vẽ lại nhưng chưa duyệt – tệp Word vẫn dùng hình gốc. Bấm “Xem &amp; duyệt” rồi “Dùng hình vẽ lại”.
-                      </p>
-                    )}
                     {approvedNote && <p className="text-[11px] font-bold text-[#1F9D6B]" data-testid="figure-approved-note">{approvedNote}</p>}
                   </div>
                 )}

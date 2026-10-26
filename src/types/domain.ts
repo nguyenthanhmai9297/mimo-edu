@@ -73,8 +73,10 @@ export type RichBlockNode =
       caption?: string;
       /** Set when the image is kept in the image store; `url` is then its signed address. */
       media?: StoredImage;
-      /** A sharp redraw of this figure the teacher approved, used by the Word export. */
+      /** A sharp redraw of this figure, used by the Word export while `active`. */
       redraw?: FigureRedraw;
+      /** Set when automatic redrawing could not redraw this figure: why the original is kept. */
+      redrawSkipped?: string;
     }
   | {
       type: 'geometry';

@@ -211,3 +211,29 @@ describe('Lưu hình đã duyệt cùng câu hỏi', () => {
     expect(plain.blocks[0]).toEqual({ type: 'image', url: 'https://x/h.png' });
   });
 });
+
+describe('Vẽ lại hình tự động sau khi nhập đề', () => {
+  const img = (url: string) => ({ version: 1 as const, blocks: [{ type: 'paragraph' as const, align: 'left' as const, text: 'Câu hỏi' }, { type: 'image' as const, url }] });
+  const qs = [
+    { id: 'q1', order: 1, type: 'essay', points: 1, prompt: img('blob:a') },
+    { id: 'q2', order: 2, type: 'essay', points: 1, prompt: img('blob:b') },
+  ] as unknown as import('../types/domain').HomeworkQuestion[];
+
+  it('đánh dấu "giữ hình gốc" có lý do; gắn hình vẽ lại thì bỏ dấu đó', async () => {
+    const { collectFigures, withFigureRedraw, withFigureSkipped } = await import('../features/homework/figureRedrawApply');
+    const skipped = withFigureSkipped(qs, 'blob:a', 'AI chưa chắc chắn');
+    const figs = collectFigures(skipped);
+    expect(figs.map((f) => [f.key, f.skipped ?? null])).toEqual([['blob:a', 'AI chưa chắc chắn'], ['blob:b', null]]);
+    const used = withFigureRedraw(skipped, 'blob:a', { active: true, spec: HINH_H, approvedAt: '2026-10-26T00:00:00Z', origin: 'ai' });
+    const a = collectFigures(used)[0];
+    expect(a.skipped).toBeUndefined();
+    expect(a.redraw?.active).toBe(true);
+  });
+
+  it('lý do giữ hình gốc còn nguyên sau khi qua trình soạn', async () => {
+    const { withFigureSkipped } = await import('../features/homework/figureRedrawApply');
+    const content = withFigureSkipped(qs, 'blob:b', 'hình vẽ lại chưa khớp hình gốc')[1].prompt;
+    const back = docToRichText(richTextToDoc(content));
+    expect(back.blocks[1]).toMatchObject({ type: 'image', url: 'blob:b', redrawSkipped: 'hình vẽ lại chưa khớp hình gốc' });
+  });
+});

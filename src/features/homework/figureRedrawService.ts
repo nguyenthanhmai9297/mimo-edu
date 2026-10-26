@@ -145,3 +145,28 @@ export async function redrawWithAI(imageUrl: string, questionText: string, hint 
   const issues = checkFigureSpec(spec, questionText);
   return { ...base, spec, verification, verifyError, issues, status: redrawStatus(issues, base.uncertain, verification), costUsd };
 }
+
+/** What a first reading got wrong, said to the AI for a second reading. */
+function retryHint(a: RedrawAttempt): string {
+  const notes = [
+    ...(a.verification?.differences ?? []).map((d) => d.detail),
+    ...a.issues.filter((i) => i.level !== 'info').map((i) => i.message),
+    ...a.uncertain,
+  ];
+  return notes.length ? `Lần đọc trước chưa đúng: ${notes.join('; ')}. Hãy đọc lại thật kỹ hình gốc.`.slice(0, 500) : '';
+}
+
+/**
+ * The automatic redraw: when the first drawing does not match (or something is
+ * unsure), the AI reads the picture once more, told what was off; the better
+ * outcome is returned. At most two readings per figure.
+ */
+export async function redrawAutomatically(imageUrl: string, questionText: string): Promise<RedrawAttempt> {
+  const first = await redrawWithAI(imageUrl, questionText);
+  if (first.status === 'ok' || first.status === 'unsupported') return first;
+  const second = await redrawWithAI(imageUrl, questionText, retryHint(first));
+  second.costUsd += first.costUsd;
+  if (second.status === 'ok' || !first.spec) return second;
+  // Neither matches: keep the reading the checks liked better ("review" before "wrong")
+  return second.status === 'review' || first.status === 'wrong' ? second : { ...first, costUsd: second.costUsd };
+}

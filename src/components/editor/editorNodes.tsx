@@ -13,6 +13,8 @@ import { GeometryBuilderModal } from './GeometryBuilderModal';
 import { GeometryRenderer } from './GeometryRenderer';
 import { MathField } from './MathField';
 import { useFigureCrop } from './FigureCropContext';
+import { parseFigureSpec } from '../../features/homework/figureSpec';
+import { FigureSvg } from '../../features/homework/figureSvg';
 
 /** Keep ProseMirror away from inputs and buttons living inside node views. */
 const stopEvent = ({ event }: { event: Event }) => {
@@ -211,8 +213,10 @@ const ImageBlockView: React.FC<NodeViewProps> = ({ node, selected, updateAttribu
   const recrop = async () => {
     const url = await figureCrop?.recrop(node.attrs.url);
     // A new crop is a different picture: an approved redraw of the old one no longer applies
-    if (url) updateAttributes({ url, redraw: null });
+    if (url) updateAttributes({ url, redraw: null, redrawSkipped: null });
   };
+  // A redraw (made automatically after import) is shown in place of the crop while in use
+  const redrawSpec = node.attrs.redraw ? parseFigureSpec(node.attrs.redraw.spec) : null;
   return (
     <NodeViewWrapper
       className={`group relative my-2 inline-block max-w-full rounded-xl border-2 bg-white p-2 ${
@@ -220,13 +224,37 @@ const ImageBlockView: React.FC<NodeViewProps> = ({ node, selected, updateAttribu
       }`}
     >
       <div contentEditable={false}>
-        <img
-          src={node.attrs.url}
-          alt={node.attrs.alt || 'Hình minh họa'}
-          referrerPolicy="no-referrer"
-          className="max-h-72 w-auto max-w-full rounded-lg object-contain"
-          draggable={false}
-        />
+        {redrawSpec && node.attrs.redraw.active ? (
+          <FigureSvg spec={redrawSpec} width={360} className="max-h-72 w-auto max-w-full" />
+        ) : (
+          <img
+            src={node.attrs.url}
+            alt={node.attrs.alt || 'Hình minh họa'}
+            referrerPolicy="no-referrer"
+            className="max-h-72 w-auto max-w-full rounded-lg object-contain"
+            draggable={false}
+          />
+        )}
+        {(redrawSpec || node.attrs.redrawSkipped) && (
+          <div className="mt-1 flex flex-wrap items-center justify-center gap-1.5 text-[11px] font-bold" data-testid="figure-status">
+            {redrawSpec && node.attrs.redraw.active ? (
+              <span className="rounded border border-emerald-300 bg-emerald-50 px-1.5 text-emerald-800">Đã vẽ lại tự động</span>
+            ) : (
+              <span className="rounded border border-slate-300 bg-slate-100 px-1.5 text-slate-700" title={node.attrs.redrawSkipped ?? ''}>
+                Giữ hình gốc{node.attrs.redrawSkipped ? ` – ${node.attrs.redrawSkipped}` : ''}
+              </span>
+            )}
+            {redrawSpec && (
+              <button
+                type="button"
+                onClick={() => updateAttributes({ redraw: { ...node.attrs.redraw, active: !node.attrs.redraw.active } })}
+                className="rounded border border-[#DCE7F3] bg-white px-1.5 text-[#2563EB] hover:bg-[#F6FAFF]"
+              >
+                {node.attrs.redraw.active ? 'Đổi lại hình gốc' : 'Dùng hình vẽ lại'}
+              </button>
+            )}
+          </div>
+        )}
         <input
           type="text"
           value={node.attrs.caption}
@@ -352,7 +380,7 @@ export const ImageBlock = Node.create({
   addAttributes() {
     // media: where a stored image lives (image store id, size); redraw: the approved
     // sharp redraw for Word. Both kept untouched through edits.
-    return { url: { default: '' }, alt: { default: '' }, caption: { default: '' }, media: { default: null }, redraw: { default: null } };
+    return { url: { default: '' }, alt: { default: '' }, caption: { default: '' }, media: { default: null }, redraw: { default: null }, redrawSkipped: { default: null } };
   },
   parseHTML() {
     return [{ tag: 'figure[data-image-block]' }];

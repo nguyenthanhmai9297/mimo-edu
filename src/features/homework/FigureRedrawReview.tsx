@@ -31,6 +31,8 @@ export interface ReviewFigure {
   label: string;
   questionText: string;
   redraw?: FigureRedraw;
+  /** Why automatic redrawing kept the original. */
+  skipped?: string;
 }
 
 interface Props {
