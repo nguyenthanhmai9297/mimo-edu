@@ -210,7 +210,8 @@ const ImageBlockView: React.FC<NodeViewProps> = ({ node, selected, updateAttribu
   const canRecrop = figureCrop?.canRecrop(node.attrs.url) ?? false;
   const recrop = async () => {
     const url = await figureCrop?.recrop(node.attrs.url);
-    if (url) updateAttributes({ url });
+    // A new crop is a different picture: an approved redraw of the old one no longer applies
+    if (url) updateAttributes({ url, redraw: null });
   };
   return (
     <NodeViewWrapper
@@ -349,8 +350,9 @@ export const ImageBlock = Node.create({
   atom: true,
   draggable: true,
   addAttributes() {
-    // media: where a stored image lives (image store id, size), kept untouched through edits
-    return { url: { default: '' }, alt: { default: '' }, caption: { default: '' }, media: { default: null } };
+    // media: where a stored image lives (image store id, size); redraw: the approved
+    // sharp redraw for Word. Both kept untouched through edits.
+    return { url: { default: '' }, alt: { default: '' }, caption: { default: '' }, media: { default: null }, redraw: { default: null } };
   },
   parseHTML() {
     return [{ tag: 'figure[data-image-block]' }];

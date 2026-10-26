@@ -35,6 +35,7 @@ import {
   SourceFile,
 } from './AIImportModal';
 import { FigureRecropModal } from './FigureRecropModal';
+import { withFigureRedraw } from './figureRedrawApply';
 import { cropFigure, NormalizedBox } from './figureCrop';
 import {
   FigureCropContext,
@@ -1613,6 +1614,7 @@ export const HomeworkPage: React.FC = () => {
             onClose={() => setWordExportOpen(false)}
             homework={{ title: title.trim() || 'Bài tập', description, grade, questions }}
             unsaved={dirty}
+            onFigureRedraw={(key, redraw) => setQuestions((prev) => withFigureRedraw(prev, key, redraw))}
           />
         </Suspense>
       )}

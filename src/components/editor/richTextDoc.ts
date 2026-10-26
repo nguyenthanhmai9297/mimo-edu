@@ -64,7 +64,7 @@ export function richTextToDoc(value?: RichTextContent | null): JSONContent {
       case 'image':
         content.push({
           type: 'imageBlock',
-          attrs: { url: block.url, alt: block.alt ?? '', caption: block.caption ?? '', media: block.media ?? null },
+          attrs: { url: block.url, alt: block.alt ?? '', caption: block.caption ?? '', media: block.media ?? null, redraw: block.redraw ?? null },
         });
         break;
       case 'geometry':
@@ -142,6 +142,7 @@ export function docToRichText(doc: JSONContent): RichTextContent {
             ...(node.attrs.alt ? { alt: node.attrs.alt } : {}),
             ...(node.attrs.caption ? { caption: node.attrs.caption } : {}),
             ...(node.attrs.media ? { media: node.attrs.media } : {}),
+            ...(node.attrs.redraw ? { redraw: node.attrs.redraw } : {}),
           });
         }
         break;

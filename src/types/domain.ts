@@ -1,3 +1,5 @@
+import type { FigureRedraw } from '../features/homework/figureSpec';
+
 /**
  * Core Domain Types for MimoEDU
  */
@@ -71,6 +73,8 @@ export type RichBlockNode =
       caption?: string;
       /** Set when the image is kept in the image store; `url` is then its signed address. */
       media?: StoredImage;
+      /** A sharp redraw of this figure the teacher approved, used by the Word export. */
+      redraw?: FigureRedraw;
     }
   | {
       type: 'geometry';

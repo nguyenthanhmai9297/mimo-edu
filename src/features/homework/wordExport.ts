@@ -1,3 +1,4 @@
+import { parseFigureSpec, type FigureSpec } from './figureSpec';
 import {
   AlignmentType,
   BorderStyle,
@@ -60,7 +61,15 @@ export interface WordExportOptions {
   /** What students get under an essay question to write on. */
   essaySpace: 'lines' | 'blank' | 'none';
   essayLines: number;
+  /**
+   * Figures: 'original' prints every picture as it is; otherwise a figure the
+   * teacher approved a sharp redraw for prints the redraw ('selected' and
+   * 'suggest' only differ in which figures the dialog offers to redraw).
+   */
+  figureMode: FigureMode;
 }
+
+export type FigureMode = 'original' | 'selected' | 'suggest';
 
 export const DEFAULT_WORD_OPTIONS: WordExportOptions = {
   content: 'exam',
@@ -76,6 +85,7 @@ export const DEFAULT_WORD_OPTIONS: WordExportOptions = {
   showPoints: true,
   essaySpace: 'lines',
   essayLines: 5,
+  figureMode: 'selected',
 };
 
 export interface WordImage {
@@ -84,6 +94,8 @@ export interface WordImage {
   /** Natural size in pixels. */
   width: number;
   height: number;
+  /** The same picture as SVG (Word shows it sharp at any size; `data` is the fallback). */
+  svg?: Uint8Array;
 }
 
 /**
@@ -114,6 +126,10 @@ export function readImageInfo(data: Uint8Array): { type: 'png' | 'jpg'; width: n
 export interface WordExportDeps {
   loadImage: (url: string) => Promise<WordImage>;
   renderGeometry: (drawing: GeometryDrawingData) => Promise<WordImage>;
+  /** Draws an approved figure redraw; without it figures print as their original picture. */
+  renderFigure?: (spec: FigureSpec, width?: number) => Promise<WordImage>;
+  /** Told when the file is made differently than asked (a redraw that failed and printed as the original). */
+  onWarning?: (message: string) => void;
 }
 
 export interface WordHomework {
@@ -307,12 +323,20 @@ async function picture(ctx: Ctx, key: string, load: () => Promise<WordImage>, al
     keepNext: true,
     spacing: { before: 60, after: 60 },
     children: [
-      new ImageRun({
-        type: img.type,
-        data: img.data,
-        transformation: { width: Math.round(img.width * scale), height: Math.round(img.height * scale) },
-        altText: { name: alt || 'Hình', description: alt || 'Hình', title: alt || 'Hình' },
-      }),
+      img.svg
+        ? new ImageRun({
+            type: 'svg',
+            data: img.svg,
+            fallback: { type: 'png', data: img.data },
+            transformation: { width: Math.round(img.width * scale), height: Math.round(img.height * scale) },
+            altText: { name: alt || 'Hình', description: alt || 'Hình', title: alt || 'Hình' },
+          })
+        : new ImageRun({
+            type: img.type,
+            data: img.data,
+            transformation: { width: Math.round(img.width * scale), height: Math.round(img.height * scale) },
+            altText: { name: alt || 'Hình', description: alt || 'Hình', title: alt || 'Hình' },
+          }),
     ],
   });
 }
@@ -348,6 +372,27 @@ function dataTable(block: Extract<RichBlockNode, { type: 'table' }>, ctx: Ctx): 
 }
 
 type Block = Paragraph | Table;
+
+/**
+ * Printed width of a redraw: close to the picture it replaces (a little larger,
+ * so labels stay readable), between 360 and 440 px; 440 when the size is unknown.
+ */
+function redrawWidth(block: Extract<RichBlockNode, { type: 'image' }>): number | undefined {
+  const w = block.media?.width;
+  return w ? Math.round(Math.min(440, Math.max(360, w * 1.3))) : undefined;
+}
+
+/** The redraw to print instead of this picture, or null to print the picture itself. */
+function approvedRedraw(block: Extract<RichBlockNode, { type: 'image' }>, ctx: Ctx): FigureSpec | null {
+  if (ctx.options.figureMode === 'original' || !block.redraw?.active) return null;
+  const spec = parseFigureSpec(block.redraw.spec);
+  if (!spec) {
+    ctx.deps.onWarning?.(`${ctx.where}: hình đã duyệt bị lỗi dữ liệu, tệp dùng hình gốc.`);
+    return null;
+  }
+  if (spec.kind === 'table') return spec.table.rows.length ? spec : null;
+  return ctx.deps.renderFigure ? spec : null;
+}
 
 /** Word blocks for rich content; `lead` is put in front of the first line (e.g. "Câu 4."). */
 async function richBlocks(content: RichTextContent | undefined, ctx: Ctx, lead: ParagraphChild[] = [], style: { color?: string } = {}): Promise<Block[]> {
@@ -392,7 +437,22 @@ async function richBlocks(content: RichTextContent | undefined, ctx: Ctx, lead: 
     } else if (block.type === 'image') {
       if (!leadUsed) out.push(new Paragraph({ keepNext: true, children: withLead([]) }));
       if (!block.url) continue;
-      out.push(await picture(ctx, block.url, () => ctx.deps.loadImage(block.url), block.alt ?? ''));
+      const original = () => picture(ctx, block.url, () => ctx.deps.loadImage(block.url), block.alt ?? '');
+      const redraw = approvedRedraw(block, ctx);
+      if (redraw?.kind === 'table') {
+        // A table read from a picture becomes a real Word table teachers can edit
+        out.push(dataTable({ type: 'table', header: redraw.table.header, rows: redraw.table.rows }, ctx));
+      } else if (redraw) {
+        try {
+          const width = redrawWidth(block);
+          out.push(await picture(ctx, `figure:${width}:${JSON.stringify(redraw)}`, () => ctx.deps.renderFigure!(redraw, width), block.alt ?? ''));
+        } catch {
+          ctx.deps.onWarning?.(`${ctx.where}: không vẽ được hình đã duyệt, tệp dùng hình gốc.`);
+          out.push(await original());
+        }
+      } else {
+        out.push(await original());
+      }
       if (block.caption) out.push(new Paragraph({ alignment: AlignmentType.LEFT, keepNext: true, children: [new TextRun({ text: block.caption, italics: true })] }));
     } else if (block.type === 'geometry') {
       if (!leadUsed) out.push(new Paragraph({ keepNext: true, children: withLead([]) }));

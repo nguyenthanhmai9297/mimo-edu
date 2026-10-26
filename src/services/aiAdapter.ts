@@ -14,6 +14,15 @@ import {
 import { AICompleteness, checkCompleteness } from '../utils/aiCompleteness.js';
 import { DEFAULT_GRADE, normalizeGrade } from '../utils/grade.js';
 import { richTextFromAIText } from '../utils/richText.js';
+import type { FigureSpec, FigureVerification } from '../features/homework/figureSpec.js';
+import {
+  claudeFigureCompareSchema,
+  claudeFigureReadSchema,
+  FIGURE_COMPARE_SYSTEM,
+  FIGURE_READ_SYSTEM,
+  figureSpecFromWire,
+  verificationFromWire,
+} from './figureAI.js';
 
 export { DEFAULT_GRADE, normalizeGrade, richTextFromAIText };
 
@@ -66,6 +75,42 @@ export interface EssayGradingInput {
   preferredModel?: string;
 }
 
+export interface FigureRedrawInput {
+  /** The figure picture as it is in the question (cropped from the exam). */
+  image: MediaFileInput;
+  /** The question's text, for context only (labels it names, units). */
+  questionText: string;
+  /** What the teacher says went wrong last time ("thiếu điểm C", "ô tô đậm ở hàng dưới"). */
+  hint?: string;
+}
+
+export interface FigureRedrawOutput {
+  redrawable: boolean;
+  reason: string;
+  spec: FigureSpec | null;
+  readings: { pointLabels: string[]; measurements: string[]; otherText: string[] };
+  uncertain: string[];
+  provider: string;
+  model: string;
+  durationMs: number;
+  estimatedCostUsd: number;
+}
+
+export interface FigureCompareInput {
+  original: MediaFileInput;
+  /** MimoEDU's drawing of the AI's description (PNG). */
+  redrawn: MediaFileInput;
+  questionText: string;
+}
+
+export interface FigureCompareOutput {
+  verification: FigureVerification;
+  provider: string;
+  model: string;
+  durationMs: number;
+  estimatedCostUsd: number;
+}
+
 export interface EssayGradingOutput {
   suggestedScore: number;
   explanation: string;
@@ -101,7 +146,11 @@ export interface AIProviderAdapter {
   readonly defaultModel: string;
   parseHomeworkFromMedia(input: ParseHomeworkInput): Promise<ParsedHomeworkOutput>;
   suggestEssayGrading(input: EssayGradingInput): Promise<EssayGradingOutput>;
+  redrawFigure(input: FigureRedrawInput): Promise<FigureRedrawOutput>;
+  compareFigure(input: FigureCompareInput): Promise<FigureCompareOutput>;
 }
+
+const FIGURES_NEED_CLAUDE = 'Chức năng AI vẽ lại hình hiện chỉ chạy với Claude. Hãy báo người quản trị hệ thống.';
 
 /** An AI short answer as a teacher would type it: no $…$, no LaTeX spacing commands. */
 function plainAnswer(answer: string): string {
@@ -244,6 +293,14 @@ export function collectFigureRequests(
 export class GeminiAIAdapter implements AIProviderAdapter {
   public readonly providerName = 'google-gemini';
   public readonly defaultModel = 'gemini-3.8-flash';
+
+  async redrawFigure(): Promise<FigureRedrawOutput> {
+    throw new Error(FIGURES_NEED_CLAUDE);
+  }
+
+  async compareFigure(): Promise<FigureCompareOutput> {
+    throw new Error(FIGURES_NEED_CLAUDE);
+  }
 
   private getClient(): GoogleGenAI {
     const apiKey = process.env.GEMINI_API_KEY;
@@ -899,7 +956,7 @@ Chỉ chép đề, KHÔNG giải và không nêu đáp án ở bất kỳ trư�
   /** One structured-output call; usage is added to this.lastUsage. */
   private async runStructured(
     model: string,
-    request: ReturnType<AnthropicAIAdapter['buildParseRequest']> | ReturnType<AnthropicAIAdapter['buildSolveRequest']>,
+    request: Pick<Anthropic.Beta.MessageCreateParamsNonStreaming, 'system' | 'messages' | 'output_config'>,
     maxTokens: number
   ): Promise<{ message: Anthropic.Beta.BetaMessage; json: unknown }> {
     let message: Anthropic.Beta.BetaMessage;
@@ -1034,6 +1091,81 @@ Chỉ chép đề, KHÔNG giải và không nêu đáp án ở bất kỳ trư�
       model: message.model,
       durationMs: Date.now() - startTime,
       estimatedCostUsd: this.usageCost(),
+    };
+  }
+
+  /** One figure picture, labelled with the size Claude sees it at (its coordinates use that size). */
+  private figureImage(label: string, file: MediaFileInput): Anthropic.Beta.BetaContentBlockParam[] {
+    const mediaType = sniffImageType(file.base64Data);
+    if (mediaType === 'unsupported') throw new Error('Ảnh hình không phải JPG, PNG, WEBP hoặc GIF.');
+    const seen = seenImageSize(file.base64Data);
+    return [
+      { type: 'text', text: seen ? `${label} (ảnh rộng ${seen.width} px, cao ${seen.height} px):` : `${label}:` },
+      { type: 'image', source: { type: 'base64', media_type: mediaType, data: file.base64Data } },
+    ];
+  }
+
+  /** Reads a figure into a description MimoEDU can draw. The AI never draws: no picture comes back. */
+  async redrawFigure(input: FigureRedrawInput): Promise<FigureRedrawOutput> {
+    const startTime = Date.now();
+    const model = this.defaultModel;
+    const content: Anthropic.Beta.BetaContentBlockParam[] = [
+      { type: 'text', text: `Câu hỏi có hình này:\n${input.questionText.slice(0, 3000) || '(không có chữ)'}` },
+      ...this.figureImage('Hình gốc', input.image),
+    ];
+    if (input.hint?.trim()) {
+      content.push({ type: 'text', text: `Giáo viên nhận xét lần đọc trước: ${input.hint.trim().slice(0, 500)}\nĐọc lại hình gốc thật kỹ, sửa đúng các điểm này nếu hình gốc cho thấy như vậy.` });
+    }
+    content.push({ type: 'text', text: 'Hãy mô tả hình theo schema.' });
+    const { message, json } = await this.runStructured(
+      model,
+      {
+        system: FIGURE_READ_SYSTEM,
+        messages: [{ role: 'user', content }],
+        output_config: { effort: 'medium', format: zodOutputFormat(claudeFigureReadSchema) },
+      },
+      16000
+    );
+    const read = claudeFigureReadSchema.parse(json);
+    const spec = read.redrawable ? figureSpecFromWire(read) : null;
+    return {
+      redrawable: read.redrawable && spec !== null,
+      reason: read.redrawable && !spec ? 'AI chưa mô tả được hình này thành dữ liệu vẽ lại.' : read.reason,
+      spec,
+      readings: read.readings,
+      uncertain: read.uncertain.filter((u) => u.trim()).slice(0, 20),
+      provider: this.providerName,
+      model: message.model,
+      durationMs: Date.now() - startTime,
+      estimatedCostUsd: this.estimateCost(model, message.usage),
+    };
+  }
+
+  /** Compares the original figure with MimoEDU's drawing; differences mean the redraw is not used as is. */
+  async compareFigure(input: FigureCompareInput): Promise<FigureCompareOutput> {
+    const startTime = Date.now();
+    const model = this.defaultModel;
+    const content: Anthropic.Beta.BetaContentBlockParam[] = [
+      { type: 'text', text: `Câu hỏi có hình này:\n${input.questionText.slice(0, 3000) || '(không có chữ)'}` },
+      ...this.figureImage('Ảnh 1 – HÌNH GỐC', input.original),
+      ...this.figureImage('Ảnh 2 – HÌNH VẼ LẠI', input.redrawn),
+      { type: 'text', text: 'So sánh hai hình theo schema.' },
+    ];
+    const { message, json } = await this.runStructured(
+      model,
+      {
+        system: FIGURE_COMPARE_SYSTEM,
+        messages: [{ role: 'user', content }],
+        output_config: { effort: 'medium', format: zodOutputFormat(claudeFigureCompareSchema) },
+      },
+      12000
+    );
+    return {
+      verification: verificationFromWire(claudeFigureCompareSchema.parse(json)),
+      provider: this.providerName,
+      model: message.model,
+      durationMs: Date.now() - startTime,
+      estimatedCostUsd: this.estimateCost(model, message.usage),
     };
   }
 

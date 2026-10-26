@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import JSZip from 'jszip';
 import type { HomeworkQuestion, RichBlockNode, RichTextContent } from '../types/domain';
+import type { FigureRedraw, FigureSpec } from '../features/homework/figureSpec';
+import { withFigureRedraw } from '../features/homework/figureRedrawApply';
+import { collectFigures } from '../features/homework/WordExportModal';
+import { BANG_DOC_SACH, HINH_H, LUOI_O } from './fixtures/figureSpecs';
 import {
   buildHomeworkDocx,
   DEFAULT_WORD_OPTIONS,
@@ -8,6 +12,7 @@ import {
   readImageInfo,
   WordExportError,
   wordFileName,
+  type WordExportDeps,
   type WordExportOptions,
   type WordHomework,
   type WordImage,
@@ -90,7 +95,7 @@ function deps(loaded: string[] = []) {
   };
 }
 
-async function open(hw: WordHomework, options: Partial<WordExportOptions> = {}, d = deps()) {
+async function open(hw: WordHomework, options: Partial<WordExportOptions> = {}, d: WordExportDeps = deps()) {
   const blob = await buildHomeworkDocx(hw, { ...DEFAULT_WORD_OPTIONS, ...options }, d);
   const zip = await JSZip.loadAsync(await blob.arrayBuffer());
   const xml = await zip.file('word/document.xml')!.async('string');
@@ -285,5 +290,104 @@ describe('xuất Word (.docx)', () => {
     expect(readImageInfo(new TextEncoder().encode('<svg></svg>'))).toBeNull();
     expect(wordFileName('Kiểm tra cuối năm – Toán 3 (Đề 1)', 'exam')).toBe('kiem-tra-cuoi-nam-toan-3-de-1-de.docx');
     expect(wordFileName('', 'answers')).toBe('bai-tap-dap-an.docx');
+  });
+});
+
+describe('xuất Word với hình AI vẽ lại', () => {
+  const approved = (spec: FigureSpec, active = true): FigureRedraw => ({ active, spec, approvedAt: '2026-10-26T08:00:00.000Z', origin: 'ai', history: [] });
+  const SVG = new TextEncoder().encode('<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"></svg>');
+  const figureDeps = (drawn: FigureSpec[], loaded: string[] = [], fail = false) => ({
+    ...deps(loaded),
+    renderFigure: async (spec: FigureSpec): Promise<WordImage> => {
+      if (fail) throw new Error('canvas hỏng');
+      drawn.push(spec);
+      return { data: png(440, 300), type: 'png', width: 440, height: 300, svg: SVG };
+    },
+  });
+  const withH = (redraw: FigureRedraw) => ({ ...EXAM, questions: withFigureRedraw(EXAM.questions, FIG6, redraw) });
+
+  it('hình đã duyệt: dùng chung cho 6a và 6b, nhúng SVG kèm PNG dự phòng, hình gốc câu 6 không tải', async () => {
+    const drawn: FigureSpec[] = [];
+    const loaded: string[] = [];
+    const hw = withH(approved(HINH_H));
+    expect(hw.questions.filter((q) => q.prompt.blocks.some((b) => b.type === 'image' && b.redraw))).toHaveLength(2);
+    const { xml, zip, text } = await open(hw, {}, figureDeps(drawn, loaded));
+    expect(drawn).toHaveLength(1);
+    expect(loaded).toEqual([FIG4]);
+    expect(Object.keys(zip.files).some((f) => f.startsWith('word/media/') && f.endsWith('.svg'))).toBe(true);
+    expect(xml).toContain('svgBlip');
+    // Question text, numbering and answers untouched
+    expect(text).toContain('a) Hình H gồm hình vuông ABCD và hình chữ nhật DEGK. Diện tích hình H là: ……');
+    expect(text).toContain('b) Chu vi hình H là: ……');
+  });
+
+  it('chế độ "Giữ nguyên hình gốc": không dùng hình vẽ lại dù đã duyệt', async () => {
+    const drawn: FigureSpec[] = [];
+    const loaded: string[] = [];
+    await open(withH(approved(HINH_H)), { figureMode: 'original' }, figureDeps(drawn, loaded));
+    expect(drawn).toHaveLength(0);
+    expect(loaded.sort()).toEqual([FIG4, FIG6].sort());
+  });
+
+  it('chưa duyệt hoặc giáo viên chọn giữ hình gốc: dùng hình gốc', async () => {
+    const drawn: FigureSpec[] = [];
+    const loaded: string[] = [];
+    await open(withH(approved(HINH_H, false)), {}, figureDeps(drawn, loaded));
+    await open(EXAM, {}, figureDeps(drawn, loaded));
+    expect(drawn).toHaveLength(0);
+  });
+
+  it('dữ liệu hình hỏng: không vẽ, dùng hình gốc và báo giáo viên', async () => {
+    const warnings: string[] = [];
+    const loaded: string[] = [];
+    const broken = { ...approved(HINH_H), spec: { ...HINH_H, kind: 'virus' } as unknown as FigureSpec };
+    await open(withH(broken), {}, { ...figureDeps([], loaded), onWarning: (m: string) => warnings.push(m) });
+    expect(loaded).toContain(FIG6);
+    expect(warnings.join(' ')).toContain('Câu 4');
+  });
+
+  it('vẽ lỗi khi tạo tệp: vẫn tạo được tệp với hình gốc, có cảnh báo', async () => {
+    const warnings: string[] = [];
+    const loaded: string[] = [];
+    const { media } = await open(withH(approved(HINH_H)), {}, { ...figureDeps([], loaded, true), onWarning: (m: string) => warnings.push(m) });
+    expect(loaded).toContain(FIG6);
+    expect(media.length).toBeGreaterThanOrEqual(2);
+    expect(warnings[0]).toMatch(/không vẽ được hình đã duyệt, tệp dùng hình gốc/);
+  });
+
+  it('bảng đọc từ ảnh: thành bảng Word sửa được, không chèn ảnh', async () => {
+    const drawn: FigureSpec[] = [];
+    const loaded: string[] = [];
+    const hw = { ...EXAM, questions: withFigureRedraw(EXAM.questions, FIG4, approved(BANG_DOC_SACH)) };
+    const tables = (xml: string) => (xml.match(/<w:tbl>/g) ?? []).length;
+    const before = await open(EXAM);
+    const { xml, text } = await open(hw, {}, figureDeps(drawn, loaded));
+    expect(loaded).toEqual([FIG6]);
+    expect(drawn).toHaveLength(0);
+    expect(tables(xml)).toBe(tables(before.xml) + 1);
+    expect(text).toContain('14 giờ');
+  });
+
+  it('đáp án và điểm không đổi khi dùng hình vẽ lại', async () => {
+    const before = await open(EXAM, { content: 'answers' });
+    const after = await open({ ...EXAM, questions: withFigureRedraw(withH(approved(HINH_H)).questions, FIG4, approved(LUOI_O)) }, { content: 'answers' }, figureDeps([]));
+    expect(after.text).toBe(before.text);
+  });
+
+  it('danh sách hình: mỗi hình một lần, đúng số câu; 6a/6b dùng chung một hình', () => {
+    const figs = collectFigures(EXAM.questions);
+    expect(figs.map((f) => [f.label, f.url])).toEqual([
+      // This sample keeps 5 of the exam's questions: the squares are Câu 2, figure H Câu 4
+      ['Câu 2', FIG4],
+      ['Câu 4', FIG6],
+    ]);
+    expect(figs[1].questionText).toContain('b) Chu vi hình H');
+  });
+
+  it('bỏ duyệt (null): xóa hình vẽ lại khỏi mọi khối của hình đó', () => {
+    const on = withFigureRedraw(EXAM.questions, FIG6, approved(HINH_H));
+    const off = withFigureRedraw(on, FIG6, null);
+    expect(JSON.stringify(off)).not.toContain('redraw');
+    expect(off).toEqual(EXAM.questions);
   });
 });

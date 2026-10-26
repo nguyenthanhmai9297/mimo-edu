@@ -38,6 +38,16 @@ const stubAdapter: AIProviderAdapter = {
     if (failWith) throw failWith;
     return { suggestedScore: 1, explanation: '', improvementFeedback: '', provider: 'stub', model: 'stub-model', durationMs: 5 } as never;
   },
+  async redrawFigure() {
+    adapterCalls++;
+    if (failWith) throw failWith;
+    return { redrawable: true, reason: '', spec: null, readings: { pointLabels: [], measurements: [], otherText: [] }, uncertain: [], provider: 'stub', model: 'stub-model', durationMs: 5, estimatedCostUsd: 0.01 };
+  },
+  async compareFigure() {
+    adapterCalls++;
+    if (failWith) throw failWith;
+    return { verification: { verdict: 'match', differences: [], summary: '' }, provider: 'stub', model: 'stub-model', durationMs: 5, estimatedCostUsd: 0.01 };
+  },
 };
 
 function start(): Promise<{ url: string; server: Server }> {
@@ -58,7 +68,7 @@ function start(): Promise<{ url: string; server: Server }> {
       isConfigured: () => configured,
       loadAdapter: async () => stubAdapter,
       logJob: async (job) => void jobs.push(job),
-      limits: { parsePerWindow: 3, gradePerWindow: 2 },
+      limits: { parsePerWindow: 3, gradePerWindow: 2, figurePerWindow: 3 },
       now: () => clock,
     })
   );
@@ -227,5 +237,28 @@ describe('API AI – phân quyền, giới hạn và xử lý lỗi', () => {
     } finally {
       stubAdapter.parseHomeworkFromMedia = original;
     }
+  });
+
+  it('vẽ lại hình: chỉ giáo viên, kiểm tra ảnh, giới hạn số lần, ghi nhật ký chi phí', async () => {
+    const img = { mimeType: 'image/png', base64Data: 'iVBORw0KGgo=' };
+    expect((await call('/redraw-figure', { image: img })).status).toBe(401);
+    expect((await call('/compare-figure', { original: img, redrawn: img }, 'outsider')).status).toBe(403);
+    expect((await call('/redraw-figure', { image: { mimeType: 'image/svg+xml', base64Data: 'PHN2Zz4=' } }, 'owner')).status).toBe(400);
+    expect((await call('/redraw-figure', { image: { mimeType: 'image/png', base64Data: 'A'.repeat(1_600_000) } }, 'owner')).status).toBe(400);
+    expect((await call('/compare-figure', { original: img }, 'owner')).status).toBe(400);
+    expect(adapterCalls).toBe(0);
+    expect((await call('/redraw-figure', { image: img, questionText: 'Hình H' }, 'owner')).status).toBe(200);
+    expect((await call('/compare-figure', { original: img, redrawn: img }, 'owner')).status).toBe(200);
+    expect((await call('/redraw-figure', { image: img }, 'owner')).status).toBe(200);
+    const limited = await call('/redraw-figure', { image: img }, 'owner');
+    expect(limited.status).toBe(429);
+    expect(adapterCalls).toBe(3);
+    expect(jobs.map((j) => `${j.taskType}:${j.status}:${j.estimatedCostUsd}`)).toEqual([
+      'figure_redraw:completed:0.01',
+      'figure_compare:completed:0.01',
+      'figure_redraw:completed:0.01',
+    ]);
+    configured = false;
+    expect((await call('/redraw-figure', { image: img }, 'allowlisted')).data.code).toBe('AI_UNAVAILABLE');
   });
 });

@@ -2,6 +2,8 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { GeometryRenderer } from '../../components/editor/GeometryRenderer';
 import type { GeometryDrawingData } from '../../types/domain';
+import type { FigureSpec } from './figureSpec';
+import { figureSvgMarkup } from './figureSvg';
 import { readImageInfo, type WordExportDeps, type WordImage } from './wordExport';
 
 /**
@@ -76,7 +78,33 @@ async function renderGeometry(drawing: GeometryDrawingData): Promise<WordImage> 
   return { data: await canvasPng(canvas), type: 'png', width, height };
 }
 
-export const browserWordDeps: WordExportDeps = { loadImage, renderGeometry };
+/** Pixels per displayed pixel in the PNG kept beside a redrawn figure's SVG. */
+const FIGURE_PNG_SCALE = 3;
+
+/** An SVG drawing as a PNG `scale` times its size, on white. */
+export async function svgToPng(svg: string, width: number, height: number, scale: number): Promise<Uint8Array> {
+  const img = new Image();
+  img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  await img.decode();
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.round(width * scale);
+  canvas.height = Math.round(height * scale);
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('trình duyệt không vẽ được hình');
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  return canvasPng(canvas);
+}
+
+/** An approved redraw: the SVG itself (sharp in Word) with a PNG for programs that cannot show SVG. */
+async function renderFigure(spec: FigureSpec, displayWidth?: number): Promise<WordImage> {
+  const { svg, width, height } = figureSvgMarkup(spec, displayWidth);
+  const data = await svgToPng(svg, width, height, FIGURE_PNG_SCALE);
+  return { data, type: 'png', width, height, svg: new TextEncoder().encode(svg) };
+}
+
+export const browserWordDeps: WordExportDeps = { loadImage, renderGeometry, renderFigure };
 
 /** Starts the download of a finished file. */
 export function saveFile(blob: Blob, fileName: string): void {
