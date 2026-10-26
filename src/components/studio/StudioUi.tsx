@@ -299,11 +299,12 @@ export const ConfirmDialog: React.FC<{
   title: React.ReactNode;
   message: React.ReactNode;
   confirmLabel: string;
+  cancelLabel?: string;
   danger?: boolean;
   busy?: boolean;
   onConfirm: () => void;
   onCancel: () => void;
-}> = ({ open, title, message, confirmLabel, danger = false, busy = false, onConfirm, onCancel }) => (
+}> = ({ open, title, message, confirmLabel, cancelLabel = 'Hủy', danger = false, busy = false, onConfirm, onCancel }) => (
   <StudioModal
     open={open}
     onClose={onCancel}
@@ -314,7 +315,7 @@ export const ConfirmDialog: React.FC<{
     footer={
       <>
         <button type="button" onClick={onCancel} className="studio-btn studio-btn-secondary">
-          Hủy
+          {cancelLabel}
         </button>
         <button type="button" onClick={onConfirm} disabled={busy} className={`studio-btn ${danger ? 'bg-[#D93B5B] text-white hover:bg-[#C12F4D]' : 'studio-btn-primary'}`}>
           {busy ? 'Đang xử lý…' : confirmLabel}

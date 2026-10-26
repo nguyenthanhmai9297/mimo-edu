@@ -107,3 +107,40 @@ export function listLocalDraftKeys(owner: string): string[] {
     return [];
   }
 }
+
+// ---------------------------------------------------------------------------
+// Saving to the system. A Firestore write waits silently while offline, so a
+// save that gets no answer in time is reported as not saved, never as saved.
+// ---------------------------------------------------------------------------
+
+export const SAVE_TIMEOUT_MS = 20_000;
+
+export class SaveTimeoutError extends Error {
+  constructor() {
+    super('save-timeout');
+  }
+}
+
+export function withSaveTimeout<T>(work: Promise<T>, ms = SAVE_TIMEOUT_MS): Promise<T> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new SaveTimeoutError()), ms);
+  });
+  return Promise.race([work, timeout]).finally(() => clearTimeout(timer));
+}
+
+/** What the teacher reads when a save fails; the raw Firestore details stay in the console. */
+export function saveErrorMessage(err: unknown, keptOnDevice: boolean): string {
+  const kept = keptOnDevice ? ' Phần đang soạn vẫn được giữ tạm trên máy này.' : '';
+  if (err instanceof SaveTimeoutError || (typeof navigator !== 'undefined' && navigator.onLine === false)) {
+    return `Chưa lưu được vào hệ thống: không kết nối được máy chủ. Hãy kiểm tra mạng rồi bấm lưu lại.${kept}`;
+  }
+  const raw = err instanceof Error ? err.message : String(err);
+  if (/insufficient permissions|permission-denied|PERMISSION_DENIED/i.test(raw)) {
+    return `Hệ thống từ chối lưu: tài khoản chưa đủ quyền hoặc dữ liệu chưa hợp lệ (ví dụ tiêu đề quá dài). Bài chưa được lưu.${kept}`;
+  }
+  if (/maximum allowed size|exceeds the maximum|too large/i.test(raw)) {
+    return `Đề quá lớn để lưu (thường do nhiều ảnh dung lượng lớn). Hãy bớt hoặc thu nhỏ ảnh rồi lưu lại. Bài chưa được lưu.${kept}`;
+  }
+  return `Chưa lưu được vào hệ thống. Hãy thử lại sau ít phút.${kept}`;
+}

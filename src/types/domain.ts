@@ -69,6 +69,8 @@ export type RichBlockNode =
       url: string;
       alt?: string;
       caption?: string;
+      /** Set when the image is kept in the image store; `url` is then its signed address. */
+      media?: StoredImage;
     }
   | {
       type: 'geometry';
@@ -89,6 +91,16 @@ export interface TableRow {
 export interface RichTextContent {
   version: 1;
   blocks: RichBlockNode[];
+}
+
+/** An image kept in the image store (Cloudinary) instead of inside the document. */
+export interface StoredImage {
+  provider: 'cloudinary';
+  publicId: string;
+  format: string;
+  bytes: number;
+  width?: number;
+  height?: number;
 }
 
 export interface ChoiceOption {

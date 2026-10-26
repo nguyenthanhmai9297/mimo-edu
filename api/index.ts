@@ -16,6 +16,7 @@ import {
 } from 'firebase/firestore';
 import { EMULATOR_PROJECT_ID, getAdminAuth, getAdminDb, isUsingFirebaseEmulator } from './firebaseAdmin.js';
 import { AIJobLog, createAIRouter } from './aiRoutes.js';
+import { cloudinaryConfigFromEnv, createMediaRouter } from './mediaRoutes.js';
 import { checkEmbeddable } from './gameEmbed.js';
 import { createLiveQuizRouter } from './liveQuiz.js';
 import { createFirestoreLiveQuizStore, LiveQuizStore } from './liveQuizStore.js';
@@ -39,7 +40,8 @@ import {
   gradeFullSubmission,
 } from '../src/utils/gradingEngine.js';
 
-dotenv.config();
+// Local secrets live in .env.local (git-ignored); on Vercel they come from Environment Variables
+dotenv.config({ path: ['.env.local', '.env'], quiet: true });
 
 // The AI SDKs are large: load them only when an AI endpoint is used, so the
 // student endpoints start faster on a cold serverless instance.
@@ -688,6 +690,22 @@ export function createApiApp() {
     logJob: logAIJob,
   });
   app.use(['/api/ai', '/ai'], aiRouter);
+
+  // 6. Homework images on Cloudinary (teacher only; off until the CLOUDINARY_* variables are set)
+  const mediaRouter = createMediaRouter({
+    requireTeacher,
+    getConfig: () => cloudinaryConfigFromEnv(),
+    isImageInUse: async (publicId) => {
+      const adminDb = getAdminDb();
+      if (!adminDb) throw new Error('Firestore Admin is not configured');
+      for (const name of ['homework', 'assignments']) {
+        const snap = await adminDb.collection(name).get();
+        if (snap.docs.some((d) => JSON.stringify(d.data()).includes(publicId))) return true;
+      }
+      return false;
+    },
+  });
+  app.use(['/api/media', '/media'], mediaRouter);
 
   return app;
 }

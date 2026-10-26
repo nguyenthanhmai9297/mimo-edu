@@ -73,3 +73,25 @@ describe('parseInlineSegments', () => {
     ]);
   });
 });
+
+describe('ảnh trong kho ảnh: sửa đề không làm mất thông tin ảnh', () => {
+  it('giữ đường dẫn có chữ ký và metadata qua trình soạn', () => {
+    const value = {
+      version: 1,
+      blocks: [
+        { type: 'paragraph', align: 'left', text: 'Quan sát hình' },
+        {
+          type: 'image',
+          url: 'https://res.cloudinary.com/x/image/authenticated/s--abc--/v1/mimoedu/homework/hw_1/aa.png',
+          alt: 'tam giác',
+          media: { provider: 'cloudinary', publicId: 'mimoedu/homework/hw_1/aa', format: 'png', bytes: 63834, width: 1600, height: 1100 },
+        },
+      ],
+    } as RichTextContent;
+    expect(docToRichText(richTextToDoc(value)).blocks[1]).toEqual(value.blocks[1]);
+  });
+  it('ảnh nhúng cũ (chưa có metadata) không thêm trường rỗng', () => {
+    const value = { version: 1, blocks: [{ type: 'image', url: 'data:image/png;base64,AA', alt: 'h' }] } as RichTextContent;
+    expect(docToRichText(richTextToDoc(value)).blocks[0]).toEqual(value.blocks[0]);
+  });
+});

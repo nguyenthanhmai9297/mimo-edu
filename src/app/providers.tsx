@@ -46,6 +46,8 @@ interface AppContextValue {
   authReady: boolean;
   isAdminAuthorized: boolean;
   adminCheckLoading: boolean;
+  /** The allowlist could not be read (network/server), which is not the same as "no access". */
+  adminCheckFailed: boolean;
   authError: string | null;
   loginAdminWithGoogle: () => Promise<boolean>;
   logoutAdmin: () => Promise<void>;
@@ -79,6 +81,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
   const [authReady, setAuthReady] = useState(false);
   const [isAdminAuthorized, setIsAdminAuthorized] = useState(false);
   const [adminCheckLoading, setAdminCheckLoading] = useState(false);
+  const [adminCheckFailed, setAdminCheckFailed] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
 
   const [classes, setClasses] = useState<ClassRoom[]>([]);
@@ -109,29 +112,40 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
     let unsub: (() => void) | undefined;
     void loadTeacherFirebase().then(({ fbAuth, config, repo }) => {
       if (cancelled) return;
+      // Reads the allowlist; a failed read is retried once, then reported as a connection problem
+      const checkAdmin = async (firebaseUser: User, attempt = 1): Promise<void> => {
+        setAdminCheckLoading(true);
+        setAdminCheckFailed(false);
+        try {
+          const allowed = await repo.verifyAdminAccess(firebaseUser.email);
+          if (cancelled) return;
+          setIsAdminAuthorized(allowed);
+          setAuthError(
+            allowed
+              ? null
+              : `Tài khoản (${firebaseUser.email}) chưa nằm trong danh sách Admin Allowlist. Chỉ giáo viên được cấp quyền mới có thể truy cập quản trị.`
+          );
+          setAdminCheckLoading(false);
+        } catch (err) {
+          console.error('Admin verification error:', err);
+          if (cancelled) return;
+          if (attempt === 1) {
+            await new Promise((r) => setTimeout(r, 1500));
+            if (!cancelled) return checkAdmin(firebaseUser, 2);
+            return;
+          }
+          setIsAdminAuthorized(false);
+          setAdminCheckFailed(true);
+          setAdminCheckLoading(false);
+        }
+      };
       unsub = fbAuth.onAuthStateChanged(config.auth, async (firebaseUser) => {
-        const { verifyAdminAccess } = repo;
           setUser(firebaseUser);
           if (firebaseUser) {
-            setAdminCheckLoading(true);
-            try {
-              const allowed = await verifyAdminAccess(firebaseUser.email);
-              setIsAdminAuthorized(allowed);
-              if (!allowed) {
-                setAuthError(
-                  `Tài khoản (${firebaseUser.email}) chưa nằm trong danh sách Admin Allowlist. Chỉ giáo viên được cấp quyền mới có thể truy cập quản trị.`
-                );
-              } else {
-                setAuthError(null);
-              }
-            } catch (err) {
-              console.error('Admin verification error:', err);
-              setIsAdminAuthorized(false);
-            } finally {
-              setAdminCheckLoading(false);
-            }
+            await checkAdmin(firebaseUser);
           } else {
             setIsAdminAuthorized(false);
+            setAdminCheckFailed(false);
             setAdminCheckLoading(false);
           }
           setAuthReady(true);
@@ -254,6 +268,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({
         authReady,
         isAdminAuthorized,
         adminCheckLoading,
+        adminCheckFailed,
         authError,
         loginAdminWithGoogle,
         logoutAdmin,

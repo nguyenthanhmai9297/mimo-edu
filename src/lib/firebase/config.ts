@@ -39,6 +39,8 @@ export enum OperationType {
 
 export interface FirestoreErrorInfo {
   error: string;
+  /** Firestore error code, e.g. permission-denied (the message wording differs by environment). */
+  code?: string;
   operationType: OperationType;
   path: string | null;
   authInfo: {
@@ -61,6 +63,7 @@ export function handleFirestoreError(
 ): never {
   const errInfo: FirestoreErrorInfo = {
     error: error instanceof Error ? error.message : String(error),
+    ...(typeof (error as { code?: unknown })?.code === 'string' ? { code: (error as { code: string }).code } : {}),
     authInfo: {
       userId: auth.currentUser?.uid ?? null,
       email: auth.currentUser?.email ?? null,

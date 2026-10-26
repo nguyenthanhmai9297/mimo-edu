@@ -333,6 +333,11 @@ export function subscribeHomeworkList(onData: (items: Homework[]) => void) {
 }
 
 /** Creates or overwrites a homework; returns its id and creation time so the editor can keep saving into it. */
+/** An id and creation time for a homework not saved yet; a retried save reuses them, so it never creates a copy. */
+export function reserveHomeworkRef(): Pick<Homework, 'id' | 'createdAt'> {
+  return { id: makeId('hw'), createdAt: new Date().toISOString() };
+}
+
 export async function saveHomework(
   homeworkData: Omit<Homework, 'id' | 'createdAt' | 'updatedAt'>,
   existing?: Pick<Homework, 'id' | 'createdAt'>

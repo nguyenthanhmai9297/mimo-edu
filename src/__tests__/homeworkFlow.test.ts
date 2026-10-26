@@ -92,3 +92,30 @@ describe('Soạn bài tập – giữ tạm phần chưa lưu trên máy', () =>
     expect(listLocalDraftKeys('co.lan@truong.vn')).toEqual([]);
   });
 });
+
+import { SaveTimeoutError, saveErrorMessage, withSaveTimeout } from '../features/homework/homeworkFlow';
+
+describe('lưu vào hệ thống: không bao giờ báo thành công giả', () => {
+  it('lưu không có phản hồi (mất mạng) thì báo lỗi sau thời hạn', async () => {
+    const never = new Promise<string>(() => {});
+    await expect(withSaveTimeout(never, 20)).rejects.toBeInstanceOf(SaveTimeoutError);
+  });
+
+  it('lưu xong trước thời hạn thì trả kết quả, lỗi thật được giữ nguyên', async () => {
+    await expect(withSaveTimeout(Promise.resolve('hw_1'), 50)).resolves.toBe('hw_1');
+    await expect(withSaveTimeout(Promise.reject(new Error('x')), 50)).rejects.toThrow('x');
+  });
+
+  it('thông báo lỗi dễ hiểu, không lộ chi tiết kỹ thuật', () => {
+    const rules = new Error(JSON.stringify({ error: 'Missing or insufficient permissions.' }));
+    expect(saveErrorMessage(rules, true)).toContain('từ chối lưu');
+    expect(saveErrorMessage(rules, true)).not.toContain('{');
+    // The emulator words it differently; the error code is what counts
+    const emulatorRules = new Error(JSON.stringify({ error: "\nfalse for 'update' @ L85", code: 'permission-denied' }));
+    expect(saveErrorMessage(emulatorRules, true)).toContain('từ chối lưu');
+    expect(saveErrorMessage(new SaveTimeoutError(), true)).toContain('không kết nối được máy chủ');
+    expect(saveErrorMessage(new SaveTimeoutError(), true)).toContain('giữ tạm trên máy này');
+    expect(saveErrorMessage(new SaveTimeoutError(), false)).not.toContain('giữ tạm');
+    expect(saveErrorMessage(new Error('Document cannot be written because its size exceeds the maximum allowed size'), false)).toContain('quá lớn');
+  });
+});

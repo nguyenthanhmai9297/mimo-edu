@@ -43,8 +43,10 @@ import { SourceDocumentPanel } from './SourceDocumentPanel';
 import {
   deleteDraftHomework,
   duplicateHomework,
+  reserveHomeworkRef,
   saveHomework,
 } from '../../services/firestoreRepository';
+import { mediaStoreEnabled, releaseImages, storeInlineImages, storedImageIds } from '../../services/mediaService';
 import {
   ChoiceOption,
   Homework,
@@ -52,6 +54,7 @@ import {
   PRACTICE_LEVEL_LABELS,
   PracticeLevel,
   QuestionType,
+  RichTextContent,
   TrueFalseStatement,
 } from '../../types/domain';
 import { createRichTextFromPlain } from '../../utils/gradingEngine';
@@ -60,6 +63,7 @@ import { incompletenessMessage } from '../../utils/aiCompleteness';
 import { homeworkImportSchema } from '../../schemas/validation';
 import { buildHomeworkFromMimo, isMimoDataset, MimoDataset } from './mimoImport';
 import { MimoImportModal } from './MimoImportModal';
+import { changeQuestionType, isPlainContent, TypeChange } from './questionConvert';
 import {
   clearLocalDraft,
   gameReadiness,
@@ -72,6 +76,9 @@ import {
   NEW_HOMEWORK,
   parseHomeworkPath,
   readLocalDraft,
+  SaveTimeoutError,
+  saveErrorMessage,
+  withSaveTimeout,
   writeLocalDraft,
 } from './homeworkFlow';
 import {
@@ -257,6 +264,8 @@ export const HomeworkPage: React.FC = () => {
   };
 
   /** Fills the form for one editor target; `savedSnapshot` is what counts as already saved. */
+  // Id kept for a new homework whose save got no answer, so saving again never makes a second copy
+  const reservedRef = useRef<{ id: string; createdAt: string } | null>(null);
   const loadEditor = (
     key: string,
     fields: EditorFields,
@@ -265,6 +274,7 @@ export const HomeworkPage: React.FC = () => {
     restoredFrom: string | null = null
   ) => {
     const f = withOrder(fields);
+    reservedRef.current = null;
     setLoadedKey(key);
     setEditingRef(ref);
     setTitle(f.title);
@@ -355,13 +365,37 @@ export const HomeworkPage: React.FC = () => {
   }, [editorReady, loadedKey, dirty, currentSnapshot, owner]);
   useEffect(() => () => pendingDraftWrite.current?.(), []);
 
-  // Only when the device could not keep the work does closing the tab need a warning
+  // Changes not yet in the system: closing or reloading the tab asks first
   useEffect(() => {
-    if (!dirty || !localSaveFailed) return;
-    const warn = (e: BeforeUnloadEvent) => e.preventDefault();
+    if (!dirty) return;
+    const warn = (e: BeforeUnloadEvent) => {
+      pendingDraftWrite.current?.();
+      e.preventDefault();
+      e.returnValue = '';
+    };
     window.addEventListener('beforeunload', warn);
     return () => window.removeEventListener('beforeunload', warn);
-  }, [dirty, localSaveFailed]);
+  }, [dirty]);
+
+  // ...and so does leaving through a link or the Đóng button (BrowserRouter has no route blocker)
+  const [leaveTo, setLeaveTo] = useState<string | null>(null);
+  useEffect(() => {
+    if (!dirty) return;
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
+      if (!a || (a.target && a.target !== '_self') || a.hasAttribute('download')) return;
+      const url = new URL(a.href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+      const to = url.pathname + url.search + url.hash;
+      if (url.pathname === window.location.pathname) return;
+      e.preventDefault();
+      e.stopPropagation();
+      setLeaveTo(to);
+    };
+    window.addEventListener('click', onClick, true);
+    return () => window.removeEventListener('click', onClick, true);
+  }, [dirty]);
 
   const localDraftKeys = useMemo(
     () => new Set(listLocalDraftKeys(owner)),
@@ -418,7 +452,13 @@ export const HomeworkPage: React.FC = () => {
 
   const openHomework = (hw: Homework, inFormat: HomeworkFormat) => navigate(homeworkPath(inFormat, hw.id));
 
-  const closeEditor = () => navigate(homeworkPath(activeFormat));
+  const closeEditor = () => (dirty ? setLeaveTo(homeworkPath(activeFormat)) : navigate(homeworkPath(activeFormat)));
+  const leaveEditor = () => {
+    const to = leaveTo;
+    setLeaveTo(null);
+    pendingDraftWrite.current?.();
+    if (to) navigate(to);
+  };
 
   /** Throws away unsaved work on this device and shows the saved copy (or a blank form). */
   const discardLocalChanges = () => {
@@ -471,6 +511,26 @@ export const HomeworkPage: React.FC = () => {
     setQuestions(copy);
   };
 
+  // Changing a question's type never drops content silently: anything the new type cannot keep is confirmed first
+  const [pendingTypeChange, setPendingTypeChange] = useState<{ idx: number; change: TypeChange } | null>(null);
+  const [lastTypeChange, setLastTypeChange] = useState<{ questionId: string; before: HomeworkQuestion; notes: string[] } | null>(null);
+  const applyTypeChange = (idx: number, change: TypeChange) => {
+    const before = questions[idx];
+    updateQuestionAt(idx, { ...change.question, order: before.order });
+    setLastTypeChange({ questionId: before.id, before, notes: change.notes });
+    setPendingTypeChange(null);
+  };
+  const requestTypeChange = (idx: number, to: QuestionType) => {
+    const change = changeQuestionType(questions[idx], to);
+    if (change.losses.length === 0 && change.notes.length === 0) applyTypeChange(idx, change);
+    else setPendingTypeChange({ idx, change });
+  };
+  const undoTypeChange = () => {
+    if (!lastTypeChange) return;
+    setQuestions((prev) => prev.map((q) => (q.id === lastTypeChange.questionId ? { ...lastTypeChange.before, order: q.order } : q)));
+    setLastTypeChange(null);
+  };
+
   const handleSave = async (status: 'draft' | 'published') => {
     setErrorMsg(null);
     if (status === 'published' && missingQuestionsWarning) {
@@ -500,27 +560,58 @@ export const HomeworkPage: React.FC = () => {
 
     setSaving(true);
     try {
-      const saved = await saveHomework(
+      const target = editingRef ?? (reservedRef.current ??= reserveHomeworkRef());
+      // With the image store on, images go to Cloudinary first; if that fails nothing is saved
+      let toSave = questions;
+      let replaced = new Map<string, string>();
+      if (mediaStoreEnabled) {
+        try {
+          ({ questions: toSave, replaced } = await withSaveTimeout(storeInlineImages(target.id, questions), 120_000));
+        } catch (err) {
+          console.error('Image upload failed:', err);
+          pendingDraftWrite.current?.();
+          setErrorMsg(
+            `Chưa lưu: ${err instanceof Error && !(err instanceof SaveTimeoutError) ? err.message : 'không tải được ảnh lên kho ảnh.'} Bài và ảnh vẫn được giữ tạm trên máy này.`
+          );
+          return;
+        }
+      }
+      const saved = await withSaveTimeout(saveHomework(
         {
           title,
           description,
           subject: 'Toán',
           grade,
-          questions,
+          questions: toSave,
           answerSource,
           aiSolverEnabled,
           totalPoints,
           status,
         },
-        editingRef || undefined
-      );
+        target
+      ));
       // The system now holds this version: drop the copy kept on this device
       pendingDraftWrite.current = null;
       if (loadedKey) clearLocalDraft(owner, loadedKey);
       clearLocalDraft(owner, saved.id);
       setDraftsVersion((v) => v + 1);
       setEditingRef(saved);
-      setBaseline(currentSnapshot);
+      if (mediaStoreEnabled) {
+        const before = storedImageIds((JSON.parse(baseline || '{}') as Partial<EditorFields>).questions ?? []);
+        const now = storedImageIds(toSave);
+        void releaseImages([...before].filter((id) => !now.has(id)));
+      }
+      if (toSave !== questions) {
+        setQuestions(toSave);
+        setFigureCrops((prev) => {
+          const next = { ...prev };
+          for (const [from, to] of replaced) if (prev[from]) next[to] = prev[from];
+          return next;
+        });
+        setBaseline(JSON.stringify({ title, description, grade, answerSource, aiSolverEnabled, questions: toSave, missingQuestionsWarning }));
+      } else {
+        setBaseline(currentSnapshot);
+      }
       setRestoredAt(null);
       if (status === 'published') {
         navigate(homeworkPath(activeFormat));
@@ -530,9 +621,9 @@ export const HomeworkPage: React.FC = () => {
         if (loadedKey !== saved.id) openInEditor(saved.id, () => setLoadedKey(saved.id), true);
       }
     } catch (err) {
-      setErrorMsg(
-        err instanceof Error ? err.message : 'Không thể lưu bài tập về nhà.'
-      );
+      console.error('Save homework failed:', err);
+      pendingDraftWrite.current?.();
+      setErrorMsg(saveErrorMessage(err, !localSaveFailed));
     } finally {
       setSaving(false);
     }
@@ -651,6 +742,7 @@ export const HomeworkPage: React.FC = () => {
           setDeletingBusy(true);
           try {
             await deleteDraftHomework(deletingHw.id);
+            if (mediaStoreEnabled) void releaseImages(storedImageIds(deletingHw.questions));
             clearLocalDraft(owner, deletingHw.id);
             setDraftsVersion((v) => v + 1);
             setDeletingHw(null);
@@ -825,7 +917,7 @@ export const HomeworkPage: React.FC = () => {
         </div>
 
         {errorMsg && (
-          <div className="cartoon-card bg-rose-50 p-4 text-xs font-bold text-rose-700">
+          <div role="alert" className="cartoon-card bg-rose-50 p-4 text-xs font-bold text-rose-700">
             {errorMsg}
           </div>
         )}
@@ -1077,6 +1169,17 @@ export const HomeworkPage: React.FC = () => {
                     </button>
                   </div>
                 )}
+                {lastTypeChange?.questionId === q.id && (
+                  <div className="mb-3 flex flex-wrap items-center gap-2 rounded-xl border border-[#BFDBFE] bg-[#EFF6FF] px-3 py-2 text-xs text-[#1E3A8A]">
+                    <span className="flex-1">
+                      Đã đổi từ <b>{QUESTION_TYPE_LABELS[lastTypeChange.before.type]}</b>.
+                      {lastTypeChange.notes.length > 0 && <> {lastTypeChange.notes.join(' ')}</>}
+                    </span>
+                    <button type="button" onClick={undoTypeChange} className="studio-btn studio-btn-secondary px-3 py-1 text-xs">
+                      Hoàn tác đổi dạng
+                    </button>
+                  </div>
+                )}
                 {/* Question Header */}
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b-2 border-[#EEF3F9] pb-3">
                   <div className="flex flex-wrap items-center gap-3">
@@ -1094,16 +1197,9 @@ export const HomeworkPage: React.FC = () => {
                     )}
 
                     <select
+                      aria-label={`Dạng câu ${qIdx + 1}`}
                       value={q.type}
-                      onChange={(e) =>
-                        updateQuestionAt(
-                          qIdx,
-                          createDefaultQuestion(
-                            e.target.value as QuestionType,
-                            qIdx + 1
-                          )
-                        )
-                      }
+                      onChange={(e) => requestTypeChange(qIdx, e.target.value as QuestionType)}
                       className="rounded-xl border border-[#DCE7F3] bg-white px-3 py-1.5 text-xs font-bold text-[#172B4D]"
                     >
                       {(
@@ -1236,28 +1332,17 @@ export const HomeworkPage: React.FC = () => {
                               <span>Đáp án {opt.label}</span>
                             </label>
 
-                            <input
-                              type="text"
-                              value={
-                                opt.content.blocks[0]?.type === 'paragraph'
-                                  ? opt.content.blocks[0].text
-                                  : ''
-                              }
-                              onChange={(e) => {
+                            <ContentField
+                              value={opt.content}
+                              onChange={(content) => {
                                 const nextOpts = [...(q.options || [])];
-                                nextOpts[oIdx] = {
-                                  ...opt,
-                                  content: createRichTextFromPlain(
-                                    e.target.value
-                                  ),
-                                };
+                                nextOpts[oIdx] = { ...opt, content };
                                 updateQuestionAt(qIdx, {
                                   ...q,
                                   options: nextOpts,
                                 });
                               }}
                               placeholder={`Nội dung phương án ${opt.label} (hỗ trợ $LaTeX$)`}
-                              className="flex-1 rounded-lg border border-[#DCE7F3] px-3 py-1.5 text-sm"
                             />
                           </div>
                         );
@@ -1276,32 +1361,21 @@ export const HomeworkPage: React.FC = () => {
                           <span className="font-display text-sm font-extrabold text-[#172B4D]">
                             Ý {st.label})
                           </span>
-                          <input
-                            type="text"
-                            value={
-                              st.statement.blocks[0]?.type === 'paragraph'
-                                ? st.statement.blocks[0].text
-                                : ''
-                            }
-                            onChange={(e) => {
+                          <ContentField
+                            value={st.statement}
+                            onChange={(statement) => {
                               const nextSt = [...(q.statements || [])];
-                              nextSt[sIdx] = {
-                                ...st,
-                                statement: createRichTextFromPlain(
-                                  e.target.value
-                                ),
-                              };
+                              nextSt[sIdx] = { ...st, statement };
                               updateQuestionAt(qIdx, {
                                 ...q,
                                 statements: nextSt,
                               });
                             }}
                             placeholder="Nhập mệnh đề Toán học..."
-                            className="flex-1 rounded-lg border border-[#DCE7F3] px-3 py-1.5 text-sm"
                           />
                           <div className="flex items-center gap-3">
                             <select
-                              value={st.isTrue ? 'true' : 'false'}
+                              value={st.isTrue === undefined ? '' : st.isTrue ? 'true' : 'false'}
                               onChange={(e) => {
                                 const nextSt = [...(q.statements || [])];
                                 nextSt[sIdx] = {
@@ -1315,6 +1389,7 @@ export const HomeworkPage: React.FC = () => {
                               }}
                               className="rounded-lg border border-[#DCE7F3] bg-amber-100 px-2.5 py-1 text-xs font-extrabold text-[#172B4D]"
                             >
+                              {st.isTrue === undefined && <option value="" disabled>Chọn…</option>}
                               <option value="true">ĐÚNG</option>
                               <option value="false">SAI</option>
                             </select>
@@ -1481,6 +1556,38 @@ export const HomeworkPage: React.FC = () => {
           </div>
         )}
       </div>
+      <ConfirmDialog
+        open={pendingTypeChange !== null}
+        danger={Boolean(pendingTypeChange?.change.losses.length)}
+        title={pendingTypeChange ? `Đổi Câu ${pendingTypeChange.idx + 1} sang “${QUESTION_TYPE_LABELS[pendingTypeChange.change.question.type].replace(/^\d+\. /, '')}”?` : ''}
+        message={
+          pendingTypeChange && (
+            <div className="space-y-2 text-left">
+              <p>Đề bài, công thức, hình ảnh, điểm và lời giải được giữ nguyên.</p>
+              {pendingTypeChange.change.losses.length > 0 && (
+                <div>
+                  <b className="text-[#9F2B47]">Dạng mới không giữ được:</b>
+                  <ul className="mt-1 list-disc space-y-0.5 pl-5">
+                    {pendingTypeChange.change.losses.map((l) => <li key={l}>{l}</li>)}
+                  </ul>
+                </div>
+              )}
+              {pendingTypeChange.change.notes.length > 0 && (
+                <div>
+                  <b>Sau khi đổi:</b>
+                  <ul className="mt-1 list-disc space-y-0.5 pl-5">
+                    {pendingTypeChange.change.notes.map((n) => <li key={n}>{n}</li>)}
+                  </ul>
+                </div>
+              )}
+              <p className="text-xs">Có thể bấm “Hoàn tác đổi dạng” ngay sau khi đổi.</p>
+            </div>
+          )
+        }
+        confirmLabel="Đổi dạng"
+        onCancel={() => setPendingTypeChange(null)}
+        onConfirm={() => pendingTypeChange && applyTypeChange(pendingTypeChange.idx, pendingTypeChange.change)}
+      />
       {recropRequest && (() => {
         const info = figureCrops[recropRequest.url];
         const page = info && sourceFiles.find((f) => f.id === info.sourceId);
@@ -1493,6 +1600,22 @@ export const HomeworkPage: React.FC = () => {
           />
         ) : null;
       })()}
+      <ConfirmDialog
+        open={leaveTo !== null}
+        title="Rời trang khi chưa lưu?"
+        message={
+          localSaveFailed ? (
+            <>Các thay đổi <b className="text-[#9F2B47]">chưa được lưu</b> và máy này cũng không giữ tạm được. Nếu rời trang, các thay đổi sẽ mất.</>
+          ) : (
+            <>Các thay đổi <b className="text-[#172B4D]">chưa được lưu vào hệ thống</b>, nên trên máy khác hoặc tài khoản khác sẽ không thấy. Máy này vẫn giữ tạm để mở lại. Hãy bấm Ở lại rồi Lưu Bản Nháp nếu muốn lưu.</>
+          )
+        }
+        danger={localSaveFailed}
+        confirmLabel="Vẫn rời trang"
+        cancelLabel="Ở lại"
+        onCancel={() => setLeaveTo(null)}
+        onConfirm={leaveEditor}
+      />
       </FigureCropContext.Provider>
     );
   }
@@ -1740,6 +1863,47 @@ export const HomeworkPage: React.FC = () => {
       {importError && <ErrorState message={importError} />}
       {homeworkSection(format)}
       {modals}
+    </div>
+  );
+};
+
+/**
+ * An option or statement: a one-line box for plain text, the full editor once it holds
+ * formulas, images or several paragraphs, so editing never drops them.
+ */
+const ContentField: React.FC<{ value: RichTextContent; onChange: (next: RichTextContent) => void; placeholder: string }> = ({
+  value,
+  onChange,
+  placeholder,
+}) => {
+  const [rich, setRich] = useState(() => !isPlainContent(value));
+  if (rich || !isPlainContent(value)) {
+    return (
+      <div className="min-w-0 flex-1">
+        <MathRichEditor compact value={value} onChange={onChange} placeholder={placeholder} />
+      </div>
+    );
+  }
+  const block = value.blocks[0];
+  return (
+    <div className="flex min-w-0 flex-1 items-center gap-1.5">
+      <input
+        type="text"
+        value={block?.type === 'paragraph' ? block.text : ''}
+        onChange={(e) =>
+          onChange({ ...value, blocks: [{ ...(block?.type === 'paragraph' ? block : { type: 'paragraph' as const, align: 'left' as const }), text: e.target.value }] })
+        }
+        placeholder={placeholder}
+        className="min-w-0 flex-1 rounded-lg border border-[#DCE7F3] px-3 py-1.5 text-sm"
+      />
+      <button
+        type="button"
+        onClick={() => setRich(true)}
+        title="Mở trình soạn đầy đủ để chèn hình, công thức"
+        className="shrink-0 rounded-lg border border-[#DCE7F3] px-2 py-1.5 text-[11px] font-bold text-[#3B4A66] hover:bg-[#F6FAFF]"
+      >
+        + Hình/công thức
+      </button>
     </div>
   );
 };

@@ -349,7 +349,8 @@ export const ImageBlock = Node.create({
   atom: true,
   draggable: true,
   addAttributes() {
-    return { url: { default: '' }, alt: { default: '' }, caption: { default: '' } };
+    // media: where a stored image lives (image store id, size), kept untouched through edits
+    return { url: { default: '' }, alt: { default: '' }, caption: { default: '' }, media: { default: null } };
   },
   parseHTML() {
     return [{ tag: 'figure[data-image-block]' }];
