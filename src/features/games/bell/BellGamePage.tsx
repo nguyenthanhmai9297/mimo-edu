@@ -66,6 +66,7 @@ const BellBoard: React.FC<{ id: string }> = ({ id }) => {
   const [detail, setDetail] = useState<string | null>(null);
   const [rescueOpen, setRescueOpen] = useState(false);
   const [confirmEnd, setConfirmEnd] = useState(false);
+  const [confirmJudge, setConfirmJudge] = useState(false);
   const [full, setFull] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const last = useRef<BellHostView['status'] | null>(null);
@@ -138,16 +139,17 @@ const BellBoard: React.FC<{ id: string }> = ({ id }) => {
   const game = view as unknown as BellGame;
   const lastQ = isLastQuestion(game);
   const detailPlayer = view.players.find((p) => p.id === detail) ?? null;
-  const unmarked = view.status === 'judging' ? onField.filter((p) => typeof marks[p.id] !== 'boolean').length : 0;
+  // Bảng con: every pupil on the field counts as right unless the teacher marks them wrong
+  const wrongCount = view.status === 'judging' ? onField.filter((p) => marks[p.id] === false).length : 0;
+  const judgeMarks = () => Object.fromEntries(onField.map((p) => [p.id, marks[p.id] !== false]));
 
   const clickTile = (p: BellPlayer) => {
     if (view.status === 'judging' && p.alive) {
-      // Not marked → Đúng → Sai → not marked
+      // First tap: wrong; second tap: back to right
       setMarks((m) => {
         const next = { ...m };
-        if (m[p.id] === undefined) next[p.id] = true;
-        else if (m[p.id] === true) next[p.id] = false;
-        else delete next[p.id];
+        if (next[p.id] === false) delete next[p.id];
+        else next[p.id] = false;
         return next;
       });
     } else setDetail(p.id);
@@ -237,7 +239,11 @@ const BellBoard: React.FC<{ id: string }> = ({ id }) => {
           <div className="rounded-3xl bg-[#13307E] p-3">
             <div className="mb-2 flex flex-wrap items-center gap-2 text-sm font-bold text-white/80">
               <Users className="h-4 w-4" /> Sân thi đấu
-              {view.status === 'judging' && <span className="text-[#FFD34E]">– bấm vào ô để chấm: 1 lần = Đúng, 2 lần = Sai ({unmarked} bạn chưa chấm)</span>}
+              {view.status === 'judging' && (
+                <span className="text-[#FFD34E]" data-testid="bell-judge-count">
+                  – bấm vào ô bạn SAI · Đúng {onField.length - wrongCount} · Sai {wrongCount} · Còn trên sân {onField.length}
+                </span>
+              )}
               {view.mode === 'online' && (view.status === 'question' || view.status === 'paused') && <span className="text-[#FFD34E]">– {view.answeredIds.length}/{onField.length} bạn đã trả lời</span>}
             </div>
             {view.players.length === 0 ? (
@@ -303,14 +309,8 @@ const BellBoard: React.FC<{ id: string }> = ({ id }) => {
           )}
           {view.status === 'judging' && (
             <>
-              <button type="button" onClick={() => setMarks((m) => Object.fromEntries(onField.map((p) => [p.id, m[p.id] ?? true])))} className="studio-btn border border-white/40 text-white hover:bg-white/10">
-                Bạn chưa chấm: Đúng
-              </button>
-              <button type="button" onClick={() => setMarks((m) => Object.fromEntries(onField.map((p) => [p.id, m[p.id] ?? false])))} className="studio-btn border border-white/40 text-white hover:bg-white/10">
-                Bạn chưa chấm: Sai
-              </button>
-              <button type="button" disabled={busy || unmarked > 0} onClick={() => void act('judge', { marks })} className="studio-btn bg-[#FFD34E] text-[#5A3A00]">
-                <Check className="h-4 w-4" /> Chốt kết quả
+              <button type="button" disabled={busy} onClick={() => setConfirmJudge(true)} className="studio-btn bg-[#FFD34E] px-6 py-3 text-base text-[#5A3A00]">
+                <Check className="h-5 w-5" /> Chốt kết quả
               </button>
             </>
           )}
@@ -348,6 +348,17 @@ const BellBoard: React.FC<{ id: string }> = ({ id }) => {
         }}
       />
       <ConfirmDialog
+        open={confirmJudge}
+        title="Đã kiểm tra đủ bảng con?"
+        message={`${onField.length - wrongCount} bạn Đúng ở lại sân, ${wrongCount} bạn Sai rời sân.`}
+        confirmLabel="Chốt kết quả"
+        onCancel={() => setConfirmJudge(false)}
+        onConfirm={async () => {
+          setConfirmJudge(false);
+          await act('judge', { marks: judgeMarks() });
+        }}
+      />
+      <ConfirmDialog
         open={confirmEnd}
         title="Kết thúc trận đấu?"
         message={`Trận dừng ở câu ${Math.max(0, view.index + 1)}/${view.questions.length}. ${onField.length ? `${onField.length} bạn còn trên sân sẽ là người thắng.` : 'Người thắng là bạn có điểm cao nhất.'} Kết quả được lưu lại.`}
@@ -380,7 +391,8 @@ const Countdown: React.FC<{ left: number; total: number; big: boolean }> = ({ le
 };
 
 const Tile: React.FC<{ p: BellPlayer; answered: boolean; mark: boolean | undefined; judging: boolean; onClick: () => void }> = ({ p, answered, mark, judging, onClick }) => {
-  const ring = judging && p.alive ? (mark === true ? 'ring-4 ring-[#22C38E]' : mark === false ? 'ring-4 ring-[#E5484D]' : 'ring-2 ring-white/60 ring-dashed') : '';
+  const wrong = judging && p.alive && mark === false;
+  const ring = judging && p.alive && !wrong ? 'ring-2 ring-[#22C38E]' : '';
   return (
     <button
       type="button"
@@ -388,13 +400,17 @@ const Tile: React.FC<{ p: BellPlayer; answered: boolean; mark: boolean | undefin
       data-testid="bell-tile"
       data-state={p.alive ? 'on' : 'out'}
       className={`relative flex flex-col items-center rounded-2xl px-2 py-2 text-center transition ${ring} ${
-        p.alive ? 'bg-gradient-to-b from-[#FFE27A] to-[#FFC61A] text-[#5A3A00] shadow-[0_3px_0_#C99400]' : 'bg-[#5E6C84]/60 text-white/70'
+        wrong
+          ? 'bg-[#E5484D] text-white shadow-[0_3px_0_#A8262B]'
+          : p.alive
+            ? 'bg-gradient-to-b from-[#FFE27A] to-[#FFC61A] text-[#5A3A00] shadow-[0_3px_0_#C99400]'
+            : 'bg-[#5E6C84]/60 text-white/70'
       }`}
     >
       <span className="font-display text-2xl leading-none font-extrabold [font-variant-numeric:tabular-nums]">{p.seat}</span>
       <span className="mt-1 line-clamp-1 w-full text-xs font-bold">{p.name}</span>
       <span className="text-[10px] font-bold">
-        {judging && p.alive ? (mark === true ? 'Đúng' : mark === false ? 'Sai' : 'Chưa chấm') : p.alive ? `${p.score} điểm` : `Loại ở câu ${(p.outAt ?? 0) + 1}`}
+        {judging && p.alive ? (wrong ? 'Sai' : 'Đúng') : p.alive ? `${p.score} điểm` : `Loại ở câu ${(p.outAt ?? 0) + 1}`}
       </span>
       {answered && p.alive && (
         <span className="absolute -top-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#22C38E] text-white" title="Đã trả lời">
