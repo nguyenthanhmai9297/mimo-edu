@@ -108,6 +108,18 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
   const [spent, setSpent] = useState(0);
   const [approvedNote, setApprovedNote] = useState('');
   const figures = useMemo(() => collectFigures(homework.questions), [homework.questions]);
+  const usable = (f: ReviewFigure) => Boolean(f.redraw?.active && parseFigureSpec(f.redraw.spec));
+  /** What the file will really contain, said plainly so a teacher never expects a redraw that is not there. */
+  const figureSummary = () => {
+    if (!figures.length) return '';
+    const redrawn = options.figureMode === 'original' ? 0 : figures.filter(usable).length;
+    return `Hình trong tệp Word: ${redrawn} hình vẽ lại đã duyệt, ${figures.length - redrawn} hình gốc.`;
+  };
+  const pendingApproval = figures.filter((f) => {
+    const st = figureState[f.key];
+    const last = st?.attempts[st.attempts.length - 1];
+    return !usable(f) && last && last.status !== 'unsupported';
+  });
   const preview = useRef<HTMLDivElement>(null);
   const run = useRef(0);
 
@@ -221,7 +233,7 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
       if (!blob.size) throw new WordExportError('Tệp tạo ra bị rỗng.');
       const name = wordFileName(effective.title, effective.content);
       saveFile(blob, name);
-      setDone(`Đã tạo và tải xuống ${name} (${kb(blob.size)}).`);
+      setDone(`Đã tạo và tải xuống ${name} (${kb(blob.size)}). ${figureSummary()}`.trim());
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -233,7 +245,6 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
   const marginName = Object.entries(MARGIN_PRESETS).find(([, m]) => JSON.stringify(m) === JSON.stringify(options.margins))?.[0] ?? 'Chuẩn (trái 2,5 cm)';
   const hasEssay = homework.questions.some((q) => q.type === 'essay');
   const figureMode = options.figureMode ?? 'selected';
-  const usable = (f: ReviewFigure) => Boolean(f.redraw?.active && parseFigureSpec(f.redraw.spec));
   const toRun = figureMode === 'suggest' ? figures.filter((f) => !usable(f) && !figureState[f.key]?.attempts.length) : figures.filter((f) => chosen.has(f.key));
   const reviewFig = figures.find((f) => f.key === reviewing);
 
@@ -292,11 +303,16 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
                     {figures.map((f) => {
                       const st = figureState[f.key];
                       const last = st?.attempts[st.attempts.length - 1];
+                      const failed = !usable(f) && (st?.error || last?.status === 'unsupported');
                       const badge = usable(f)
-                        ? { text: 'Đang dùng hình vẽ lại đã duyệt', tone: 'bg-emerald-50 text-emerald-800 border-emerald-300' }
-                        : last
-                          ? STATUS_TEXT[last.status]
-                          : { text: f.redraw ? 'Đang dùng hình gốc (có bản vẽ lại cũ)' : 'Hình gốc', tone: 'bg-white text-[#5E6C84] border-[#DCE7F3]' };
+                        ? { text: 'Đã duyệt', tone: 'bg-emerald-50 text-emerald-800 border-emerald-300' }
+                        : failed
+                          ? { text: 'Không thể tái dựng chính xác, đang giữ hình gốc', tone: 'bg-slate-100 text-slate-700 border-slate-300' }
+                          : last
+                            ? { text: 'Đã vẽ lại – chờ duyệt', tone: 'bg-amber-50 text-amber-900 border-amber-300' }
+                            : { text: 'Hình gốc', tone: 'bg-white text-[#5E6C84] border-[#DCE7F3]' };
+                      // AI's own verdict on a pending redraw (matches / needs a check / has errors)
+                      const detail = !usable(f) && !failed && last ? STATUS_TEXT[last.status].text : '';
                       return (
                         <div key={f.key} className="flex items-center gap-2 rounded-xl border border-[#DCE7F3] p-2" data-testid="figure-row">
                           {figureMode === 'selected' && (
@@ -309,6 +325,7 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
                             <p className={`mt-0.5 inline-block rounded border px-1.5 text-[11px] font-bold ${badge.tone}`}>
                               {st?.running ? 'AI đang vẽ lại…' : badge.text}
                             </p>
+                            {detail && <p className="text-[11px] text-[#5E6C84]">{detail}</p>}
                             {st?.error && <p className="text-[11px] text-rose-700">{st.error}</p>}
                           </div>
                           <button type="button" disabled={!last && !f.redraw} onClick={() => setReviewing(f.key)}
@@ -327,6 +344,11 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
                       Mỗi hình dùng 2 lượt AI (đọc hình, so với hình gốc), khoảng 0,01–0,04 USD. Hình vẽ lại chỉ vào tệp Word sau khi thầy cô duyệt.
                       {spent > 0 ? ` Đã dùng khoảng ${usd(spent)}.` : ''}
                     </p>
+                    {pendingApproval.length > 0 && (
+                      <p className="rounded-lg border border-amber-300 bg-amber-50 p-2 text-[11px] font-bold text-amber-900" data-testid="figure-pending">
+                        {pendingApproval.map((f) => f.label).join(', ')}: đã vẽ lại nhưng chưa duyệt – tệp Word vẫn dùng hình gốc. Bấm “Xem &amp; duyệt” rồi “Dùng hình vẽ lại”.
+                      </p>
+                    )}
                     {approvedNote && <p className="text-[11px] font-bold text-[#1F9D6B]" data-testid="figure-approved-note">{approvedNote}</p>}
                   </div>
                 )}
@@ -426,6 +448,9 @@ export const WordExportModal: React.FC<WordExportModalProps> = ({ open, onClose,
         </div>
 
         <div className="flex flex-wrap items-center justify-end gap-2 border-t border-[#EEF3F9] px-5 py-3">
+          {!done && figures.length > 0 && (
+            <span className="mr-auto text-xs font-bold text-[#3B4A66]" data-testid="figure-summary">{figureSummary()}</span>
+          )}
           {done && (
             <span role="status" className="mr-auto flex items-center gap-1.5 text-xs font-bold text-[#1F9D6B]">
               <CheckCircle2 className="h-4 w-4" /> {done}

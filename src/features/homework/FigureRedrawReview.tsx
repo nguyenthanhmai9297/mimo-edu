@@ -51,7 +51,7 @@ export const STATUS_TEXT: Record<RedrawStatus, { text: string; tone: string }> =
   ok: { text: 'Khớp hình gốc – chờ thầy cô duyệt', tone: 'bg-emerald-50 text-emerald-800 border-emerald-300' },
   review: { text: 'Cần giáo viên kiểm tra', tone: 'bg-amber-50 text-amber-900 border-amber-300' },
   wrong: { text: 'Hình vẽ lại có chỗ sai – chưa dùng được', tone: 'bg-rose-50 text-rose-800 border-rose-300' },
-  unsupported: { text: 'Không vẽ lại được – giữ hình gốc', tone: 'bg-slate-100 text-slate-700 border-slate-300' },
+  unsupported: { text: 'Không thể tái dựng chính xác, đang giữ hình gốc', tone: 'bg-slate-100 text-slate-700 border-slate-300' },
 };
 
 const FILL_TEXT: Record<(typeof FIGURE_FILLS)[number], string> = { none: 'Không tô', light: 'Tô nhạt', dark: 'Tô đậm' };
@@ -224,7 +224,7 @@ export const FigureRedrawReview: React.FC<Props> = ({ figure, attempts, running,
                   </div>
                 ) : (
                   <div className="flex h-full flex-col items-center justify-center gap-2 p-4 text-center text-xs text-[#5E6C84]">
-                    <p>{latest && !latest.spec ? `AI không vẽ lại được hình này: ${latest.reason}` : draft ? 'Dữ liệu hình chưa hợp lệ – hãy sửa các mục bên dưới.' : 'Chưa có hình vẽ lại.'}</p>
+                    <p>{latest && !latest.spec ? `Không thể tái dựng chính xác, đang giữ hình gốc. ${latest.reason}` : draft ? 'Dữ liệu hình chưa hợp lệ – hãy sửa các mục bên dưới.' : 'Chưa có hình vẽ lại.'}</p>
                     {!draft && (
                       <>
                         <p className="font-bold text-amber-800">Cần giáo viên kiểm tra. Thầy cô có thể giữ hình gốc, nhờ AI vẽ lại lần nữa, hoặc tự dựng hình:</p>
