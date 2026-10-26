@@ -94,22 +94,40 @@ describe('MimoEDU Studio – các trang Giai đoạn 1', () => {
     expect(html).toContain('Khối');
   });
 
-  it('Soạn bài tập: tên mới, ba công cụ, danh sách và trạng thái', () => {
-    const empty = at('/admin/homework', '/admin/homework', <HomeworkPage />);
+  it('Soạn bài tập: hai hình thức Word / Game, danh sách và trạng thái', () => {
+    const empty = at('/admin/homework', '/admin/homework/*', <HomeworkPage />);
     expect(empty).toContain('Soạn bài tập');
-    expect(empty).not.toContain('Kho học liệu');
-    expect(empty).toContain('Tạo bài tập bằng AI');
-    expect(empty).toContain('Soạn bài tập thủ công');
-    expect(empty).toContain('Nhập bài tập từ tệp');
+    expect(empty).toContain('SOẠN BÀI TẬP WORD');
+    expect(empty).toContain('SOẠN BÀI TẬP GAME');
+    expect(empty).toContain('href="/admin/homework/word"');
+    expect(empty).toContain('href="/admin/homework/game"');
+    // The ways to create live inside a format, not on the chooser
+    expect(empty).not.toContain('Tạo bài tập từ tệp');
     expect(empty).toContain('Chưa có bài tập nào');
-    // One entry point per function: no extra "Soạn bài mới" / "Tạo bằng AI" buttons
-    expect(empty).not.toContain('Soạn bài mới');
-    expect(empty).not.toContain('Tạo bằng AI');
     ctx.homeworkList = [hw('a', 'published'), hw('b', 'draft')];
-    const html = at('/admin/homework', '/admin/homework', <HomeworkPage />);
+    const html = at('/admin/homework', '/admin/homework/*', <HomeworkPage />);
     expect(html).toContain('Đã xuất bản');
     expect(html).toContain('Bản nháp');
     expect(html).toContain('21/10/2026');
+  });
+
+  it('Soạn bài tập Word / Game: một ô tạo từ tệp, soạn thủ công, nêu rõ phần chưa có', () => {
+    ctx.homeworkList = [hw('a', 'published')];
+    const word = at('/admin/homework/word', '/admin/homework/*', <HomeworkPage />);
+    expect(word).toContain('Tạo bài tập từ tệp');
+    expect(word).toContain('Soạn bài tập thủ công');
+    // AI and .json import are one entry point now
+    expect(word).not.toContain('Tạo bài tập bằng AI');
+    expect(word).not.toContain('Nhập bài tập từ tệp');
+    expect(word).toContain('Tải xuống tệp Word và in phiếu');
+    expect(word).toContain('Chưa có trong phiên bản này');
+    expect(word).toContain('href="/admin/homework/game"');
+    const game = at('/admin/homework/game', '/admin/homework/*', <HomeworkPage />);
+    expect(game).toContain('Soạn bài tập Game');
+    expect(game).toContain('href="/admin/tools/mimo-quiz"');
+    expect(game).toContain('câu chơi được');
+    // Unknown formats fall back to the chooser
+    expect(at('/admin/homework/excel', '/admin/homework/*', <HomeworkPage />)).toContain('SOẠN BÀI TẬP WORD');
   });
 
   it('Giao bài tập: trống, danh sách có tiến độ và quá hạn', () => {

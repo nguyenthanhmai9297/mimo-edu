@@ -61,7 +61,7 @@ export const AppRouter: React.FC = () => {
                 <Route path="classes" element={<ClassesPage />} />
                 <Route path="classes/:classId" element={<ClassesPage />} />
                 <Route path="students" element={<StudentsPage />} />
-                <Route path="homework" element={<HomeworkPage />} />
+                <Route path="homework/*" element={<HomeworkPage />} />
                 <Route path="geometry3d" element={<Geometry3DPage />} />
                 <Route path="practice" element={<PracticeAdminPage />} />
                 <Route path="assignments" element={<AssignmentsPage />} />

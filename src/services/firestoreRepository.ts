@@ -332,10 +332,11 @@ export function subscribeHomeworkList(onData: (items: Homework[]) => void) {
   );
 }
 
+/** Creates or overwrites a homework; returns its id and creation time so the editor can keep saving into it. */
 export async function saveHomework(
   homeworkData: Omit<Homework, 'id' | 'createdAt' | 'updatedAt'>,
-  existing?: Homework
-): Promise<string> {
+  existing?: Pick<Homework, 'id' | 'createdAt'>
+): Promise<{ id: string; createdAt: string }> {
   const hwId = existing?.id || makeId('hw');
   const now = new Date().toISOString();
   const totalPoints = Number(
@@ -365,14 +366,14 @@ export async function saveHomework(
 
   try {
     await setDoc(doc(db, 'homework', hwId), payload);
-    return hwId;
+    return { id: hwId, createdAt: payload.createdAt };
   } catch (error) {
     handleFirestoreError(error, OperationType.WRITE, `homework/${hwId}`);
   }
 }
 
 export async function duplicateHomework(hw: Homework): Promise<string> {
-  return saveHomework({
+  const { id } = await saveHomework({
     title: `${hw.title} (Bản sao)`,
     description: hw.description,
     subject: hw.subject,
@@ -384,6 +385,7 @@ export async function duplicateHomework(hw: Homework): Promise<string> {
     totalPoints: hw.totalPoints,
     status: 'draft',
   });
+  return id;
 }
 
 export async function deleteDraftHomework(hwId: string): Promise<void> {
@@ -1018,7 +1020,7 @@ export async function seedSampleClassroomData(): Promise<{
     },
   ];
 
-  const hwId = await saveHomework({
+  const { id: hwId } = await saveHomework({
     title: 'Phiếu BTVN Tuần 8: Phân Số & Diện Tích Tam Giác',
     description:
       'Các con đọc kỹ đề, nháp cẩn thận trước khi chọn đáp án và trình bày rõ ràng câu tự luận số 5 nhé!',

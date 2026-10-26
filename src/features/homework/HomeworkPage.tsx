@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   ArrowDown,
   AlertTriangle,
@@ -9,14 +10,18 @@ import {
   Copy,
   Edit3,
   Eye,
-  FileJson,
+  ArrowLeft,
   FileText,
+  Gamepad2,
+  History,
+  Info,
   PenLine,
   Plus,
   Save,
   Search,
   Sparkles,
   Trash2,
+  Upload,
   X,
 } from 'lucide-react';
 import { useAppContext } from '../../app/providers';
@@ -56,9 +61,24 @@ import { homeworkImportSchema } from '../../schemas/validation';
 import { buildHomeworkFromMimo, isMimoDataset, MimoDataset } from './mimoImport';
 import { MimoImportModal } from './MimoImportModal';
 import {
+  clearLocalDraft,
+  gameReadiness,
+  HOMEWORK_FORMAT_LABELS,
+  HOMEWORK_FORMATS,
+  HomeworkFormat,
+  homeworkPath,
+  listLocalDraftKeys,
+  LocalHomeworkDraft,
+  NEW_HOMEWORK,
+  parseHomeworkPath,
+  readLocalDraft,
+  writeLocalDraft,
+} from './homeworkFlow';
+import {
   ConfirmDialog,
   EmptyState,
   ErrorState,
+  LoadingState,
   PageHeader,
   SearchInput,
   SectionHeading,
@@ -144,12 +164,59 @@ function createDefaultQuestion(
   };
 }
 
-export const HomeworkPage: React.FC = () => {
-  const { homeworkList } = useAppContext();
+type EditorFields = Omit<LocalHomeworkDraft, 'savedAt'>;
 
-  const [editorMode, setEditorMode] = useState(false);
+const withOrder = (f: EditorFields): EditorFields => ({
+  ...f,
+  questions: f.questions.map((q, i) => ({ ...q, order: i + 1 })),
+});
+
+const blankFields = (): EditorFields => ({
+  title: '',
+  description: '',
+  grade: DEFAULT_GRADE,
+  answerSource: 'teacher',
+  aiSolverEnabled: true,
+  questions: [createDefaultQuestion('single_choice', 1)],
+  missingQuestionsWarning: null,
+});
+
+const fieldsOfHomework = (hw: Homework): EditorFields =>
+  withOrder({
+    title: hw.title,
+    description: hw.description || '',
+    grade: hw.grade || DEFAULT_GRADE,
+    answerSource: hw.answerSource,
+    aiSolverEnabled: hw.aiSolverEnabled,
+    questions: hw.questions || [],
+    missingQuestionsWarning: null,
+  });
+
+const timeLabel = (iso: string) =>
+  new Date(iso).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+
+const otherFormat = (f: HomeworkFormat): HomeworkFormat => (f === 'word' ? 'game' : 'word');
+
+export const HomeworkPage: React.FC = () => {
+  const { homeworkList, adminDataLoading, user } = useAppContext();
+  // Unsaved work on this device belongs to the signed-in teacher
+  const owner = user?.email ?? 'unknown';
+  const navigate = useNavigate();
+  const { format, target } = parseHomeworkPath(useParams()['*']);
+  // Homework id or "new" when the URL points at the editor
+  const editorKey = format && target ? target : null;
+
   const [studentPreviewMode, setStudentPreviewMode] = useState(false);
-  const [editingHw, setEditingHw] = useState<Homework | null>(null);
+  // The saved homework being edited; null until a new one is first saved
+  const [editingRef, setEditingRef] = useState<{ id: string; createdAt: string } | null>(null);
+  // Which editor target the form currently holds, so the URL can change (Word ⇄ Game) without reloading it
+  const [loadedKey, setLoadedKey] = useState<string | null>(null);
+  // The form as last saved to the system; anything else is unsaved work
+  const [baseline, setBaseline] = useState('');
+  const [restoredAt, setRestoredAt] = useState<string | null>(null);
+  const [savedAt, setSavedAt] = useState<string | null>(null);
+  const [localSaveFailed, setLocalSaveFailed] = useState(false);
+  const [draftsVersion, setDraftsVersion] = useState(0);
 
   // Homework Form State
   const [title, setTitle] = useState('');
@@ -188,6 +255,119 @@ export const HomeworkPage: React.FC = () => {
     setSourceFiles([]);
     setFigureCrops({});
   };
+
+  /** Fills the form for one editor target; `savedSnapshot` is what counts as already saved. */
+  const loadEditor = (
+    key: string,
+    fields: EditorFields,
+    ref: { id: string; createdAt: string } | null,
+    savedSnapshot: string,
+    restoredFrom: string | null = null
+  ) => {
+    const f = withOrder(fields);
+    setLoadedKey(key);
+    setEditingRef(ref);
+    setTitle(f.title);
+    setDescription(f.description);
+    setGrade(f.grade);
+    setAnswerSource(f.answerSource);
+    setAiSolverEnabled(f.aiSolverEnabled);
+    setQuestions(f.questions);
+    setMissingQuestionsWarning(f.missingQuestionsWarning);
+    setBaseline(savedSnapshot);
+    setRestoredAt(restoredFrom);
+    setSavedAt(null);
+    setStudentPreviewMode(false);
+    setConfirmPublish(false);
+    setErrorMsg(null);
+  };
+
+  const homeworkById = (id: string) => homeworkList.find((h) => h.id === id);
+
+  /** Opens the target named by the URL: unsaved work kept on this device wins over the saved copy. */
+  const loadTarget = (key: string, ignoreLocal = false) => {
+    const local = ignoreLocal ? null : readLocalDraft(owner, key);
+    if (key === NEW_HOMEWORK) {
+      const fresh = blankFields();
+      if (local) loadEditor(key, local, null, '', local.savedAt);
+      else loadEditor(key, fresh, null, JSON.stringify(withOrder(fresh)));
+      return true;
+    }
+    const hw = homeworkById(key);
+    if (!hw) return false;
+    const saved = fieldsOfHomework(hw);
+    loadEditor(key, local ?? saved, { id: hw.id, createdAt: hw.createdAt }, JSON.stringify(saved), local?.savedAt ?? null);
+    return true;
+  };
+
+  // Work handed to the editor (from a file, AI or a first save) waits here until the URL
+  // has switched: the router applies navigations as transitions, a render after our own state
+  const handoff = useRef<{ key: string; run: () => void } | null>(null);
+  const openInEditor = (key: string, run: () => void, replace = false) => {
+    handoff.current = { key, run };
+    navigate(homeworkPath(format ?? 'word', key), { replace });
+  };
+
+  useEffect(() => {
+    if (!editorKey) {
+      if (loadedKey && !handoff.current) {
+        clearSourceFiles();
+        setLoadedKey(null);
+      }
+      return;
+    }
+    if (editorKey === loadedKey) return;
+    if (handoff.current?.key === editorKey) {
+      const { run } = handoff.current;
+      handoff.current = null;
+      run();
+      return;
+    }
+    loadTarget(editorKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [editorKey, loadedKey, homeworkList]);
+
+  const currentSnapshot = useMemo(
+    () => JSON.stringify({ title, description, grade, answerSource, aiSolverEnabled, questions, missingQuestionsWarning }),
+    [title, description, grade, answerSource, aiSolverEnabled, questions, missingQuestionsWarning]
+  );
+  const editorReady = Boolean(editorKey) && loadedKey === editorKey;
+  const dirty = editorReady && currentSnapshot !== baseline;
+
+  // Keep unsaved work on this device (written shortly after each change, and when the page closes)
+  const pendingDraftWrite = useRef<(() => void) | null>(null);
+  useEffect(() => {
+    if (!editorReady || !loadedKey) return;
+    const key = loadedKey;
+    const write = () => {
+      pendingDraftWrite.current = null;
+      if (dirty) {
+        const fields = JSON.parse(currentSnapshot) as EditorFields;
+        setLocalSaveFailed(!writeLocalDraft(owner, key, { ...fields, savedAt: new Date().toISOString() }));
+      } else {
+        clearLocalDraft(owner, key);
+        setLocalSaveFailed(false);
+      }
+    };
+    pendingDraftWrite.current = write;
+    const timer = window.setTimeout(write, 400);
+    return () => window.clearTimeout(timer);
+  }, [editorReady, loadedKey, dirty, currentSnapshot, owner]);
+  useEffect(() => () => pendingDraftWrite.current?.(), []);
+
+  // Only when the device could not keep the work does closing the tab need a warning
+  useEffect(() => {
+    if (!dirty || !localSaveFailed) return;
+    const warn = (e: BeforeUnloadEvent) => e.preventDefault();
+    window.addEventListener('beforeunload', warn);
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [dirty, localSaveFailed]);
+
+  const localDraftKeys = useMemo(
+    () => new Set(listLocalDraftKeys(owner)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [draftsVersion, editorKey, homeworkList, owner]
+  );
 
   const figureCropContext: FigureCropContextValue = {
     canRecrop: (url) => {
@@ -229,34 +409,24 @@ export const HomeworkPage: React.FC = () => {
     );
   };
 
+  const activeFormat: HomeworkFormat = format ?? 'word';
+
   const startNewHomework = () => {
-    setMissingQuestionsWarning(null);
     clearSourceFiles();
-    setEditingHw(null);
-    setTitle('');
-    setDescription('');
-    setGrade(DEFAULT_GRADE);
-    setAnswerSource('teacher');
-    setAiSolverEnabled(true);
-    setQuestions([createDefaultQuestion('single_choice', 1)]);
-    setStudentPreviewMode(false);
-    setErrorMsg(null);
-    setEditorMode(true);
+    navigate(homeworkPath(activeFormat, NEW_HOMEWORK));
   };
 
-  const openEditHomework = (hw: Homework) => {
-    clearSourceFiles();
-    setEditingHw(hw);
-    setMissingQuestionsWarning(null);
-    setTitle(hw.title);
-    setDescription(hw.description || '');
-    setGrade(hw.grade || DEFAULT_GRADE);
-    setAnswerSource(hw.answerSource);
-    setAiSolverEnabled(hw.aiSolverEnabled);
-    setQuestions(hw.questions || []);
-    setStudentPreviewMode(false);
-    setErrorMsg(null);
-    setEditorMode(true);
+  const openHomework = (hw: Homework, inFormat: HomeworkFormat) => navigate(homeworkPath(inFormat, hw.id));
+
+  const closeEditor = () => navigate(homeworkPath(activeFormat));
+
+  /** Throws away unsaved work on this device and shows the saved copy (or a blank form). */
+  const discardLocalChanges = () => {
+    if (!loadedKey) return;
+    clearLocalDraft(owner, loadedKey);
+    pendingDraftWrite.current = null;
+    loadTarget(loadedKey, true);
+    setDraftsVersion((v) => v + 1);
   };
 
   const addQuestion = (type: QuestionType) => {
@@ -330,7 +500,7 @@ export const HomeworkPage: React.FC = () => {
 
     setSaving(true);
     try {
-      await saveHomework(
+      const saved = await saveHomework(
         {
           title,
           description,
@@ -342,10 +512,23 @@ export const HomeworkPage: React.FC = () => {
           totalPoints,
           status,
         },
-        editingHw || undefined
+        editingRef || undefined
       );
-      clearSourceFiles();
-      setEditorMode(false);
+      // The system now holds this version: drop the copy kept on this device
+      pendingDraftWrite.current = null;
+      if (loadedKey) clearLocalDraft(owner, loadedKey);
+      clearLocalDraft(owner, saved.id);
+      setDraftsVersion((v) => v + 1);
+      setEditingRef(saved);
+      setBaseline(currentSnapshot);
+      setRestoredAt(null);
+      if (status === 'published') {
+        navigate(homeworkPath(activeFormat));
+      } else {
+        // Stay in the editor; later saves update this same homework
+        setSavedAt(new Date().toISOString());
+        if (loadedKey !== saved.id) openInEditor(saved.id, () => setLoadedKey(saved.id), true);
+      }
     } catch (err) {
       setErrorMsg(
         err instanceof Error ? err.message : 'Không thể lưu bài tập về nhà.'
@@ -359,6 +542,7 @@ export const HomeworkPage: React.FC = () => {
 
   const [mimoDataset, setMimoDataset] = useState<MimoDataset | null>(null);
 
+  /** Opens content that came from a file or from AI as a new, unsaved homework. */
   const openImportedDraft = (draft: {
     title: string;
     description?: string;
@@ -366,26 +550,27 @@ export const HomeworkPage: React.FC = () => {
     answerSource: 'teacher' | 'ai';
     aiSolverEnabled: boolean;
     questions: HomeworkQuestion[];
-  }) => {
-    clearSourceFiles();
-    setMissingQuestionsWarning(null);
-    setEditingHw(null);
-    setTitle(draft.title);
-    setDescription(draft.description || '');
-    setGrade(draft.grade || DEFAULT_GRADE);
-    setAnswerSource(draft.answerSource);
-    setAiSolverEnabled(draft.aiSolverEnabled);
-    setQuestions(draft.questions.map((q, i) => ({ ...q, order: i + 1 })));
-    setStudentPreviewMode(false);
-    setErrorMsg(null);
-    setEditorMode(true);
+    missingQuestionsWarning?: string | null;
+  }, notice?: string) => {
+    const fields: EditorFields = {
+      title: draft.title,
+      description: draft.description || '',
+      grade: draft.grade || DEFAULT_GRADE,
+      answerSource: draft.answerSource,
+      aiSolverEnabled: draft.aiSolverEnabled,
+      questions: draft.questions,
+      missingQuestionsWarning: draft.missingQuestionsWarning ?? null,
+    };
+    // Not saved yet, so it counts as unsaved work from the start
+    openInEditor(NEW_HOMEWORK, () => {
+      loadEditor(NEW_HOMEWORK, fields, null, '');
+      if (notice) setErrorMsg(notice);
+    });
   };
 
-  const handleImportFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    e.target.value = '';
-    if (!file) return;
+  const openDataFile = async (file: File) => {
     setImportError(null);
+    clearSourceFiles();
     let json: unknown;
     try {
       json = JSON.parse(await file.text());
@@ -417,12 +602,12 @@ export const HomeworkPage: React.FC = () => {
       setImportError('Không có câu hỏi nào thuộc dạng hệ thống hỗ trợ trong các mức đã chọn.');
       return;
     }
-    openImportedDraft({ ...draft, answerSource: 'teacher', aiSolverEnabled: false });
-    if (draft.skippedIds.length > 0) {
-      setErrorMsg(
-        `Đã bỏ qua ${draft.skippedIds.length} câu thuộc dạng chưa hỗ trợ: ${draft.skippedIds.join(', ')}.`
-      );
-    }
+    openImportedDraft(
+      { ...draft, answerSource: 'teacher', aiSolverEnabled: false },
+      draft.skippedIds.length > 0
+        ? `Đã bỏ qua ${draft.skippedIds.length} câu thuộc dạng chưa hỗ trợ: ${draft.skippedIds.join(', ')}.`
+        : undefined
+    );
   };
 
   const handleExtracted = (
@@ -436,18 +621,87 @@ export const HomeworkPage: React.FC = () => {
     setSourceFiles(sources);
     setFigureCrops(crops);
     setShowSource(true);
-    setEditingHw(null);
-    setTitle(data.title || 'Đề Toán trích xuất từ AI');
-    setDescription(data.description || '');
-    setGrade(normalizeGrade(data.grade));
-    setMissingQuestionsWarning(incompletenessMessage(data.completeness));
-    setAnswerSource(solveWithAI ? 'ai' : 'teacher');
-    setAiSolverEnabled(solveWithAI);
-    setQuestions(data.questions || []);
-    setStudentPreviewMode(false);
-    setErrorMsg(null);
-    setEditorMode(true);
+    openImportedDraft({
+      title: data.title || 'Đề Toán trích xuất từ AI',
+      description: data.description || '',
+      grade: normalizeGrade(data.grade),
+      answerSource: solveWithAI ? 'ai' : 'teacher',
+      aiSolverEnabled: solveWithAI,
+      questions: data.questions || [],
+      missingQuestionsWarning: incompletenessMessage(data.completeness),
+    });
   };
+
+  const modals = (
+    <>
+      <ConfirmDialog
+        open={deletingHw !== null}
+        danger
+        busy={deletingBusy}
+        title="Xóa bản nháp?"
+        message={
+          <>
+            Bản nháp <b className="text-[#172B4D]">{deletingHw?.title}</b> sẽ bị xóa và không khôi phục được.
+          </>
+        }
+        confirmLabel="Xóa bản nháp"
+        onCancel={() => setDeletingHw(null)}
+        onConfirm={async () => {
+          if (!deletingHw) return;
+          setDeletingBusy(true);
+          try {
+            await deleteDraftHomework(deletingHw.id);
+            clearLocalDraft(owner, deletingHw.id);
+            setDraftsVersion((v) => v + 1);
+            setDeletingHw(null);
+          } finally {
+            setDeletingBusy(false);
+          }
+        }}
+      />
+
+      {mimoDataset && (
+        <MimoImportModal
+          dataset={mimoDataset}
+          onCancel={() => setMimoDataset(null)}
+          onConfirm={handleMimoConfirm}
+        />
+      )}
+
+      <AIImportModal
+        open={aiModalOpen}
+        onClose={() => setAiModalOpen(false)}
+        onManual={startNewHomework}
+        onDataFile={(file) => void openDataFile(file)}
+        onExtracted={handleExtracted}
+      />
+    </>
+  );
+
+  if (editorKey && !editorReady) {
+    return (
+      <div className="studio-skin space-y-6">
+        {adminDataLoading || editorKey === NEW_HOMEWORK ? (
+          <LoadingState label="Đang mở bài tập…" />
+        ) : (
+          <EmptyState
+            icon={Search}
+            tone="gray"
+            title="Không tìm thấy bài tập này"
+            text="Bài tập có thể đã bị xóa. Hãy chọn lại trong danh sách bài tập đã soạn."
+            action={
+              <Link to={homeworkPath(activeFormat)} className="studio-btn studio-btn-primary">
+                <ArrowLeft className="h-4 w-4" />
+                Về danh sách
+              </Link>
+            }
+          />
+        )}
+      </div>
+    );
+  }
+
+  const editorMode = editorReady;
 
   if (editorMode) {
     const totalPoints = Number(
@@ -459,10 +713,41 @@ export const HomeworkPage: React.FC = () => {
       <div className="studio-skin space-y-6">
         {/* Top Editor Action Bar */}
         <div className="cartoon-card sticky top-16 z-10 flex flex-wrap items-center justify-between gap-4 bg-white/95 p-4 backdrop-blur">
-          <div>
-            <h1 className="font-display text-lg font-extrabold text-[#172B4D]">
-              {editingHw ? 'Chỉnh sửa bài tập' : 'Soạn bài tập mới'}
-            </h1>
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <h1 className="font-display text-lg font-extrabold text-[#172B4D]">
+                {editingRef ? 'Chỉnh sửa bài tập' : 'Soạn bài tập mới'}
+              </h1>
+              {/* Same homework in either format: switching only changes the URL */}
+              <div role="group" aria-label="Hình thức" className="flex rounded-xl border border-[#DCE7F3] bg-[#F6FAFF] p-0.5 text-xs font-extrabold">
+                {HOMEWORK_FORMATS.map((f) => (
+                  <button
+                    key={f}
+                    type="button"
+                    aria-pressed={f === format}
+                    onClick={() => loadedKey && navigate(homeworkPath(f, loadedKey), { replace: true })}
+                    className={`rounded-lg px-2.5 py-1 ${f === format ? 'bg-[#2563EB] text-white' : 'text-[#3B4A66] hover:bg-white'}`}
+                  >
+                    {f === 'word' ? 'Word' : 'Game'}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <p className="text-xs font-bold" aria-live="polite">
+              {saving ? (
+                <span className="text-[#5E6C84]">Đang lưu…</span>
+              ) : dirty ? (
+                localSaveFailed ? (
+                  <span className="text-rose-700">Có thay đổi chưa lưu – máy này không giữ tạm được, hãy bấm Lưu Bản Nháp</span>
+                ) : (
+                  <span className="text-amber-700">Có thay đổi chưa lưu vào hệ thống (đã giữ tạm trên máy này)</span>
+                )
+              ) : editingRef ? (
+                <span className="text-[#1F9D6B]">{savedAt ? `Đã lưu vào hệ thống lúc ${timeLabel(savedAt)}` : 'Đã lưu vào hệ thống'}</span>
+              ) : (
+                <span className="text-[#5E6C84]">Chưa lưu</span>
+              )}
+            </p>
             <p className="text-xs text-[#3B4A66]">
               Tổng số câu:{' '}
               <span className="font-mono font-bold">{questions.length}</span> ·
@@ -531,10 +816,7 @@ export const HomeworkPage: React.FC = () => {
 
             <button
               type="button"
-              onClick={() => {
-                clearSourceFiles();
-                setEditorMode(false);
-              }}
+              onClick={closeEditor}
               className="cartoon-button rounded-xl bg-[#F6FAFF] px-3 py-2 text-xs font-bold text-[#3B4A66]"
             >
               Đóng
@@ -545,6 +827,32 @@ export const HomeworkPage: React.FC = () => {
         {errorMsg && (
           <div className="cartoon-card bg-rose-50 p-4 text-xs font-bold text-rose-700">
             {errorMsg}
+          </div>
+        )}
+
+        {restoredAt && (
+          <div role="status" className="flex flex-wrap items-center gap-3 rounded-2xl border-2 border-amber-400 bg-amber-50 p-4 text-sm text-amber-900">
+            <History className="h-5 w-5 shrink-0 text-amber-600" />
+            <div className="min-w-0 flex-1">
+              <div className="font-extrabold">Đã mở lại phần đang soạn dở lúc {timeLabel(restoredAt)}</div>
+              <div className="text-xs">Phần này chưa được lưu vào hệ thống. Bấm Lưu Bản Nháp để lưu, hoặc bỏ để quay về bản đã lưu.</div>
+            </div>
+            <button type="button" onClick={discardLocalChanges} className="studio-btn studio-btn-secondary">
+              {editingRef ? 'Bỏ thay đổi chưa lưu' : 'Bỏ bản này, soạn mới'}
+            </button>
+          </div>
+        )}
+
+        {format === 'game' ? (
+          <GameReadinessBar questions={questions} />
+        ) : (
+          <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] px-4 py-2.5 text-xs text-[#3B4A66]">
+            <FileText className="h-4 w-4 text-[#2563EB]" />
+            <span>
+              <b>Phiếu bài tập Word.</b> Lưu nháp, xuất bản rồi giao về nhà ở mục{' '}
+              <Link to="/admin/assignments" className="font-bold text-[#2563EB] hover:underline">Giao bài tập</Link>.
+            </span>
+            <span className="text-[#5E6C84]">Tải xuống tệp Word: chưa có trong phiên bản này.</span>
           </div>
         )}
 
@@ -1199,74 +1507,36 @@ export const HomeworkPage: React.FC = () => {
     const q = hwSearch.trim().toLowerCase();
     return !q || hw.title.toLowerCase().includes(q) || (hw.description || '').toLowerCase().includes(q) || (hw.grade || '').toLowerCase().includes(q);
   });
-  const tools = [
-    {
-      key: 'ai',
-      icon: Sparkles,
-      tone: 'yellow' as const,
-      title: 'Tạo bài tập bằng AI',
-      text: 'Tải ảnh chụp hoặc PDF đề bài, AI chuyển thành câu hỏi có cấu trúc để cô xem lại.',
-      cta: 'Tải ảnh / PDF',
-    },
-    {
-      key: 'manual',
-      icon: PenLine,
-      tone: 'blue' as const,
-      title: 'Soạn bài tập thủ công',
-      text: 'Soạn từng câu với công thức Toán, hình vẽ và 5 dạng câu hỏi.',
-      cta: 'Bắt đầu soạn',
-    },
-    {
-      key: 'file',
-      icon: FileJson,
-      tone: 'teal' as const,
-      title: 'Nhập bài tập từ tệp',
-      text: 'Mở tệp .json đã soạn sẵn (định dạng MimoEDU hoặc bộ câu hỏi Mimo).',
-      cta: 'Chọn tệp .json',
-    },
-  ];
+  const unsavedNew = localDraftKeys.has(NEW_HOMEWORK) ? readLocalDraft(owner, NEW_HOMEWORK) : null;
 
-  return (
-    <div className="studio-skin space-y-6">
-      <PageHeader
-        icon={BookOpen}
-        title="Soạn bài tập"
-        description="Soạn bài tập Toán với công thức và hình học, tạo đề bằng AI từ ảnh/PDF, hoặc nhập từ tệp. Bài đã xuất bản dùng được ở mục Giao bài tập."
-      />
-
-      <section aria-label="Cách tạo bài tập" className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        {tools.map((t) => {
-          const Icon = t.icon;
-          const body = (
-            <>
-              <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${STUDIO_TONE[t.tone]}`}>
-                <Icon className="h-6 w-6" />
-              </span>
-              <span className="mt-4 block font-display text-base font-extrabold text-[#172B4D]">{t.title}</span>
-              <span className="mt-1 block text-sm leading-relaxed text-[#5E6C84]">{t.text}</span>
-              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#2563EB] transition group-hover:gap-2">
-                {t.cta} <ArrowRight className="h-4 w-4" />
-              </span>
-            </>
-          );
-          const wash = { yellow: 'from-[#FFF8E1]', blue: 'from-[#EFF6FF]', teal: 'from-[#ECFEFF]' }[t.tone];
-          const cls = `studio-card group flex h-full flex-col bg-gradient-to-br ${wash} to-white p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-within:ring-4 focus-within:ring-[#54C8FF]/30`;
-          return t.key === 'file' ? (
-            <label key={t.key} className={`${cls} cursor-pointer`}>
-              {body}
-              <input type="file" accept="application/json,.json" onChange={handleImportFile} className="sr-only" />
-            </label>
-          ) : (
-            <button key={t.key} type="button" onClick={t.key === 'ai' ? () => setAiModalOpen(true) : startNewHomework} className={cls}>
-              {body}
-            </button>
-          );
-        })}
-      </section>
-
-      {importError && <ErrorState message={importError} />}
-
+  const homeworkSection = (openIn: HomeworkFormat) => (
+    <>
       <SectionHeading icon={FileText} title="Bài tập đã soạn" note={`${hwCounts.all} bài · ${hwCounts.published} đã xuất bản · ${hwCounts.draft} bản nháp`} />
+
+      {unsavedNew && (
+        <div className="flex flex-wrap items-center gap-3 rounded-2xl border-2 border-dashed border-amber-400 bg-amber-50 p-4 text-sm text-amber-900">
+          <History className="h-5 w-5 shrink-0 text-amber-600" />
+          <div className="min-w-0 flex-1">
+            <div className="font-extrabold">Bài đang soạn dở, chưa lưu vào hệ thống</div>
+            <div className="text-xs">
+              {unsavedNew.title || 'Chưa đặt tiêu đề'} · {unsavedNew.questions.length} câu · giữ tạm trên máy này lúc {timeLabel(unsavedNew.savedAt)}
+            </div>
+          </div>
+          <button type="button" onClick={() => navigate(homeworkPath(openIn, NEW_HOMEWORK))} className="studio-btn studio-btn-primary">
+            Tiếp tục soạn
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              clearLocalDraft(owner, NEW_HOMEWORK);
+              setDraftsVersion((v) => v + 1);
+            }}
+            className="studio-btn studio-btn-secondary"
+          >
+            Bỏ bản này
+          </button>
+        </div>
+      )}
 
       {homeworkList.length > 0 && (
         <Toolbar>
@@ -1284,11 +1554,13 @@ export const HomeworkPage: React.FC = () => {
         </Toolbar>
       )}
 
-      {homeworkList.length === 0 ? (
+      {adminDataLoading && homeworkList.length === 0 ? (
+        <LoadingState label="Đang tải bài tập đã soạn…" />
+      ) : homeworkList.length === 0 ? (
         <EmptyState
           icon={BookOpen}
           title="Chưa có bài tập nào"
-          text="Chọn một trong ba cách ở trên để tạo bài tập đầu tiên. Bài soạn xong có thể lưu nháp hoặc xuất bản để giao cho lớp."
+          text="Bài soạn xong có thể lưu nháp để sửa tiếp, hoặc xuất bản để giao cho lớp."
         />
       ) : shownHomework.length === 0 ? (
         <EmptyState icon={Search} tone="gray" title="Không có bài tập phù hợp" text="Thử từ khóa hoặc trạng thái khác." />
@@ -1296,6 +1568,7 @@ export const HomeworkPage: React.FC = () => {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
           {shownHomework.map((hw) => {
             const published = hw.status === 'published';
+            const game = openIn === 'game' ? gameReadiness(hw.questions) : null;
             return (
               <article key={hw.id} className="studio-card flex flex-col p-5 transition hover:shadow-[var(--studio-shadow-hover)]">
                 <div className="flex flex-wrap items-center gap-2">
@@ -1308,6 +1581,11 @@ export const HomeworkPage: React.FC = () => {
                       Đáp án AI
                     </StatusBadge>
                   )}
+                  {localDraftKeys.has(hw.id) && (
+                    <StatusBadge kind="danger" icon={History}>
+                      Có thay đổi chưa lưu
+                    </StatusBadge>
+                  )}
                 </div>
                 <h3 className="mt-3 font-display text-lg leading-snug font-extrabold text-[#172B4D]">{hw.title}</h3>
                 {hw.description && <p className="mt-1 line-clamp-2 text-sm text-[#5E6C84]">{hw.description}</p>}
@@ -1318,10 +1596,15 @@ export const HomeworkPage: React.FC = () => {
                   <span>
                     <b className="text-[#172B4D]">{hw.totalPoints}</b> điểm
                   </span>
+                  {game && (
+                    <span>
+                      <b className="text-[#172B4D]">{game.playable}/{hw.questions.length}</b> câu chơi được
+                    </span>
+                  )}
                   <span>Cập nhật {hw.updatedAt.slice(0, 10).split('-').reverse().join('/')}</span>
                 </div>
                 <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-[#EEF3F9] pt-4">
-                  <button type="button" onClick={() => openEditHomework(hw)} className="studio-btn studio-btn-primary flex-1">
+                  <button type="button" onClick={() => openHomework(hw, openIn)} className="studio-btn studio-btn-primary flex-1">
                     <Edit3 className="h-4 w-4" />
                     Mở / chỉnh sửa
                   </button>
@@ -1341,45 +1624,214 @@ export const HomeworkPage: React.FC = () => {
           })}
         </div>
       )}
+    </>
+  );
 
-      <ConfirmDialog
-        open={deletingHw !== null}
-        danger
-        busy={deletingBusy}
-        title="Xóa bản nháp?"
-        message={
-          <>
-            Bản nháp <b className="text-[#172B4D]">{deletingHw?.title}</b> sẽ bị xóa và không khôi phục được.
-          </>
-        }
-        confirmLabel="Xóa bản nháp"
-        onCancel={() => setDeletingHw(null)}
-        onConfirm={async () => {
-          if (!deletingHw) return;
-          setDeletingBusy(true);
-          try {
-            await deleteDraftHomework(deletingHw.id);
-            setDeletingHw(null);
-          } finally {
-            setDeletingBusy(false);
-          }
-        }}
-      />
-
-      {mimoDataset && (
-        <MimoImportModal
-          dataset={mimoDataset}
-          onCancel={() => setMimoDataset(null)}
-          onConfirm={handleMimoConfirm}
+  // Step 1: choose Word or Game
+  if (!format) {
+    return (
+      <div className="studio-skin space-y-6">
+        <PageHeader
+          icon={BookOpen}
+          title="Soạn bài tập"
+          description="Chọn hình thức trước khi soạn. Word và Game dùng chung một bộ câu hỏi: một đề soạn xong mở được ở cả hai hình thức."
         />
-      )}
 
-      <AIImportModal
-        open={aiModalOpen}
-        onClose={() => setAiModalOpen(false)}
-        onManual={startNewHomework}
-        onExtracted={handleExtracted}
+        <section aria-label="Chọn hình thức bài tập" className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {HOMEWORK_FORMATS.map((f) => {
+            const look = FORMAT_LOOK[f];
+            const Icon = look.icon;
+            return (
+              <Link
+                key={f}
+                to={homeworkPath(f)}
+                className={`group relative flex min-h-[220px] flex-col overflow-hidden rounded-[28px] bg-gradient-to-br ${look.gradient} p-6 text-white shadow-[0_18px_40px_-18px_rgba(30,58,138,0.55)] transition hover:-translate-y-1 focus-visible:ring-4 focus-visible:ring-[#54C8FF]/50 focus-visible:outline-none sm:p-7`}
+              >
+                <span className="pointer-events-none absolute -top-12 -right-10 h-40 w-40 rounded-full bg-white/15" aria-hidden="true" />
+                <span className="pointer-events-none absolute -bottom-14 right-16 h-28 w-28 rounded-full bg-[#FFD34E]/35 blur-lg" aria-hidden="true" />
+                <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 ring-1 ring-white/40">
+                  <Icon className="h-7 w-7" />
+                </span>
+                <span className="relative mt-4 font-display text-xl font-extrabold tracking-wide sm:text-2xl">
+                  {HOMEWORK_FORMAT_LABELS[f].toUpperCase()}
+                </span>
+                <span className="relative mt-1.5 max-w-md text-sm leading-relaxed text-white/90">{look.description}</span>
+                <span className="relative mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-extrabold text-[#FFE08A] transition group-hover:gap-2.5">
+                  Chọn {f === 'word' ? 'Word' : 'Game'} <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+            );
+          })}
+        </section>
+
+        {importError && <ErrorState message={importError} />}
+        {homeworkSection('word')}
+        {modals}
+      </div>
+    );
+  }
+
+  // Step 2: from a file or by hand, inside the chosen format
+  const look = FORMAT_LOOK[format];
+  return (
+    <div className="studio-skin space-y-6">
+      <PageHeader
+        icon={look.icon}
+        eyebrow={
+          <Link to={homeworkPath()} className="inline-flex items-center gap-1 hover:underline">
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Soạn bài tập
+          </Link>
+        }
+        title={HOMEWORK_FORMAT_LABELS[format]}
+        description={look.description}
+        actions={
+          <Link to={homeworkPath(otherFormat(format))} className="studio-btn studio-btn-secondary">
+            Chuyển sang {format === 'word' ? 'Game' : 'Word'}
+          </Link>
+        }
       />
+
+      <FormatStatus format={format} />
+
+      <section aria-label="Cách soạn bài tập" className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {[
+          {
+            key: 'file',
+            icon: Upload,
+            tone: 'yellow' as const,
+            title: 'Tạo bài tập từ tệp',
+            text: 'Ảnh chụp hoặc PDF đề bài: AI nhận diện thành câu hỏi để thầy cô soát lại. Tệp đề .json có sẵn: mở ngay, không dùng AI.',
+            cta: 'Chọn tệp',
+            onClick: () => setAiModalOpen(true),
+          },
+          {
+            key: 'manual',
+            icon: PenLine,
+            tone: 'blue' as const,
+            title: 'Soạn bài tập thủ công',
+            text: 'Soạn từng câu với công thức Toán, hình vẽ, bảng và 5 dạng câu hỏi.',
+            cta: 'Bắt đầu soạn',
+            onClick: startNewHomework,
+          },
+        ].map((t) => {
+          const Icon = t.icon;
+          const wash = t.tone === 'yellow' ? 'from-[#FFF8E1]' : 'from-[#EFF6FF]';
+          return (
+            <button
+              key={t.key}
+              type="button"
+              onClick={t.onClick}
+              className={`studio-card group flex h-full flex-col bg-gradient-to-br ${wash} to-white p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-visible:ring-4 focus-visible:ring-[#54C8FF]/30 focus-visible:outline-none`}
+            >
+              <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${STUDIO_TONE[t.tone]}`}>
+                <Icon className="h-6 w-6" />
+              </span>
+              <span className="mt-4 block font-display text-base font-extrabold text-[#172B4D]">{t.title}</span>
+              <span className="mt-1 block text-sm leading-relaxed text-[#5E6C84]">{t.text}</span>
+              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#2563EB] transition group-hover:gap-2">
+                {t.cta} <ArrowRight className="h-4 w-4" />
+              </span>
+            </button>
+          );
+        })}
+      </section>
+
+      {importError && <ErrorState message={importError} />}
+      {homeworkSection(format)}
+      {modals}
     </div>
+  );
+};
+
+/** In the Game format: how many questions the classroom games can actually play. */
+const GameReadinessBar: React.FC<{ questions: HomeworkQuestion[] }> = ({ questions }) => {
+  const { playable, notPlayable } = gameReadiness(questions);
+  return (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-2xl border border-[#E9D5FF] bg-[#FAF5FF] px-4 py-2.5 text-xs text-[#4C1D95]">
+      <Gamepad2 className="h-4 w-4 text-[#7C3AED]" />
+      <span>
+        <b>{playable}/{questions.length} câu chơi được</b> trong Mimo Quiz và Đoàn tàu kiến thức (trắc nghiệm, Đúng/Sai có đáp án).
+      </span>
+      {notPlayable > 0 && (
+        <span className="font-bold text-[#9D174D]">
+          {notPlayable} câu chưa chơi được: trả lời ngắn, tự luận hoặc chưa chọn đáp án.
+        </span>
+      )}
+      <span className="text-[#6B21A8]">Lưu đề rồi chọn trong trò chơi, nguồn “Kho học liệu Toán 3”.</span>
+    </div>
+  );
+};
+
+const FORMAT_LOOK: Record<HomeworkFormat, { icon: typeof FileText; gradient: string; description: string }> = {
+  word: {
+    icon: FileText,
+    gradient: 'from-[#1E3A8A] via-[#2563EB] to-[#38BDF8]',
+    description: 'Tạo phiếu bài tập, đề ôn tập, đề kiểm tra để chỉnh sửa, tải xuống và in.',
+  },
+  game: {
+    icon: Gamepad2,
+    gradient: 'from-[#6D28D9] via-[#C026D3] to-[#FB7185]',
+    description: 'Tạo câu hỏi và chuyển thành trò chơi tương tác để tổ chức dạy học hoặc giao bài.',
+  },
+};
+
+/** What each format can really do today, so nothing looks finished when it is not. */
+const FormatStatus: React.FC<{ format: HomeworkFormat }> = ({ format }) => {
+  const ready =
+    format === 'word'
+      ? [
+          <>Soạn, lưu nháp, mở lại và sửa tiếp</>,
+          <>Xem trước giao diện học sinh</>,
+          <>
+            Xuất bản rồi giao bài về nhà ở mục{' '}
+            <Link to="/admin/assignments" className="font-bold text-[#2563EB] hover:underline">
+              Giao bài tập
+            </Link>
+          </>,
+        ]
+      : [
+          <>Câu trắc nghiệm và Đúng/Sai dùng được ngay trong trò chơi</>,
+          <>
+            Chơi trên lớp: mở{' '}
+            <Link to="/admin/tools/mimo-quiz" className="font-bold text-[#2563EB] hover:underline">
+              Mimo Quiz
+            </Link>{' '}
+            hoặc{' '}
+            <Link to="/admin/tools/doan-tau" className="font-bold text-[#2563EB] hover:underline">
+              Đoàn tàu kiến thức
+            </Link>
+            , chọn nguồn “Kho học liệu Toán 3” rồi chọn đề này
+          </>,
+        ];
+  const notYet =
+    format === 'word'
+      ? ['Tải xuống tệp Word và in phiếu']
+      : ['Tự chuyển đề thành một trò chơi riêng', 'Câu trả lời ngắn và tự luận chưa chơi được trong trò chơi'];
+  return (
+    <section aria-label="Chức năng hiện có" className="grid grid-cols-1 gap-3 md:grid-cols-2">
+      <div className="rounded-2xl border border-[#BFE3D0] bg-[#F0FBF5] p-4 text-sm text-[#14532D]">
+        <div className="mb-1.5 flex items-center gap-1.5 font-extrabold">
+          <CheckCircle2 className="h-4 w-4 text-[#1F9D6B]" />
+          Đã dùng được
+        </div>
+        <ul className="list-disc space-y-1 pl-5">
+          {ready.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] p-4 text-sm text-[#3B4A66]">
+        <div className="mb-1.5 flex items-center gap-1.5 font-extrabold">
+          <Info className="h-4 w-4 text-[#5E6C84]" />
+          Chưa có trong phiên bản này
+        </div>
+        <ul className="list-disc space-y-1 pl-5">
+          {notYet.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 };

@@ -52,6 +52,8 @@ interface AIImportModalProps {
   onClose: () => void;
   /** Opens the manual editor; offered when the AI service is not available. */
   onManual?: () => void;
+  /** A ready-made .json homework file: opened directly, without AI. */
+  onDataFile?: (file: File) => void;
   onExtracted: (
     data: ExtractedHomework,
     solveWithAI: boolean,
@@ -61,6 +63,10 @@ interface AIImportModalProps {
 }
 
 const ACCEPTED_TYPES = ['image/png', 'image/jpeg', 'image/webp', 'application/pdf'];
+
+function isDataFile(file: File): boolean {
+  return file.type === 'application/json' || file.name.toLowerCase().endsWith('.json');
+}
 // Vercel Serverless rejects request bodies above ~4.5MB; leave room for JSON overhead.
 const MAX_TOTAL_BASE64 = 4_200_000;
 const MAX_FILES = 20;
@@ -184,6 +190,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
   open,
   onClose,
   onManual,
+  onDataFile,
   onExtracted,
 }) => {
   const [files, setFiles] = useState<PendingFile[]>([]);
@@ -201,6 +208,16 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
 
   const addFiles = async (incoming: File[]) => {
     setError(null);
+    const dataFiles = incoming.filter(isDataFile);
+    if (dataFiles.length > 0 && onDataFile) {
+      if (dataFiles.length === 1 && incoming.length === 1 && files.length === 0) {
+        closeAndReset();
+        onDataFile(dataFiles[0]);
+      } else {
+        setError('Tệp đề .json được mở riêng: hãy chọn một tệp .json, không kèm ảnh hay PDF.');
+      }
+      return;
+    }
     const accepted = incoming.filter((f) => ACCEPTED_TYPES.includes(resolveMimeType(f)));
     if (accepted.length < incoming.length) {
       setError('Một số file bị bỏ qua: chỉ hỗ trợ PNG, JPG, WEBP hoặc PDF.');
@@ -340,7 +357,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
           <div className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-amber-600" />
             <h2 className="font-display text-lg font-extrabold text-[#172B4D]">
-              Chuyển ảnh / PDF thành đề
+              Tạo bài tập từ tệp
             </h2>
           </div>
           <button
@@ -406,13 +423,18 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
               Kéo thả, nhấn để chọn, hoặc dán (Ctrl+V) ảnh chụp đề
             </span>
             <span className="mt-1 text-xs text-[#5E6C84]">
-              Chọn được nhiều trang cùng lúc · PNG, JPG, WEBP, PDF · PDF được tách thành từng trang · Hình vẽ trong đề được tự cắt vào câu hỏi
+              Ảnh chụp hoặc PDF (PNG, JPG, WEBP, PDF): AI nhận diện câu hỏi · Chọn được nhiều trang cùng lúc · Hình vẽ trong đề được tự cắt vào câu hỏi
             </span>
+            {onDataFile && (
+              <span className="mt-1 text-xs text-[#5E6C84]">
+                Tệp đề .json (MimoEDU hoặc bộ câu hỏi Mimo): mở ngay vào trình soạn, không dùng AI
+              </span>
+            )}
             <input
               ref={inputRef}
               type="file"
               multiple
-              accept={ACCEPTED_TYPES.join(',')}
+              accept={[...ACCEPTED_TYPES, ...(onDataFile ? ['application/json', '.json'] : [])].join(',')}
               onChange={(e) => {
                 void addFiles(Array.from(e.target.files || []));
                 e.target.value = '';
