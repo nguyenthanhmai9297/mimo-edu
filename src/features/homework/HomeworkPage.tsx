@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   ArrowDown,
@@ -7,6 +7,7 @@ import {
   ArrowUp,
   BookOpen,
   CheckCircle2,
+  Download,
   Copy,
   Edit3,
   Eye,
@@ -40,6 +41,9 @@ import {
   FigureCropContextValue,
 } from '../../components/editor/FigureCropContext';
 import { SourceDocumentPanel } from './SourceDocumentPanel';
+
+// The Word builder is large; it loads only when a teacher opens the export
+const WordExportModal = lazy(() => import('./WordExportModal').then((m) => ({ default: m.WordExportModal })));
 import {
   deleteDraftHomework,
   duplicateHomework,
@@ -233,6 +237,7 @@ export const HomeworkPage: React.FC = () => {
   const [aiSolverEnabled, setAiSolverEnabled] = useState(true);
   const [questions, setQuestions] = useState<HomeworkQuestion[]>([]);
   const [saving, setSaving] = useState(false);
+  const [wordExportOpen, setWordExportOpen] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   // AI Upload Modal State
@@ -887,6 +892,19 @@ export const HomeworkPage: React.FC = () => {
                 : 'Xem Trước Giao Diện Học Sinh'}
             </button>
 
+            {format === 'word' && (
+              <button
+                type="button"
+                onClick={() => setWordExportOpen(true)}
+                disabled={!questions.length}
+                title={questions.length ? 'Tải đề về máy dạng tệp Word (.docx)' : 'Đề chưa có câu hỏi'}
+                className="cartoon-button flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-xs font-extrabold text-[#172B4D] disabled:opacity-50"
+              >
+                <Download className="h-4 w-4" />
+                Tải Word (.docx)
+              </button>
+            )}
+
             <button
               type="button"
               onClick={() => handleSave('draft')}
@@ -944,7 +962,7 @@ export const HomeworkPage: React.FC = () => {
               <b>Phiếu bài tập Word.</b> Lưu nháp, xuất bản rồi giao về nhà ở mục{' '}
               <Link to="/admin/assignments" className="font-bold text-[#2563EB] hover:underline">Giao bài tập</Link>.
             </span>
-            <span className="text-[#5E6C84]">Tải xuống tệp Word: chưa có trong phiên bản này.</span>
+            <span className="text-[#5E6C84]">Bấm <b>Tải Word (.docx)</b> để in đề, đề kèm đáp án hoặc file đáp án riêng.</span>
           </div>
         )}
 
@@ -1588,6 +1606,16 @@ export const HomeworkPage: React.FC = () => {
         onCancel={() => setPendingTypeChange(null)}
         onConfirm={() => pendingTypeChange && applyTypeChange(pendingTypeChange.idx, pendingTypeChange.change)}
       />
+      {wordExportOpen && (
+        <Suspense fallback={null}>
+          <WordExportModal
+            open
+            onClose={() => setWordExportOpen(false)}
+            homework={{ title: title.trim() || 'Bài tập', description, grade, questions }}
+            unsaved={dirty}
+          />
+        </Suspense>
+      )}
       {recropRequest && (() => {
         const info = figureCrops[recropRequest.url];
         const page = info && sourceFiles.find((f) => f.id === info.sourceId);
@@ -1947,6 +1975,7 @@ const FormatStatus: React.FC<{ format: HomeworkFormat }> = ({ format }) => {
       ? [
           <>Soạn, lưu nháp, mở lại và sửa tiếp</>,
           <>Xem trước giao diện học sinh</>,
+          <>Tải Word (.docx): đề, đề kèm đáp án hoặc file đáp án riêng; in được trên khổ A4</>,
           <>
             Xuất bản rồi giao bài về nhà ở mục{' '}
             <Link to="/admin/assignments" className="font-bold text-[#2563EB] hover:underline">
@@ -1970,7 +1999,7 @@ const FormatStatus: React.FC<{ format: HomeworkFormat }> = ({ format }) => {
         ];
   const notYet =
     format === 'word'
-      ? ['Tải xuống tệp Word và in phiếu']
+      ? []
       : ['Tự chuyển đề thành một trò chơi riêng', 'Câu trả lời ngắn và tự luận chưa chơi được trong trò chơi'];
   return (
     <section aria-label="Chức năng hiện có" className="grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -1985,7 +2014,7 @@ const FormatStatus: React.FC<{ format: HomeworkFormat }> = ({ format }) => {
           ))}
         </ul>
       </div>
-      <div className="rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] p-4 text-sm text-[#3B4A66]">
+      {notYet.length > 0 && <div className="rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] p-4 text-sm text-[#3B4A66]">
         <div className="mb-1.5 flex items-center gap-1.5 font-extrabold">
           <Info className="h-4 w-4 text-[#5E6C84]" />
           Chưa có trong phiên bản này
@@ -1995,7 +2024,7 @@ const FormatStatus: React.FC<{ format: HomeworkFormat }> = ({ format }) => {
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </div>
+      </div>}
     </section>
   );
 };
