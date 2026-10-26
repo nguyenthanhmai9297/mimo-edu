@@ -109,10 +109,8 @@ export const BellAnswerFix: React.FC<{
     >
       <div className="space-y-3">
         <p className="text-sm text-[#5E6C84]">
-          {todo.length > 0
-            ? `${todo.length} câu cần thầy cô chọn hoặc xác nhận đáp án. Câu chưa xác nhận sẽ không đưa vào trò chơi.`
-            : 'Các câu đều đã có đáp án.'}
-          {essays > 0 ? ` ${essays} câu tự luận không dùng trong trò chơi.` : ''}
+          {todo.length > 0 ? `Chọn đáp án đúng cho ${todo.length} câu.` : 'Các câu đều đã có đáp án.'}
+          {essays > 0 ? ` Bỏ qua ${essays} câu tự luận.` : ''}
         </p>
         {error && <ErrorState message={error} />}
         {todo.map((q) => {
@@ -124,7 +122,6 @@ export const BellAnswerFix: React.FC<{
                 <span className="rounded-lg bg-[#FFF4C2] px-2 py-0.5 text-xs font-extrabold text-[#5A3A00]">Câu {q.order}</span>
                 <RichContentRenderer content={q.prompt} className="min-w-0 flex-1 text-sm font-bold text-[#172B4D]" inheritSize />
               </div>
-              {q.aiReviewNote && <p className="mt-1 text-xs text-amber-800">AI ghi chú: {q.aiReviewNote}</p>}
               <div className="mt-2 flex flex-wrap items-center gap-2">
                 {(q.type === 'single_choice' || q.type === 'multiple_choice') &&
                   q.options!.map((o, i) => (

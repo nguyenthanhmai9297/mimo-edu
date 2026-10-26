@@ -12,6 +12,7 @@ import {
 import { HomeworkQuestion } from '../../types/domain';
 import type { AICompleteness } from '../../utils/aiCompleteness';
 import { cropFigure, NormalizedBox, padBox, pdfToPageImages } from './figureCrop';
+import { docxToPageImages } from './docxPages';
 import { apiUrl } from '../../lib/apiUrl';
 import { auth } from '../../lib/firebase/config';
 
@@ -43,7 +44,7 @@ export interface FigureCropInfo {
   box: NormalizedBox;
 }
 
-interface PendingFile extends SourceFile {
+export interface PendingFile extends SourceFile {
   base64: string;
 }
 
@@ -62,7 +63,10 @@ interface AIImportModalProps {
   ) => void;
 }
 
-const ACCEPTED_TYPES = ['image/png', 'image/jpeg', 'image/webp', 'application/pdf'];
+const DOCX = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+export const ACCEPTED_TYPES = ['image/png', 'image/jpeg', 'image/webp', 'application/pdf', DOCX];
+/** For a file input: the types above, plus the extension (some systems give .docx no type). */
+export const ACCEPT_ATTR = [...ACCEPTED_TYPES, '.docx'].join(',');
 
 function isDataFile(file: File): boolean {
   return file.type === 'application/json' || file.name.toLowerCase().endsWith('.json');
@@ -82,9 +86,10 @@ function readAsDataUrl(file: Blob): Promise<string> {
   });
 }
 
-function resolveMimeType(file: File): string {
-  if (file.type && file.type !== 'image/jpg') return file.type;
+export function resolveMimeType(file: File): string {
   const ext = file.name.split('.').pop()?.toLowerCase() || '';
+  if (ext === 'docx') return DOCX;
+  if (file.type && file.type !== 'image/jpg') return file.type;
   if (ext === 'pdf') return 'application/pdf';
   if (ext === 'png') return 'image/png';
   if (ext === 'webp') return 'image/webp';
@@ -126,12 +131,12 @@ async function blobToPending(blob: Blob, name: string, mimeType: string): Promis
   };
 }
 
-/** Images become one page each; PDFs are rendered to one image per page. */
-async function prepareFile(file: File): Promise<PendingFile[]> {
+/** Images become one page each; PDF and Word files are rendered to one image per page. */
+export async function prepareFile(file: File): Promise<PendingFile[]> {
   let mimeType = resolveMimeType(file);
   const name = file.name || 'anh-dan.png';
-  if (mimeType === 'application/pdf') {
-    const pages = await pdfToPageImages(file);
+  if (mimeType === 'application/pdf' || mimeType === DOCX) {
+    const pages = mimeType === DOCX ? await docxToPageImages(file) : await pdfToPageImages(file);
     return Promise.all(
       pages.map((blob, idx) =>
         blobToPending(blob, pages.length > 1 ? `${name} – trang ${idx + 1}` : name, 'image/jpeg')
@@ -172,6 +177,46 @@ async function insertFigures(
     }
   }
   return crops;
+}
+
+/** Sends the pages to the AI and crops the figures it located; throws a teacher-readable error (with `code`). */
+export async function extractHomework(
+  files: PendingFile[],
+  solveWithAI: boolean
+): Promise<{ data: ExtractedHomework; figureCrops: Record<string, FigureCropInfo> }> {
+  // The server checks this teacher's Firebase sign-in before any AI call
+  const token = await auth.currentUser?.getIdToken();
+  if (!token) throw new Error('Phiên đăng nhập đã hết hạn, vui lòng tải lại trang và đăng nhập lại.');
+  const res = await fetch(apiUrl('/api/ai/parse-homework'), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+    body: JSON.stringify({
+      files: files.map((f) => ({ mimeType: f.mimeType, base64Data: f.base64 })),
+      solveWithAI,
+    }),
+  });
+
+  const rawText = await res.text();
+  let data: ExtractedHomework & { error?: string; code?: string };
+  try {
+    data = JSON.parse(rawText);
+  } catch {
+    if (res.status === 404) {
+      throw new Error('Không tìm thấy API Server (/api/ai/parse-homework). Hãy kiểm tra bản deploy.');
+    }
+    if (res.status === 413) {
+      throw new Error('Đề quá lớn. Vui lòng bớt trang hoặc chọn tệp nhỏ hơn.');
+    }
+    if (res.status === 504) {
+      throw new Error('Máy chủ xử lý quá lâu. Hãy tách đề thành nhiều phần nhỏ rồi thử lại.');
+    }
+    throw new Error(`Máy chủ trả về phản hồi không hợp lệ (HTTP ${res.status}).`);
+  }
+  if (!res.ok) {
+    throw Object.assign(new Error(data.error || 'AI không thể chuyển đổi file này.'), { code: data.code });
+  }
+  const figureCrops = await insertFigures(data, files);
+  return { data, figureCrops };
 }
 
 function formatMB(base64Length: number): string {
@@ -220,7 +265,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
     }
     const accepted = incoming.filter((f) => ACCEPTED_TYPES.includes(resolveMimeType(f)));
     if (accepted.length < incoming.length) {
-      setError('Một số file bị bỏ qua: chỉ hỗ trợ PNG, JPG, WEBP hoặc PDF.');
+      setError('Một số file bị bỏ qua: chỉ hỗ trợ ảnh (PNG, JPG, WEBP), PDF hoặc Word (.docx).');
     }
     if (accepted.length === 0) return;
     setPreparing(true);
@@ -300,40 +345,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
     setAiUnavailable(false);
     setLoading(true);
     try {
-      // The server checks this teacher's Firebase sign-in before any AI call
-      const token = await auth.currentUser?.getIdToken();
-      if (!token) throw new Error('Phiên đăng nhập đã hết hạn, vui lòng tải lại trang và đăng nhập lại.');
-      const res = await fetch(apiUrl('/api/ai/parse-homework'), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-        body: JSON.stringify({
-          files: files.map((f) => ({ mimeType: f.mimeType, base64Data: f.base64 })),
-          solveWithAI,
-        }),
-      });
-
-      const rawText = await res.text();
-      let data: ExtractedHomework & { error?: string; code?: string };
-      try {
-        data = JSON.parse(rawText);
-      } catch {
-        if (res.status === 404) {
-          throw new Error('Không tìm thấy API Server (/api/ai/parse-homework). Hãy kiểm tra bản deploy.');
-        }
-        if (res.status === 413) {
-          throw new Error('Dung lượng ảnh/PDF quá lớn. Vui lòng bớt trang hoặc chọn file nhỏ hơn.');
-        }
-        if (res.status === 504) {
-          throw new Error('Máy chủ xử lý quá lâu. Hãy tách đề thành nhiều phần nhỏ rồi thử lại.');
-        }
-        throw new Error(`Máy chủ trả về phản hồi không hợp lệ (HTTP ${res.status}).`);
-      }
-      if (!res.ok) {
-        if (data.code === 'AI_UNAVAILABLE') setAiUnavailable(true);
-        throw new Error(data.error || 'AI không thể chuyển đổi file này.');
-      }
-
-      const figureCrops = await insertFigures(data, files);
+      const { data, figureCrops } = await extractHomework(files, solveWithAI);
       onExtracted(
         data,
         solveWithAI,
@@ -344,6 +356,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
       setFiles([]);
       onClose();
     } catch (err) {
+      if ((err as { code?: string }).code === 'AI_UNAVAILABLE') setAiUnavailable(true);
       setError(err instanceof Error ? err.message : 'Chuyển đổi đề thất bại. Vui lòng thử lại.');
     } finally {
       setLoading(false);
@@ -423,7 +436,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
               Kéo thả, nhấn để chọn, hoặc dán (Ctrl+V) ảnh chụp đề
             </span>
             <span className="mt-1 text-xs text-[#5E6C84]">
-              Ảnh chụp hoặc PDF (PNG, JPG, WEBP, PDF): AI nhận diện câu hỏi · Chọn được nhiều trang cùng lúc · Hình vẽ trong đề được tự cắt vào câu hỏi
+              Ảnh chụp, PDF hoặc Word (.docx): AI nhận diện câu hỏi · Chọn được nhiều trang cùng lúc · Hình vẽ trong đề được tự cắt vào câu hỏi
             </span>
             {onDataFile && (
               <span className="mt-1 text-xs text-[#5E6C84]">
@@ -434,7 +447,7 @@ export const AIImportModal: React.FC<AIImportModalProps> = ({
               ref={inputRef}
               type="file"
               multiple
-              accept={[...ACCEPTED_TYPES, ...(onDataFile ? ['application/json', '.json'] : [])].join(',')}
+              accept={[ACCEPT_ATTR, ...(onDataFile ? ['application/json', '.json'] : [])].join(',')}
               onChange={(e) => {
                 void addFiles(Array.from(e.target.files || []));
                 e.target.value = '';

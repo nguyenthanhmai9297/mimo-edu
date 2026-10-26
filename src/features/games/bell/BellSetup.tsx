@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Bell, ChevronDown, FileUp, ListChecks, Smartphone, Trophy, Users } from 'lucide-react';
+import { ArrowLeft, Bell, ChevronDown, FileUp, ListChecks, Loader2, Smartphone, Trophy, Users } from 'lucide-react';
 import { useAppContext } from '../../../app/providers';
 import {
   DataTable,
@@ -21,7 +21,16 @@ import { reserveHomeworkRef, saveHomework } from '../../../services/firestoreRep
 import { createBellGame, listBellGames } from '../../../services/bellGameService';
 import type { Homework, HomeworkQuestion } from '../../../types/domain';
 import { normalizeGrade } from '../../../utils/grade';
-import { AIImportModal, type ExtractedHomework, type SourceFile } from '../../homework/AIImportModal';
+import {
+  ACCEPT_ATTR,
+  ACCEPTED_TYPES,
+  extractHomework,
+  prepareFile,
+  resolveMimeType,
+  type ExtractedHomework,
+  type PendingFile,
+  type SourceFile,
+} from '../../homework/AIImportModal';
 import { homeworkPath, NEW_HOMEWORK, withSaveTimeout } from '../../homework/homeworkFlow';
 import { MAX_BELL_QUESTIONS, MAX_PLAYERS, type BellMode, type BellSummary } from './bellEngine';
 import { bellQuestionsOf } from './bellQuestions';
@@ -66,7 +75,9 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
   const [names, setNames] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
-  const [importOpen, setImportOpen] = useState(false);
+  const [reading, setReading] = useState<number | null>(null);
+  const [readError, setReadError] = useState('');
+  const fileInput = useRef<HTMLInputElement>(null);
   const [newExam, setNewExam] = useState<NewExam | null>(null);
   const [fixing, setFixing] = useState(false);
   const [reviewNew, setReviewNew] = useState(false);
@@ -109,8 +120,41 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
   }, []);
   useEffect(loadSaved, [loadSaved]);
 
+  useEffect(() => {
+    if (reading === null) return;
+    const t = window.setInterval(() => setReading((s) => (s === null ? s : s + 1)), 1000);
+    return () => window.clearInterval(t);
+  }, [reading === null]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  /** Picture, PDF or Word file → AI reads it (and proposes answers) → the answer check opens. */
+  const readExam = async (picked: File[]) => {
+    setReadError('');
+    const ok = picked.filter((f) => ACCEPTED_TYPES.includes(resolveMimeType(f)));
+    if (!ok.length) {
+      setReadError('Chọn ảnh, PDF hoặc tệp Word (.docx).');
+      return;
+    }
+    setReading(0);
+    let pages: PendingFile[] = [];
+    try {
+      pages = (await Promise.all(ok.map(prepareFile))).flat();
+      if (pages.length > 20) throw new Error('Đề quá dài (tối đa 20 trang).');
+      if (pages.reduce((n, p) => n + p.base64.length, 0) > 4_200_000) throw new Error('Đề quá lớn. Hãy bớt trang hoặc chọn tệp nhỏ hơn.');
+      const { data } = await extractHomework(pages, true);
+      onExtracted(data, true, pages.map(({ id, name, mimeType, objectUrl }) => ({ id, name, mimeType, objectUrl })));
+    } catch (e) {
+      pages.forEach((p) => URL.revokeObjectURL(p.objectUrl));
+      setReadError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setReading(null);
+    }
+  };
+  const pickFile = () => {
+    if (fileInput.current) fileInput.current.value = '';
+    fileInput.current?.click();
+  };
+
   const onExtracted = (data: ExtractedHomework, solved: boolean, sources: SourceFile[]) => {
-    setImportOpen(false);
     setSaveError('');
     const questions = (data.questions ?? []).map((q, i) => ({ ...q, order: q.order || i + 1 }));
     newExam?.sources.forEach((s) => URL.revokeObjectURL(s.objectUrl));
@@ -184,11 +228,11 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
   const canStart = source === 'saved' && Boolean(chosen) && max > 0 && (mode === 'online' || offlineReady);
   const blocker =
     source === 'new'
-      ? 'Tải đề lên và xác nhận đáp án trước.'
+      ? 'Tải đề lên trước.'
       : !chosen
         ? 'Chọn một đề.'
         : max === 0
-          ? 'Đề này chưa có câu chơi được – bấm “Xác nhận đáp án”.'
+          ? 'Bấm “Xác nhận đáp án”.'
           : mode === 'offline' && !offlineReady
             ? roster.length > MAX_PLAYERS
               ? `Tối đa ${MAX_PLAYERS} học sinh.`
@@ -206,7 +250,6 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
           </Link>
         }
         title="Rung chuông vàng"
-        description="Đúng thì ở lại sân, sai hoặc hết giờ thì rời sân. Bạn trụ đến câu cuối rung chuông vàng."
       />
 
       <section className="studio-card space-y-6 p-5" data-testid="bell-setup">
@@ -215,7 +258,16 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
             <button type="button" role="tab" aria-selected={source === 'saved'} className={tab(source === 'saved')} onClick={() => setSource('saved')}>
               Đề đã lưu
             </button>
-            <button type="button" role="tab" aria-selected={source === 'new'} className={tab(source === 'new')} onClick={() => setSource('new')}>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={source === 'new'}
+              className={tab(source === 'new')}
+              onClick={() => {
+                setSource('new');
+                if (!newExam && reading === null) pickFile();
+              }}
+            >
               Tải đề mới
             </button>
           </div>
@@ -224,9 +276,7 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
             adminDataLoading && !homeworkList.length ? (
               <LoadingState rows={1} label="Đang tải đề…" />
             ) : all.length === 0 ? (
-              <p className="text-sm text-[#5E6C84]">
-                Thầy cô chưa có đề nào. Chọn <b>Tải đề mới</b> để AI chép đề từ ảnh hoặc PDF.
-              </p>
+              <p className="text-sm text-[#5E6C84]">Chưa có đề. Bấm <b>Tải đề mới</b>.</p>
             ) : (
               <>
                 <select id="bell-homework" aria-label="Đề đã lưu" className={STUDIO_INPUT} value={homeworkId} onChange={(e) => setHomeworkId(e.target.value)}>
@@ -254,20 +304,27 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
             )
           ) : (
             <div className="space-y-2">
-              <button
-                type="button"
-                onClick={() => setImportOpen(true)}
-                className="flex w-full flex-col items-center gap-1 rounded-2xl border-2 border-dashed border-[#9CC0F5] bg-[#F6FAFF] p-5 text-[#2563EB] hover:bg-[#EFF6FF]"
-              >
-                <FileUp className="h-7 w-7" />
-                <span className="font-extrabold">Chọn ảnh hoặc PDF đề bài</span>
-                <span className="text-xs text-[#5E6C84]">AI chép đề; thầy cô xác nhận đáp án rồi chơi ngay</span>
-              </button>
-              {newExam && !reviewNew && (
+              <input ref={fileInput} type="file" multiple hidden accept={ACCEPT_ATTR} data-testid="bell-file" onChange={(e) => void readExam(Array.from(e.target.files ?? []))} />
+              {reading !== null ? (
+                <div role="status" className="flex items-center justify-center gap-2 rounded-2xl bg-[#F6FAFF] p-5 font-bold text-[#2563EB]">
+                  <Loader2 className="h-5 w-5 animate-spin" /> AI đang đọc đề… {reading} giây
+                </div>
+              ) : newExam ? (
                 <button type="button" onClick={() => setReviewNew(true)} className="studio-btn studio-btn-secondary w-full justify-center">
-                  <ListChecks className="h-4 w-4" /> Tiếp tục xác nhận đáp án “{newExam.data.title || 'đề vừa tải'}”
+                  <ListChecks className="h-4 w-4" /> Xác nhận đáp án “{newExam.data.title || 'đề vừa tải'}”
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={pickFile}
+                  className="flex w-full flex-col items-center gap-1 rounded-2xl border-2 border-dashed border-[#9CC0F5] bg-[#F6FAFF] p-5 text-[#2563EB] hover:bg-[#EFF6FF]"
+                >
+                  <FileUp className="h-7 w-7" />
+                  <span className="font-extrabold">Chọn tệp đề</span>
+                  <span className="text-xs text-[#5E6C84]">Ảnh, PDF hoặc Word</span>
                 </button>
               )}
+              {readError && <ErrorState message={readError} />}
             </div>
           )}
         </Step>
@@ -275,16 +332,13 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
         <Step n={2} title="Chọn cách chơi">
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {[
-              { v: 'online' as const, icon: Smartphone, t: 'Online – điện thoại', d: 'Học sinh quét QR, trả lời trên điện thoại.' },
-              { v: 'offline' as const, icon: Users, t: 'Offline – bảng con', d: 'Không cần điện thoại; thầy cô bấm chấm từng bạn.' },
+              { v: 'online' as const, icon: Smartphone, t: 'Online – điện thoại' },
+              { v: 'offline' as const, icon: Users, t: 'Offline – bảng con' },
             ].map((m) => (
-              <label key={m.v} className={`flex cursor-pointer gap-3 rounded-2xl border-2 p-3 ${mode === m.v ? 'border-[#2563EB] bg-[#EFF6FF]' : 'border-[#DCE7F3]'}`}>
-                <input type="radio" name="bell-mode" className="mt-1" checked={mode === m.v} onChange={() => setMode(m.v)} />
-                <m.icon className="mt-0.5 h-5 w-5 shrink-0 text-[#2563EB]" />
-                <span>
-                  <span className="block text-sm font-extrabold text-[#172B4D]">{m.t}</span>
-                  <span className="block text-xs text-[#5E6C84]">{m.d}</span>
-                </span>
+              <label key={m.v} className={`flex cursor-pointer items-center gap-3 rounded-2xl border-2 p-3 ${mode === m.v ? 'border-[#2563EB] bg-[#EFF6FF]' : 'border-[#DCE7F3]'}`}>
+                <input type="radio" name="bell-mode" checked={mode === m.v} onChange={() => setMode(m.v)} />
+                <m.icon className="h-5 w-5 shrink-0 text-[#2563EB]" />
+                <span className="text-sm font-extrabold text-[#172B4D]">{m.t}</span>
               </label>
             ))}
           </div>
@@ -326,7 +380,7 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
             {busy ? 'Đang chuẩn bị sân…' : 'Bắt đầu Rung chuông vàng'}
           </button>
           <p className="text-center text-xs text-[#5E6C84]" data-testid="bell-start-note">
-            {blocker || (mode === 'online' ? `${Math.min(count, max)} câu · mã phòng và QR hiện trên sân; học sinh vào xong thầy cô bấm “Bắt đầu câu 1”.` : `${Math.min(count, max)} câu · ${roster.length} học sinh.`)}
+            {blocker || `${Math.min(count, max)} câu${mode === 'offline' ? ` · ${roster.length} học sinh` : ''}`}
           </p>
         </div>
 
@@ -395,7 +449,6 @@ export const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
         </details>
       </section>
 
-      <AIImportModal open={importOpen} onClose={() => setImportOpen(false)} onManual={() => navigate(homeworkPath('game', NEW_HOMEWORK))} onExtracted={onExtracted} />
       <BellAnswerFix
         open={reviewNew || fixing}
         title={reviewNew ? 'Xác nhận đáp án đề mới' : 'Xác nhận đáp án'}
