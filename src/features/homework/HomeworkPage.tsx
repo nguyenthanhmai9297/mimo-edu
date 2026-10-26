@@ -1845,7 +1845,7 @@ export const HomeworkPage: React.FC = () => {
         }
       />
 
-      <FormatStatus format={format} />
+      {format === 'game' && <GameStatus />}
 
       <section aria-label="Cách soạn bài tập" className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {[
@@ -1970,39 +1970,23 @@ const FORMAT_LOOK: Record<HomeworkFormat, { icon: typeof FileText; gradient: str
   },
 };
 
-/** What each format can really do today, so nothing looks finished when it is not. */
-const FormatStatus: React.FC<{ format: HomeworkFormat }> = ({ format }) => {
-  const ready =
-    format === 'word'
-      ? [
-          <>Soạn, lưu nháp, mở lại và sửa tiếp</>,
-          <>Xem trước giao diện học sinh</>,
-          <>Tải Word (.docx): đề, đề kèm đáp án hoặc file đáp án riêng; in được trên khổ A4</>,
-          <>
-            Xuất bản rồi giao bài về nhà ở mục{' '}
-            <Link to="/admin/assignments" className="font-bold text-[#2563EB] hover:underline">
-              Giao bài tập
-            </Link>
-          </>,
-        ]
-      : [
-          <>Câu trắc nghiệm và Đúng/Sai dùng được ngay trong trò chơi</>,
-          <>
-            Chơi trên lớp: mở{' '}
-            <Link to="/admin/tools/mimo-quiz" className="font-bold text-[#2563EB] hover:underline">
-              Mimo Quiz
-            </Link>{' '}
-            hoặc{' '}
-            <Link to="/admin/tools/doan-tau" className="font-bold text-[#2563EB] hover:underline">
-              Đoàn tàu kiến thức
-            </Link>
-            , chọn nguồn “Kho học liệu Toán 3” rồi chọn đề này
-          </>,
-        ];
-  const notYet =
-    format === 'word'
-      ? []
-      : ['Tự chuyển đề thành một trò chơi riêng', 'Câu trả lời ngắn và tự luận chưa chơi được trong trò chơi'];
+/** What the Game format can really do today, so nothing looks finished when it is not. */
+const GameStatus: React.FC = () => {
+  const ready = [
+    <>Câu trắc nghiệm và Đúng/Sai dùng được ngay trong trò chơi</>,
+    <>
+      Chơi trên lớp: mở{' '}
+      <Link to="/admin/tools/mimo-quiz" className="font-bold text-[#2563EB] hover:underline">
+        Mimo Quiz
+      </Link>{' '}
+      hoặc{' '}
+      <Link to="/admin/tools/doan-tau" className="font-bold text-[#2563EB] hover:underline">
+        Đoàn tàu kiến thức
+      </Link>
+      , chọn nguồn “Kho học liệu Toán 3” rồi chọn đề này
+    </>,
+  ];
+  const notYet = ['Tự chuyển đề thành một trò chơi riêng', 'Câu trả lời ngắn và tự luận chưa chơi được trong trò chơi'];
   return (
     <section aria-label="Chức năng hiện có" className="grid grid-cols-1 gap-3 md:grid-cols-2">
       <div className="rounded-2xl border border-[#BFE3D0] bg-[#F0FBF5] p-4 text-sm text-[#14532D]">
@@ -2016,7 +2000,7 @@ const FormatStatus: React.FC<{ format: HomeworkFormat }> = ({ format }) => {
           ))}
         </ul>
       </div>
-      {notYet.length > 0 && <div className="rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] p-4 text-sm text-[#3B4A66]">
+      <div className="rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] p-4 text-sm text-[#3B4A66]">
         <div className="mb-1.5 flex items-center gap-1.5 font-extrabold">
           <Info className="h-4 w-4 text-[#5E6C84]" />
           Chưa có trong phiên bản này
@@ -2026,7 +2010,7 @@ const FormatStatus: React.FC<{ format: HomeworkFormat }> = ({ format }) => {
             <li key={item}>{item}</li>
           ))}
         </ul>
-      </div>}
+      </div>
     </section>
   );
 };
