@@ -81,15 +81,17 @@ async function main() {
 
   // Cost cap: exact input tokens (free count) + a margin for the output schema,
   // then max_tokens is whatever output still fits under the cap. No retries and
-  // no fallback model, so exactly one billed request can happen.
+  // no fallback model. "AI giải" is two billed requests (copy, then solve), so
+  // each gets half the cap.
+  const steps = solve ? 2 : 1;
   const counter = new AnthropicAIAdapter(process.env.AI_MODEL, { maxRetries: 0 });
   const price = CLAUDE_PRICING_PER_MTOK[counter.defaultModel];
   if (!price) stop(`Chưa có bảng giá cho model ${counter.defaultModel}, không tính được giới hạn chi phí.`);
   const inputTokens = (await counter.countParseInputTokens(input)) + SCHEMA_TOKEN_MARGIN;
   const inputCost = (inputTokens * price.input) / 1_000_000;
-  const maxOutputTokens = Math.floor(((COST_CAP_USD - inputCost) * 1_000_000) / price.output);
+  const maxOutputTokens = Math.floor(((COST_CAP_USD / steps - inputCost) * 1_000_000) / price.output);
   console.log(`Token đầu vào (đã cộng dự phòng ${SCHEMA_TOKEN_MARGIN}): ${inputTokens} ≈ ${inputCost.toFixed(4)} USD`);
-  console.log(`Giới hạn đầu ra: ${maxOutputTokens} token → tối đa ${COST_CAP_USD} USD, 1 yêu cầu, không thử lại, không model dự phòng`);
+  console.log(`Giới hạn đầu ra: ${maxOutputTokens} token → tối đa ${COST_CAP_USD} USD, ${steps} yêu cầu, không thử lại, không model dự phòng`);
   if (maxOutputTokens < MIN_OUTPUT_TOKENS) {
     stop(`Trần ${COST_CAP_USD} USD chỉ đủ cho ${maxOutputTokens} token đầu ra, dưới mức an toàn ${MIN_OUTPUT_TOKENS}; AI có thể bị cắt giữa chừng. Không gửi yêu cầu.`);
   }

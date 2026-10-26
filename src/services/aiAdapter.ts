@@ -499,16 +499,23 @@ Hãy trả về JSON gồm:
   }
 }
 
-// Output schema for Claude structured outputs. Kept free of numeric/length
-// constraints; the result is re-validated with aiParsedHomeworkResponseSchema.
+/**
+ * Step 1 of a conversion (both modes): what Claude copies from the paper,
+ * re-validated afterwards with aiParsedHomeworkResponseSchema. Every field is
+ * required: optional fields (each a branch in the compiled output grammar)
+ * made the API reject the whole request with 400 "Schema is too complex",
+ * before reading any page. Fields that do not apply are sent empty ("", [], 0)
+ * and dropped by wireToParsed. No answer fields: copying never solves.
+ */
 const claudeParsedHomeworkSchema = z.object({
   title: z.string(),
-  description: z.string().optional(),
-  grade: z.string().optional(),
-  questionCountOnExam: z.number().optional(),
+  description: z.string(),
+  grade: z.string(),
+  /** 0 when the exam does not number its questions. */
+  questionCountOnExam: z.number(),
   questions: z.array(
     z.object({
-      sourceNumber: z.string().optional(),
+      sourceNumber: z.string(),
       type: z.enum([
         'single_choice',
         'multiple_choice',
@@ -518,36 +525,80 @@ const claudeParsedHomeworkSchema = z.object({
       ]),
       promptText: z.string(),
       points: z.number(),
-      options: z.array(z.object({ label: z.string(), text: z.string() })).optional(),
-      correctOptionLabel: z.string().optional(),
-      correctOptionLabels: z.array(z.string()).optional(),
-      statements: z
-        .array(
-          z.object({
-            label: z.string(),
-            text: z.string(),
-            isTrue: z.boolean().optional(),
-            points: z.number().optional(),
-          })
-        )
-        .optional(),
-      acceptableAnswers: z.array(z.string()).optional(),
-      rubric: z.string().optional(),
-      sampleSolutionText: z.string().optional(),
-      figures: z
-        .array(
-          z.object({
-            page: z.number(),
-            box: z.array(z.number()),
-            description: z.string(),
-          })
-        )
-        .optional(),
-      needsReview: z.boolean().optional(),
-      reviewNote: z.string().optional(),
+      options: z.array(z.object({ label: z.string(), text: z.string() })),
+      statements: z.array(z.object({ label: z.string(), text: z.string() })),
+      figures: z.array(
+        z.object({
+          page: z.number(),
+          box: z.array(z.number()),
+          description: z.string(),
+        })
+      ),
+      reviewNote: z.string(),
     })
   ),
 });
+
+/** Step 2, only with "AI giải": answers to the questions step 1 copied, by their 1-based index. */
+const claudeSolutionSchema = z.object({
+  answers: z.array(
+    z.object({
+      index: z.number(),
+      correctOptionLabels: z.array(z.string()),
+      /** One verdict per statement, in order: "dung", "sai", or "" when not sure. */
+      statementAnswers: z.array(z.enum(['dung', 'sai', ''])),
+      acceptableAnswers: z.array(z.string()),
+      sampleSolutionText: z.string(),
+      /** false: the answer is a guess (e.g. inferred from the options); it is dropped, only the note stays. */
+      certain: z.boolean(),
+      reviewNote: z.string(),
+    })
+  ),
+});
+
+type ClaudeExtraction = z.infer<typeof claudeParsedHomeworkSchema>;
+type ClaudeSolution = z.infer<typeof claudeSolutionSchema>;
+
+/** The copied exam (plus answers, when solved) in the optional shape the rest of the import uses. */
+export function wireToParsed(wire: ClaudeExtraction, solution?: ClaudeSolution['answers']) {
+  const text = (v: string) => (v.trim() ? v : undefined);
+  const list = <T,>(v: T[]) => (v.length ? v : undefined);
+  return {
+    title: wire.title,
+    description: text(wire.description),
+    grade: text(wire.grade),
+    questionCountOnExam: wire.questionCountOnExam > 0 ? wire.questionCountOnExam : undefined,
+    questions: wire.questions.map((q, idx) => {
+      const found = solution?.find((a) => Math.round(a.index) === idx + 1);
+      // An answer Claude itself is not sure of is never filled in: the teacher decides
+      const answer = found && !found.certain
+        ? { ...found, correctOptionLabels: [], statementAnswers: [], acceptableAnswers: [], sampleSolutionText: '' }
+        : found;
+      const labels = (answer?.correctOptionLabels ?? []).filter((l) => l.trim());
+      const note = [q.reviewNote, answer?.reviewNote ?? ''].map((n) => n.trim()).filter(Boolean).join(' ');
+      return {
+        sourceNumber: text(q.sourceNumber),
+        type: q.type,
+        promptText: q.promptText,
+        points: q.points,
+        options: list(q.options),
+        ...(q.type === 'single_choice' && labels.length === 1 ? { correctOptionLabel: labels[0] } : {}),
+        correctOptionLabels: q.type === 'multiple_choice' ? list(labels) : undefined,
+        statements: list(
+          q.statements.map((st, sIdx) => {
+            const verdict = answer?.statementAnswers[sIdx];
+            return { label: st.label, text: st.text, ...(verdict ? { isTrue: verdict === 'dung' } : {}) };
+          })
+        ),
+        acceptableAnswers: list((answer?.acceptableAnswers ?? []).filter((a) => a.trim())),
+        sampleSolutionText: text(answer?.sampleSolutionText ?? ''),
+        figures: list(q.figures),
+        needsReview: note ? true : undefined,
+        reviewNote: text(note),
+      };
+    }),
+  };
+}
 
 export const CLAUDE_PRICING_PER_MTOK: Record<string, { input: number; output: number }> = {
   'claude-sonnet-5-5': { input: 2, output: 10 },
@@ -564,6 +615,98 @@ export const CLAUDE_PRICING_PER_MTOK: Record<string, { input: number; output: nu
  */
 export function parseOutputTokenLimit(pages: number): number {
   return Math.min(64000, 12000 + 4000 * Math.max(0, pages - 1));
+}
+
+/** Teacher-facing reason for a 400 from Claude, by what the API actually said. */
+export function badRequestReason(apiMessage: string): string {
+  const m = apiMessage.toLowerCase();
+  if (m.includes('schema') || m.includes('output_config') || m.includes('grammar')) {
+    return 'Lỗi cấu hình AI phía máy chủ MimoEDU, không phải do tệp đề. Hãy báo quản trị viên';
+  }
+  if (m.includes('password') || m.includes('encrypted')) return 'Tệp PDF có mật khẩu nên AI không mở được. Hãy bỏ mật khẩu hoặc chụp ảnh đề';
+  if (m.includes('page') && (m.includes('limit') || m.includes('maximum') || m.includes('exceed'))) {
+    return 'Tệp có quá nhiều trang cho một lần nhận dạng. Hãy tách đề thành nhiều phần';
+  }
+  if (m.includes('too large') || m.includes('exceeds') || m.includes('maximum') || m.includes('size')) {
+    return 'Ảnh hoặc tệp quá lớn để AI xử lý. Hãy chụp lại với độ phân giải thấp hơn hoặc tách đề';
+  }
+  if (m.includes('media type') || m.includes('image') || m.includes('base64') || m.includes('pdf')) {
+    return 'AI không đọc được ảnh/tệp này (định dạng không đúng hoặc tệp bị hỏng). Hãy lưu lại thành JPG/PNG rồi thử lại';
+  }
+  return 'AI từ chối yêu cầu này. Hãy thử lại; nếu vẫn lỗi, báo quản trị viên kèm mã yêu cầu';
+}
+
+/** Pixel size of a JPEG, PNG, WEBP or GIF from its header; null when it cannot be read. */
+export function imagePixelSize(base64: string): { width: number; height: number } | null {
+  const b = Buffer.from(base64, 'base64');
+  if (b.length < 30) return null;
+  if (b.subarray(0, 4).toString('hex') === '89504e47') return { width: b.readUInt32BE(16), height: b.readUInt32BE(20) };
+  if (b.subarray(0, 3).toString('latin1') === 'GIF') return { width: b.readUInt16LE(6), height: b.readUInt16LE(8) };
+  if (b.subarray(0, 4).toString('latin1') === 'RIFF' && b.subarray(8, 12).toString('latin1') === 'WEBP') {
+    const chunk = b.subarray(12, 16).toString('latin1');
+    if (chunk === 'VP8X') return { width: 1 + b.readUIntLE(24, 3), height: 1 + b.readUIntLE(27, 3) };
+    if (chunk === 'VP8L') {
+      const bits = b.readUInt32LE(21);
+      return { width: 1 + (bits & 0x3fff), height: 1 + ((bits >> 14) & 0x3fff) };
+    }
+    if (chunk === 'VP8 ') return { width: b.readUInt16LE(26) & 0x3fff, height: b.readUInt16LE(28) & 0x3fff };
+    return null;
+  }
+  if (b[0] === 0xff && b[1] === 0xd8) {
+    // Walk the JPEG segments to the frame header (SOF0–SOF15, except DHT/JPG/DAC)
+    let i = 2;
+    while (i + 9 < b.length) {
+      if (b[i] !== 0xff) return null;
+      const marker = b[i + 1];
+      if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+        i += 2;
+        continue;
+      }
+      if (marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc) {
+        return { width: b.readUInt16BE(i + 7), height: b.readUInt16BE(i + 5) };
+      }
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  return null;
+}
+
+/** Longest edge and pixel count Claude reads an image at; larger images are scaled down by the API. */
+const CLAUDE_MAX_EDGE = 2576;
+const CLAUDE_MAX_PIXELS = 3_750_000;
+
+/** The image size Claude actually sees, which its pixel coordinates refer to. */
+export function seenImageSize(base64: string): { width: number; height: number } | null {
+  const size = imagePixelSize(base64);
+  if (!size || size.width <= 0 || size.height <= 0) return null;
+  const scale = Math.min(
+    1,
+    CLAUDE_MAX_EDGE / Math.max(size.width, size.height),
+    Math.sqrt(CLAUDE_MAX_PIXELS / (size.width * size.height))
+  );
+  return { width: Math.round(size.width * scale), height: Math.round(size.height * scale) };
+}
+
+/** A pixel box on the image Claude saw, as the 0–1000 page box the editor crops with. */
+export function pixelBoxToNormalized(box: number[], seen: { width: number; height: number }): number[] {
+  const clamp = (v: number) => Math.min(1000, Math.max(0, Math.round(v)));
+  const [x0, y0, x1, y1] = box;
+  return [
+    clamp((Math.min(x0, x1) / seen.width) * 1000),
+    clamp((Math.min(y0, y1) / seen.height) * 1000),
+    clamp((Math.max(x0, x1) / seen.width) * 1000),
+    clamp((Math.max(y0, y1) / seen.height) * 1000),
+  ];
+}
+
+/** The real image type from the file's first bytes (a .jpg may really be PNG, WEBP or HEIC). */
+export function sniffImageType(base64: string): 'image/jpeg' | 'image/png' | 'image/webp' | 'image/gif' | 'unsupported' {
+  const head = Buffer.from(base64.slice(0, 24), 'base64');
+  if (head[0] === 0xff && head[1] === 0xd8 && head[2] === 0xff) return 'image/jpeg';
+  if (head.subarray(0, 4).toString('hex') === '89504e47') return 'image/png';
+  if (head.subarray(0, 4).toString('latin1') === 'RIFF' && head.subarray(8, 12).toString('latin1') === 'WEBP') return 'image/webp';
+  if (head.subarray(0, 3).toString('latin1') === 'GIF') return 'image/gif';
+  return 'unsupported';
 }
 
 export class AnthropicAIAdapter implements AIProviderAdapter {
@@ -614,10 +757,10 @@ export class AnthropicAIAdapter implements AIProviderAdapter {
     if (error instanceof Anthropic.RateLimitError) {
       return new Error('Claude đang quá tải hoặc vượt hạn mức. Vui lòng thử lại sau ít phút.');
     }
-    // Raw API details go to the server log only; teachers get a plain instruction
+    // Raw API details go to the server log; teachers get the actual reason in plain words plus the request id
     if (error instanceof Anthropic.BadRequestError) {
       console.error('Claude API rejected the request:', error.message);
-      return new Error('AI chưa đọc được tệp này (tệp hỏng, có mật khẩu hoặc quá nhiều trang). Hãy thử ảnh chụp rõ hơn hoặc tách đề thành nhiều phần.');
+      return new Error(`${badRequestReason(error.message)} (mã yêu cầu: ${error.requestID ?? 'không có'})`);
     }
     if (error instanceof Anthropic.APIError) {
       console.error(`Claude API error (${error.status ?? 'network'}):`, error.message);
@@ -626,16 +769,38 @@ export class AnthropicAIAdapter implements AIProviderAdapter {
     return error instanceof Error ? error : new Error(String(error));
   }
 
-  /** System prompt and page blocks of one conversion request. */
-  private buildParseRequest(input: ParseHomeworkInput) {
-    const solverInstruction = input.solveWithAI
-      ? `Giáo viên BẬT chế độ AI giải đề: hãy giải cẩn thận TỪNG câu và điền đáp án (correctOptionLabel, correctOptionLabels, isTrue của từng mệnh đề, acceptableAnswers) cùng sampleSolutionText cho câu tự luận. Đáp án sẽ được giáo viên duyệt lại.
-- Số đo, độ dài, góc và nhãn ghi trên hình vẽ là dữ kiện của bài: đọc chúng từ hình và dùng trong lời giải (ví dụ hình vuông cạnh 4 cm ghi trên hình thì chu vi là 4 × 4 = 16 (cm)).
-- Lời giải tự luận trình bày như học sinh lớp 3: câu lời giải, phép tính kèm đơn vị trong ngoặc, dòng cuối "Đáp số: …".
-- acceptableAnswers ghi đáp số dạng chữ thường, không dùng $…$; nếu đáp số có đơn vị thì ghi cả dạng có đơn vị và không đơn vị (ví dụ "16 cm", "16").
-- Không đoán: nếu hình mờ, thiếu số đo hoặc không đủ dữ kiện để giải chắc chắn, bỏ trống đáp án của câu đó, đặt needsReview = true và ghi rõ thiếu gì trong reviewNote.`
-      : 'Giáo viên TẮT chế độ AI giải đề: chỉ chép đề. Chỉ điền đáp án khi tài liệu ghi sẵn đáp án rõ ràng; nếu không, bỏ trống các trường đáp án.';
+  /** Page blocks sent with both steps: each page labelled with the pixel size Claude sees it at. */
+  private pageBlocks(input: ParseHomeworkInput): Anthropic.Beta.BetaContentBlockParam[] {
+    const content: Anthropic.Beta.BetaContentBlockParam[] = [];
+    input.files.forEach((file, idx) => {
+      const seen = file.mimeType === 'application/pdf' ? null : seenImageSize(file.base64Data);
+      content.push({
+        type: 'text',
+        text: seen ? `Trang/File ${idx + 1} (ảnh rộng ${seen.width} px, cao ${seen.height} px):` : `Trang/File ${idx + 1}:`,
+      });
+      if (file.mimeType === 'application/pdf') {
+        content.push({
+          type: 'document',
+          source: { type: 'base64', media_type: 'application/pdf', data: file.base64Data },
+        });
+      } else {
+        const mediaType = sniffImageType(file.base64Data);
+        if (mediaType === 'unsupported') {
+          throw new Error(
+            `Tệp số ${idx + 1} không phải ảnh JPG, PNG, WEBP hoặc GIF (có thể là ảnh HEIC của iPhone). Hãy lưu lại thành JPG rồi thử lại.`
+          );
+        }
+        content.push({
+          type: 'image',
+          source: { type: 'base64', media_type: mediaType, data: file.base64Data },
+        });
+      }
+    });
+    return content;
+  }
 
+  /** Step 1, identical in both modes: copy the paper verbatim, never solve. */
+  private buildParseRequest(input: ParseHomeworkInput) {
     const system = `Bạn số hóa đề kiểm tra / bài tập Toán tiếng Việt từ ảnh chụp hoặc PDF thành dữ liệu có cấu trúc. Giáo viên sẽ soát lại kết quả bên cạnh đề gốc trước khi giao cho học sinh, nên hãy chép trung thực, đầy đủ, đúng thứ tự.
 
 Phạm vi:
@@ -651,44 +816,29 @@ Dạng câu hỏi (type):
 - true_false_multi: câu đúng/sai gồm nhiều mệnh đề a), b), c), d).
 - short_answer: điền đáp số / trả lời ngắn.
 - essay: tự luận trình bày lời giải. Nếu một bài tự luận có các ý a), b), c) thì giữ chung một câu, các ý xuống dòng trong promptText.
-- Một câu có các ý a/, b/ mà mỗi ý có bộ phương án riêng (hoặc đáp án riêng) thì tách thành các câu hỏi riêng theo đúng thứ tự, mỗi câu mở đầu promptText bằng nhãn ý, ví dụ "a) Tích của 32 và 2 là:". Chia điểm của câu gốc cho các ý (ghi trong đề hoặc chia đều).
+- Một câu có các ý a/, b/ mà mỗi ý có bộ phương án riêng hoặc chỗ chấm để điền đáp số riêng (ví dụ "a) Diện tích hình H là: ……", "b) Chu vi hình H là: ……") thì LUÔN tách thành các câu hỏi riêng theo đúng thứ tự (sourceNumber "6a", "6b"), mỗi câu mở đầu promptText bằng nhãn ý. Phần dẫn chung của câu (ví dụ "Hình H gồm …") chép vào ý đầu tiên; ý sau dùng chung hình thì khai báo lại hình đó trong figures. Chia điểm của câu gốc cho các ý (ghi trong đề hoặc chia đều).
 
 Cách viết nội dung:
 - Công thức toán viết bằng LaTeX đặt trong $...$ ngay tại vị trí của nó trong câu, ví dụ: "Tính $\\frac{3}{4} + \\frac{1}{2}$". Công thức lớn đứng riêng một dòng thì viết thành một dòng "$$...$$".
 - Dùng ký tự xuống dòng (\\n) để tách đoạn. Giữ nguyên tiếng Việt có dấu.
 - Không chép số thứ tự "Câu 1." vào promptText; không chép nhãn "A." vào text của phương án (đặt vào label).
-- Hình: nếu câu cần hình vẽ, tranh, đồ thị hoặc bảng để làm bài (kể cả hình để đếm như ngôi sao, tam giác, khối hình), khai báo từng hình trong figures để hệ thống cắt hình từ đề gốc:
+- Mọi trường đều phải có mặt. Trường không áp dụng thì để trống: chuỗi "", mảng [], questionCountOnExam = 0 nếu đề không đánh số câu.
+- Hình: câu nào có hình in trên đề (hình vẽ, ô vuông, hình học có ghi kích thước, tranh, sơ đồ) thì KHÔNG được bỏ qua hình đó; nếu câu cần hình vẽ, tranh, đồ thị hoặc bảng để làm bài (kể cả hình để đếm như ngôi sao, tam giác, khối hình), khai báo từng hình trong figures để hệ thống cắt hình từ đề gốc:
   - page: số thứ tự trang/file chứa hình (bắt đầu từ 1).
-  - box: [xMin, yMin, xMax, yMax] là khung bao quanh hình, theo thang 0–1000 của chiều rộng và chiều cao trang (0,0 là góc trên bên trái). Khung phải chứa trọn hình kể cả nhãn chữ trên hình, không lấy phần chữ của câu hỏi hay phương án.
+  - box: [xMin, yMin, xMax, yMax] là khung bao quanh hình, tính bằng PIXEL của ảnh trang đó (kích thước ảnh ghi ngay trước mỗi trang; 0,0 là góc trên bên trái). Khung phải chứa TRỌN hình: mọi cạnh, đỉnh, nhãn chữ cái (A, B, C…), số đo (7 cm, 1cm²…) và mũi tên chú thích; thà rộng hơn một chút còn hơn cắt mất. Không lấy phần chữ của câu hỏi hay phương án.
   - description: mô tả ngắn hình đó.
+- promptText chỉ chép chữ in trong đề, đúng nguyên văn. Không tự thêm vào promptText số đo, nhãn hay nội dung đọc từ hình vẽ (ví dụ không viết thêm "(BC = 7 cm)"); những thông tin đó đã nằm trong hình được cắt.
 - Bảng số liệu: chép thành bảng ngay trong promptText, mỗi hàng một dòng dạng "| Lớp | 3A | 3B |"; nếu hàng đầu là tiêu đề thì thêm dòng "|---|---|---|" ngay sau nó. Chỉ cắt bảng thành hình khi bảng có hình vẽ hoặc ô gộp không chép được.
+- Đơn vị đo (cm, m, kg, giờ, phút…) viết bằng chữ thường, không đặt trong $...$; đơn vị diện tích, thể tích dùng ký tự ² ³ (ví dụ 9 cm², 1 cm²).
 - Số có hàng nghìn viết như in trên đề, với dấu cách thường (ví dụ 2 345); không dùng lệnh LaTeX \\, để tách hàng nghìn.
 - points: dùng điểm ghi trong đề; nếu đề không ghi, chia hợp lý để tổng là 10 điểm.
 - Nếu tài liệu có nhiều file, đó là các trang liên tiếp của cùng một đề theo thứ tự gửi.
 
-Đánh dấu cần kiểm tra: đặt needsReview = true và ghi reviewNote (một câu ngắn nêu lý do) khi câu đó cần giáo viên soát kỹ, ví dụ chữ hoặc số trong ảnh bị mờ, không chắc đã chép đúng, đáp án phụ thuộc vào việc đọc/đếm trên hình, hoặc đề có thể có nhiều cách hiểu. Không đánh dấu những câu rõ ràng.
+Đánh dấu cần kiểm tra: ghi reviewNote (một câu ngắn nêu lý do; để "" nếu không cần) khi câu đó cần giáo viên soát kỹ, ví dụ chữ hoặc số trong ảnh bị mờ, không chắc đã chép đúng, hoặc đề có thể có nhiều cách hiểu. Không đánh dấu những câu rõ ràng.
 
-${solverInstruction}`;
+Chỉ chép đề, KHÔNG giải và không nêu đáp án ở bất kỳ trường nào.`;
 
-    const content: Anthropic.Beta.BetaContentBlockParam[] = [];
-    input.files.forEach((file, idx) => {
-      content.push({ type: 'text', text: `Trang/File ${idx + 1}:` });
-      if (file.mimeType === 'application/pdf') {
-        content.push({
-          type: 'document',
-          source: { type: 'base64', media_type: 'application/pdf', data: file.base64Data },
-        });
-      } else {
-        content.push({
-          type: 'image',
-          source: {
-            type: 'base64',
-            media_type: file.mimeType as 'image/png' | 'image/jpeg' | 'image/webp',
-            data: file.base64Data,
-          },
-        });
-      }
-    });
+    const content = this.pageBlocks(input);
     content.push({
       type: 'text',
       text: 'Hãy chuyển toàn bộ đề Toán trên thành dữ liệu theo schema.',
@@ -697,10 +847,96 @@ ${solverInstruction}`;
       system,
       messages: [{ role: 'user' as const, content }],
       output_config: {
-        effort: input.solveWithAI ? ('high' as const) : ('medium' as const),
+        effort: 'medium' as const,
         format: zodOutputFormat(claudeParsedHomeworkSchema),
       },
     };
+  }
+
+  /** Step 2 ("Chép đề + AI giải"): answers for the questions step 1 copied; it cannot change them. */
+  private buildSolveRequest(input: ParseHomeworkInput, extraction: ClaudeExtraction) {
+    const copied = extraction.questions.map((q, idx) => ({
+      index: idx + 1,
+      sourceNumber: q.sourceNumber,
+      type: q.type,
+      promptText: q.promptText,
+      ...(q.options.length ? { options: q.options } : {}),
+      ...(q.statements.length ? { statements: q.statements } : {}),
+      ...(q.figures.length ? { figures: q.figures.map((f) => `trang ${f.page}: ${f.description}`) } : {}),
+    }));
+    const system = `Bạn là giáo viên Toán tiểu học Việt Nam, giải đề kiểm tra để đề xuất đáp án. Giáo viên sẽ kiểm tra, sửa và duyệt từng đáp án trước khi dùng.
+
+Đề đã được chép sẵn thành danh sách câu hỏi (kèm ảnh đề gốc để xem hình vẽ, bảng và số đo). Trả về một mục trong answers cho MỖI câu, đúng index của câu đó. Không chép lại hay sửa đề.
+
+- single_choice: correctOptionLabels gồm đúng một nhãn (ví dụ ["B"]). multiple_choice: tất cả nhãn đúng.
+- true_false_multi: statementAnswers có đúng một giá trị "dung"/"sai" cho mỗi mệnh đề, theo thứ tự.
+- short_answer: acceptableAnswers ghi đáp số dạng chữ thường, không dùng $…$; nếu đáp số có đơn vị thì ghi cả dạng có đơn vị và không đơn vị (ví dụ "16 cm", "16").
+- essay: sampleSolutionText là lời giải trình bày như học sinh lớp 3 (câu lời giải, phép tính kèm đơn vị trong ngoặc, dòng cuối "Đáp số: …"). Viết công thức trong $...$ nếu cần. Các dạng khác để sampleSolutionText là "".
+- Số đo, độ dài, nhãn ghi trên hình vẽ là dữ kiện của bài: đọc chúng từ ảnh đề gốc.
+- Trường không áp dụng để trống ("" hoặc []).
+- certain = true chỉ khi bạn tự giải ra đáp án từ dữ kiện của đề (đã đọc/đếm được trên hình). Nếu hình mờ, thiếu số đo, phải đếm trên hình mà không chắc, không đủ dữ kiện, hoặc đáp án chỉ suy ra từ cách đặt các phương án, thì certain = false và ghi rõ lý do trong reviewNote; đáp án khi đó sẽ không được dùng.
+- Câu chắc chắn thì reviewNote là "", trừ khi có điều giáo viên cần biết (ví dụ số đo đọc từ hình).`;
+    const content = this.pageBlocks(input);
+    content.push({
+      type: 'text',
+      text: `Đề đã chép (JSON):\n${JSON.stringify(copied)}\n\nHãy giải từng câu theo schema.`,
+    });
+    return {
+      system,
+      messages: [{ role: 'user' as const, content }],
+      output_config: {
+        effort: 'high' as const,
+        format: zodOutputFormat(claudeSolutionSchema),
+      },
+    };
+  }
+
+  /** Cost of every call of the current conversion (a method so TS does not narrow lastUsage to null). */
+  private usageCost(): number {
+    return this.lastUsage?.costUsd ?? 0;
+  }
+
+  /** One structured-output call; usage is added to this.lastUsage. */
+  private async runStructured(
+    model: string,
+    request: ReturnType<AnthropicAIAdapter['buildParseRequest']> | ReturnType<AnthropicAIAdapter['buildSolveRequest']>,
+    maxTokens: number
+  ): Promise<{ message: Anthropic.Beta.BetaMessage; json: unknown }> {
+    let message: Anthropic.Beta.BetaMessage;
+    try {
+      // Streaming keeps long exams (large outputs) clear of HTTP timeouts.
+      const stream = this.getClient().beta.messages.stream({
+        model,
+        max_tokens: maxTokens,
+        ...(this.limits.fallbacks === false
+          ? {}
+          : { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const }),
+        ...request,
+      });
+      message = await stream.finalMessage();
+    } catch (error) {
+      throw this.toFriendlyError(error);
+    }
+    const before = this.lastUsage;
+    this.lastUsage = {
+      inputTokens: (before?.inputTokens ?? 0) + message.usage.input_tokens,
+      outputTokens: (before?.outputTokens ?? 0) + message.usage.output_tokens,
+      costUsd: Number(((before?.costUsd ?? 0) + this.estimateCost(model, message.usage)).toFixed(4)),
+      stopReason: message.stop_reason,
+    };
+    if (message.stop_reason === 'refusal') {
+      throw new Error('Claude từ chối xử lý tài liệu này. Vui lòng kiểm tra lại nội dung file.');
+    }
+    if (message.stop_reason === 'max_tokens') {
+      throw new Error('Đề quá dài để xử lý trong một lần. Vui lòng tách thành nhiều phần nhỏ hơn.');
+    }
+    const rawText = message.content.map((block) => (block.type === 'text' ? block.text : '')).join('');
+    try {
+      return { message, json: JSON.parse(rawText) };
+    } catch {
+      console.error('Claude returned non-JSON output, stop_reason:', message.stop_reason, rawText.slice(0, 300));
+      throw new Error('AI trả kết quả không đúng định dạng. Vui lòng thử lại.');
+    }
   }
 
   /** Exact input tokens of a conversion request, output schema included (count_tokens is free). */
@@ -717,42 +953,42 @@ ${solverInstruction}`;
   ): Promise<ParsedHomeworkOutput> {
     const startTime = Date.now();
     const model = this.resolveModel(input.preferredModel);
-    const client = this.getClient();
-    const request = this.buildParseRequest(input);
+    this.lastUsage = null;
 
-    let message: Anthropic.Beta.BetaMessage;
-    try {
-      // Streaming keeps long exams (large outputs) clear of HTTP timeouts.
-      const stream = client.beta.messages.stream({
-        model,
-        max_tokens: this.limits.maxOutputTokens ?? parseOutputTokenLimit(input.files.length),
-        ...(this.limits.fallbacks === false
-          ? {}
-          : { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const }),
-        ...request,
-      });
-      message = await stream.finalMessage();
-    } catch (error) {
-      throw this.toFriendlyError(error);
-    }
-    this.lastUsage = {
-      inputTokens: message.usage.input_tokens,
-      outputTokens: message.usage.output_tokens,
-      costUsd: this.estimateCost(model, message.usage),
-      stopReason: message.stop_reason,
-    };
+    const step1 = await this.runStructured(
+      model,
+      this.buildParseRequest(input),
+      this.limits.maxOutputTokens ?? parseOutputTokenLimit(input.files.length)
+    );
+    const extraction = claudeParsedHomeworkSchema.parse(step1.json);
 
-    if (message.stop_reason === 'refusal') {
-      throw new Error('Claude từ chối xử lý tài liệu này. Vui lòng kiểm tra lại nội dung file.');
+    let solution: ClaudeSolution['answers'] | undefined;
+    if (input.solveWithAI && extraction.questions.length > 0) {
+      try {
+        const step2 = await this.runStructured(
+          model,
+          this.buildSolveRequest(input, extraction),
+          this.limits.maxOutputTokens ?? parseOutputTokenLimit(input.files.length)
+        );
+        solution = claudeSolutionSchema.parse(step2.json).answers;
+      } catch (error) {
+        // The copied exam is still returned; every question is flagged as unsolved, with the reason
+        if ((error as { code?: string } | null)?.code === 'AI_UNAVAILABLE') throw error;
+        console.error('Solve step failed:', error);
+        const reason = error instanceof Error ? error.message : String(error);
+        solution = extraction.questions.map((_q, idx) => ({
+          index: idx + 1,
+          correctOptionLabels: [],
+          statementAnswers: [],
+          acceptableAnswers: [],
+          sampleSolutionText: '',
+          certain: false,
+          reviewNote: `Bước AI giải bị lỗi: ${reason}`,
+        }));
+      }
     }
-    if (message.stop_reason === 'max_tokens') {
-      throw new Error('Đề quá dài để xử lý trong một lần. Vui lòng tách thành nhiều phần nhỏ hơn.');
-    }
-
-    const rawText = message.content
-      .map((block) => (block.type === 'text' ? block.text : ''))
-      .join('');
-    const parsedJson = claudeParsedHomeworkSchema.parse(JSON.parse(rawText));
+    const message = step1.message;
+    const parsedJson = wireToParsed(extraction, solution);
     if (parsedJson.questions.length === 0) {
       throw new Error(
         'Không tìm thấy câu hỏi Toán học nào trong ảnh hoặc PDF đã tải lên. Vui lòng chọn file đề Toán rõ nét hơn.'
@@ -764,11 +1000,18 @@ ${solverInstruction}`;
         ...q,
         figures: q.figures
           ?.filter((f) => f.box.length === 4 && f.page >= 1 && f.page <= input.files.length)
-          .map((f) => ({ ...f, page: Math.round(f.page) })),
+          .map((f) => {
+            const page = Math.round(f.page);
+            const file = input.files[page - 1];
+            const seen = file.mimeType === 'application/pdf' ? null : seenImageSize(file.base64Data);
+            return { ...f, page, box: seen ? pixelBoxToNormalized(f.box, seen) : f.box };
+          })
+          .filter((f) => f.box[2] > f.box[0] && f.box[3] > f.box[1]),
         points: q.points > 0 ? q.points : 2,
-        statements: q.statements?.map((st) => ({
+        // The question's points shared between its statements (to the nearest quarter point)
+        statements: q.statements?.map((st, _i, all) => ({
           ...st,
-          points: st.points && st.points > 0 ? st.points : 0.5,
+          points: Math.max(0.25, Math.round(((q.points > 0 ? q.points : 2) / all.length) * 4) / 4),
         })),
       })),
     });
@@ -790,7 +1033,7 @@ ${solverInstruction}`;
       provider: this.providerName,
       model: message.model,
       durationMs: Date.now() - startTime,
-      estimatedCostUsd: this.estimateCost(model, message.usage),
+      estimatedCostUsd: this.usageCost(),
     };
   }
 
