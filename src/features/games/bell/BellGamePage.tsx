@@ -5,6 +5,7 @@ import {
   Bell,
   Check,
   Expand,
+  FilePlus2,
   Flag,
   LifeBuoy,
   Minimize,
@@ -12,12 +13,14 @@ import {
   Play,
   Smartphone,
   Trophy,
+  Upload,
   UserMinus,
   UserPlus,
   Users,
   X,
 } from 'lucide-react';
 import { useAppContext } from '../../../app/providers';
+import { homeworkPath, NEW_HOMEWORK } from '../../homework/homeworkFlow';
 import { RichContentRenderer } from '../../../components/editor/RichContentRenderer';
 import {
   ConfirmDialog,
@@ -83,10 +86,10 @@ const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
   const [saved, setSaved] = useState<BellSummary[] | null>(null);
   const [savedError, setSavedError] = useState('');
 
-  const options = useMemo(
-    () => homeworkList.map((hw) => ({ hw, ...bellQuestionsOf(hw.questions) })).filter((o) => o.usable.length > 0),
-    [homeworkList]
-  );
+  const all = useMemo(() => homeworkList.map((hw) => ({ hw, ...bellQuestionsOf(hw.questions) })), [homeworkList]);
+  const options = all.filter((o) => o.usable.length > 0);
+  /** Saved homework that cannot be played yet: shown so the teacher knows what to fix. */
+  const notPlayable = all.filter((o) => o.usable.length === 0 && o.hw.questions.length > 0);
   const chosen = options.find((o) => o.hw.id === homeworkId) ?? null;
   const max = Math.min(MAX_BELL_QUESTIONS, chosen?.usable.length ?? 0);
   const roster = names.split('\n').map((n) => n.trim()).filter(Boolean);
@@ -147,13 +150,39 @@ const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
         description="Cả lớp cùng trả lời từng câu; đúng thì ở lại sân, sai hoặc hết giờ thì rời sân. Người trụ lại đến câu cuối rung chuông vàng."
       />
 
+      <section className="studio-card p-5" aria-label="Cách tổ chức" data-testid="bell-guide">
+        <h2 className="font-display text-base font-extrabold text-[#172B4D]">Cách tổ chức Rung chuông vàng</h2>
+        <ol className="mt-3 grid grid-cols-1 gap-3 text-sm text-[#3B4A66] md:grid-cols-3">
+          <li className="rounded-2xl bg-[#F6FAFF] p-3">
+            <b className="text-[#172B4D]">1. Chuẩn bị đề.</b> Soạn câu hỏi hoặc tạo đề từ ảnh/tệp, chọn sẵn đáp án đúng cho từng câu rồi bấm <b>Lưu Bản Nháp</b>.
+            Câu trắc nghiệm, Đúng/Sai và trả lời ngắn đều chơi được.
+          </li>
+          <li className="rounded-2xl bg-[#F6FAFF] p-3">
+            <b className="text-[#172B4D]">2. Tạo sân.</b> Chọn đề ở dưới, chọn Online (điện thoại) hoặc Offline (bảng con), số câu, thời gian mỗi câu, rồi bấm <b>Tạo sân thi đấu</b>.
+          </li>
+          <li className="rounded-2xl bg-[#F6FAFF] p-3">
+            <b className="text-[#172B4D]">3. Chơi trên máy chiếu.</b> Online: học sinh quét QR hoặc vào trang <b>/rcv</b>, nhập mã phòng và tên. Offline: học sinh giơ bảng con, thầy cô bấm vào ô của từng bạn để chấm.
+          </li>
+        </ol>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <Link to={homeworkPath('game', NEW_HOMEWORK)} className="studio-btn studio-btn-secondary" data-testid="bell-new-homework">
+            <FilePlus2 className="h-4 w-4" /> Soạn đề mới
+          </Link>
+          <Link to={homeworkPath('game')} className="studio-btn studio-btn-secondary">
+            <Upload className="h-4 w-4" /> Tạo đề từ ảnh hoặc tệp
+          </Link>
+        </div>
+      </section>
+
       <section className="studio-card space-y-5 p-5">
         <div>
-          <label className={STUDIO_LABEL} htmlFor="bell-homework">Bộ đề đã lưu</label>
+          <label className={STUDIO_LABEL} htmlFor="bell-homework">Chọn đề đã lưu</label>
           {adminDataLoading && !homeworkList.length ? (
             <LoadingState rows={1} label="Đang tải bài tập…" />
           ) : options.length === 0 ? (
-            <p className="text-sm text-[#5E6C84]">Chưa có bài tập nào có câu hỏi kèm đáp án đã duyệt. Hãy soạn và lưu bài tập trước.</p>
+            <p className="text-sm text-[#5E6C84]" data-testid="bell-no-homework">
+              Chưa có đề nào chơi được. Bấm <b>Soạn đề mới</b> hoặc <b>Tạo đề từ ảnh hoặc tệp</b> ở trên, chọn đáp án đúng cho các câu rồi lưu; đề sẽ hiện ở đây.
+            </p>
           ) : (
             <select id="bell-homework" className={STUDIO_INPUT} value={homeworkId} onChange={(e) => setHomeworkId(e.target.value)}>
               {options.map((o) => (
@@ -162,6 +191,19 @@ const BellSetup: React.FC<{ preselect: string }> = ({ preselect }) => {
                 </option>
               ))}
             </select>
+          )}
+          {notPlayable.length > 0 && (
+            <details className="mt-2 text-xs text-[#5E6C84]" open={options.length === 0}>
+              <summary className="cursor-pointer font-bold text-[#3B4A66]">{notPlayable.length} đề đã lưu chưa chơi được</summary>
+              <ul className="mt-1 space-y-1">
+                {notPlayable.map((o) => (
+                  <li key={o.hw.id}>
+                    {o.hw.title}: câu chưa có đáp án, còn “cần kiểm tra” hoặc là câu tự luận.{' '}
+                    <Link to={homeworkPath('game', o.hw.id)} className="font-bold text-[#2563EB] hover:underline">Mở để thêm đáp án</Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
           )}
           {chosen && chosen.skipped > 0 && (
             <p className="mt-1 text-xs text-[#5E6C84]">
