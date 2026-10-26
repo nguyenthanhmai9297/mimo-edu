@@ -111,7 +111,7 @@ describe('MimoEDU Studio – các trang Giai đoạn 1', () => {
     expect(html).toContain('21/10/2026');
   });
 
-  it('Soạn bài tập Word / Game: một ô tạo từ tệp, soạn thủ công; Game nêu rõ phần đã có', () => {
+  it('Soạn bài tập Word: tạo từ tệp, soạn thủ công; Game: banner Rung chuông vàng và nút Tạo trò chơi', () => {
     ctx.homeworkList = [hw('a', 'published')];
     const word = at('/admin/homework/word', '/admin/homework/*', <HomeworkPage />);
     expect(word).toContain('Tạo bài tập từ tệp');
@@ -126,13 +126,17 @@ describe('MimoEDU Studio – các trang Giai đoạn 1', () => {
     expect(word).toContain('href="/admin/homework/game"');
     const game = at('/admin/homework/game', '/admin/homework/*', <HomeworkPage />);
     expect(game).toContain('Soạn bài tập Game');
-    expect(game).toContain('href="/admin/tools/mimo-quiz"');
     expect(game).toContain('href="/admin/homework/game/rung-chuong-vang"');
     expect(game).toContain('data-testid="bell-game-card"');
-    expect(game).toContain('🔔 Rung chuông vàng');
+    // The banner image carries the title: no repeated heading, one "Tạo trò chơi" button
+    expect(game).toContain('/images/rung-chuong-vang-banner-1280.webp');
+    expect(game).toContain('Tạo trò chơi');
+    expect(game).not.toContain('🔔 Rung chuông vàng');
     expect(game).toContain('câu chơi được');
-    expect(game).toContain('Chưa có trong phiên bản này');
-    expect(game).toContain('Đã dùng được');
+    expect(game).not.toContain('Chưa có trong phiên bản này');
+    expect(game).not.toContain('Đã dùng được');
+    expect(game).not.toContain('Tạo bài tập từ tệp');
+    expect(game).not.toContain('Soạn bài tập thủ công');
     expect(game).not.toContain('Tải Word (.docx)');
     // Unknown formats fall back to the chooser
     expect(at('/admin/homework/excel', '/admin/homework/*', <HomeworkPage />)).toContain('SOẠN BÀI TẬP WORD');

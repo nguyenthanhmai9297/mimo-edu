@@ -16,7 +16,6 @@ import {
   FileText,
   Gamepad2,
   History,
-  Info,
   Loader2,
   PenLine,
   Plus,
@@ -1873,70 +1872,74 @@ export const HomeworkPage: React.FC = () => {
       />
 
       {format === 'game' && (
-        <section aria-label="Trò chơi" className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <section aria-label="Trò chơi" className="mx-auto w-full max-w-[860px] space-y-3">
           <Link
-            to="/admin/homework/game/rung-chuong-vang"
+            to={BELL_GAME_PATH}
             data-testid="bell-game-card"
-            className="studio-card group flex h-full flex-col bg-gradient-to-br from-[#FFF4C2] to-white p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-visible:ring-4 focus-visible:ring-[#FFD34E]/40 focus-visible:outline-none"
+            className="block rounded-[20px] transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-visible:ring-4 focus-visible:ring-[#FFD34E]/50 focus-visible:outline-none"
           >
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFD34E] text-[#5A3A00]">
-              <Bell className="h-6 w-6" />
-            </span>
-            <span className="mt-4 block font-display text-base font-extrabold text-[#172B4D]">🔔 Rung chuông vàng</span>
-            <span className="mt-1 block text-sm leading-relaxed text-[#5E6C84]">
-              Cả lớp cùng trả lời từ bộ đề đã lưu: Online trên điện thoại (mã phòng, QR) hoặc Offline với bảng con. Có cứu trợ, theo dõi từng học sinh và lưu kết quả.
-            </span>
-            <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#2563EB] transition group-hover:gap-2">
-              Tạo phòng chơi <ArrowRight className="h-4 w-4" />
-            </span>
+            <img
+              src="/images/rung-chuong-vang-banner-1280.webp"
+              srcSet="/images/rung-chuong-vang-banner-800.webp 800w, /images/rung-chuong-vang-banner-1280.webp 1280w, /images/rung-chuong-vang-banner-2000.webp 2000w"
+              sizes="(min-width: 900px) 860px, 100vw"
+              width={2000}
+              height={667}
+              alt="Rung chuông vàng – Cả lớp cùng tranh tài, trả lời nhanh, chinh phục chuông vàng"
+              className="block aspect-[2000/667] h-auto w-full rounded-[20px]"
+            />
           </Link>
+          <div className="flex justify-center">
+            <Link to={BELL_GAME_PATH} className="studio-btn bg-[#FFD34E] px-8 py-3 text-base text-[#5A3A00] shadow-[0_4px_0_#C99400] hover:bg-[#FFC61A]">
+              <Bell className="h-5 w-5" /> Tạo trò chơi
+            </Link>
+          </div>
         </section>
       )}
 
-      {format === 'game' && <GameStatus />}
-
-      <section aria-label="Cách soạn bài tập" className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {[
-          {
-            key: 'file',
-            icon: Upload,
-            tone: 'yellow' as const,
-            title: 'Tạo bài tập từ tệp',
-            text: 'Ảnh chụp hoặc PDF đề bài: AI nhận diện thành câu hỏi để thầy cô soát lại. Tệp đề .json có sẵn: mở ngay, không dùng AI.',
-            cta: 'Chọn tệp',
-            onClick: () => setAiModalOpen(true),
-          },
-          {
-            key: 'manual',
-            icon: PenLine,
-            tone: 'blue' as const,
-            title: 'Soạn bài tập thủ công',
-            text: 'Soạn từng câu với công thức Toán, hình vẽ, bảng và 5 dạng câu hỏi.',
-            cta: 'Bắt đầu soạn',
-            onClick: startNewHomework,
-          },
-        ].map((t) => {
-          const Icon = t.icon;
-          const wash = t.tone === 'yellow' ? 'from-[#FFF8E1]' : 'from-[#EFF6FF]';
-          return (
-            <button
-              key={t.key}
-              type="button"
-              onClick={t.onClick}
-              className={`studio-card group flex h-full flex-col bg-gradient-to-br ${wash} to-white p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-visible:ring-4 focus-visible:ring-[#54C8FF]/30 focus-visible:outline-none`}
-            >
-              <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${STUDIO_TONE[t.tone]}`}>
-                <Icon className="h-6 w-6" />
-              </span>
-              <span className="mt-4 block font-display text-base font-extrabold text-[#172B4D]">{t.title}</span>
-              <span className="mt-1 block text-sm leading-relaxed text-[#5E6C84]">{t.text}</span>
-              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#2563EB] transition group-hover:gap-2">
-                {t.cta} <ArrowRight className="h-4 w-4" />
-              </span>
-            </button>
-          );
-        })}
-      </section>
+      {format === 'word' && (
+        <section aria-label="Cách soạn bài tập" className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {[
+            {
+              key: 'file',
+              icon: Upload,
+              tone: 'yellow' as const,
+              title: 'Tạo bài tập từ tệp',
+              text: 'Ảnh chụp hoặc PDF đề bài: AI nhận diện thành câu hỏi để thầy cô soát lại. Tệp đề .json có sẵn: mở ngay, không dùng AI.',
+              cta: 'Chọn tệp',
+              onClick: () => setAiModalOpen(true),
+            },
+            {
+              key: 'manual',
+              icon: PenLine,
+              tone: 'blue' as const,
+              title: 'Soạn bài tập thủ công',
+              text: 'Soạn từng câu với công thức Toán, hình vẽ, bảng và 5 dạng câu hỏi.',
+              cta: 'Bắt đầu soạn',
+              onClick: startNewHomework,
+            },
+          ].map((t) => {
+            const Icon = t.icon;
+            const wash = t.tone === 'yellow' ? 'from-[#FFF8E1]' : 'from-[#EFF6FF]';
+            return (
+              <button
+                key={t.key}
+                type="button"
+                onClick={t.onClick}
+                className={`studio-card group flex h-full flex-col bg-gradient-to-br ${wash} to-white p-5 text-left transition hover:-translate-y-0.5 hover:shadow-[var(--studio-shadow-hover)] focus-visible:ring-4 focus-visible:ring-[#54C8FF]/30 focus-visible:outline-none`}
+              >
+                <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${STUDIO_TONE[t.tone]}`}>
+                  <Icon className="h-6 w-6" />
+                </span>
+                <span className="mt-4 block font-display text-base font-extrabold text-[#172B4D]">{t.title}</span>
+                <span className="mt-1 block text-sm leading-relaxed text-[#5E6C84]">{t.text}</span>
+                <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-bold text-[#2563EB] transition group-hover:gap-2">
+                  {t.cta} <ArrowRight className="h-4 w-4" />
+                </span>
+              </button>
+            );
+          })}
+        </section>
+      )}
 
       {importError && <ErrorState message={importError} />}
       {homeworkSection(format)}
@@ -2005,6 +2008,8 @@ const GameReadinessBar: React.FC<{ questions: HomeworkQuestion[] }> = ({ questio
   );
 };
 
+const BELL_GAME_PATH = '/admin/homework/game/rung-chuong-vang';
+
 const FORMAT_LOOK: Record<HomeworkFormat, { icon: typeof FileText; gradient: string; description: string }> = {
   word: {
     icon: FileText,
@@ -2016,55 +2021,4 @@ const FORMAT_LOOK: Record<HomeworkFormat, { icon: typeof FileText; gradient: str
     gradient: 'from-[#6D28D9] via-[#C026D3] to-[#FB7185]',
     description: 'Tạo câu hỏi và chuyển thành trò chơi tương tác để tổ chức dạy học hoặc giao bài.',
   },
-};
-
-/** What the Game format can really do today, so nothing looks finished when it is not. */
-const GameStatus: React.FC = () => {
-  const ready = [
-    <>Câu trắc nghiệm và Đúng/Sai dùng được ngay trong trò chơi</>,
-    <>
-      <Link to="/admin/homework/game/rung-chuong-vang" className="font-bold text-[#2563EB] hover:underline">
-        Rung chuông vàng
-      </Link>
-      : cả lớp chơi trực tiếp từ đề đã lưu, trả lời trên điện thoại hoặc bảng con (dùng được cả câu trả lời ngắn)
-    </>,
-    <>
-      Chơi trên lớp: mở{' '}
-      <Link to="/admin/tools/mimo-quiz" className="font-bold text-[#2563EB] hover:underline">
-        Mimo Quiz
-      </Link>{' '}
-      hoặc{' '}
-      <Link to="/admin/tools/doan-tau" className="font-bold text-[#2563EB] hover:underline">
-        Đoàn tàu kiến thức
-      </Link>
-      , chọn nguồn “Kho học liệu Toán 3” rồi chọn đề này
-    </>,
-  ];
-  const notYet = ['Câu tự luận chưa chơi được trong trò chơi', 'Câu trả lời ngắn chưa chơi được trong Mimo Quiz và Đoàn tàu'];
-  return (
-    <section aria-label="Chức năng hiện có" className="grid grid-cols-1 gap-3 md:grid-cols-2">
-      <div className="rounded-2xl border border-[#BFE3D0] bg-[#F0FBF5] p-4 text-sm text-[#14532D]">
-        <div className="mb-1.5 flex items-center gap-1.5 font-extrabold">
-          <CheckCircle2 className="h-4 w-4 text-[#1F9D6B]" />
-          Đã dùng được
-        </div>
-        <ul className="list-disc space-y-1 pl-5">
-          {ready.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="rounded-2xl border border-[#DCE7F3] bg-[#F6FAFF] p-4 text-sm text-[#3B4A66]">
-        <div className="mb-1.5 flex items-center gap-1.5 font-extrabold">
-          <Info className="h-4 w-4 text-[#5E6C84]" />
-          Chưa có trong phiên bản này
-        </div>
-        <ul className="list-disc space-y-1 pl-5">
-          {notYet.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
 };
